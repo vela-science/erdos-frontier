@@ -50,19 +50,27 @@ erdos = {int(p["number"]): p for p in yaml.safe_load(fetch(ERDOS_URL))}
 # --- hosted proofs: union of plby and Jayyhk ------------------------------
 # presence => a proof is hosted; only a non-conditional / `complete` proof counts
 # as complete (an axiomatic / trust-extended / partial proof is not).
-proofs = {}  # n -> {"complete": bool, "sources": set}
+proofs = {}  # n -> {"complete", "conditional", "partial": bool, "sources": set}
 
 
-def add_proof(n, complete, source):
-    rec = proofs.setdefault(n, {"complete": False, "sources": set()})
-    rec["complete"] = rec["complete"] or complete
+def add_proof(n, complete, conditional, partial, source):
+    rec = proofs.setdefault(n, {"complete": False, "conditional": False,
+                                "partial": False, "sources": set()})
+    rec["complete"] |= complete
+    rec["conditional"] |= conditional
+    rec["partial"] |= partial
     rec["sources"].add(source)
 
 
 for e in yaml.safe_load(fetch(PLBY_URL)):
     m = re.search(r"Erdos(\d+)", e.get("key", ""))
-    if m:
-        add_proof(int(m.group(1)), not (e.get("partial") or e.get("conditional")), "plby")
+    if not m:
+        continue
+    # key PRESENCE is the flag; `conditional:` is often null-valued (axiom omitted).
+    # plby's distinction: `conditional` assumes an axiom; `partial` proves a variant.
+    cond = "conditional" in e
+    part = "partial" in e
+    add_proof(int(m.group(1)), not (cond or part), cond, part, "plby")
 
 for e in yaml.safe_load(fetch(JAYY_URL)):
     try:
@@ -70,7 +78,8 @@ for e in yaml.safe_load(fetch(JAYY_URL)):
     except (KeyError, ValueError, TypeError):
         continue
     state = (e.get("proof") or {}).get("state")
-    add_proof(n, state == "complete", "jayyhk")  # axiomatic / trust_extended => not complete
+    # Jayyhk: `complete` is clean; `axiomatic` / `trust_extended` are not axiom-clean.
+    add_proof(n, state == "complete", state in ("axiomatic", "trust_extended"), False, "jayyhk")
 
 # --- FC view: has a file? has a formal_proof link? ------------------------
 conj = json.loads(fetch(CONJ_URL))
@@ -168,11 +177,11 @@ def action(n):
         return "wont-fix"
     if n in claimed:
         return "in-pr"
-    if not p["complete"]:
+    if p["complete"]:
+        return "link" if f["has_file"] else "statement"
+    if p["conditional"]:
         return "docstring"
-    if f["has_file"]:
-        return "link"
-    return "statement"
+    return "partial"
 
 
 def srcs(n):
@@ -184,11 +193,12 @@ rows = [(n, action(n), erdos[n].get("status", {}).get("state", "?")) for n in so
 
 from collections import Counter
 counts = Counter(a for _, a, _ in rows)
-ORDER = ["statement", "link", "docstring", "in-pr", "wont-fix", "done", "no-proof"]
+ORDER = ["statement", "link", "docstring", "partial", "in-pr", "wont-fix", "done", "no-proof"]
 DESC = {
     "statement": "**Write the FC statement + link.** A complete hosted proof exists, FC has no file yet. The #3998 batch.",
     "link":      "**Add the `formal_proof` link.** FC already has the statement; the hosted proof just isn't linked.",
-    "docstring": "**Docstring note, not a `formal_proof` tag.** The hosted proof is conditional, axiomatic, or trust-extended.",
+    "docstring": "**Docstring note, not a `formal_proof` tag.** The hosted proof is conditional (assumes an unformalized axiom) or axiomatic / trust-extended.",
+    "partial":   "**Partial proof.** Proves a specific variant, not the full erdosproblems statement. May be linkable to that FC variant; needs a per-problem look (per @plby).",
     "in-pr":     "**Claimed.** An open FC pull request (or a tracked issue claim) already covers this.",
     "wont-fix":  "**Maintainer marked `won't fix`** (e.g. the hosted proof is not actually complete). Skip it.",
     "done":      "Already linked in FC.",
@@ -226,7 +236,7 @@ def md():
                "comments rather than the structured sources: 678 (`wont-fix`, mo271 flagged the "
                "proof as not actually complete) and 613 (`in-pr`, claimed by Paul-Lez). "
                "Everything else is computed.*\n")
-    for a in ("statement", "link", "docstring", "wont-fix"):
+    for a in ("statement", "link", "docstring", "partial", "wont-fix"):
         ns = [n for n, x, _ in rows if x == a]
         out.append(f"\n## `{a}` — {len(ns)} problem(s)\n\n{DESC[a]}\n")
         out.append(" ".join(f"[{n}]({EPC}/{n}){srcs(n)}" for n in ns) or "_none_")
