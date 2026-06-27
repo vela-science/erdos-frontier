@@ -34,8 +34,9 @@ CONJ_URL = "https://google-deepmind.github.io/formal-conjectures/data/conjecture
 ERDOS_URL = "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
 PLBY_URL = "https://raw.githubusercontent.com/plby/lean-proofs/main/data/sources.yaml"
 JAYY_URL = "https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml"
+VLP_URL = "https://raw.githubusercontent.com/willblair0708/verified-lean-proofs/main/proofs.yaml"
 REPO = "google-deepmind/formal-conjectures"
-SRC_TAG = {"plby": "ᵖ", "jayyhk": "ʲ"}
+SRC_TAG = {"plby": "ᵖ", "jayyhk": "ʲ", "vlp": "ᵛ"}
 
 
 def fetch(url, headers=None):
@@ -80,6 +81,18 @@ for e in yaml.safe_load(fetch(JAYY_URL)):
     state = (e.get("proof") or {}).get("state")
     # Jayyhk: `complete` is clean; `axiomatic` / `trust_extended` are not axiom-clean.
     add_proof(n, state == "complete", state in ("axiomatic", "trust_extended"), False, "jayyhk")
+
+# verified-lean-proofs: own-hosted proofs whose `#print axioms` audit is enforced
+# by CI. `axioms_clean: true` => complete (kernel axioms only, no sorry). Tolerant
+# of the repo not existing yet so the sync never breaks before it is published.
+try:
+    for e in (yaml.safe_load(fetch(VLP_URL)) or {}).get("proofs", []):
+        try:
+            add_proof(int(e["problem"]), bool(e.get("axioms_clean")), False, False, "vlp")
+        except (KeyError, ValueError, TypeError):
+            continue
+except (urllib.error.HTTPError, urllib.error.URLError):
+    pass  # repo not published yet / transient: degrade silently
 
 # --- FC view: has a file? has a formal_proof link? ------------------------
 conj = json.loads(fetch(CONJ_URL))
@@ -186,7 +199,7 @@ def action(n):
 
 def srcs(n):
     s = proofs.get(n, {}).get("sources", set())
-    return "".join(SRC_TAG[k] for k in ("plby", "jayyhk") if k in s)
+    return "".join(SRC_TAG[k] for k in ("plby", "jayyhk", "vlp") if k in s)
 
 
 rows = [(n, action(n), erdos[n].get("status", {}).get("state", "?")) for n in sorted(erdos)]
@@ -226,11 +239,13 @@ def md():
         "([`problems.yaml`](https://github.com/teorth/erdosproblems/blob/main/data/problems.yaml))\n"
         "- Formal Conjectures' own [`conjectures.json`](https://google-deepmind.github.io/formal-conjectures/data/conjectures.json) "
         "(has-a-file + `formalProofLink`)\n"
-        "- hosted proofs from [`plby/lean-proofs`](https://github.com/plby/lean-proofs/blob/main/data/sources.yaml) (ᵖ) "
-        "and [`Jayyhk/erdos-lean`](https://github.com/Jayyhk/erdos-lean/blob/main/data/problems.yaml) (ʲ), "
-        "with their `conditional` / `axiomatic` / `trust_extended` flags\n\n"
+        "- hosted proofs from [`plby/lean-proofs`](https://github.com/plby/lean-proofs/blob/main/data/sources.yaml) (ᵖ), "
+        "[`Jayyhk/erdos-lean`](https://github.com/Jayyhk/erdos-lean/blob/main/data/problems.yaml) (ʲ), "
+        "with their `conditional` / `axiomatic` / `trust_extended` flags, and "
+        "[`willblair0708/verified-lean-proofs`](https://github.com/willblair0708/verified-lean-proofs/blob/main/proofs.yaml) (ᵛ), "
+        "whose `#print axioms` audit is CI-enforced\n\n"
         "It also folds in the live set of open FC pull requests, so it never points at in-flight work. "
-        "The ᵖ / ʲ marks after each problem show which collection hosts the proof.\n")
+        "The ᵖ / ʲ / ᵛ marks after each problem show which collection hosts the proof.\n")
     if not claims_available:
         out.append("> ⚠️ The open-PR (claims) layer did not run this time (no token / rate limit), "
                    "so `in-pr` may be undercounted.\n")
