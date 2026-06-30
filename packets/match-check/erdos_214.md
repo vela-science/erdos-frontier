@@ -1,8 +1,11 @@
 # Match-check packet — Erdős problem 214
 
 Computed bucket: `mismatch`
-Signed verdict: `unfaithful` (cache, reviewer:will-blair)
-Override note: Hosted proof is complete, but proves an existential coloring result rather than the universal boxed problem.
+Signed verdict: `unfaithful` (hub, reviewer:will-blair)
+
+## Machine evidence (L1) — deterministic, no human/model judgment
+
+- Verdict: `unconditional`
 
 ## 1. Upstream statement
 

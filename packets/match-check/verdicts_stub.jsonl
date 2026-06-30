@@ -1,0 +1,16 @@
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/94", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on hconv : Erdos94.ConvexPosition P"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/115", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on a : Erdos115.EremenkoLempertAtZeroStatement n"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/150", "formal_ref": null, "formal_statement_hash": null, "note": ""}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/164", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on hA : Erdos164.PrimitiveSet A"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/202", "formal_ref": null, "formal_statement_hash": null, "note": ""}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/205", "formal_ref": null, "formal_statement_hash": null, "note": ""}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/214", "formal_ref": null, "formal_statement_hash": null, "note": ""}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/224", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on hNo : Erdos224.NoObtuse A"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/281", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on h : Erdos281.Erdos281Hyp n hmono hnpos"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/337", "formal_ref": null, "formal_statement_hash": null, "note": ""}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/785", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on h_hyp : Erdos785.exact_complements A B"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/964", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on hGPY : Erdos964.GoldstonGrahamPintzYildirimStatement"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/1100", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on hPNT : Erdos1100b.PNT_statement"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/1121", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on hns : Erdos1121.CirclesNonseparable circles"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/1148", "formal_ref": "google-deepmind/formal-conjectures@HEAD:FormalConjectures/ErdosProblems/1148.lean", "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on h_duke : Erdos1148.DukeTheoremStatement"}
+{"target": null, "verdict": "", "informal_ref": "erdosproblems.com/1187", "formal_ref": null, "formal_statement_hash": null, "note": "machine: kernel-clean but conditional on hp : Erdos1187b.Prime p"}

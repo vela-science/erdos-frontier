@@ -595,6 +595,15 @@ def row_for_problem(
         "claims": [asdict(claim) for claim in claims],
         "override": override or None,
         "fidelity": fidelity_field(fidelity, fc_data),
+        "machine": (
+            {
+                "verdict": proof.get("machine_verdict"),
+                "named_assumptions": proof.get("machine_named_assumptions") or [],
+                "non_kernel_axioms": proof.get("machine_non_kernel_axioms") or [],
+            }
+            if proof and proof.get("machine_verdict")
+            else None
+        ),
         "recommended_action": (override or {}).get("recommended_action") or RECOMMENDED_ACTION[bucket],
     }
 
@@ -811,11 +820,54 @@ def render_next_batch_md(payload: dict, *, top_count: int = 20, batch_size: int 
     return "\n".join(out)
 
 
+def render_verdicts_feed(payload: dict) -> dict:
+    """The public audit feed: which formally-solved Erdős claims are actually
+    unconditional. One row per problem, joining the machine L1 verdict, the FC/
+    erdos L0 status, and any signed L2 fidelity verdict. The saleable artifact —
+    a benchmark builder consumes this to avoid counting a conditional proof as a
+    solve. Machine evidence is deterministic; signed verdicts carry a reviewer.
+    """
+    rows = []
+    for r in payload["rows"]:
+        machine = r.get("machine") or {}
+        fidelity = r.get("fidelity") or {}
+        rows.append({
+            "problem": r["problem"],
+            "erdos_url": r["erdos_url"],
+            "erdos_state": r.get("erdos_state"),
+            "fc_linked": bool((r.get("fc") or {}).get("linked")),
+            "bucket": r["bucket"],
+            "machine_verdict": machine.get("verdict"),
+            "named_assumptions": machine.get("named_assumptions") or [],
+            "non_kernel_axioms": machine.get("non_kernel_axioms") or [],
+            "signed_fidelity_verdict": fidelity.get("verdict"),
+            "signed_by": fidelity.get("reviewer") if fidelity.get("signed") else None,
+            "recommended_action": r.get("recommended_action"),
+        })
+    flagged = [r for r in rows if r["machine_verdict"] == "conditional"]
+    return {
+        "schema": "erdos-fidelity-audit.v1",
+        "generated_at": payload["generated_at"],
+        "sources": payload.get("sources"),
+        "summary": {
+            "problems": len(rows),
+            "machine_conditional": len(flagged),
+            "axiom_clean_but_conditional": [
+                r["problem"] for r in flagged
+                if r["named_assumptions"] and not r["non_kernel_axioms"]
+            ],
+        },
+        "rows": rows,
+    }
+
+
 def write_outputs(payload: dict, root: str | Path = ".") -> None:
     root = Path(root)
     (root / "STATUS.md").write_text(render_status_md(payload))
     (root / "NEXT_BATCH.md").write_text(render_next_batch_md(payload))
     (root / "status.json").write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    (root / "verdicts.json").write_text(
+        json.dumps(render_verdicts_feed(payload), indent=2, sort_keys=True) + "\n")
 
 
 def load_live_status(overrides_path: str | Path = "overrides.yaml") -> dict:
@@ -862,6 +914,6 @@ def main() -> int:
     )
     for bucket in BUCKET_ORDER:
         print(f"  {bucket:>24}: {payload['counts'].get(bucket, 0)}")
-    print("wrote STATUS.md, status.json, NEXT_BATCH.md")
+    print("wrote STATUS.md, status.json, NEXT_BATCH.md, verdicts.json")
     return 0
 

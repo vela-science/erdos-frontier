@@ -1,7 +1,7 @@
-# Match-check packet — Erdős problem 205
+# Match-check packet — Erdős problem 150
 
-Computed bucket: `hypothesis-conditional`
-Signed verdict: `variant` (hub, reviewer:will-blair)
+Computed bucket: `needs-human-match-check`
+Override note: Previously dropped from a batch because no hosted proof cleanly matched the boxed statement.
 
 ## Machine evidence (L1) — deterministic, no human/model judgment
 
@@ -9,9 +9,9 @@ Signed verdict: `variant` (hub, reviewer:will-blair)
 
 ## 1. Upstream statement
 
-- Boxed problem: https://www.erdosproblems.com/205
-- LaTeX source: https://www.erdosproblems.com/latex/205
-- Upstream state: `disproved (Lean)`
+- Boxed problem: https://www.erdosproblems.com/150
+- LaTeX source: https://www.erdosproblems.com/latex/150
+- Upstream state: `proved (Lean)`
 
 ## 2. FC theorem
 
@@ -20,9 +20,9 @@ Signed verdict: `variant` (hub, reviewer:will-blair)
 ## 3. Hosted theorem signature(s)
 
 - plby/lean-proofs — state `complete` (complete)
-  - https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos205.lean
+  - https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos150.lean
 - Jayyhk/erdos-lean — state `complete` (complete)
-  - https://github.com/Jayyhk/erdos-lean/blob/main/problems/205/Erdos205.lean
+  - https://github.com/Jayyhk/erdos-lean/blob/main/problems/150/Erdos150.lean
 
 ## Decision
 

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erdős formal-proof fidelity audit</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 15px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+         max-width: 60rem; margin: 2.5rem auto; padding: 0 1.2rem; }
+  h1 { font-size: 1.4rem; margin-bottom: .2rem; }
+  .sub { opacity: .7; margin-top: 0; }
+  .lead { margin: 1.2rem 0; }
+  table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+  th, td { text-align: left; padding: .35rem .6rem; border-bottom: 1px solid #8884; vertical-align: top; }
+  th { opacity: .65; font-weight: 600; }
+  code { background: #8881; padding: .05rem .3rem; border-radius: 3px; }
+  .hyp { color: #c0392b; }
+  a { color: inherit; }
+  .stat { display: inline-block; margin-right: 1.5rem; }
+  .stat b { font-size: 1.3rem; }
+</style>
+</head>
+<body>
+<h1>Erdős formal-proof fidelity audit</h1>
+<p class="sub">Which "formally solved" Erdős claims rest on an <em>unconditional</em> proof — and which silently assume an unproven result.</p>
+
+<p class="lead">A formal proof can be <code>sorry</code>-free and <code>#print axioms</code>-clean
+and still prove the problem only <strong>conditionally</strong> — by taking a deep theorem
+(<code>DukeTheoremStatement</code>, the Prime Number Theorem) as a hypothesis parameter, which the
+axiom check cannot see. This audit reads each hosted Lean proof mechanically and reports it.
+Machine-readable feed: <a href="verdicts.json">verdicts.json</a> · source:
+<a href="https://github.com/willblair0708/erdos-fc-sync">erdos-fc-sync</a>.</p>
+
+<p id="summary"></p>
+<table id="rows"><thead><tr>
+  <th>problem</th><th>machine</th><th>conditional on</th><th>FC status</th><th>signed</th>
+</tr></thead><tbody></tbody></table>
+
+<script>
+fetch('verdicts.json').then(r => r.json()).then(d => {
+  const s = d.summary;
+  document.getElementById('summary').innerHTML =
+    `<span class="stat"><b>${s.problems}</b> problems</span>` +
+    `<span class="stat"><b>${s.machine_conditional}</b> conditional</span>` +
+    `<span class="stat"><b>${s.axiom_clean_but_conditional.length}</b> kernel-clean&nbsp;but&nbsp;conditional ` +
+    `<small>(invisible to <code>#print axioms</code>)</small></span>`;
+  const tb = document.querySelector('#rows tbody');
+  d.rows.filter(r => r.machine_verdict === 'conditional')
+        .sort((a, b) => a.problem - b.problem)
+        .forEach(r => {
+    const on = (r.named_assumptions.length ? r.named_assumptions : r.non_kernel_axioms)
+                 .map(x => `<code class="${r.named_assumptions.length ? 'hyp' : ''}">${x}</code>`).join(' ');
+    const sig = r.signed_fidelity_verdict
+                 ? `${r.signed_fidelity_verdict}${r.signed_by ? ' · ' + r.signed_by : ''}` : '';
+    tb.insertAdjacentHTML('beforeend',
+      `<tr><td><a href="https://www.erdosproblems.com/${r.problem}">${r.problem}</a></td>` +
+      `<td>${r.machine_verdict}</td><td>${on}</td>` +
+      `<td>${r.erdos_state || ''}</td><td>${sig}</td></tr>`);
+  });
+}).catch(e => { document.getElementById('summary').textContent = 'feed unavailable: ' + e; });
+</script>
+</body>
+</html>

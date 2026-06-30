@@ -20,6 +20,7 @@ Usage:
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 import sys
 
@@ -55,6 +56,22 @@ def render_packet(row: dict) -> str:
     if override and override.get("reason"):
         out.append(f"Override note: {override['reason']}")
     out.append("")
+
+    machine = row.get("machine")
+    if machine:
+        out.append("## Machine evidence (L1) — deterministic, no human/model judgment\n")
+        out.append(f"- Verdict: `{machine.get('verdict')}`")
+        if machine.get("non_kernel_axioms"):
+            out.append(f"- Non-kernel axioms: `{', '.join(machine['non_kernel_axioms'])}` "
+                       "(visible to `#print axioms`)")
+        if machine.get("named_assumptions"):
+            out.append("- **Undischarged named assumptions** (theorem parameters — "
+                       "`#print axioms` cannot see these):")
+            for a in machine["named_assumptions"]:
+                out.append(f"  - `{a}`")
+            out.append("  → the proof is conditional on the above; it is NOT an "
+                       "unconditional resolution even if kernel-clean.")
+        out.append("")
 
     out.append("## 1. Upstream statement\n")
     out.append(f"- Boxed problem: {row['erdos_url']}")
@@ -115,6 +132,30 @@ def select_rows(payload: dict, problem: int | None) -> list[dict]:
     return [row for row in payload["rows"] if row["bucket"] in PACKET_BUCKETS]
 
 
+def verdict_stub(row: dict) -> dict:
+    """A pre-filled row for `vela attest --batch`. The reviewer fills `verdict`
+    (faithful/variant/unfaithful) and `target` (the finding id) after reading the
+    packet; everything else is derived. `note` carries the machine hint, not a
+    judgment. Statement-faithfulness stays a human verdict signed under one key."""
+    fc = row.get("fc") or {}
+    machine = row.get("machine") or {}
+    hint = ""
+    if machine.get("named_assumptions"):
+        hint = ("machine: kernel-clean but conditional on "
+                + ", ".join(machine["named_assumptions"]))
+    elif machine.get("non_kernel_axioms"):
+        hint = "machine: conditional on axioms " + ", ".join(machine["non_kernel_axioms"])
+    return {
+        "target": None,
+        "verdict": "",
+        "informal_ref": f"erdosproblems.com/{row['problem']}",
+        "formal_ref": (f"google-deepmind/formal-conjectures@HEAD:{fc['path']}"
+                       if fc.get("path") else None),
+        "formal_statement_hash": None,
+        "note": hint,
+    }
+
+
 def main(argv: list[str]) -> int:
     problem = int(argv[1]) if len(argv) > 1 else None
     payload = load_live_status()
@@ -123,9 +164,15 @@ def main(argv: list[str]) -> int:
         target = f"problem {problem}" if problem is not None else "the match-check buckets"
         print(f"No rows found for {target}.")
         return 0
+    stubs = []
     for row in rows:
         path = write_packet(row)
+        stubs.append(verdict_stub(row))
         print(f"wrote {path}")
+    stub_path = Path(PACKET_DIR) / "verdicts_stub.jsonl"
+    stub_path.write_text("\n".join(json.dumps(s) for s in stubs) + "\n")
+    print(f"wrote {stub_path} ({len(stubs)} rows) — fill verdict+target, then "
+          "`vela attest <frontier> --batch verdicts_stub.jsonl --as reviewer:will-blair --key <key>`")
     return 0
 
 

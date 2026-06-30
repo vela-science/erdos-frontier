@@ -1,8 +1,11 @@
 # Match-check packet — Erdős problem 337
 
 Computed bucket: `mismatch`
-Signed verdict: `unfaithful` (cache, reviewer:will-blair)
-Override note: Hosted proof is a counterexample/existence theorem and needs a fresh match-check before linking to the FC statement.
+Signed verdict: `unfaithful` (hub, reviewer:will-blair)
+
+## Machine evidence (L1) — deterministic, no human/model judgment
+
+- Verdict: `unconditional`
 
 ## 1. Upstream statement
 
