@@ -15884,7 +15884,7 @@
     "formal_conjectures": "https://google-deepmind.github.io/formal-conjectures/data/conjectures.json",
     "jayyhk": "https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml",
     "plby": "https://raw.githubusercontent.com/plby/lean-proofs/main/data/sources.yaml",
-    "vlp": "https://raw.githubusercontent.com/willblair0708/lean-proofs/main/proofs.yaml"
+    "vlp": "https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml"
   },
   "summary": {
     "axiom_clean_but_conditional": [

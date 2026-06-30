@@ -13,7 +13,7 @@ An Erdős problem's "status" lives in several places that update independently:
   `conditional` / `partial` flags.
 - **[Jayyhk/erdos-lean](https://github.com/Jayyhk/erdos-lean)** — hosted Lean proofs and
   `complete` / `axiomatic` / `trust_extended` states.
-- **[willblair0708/lean-proofs](https://github.com/willblair0708/lean-proofs)** — a small
+- **[williamjblair/lean-proofs](https://github.com/williamjblair/lean-proofs)** — a small
   CI-audited proof host whose manifest is checked by `#print axioms`.
 - **Statement-fidelity verdicts** — signed reviewer attestations of whether a formal theorem
   faithfully states the boxed problem (`faithful` / `variant` / `unfaithful`). Read from a

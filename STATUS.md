@@ -4,11 +4,11 @@
 
 This is a **computed** view, not a hand-kept list. It joins erdosproblems.com, Formal Conjectures, hosted Lean proof indexes, live open PRs, and explicit human overrides on the problem number so the status cannot drift silently.
 
-Proof-source marks: ᵖ = [`plby/lean-proofs`](https://github.com/plby/lean-proofs), ʲ = [`Jayyhk/erdos-lean`](https://github.com/Jayyhk/erdos-lean), ʷ = [`willblair0708/lean-proofs`](https://github.com/willblair0708/lean-proofs).
+Proof-source marks: ᵖ = [`plby/lean-proofs`](https://github.com/plby/lean-proofs), ʲ = [`Jayyhk/erdos-lean`](https://github.com/Jayyhk/erdos-lean), ʷ = [`williamjblair/lean-proofs`](https://github.com/williamjblair/lean-proofs).
 
 > ⚠️ The open-PR claims layer did not run this time, so `in-pr` may be undercounted.
 
-**Coverage:** all 473 problems Bloom marks formalized are tracked by plby ∪ Jayyhk ∪ willblair0708/lean-proofs ∪ FC. No gap.
+**Coverage:** all 473 problems Bloom marks formalized are tracked by plby ∪ Jayyhk ∪ williamjblair/lean-proofs ∪ FC. No gap.
 
 Reconciled **1217** problems.
 

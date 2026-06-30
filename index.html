@@ -76,7 +76,7 @@
   prove the problem only <em>conditionally</em> — by taking a deep theorem as a hypothesis parameter,
   which the axiom check cannot see. This reads each hosted Lean proof mechanically and reports it.
   No human or model judgment in the machine layer; signed verdicts carry a named reviewer.
-  Feed: <a href="verdicts.json">verdicts.json</a> · method: <a href="https://github.com/willblair0708/erdos-fc-sync/tree/main/lean_assumptions">lean_assumptions</a>.</p>
+  Feed: <a href="verdicts.json">verdicts.json</a> · method: <a href="https://github.com/williamjblair/erdos-fc-sync/tree/main/lean_assumptions">lean_assumptions</a>.</p>
 
   <div class="funnel" id="funnel"></div>
   <div class="traps" id="traps" hidden></div>
@@ -168,8 +168,8 @@ fetch("verdicts.json").then(r=>r.json()).then(d=>{
         `<li><span class="num">${r.problem}</span> — assumes <code>${esc(r.named_assumptions[0].split(" : ").pop())}</code></li>`).join("")}</ul>`;
   }
   document.getElementById("foot").innerHTML =
-    `Generated ${esc(d.generated_at)} · sources: erdosproblems.com, formal-conjectures, plby / Jayyhk / willblair0708 Lean proofs · `
-    + `<a href="https://github.com/willblair0708/erdos-fc-sync">source</a>`;
+    `Generated ${esc(d.generated_at)} · sources: erdosproblems.com, formal-conjectures, plby / Jayyhk / williamjblair Lean proofs · `
+    + `<a href="https://github.com/williamjblair/erdos-fc-sync">source</a>`;
   render();
 });
 

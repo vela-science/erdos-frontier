@@ -24,7 +24,7 @@ CONJ_URL = "https://google-deepmind.github.io/formal-conjectures/data/conjecture
 ERDOS_URL = "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
 PLBY_URL = "https://raw.githubusercontent.com/plby/lean-proofs/main/data/sources.yaml"
 JAYY_URL = "https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml"
-VLP_URL = "https://raw.githubusercontent.com/willblair0708/lean-proofs/main/proofs.yaml"
+VLP_URL = "https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml"
 # Statement-fidelity verdicts: signed attestations that a hosted/FC theorem
 # faithfully states the boxed problem. Primary read is the hub snapshot for the
 # erdos-formalization frontier (vfr_0a25edabc16db143); the committed
@@ -42,7 +42,7 @@ SRC_TAG = {"plby": "ᵖ", "jayyhk": "ʲ", "vlp": "ʷ"}
 SOURCE_LABEL = {
     "plby": "plby/lean-proofs",
     "jayyhk": "Jayyhk/erdos-lean",
-    "vlp": "willblair0708/lean-proofs",
+    "vlp": "williamjblair/lean-proofs",
 }
 
 BUCKET_ORDER = [
@@ -150,7 +150,7 @@ def proof_url(source: str, problem: int, entry: dict | None = None) -> str:
         return f"https://github.com/Jayyhk/erdos-lean/blob/main/problems/{problem}/Erdos{problem}.lean"
     if source == "vlp":
         file = (entry or {}).get("file") or f"ErdosProblems/Erdos{problem}.lean"
-        return f"https://github.com/willblair0708/lean-proofs/blob/main/{file}"
+        return f"https://github.com/williamjblair/lean-proofs/blob/main/{file}"
     raise ValueError(f"unknown proof source: {source}")
 
 
@@ -738,7 +738,7 @@ def render_status_md(payload: dict) -> str:
     out.append(
         "Proof-source marks: ᵖ = [`plby/lean-proofs`](https://github.com/plby/lean-proofs), "
         "ʲ = [`Jayyhk/erdos-lean`](https://github.com/Jayyhk/erdos-lean), "
-        "ʷ = [`willblair0708/lean-proofs`](https://github.com/willblair0708/lean-proofs).\n"
+        "ʷ = [`williamjblair/lean-proofs`](https://github.com/williamjblair/lean-proofs).\n"
     )
     if not payload["claims_available"]:
         out.append("> ⚠️ The open-PR claims layer did not run this time, so `in-pr` may be undercounted.\n")
@@ -748,7 +748,7 @@ def render_status_md(payload: dict) -> str:
     else:
         out.append(
             f"**Coverage:** all {payload['bloom_formalized_count']} problems Bloom marks formalized are tracked "
-            "by plby ∪ Jayyhk ∪ willblair0708/lean-proofs ∪ FC. No gap.\n"
+            "by plby ∪ Jayyhk ∪ williamjblair/lean-proofs ∪ FC. No gap.\n"
         )
     out.append(f"Reconciled **{payload['total_problems']}** problems.\n")
     out.append("| status | count | meaning |\n|---|---:|---|")
