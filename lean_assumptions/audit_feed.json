@@ -783,7 +783,7 @@
     "problem": 296,
     "erdos_url": "https://www.erdosproblems.com/296",
     "fc_status": "proved (Lean)",
-    "fc_bucket": "statement",
+    "fc_bucket": "hypothesis-conditional",
     "headline_decl": "Erdos296.erdos296_upper_bound",
     "machine_verdict": "conditional",
     "axiom_verdict": "kernel_clean",
