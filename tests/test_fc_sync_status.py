@@ -2,13 +2,40 @@ import json
 
 from fc_sync_status import (
     Claim,
+    apply_machine_audit,
     build_proofs,
     build_status,
+    classify,
     load_fidelity,
     parse_fidelity,
     render_next_batch_md,
     render_status_md,
 )
+
+
+def test_machine_audit_overrides_flags_and_buckets_hypothesis_conditional():
+    # The Lean extractor found a problem-defined named Prop assumed as a hypothesis
+    # (kernel-clean, #print-axioms-invisible). It must override a producer's
+    # (wrong) "complete" flag and route to the precise bucket.
+    proofs = {1148: {"complete": True, "conditional": False, "partial": False, "sources": {}}}
+    audit = {1148: {"problem": 1148, "machine_verdict": "conditional",
+                    "named_assumptions": ["h_duke : Erdos1148.DukeTheoremStatement"],
+                    "non_kernel_axioms": []}}
+    apply_machine_audit(proofs, audit)
+    assert proofs[1148]["conditional"] is True
+    assert proofs[1148]["complete"] is False
+    bucket = classify(1148, {"has_file": True, "linked": False}, proofs[1148], [], None, None)
+    assert bucket == "hypothesis-conditional"
+
+
+def test_machine_audit_axiom_conditional_is_docstring_not_hypothesis():
+    # A proof conditional via a non-kernel AXIOM (caught by #print axioms, no named
+    # hypothesis) is the generic "docstring" bucket, not "hypothesis-conditional".
+    proofs = {694: {"complete": True, "conditional": False, "partial": False, "sources": {}}}
+    audit = {694: {"problem": 694, "machine_verdict": "conditional",
+                   "named_assumptions": [], "non_kernel_axioms": ["mertens_product", "linnik_dvd"]}}
+    apply_machine_audit(proofs, audit)
+    assert classify(694, {"has_file": True, "linked": False}, proofs[694], [], None, None) == "docstring"
 
 
 def erdos_records(*problems):

@@ -241,6 +241,47 @@ def build_proofs(
     return proofs
 
 
+LEAN_AUDIT_PATH = Path(__file__).resolve().parent / "lean_assumptions" / "audit_feed.json"
+
+
+def load_machine_audit(path: Path = LEAN_AUDIT_PATH) -> dict[int, dict]:
+    """Machine L1 verdicts from the Lean assumption-extractor, keyed by problem.
+
+    The deterministic, repo-local result of actually loading each hosted proof and
+    reading its axioms + theorem-parameter hypotheses — not a flag the proof author
+    declared. Empty if the audit has not been generated.
+    """
+    try:
+        rows = json.load(open(path))
+    except (OSError, ValueError):
+        return {}
+    return {int(r["problem"]): r for r in rows if "problem" in r}
+
+
+def apply_machine_audit(proofs: dict[int, dict], audit: dict[int, dict]) -> None:
+    """Fold the machine verdict over the producer-declared flags, in place.
+
+    The machine ran the proof, so its verdict is authoritative for any problem it
+    audited. A non-empty ``named_assumptions`` (a problem-defined Prop assumed as a
+    hypothesis — e.g. ``DukeTheoremStatement``) is the ``#print axioms``-invisible
+    conditionality the raw ``conditional``/``partial`` flags systematically miss.
+    """
+    for problem, feed in audit.items():
+        rec = proofs.get(problem)
+        if rec is None:
+            continue
+        verdict = feed.get("machine_verdict")
+        rec["machine_verdict"] = verdict
+        rec["machine_named_assumptions"] = feed.get("named_assumptions") or []
+        rec["machine_non_kernel_axioms"] = feed.get("non_kernel_axioms") or []
+        if verdict == "conditional":
+            rec["conditional"] = True
+            rec["complete"] = False
+        elif verdict == "unconditional":
+            rec["conditional"] = False
+            rec["complete"] = not rec.get("partial")
+
+
 def build_fc(conjectures: dict) -> dict[int, dict]:
     entries = []
     for value in conjectures.values():
@@ -478,6 +519,10 @@ def classify(
         return "no-proof"
     if proof.get("complete"):
         return "link" if fc.get("has_file") else "statement"
+    if proof.get("machine_named_assumptions"):
+        # the machine found a problem-defined named Prop assumed as a hypothesis —
+        # kernel-clean but conditional, exactly what #print axioms cannot see.
+        return "hypothesis-conditional"
     if proof.get("conditional"):
         return "docstring"
     if proof.get("partial"):
@@ -782,6 +827,7 @@ def load_live_status(overrides_path: str | Path = "overrides.yaml") -> dict:
     except (urllib.error.HTTPError, urllib.error.URLError):
         vlp_doc = {}
     proofs = build_proofs(plby_items, jayyhk_items, vlp_doc)
+    apply_machine_audit(proofs, load_machine_audit())
     fc = build_fc(load_json_url(CONJ_URL))
     claims_by_problem, claims_available = fetch_claims()
     overrides = load_overrides(overrides_path)
