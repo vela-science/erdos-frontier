@@ -17,10 +17,8 @@
     "statement": 69,
     "wont-fix": 1
   },
-  "coverage_gap": [
-    742
-  ],
-  "generated_at": "2026-06-29",
+  "coverage_gap": [],
+  "generated_at": "2026-06-30",
   "hosted_proofs_tracked": 210,
   "rows": [
     {
@@ -17190,6 +17188,12 @@
       "bucket": "in-pr",
       "claims": [
         {
+          "head_ref": "codex/erdos686-lemmaT",
+          "number": 4359,
+          "title": "Erd\u0151s 686 via conditional Lemma T",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4359"
+        },
+        {
           "head_ref": "bump_v4.31",
           "number": 4356,
           "title": "chore: bump to v4.31.0",
@@ -18587,9 +18591,9 @@
       "erdos_url": "https://www.erdosproblems.com/742",
       "fc": {
         "formal_proof_link": null,
-        "has_file": false,
+        "has_file": true,
         "linked": false,
-        "path": null
+        "path": "FormalConjectures/ErdosProblems/742.lean"
       },
       "latex_url": "https://www.erdosproblems.com/latex/742",
       "override": null,

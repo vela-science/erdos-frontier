@@ -1,6 +1,6 @@
 # Next Erdős FC Sync Batch
 
-*Generated 2026-06-29 from [`status.json`](status.json).*
+*Generated 2026-06-30 from [`status.json`](status.json).*
 
 This file lists safe `statement` candidates only: no open PR claim, no human override, and at least one complete hosted proof source.
 

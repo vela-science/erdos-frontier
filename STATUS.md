@@ -1,12 +1,12 @@
 # Erdős ↔ Formal Conjectures sync status
 
-*Regenerated 2026-06-29 by [`fc-sync-status.py`](fc-sync-status.py). Do not edit by hand.*
+*Regenerated 2026-06-30 by [`fc-sync-status.py`](fc-sync-status.py). Do not edit by hand.*
 
 This is a **computed** view, not a hand-kept list. It joins erdosproblems.com, Formal Conjectures, hosted Lean proof indexes, live open PRs, and explicit human overrides on the problem number so the status cannot drift silently.
 
 Proof-source marks: ᵖ = [`plby/lean-proofs`](https://github.com/plby/lean-proofs), ʲ = [`Jayyhk/erdos-lean`](https://github.com/Jayyhk/erdos-lean), ʷ = [`willblair0708/lean-proofs`](https://github.com/willblair0708/lean-proofs).
 
-> ⚠️ **Coverage gap:** investigate [742](https://www.erdosproblems.com/742)
+**Coverage:** all 473 problems Bloom marks formalized are tracked by plby ∪ Jayyhk ∪ willblair0708/lean-proofs ∪ FC. No gap.
 
 Reconciled **1217** problems.
 
