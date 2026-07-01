@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frontier map · Erdős formal-proof fidelity audit</title>
+<style>
+  :root{
+    color-scheme: light dark;
+    --paper:#faf8f3; --ink:#1b1916; --faint:#6f675c; --hair:#dcd5c8;
+    --accent:#9a3b2e; --accent-bg:#9a3b2e12; --ok:#5b6e4f; --warn:#9a7b2e; --signed:#7a5a2e;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#15120e; --ink:#e9e3d8; --faint:#9a9082; --hair:#332c23;
+           --accent:#d2735f; --accent-bg:#d2735f1a; --ok:#9fb18c; --warn:#cbab63; --signed:#d9b36c; }
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+    font:17px/1.6 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:64rem; margin:0 auto; padding:4.5rem 1.6rem 6rem; }
+  code,.mono{ font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:.86em; }
+  a{ color:inherit; text-decoration-color:var(--hair); text-underline-offset:2px; }
+  a:hover{ text-decoration-color:var(--accent); }
+  .nav{ font-size:.85rem; color:var(--faint); margin-bottom:2.4rem; }
+  .nav a{ margin-right:1.1rem; }
+  .nav a.here{ color:var(--ink); text-decoration-color:var(--accent); }
+  h1{ font-size:2.1rem; font-weight:600; letter-spacing:-.01em; margin:0 0 .4rem; }
+  .dek{ color:var(--faint); font-size:1.12rem; margin:0 0 1.6rem; max-width:44rem; }
+  .stats{ font-family:ui-monospace,monospace; font-size:.8rem; color:var(--faint); margin:0 0 2rem; }
+
+  .controls{ display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin-bottom:1.2rem; }
+  .controls input{ font:inherit; font-size:.95rem; padding:.4rem .7rem; width:22rem; max-width:100%;
+    background:transparent; color:inherit; border:1px solid var(--hair); border-radius:3px; }
+  .hint{ color:var(--faint); font-size:.82rem; }
+  #suggest{ list-style:none; margin:.2rem 0 0; padding:0; border:1px solid var(--hair);
+    border-radius:3px; max-height:14rem; overflow:auto; display:none; position:absolute;
+    background:var(--paper); z-index:5; width:22rem; }
+  #suggest li{ padding:.3rem .7rem; cursor:pointer; font-size:.9rem; }
+  #suggest li:hover{ background:var(--accent-bg); }
+  #suggest .k{ font-family:ui-monospace,monospace; font-size:.72rem; color:var(--faint); margin-left:.4rem; }
+
+  .canvas{ border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
+    padding:1rem 0; margin-bottom:1.4rem; overflow-x:auto; }
+  .canvas svg{ display:block; margin:0 auto; max-width:100%; }
+  .legend{ display:flex; flex-wrap:wrap; gap:1.2rem; font-size:.78rem; color:var(--faint); margin-bottom:2rem; }
+  .legend .sw{ display:inline-block; width:1.4rem; height:2px; vertical-align:middle; margin-right:.3rem; }
+
+  .starts{ margin-top:1rem; }
+  .starts h2{ font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--faint);
+    font-weight:600; margin:1.6rem 0 .5rem; }
+  .starts a{ font-family:ui-monospace,monospace; font-size:.85rem; margin-right:.7rem; white-space:nowrap; }
+  .foot{ margin-top:3rem; padding-top:1.4rem; border-top:1px solid var(--hair); color:var(--faint); font-size:.85rem; }
+
+  svg text{ font:500 12px ui-monospace,monospace; fill:var(--ink); }
+  svg .nlabel.dim{ fill:var(--faint); }
+  svg .ekind{ font-size:9.5px; fill:var(--faint); letter-spacing:.03em; }
+  svg .node{ fill:var(--paper); stroke-width:1.6; cursor:pointer; }
+  svg .center{ stroke-width:2.4; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><a href="index.html">Overview</a><a href="conditions.html">Conditions</a><a class="here" href="map.html">Map</a></div>
+  <h1>Frontier map</h1>
+  <p class="dek">The corpus as a typed graph: problems, formal statements, hosted proofs,
+  load-bearing conditions, recorded claims, and signed verdicts — every edge declared by a
+  source, tiered by how it is trusted. Pick a node; see its neighborhood.</p>
+  <p class="stats" id="stats"></p>
+
+  <div class="controls" style="position:relative">
+    <div>
+      <input id="q" type="search" placeholder="problem number, condition, proof…" autocomplete="off">
+      <ul id="suggest"></ul>
+    </div>
+    <label class="hint"><input type="checkbox" id="hops2"> 2 hops</label>
+  </div>
+
+  <div class="canvas" id="canvas" hidden></div>
+  <div class="legend" id="legend" hidden>
+    <span><span class="sw" style="background:var(--signed)"></span>signed (a named reviewer's key)</span>
+    <span><span class="sw" style="background:var(--ok)"></span>machine (kernel + axiom audit)</span>
+    <span><span class="sw" style="background:var(--warn)"></span>recorded (the frozen wiki)</span>
+    <span><span class="sw" style="background:var(--hair)"></span>declared (a source's own manifest)</span>
+  </div>
+
+  <div class="starts" id="starts">
+    <h2>Load-bearing conditions (leverage)</h2>
+    <div id="start-conds"></div>
+    <h2>The contradictions (wiki says solved; the proof is conditional)</h2>
+    <div id="start-disc"></div>
+  </div>
+
+  <p class="foot">Derived from the locked sources by the reducer — an index, not signed state;
+  the signed spine is the <a href="https://github.com/williamjblair/erdos-frontier">.vela event log</a>.
+  Query it locally: <code>vela atlas decl-blast --edges graph/corpus-edges.jsonl --decl cond:maynard-tao</code>
+  · feed: <a href="graph.json">graph.json</a></p>
+</div>
+
+<script>
+let G=null, byId={}, adj={};
+const TRUST_COLOR={signed:"var(--signed)", machine:"var(--ok)", recorded:"var(--warn)", declared:"var(--hair)"};
+const KIND_GLYPH={problem:"◉", statement:"▣", proof:"▲", condition:"◆", claim:"○", attestation:"✳"};
+function esc(s){ return String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+function nodeHref(n){
+  if(n.kind==="problem") return "finding.html?n="+n.id.split(":")[1];
+  if(n.kind==="condition") return "conditions.html";
+  return n.url || null;
+}
+
+function neighborhood(id, hops){
+  const seen=new Set([id]); let frontier=[id];
+  const picked=[];
+  for(let h=0; h<hops; h++){
+    const next=[];
+    for(const e of G.edges){
+      for(const [a,b] of [[e.from,e.to],[e.to,e.from]]){
+        if(frontier.includes(a) && !seen.has(b)){
+          seen.add(b); next.push(b);
+        }
+      }
+    }
+    frontier=next;
+  }
+  const nodes=[...seen];
+  const edges=G.edges.filter(e=>seen.has(e.from)&&seen.has(e.to));
+  return {nodes, edges};
+}
+
+function render(id){
+  const hops=document.getElementById("hops2").checked?2:1;
+  const {nodes, edges}=neighborhood(id, hops);
+  const others=nodes.filter(n=>n!==id);
+  const W=720, cx=W/2, R=Math.min(240, 90+others.length*6), H=2*R+140, cy=H/2;
+  const pos={[id]:[cx,cy]};
+  others.forEach((n,i)=>{
+    const a=-Math.PI/2 + i*(2*Math.PI/Math.max(others.length,1));
+    pos[n]=[cx+R*Math.cos(a), cy+R*Math.sin(a)];
+  });
+  let svg=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">`;
+  for(const e of edges){
+    const [x1,y1]=pos[e.from], [x2,y2]=pos[e.to];
+    const col=TRUST_COLOR[e.trust]||"var(--hair)";
+    const mx=(x1+x2)/2, my=(y1+y2)/2;
+    svg+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="${e.trust==='declared'?1:1.6}"/>`;
+    if(edges.length<=24)
+      svg+=`<text class="ekind" x="${mx}" y="${my-3}" text-anchor="middle">${esc(e.kind)}</text>`;
+  }
+  for(const nid of nodes){
+    const n=byId[nid]; const [x,y]=pos[nid];
+    const col=nid===id?"var(--accent)":"var(--faint)";
+    const href=nodeHref(n);
+    const label=`${KIND_GLYPH[n.kind]||"·"} ${n.label.length>28?n.label.slice(0,27)+"…":n.label}`;
+    const anchor=x<cx-10?"end":x>cx+10?"start":"middle";
+    const lx=x<cx-10?x-10:x>cx+10?x+10:x, ly=y<cy?y-10:y+18;
+    svg+=`<circle class="node${nid===id?' center':''}" cx="${x}" cy="${y}" r="6" stroke="${col}"`
+       + ` onclick="select('${nid}')"/>`;
+    const t=`<text class="nlabel${nid===id?'':' dim'}" x="${lx}" y="${ly}" text-anchor="${anchor}">${esc(label)}</text>`;
+    svg+= href? `<a href="${esc(href)}">${t}</a>` : t;
+  }
+  svg+=`</svg>`;
+  document.getElementById("canvas").innerHTML=svg;
+  document.getElementById("canvas").hidden=false;
+  document.getElementById("legend").hidden=false;
+}
+window.select=function(id){ render(id); document.getElementById("q").value=byId[id]?.label||id; };
+
+function suggest(q){
+  const ul=document.getElementById("suggest");
+  if(!q){ ul.style.display="none"; return; }
+  const ql=q.toLowerCase();
+  const hits=G.nodes.filter(n=> n.id.toLowerCase().includes(ql)||n.label.toLowerCase().includes(ql)).slice(0,12);
+  ul.innerHTML=hits.map(n=>`<li onclick="select('${n.id}');this.parentElement.style.display='none'">`
+    + `${esc(n.label)}<span class="k">${esc(n.id)}</span></li>`).join("");
+  ul.style.display=hits.length?"block":"none";
+}
+
+fetch("graph.json").then(r=>r.json()).then(d=>{
+  G=d; byId=Object.fromEntries(d.nodes.map(n=>[n.id,n]));
+  const c=d.counts;
+  document.getElementById("stats").textContent=
+    `${c.nodes} nodes · ${c.edges} edges · trust: `+
+    Object.entries(c.by_trust).map(([k,v])=>`${k} ${v}`).join(" · ");
+  const conds=d.nodes.filter(n=>n.kind==="condition").sort((a,b)=>(b.leverage||0)-(a.leverage||0)).slice(0,10);
+  document.getElementById("start-conds").innerHTML=
+    conds.map(n=>`<a href="#" onclick="select('${n.id}');return false">${esc(n.label)}${n.leverage>1?` (${n.leverage})`:""}</a>`).join("");
+  const disc=d.edges.filter(e=>e.kind==="contradicts"&&e.trust==="recorded");
+  document.getElementById("start-disc").innerHTML=
+    disc.map(e=>{const n=e.from.split(":")[1];return `<a href="#" onclick="select('erdos:${n}');return false">${n}</a>`;}).join("");
+  document.getElementById("q").addEventListener("input", e=>suggest(e.target.value));
+  document.getElementById("hops2").addEventListener("change", ()=>{
+    const q=document.getElementById("q").value;
+    const hit=G.nodes.find(n=>n.label===q||n.id===q);
+    if(hit) render(hit.id);
+  });
+});
+</script>
+</body>
+</html>

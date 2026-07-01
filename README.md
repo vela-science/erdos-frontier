@@ -43,6 +43,35 @@ See [VISION.md](VISION.md) for the two layers and the trust rule, and
 [CONTRIBUTING.md](CONTRIBUTING.md) for the two ways to contribute (host a proof
 the audit reads, or fork and propose a finding a maintainer accepts).
 
+## The corpus graph
+
+Beside the signed spine sits the **corpus graph**: the whole reconciled state —
+problems, formal statements, hosted proofs, load-bearing conditions, recorded
+claims, signed verdicts — as one typed graph in the Vela edge vocabulary
+(`supports`, `depends_on`, `derived_from`, `replicates`, `contradicts`), with a
+trust tier on every edge (`signed` / `machine` / `recorded` / `declared`). It is
+a derived index rebuilt from the locked sources, never signed state: the
+substrate itself refuses agent-authored truth claims, so the graph carries what
+the sources *declare* and marks how each declaration is trusted.
+
+```bash
+bash scripts/graph.sh build                       # rebuild from the sources
+bash scripts/graph.sh blast cond:maynard-tao      # dependency impact: what does
+                                                  # retracting an input unsettle?
+bash scripts/graph.sh serve                       # the frontier over HTTP
+```
+
+`blast` runs the substrate's own analysis (`vela atlas decl-blast`) over
+[`graph/corpus-edges.jsonl`](graph/): retract the Maynard–Tao theorem and
+problems 237 and 997 lose their solved support, through their proofs, down to
+the wiki claim that recorded them. The browsable view is the
+[frontier map](https://williamjblair.github.io/erdos-frontier/map.html).
+
+**MCP:** the repo ships [`.mcp.json`](.mcp.json) — any MCP client opened here
+(Claude Code included) gets the read-only Vela tool set over the signed
+frontier: `frontier_stats`, `search_findings`, `frontier_graph`, `deep_trace`,
+`blast_radius`, `contradictions`, `trace_evidence_chain`, and ten more.
+
 ## The proof-status join: drift
 
 An Erdős problem's "status" lives in several places that update independently:
