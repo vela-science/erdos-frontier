@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 # Sign a reviewed campaign batch in one pass, under YOUR key.
 #
-#   bash scripts/sign-batch.sh [stub-file]
+#   bash scripts/sign-batch.sh --review     # the full session: shows each packet
+#                                           # in the terminal, takes your verdict
+#                                           # inline, then signs everything
+#   bash scripts/sign-batch.sh [stub-file]  # sign a stub you filled by hand
 #   (default stub: packets/draft-review/verdicts_stub.json)
 #
-# Prerequisite: you read the packets and filled each row's "verdict" in the stub
-# (faithful / variant / unfaithful). This script then, for every VERDICT-FILLED
-# row: creates the campaign finding (`vela finding add --apply`), fills the row's
-# `target` with the vf_ id, and finally signs ALL rows in one `vela attest
-# --batch` (one key read) and re-materializes the frontier.
+# Either way the judgment is yours: for every VERDICT-FILLED row the script
+# creates the campaign finding (`vela finding add --apply`), fills the row's
+# `target` with the vf_ id, and signs ALL rows in one `vela attest --batch`
+# (one key read), then re-materializes the frontier.
 #
 # KEY CUSTODY: the attest verdicts are reserved for reviewer: actors by the
 # substrate; an agent cannot run this to any effect. Rows with an empty verdict
@@ -20,9 +22,51 @@ HERE="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$HERE"
 VELA="${VELA:-vela}"
 REVIEWER="${REVIEWER:-reviewer:will-blair}"
-STUB="${1:-packets/draft-review/verdicts_stub.json}"
+
+REVIEW=0; STUB=""
+for a in "$@"; do
+  case "$a" in
+    --review) REVIEW=1 ;;
+    *) STUB="$a" ;;
+  esac
+done
+STUB="${STUB:-packets/draft-review/verdicts_stub.json}"
 
 [ -f "$STUB" ] || { echo "no stub at $STUB (run match_packet.py --draft first)"; exit 1; }
+
+# --review: walk each unfilled row — show the packet, take the verdict inline.
+# The judgment stays yours; this only removes the file-editing friction.
+if [ "$REVIEW" = "1" ]; then
+  python3 - "$STUB" <<'EOF'
+import json, sys, pathlib
+stub = pathlib.Path(sys.argv[1])
+rows = json.load(stub.open())
+valid = {"f": "faithful", "v": "variant", "u": "unfaithful"}
+for r in rows:
+    if r.get("verdict") in ("faithful", "variant", "unfaithful"):
+        continue
+    n = r["problem"]
+    packet = pathlib.Path(f"packets/draft-review/erdos_{n}.md")
+    print("\n" + "=" * 72)
+    print(packet.read_text() if packet.exists() else f"(no packet for {n})")
+    print("=" * 72)
+    while True:
+        ans = input(f"verdict for {n} — [f]aithful / [v]ariant / [u]nfaithful "
+                    f"/ [s]kip / [q]uit: ").strip().lower()
+        if ans in ("q", "quit"):
+            json.dump(rows, stub.open("w"), indent=2)
+            print("saved partial progress; re-run to continue.")
+            sys.exit(2)
+        if ans in ("s", "skip", ""):
+            break
+        if ans in valid or ans in valid.values():
+            r["verdict"] = valid.get(ans, ans)
+            break
+        print("  (f, v, u, s, or q)")
+json.dump(rows, stub.open("w"), indent=2)
+print("\nverdicts saved.")
+EOF
+fi
 
 # refuse empty verdicts + validate values, BEFORE creating anything
 python3 - "$STUB" <<'EOF'
