@@ -1,0 +1,67 @@
+{
+  "id": "vf_e1a7b87c4086354b",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The drafted Formal Conjectures statement for Erdős problem 164 (statements/164/164.lean) faithfully represents the boxed problem; machine verdict on the linked hosted proof: unconditional (plby).",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "Members > 1: both hosted bake (forall a in A, 2 <= a) into their PrimitiveSet predicate; draft keeps the problem text's definition verbatim (IsPrimitive A = no member of A divides another) and adds the floor as a separate hypothesis (forall a in A, 2 <= a), following the convention of Er35/Li23 ('a set of integers greater than one'). The floor is load-bearing for fidelity: with",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.3,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "expert_assertion",
+    "doi": null,
+    "url": "https://github.com/williamjblair/erdos-frontier/blob/779ac85096186eb7e95aa2f843af6a3d0e8b2683/statements/164/164.lean",
+    "title": "campaign batch-3",
+    "authors": [
+      {
+        "name": "agent:claude",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-01T21:48:43.862642+00:00",
+      "extractor_version": "vela/0.720.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-01T21:48:43.862784+00:00",
+  "updated": null
+}

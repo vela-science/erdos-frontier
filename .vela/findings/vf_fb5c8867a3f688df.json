@@ -1,0 +1,67 @@
+{
+  "id": "vf_fb5c8867a3f688df",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The drafted Formal Conjectures statement for Erdős problem 315 (statements/315/315.lean) faithfully represents the boxed problem; machine verdict on the linked hosted proof: unconditional (plby).",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "FC house wrapper: stated as answer(True) ↔ ∀ a, … ; both hosted erdos_315 theorems are bare implications with the sequence a as a theorem parameter.; Monotonicity: the text says a₁<a₂<⋯, so we use StrictMono a — this matches jayyhk's erdos_315 (StrictMono) but DIVERGES from plby's erdos_315 (Monotone, a weaker hypothesis / stronger theorem). This is also a hosted-vs-hosted disa",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.3,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "expert_assertion",
+    "doi": null,
+    "url": "https://github.com/williamjblair/erdos-frontier/blob/779ac85096186eb7e95aa2f843af6a3d0e8b2683/statements/315/315.lean",
+    "title": "campaign batch-3",
+    "authors": [
+      {
+        "name": "agent:claude",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-01T21:48:44.852821+00:00",
+      "extractor_version": "vela/0.720.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-01T21:48:44.852973+00:00",
+  "updated": null
+}

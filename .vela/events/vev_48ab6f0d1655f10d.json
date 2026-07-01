@@ -1,0 +1,35 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_48ab6f0d1655f10d",
+  "kind": "statement.attested",
+  "target": {
+    "type": "finding",
+    "id": "vf_fb5c8867a3f688df"
+  },
+  "actor": {
+    "id": "reviewer:will-blair",
+    "type": "human"
+  },
+  "timestamp": "2026-07-01T21:55:49.230843+00:00",
+  "reason": "statement faithfulness attestation",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
+  "payload": {
+    "attestation": {
+      "attested_at": "2026-07-01T21:55:49.230809+00:00",
+      "attested_by": "reviewer:will-blair",
+      "formal_ref": "statements/315/315.lean",
+      "formal_statement_hash": "f2f7999ea5283f382af3d49658c3031d1690866bd6b32d2e4f8b77a814168b21",
+      "id": "vsa_a6dd8ad77d869095",
+      "informal_ref": "erdosproblems.com/315",
+      "note": "batch-3 draft for Erdős 315",
+      "schema": "vela.statement_attestation.v0.1",
+      "signature": "3bc0723a10a89d9797de049e56dfbb4d9c309b023f6956dff4cf7a2826e9e676cb51ce2f6d45391605968d7cd8fe19a8c1de81ecb86017c31b876ce76ee91d07",
+      "signer_pubkey_hex": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
+      "target": "vf_fb5c8867a3f688df",
+      "verdict": "faithful"
+    }
+  },
+  "caveats": [],
+  "signature": "v1:d4f0544616ed81016254a200813bbad13898db7c2c4daaad33622a0a305896767f224eadbbf5fe78e18447a594f87144c18987b7121886ec56b9b97ce2fdcd01"
+}

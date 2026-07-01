@@ -1,0 +1,67 @@
+{
+  "id": "vf_6bc3abb5d5ae322d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The drafted Formal Conjectures statement for Erdős problem 314 (statements/314/314.lean) faithfully represents the boxed problem; machine verdict on the linked hosted proof: unconditional (plby).",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "FC house wrapper: stated as answer(True) ↔ (liminf n²·ε(n) = 0); jayyhk's hosted erdos_314 is the bare equality Filter.liminf (fun n => (n:ℝ)^2 * eps n) atTop = 0 with no answer() wrapper.; vs plby: plby has NO erdos_314 endpoint; its final theorem is main_theorem : ∀ c > 0, ∀ N, ∃ m n, N ≤ n ∧ 1 ≤ ∑_{n≤k≤m} 1/k ≤ 1 + c/n² — a block-existence form that never defines ε(n) via th",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.3,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "expert_assertion",
+    "doi": null,
+    "url": "https://github.com/williamjblair/erdos-frontier/blob/779ac85096186eb7e95aa2f843af6a3d0e8b2683/statements/314/314.lean",
+    "title": "campaign batch-3",
+    "authors": [
+      {
+        "name": "agent:claude",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-01T21:48:44.364590+00:00",
+      "extractor_version": "vela/0.720.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-01T21:48:44.364724+00:00",
+  "updated": null
+}

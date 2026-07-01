@@ -1,0 +1,67 @@
+{
+  "id": "vf_e353246f09d54076",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The drafted Formal Conjectures statement for Erdős problem 93 (statements/93/93.lean) faithfully represents the boxed problem; machine verdict on the linked hosted proof: unconditional (plby).",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "Space: draft uses FC's concrete R^2 (EuclideanSpace R (Fin 2), the scoped notation from FormalConjecturesForMathlib/Geometry/2d.lean), house style of the sibling problems FC 982 and FC 1082; both hosted quantify over an abstract V with [NormedAddCommGroup V] [InnerProductSpace R V] [Fact (finrank R V = 2)]. Equivalent up to isometric isomorphism.; Convex position: draft uses FC",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.3,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "expert_assertion",
+    "doi": null,
+    "url": "https://github.com/williamjblair/erdos-frontier/blob/779ac85096186eb7e95aa2f843af6a3d0e8b2683/statements/93/93.lean",
+    "title": "campaign batch-3",
+    "authors": [
+      {
+        "name": "agent:claude",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-01T21:48:43.324295+00:00",
+      "extractor_version": "vela/0.720.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-01T21:48:43.324429+00:00",
+  "updated": null
+}

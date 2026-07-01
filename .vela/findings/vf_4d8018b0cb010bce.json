@@ -1,0 +1,67 @@
+{
+  "id": "vf_4d8018b0cb010bce",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The drafted Formal Conjectures statement for Erdős problem 369 (statements/369/369.lean) faithfully represents the boxed problem; machine verdict on the linked hosted proof: unconditional (plby).",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "INTERPRETATION (statement vs problem text): the text as written is trivially true (the site commentary itself says so: take {1,...,k} and n > k^{1/eps}). The drafted statement formalizes the commentary's SECOND non-trivial variant -- the k consecutive integers must lie in [n/2, n] -- which is what the upstream 'proved (Lean)' status refers to (SkyYang via the Balog-Wooley const",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.3,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "expert_assertion",
+    "doi": null,
+    "url": "https://github.com/williamjblair/erdos-frontier/blob/779ac85096186eb7e95aa2f843af6a3d0e8b2683/statements/369/369.lean",
+    "title": "campaign batch-3",
+    "authors": [
+      {
+        "name": "agent:claude",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-01T21:48:45.887994+00:00",
+      "extractor_version": "vela/0.720.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-01T21:48:45.888085+00:00",
+  "updated": null
+}
