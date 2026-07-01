@@ -4,9 +4,13 @@ name: Re-audit Lean proofs (heavy)
 # toolchains, re-run the assumption-extractor, and commit the regenerated feeds.
 # The daily update-status.yml job stays cheap (it only re-reads these feeds).
 #
-# Manual (workflow_dispatch) until validated on a first run — it builds two Mathlib
-# toolchains, which is long and worth watching once before trusting on a schedule.
-# To run it locally instead: the repos cloned + built, then `bash lean/reaudit.sh`.
+# Manual (workflow_dispatch). It builds TWO Mathlib toolchains from scratch: a
+# validated dispatch reached [8346/8353] of the plby build (`lake exe cache get`
+# fetched the Mathlib oleans fine) — the logic is sound, it just needs ~2h per
+# toolchain, so the whole job runs ~4h cold. The fast, reliable path is LOCAL:
+# with the proof repos cloned + built, `bash lean/reaudit.sh` finishes in minutes.
+# Don't run this right before an external comms moment — if the fork moved since the
+# last local audit, it will commit changed feeds (which is the point, just review them).
 on:
   workflow_dispatch: {}
   # schedule:
@@ -23,7 +27,7 @@ concurrency:
 jobs:
   reaudit:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300   # ~4h cold (two toolchains built from scratch) + margin
     steps:
       - uses: actions/checkout@v4
 
