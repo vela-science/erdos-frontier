@@ -20,6 +20,21 @@ cannot see. This reads each hosted Lean proof mechanically and reports it, then:
 The machine layer carries no human or model judgment; signed verdicts carry a named
 reviewer. The underlying FC↔erdos proof-status join (below) is what the audit sits on.
 
+## The signed frontier
+
+This repo is also a git-native Vela frontier (`vfr_0a25edabc16db143`). The
+statement-fidelity verdicts that carry a human judgment live as signed,
+content-addressed events under [`.vela/`](.vela/); `frontier.json` and `vela.lock`
+are replayed from that log. Everything under `site/`, plus `STATUS.md`,
+`status.json`, and `NEXT_BATCH.md`, is a **materialized view** — generated, not
+authored. You do not have to trust the dashboard:
+
+```bash
+vela check . --strict     # replays the event log, verifies every signature
+```
+
+See [VISION.md](VISION.md) for the two layers and the trust rule.
+
 ## The proof-status join: drift
 
 An Erdős problem's "status" lives in several places that update independently:
