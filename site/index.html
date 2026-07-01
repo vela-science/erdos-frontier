@@ -8,11 +8,11 @@
   :root{
     color-scheme: light dark;
     --paper:#faf8f3; --ink:#1b1916; --faint:#6f675c; --hair:#dcd5c8;
-    --accent:#9a3b2e; --accent-bg:#9a3b2e12; --ok:#5b6e4f;
+    --accent:#9a3b2e; --accent-bg:#9a3b2e12; --ok:#5b6e4f; --warn:#9a7b2e;
   }
   @media (prefers-color-scheme: dark){
     :root{ --paper:#15120e; --ink:#e9e3d8; --faint:#9a9082; --hair:#332c23;
-           --accent:#d2735f; --accent-bg:#d2735f1a; --ok:#9fb18c; }
+           --accent:#d2735f; --accent-bg:#d2735f1a; --ok:#9fb18c; --warn:#cbab63; }
   }
   *{ box-sizing:border-box; }
   body{ margin:0; background:var(--paper); color:var(--ink);
@@ -22,10 +22,18 @@
   code,.mono{ font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:.86em; }
   h1{ font-size:2.1rem; font-weight:600; letter-spacing:-.01em; margin:0 0 .4rem; }
   .dek{ color:var(--faint); font-size:1.12rem; margin:0 0 2.4rem; max-width:44rem; }
-  .lede{ max-width:44rem; margin:0 0 2.6rem; }
+  .lede{ max-width:44rem; margin:0 0 1.6rem; }
   .lede code{ background:var(--accent-bg); padding:.05rem .3rem; border-radius:2px; }
   a{ color:inherit; text-decoration-color:var(--hair); text-underline-offset:2px; }
   a:hover{ text-decoration-color:var(--accent); }
+
+  .axes{ display:flex; flex-wrap:wrap; gap:1rem; margin:0 0 2.6rem; max-width:44rem; }
+  .axis{ flex:1 1 18rem; border:1px solid var(--hair); border-radius:4px; padding:.9rem 1rem; }
+  .axis .k{ font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--faint); }
+  .axis .t{ font-weight:600; margin:.1rem 0 .25rem; }
+  .axis .d{ font-size:.86rem; color:var(--faint); }
+  .axis .tag{ font-family:ui-monospace,monospace; font-size:.7rem; padding:.04rem .35rem;
+    border:1px solid var(--hair); border-radius:3px; margin-top:.5rem; display:inline-block; }
 
   .funnel{ display:flex; flex-wrap:wrap; gap:1.4rem 2rem; align-items:baseline;
     padding:1.6rem 0 1.8rem; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); margin-bottom:2.4rem; }
@@ -62,33 +70,94 @@
   thead th{ text-align:left; font-weight:600; color:var(--faint); font-size:.74rem;
     text-transform:uppercase; letter-spacing:.04em; padding:.5rem .6rem; border-bottom:1px solid var(--hair); }
   .grid td{ padding:.5rem .6rem; border-bottom:1px solid var(--hair); vertical-align:top; }
-  tbody tr:hover{ background:#8881; }
+  tbody tr.row{ cursor:pointer; }
+  tbody tr.row:hover{ background:#8881; }
   tr.disc td{ background:var(--accent-bg); }
-  td.p{ font-family:ui-monospace,monospace; }
+  td.p{ font-family:ui-monospace,monospace; white-space:nowrap; }
+  td.p .fc{ font-size:.7rem; color:var(--faint); margin-left:.4rem; text-decoration:none;
+    border:1px solid var(--hair); border-radius:3px; padding:0 .28rem; }
+  td.p .fc:hover{ color:var(--accent); border-color:var(--accent); }
+  td.p .caret{ color:var(--faint); font-size:.7rem; margin-left:.35rem; }
   .v{ font-family:ui-monospace,monospace; font-size:.82rem; }
   .v.cond{ color:var(--accent); }
   .v.uncond{ color:var(--ok); }
+  .v.incomplete{ color:var(--warn); }
+  .st{ font-family:ui-monospace,monospace; font-size:.82rem; }
+  .st.faithful{ color:var(--ok); }
+  .st.variant{ color:var(--warn); }
+  .st.unfaithful{ color:var(--accent); }
+  .st.none{ color:var(--faint); }
   .on{ font-family:ui-monospace,monospace; font-size:.82rem; color:var(--faint); }
   .on .named{ color:var(--accent); }
   .wiki .o{ font-size:.86rem; }
   .wiki .ai{ display:block; font-size:.74rem; color:var(--faint); margin-top:.1rem; }
-  .dot{ display:inline-block; width:.55rem; }
-  .sig{ font-size:.82rem; }
-  .foot{ margin-top:3rem; padding-top:1.4rem; border-top:1px solid var(--hair);
+
+  tr.detailrow > td{ padding:0; border-bottom:1px solid var(--hair); background:#8880; }
+  .detail{ padding:.9rem 1rem 1.1rem; font-size:.88rem; }
+  .detail dl{ display:grid; grid-template-columns:8.5rem 1fr; gap:.35rem 1rem; margin:0; }
+  .detail dt{ color:var(--faint); font-size:.76rem; text-transform:uppercase; letter-spacing:.03em; padding-top:.12rem; }
+  .detail dd{ margin:0; }
+  .detail .links a{ margin-right:1rem; white-space:nowrap; }
+  .detail .cond{ font-family:ui-monospace,monospace; color:var(--accent); }
+  .detail .muted{ color:var(--faint); }
+
+  .method{ margin-top:2.6rem; }
+  .method summary{ cursor:pointer; font-weight:600; font-size:1rem; }
+  .method .body{ max-width:44rem; color:var(--faint); font-size:.9rem; margin-top:.8rem; }
+  .method .body p{ margin:.2rem 0 .9rem; }
+  .method .body b{ color:var(--ink); font-weight:600; }
+
+  .foot{ margin-top:2.6rem; padding-top:1.4rem; border-top:1px solid var(--hair);
     color:var(--faint); font-size:.85rem; }
+
+  @media (max-width:640px){
+    .wrap{ padding:2.6rem 1.1rem 4rem; }
+    table.grid thead{ display:none; }
+    table.grid, table.grid tbody, table.grid tr, table.grid td{ display:block; width:100%; }
+    tbody tr.row{ border:1px solid var(--hair); border-radius:4px; margin-bottom:.7rem; padding:.4rem .2rem .5rem; }
+    tr.disc{ border-color:var(--accent); }
+    tr.disc td{ background:transparent; }
+    .grid td{ border:none; padding:.15rem .9rem; display:block; }
+    .grid td:empty{ display:none; }
+    .grid td::before{ content:attr(data-label); display:block; color:var(--faint); font-size:.64rem;
+      text-transform:uppercase; letter-spacing:.05em; margin-bottom:.05rem; }
+    .grid td.p::before, tr.detailrow td::before{ display:none; }
+    .grid td.p{ font-size:1.05rem; padding:.2rem .9rem .35rem; }
+    tr.detailrow > td{ padding:0; }
+    .detail dl{ grid-template-columns:1fr; gap:.15rem; }
+    .detail dt{ margin-top:.5rem; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Erdős formal-proof fidelity audit</h1>
-  <p class="dek">Which “formally solved” Erdős problems rest on an <em>unconditional</em> Lean proof — and which silently assume an unproven result.</p>
+  <p class="dek">Which “formally solved” Erdős problems rest on an <em>unconditional</em> Lean proof, and which silently assume an unproven result.</p>
 
-  <p class="lede">A formal proof can be <code>sorry</code>-free and <code>#print axioms</code>-clean and still
-  prove the problem only <em>conditionally</em> — by taking a deep theorem as a hypothesis parameter,
-  which the axiom check cannot see. This reads each hosted Lean proof mechanically and reports it, then
-  cross-references the (now frozen) <a href="https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems">AI-contributions wiki</a>
-  to surface where a problem recorded as solved rests on a proof that is not.
-  No human or model judgment in the machine layer; signed verdicts carry a named reviewer.</p>
+  <p class="lede"><a href="https://google-deepmind.github.io/formal-conjectures/">Formal Conjectures</a>
+  catalogs the Erdős statements and marks one solved when a proof is linked. It does not read the proof.
+  This audit reads each hosted Lean proof mechanically and flags the ones marked solved whose proof holds
+  only under an unproven assumption. A proof can be <code>sorry</code>-free and <code>#print axioms</code>-clean
+  and still prove the problem only <em>conditionally</em>, by taking a deep theorem as a hypothesis parameter
+  the axiom check never sees. The machine layer carries no human or model judgment; a statement-fidelity
+  verdict carries a named reviewer.</p>
+
+  <div class="axes">
+    <div class="axis">
+      <div class="k">Axis 1 · the proof</div>
+      <div class="t">Is the proof unconditional?</div>
+      <div class="d">Read mechanically from each hosted Lean proof: the axioms it uses and the
+        Prop hypotheses it takes as parameters. A fact, not a judgment.</div>
+      <div class="tag">machine · deterministic</div>
+    </div>
+    <div class="axis">
+      <div class="k">Axis 2 · the statement</div>
+      <div class="t">Is that the right problem?</div>
+      <div class="d">Whether the formal statement faithfully states the boxed problem. A passing
+        proof checks the statement, not that the statement is the problem.</div>
+      <div class="tag">signed · named reviewer</div>
+    </div>
+  </div>
 
   <div class="funnel" id="funnel"></div>
 
@@ -119,22 +188,42 @@
     <span class="chip" data-f="conditional">conditional</span>
     <span class="chip" data-f="axiomblind">axiom-invisible</span>
     <span class="chip" data-f="unconditional">unconditional</span>
+    <span class="chip" data-f="statement">statement-checked</span>
     <span class="chip" data-f="wiki">in wiki</span>
     <span class="chip" data-f="gpterdos">gpt-erdos</span>
-    <span class="chip" data-f="signed">signed</span>
     <span class="chip" data-f="all">all</span>
     <span class="count" id="count"></span>
   </div>
   <table class="grid">
-    <thead><tr><th>#</th><th>machine verdict</th><th>conditional on</th><th>external claim</th><th>signed</th></tr></thead>
+    <thead><tr><th>#</th><th>proof</th><th>conditional on</th><th>statement</th><th>external claim</th></tr></thead>
     <tbody id="rows"></tbody>
   </table>
+
+  <details class="method" id="method">
+    <summary>How it works, and what it cannot do</summary>
+    <div class="body">
+      <p><b>Axis 1 (the proof).</b> For each hosted Lean proof, a metaprogram loads the boxed-problem
+        theorem in the proof’s own built environment and reports its axiom set (<code>#print axioms</code>),
+        whether it is <code>sorry</code>-free, and the non-instance Prop hypotheses it takes as parameters.
+        The last is the case an axiom check cannot see: a proof can be kernel-clean yet prove the goal only
+        under a famous theorem passed as a hypothesis. Verdicts are mechanical and reproducible; no human or
+        model is in this path.</p>
+      <p><b>Axis 2 (the statement).</b> Whether the formal statement faithfully states the boxed problem is
+        a human judgment, not a machine one. Those verdicts are signed by a named reviewer and shown in the
+        statement column; a problem with no signed verdict is left blank rather than assumed faithful.</p>
+      <p><b>What it cannot do.</b> When a proof file boxes more than one theorem, which declaration answers
+        the problem can be a judgment call; the audit reads the problem-numbered theorem and records the
+        declaration it used. It does not check that the statement is the right problem; that is Axis 2. It
+        reports the conditionality of the proof available to it, which may differ from an informal argument
+        recorded elsewhere.</p>
+    </div>
+  </details>
 
   <p class="foot" id="foot"></p>
 </div>
 
 <script>
-let DATA = null, filter = "audited";
+let DATA = null, filter = "audited", openN = null;
 const COLOR = {green:"🟢", yellow:"🟡", red:"🔴", white:"⚪"};
 
 function audited(r){ return r.machine_verdict != null; }
@@ -146,15 +235,16 @@ const FILTERS = {
   unconditional: r => r.machine_verdict==="unconditional",
   axiomblind,
   discrepancy: r => r.discrepancy,
+  statement: r => !!r.signed_fidelity_verdict,
   wiki: r => r.wiki_outcome != null,
   gpterdos: r => r.gpt_erdos != null,
-  signed: r => !!r.signed_fidelity_verdict,
 };
 
 function esc(s){ return String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+function condName(a){ return a.split(" : ").pop(); }
 function condOn(r){
   if(r.named_assumptions.length)
-    return r.named_assumptions.map(a => `<span class="named">${esc(a.split(" : ").pop())}</span>`).join(", ");
+    return r.named_assumptions.map(a => `<span class="named">${esc(condName(a))}</span>`).join(", ");
   if(r.non_kernel_axioms.length) return r.non_kernel_axioms.map(esc).join(", ");
   return r.machine_verdict==="incomplete" ? "<span class='named'>incomplete (sorry)</span>" : "";
 }
@@ -175,6 +265,57 @@ function wikiCell(r){
     out += `<span class="ai">gpt-erdos: ${esc(GPT[r.gpt_erdos]||r.gpt_erdos)}</span>`;
   return out;
 }
+function stmtCell(r){
+  const v = r.signed_fidelity_verdict;
+  if(!v) return `<span class="st none">—</span>`;
+  const by = r.signed_by ? " · "+esc(r.signed_by) : "";
+  return `<span class="st ${esc(v)}">${esc(v)}${by}</span>`;
+}
+
+function detail(r){
+  const L = [];
+  const link = (href,txt) => href ? `<a href="${esc(href)}">${esc(txt)}</a>` : "";
+  // Axis 1
+  let proof = r.machine_verdict ? `<b>${esc(r.machine_verdict)}</b>` : "not audited";
+  if(r.machine_verdict==="conditional"){
+    const inv = (r.named_assumptions.length && !r.non_kernel_axioms.length);
+    proof += `. Holds only under <span class="cond">${condOn(r)}</span>`
+      + (inv ? ` <span class="muted">(an axiom check alone would pass this)</span>` : "");
+  } else if(r.machine_verdict==="unconditional"){
+    proof += ` <span class="muted">· kernel-clean, no undischarged hypothesis</span>`;
+  }
+  L.push(["proof", proof]);
+  // Axis 2
+  const v = r.signed_fidelity_verdict;
+  if(v){
+    let s = `<span class="st ${esc(v)}"><b>${esc(v)}</b></span>`;
+    s += r.signed_by ? ` · signed ${esc(r.signed_by)}` : ` <span class="muted">· awaiting a named reviewer</span>`;
+    if(r.fidelity_note) s += `<br><span class="muted">${esc(r.fidelity_note)}</span>`;
+    L.push(["statement", s]);
+  } else {
+    L.push(["statement", `<span class="muted">not yet reviewed</span>`]);
+  }
+  // recorded claim
+  if(r.wiki_outcome || r.gpt_erdos){
+    let c = "";
+    if(r.wiki_outcome) c += `${COLOR[r.wiki_color]||""} ${esc(r.wiki_outcome)}`
+      + ((r.wiki_ai_systems||[]).length ? ` <span class="muted">(${esc(r.wiki_ai_systems.join(", "))})</span>` : "");
+    if(r.gpt_erdos) c += `${c?"<br>":""}gpt-erdos: ${esc(GPT[r.gpt_erdos]||r.gpt_erdos)}`;
+    L.push(["recorded", c]);
+  }
+  // links
+  const links = [
+    link(r.erdos_url, "erdosproblems.com"),
+    link(`https://www.erdosproblems.com/forum/thread/${r.problem}`, "forum thread"),
+    link(r.fc_url, "Formal Conjectures"),
+  ];
+  const proofs = (r.proof_links||[]).map(p => link(p.url || p.link, `proof: ${p.label||p.source||"hosted"}`));
+  if(!proofs.length && r.proof_link) proofs.push(link(r.proof_link, "hosted proof"));
+  L.push(["links", `<span class="links">${[...links, ...proofs].filter(Boolean).join("")}</span>`]);
+  return `<dl>${L.map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>`;
+}
+
+function td(label, cls, html){ return `<td class="${cls}" data-label="${label}">${html}</td>`; }
 
 function render(){
   const q = document.getElementById("q").value.trim();
@@ -187,15 +328,26 @@ function render(){
   });
   document.getElementById("count").textContent = `${rows.length} shown`;
   document.getElementById("rows").innerHTML = rows.map(r => {
-    const vcl = r.machine_verdict==="conditional" ? "cond" : r.machine_verdict==="unconditional" ? "uncond" : "";
-    const sig = r.signed_fidelity_verdict
-      ? `${esc(r.signed_fidelity_verdict)}${r.signed_by ? " · "+esc(r.signed_by) : ""}` : "";
-    return `<tr class="${r.discrepancy?"disc":""}"><td class="p"><a href="https://www.erdosproblems.com/${r.problem}">${r.problem}</a></td>`
-      + `<td><span class="v ${vcl}">${r.machine_verdict ?? "—"}</span></td>`
-      + `<td class="on">${condOn(r)}</td>`
-      + `<td class="wiki">${wikiCell(r)}</td>`
-      + `<td class="sig">${sig}</td></tr>`;
+    const vcl = r.machine_verdict || "";
+    const fc = r.fc_url ? `<a class="fc" href="${esc(r.fc_url)}" title="Formal Conjectures page" onclick="event.stopPropagation()">FC</a>` : "";
+    const open = r.problem === openN;
+    const numCell = `<td class="p" data-label="#"><a href="${esc(r.erdos_url)}" onclick="event.stopPropagation()">${r.problem}</a>${fc}<span class="caret">${open?"▾":"▸"}</span></td>`;
+    const main = `<tr class="row ${r.discrepancy?"disc":""}" data-n="${r.problem}">`
+      + numCell
+      + td("proof","", `<span class="v ${vcl}">${r.machine_verdict ?? "—"}</span>`)
+      + td("conditional on","on", condOn(r))
+      + td("statement","", stmtCell(r))
+      + td("external claim","wiki", wikiCell(r))
+      + `</tr>`;
+    const det = open ? `<tr class="detailrow"><td colspan="5"><div class="detail">${detail(r)}</div></td></tr>` : "";
+    return main + det;
   }).join("");
+  document.querySelectorAll("tr.row").forEach(tr => tr.addEventListener("click", () => {
+    const n = Number(tr.dataset.n);
+    openN = (openN === n) ? null : n;
+    const u = new URL(location); openN ? u.searchParams.set("n", n) : u.searchParams.delete("n");
+    history.replaceState(null, "", u); render();
+  }));
 }
 
 fetch("verdicts.json").then(r=>r.json()).then(d=>{
@@ -231,20 +383,27 @@ fetch("verdicts.json").then(r=>r.json()).then(d=>{
   if(xref.length){
     document.getElementById("xref").hidden = false;
     document.getElementById("xref-rows").innerHTML = xref.map(x => {
-      const vcl = x.machine_verdict==="conditional" ? "cond" : x.machine_verdict==="unconditional" ? "uncond" : "";
+      const vcl = x.machine_verdict || "";
       return `<tr><td class="p"><a href="https://www.erdosproblems.com/${x.problem}">${x.problem}</a></td>`
         + `<td><span class="v ${vcl}">proof: ${esc(x.machine_verdict)}</span></td>`
         + `<td class="on">gpt-erdos: ${esc(GPT[x.gpt_erdos]||x.gpt_erdos)}</td></tr>`;
     }).join("");
   }
+  const sig = (d.summary.signed_fidelity || []).length;
   document.getElementById("foot").innerHTML =
     `Generated ${esc(d.generated_at)} · ${d.summary.wiki_problems} problems cross-referenced from the frozen `
     + `<a href="https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems">AI-contributions wiki</a>`
     + ` (2026-06-30) · ${d.summary.gpt_erdos_problems} candidate claims from `
     + `<a href="https://github.com/neelsomani/gpt-erdos">gpt-erdos</a>`
-    + ` · proofs: formal-conjectures, alphaproof-nexus, plby / Jayyhk / williamjblair · feed: `
+    + ` · ${sig} statement verdict${sig===1?"":"s"}`
+    + ` · statements: <a href="https://google-deepmind.github.io/formal-conjectures/">Formal Conjectures</a>`
+    + ` · proofs: alphaproof-nexus, plby / Jayyhk / williamjblair · feed: `
     + `<a href="verdicts.json">verdicts.json</a> · method: `
     + `<a href="https://github.com/williamjblair/erdos-frontier/tree/main/lean">lean</a>`;
+
+  const pn = Number(new URL(location).searchParams.get("n"));
+  if(pn && rows.some(r => r.problem===pn)){ openN = pn; filter = "all";
+    document.querySelectorAll(".chip").forEach(x => x.classList.toggle("on", x.dataset.f==="all")); }
   render();
 });
 

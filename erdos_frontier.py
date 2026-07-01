@@ -398,6 +398,19 @@ def load_candidate_claims(path: Path = CANDIDATE_CLAIMS_PATH) -> dict[int, dict]
     return out
 
 
+def fc_theorem_url(theorem: str | None) -> str | None:
+    """The Formal Conjectures per-theorem page for a declaration name.
+
+    The site keys its theorem view on the exact ``theorem`` field from
+    ``conjectures.json`` (e.g. ``Erdos258.erdos_258``), so pass that value
+    verbatim rather than reconstructing a name.
+    """
+    if not theorem:
+        return None
+    return ("https://google-deepmind.github.io/formal-conjectures/theorem/?name="
+            + urllib.parse.quote(theorem))
+
+
 def build_fc(conjectures: dict) -> dict[int, dict]:
     entries = []
     for value in conjectures.values():
@@ -411,12 +424,28 @@ def build_fc(conjectures: dict) -> dict[int, dict]:
         if not match:
             continue
         problem = int(match.group(1))
-        rec = fc.setdefault(problem, {"has_file": True, "linked": False, "path": path, "formal_proof_link": None})
+        rec = fc.setdefault(problem, {
+            "has_file": True, "linked": False, "path": path,
+            "formal_proof_link": None, "theorem": None, "has_proof": False,
+        })
         rec["has_file"] = True
         rec["path"] = rec.get("path") or path
-        if entry.get("hasFormalProof") and entry.get("formalProofLink"):
-            rec["linked"] = True
-            rec["formal_proof_link"] = entry.get("formalProofLink")
+        theorem = entry.get("theorem")
+        base = f"Erdos{problem}.erdos_{problem}"
+        # Pick the FC theorem the row should link to: the one that carries the
+        # formal proof wins, else the base `erdos_<n>` statement, else the first
+        # seen. `.variants.*` are secondary framings of the same problem.
+        if entry.get("hasFormalProof"):
+            rec["has_proof"] = True
+            if entry.get("formalProofLink"):
+                rec["linked"] = True
+                rec["formal_proof_link"] = entry.get("formalProofLink")
+            rec["theorem"] = theorem or rec["theorem"]
+        elif rec["theorem"] is None or theorem == base:
+            if not rec.get("has_proof"):
+                rec["theorem"] = theorem or rec["theorem"]
+    for rec in fc.values():
+        rec["fc_url"] = fc_theorem_url(rec.get("theorem"))
     return fc
 
 
@@ -763,6 +792,9 @@ def row_for_problem(
             "linked": bool(fc_data.get("linked")),
             "path": fc_data.get("path"),
             "formal_proof_link": fc_data.get("formal_proof_link"),
+            "theorem": fc_data.get("theorem"),
+            "has_proof": bool(fc_data.get("has_proof")),
+            "fc_url": fc_data.get("fc_url"),
         },
         "claims": [asdict(claim) for claim in claims],
         "override": override or None,
@@ -871,18 +903,13 @@ def format_problem_detail(row: dict) -> str:
 
 
 def fidelity_theorem_link(row: dict) -> str:
-    """Best-effort link to the FC theorem page; falls back to the erdos URL.
+    """Link to the FC theorem page; falls back to the erdos URL.
 
-    Derives the theorem-page query from the FC file path (``ErdosProblems/<n>.lean``)
-    when one is known; otherwise points at the upstream problem page so the link
-    is always live and never hand-written.
+    Uses the exact FC ``theorem`` name captured in ``build_fc`` so the query
+    resolves on the site; if no FC file is known, points at the upstream problem
+    page so the link is always live.
     """
-    path = (row.get("fc") or {}).get("path") or ""
-    match = re.search(r"ErdosProblems/(\d+)\.lean", path)
-    if match:
-        name = urllib.parse.quote(f"ErdosProblems.erdos_{match.group(1)}")
-        return f"https://google-deepmind.github.io/formal-conjectures/theorem/?name={name}"
-    return row["erdos_url"]
+    return (row.get("fc") or {}).get("fc_url") or row["erdos_url"]
 
 
 def fidelity_rows(payload: dict) -> list[dict]:
@@ -1022,11 +1049,21 @@ def render_verdicts_feed(payload: dict) -> dict:
         fidelity = r.get("fidelity") or {}
         wiki = r.get("wiki") or {}
         candidate = r.get("candidate_claims") or {}
+        fc = r.get("fc") or {}
         rows.append({
             "problem": r["problem"],
             "erdos_url": r["erdos_url"],
             "erdos_state": r.get("erdos_state"),
-            "fc_linked": bool((r.get("fc") or {}).get("linked")),
+            "fc_linked": bool(fc.get("linked")),
+            # the FC catalog page for this problem, and whether FC marks it
+            # formally proved — the claim this audit reads the proof behind.
+            "fc_url": fc.get("fc_url"),
+            "fc_theorem": fc.get("theorem"),
+            "fc_has_proof": bool(fc.get("has_proof")),
+            # the hosted proof FC links (the artifact the machine layer audited),
+            # plus every indexed hosted proof for the problem.
+            "proof_link": fc.get("formal_proof_link"),
+            "proof_links": r.get("proof_links") or [],
             "bucket": r["bucket"],
             "machine_verdict": machine.get("verdict"),
             "machine_source": machine.get("source"),
@@ -1045,8 +1082,12 @@ def render_verdicts_feed(payload: dict) -> dict:
             "held_for_review": bool(r.get("held_for_review")),
             # independent human review of the GPT-5.2 candidate (neelsomani/gpt-erdos).
             "gpt_erdos": candidate.get("category"),
+            # axis 2 — the signed statement-fidelity verdict (does the formal
+            # statement faithfully state the boxed problem). Human-signed, L2.
             "signed_fidelity_verdict": fidelity.get("verdict"),
             "signed_by": fidelity.get("reviewer") if fidelity.get("signed") else None,
+            "fidelity_note": fidelity.get("note"),
+            "fidelity_source": fidelity.get("source"),
             "recommended_action": r.get("recommended_action"),
         })
     flagged = [r for r in rows if r["machine_verdict"] == "conditional"]
@@ -1064,6 +1105,11 @@ def render_verdicts_feed(payload: dict) -> dict:
             ],
             "discrepancies": [r["problem"] for r in rows if r["discrepancy"]],
             "held_for_review": [r["problem"] for r in rows if r["held_for_review"]],
+            "signed_fidelity": [
+                {"problem": r["problem"], "verdict": r["signed_fidelity_verdict"],
+                 "reviewer": r["signed_by"]}
+                for r in rows if r["signed_fidelity_verdict"] is not None
+            ],
             "gpt_erdos_problems": sum(1 for r in rows if r["gpt_erdos"] is not None),
             # where an independent human review (gpt-erdos) and this proof audit both
             # speak to the same problem — they examine different artifacts (informal

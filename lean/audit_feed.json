@@ -2385,15 +2385,16 @@
     "erdos_url": "https://www.erdosproblems.com/997",
     "fc_status": "proved (Lean)",
     "fc_bucket": "done",
-    "headline_decl": "Erdos997.not_wellDistributed_of_clustering",
+    "headline_decl": "Erdos997.erdos997",
     "machine_verdict": "conditional",
-    "axiom_verdict": "kernel_clean",
-    "non_kernel_axioms": [],
-    "named_assumptions": [
-      "hc : Erdos997.HasClustering x"
+    "axiom_verdict": "non_kernel_axioms",
+    "non_kernel_axioms": [
+      "maynardTaoBFT"
     ],
+    "named_assumptions": [],
     "preconditions": [],
     "all_decls": {
+      "Erdos997.erdos997": "conditional",
       "Erdos997.not_wellDistributed_of_clustering": "conditional",
       "Erdos997.circleCluster": "conditional"
     }

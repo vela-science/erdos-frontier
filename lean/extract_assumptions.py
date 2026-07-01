@@ -33,6 +33,16 @@ STATUS = SP.parent / "site" / "status.json"
 # `.lake/build` lives); override with the env var for CI checkouts. `glob` finds
 # the Erdős problem files under it; `num_re` reads the problem number from the file
 # name; `keep` selects the headline theorem(s) in each file.
+# `headline_override` pins the boxed theorem for a problem the name heuristic
+# mis-selects. Hand-verified, one entry per correction, kept explicit so the choice
+# is auditable rather than emergent. #997's file names its boxed result `erdos997`
+# (no underscore, so the `erdos_` keep-prefix misses it) at the end of the file, past
+# the `thms[:2]` fallback window, so the heuristic picked the helper
+# `not_wellDistributed_of_clustering`, which is conditional on a `HasClustering`
+# hypothesis the boxed theorem discharges. The boxed theorem's own
+# `#print axioms erdos997` attests the real dependency: the visible `maynardTaoBFT`
+# axiom. Pinning it keeps the verdict (still conditional, still a discrepancy) but
+# reports a visible axiom instead of an invisible hypothesis.
 REPOS = {
     "plby": {
         "root_env": "VELA_PROOF_REPO",
@@ -40,6 +50,7 @@ REPOS = {
         "glob": "ErdosProblems/Erdos[0-9]*.lean",
         "num_re": r"Erdos(\d+)",
         "keep": ("erdos_", "main_theorem", "not_erdos"),
+        "headline_override": {997: "erdos997"},
     },
     "alphaproof": {
         "root_env": "VELA_PROOF_REPO_ALPHAPROOF",
@@ -47,6 +58,7 @@ REPOS = {
         "glob": "APNOutputs/ErdosProblems/erdos_[0-9]*.lean",
         "num_re": r"erdos_(\d+)",
         "keep": ("target_theorem", "erdos_"),
+        "headline_override": {},
     },
 }
 
@@ -135,6 +147,14 @@ def discover(cfg: dict, root: pathlib.Path) -> dict:
         keep = [t for t in thms if t.startswith(cfg["keep"])]
         if not keep:
             keep = thms[:2]
+        # a hand-verified headline pin overrides the heuristic: audit that boxed
+        # theorem and force it as the reported decl in join_feed (see REPOS).
+        override = cfg.get("headline_override", {}).get(num)
+        forced = None
+        if override and override in thms:
+            if override not in keep:
+                keep = [override, *keep]
+            forced = f"{ns}.{override}"
         if not keep:
             continue
         # last file per problem number wins (e.g. Erdos1100b over Erdos1100), as
@@ -143,6 +163,7 @@ def discover(cfg: dict, root: pathlib.Path) -> dict:
             "module": [module_of(f, root)],
             "decls": [f"{ns}.{t}" for t in keep],
             "built": olean_of(f, root).exists(),
+            "headline": forced,
         }
     return by_num
 
@@ -185,8 +206,13 @@ def join_feed(records: list, by_num: dict, out_feed: pathlib.Path):
         recs = [by_decl[d] for d in info["decls"] if d in by_decl]
         if not recs:
             continue
-        headline = next(
-            (r for r in recs if r["decl"].endswith((f"erdos_{num}", "target_theorem_0"))), None)
+        # a hand-verified pin wins; else the problem-numbered boxed name; else the
+        # most-conditional decl among those audited.
+        forced = info.get("headline")
+        headline = next((r for r in recs if r["decl"] == forced), None) if forced else None
+        if headline is None:
+            headline = next(
+                (r for r in recs if r["decl"].endswith((f"erdos_{num}", "target_theorem_0"))), None)
         order = {"incomplete": 0, "conditional": 1, "unconditional": 2}
         if headline is None:
             headline = min(recs, key=lambda r: order.get(r["verdict"], 9))
