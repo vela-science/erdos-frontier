@@ -7,12 +7,12 @@
     "docstring": 8,
     "done": 91,
     "hypothesis-conditional": 8,
-    "in-pr": 317,
+    "in-pr": 318,
     "link": 0,
     "mismatch": 2,
     "needs-human-match-check": 2,
     "needs-statement-update": 1,
-    "no-proof": 712,
+    "no-proof": 711,
     "partial": 7,
     "statement": 65,
     "wont-fix": 1
@@ -29,7 +29,7 @@
     1148,
     1197
   ],
-  "generated_at": "2026-06-30",
+  "generated_at": "2026-07-01",
   "held_for_review": [],
   "hosted_proofs_tracked": 210,
   "rows": [
@@ -1328,6 +1328,18 @@
       "bucket": "done",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "erdos-36-M-four-five",
+          "number": 4363,
+          "title": "feat(ErdosProblems/36): prove M_four and M_five (M 4 = 2, M 5 = 3)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4363"
+        },
+        {
+          "head_ref": "erdos-36-M-three",
+          "number": 4362,
+          "title": "feat(ErdosProblems/36): prove M_three (M 3 = 2)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4362"
+        },
         {
           "head_ref": "codex/erdos-reference-docstrings",
           "number": 4003,
@@ -11495,7 +11507,14 @@
     {
       "bucket": "needs-statement-update",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "feat/erdos-status-autofix",
+          "number": 4367,
+          "title": " feat(tooling): implement auto-fixer for Erdos statuses and automate via GitHub Actions",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4367"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/330",
@@ -14833,7 +14852,14 @@
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-418-odd-noncototient",
+          "number": 4361,
+          "title": "feat(ErdosProblems/418): state the Odd Noncototient Conjecture",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4361"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/418",
@@ -23183,7 +23209,14 @@
         "category_label": "Valid but non-improving proofs",
         "source": "gpt-erdos"
       },
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "feat/erdos-status-autofix",
+          "number": 4367,
+          "title": " feat(tooling): implement auto-fixer for Erdos statuses and automate via GitHub Actions",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4367"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/655",
@@ -26202,6 +26235,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "feat/erdos-status-autofix",
+          "number": 4367,
+          "title": " feat(tooling): implement auto-fixer for Erdos statuses and automate via GitHub Actions",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4367"
+        },
         {
           "head_ref": "formalize-erdos-742",
           "number": 2200,
@@ -30965,6 +31004,12 @@
         "source": "gpt-erdos"
       },
       "claims": [
+        {
+          "head_ref": "feat/erdos-status-autofix",
+          "number": 4367,
+          "title": " feat(tooling): implement auto-fixer for Erdos statuses and automate via GitHub Actions",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4367"
+        },
         {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
@@ -37211,7 +37256,14 @@
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-1052-link-87360",
+          "number": 4360,
+          "title": "feat(ErdosProblems/1052): link the fast proof of isUnitaryPerfect_87360",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4360"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1052",
@@ -37237,6 +37289,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "erdos-1053",
+          "number": 4366,
+          "title": "feat(ErdosProblems): 1053",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4366"
+        },
         {
           "head_ref": "erdos-all",
           "number": 3422,
@@ -41726,9 +41784,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "feat/erdos-status-autofix",
+          "number": 4367,
+          "title": " feat(tooling): implement auto-fixer for Erdos statuses and automate via GitHub Actions",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4367"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "not disprovable",
       "erdos_url": "https://www.erdosproblems.com/1176",
@@ -41746,7 +41811,7 @@
       "problem": 1176,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },

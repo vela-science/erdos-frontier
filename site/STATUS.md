@@ -1,6 +1,6 @@
 # Erdős frontier — proof status
 
-*Regenerated 2026-06-30 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
+*Regenerated 2026-07-01 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
 
 This is a **computed** view, not a hand-kept list. It joins erdosproblems.com, Formal Conjectures, hosted Lean proof indexes, live open PRs, and explicit human overrides on the problem number so the status cannot drift silently.
 
@@ -21,11 +21,11 @@ Reconciled **1217** problems.
 | `docstring` | 8 | **Docstring note, not a `formal_proof` tag.** The hosted proof is conditional, axiomatic, or trust-extended. |
 | `partial` | 7 | **Partial proof.** Proves a variant, not the full erdosproblems statement. |
 | `blocked-claim` | 3 | **Claimed outside an open PR.** Skip until the claim is resolved. |
-| `in-pr` | 317 | **Claimed by an open FC PR.** Skip to avoid collisions. |
+| `in-pr` | 318 | **Claimed by an open FC PR.** Skip to avoid collisions. |
 | `wont-fix` | 1 | **Maintainer marked `won't fix`.** Skip. |
 | `defer` | 0 | **Deferred.** A human override says to leave this out of the next batch. |
 | `done` | 91 | Already linked in FC. |
-| `no-proof` | 712 | No hosted Lean proof to link yet. |
+| `no-proof` | 711 | No hosted Lean proof to link yet. |
 
 Human override judgments live in [`overrides.yaml`](overrides.yaml). They encode known claims, theorem mismatches, and conditional-proof traps that are not visible in the upstream machine-readable sources.
 
@@ -46,7 +46,7 @@ _none_
 
 **Not a trivial link.** FC has a file, but the statement or answer needs a human update before linking.
 
-- [330](https://www.erdosproblems.com/330)ʲ — FC already has an open answer-shaped statement; resolving this is not a trivial link-only update.
+- [330](https://www.erdosproblems.com/330)ʲ ([#4367](https://github.com/google-deepmind/formal-conjectures/pull/4367)) — FC already has an open answer-shaped statement; resolving this is not a trivial link-only update.
 
 ## `needs-human-match-check` — 2 problem(s)
 

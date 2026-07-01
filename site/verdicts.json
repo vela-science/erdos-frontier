@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30",
+  "generated_at": "2026-07-01",
   "rows": [
     {
       "bucket": "in-pr",
@@ -28305,7 +28305,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "not disprovable",
       "erdos_url": "https://www.erdosproblems.com/1176",
@@ -28317,7 +28317,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 1176,
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
