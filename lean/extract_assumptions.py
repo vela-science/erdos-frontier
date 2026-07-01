@@ -79,6 +79,18 @@ REPOS = {
         "keep": ("target_theorem", "erdos_"),
         "headline_override": {},
     },
+    # Jayyhk/erdos-lean is a per-problem-project repo: each `problems/<n>/` is its
+    # own lake project pinned to its own toolchain + mathlib revision (so it cannot
+    # be one built env like plby). The driver audits every problem whose project is
+    # already built and records the machine verdict beside the producer's declared
+    # `state`, so a `complete` claim over a conditional proof shows up as an overclaim.
+    "jayyhk": {
+        "root_env": "VELA_PROOF_REPO_JAYYHK",
+        "root": HOME / "personal/erdos-lean",
+        "mode": "per_problem_project",
+        "manifest": "data/problems.yaml",
+        "headline_override": {},
+    },
 }
 
 EXTRACT_TEMPLATE = r'''__IMPORTS__
@@ -254,6 +266,63 @@ def join_feed(records: list, by_num: dict, out_feed: pathlib.Path):
     return feed
 
 
+def audit_jayyhk(cfg: dict, root: pathlib.Path, out_feed: pathlib.Path):
+    """Per-problem-project audit. Each `problems/<n>/` is its own built lake project;
+    run the same metaprogram on its boxed theorem and record the verdict beside the
+    producer-declared `state`. Only already-built projects are audited (building the
+    12 pinned toolchains is the CI job); the rest are skipped and reported."""
+    import yaml
+    manifest = yaml.safe_load((root / cfg["manifest"]).read_text())
+    feed, counts = [], Counter()
+    built = skipped = 0
+    for entry in manifest:
+        try:
+            num = int(entry["number"])
+        except (KeyError, ValueError, TypeError):
+            continue
+        proof = entry.get("proof") or {}
+        theorem = proof.get("theorem")            # e.g. Erdos45.erdos_45
+        pdir = root / (proof.get("path") or f"problems/{num}/")
+        if not theorem or not (pdir / ".lake" / "build").exists():
+            skipped += 1
+            continue
+        module = theorem.split(".")[0]            # Erdos45
+        extract_path = pdir / "extract_jayyhk.lean"
+        extract_path.write_text(
+            EXTRACT_TEMPLATE.replace("__IMPORTS__", f"import {module}")
+                            .replace("__DECLS__", f'  "{theorem}"'))
+        res = subprocess.run(["lake", "env", "lean", extract_path.name],
+                             cwd=str(pdir), capture_output=True, text=True)
+        recs = [json.loads(l) for l in res.stdout.splitlines() if l.startswith("{")]
+        rec = next((r for r in recs if r["decl"] == theorem), recs[0] if recs else None)
+        if rec is None:
+            sys.stderr.write(f"[jayyhk] #{num}: no record ({res.stderr[-160:].strip()})\n")
+            continue
+        built += 1
+        counts[rec["verdict"]] += 1
+        feed.append({
+            "problem": num,
+            "erdos_url": f"https://www.erdosproblems.com/{num}",
+            "headline_decl": rec["decl"],
+            "machine_verdict": rec["verdict"],
+            "axiom_verdict": rec["axiom_verdict"],
+            "non_kernel_axioms": [a for a in rec["axioms"]
+                                  if a not in ("propext", "Classical.choice", "Quot.sound")],
+            "named_assumptions": rec["named_assumptions"],
+            "preconditions": rec["preconditions"],
+            "declared_state": proof.get("state"),
+            "all_decls": {rec["decl"]: rec["verdict"]},
+        })
+    json.dump(feed, open(out_feed, "w"), indent=2)
+    sys.stderr.write(f"[jayyhk] audited {built} built projects ({skipped} unbuilt/skipped); "
+                     f"verdicts {dict(counts)} -> {out_feed.name}\n")
+    over = [r["problem"] for r in feed
+            if r.get("declared_state") == "complete" and r["machine_verdict"] == "conditional"]
+    if over:
+        sys.stderr.write(f"[jayyhk] PRODUCER OVERCLAIM (declared complete, machine conditional): {over}\n")
+    return feed
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", choices=sorted(REPOS), default="plby")
@@ -270,6 +339,9 @@ def main():
 
     if not root.exists():
         sys.stderr.write(f"[{args.repo}] root not found: {root} — skipping\n")
+        return
+    if cfg.get("mode") == "per_problem_project":
+        audit_jayyhk(cfg, root, out_feed)
         return
     by_num = discover(cfg, root)
     nmods, ndecls = gen_extract(by_num, extract_path)

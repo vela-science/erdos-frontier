@@ -20,6 +20,12 @@ python3 lean/extract_assumptions.py --repo plby
 echo "==> alphaproof-nexus (Lean 4.27.0)"
 python3 lean/extract_assumptions.py --repo alphaproof
 
+# Jayyhk/erdos-lean is per-problem-project (each problems/<n>/ pins its own
+# toolchain). Provision a toolchain group first with lean/build-jayyhk.sh; this
+# audits whatever is already built and skips the rest.
+echo "==> Jayyhk/erdos-lean (audits already-built problem projects)"
+python3 lean/extract_assumptions.py --repo jayyhk || true
+
 echo "==> regenerate the join (status.json + verdicts.json + STATUS.md + packets feed)"
 python3 erdos_frontier.py
 
