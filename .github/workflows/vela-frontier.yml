@@ -1,0 +1,69 @@
+name: Verify the signed frontier
+
+# The git-native gate: on every change to the signed frontier, re-derive it from
+# a clean checkout and prove the working tree IS the signed state. This is what
+# makes the "replayable frontier" claim real rather than branding — the mechanism
+# the README's `vela check .` points at, run in CI. It NEVER signs: the human-key
+# accept stays the reviewer's signed event committed in the repo.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".vela/**"
+      - "frontier.json"
+      - "frontier.yaml"
+      - "vela.lock"
+      - "proof/**"
+      - ".github/workflows/vela-frontier.yml"
+  pull_request:
+    paths:
+      - ".vela/**"
+      - "frontier.json"
+      - "frontier.yaml"
+      - "vela.lock"
+      - "proof/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install vela (pinned release binary, no from-source build)
+        run: |
+          set -euo pipefail
+          # install.sh fetches the platform asset from the GitHub release and
+          # verifies its sha256. Pinned to the vela_version in vela.lock so the
+          # reducer/verifier digests match what materialized the committed state.
+          curl -fsSL https://raw.githubusercontent.com/constellate-science/vela/main/install.sh \
+            | VELA_VERSION=v0.720.0 bash
+          vela --version
+
+      - name: Replay + verify signatures (structural gate)
+        run: vela check .
+
+      - name: Hash parity — the working tree matches the committed vela.lock
+        run: |
+          set -uo pipefail
+          # Read the committed lock FIRST; materialize would rewrite it.
+          lsnap="$(awk '/^snapshot_hash:/{print $2}' vela.lock)"
+          lelog="$(awk '/^event_log_hash:/{print $2}' vela.lock)"
+          out="$(vela frontier materialize . --json)"
+          snap="$(printf '%s' "$out" | python3 -c 'import json,sys;print(json.load(sys.stdin).get("snapshot_hash",""))')"
+          elog="$(printf '%s' "$out" | python3 -c 'import json,sys;print(json.load(sys.stdin).get("event_log_hash",""))')"
+          echo "committed:  snapshot=$lsnap event_log=$lelog"
+          echo "recomputed: snapshot=$snap event_log=$elog"
+          if [ -z "$snap" ] || [ "$snap" != "$lsnap" ] || [ "$elog" != "$lelog" ]; then
+            echo "::error::hash-parity failed — the working tree is not the signed state"
+            exit 1
+          fi
+          echo "hash-parity OK — the working tree IS the signed state"
+
+      - name: Strict trust signal (non-blocking; owner key-custody debt)
+        run: |
+          vela check . --strict \
+            || echo "::notice::strict proof-readiness debt — resolved when the owner signs the pending reviewer events"
