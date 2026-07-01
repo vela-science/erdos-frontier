@@ -7,12 +7,12 @@
     "docstring": 8,
     "done": 91,
     "hypothesis-conditional": 7,
-    "in-pr": 318,
+    "in-pr": 319,
     "link": 0,
     "mismatch": 2,
     "needs-human-match-check": 2,
     "needs-statement-update": 1,
-    "no-proof": 711,
+    "no-proof": 710,
     "partial": 7,
     "statement": 66,
     "wont-fix": 1
@@ -892,7 +892,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/24",
@@ -905,7 +912,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/24/24.lean",
+        "note": "batch-3 draft for Erd\u0151s 24",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/24",
       "machine": {
@@ -3549,7 +3564,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/93",
@@ -3562,7 +3584,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/93/93.lean",
+        "note": "batch-3 draft for Erd\u0151s 93",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/93",
       "machine": {
@@ -6150,7 +6180,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/164",
@@ -6163,7 +6200,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/164/164.lean",
+        "note": "batch-3 draft for Erd\u0151s 164",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/164",
       "machine": {
@@ -11848,7 +11893,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/314",
@@ -11861,7 +11913,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/314/314.lean",
+        "note": "batch-3 draft for Erd\u0151s 314",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/314",
       "machine": {
@@ -11913,7 +11973,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/315",
@@ -11926,7 +11993,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/315/315.lean",
+        "note": "batch-3 draft for Erd\u0151s 315",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/315",
       "machine": {
@@ -12671,7 +12746,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/333",
@@ -12684,7 +12766,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/333/333.lean",
+        "note": "batch-3 draft for Erd\u0151s 333",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/333",
       "machine": {
@@ -14232,7 +14322,14 @@
         "category_label": "Solved as stated, hidden constraints",
         "source": "gpt-erdos"
       },
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/369",
@@ -14245,7 +14342,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/369/369.lean",
+        "note": "batch-3 draft for Erd\u0151s 369",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/369",
       "machine": {
@@ -15526,7 +15631,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/401",
@@ -15539,7 +15651,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/401/401.lean",
+        "note": "batch-3 draft for Erd\u0151s 401",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/401",
       "machine": {
@@ -16641,7 +16761,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/429",
@@ -16654,7 +16781,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/429/429.lean",
+        "note": "batch-3 draft for Erd\u0151s 429",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/429",
       "machine": {
@@ -16956,7 +17091,14 @@
     {
       "bucket": "statement",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-3",
+          "number": 4369,
+          "title": "ErdosProblems: add 24, 93, 164, 314, 315, 333, 369, 401, 429, 435 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/435",
@@ -16969,7 +17111,15 @@
         "path": null,
         "theorem": null
       },
-      "fidelity": null,
+      "fidelity": {
+        "formal_ref": "statements/435/435.lean",
+        "note": "batch-3 draft for Erd\u0151s 435",
+        "reviewer": "reviewer:will-blair",
+        "signed": true,
+        "source": "local",
+        "stale": null,
+        "verdict": "faithful"
+      },
       "held_for_review": false,
       "latex_url": "https://www.erdosproblems.com/latex/435",
       "machine": {
@@ -25658,9 +25808,16 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "formalise-erdos-667",
+          "number": 4370,
+          "title": "feat(ErdosProblems): formalise Erd\u0151s problem 667",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4370"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/667",
@@ -25681,7 +25838,7 @@
       "problem": 667,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },

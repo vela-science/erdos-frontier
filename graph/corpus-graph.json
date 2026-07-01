@@ -3,7 +3,7 @@
  "note": "Derived index of what the ingested sources declare \u2014 typed in the Vela EdgeKind vocabulary with a trust tier per edge. Not signed state: the signed spine is .vela/ + frontier.json.",
  "source_locks": {
   "erdos": "sha256:3921f4f73",
-  "fidelity": "sha256:36d02b124",
+  "fidelity": "sha256:2416e2517",
   "formal_conjectures": "sha256:73f757c22",
   "gpt_erdos": "sha256:c0f626a47",
   "jayyhk": "sha256:e2db2d0f2",
@@ -12,10 +12,10 @@
   "williamjblair_lean_proofs": "sha256:b0e681bf4"
  },
  "counts": {
-  "nodes": 2463,
-  "edges": 1063,
+  "nodes": 2473,
+  "edges": 1073,
   "by_node_kind": {
-   "attestation": 15,
+   "attestation": 25,
    "claim": 342,
    "condition": 24,
    "problem": 1217,
@@ -28,13 +28,13 @@
    "derived_from": 473,
    "replicates": 165,
    "specializes": 2,
-   "supports": 386
+   "supports": 396
   },
   "by_trust": {
    "declared": 672,
    "machine": 367,
    "recorded": 9,
-   "signed": 15
+   "signed": 25
   }
  },
  "nodes": [
@@ -7002,7 +7002,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 667",
    "state": "open",
-   "bucket": "no-proof",
+   "bucket": "in-pr",
    "url": "https://www.erdosproblems.com/667"
   },
   {
@@ -16019,9 +16019,23 @@
    "verdict": "faithful"
   },
   {
+   "id": "vsa:vsa_1f3d381599abb1ff",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 333",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
    "id": "vsa:vsa_286db47f558bdec1",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 369",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_40c141d610daf5d4",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 314",
    "reviewer": "reviewer:will-blair",
    "verdict": "faithful"
   },
@@ -16036,6 +16050,13 @@
    "id": "vsa:vsa_56973ed9feca81cc",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 429",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_5b64b43cdceb5588",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 164",
    "reviewer": "reviewer:will-blair",
    "verdict": "faithful"
   },
@@ -16061,6 +16082,13 @@
    "verdict": "faithful"
   },
   {
+   "id": "vsa:vsa_7c835a596e46b58b",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 24",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
    "id": "vsa:vsa_879bd2c826515cbf",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 333",
@@ -16068,9 +16096,44 @@
    "verdict": "faithful"
   },
   {
+   "id": "vsa:vsa_9691f0035704c649",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 401",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
    "id": "vsa:vsa_96f98b83ba41c2e7",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 315",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_9ce6beabb331c7f5",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 93",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_a6dd8ad77d869095",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 315",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_c1ba4a06c0a0bfce",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 369",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_c974adb93cc0448c",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 429",
    "reviewer": "reviewer:will-blair",
    "verdict": "faithful"
   },
@@ -16083,6 +16146,13 @@
   },
   {
    "id": "vsa:vsa_d26afe685e264d30",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 435",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_db083f4319ac62f7",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 435",
    "reviewer": "reviewer:will-blair",
@@ -26405,8 +26475,22 @@
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
+   "from": "vsa:vsa_1f3d381599abb1ff",
+   "to": "erdos:333",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
    "from": "vsa:vsa_286db47f558bdec1",
    "to": "erdos:369",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_40c141d610daf5d4",
+   "to": "erdos:314",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -26421,6 +26505,13 @@
   {
    "from": "vsa:vsa_56973ed9feca81cc",
    "to": "erdos:429",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_5b64b43cdceb5588",
+   "to": "erdos:164",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -26447,6 +26538,13 @@
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
+   "from": "vsa:vsa_7c835a596e46b58b",
+   "to": "erdos:24",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
    "from": "vsa:vsa_879bd2c826515cbf",
    "to": "erdos:333",
    "kind": "supports",
@@ -26454,8 +26552,43 @@
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
+   "from": "vsa:vsa_9691f0035704c649",
+   "to": "erdos:401",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
    "from": "vsa:vsa_96f98b83ba41c2e7",
    "to": "erdos:315",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_9ce6beabb331c7f5",
+   "to": "erdos:93",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_a6dd8ad77d869095",
+   "to": "erdos:315",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_c1ba4a06c0a0bfce",
+   "to": "erdos:369",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_c974adb93cc0448c",
+   "to": "erdos:429",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -26469,6 +26602,13 @@
   },
   {
    "from": "vsa:vsa_d26afe685e264d30",
+   "to": "erdos:435",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_db083f4319ac62f7",
    "to": "erdos:435",
    "kind": "supports",
    "trust": "signed",

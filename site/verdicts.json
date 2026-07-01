@@ -740,8 +740,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 24",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -771,8 +771,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -3099,8 +3099,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 93",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -3130,8 +3130,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "Claude Opus 4.5",
@@ -5446,8 +5446,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 164",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -5477,8 +5477,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Codex"
       ],
@@ -10661,8 +10661,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 314",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -10692,8 +10692,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -10712,8 +10712,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 315",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -10743,8 +10743,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -11351,8 +11351,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 333",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -11382,8 +11382,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Claude Opus 4.5",
         "GPT-5.2 Pro"
@@ -12668,8 +12668,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 369",
+      "fidelity_source": "local",
       "gpt_erdos": "hidden_constraints",
       "held_for_review": false,
       "machine_source": "plby",
@@ -12699,8 +12699,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "GPT"
@@ -13796,8 +13796,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 401",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -13827,8 +13827,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "GPT-5.2 Pro"
@@ -14781,8 +14781,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 429",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -14812,8 +14812,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -15038,8 +15038,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-3 draft for Erd\u0151s 435",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -15069,8 +15069,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -22915,7 +22915,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/667",
@@ -22934,7 +22934,7 @@
       "problem": 667,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -41930,6 +41930,21 @@
     "problems": 1217,
     "signed_fidelity": [
       {
+        "problem": 24,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 93,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 164,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
         "problem": 205,
         "reviewer": "reviewer:will-blair",
         "verdict": "variant"
@@ -41945,9 +41960,44 @@
         "verdict": "faithful"
       },
       {
+        "problem": 314,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 315,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 333,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
         "problem": 337,
         "reviewer": "reviewer:will-blair",
         "verdict": "unfaithful"
+      },
+      {
+        "problem": 369,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 401,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 429,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 435,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
       },
       {
         "problem": 1148,

@@ -6,7 +6,7 @@ This file lists safe `statement` candidates only: no open PR claim, no human ove
 
 ## Suggested Batch — 8 problem(s)
 
-[24](https://www.erdosproblems.com/24)ᵖʲ [93](https://www.erdosproblems.com/93)ᵖʲ [164](https://www.erdosproblems.com/164)ᵖʲ [206](https://www.erdosproblems.com/206)ᵖʲ [314](https://www.erdosproblems.com/314)ᵖʲ [315](https://www.erdosproblems.com/315)ᵖʲ [333](https://www.erdosproblems.com/333)ᵖʲ [369](https://www.erdosproblems.com/369)ᵖʲ
+[24](https://www.erdosproblems.com/24)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [93](https://www.erdosproblems.com/93)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [164](https://www.erdosproblems.com/164)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [206](https://www.erdosproblems.com/206)ᵖʲ [314](https://www.erdosproblems.com/314)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [315](https://www.erdosproblems.com/315)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [333](https://www.erdosproblems.com/333)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [369](https://www.erdosproblems.com/369)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369))
 
 ## Top 20 Safe Candidates
 
