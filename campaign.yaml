@@ -41,7 +41,7 @@ batches:
 
     '
 - name: batch-3
-  state: packeted
+  state: pr-open
   problems:
   - 24
   - 93
