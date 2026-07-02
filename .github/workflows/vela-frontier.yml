@@ -35,8 +35,5 @@ jobs:
         with:
           # vela-version defaults to the vela_version pinned in vela.lock, so
           # the gating binary always matches the one that materialized state.
-          # strict stays a non-blocking notice until v0.721.0 releases (the
-          # binary CI pins from vela.lock): v0.721.0 carries the review-queue
-          # fix that lets `check --strict` pass clean on this frontier. Once
-          # the lock bumps to 0.721.0, flip this to "true".
-          strict: "false"
+          # v0.721.0 (released) passes --strict clean here: the gate is on.
+          strict: "true"
