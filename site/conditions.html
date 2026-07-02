@@ -4,118 +4,113 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Load-bearing conditions · Erdős formal-proof fidelity audit</title>
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  :root{
-    color-scheme: light dark;
-    --paper:oklch(97.2% 0.008 248); --ink:oklch(25% 0.03 262);
-    --faint:oklch(48% 0.022 258); --hair:oklch(88% 0.012 250);
-    --accent:oklch(50% 0.13 35); --accent-bg:oklch(50% 0.13 35 / 0.07);
-    --ok:oklch(48% 0.08 145); --warn:oklch(55% 0.1 85); --gold:oklch(62% 0.12 86);
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --paper:oklch(21% 0.022 262); --ink:oklch(92% 0.012 250);
-           --faint:oklch(66% 0.016 255); --hair:oklch(33% 0.02 258);
-           --accent:oklch(70% 0.12 35); --accent-bg:oklch(70% 0.12 35 / 0.1);
-           --ok:oklch(72% 0.08 145); --warn:oklch(74% 0.09 85); --gold:oklch(74% 0.11 86); }
-  }
-  *{ box-sizing:border-box; }
-  body{ margin:0; background:var(--paper); color:var(--ink);
-    font:17px/1.6 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    -webkit-font-smoothing:antialiased; }
-  .wrap{ max-width:64rem; margin:0 auto; padding:4.5rem 1.6rem 6rem; }
-  code,.mono{ font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:.86em; }
-  a{ color:inherit; text-decoration-color:var(--hair); text-underline-offset:2px; }
-  a:hover{ text-decoration-color:var(--accent); }
-  .nav{ font-size:.85rem; color:var(--faint); margin-bottom:2.4rem; }
-  .nav a{ margin-right:1.1rem; }
-  h1{ font-size:2.1rem; font-weight:600; letter-spacing:-.01em; margin:0 0 .4rem; }
-  .dek{ color:var(--faint); font-size:1.12rem; margin:0 0 2.4rem; max-width:44rem; }
-  h2{ font-size:1.05rem; font-weight:600; margin:2.8rem 0 .3rem; }
-  h2 .sub{ font-weight:400; color:var(--faint); font-size:.85rem; margin-left:.5rem; }
-  .note{ color:var(--faint); font-size:.85rem; max-width:44rem; margin:.2rem 0 1.2rem; }
+  /* ── Catalogue-page specifics ── */
+  .map { border-top: 1px solid var(--rule-2); border-bottom: 1px solid var(--rule-1);
+    padding: var(--s-3) 0; margin: var(--s-2) 0 var(--s-4); overflow-x: auto; }
+  .map svg { display: block; margin: 0 auto; max-width: 100%; }
+  .map .clabel { font: 500 12.5px var(--font-mono); fill: var(--ink-1); }
+  .map .plabel { font: 500 12.5px var(--font-mono); fill: var(--ink-3); }
+  .map .axis-label { font: 600 10px var(--font-sans); letter-spacing: 0.08em; fill: var(--ink-4); }
+  .map .edge { stroke: var(--rule-2); stroke-width: 1; fill: none; }
+  .map .edge.shared { stroke: var(--brass); stroke-width: 1.4; }
+  .map .node { fill: var(--stone); }
+  .map .node.shared { fill: var(--brass); }
+  .map g.cond { cursor: pointer; }
+  .map g.cond:hover .edge { stroke: var(--brass); stroke-width: 1.6; }
+  .map g.cond:hover .clabel { fill: var(--brass); }
+  .map.armed g.cond .edge { stroke: var(--rule-1); stroke-width: 1; }
+  .map.armed g.cond .clabel { fill: var(--ink-4); }
+  .map.armed g.cond .node { fill: var(--stone); }
+  .map.armed g.cond.hit .edge { stroke: var(--cinnabar); stroke-width: 1.8; }
+  .map.armed g.cond.hit .clabel { fill: var(--cinnabar); font-weight: 600; }
+  .map.armed g.cond.hit .node { fill: var(--cinnabar); }
+  .map.armed .plabel { fill: color-mix(in oklch, var(--ink-4) 45%, transparent); }
+  .map.armed g.hitp .plabel { fill: var(--cinnabar); font-weight: 600; }
+  .map.armed g.hitp .node { fill: var(--cinnabar); }
 
-  .map{ border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
-    padding:1.4rem 0; margin:1.2rem 0 2rem; overflow-x:auto; }
-  .map svg{ display:block; margin:0 auto; max-width:100%; }
-  .map .clabel{ font:500 12.5px ui-monospace,monospace; fill:var(--ink); }
-  .map .plabel{ font:500 12.5px ui-monospace,monospace; fill:var(--faint); }
-  .map .edge{ stroke:var(--hair); stroke-width:1; fill:none; }
-  .map .edge.shared{ stroke:var(--accent); stroke-width:1.4; }
-  .map .node{ fill:var(--faint); }
-  .map .node.shared{ fill:var(--accent); }
-  .map g.cond{ cursor:pointer; }
-  .map g.cond:hover .edge{ stroke:var(--accent); stroke-width:1.6; }
-  .map g.cond:hover .clabel{ fill:var(--accent); }
-  .map.armed g.cond .edge{ stroke:var(--hair); stroke-width:1; }
-  .map.armed g.cond .clabel{ fill:var(--faint); }
-  .map.armed g.cond .node{ fill:var(--faint); }
-  .map.armed g.cond.hit .edge{ stroke:var(--accent); stroke-width:1.8; }
-  .map.armed g.cond.hit .clabel{ fill:var(--accent); font-weight:600; }
-  .map.armed g.cond.hit .node{ fill:var(--accent); }
-  .map.armed .plabel{ fill:var(--hair); }
-  .map.armed g.hitp .plabel{ fill:var(--accent); font-weight:600; }
-  .map.armed g.hitp .node{ fill:var(--accent); }
-  .blast{ margin:0 0 2rem; padding:1.1rem 1.4rem; border-left:2px solid var(--accent);
-    background:var(--accent-bg); font-size:.92rem; }
-  .blast b{ font-weight:600; }
-  .blast .close{ float:right; cursor:pointer; color:var(--faint); font-size:.85rem;
-    border:none; background:none; font-family:inherit; padding:0; }
-  .blast .close:hover{ color:var(--ink); }
-  .blast ul{ margin:.5rem 0 0; padding-left:1.1rem; }
-  .blast li{ margin:.15rem 0; }
-  .blast .w{ color:var(--faint); font-size:.85rem; }
+  .blast { margin: 0 0 var(--s-4); padding: var(--s-2) 0 0;
+    border-top: 2px solid color-mix(in oklch, var(--cinnabar) 60%, transparent);
+    font-size: var(--text-small); }
+  .blast b { font-weight: 600; color: var(--cinnabar); }
+  .blast .close { float: right; cursor: pointer; color: var(--ink-4); font-size: 13px;
+    border: none; background: none; font-family: inherit; padding: 0; }
+  .blast .close:hover { color: var(--ink-1); }
+  .blast ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+  .blast li { margin: 0.15rem 0; }
+  .blast .w { color: var(--ink-4); font-size: 13px; }
 
-  ul.conds{ list-style:none; margin:0; padding:0; }
-  ul.conds li{ padding:.7rem 0; border-bottom:1px solid var(--hair); display:flex; gap:1rem; align-items:baseline; }
-  .lev{ font-family:ui-monospace,monospace; font-size:.78rem; color:var(--accent);
-    border:1px solid var(--hair); border-radius:3px; padding:.05rem .4rem; white-space:nowrap; flex-shrink:0; min-width:3.3rem; text-align:center; }
-  .lev.one{ color:var(--faint); }
-  .cbody{ flex:1; }
-  .cname{ font-weight:600; }
-  .cdesc{ color:var(--faint); font-size:.9rem; }
-  .cprobs{ font-family:ui-monospace,monospace; font-size:.82rem; margin-top:.15rem; }
-  .cprobs a{ margin-right:.5rem; }
-  .foot{ margin-top:3rem; padding-top:1.4rem; border-top:1px solid var(--hair);
-    color:var(--faint); font-size:.85rem; }
-  @media (max-width:640px){ .wrap{ padding:2.6rem 1.1rem 4rem; } ul.conds li{ flex-wrap:wrap; } }
+  h2 { font-family: var(--font-sans); font-weight: 600; font-size: var(--text-h3);
+    color: var(--ink-0); margin: var(--s-5) 0 0.3rem; }
+  h2 .sub { font-weight: 400; color: var(--ink-4); font-size: 13px; margin-left: 0.5rem; }
+  .note { color: var(--ink-3); font-size: var(--text-small); max-width: var(--measure-wide); margin: 0.2rem 0 var(--s-2); }
+
+  ul.conds { list-style: none; margin: 0; padding: 0; max-width: var(--measure-wide); }
+  ul.conds li { padding: 0.75rem 0; border-bottom: 1px solid var(--rule-1);
+    display: flex; gap: var(--s-2); align-items: baseline; }
+  .lev { font-family: var(--font-mono); font-size: var(--text-meta); color: var(--brass);
+    border: 1px solid color-mix(in oklch, var(--brass) 40%, transparent);
+    border-radius: 999px; padding: 0.15em 0.55em; white-space: nowrap;
+    flex-shrink: 0; min-width: 3.6rem; text-align: center; font-variant-numeric: tabular-nums; }
+  .lev.one { color: var(--stone); border-color: var(--rule-2); }
+  .cbody { flex: 1; }
+  .cname { font-weight: 600; color: var(--ink-0); }
+  .cdesc { color: var(--ink-3); font-size: var(--text-small); }
+  .cprobs { font-family: var(--font-mono); font-size: 13px; margin-top: 0.2rem; }
+  .cprobs a { margin-right: 0.5rem; }
+  @media (max-width: 720px) { ul.conds li { flex-wrap: wrap; } }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="nav"><a href="index.html">← Overview</a><a href="map.html">Map</a></div>
-  <h1>Load-bearing conditions</h1>
-  <p class="dek">The unproven inputs the formal proofs rest on. Formalize one, and every
-  problem that assumes it becomes unconditional.</p>
+<div class="page">
+  <nav class="site-nav" aria-label="Site">
+    <a href="index.html">Audit</a>
+    <a href="conditions.html" aria-current="page">Conditions</a>
+    <a href="map.html">Map</a>
+    <a href="method.html">Method</a>
+    <a class="nav-mark" href="https://hub.constellate.science/entries/vfr_0a25edabc16db143">constellate · vfr_0a25edab</a>
+  </nav>
 
-  <p class="note">Click any assumed theorem to see its blast radius: the problems
-  whose only formal support falls with it if the assumption is retracted.</p>
+  <header class="hero">
+    <p class="kicker">The unproven inputs</p>
+    <h1>Load-bearing conditions</h1>
+    <p class="lede">What the formal proofs rest on. Formalize one, and every problem
+      that assumes it becomes unconditional.</p>
+    <p class="t-caption" style="max-width:60ch">Click any assumed theorem to see its blast radius:
+      the problems whose only formal support falls with it if the assumption is retracted.</p>
+  </header>
+
+  <noscript><p>The diagram needs JavaScript; the same data is in
+    <a href="verdicts.json">verdicts.json</a> under <code>summary.conditions</code>.</p></noscript>
   <div class="map" id="map"></div>
   <div class="blast" id="blast" hidden></div>
 
   <h2>Assumed theorems <span class="sub" id="thm-count"></span></h2>
-  <p class="note">Named results a proof takes as given — as an axiom, or as a
-  hypothesis it never discharges. These are the frontier's real dependencies: each
-  is a known theorem not yet in Mathlib, and formalizing it clears the problems that
-  cite it.</p>
+  <p class="note">Named results a proof takes as given, as an axiom or as a hypothesis
+    it never discharges. These are the frontier’s real dependencies: each is a known
+    theorem not yet in Mathlib, and formalizing it clears the problems that cite it.</p>
   <ul class="conds" id="theorems"></ul>
 
   <h2>Undischarged hypotheses <span class="sub" id="hyp-count"></span></h2>
-  <p class="note">A proof here carries a problem-specific hypothesis it did not
-  prove. Unlike the assumed theorems above, these are internal to one problem, so
-  they are a fidelity concern for that proof rather than a shared input to formalize.</p>
+  <p class="note">A proof here carries a problem-specific hypothesis it did not prove.
+    Unlike the assumed theorems above, these are internal to one problem, so they are
+    a fidelity concern for that proof rather than a shared input to formalize.</p>
   <ul class="conds" id="hypotheses"></ul>
 
   <h2>Compiler trust <span class="sub" id="comp-count"></span></h2>
-  <p class="note">Not a kernel proof: the argument trusts a native-compiled
-  computation (<code>native_decide</code>), which extends the trusted base beyond
-  Lean's kernel.</p>
+  <p class="note">Not a kernel proof: the argument trusts a native-compiled computation
+    (<code>native_decide</code>), which extends the trusted base beyond Lean’s kernel.</p>
   <ul class="conds" id="compiler"></ul>
 
-  <p class="foot" id="foot"></p>
+  <p class="site-foot" id="foot" data-url="https://williamjblair.github.io/erdos-frontier/conditions.html"></p>
 </div>
 
+<script src="assets/site.js"></script>
 <script>
-function esc(s){ return String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
 function problemLink(n){ return `<a href="finding.html?n=${n}" title="finding page">${n}</a>`; }
 
 function renderList(el, conds){
@@ -123,7 +118,7 @@ function renderList(el, conds){
     const one = c.leverage === 1 ? " one" : "";
     const probs = c.problems.map(problemLink).join(" ");
     const desc = c.description ? `<div class="cdesc">${esc(c.description)}</div>` : "";
-    return `<li><span class="lev${one}">${c.leverage}&nbsp;prob${c.leverage===1?"":"s"}</span>`
+    return `<li><span class="lev${one}">${c.leverage}&nbsp;prob${c.leverage === 1 ? "" : "s"}</span>`
       + `<div class="cbody"><div class="cname">${esc(c.name)}</div>${desc}`
       + `<div class="cprobs">${probs}</div></div></li>`;
   }).join("") || `<li class="note">none</li>`;
@@ -132,37 +127,31 @@ function renderList(el, conds){
 function renderMap(conds){
   // Bipartite: assumed theorems (left) -> problems (right). Cartography, not a cloud.
   const rowH = 30, padTop = 18, padBot = 18, leftX = 258, rightX = 540, w = 700;
-  const probs = [...new Set(conds.flatMap(c => c.problems))].sort((a,b)=>a-b);
-  const py = {}; probs.forEach((p,i) => py[p] = padTop + i*rowH);
-  const cy = {}; conds.forEach((c,i) => cy[c.key] = padTop + i*rowH);
-  const h = padTop + padBot + Math.max(conds.length, probs.length)*rowH - rowH;
-  const edges = conds.flatMap(c => c.problems.map(p => {
-    const shared = c.leverage >= 2 ? " shared" : "";
-    const x1 = leftX+6, y1 = cy[c.key], x2 = rightX-6, y2 = py[p];
-    const mx = (x1+x2)/2;
-    return `<path class="edge${shared}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`;
-  }));
+  const probs = [...new Set(conds.flatMap(c => c.problems))].sort((a, b) => a - b);
+  const py = {}; probs.forEach((p, i) => py[p] = padTop + i * rowH);
+  const cy = {}; conds.forEach((c, i) => cy[c.key] = padTop + i * rowH);
+  const h = padTop + padBot + Math.max(conds.length, probs.length) * rowH - rowH;
   const condG = conds.map(c => {
     const shared = c.leverage >= 2 ? " shared" : "";
     const y = cy[c.key];
     const es = c.problems.map(p => {
-      const x1 = leftX+6, y1 = y, x2 = rightX-6, y2 = py[p], mx=(x1+x2)/2;
+      const x1 = leftX + 6, y1 = y, x2 = rightX - 6, y2 = py[p], mx = (x1 + x2) / 2;
       return `<path class="edge${shared}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`;
     }).join("");
     return `<g class="cond" data-key="${esc(c.key)}">${es}`
-      + `<text class="clabel" x="${leftX}" y="${y+4}" text-anchor="end">${esc(c.name)}</text>`
-      + `<circle class="node${shared}" cx="${leftX+6}" cy="${y}" r="3"/></g>`;
+      + `<text class="clabel" x="${leftX}" y="${y + 4}" text-anchor="end">${esc(c.name)}</text>`
+      + `<circle class="node${shared}" cx="${leftX + 6}" cy="${y}" r="3"/></g>`;
   }).join("");
   const probG = probs.map(p => {
-    const shared = conds.some(c => c.leverage>=2 && c.problems.includes(p)) ? " shared" : "";
+    const shared = conds.some(c => c.leverage >= 2 && c.problems.includes(p)) ? " shared" : "";
     const y = py[p];
-    return `<g data-p="${p}"><circle class="node${shared}" cx="${rightX-6}" cy="${y}" r="3"/>`
-      + `<a href="finding.html?n=${p}"><text class="plabel" x="${rightX}" y="${y+4}">${p}</text></a></g>`;
+    return `<g data-p="${p}"><circle class="node${shared}" cx="${rightX - 6}" cy="${y}" r="3"/>`
+      + `<a href="finding.html?n=${p}"><text class="plabel" x="${rightX}" y="${y + 4}">${p}</text></a></g>`;
   }).join("");
   document.getElementById("map").innerHTML =
-    `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Assumed theorems and the problems that depend on them">`
-    + `<text class="plabel" x="${leftX}" y="10" text-anchor="end" style="fill:var(--faint);font-size:10px;letter-spacing:.05em">ASSUMED THEOREM</text>`
-    + `<text class="plabel" x="${rightX}" y="10" style="fill:var(--faint);font-size:10px;letter-spacing:.05em">PROBLEM</text>`
+    `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Assumed theorems and the problems that depend on them; the lists below carry the same data">`
+    + `<text class="axis-label" x="${leftX}" y="10" text-anchor="end">ASSUMED THEOREM</text>`
+    + `<text class="axis-label" x="${rightX}" y="10">PROBLEM</text>`
     + condG + probG + `</svg>`;
   document.querySelectorAll("#map g.cond").forEach(g => {
     g.addEventListener("click", () => {
@@ -172,58 +161,63 @@ function renderMap(conds){
   });
 }
 
-let ROWS = {};   // problem -> verdict row, for wiki context in the blast panel
+let WIKI = {};   // problem -> recorded wiki outcome, for the blast panel
 let ARMED = null;
 
 function blastFor(cond){
   const map = document.getElementById("map");
   const panel = document.getElementById("blast");
-  if (ARMED === cond.key){ ARMED = null; map.classList.remove("armed");
-    panel.hidden = true;
-    map.querySelectorAll("g.cond.hit, g.hitp").forEach(g => g.classList.remove("hit","hitp"));
-    return; }
+  if (ARMED === cond.key){
+    ARMED = null; map.classList.remove("armed"); panel.hidden = true;
+    map.querySelectorAll("g.cond.hit, g.hitp").forEach(g => g.classList.remove("hit", "hitp"));
+    return;
+  }
   ARMED = cond.key;
   map.classList.add("armed");
-  map.querySelectorAll("g.cond.hit, g.hitp").forEach(g => g.classList.remove("hit","hitp"));
+  map.querySelectorAll("g.cond.hit, g.hitp").forEach(g => g.classList.remove("hit", "hitp"));
   map.querySelector(`g.cond[data-key="${CSS.escape(cond.key)}"]`)?.classList.add("hit");
   cond.problems.forEach(pn => {
     map.querySelector(`g[data-p="${pn}"]`)?.classList.add("hitp");
   });
   const items = cond.problems.map(pn => {
-    const r = ROWS[pn] || {};
-    const wiki = r.wiki_outcome != null
-      ? ` <span class="w">— the wiki records this as ${esc(String(r.wiki_outcome))}</span>`
-      : "";
+    const wiki = WIKI[String(pn)] != null
+      ? ` <span class="w">· the wiki records this as ${esc(String(WIKI[String(pn)]))}</span>` : "";
     return `<li>${problemLink(pn)}${wiki}</li>`;
   }).join("");
   panel.innerHTML =
-    `<button class="close" onclick="document.getElementById('blast').hidden=true;document.getElementById('map').classList.remove('armed');">dismiss</button>`
+    `<button class="close">dismiss</button>`
     + `<b>Retract ${esc(cond.name)}</b> and ${cond.problems.length} `
-    + `problem${cond.problems.length===1?" loses":"s lose"} the formal support shown here — `
-    + `each proof takes it as given, so nothing below it survives the retraction.`
+    + `problem${cond.problems.length === 1 ? " loses" : "s lose"} the formal support shown here. `
+    + `Each proof takes it as given, so nothing below it survives the retraction.`
     + `<ul>${items}</ul>`;
   panel.hidden = false;
+  panel.querySelector(".close").addEventListener("click", () => {
+    panel.hidden = true; ARMED = null;
+    map.classList.remove("armed");
+    map.querySelectorAll("g.cond.hit, g.hitp").forEach(g => g.classList.remove("hit", "hitp"));
+  });
 }
 
-fetch("verdicts.json").then(r=>r.json()).then(d=>{
-  (d.rows || []).forEach(r => { ROWS[r.problem] = r; });
-  const conds = d.summary.conditions || [];
-  const thm = conds.filter(c => c.tier==="theorem");
-  const hyp = conds.filter(c => c.tier==="hypothesis");
-  const comp = conds.filter(c => c.tier==="compiler");
+fetchJSON("data/summary.json").then(d => {
+  const S = d.summary;
+  WIKI = S.wiki_by_problem || {};
+  const conds = S.conditions || [];
+  const thm = conds.filter(c => c.tier === "theorem");
+  const hyp = conds.filter(c => c.tier === "hypothesis");
+  const comp = conds.filter(c => c.tier === "compiler");
   renderMap(thm);
   renderList(document.getElementById("theorems"), thm);
   renderList(document.getElementById("hypotheses"), hyp);
   renderList(document.getElementById("compiler"), comp);
-  const shared = thm.filter(c => c.leverage>=2).length;
+  const shared = thm.filter(c => c.leverage >= 2).length;
   document.getElementById("thm-count").textContent =
     `${thm.length} inputs · ${shared} shared across problems`;
   document.getElementById("hyp-count").textContent = `${hyp.length}`;
   document.getElementById("comp-count").textContent = `${comp.length}`;
   document.getElementById("foot").innerHTML =
-    `Every edge is declared by the proof itself — an axiom in its <code>#print axioms</code>, `
+    `Every edge is declared by the proof itself: an axiom in its <code>#print axioms</code>, `
     + `or a hypothesis in its signature. Generated ${esc(d.generated_at)} · `
-    + `<a href="verdicts.json">verdicts.json</a> · <a href="index.html">overview</a>`;
+    + `<a href="verdicts.json">verdicts.json</a> · <a href="index.html">audit</a>`;
 });
 </script>
 </body>

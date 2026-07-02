@@ -1238,14 +1238,93 @@ def render_verdicts_feed(payload: dict) -> dict:
     }
 
 
+#: The slim per-row projection the dashboard table needs. Everything else
+#: (proof links, notes, full hypothesis types, provenance) lives in the
+#: per-problem shard. `named` carries display names only: the full
+#: "binder : Type" strings are most of verdicts.json's bulk. Empty and
+#: null fields are omitted per row, and erdos_url is derived client-side,
+#: so a row with no audit data is just its problem number and bucket.
+TABLE_FIELDS = (
+    "problem", "fc_url", "bucket", "machine_verdict",
+    "named", "axioms", "signed_fidelity_verdict", "signed_by",
+    "wiki_outcome", "wiki_ai_systems", "gpt_erdos", "discrepancy",
+)
+
+
+def _table_row(r: dict) -> dict:
+    row = dict(r,
+               named=[a.split(" : ")[-1] for a in r["named_assumptions"]],
+               axioms=r["non_kernel_axioms"])
+    return {k: row[k] for k in TABLE_FIELDS if row.get(k) not in (None, [], False, "")}
+
+
+def render_site_data(feed: dict, root: Path) -> None:
+    """Pre-split site feeds so no page needs the full verdicts.json.
+
+    Additive only: verdicts.json stays the public contract, byte-for-byte.
+    Shards omit generated_at (it lives in summary.json) and are written
+    compact with sorted keys, so unchanged content produces no diff in the
+    daily refresh commit.
+    """
+    data = root / "data"
+    problems_dir = data / "problems"
+    problems_dir.mkdir(parents=True, exist_ok=True)
+    rows = feed["rows"]
+
+    def dumps(obj: object) -> str:
+        return json.dumps(obj, sort_keys=True, separators=(",", ":")) + "\n"
+
+    summary = dict(feed["summary"])
+    summary["funnel"] = {
+        "problems": len(rows),
+        "hosted_proof": sum(1 for r in rows if r["bucket"] != "no-proof"),
+        "audited": sum(1 for r in rows if r["machine_verdict"] is not None),
+        "conditional": sum(1 for r in rows if r["machine_verdict"] == "conditional"),
+        "axiom_clean_but_conditional": len(summary["axiom_clean_but_conditional"]),
+        "wiki": summary["wiki_problems"],
+        "discrepancies": len(summary["discrepancies"]),
+    }
+    summary["discrepancy_rows"] = [
+        {"problem": r["problem"], "wiki_outcome": r["wiki_outcome"],
+         "named_assumptions": r["named_assumptions"],
+         "non_kernel_axioms": r["non_kernel_axioms"],
+         "axiom_invisible": bool(r["named_assumptions"] and not r["non_kernel_axioms"])}
+        for r in rows if r["discrepancy"]
+    ]
+    summary["wiki_by_problem"] = {
+        str(r["problem"]): r["wiki_outcome"]
+        for r in rows if r["wiki_outcome"] is not None
+    }
+    (data / "summary.json").write_text(dumps({
+        "schema": feed["schema"],
+        "generated_at": feed["generated_at"],
+        "summary": summary,
+    }))
+
+    (data / "table.json").write_text(dumps({
+        "schema": feed["schema"],
+        "rows": [_table_row(r) for r in rows],
+    }))
+
+    live = set()
+    for r in rows:
+        name = f"{r['problem']}.json"
+        live.add(name)
+        (problems_dir / name).write_text(dumps(r))
+    for stale in problems_dir.glob("*.json"):
+        if stale.name not in live:
+            stale.unlink()
+
+
 def write_outputs(payload: dict, root: str | Path = ".") -> None:
     root = Path(root)
     root.mkdir(parents=True, exist_ok=True)
     (root / "STATUS.md").write_text(render_status_md(payload))
     (root / "NEXT_BATCH.md").write_text(render_next_batch_md(payload))
     (root / "status.json").write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
-    (root / "verdicts.json").write_text(
-        json.dumps(render_verdicts_feed(payload), indent=2, sort_keys=True) + "\n")
+    feed = render_verdicts_feed(payload)
+    (root / "verdicts.json").write_text(json.dumps(feed, indent=2, sort_keys=True) + "\n")
+    render_site_data(feed, root)
 
 
 def load_live_status(overrides_path: str | Path = "overrides.yaml") -> dict:

@@ -1,0 +1,234 @@
+/* =========================================================================
+   Erdős Frontier · design tokens
+   Ported subset of the Constellate/Vela design system
+   (vela: vendor/vela/web/styles/tokens.css). Same names, same values,
+   plus the Observatory-night dark theme this static site needs.
+
+   Doctrine: cream paper, Vela-midnight ink, one gold accent per fold
+   (human-signed acts only), editorial state materials — never
+   traffic lights. The page is the artifact: it should print well.
+   ========================================================================= */
+
+:root {
+  color-scheme: light dark;
+
+  /* ── Surfaces ── cream paper ─────────────────────────────────────── */
+  --paper-0:    oklch(96.6% 0.012 88);   /* page ground */
+  --paper-1:    oklch(98.0% 0.013 88);   /* raised — panels */
+  --paper-2:    oklch(91.8% 0.024 78);   /* sunken — hover, wells */
+  --paper-edge: oklch(85.6% 0.020 78);   /* default border */
+
+  /* ── Ink ── Vela midnight ────────────────────────────────────────── */
+  --ink-0: oklch(20.0% 0.026 252);       /* headlines */
+  --ink-1: oklch(24.4% 0.030 252);       /* body */
+  --ink-2: oklch(34.6% 0.040 250);       /* secondary */
+  --ink-3: oklch(50.6% 0.030 250);       /* tertiary, captions */
+  --ink-4: oklch(62.6% 0.026 250);       /* faintest */
+
+  /* ── Hairlines ── ink-with-alpha, never grey ─────────────────────── */
+  --rule-1: color-mix(in oklch, var(--ink-1) 6%, transparent);
+  --rule-2: color-mix(in oklch, var(--ink-1) 13%, transparent);
+  --rule-3: color-mix(in oklch, var(--ink-1) 22%, transparent);
+
+  /* ── Signature — luminous gold (signed, human-key acts only) ─────── */
+  --gold:       oklch(76.4% 0.156 84);
+  --gold-ink:   oklch(50.0% 0.142 76);   /* AA text on paper-0 */
+  --gold-soft:  color-mix(in oklch, var(--gold) 32%, transparent);
+  --gold-glow:  color-mix(in oklch, var(--gold) 20%, transparent);
+  --focus-ring: oklch(76.6% 0.144 78);
+
+  /* ── Editorial state materials — never traffic-light ─────────────── */
+  --moss:     oklch(48.4% 0.064 138);    /* verified, unconditional */
+  --brass:    oklch(50.6% 0.116 78);     /* conditional, contested, recorded */
+  --cinnabar: oklch(50.4% 0.146 30);     /* contradiction, unfaithful */
+  --winter:   oklch(60.0% 0.045 232);    /* inferred, incomplete, unreviewed */
+  --stone:    oklch(55.0% 0.015 250);    /* declared, inactive, not audited */
+  --moss-soft:     color-mix(in oklch, var(--moss) 14%, transparent);
+  --brass-soft:    color-mix(in oklch, var(--brass) 14%, transparent);
+  --cinnabar-soft: color-mix(in oklch, var(--cinnabar) 9%, transparent);
+  --winter-soft:   color-mix(in oklch, var(--winter) 14%, transparent);
+  --stone-soft:    color-mix(in oklch, var(--stone) 12%, transparent);
+
+  /* ── Type ─────────────────────────────────────────────────────────── */
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+
+  --text-h1:     28px;
+  --text-h2:     22px;
+  --text-h3:     18px;
+  --text-lede:   19px;
+  --text-body:   16.5px;
+  --text-small:  14.5px;
+  --text-meta:   12px;
+  --text-kicker: 10.5px;
+
+  --leading-tight: 1.08;
+  --leading-snug:  1.30;
+  --leading-body:  1.55;
+  --leading-read:  1.74;
+  --leading-ui:    1.45;
+
+  --track-mono-label: 0.06em;
+  --track-eyebrow:    0.18em;
+  --track-label:      0.08em;
+
+  /* ── Space — 8-step ladder ────────────────────────────────────────── */
+  --s-0: 4px;
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 40px;
+  --s-5: 72px;
+  --s-6: 120px;
+  --s-7: 200px;
+
+  /* ── Layout ───────────────────────────────────────────────────────── */
+  --measure:      41.5rem;   /* prose column */
+  --measure-wide: 52rem;     /* record column, figures */
+  --measure-page: 1180px;    /* board/instrument pages */
+  --container-px: clamp(20px, 4vw, 48px);
+
+  /* ── Radii ────────────────────────────────────────────────────────── */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* ── Elevation — paper stack ─────────────────────────────────────── */
+  --lift-1: 0 1px 0 var(--rule-2);
+  --lift-2: 0 2px 8px color-mix(in oklch, var(--ink-1) 6%, transparent),
+            0 0 0 1px var(--rule-2);
+
+  /* ── Motion — the chord ──────────────────────────────────────────── */
+  --dur-fast: 180ms;
+  --dur-mid:  360ms;
+  --dur-slow: 1200ms;
+  --ease-out:   cubic-bezier(0.20, 0, 0.13, 1);
+  --ease-trace: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ── Observatory night — deep prussian indigo; gold stays the one warm
+     light. Every property above that carries color is redefined here. ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-0:    oklch(17.5% 0.035 258);
+    --paper-1:    oklch(21.0% 0.040 258);
+    --paper-2:    oklch(14.5% 0.030 258);
+    --paper-edge: oklch(32.0% 0.035 258);
+
+    --ink-0: oklch(95.0% 0.010 250);
+    --ink-1: oklch(90.0% 0.012 250);
+    --ink-2: oklch(78.0% 0.016 250);
+    --ink-3: oklch(64.0% 0.020 250);
+    --ink-4: oklch(52.0% 0.022 252);
+
+    --rule-1: color-mix(in oklch, var(--ink-1) 8%, transparent);
+    --rule-2: color-mix(in oklch, var(--ink-1) 16%, transparent);
+    --rule-3: color-mix(in oklch, var(--ink-1) 26%, transparent);
+
+    --gold:       oklch(80.0% 0.130 86);   /* lantern */
+    --gold-ink:   oklch(80.0% 0.110 84);
+    --gold-soft:  color-mix(in oklch, var(--gold) 30%, transparent);
+    --gold-glow:  color-mix(in oklch, var(--gold) 16%, transparent);
+    --focus-ring: oklch(80.0% 0.120 82);
+
+    --moss:     oklch(72.0% 0.075 140);
+    --brass:    oklch(74.0% 0.105 80);
+    --cinnabar: oklch(70.0% 0.130 32);
+    --winter:   oklch(72.0% 0.050 232);
+    --stone:    oklch(62.0% 0.015 250);
+    --moss-soft:     color-mix(in oklch, var(--moss) 16%, transparent);
+    --brass-soft:    color-mix(in oklch, var(--brass) 16%, transparent);
+    --cinnabar-soft: color-mix(in oklch, var(--cinnabar) 12%, transparent);
+    --winter-soft:   color-mix(in oklch, var(--winter) 16%, transparent);
+    --stone-soft:    color-mix(in oklch, var(--stone) 14%, transparent);
+
+    --lift-1: 0 1px 0 var(--rule-2);
+    --lift-2: 0 2px 8px oklch(10% 0.02 258 / 0.5), 0 0 0 1px var(--rule-2);
+  }
+}
+
+/* =========================================================================
+   Fonts — self-hosted latin subsets (OFL; see fonts/LICENSE.md)
+   ========================================================================= */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/inter-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/source-serif-4-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/source-serif-4-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+}
+
+/* =========================================================================
+   Motion primitives — the only four. Reduced motion kills the chord.
+   ========================================================================= */
+
+.motion-fade-in-up {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-mid) var(--ease-out),
+              transform var(--dur-mid) var(--ease-out);
+}
+.motion-fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+
+.motion-gold-trace {
+  stroke-dasharray: var(--trace-length, 700);
+  stroke-dashoffset: var(--trace-length, 700);
+  transition: stroke-dashoffset var(--dur-slow) var(--ease-trace),
+              opacity var(--dur-mid) var(--ease-out);
+}
+.motion-gold-trace.is-traced { stroke-dashoffset: 0; }
+
+.motion-hover-lift {
+  transition: transform var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+}
+.motion-hover-lift:hover,
+.motion-hover-lift:focus-visible { transform: translateY(-1px); }
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-fade-in-up { opacity: 1 !important; transform: none !important; }
+  .motion-gold-trace { stroke-dashoffset: 0 !important; }
+}

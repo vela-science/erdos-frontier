@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method · Erdős formal-proof fidelity audit</title>
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* ── Reading-page specifics ── */
+  .read { font-family: var(--font-display); font-size: 17px; line-height: var(--leading-read); color: var(--ink-1); }
+  .read p { margin: 0 0 1.1em; text-wrap: pretty; }
+  .read b { font-weight: 600; color: var(--ink-0); }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: var(--text-h2);
+    color: var(--ink-0); margin: var(--s-5) 0 var(--s-2); }
+  h2:first-of-type { margin-top: var(--s-4); }
+  .tiers { list-style: none; margin: 0 0 var(--s-2); padding: 0; }
+  .tiers li { display: flex; gap: var(--s-2); align-items: baseline; padding: 0.65rem 0;
+    border-bottom: 1px solid var(--rule-1); font-family: var(--font-sans); font-size: var(--text-small); }
+  .tiers .chip { flex-shrink: 0; min-width: 7.5rem; justify-content: center; }
+  .tiers .d { color: var(--ink-2); }
+  .gold-note { border-top: 1px solid var(--rule-2); padding-top: var(--s-2); margin-top: var(--s-2);
+    font-family: var(--font-sans); font-size: var(--text-small); color: var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="page page--prose">
+  <nav class="site-nav" aria-label="Site">
+    <a href="index.html">Audit</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="map.html">Map</a>
+    <a href="method.html" aria-current="page">Method</a>
+    <a class="nav-mark" href="https://hub.constellate.science/entries/vfr_0a25edabc16db143">constellate · vfr_0a25edab</a>
+  </nav>
+
+  <header class="hero">
+    <p class="kicker">How the audit works</p>
+    <h1>Method</h1>
+    <p class="lede">Two axes, four trust tiers, and a signed event log you can replay
+      without trusting this page.</p>
+  </header>
+
+  <div class="read">
+    <h2>The two axes</h2>
+    <p><b>Axis 1, the proof.</b> For each hosted Lean proof, a metaprogram loads the boxed-problem
+      theorem in the proof’s own built environment and reports its axiom set
+      (<code>#print axioms</code>), whether it is <code>sorry</code>-free, and the non-instance Prop
+      hypotheses it takes as parameters. The last is the case an axiom check cannot see: a proof can
+      be kernel-clean yet prove the goal only under a famous theorem passed as a hypothesis. Verdicts
+      are mechanical and reproducible; no human or model is in this path.</p>
+    <p><b>Axis 2, the statement.</b> Whether the formal statement faithfully states the boxed problem
+      is a human judgment, not a machine one. Those verdicts are signed by a named reviewer with a
+      registered key on the Vela frontier, and shown in the statement column. A problem with no
+      signed verdict is left blank rather than assumed faithful.</p>
+
+    <h2>The four trust tiers</h2>
+  </div>
+
+  <ul class="tiers">
+    <li><span class="chip chip--signed">signed</span>
+      <span class="d">A named reviewer’s key. Statement-fidelity verdicts; the only tier that
+        carries human judgment, and the only place this site uses gold.</span></li>
+    <li><span class="chip chip--ok">machine</span>
+      <span class="d">The kernel plus the axiom-and-hypothesis audit. Deterministic; anyone can
+        recompute it.</span></li>
+    <li><span class="chip chip--recorded">recorded</span>
+      <span class="d">The frozen AI-contributions wiki (2026-06-30). What was claimed, preserved
+        as claimed; recorded is not verified.</span></li>
+    <li><span class="chip chip--stale">declared</span>
+      <span class="d">A source’s own manifest: which repo hosts which proof, which statement links
+        where. Provenance, not a verdict.</span></li>
+  </ul>
+  <p class="gold-note">Where a recorded claim and the machine tier disagree, the site marks the
+    contradiction in <span style="color:var(--cinnabar)">cinnabar</span>: recorded as solved, proof
+    is conditional. Nine problems carry that mark today.</p>
+
+  <div class="read">
+    <h2>What it cannot do</h2>
+    <p>When a proof file boxes more than one theorem, which declaration answers the problem can be a
+      judgment call; the audit reads the problem-numbered theorem and records the declaration it
+      used. It does not check that the statement is the right problem; that is Axis 2. It reports
+      the conditionality of the proof available to it, which may differ from an informal argument
+      recorded elsewhere.</p>
+
+    <h2>Verify it yourself</h2>
+    <p>The dashboard is a materialized view. The authority is a signed, replayable event log in the
+      repository; you do not have to trust this page, the wiki, or us.</p>
+  </div>
+
+  <pre class="repro">git clone https://github.com/williamjblair/erdos-frontier
+cd erdos-frontier
+vela check . --strict     # replay the signed frontier; any tampered event fails
+vela frontier next .      # what is open to work on right now</pre>
+
+  <div class="read">
+    <p>The same state, three more doors: the
+      <a href="https://hub.constellate.science/entries/vfr_0a25edabc16db143">hub index entry</a>,
+      re-derived from this repo by strict replay on every push; the
+      <a href="https://hub.constellate.science/entries/vfr_0a25edabc16db143/reproduce">reproduce walkthrough</a>;
+      and for agents, <code>https://hub.constellate.science/mcp</code> (MCP, streamable HTTP,
+      read-only, no clone needed).</p>
+
+    <h2>Cite the audit</h2>
+  </div>
+
+  <pre class="repro" id="citation">loading…</pre>
+  <div class="read">
+    <p>Pin by commit for immutable citation; the event-log hash binds the signed verdicts you cite.
+      Machine-readable feeds: <a href="verdicts.json">verdicts.json</a> (one row per problem),
+      <a href="graph.json">graph.json</a> (the typed corpus graph),
+      <a href="STATUS.md">STATUS.md</a> (maintainer view).</p>
+  </div>
+
+  <p class="site-foot" id="foot" data-url="https://williamjblair.github.io/erdos-frontier/method.html">
+    Part of the <a href="https://constellate.science">Constellate</a> ecosystem: the frontier is a
+    Vela repository, and this site is one projection of its signed state.
+    <a href="https://github.com/williamjblair/erdos-frontier">Source</a> ·
+    <a href="index.html">audit</a></p>
+</div>
+
+<script src="assets/site.js"></script>
+<script>
+fetchJSON("data/summary.json").then(d => {
+  const when = (d.generated_at || "").slice(0, 10);
+  const year = when.slice(0, 4) || new Date().getFullYear();
+  document.getElementById("citation").textContent =
+`@misc{erdos_fidelity_audit,
+  title  = {Erdős formal-proof fidelity audit},
+  author = {Blair, William},
+  year   = {${year}},
+  url    = {https://williamjblair.github.io/erdos-frontier/},
+  note   = {Signed frontier vfr_0a25edabc16db143; audit of ${when};
+            verify: git clone github.com/williamjblair/erdos-frontier
+            && vela check . --strict}
+}`;
+});
+</script>
+</body>
+</html>

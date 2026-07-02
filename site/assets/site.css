@@ -1,0 +1,333 @@
+/* =========================================================================
+   Erdős Frontier · shared components
+   Requires tokens.css first.
+
+   Canonical nav block — keep byte-identical on every page, only
+   aria-current moves:
+
+   <nav class="site-nav" aria-label="Site">
+     <a href="index.html">Audit</a>
+     <a href="conditions.html">Conditions</a>
+     <a href="map.html">Map</a>
+     <a href="method.html">Method</a>
+   </nav>
+   ========================================================================= */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper-0);
+  color: var(--ink-1);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Page containers ────────────────────────────────────────────────── */
+.page {
+  max-width: var(--measure-page);
+  margin: 0 auto;
+  padding: var(--s-4) var(--container-px) var(--s-6);
+}
+.page--record { max-width: var(--measure-wide); }
+.page--prose  { max-width: var(--measure); }
+
+/* Prose blocks inside wide pages stay readable */
+.prose { max-width: var(--measure-wide); }
+
+/* ── Type roles ─────────────────────────────────────────────────────── */
+h1, .t-h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(26px, 3.4vw, 34px);
+  line-height: var(--leading-tight);
+  letter-spacing: 0;
+  color: var(--ink-0);
+  text-wrap: balance;
+  margin: 0 0 var(--s-1);
+}
+h2, .t-h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-h2);
+  line-height: var(--leading-snug);
+  color: var(--ink-0);
+  margin: 0 0 var(--s-1);
+}
+.t-h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-h3);
+  color: var(--ink-0);
+}
+.kicker {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-kicker);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--gold) 70%, var(--ink-2));
+  margin: 0 0 var(--s-1);
+}
+.lede {
+  font-size: var(--text-lede);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 60ch;
+  text-wrap: pretty;
+  margin: 0 0 var(--s-2);
+}
+.t-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.t-caption { font-size: 12px; color: var(--ink-3); line-height: var(--leading-ui); }
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  font-variant-numeric: tabular-nums;
+}
+
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule-3); text-underline-offset: 2px; }
+a:hover { text-decoration-color: var(--gold-ink); }
+a.quiet-link {
+  color: var(--ink-2);
+  text-decoration-color: var(--gold-soft);
+}
+a.quiet-link:hover { color: var(--gold-ink); text-decoration-color: var(--gold); }
+
+::selection { background: var(--gold-soft); }
+
+/* ── Navigation ─────────────────────────────────────────────────────── */
+.site-nav {
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+  font-size: var(--text-small);
+  margin-bottom: var(--s-5);
+}
+.site-nav a {
+  color: var(--ink-3);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.site-nav a:hover { color: var(--ink-1); border-bottom-color: var(--rule-3); }
+.site-nav a[aria-current="page"] {
+  color: var(--ink-0);
+  border-bottom-color: var(--gold);
+}
+.site-nav .nav-mark {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-kicker);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-4);
+  text-decoration: none;
+  border: 0;
+}
+.site-nav .nav-mark:hover { color: var(--gold-ink); }
+
+/* ── Hairline rules ─────────────────────────────────────────────────── */
+.rule { border: 0; height: 1px; background: var(--rule-2); margin: 0; }
+.rule--heavy { background: var(--rule-3); }
+
+/* ── State chips — engraved, worded, never color-only ───────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  letter-spacing: var(--track-mono-label);
+  line-height: 1;
+  padding: 0.38em 0.7em;
+  border: 1px solid var(--rule-3);
+  border-radius: var(--radius-full, 999px);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.chip--ok        { color: var(--moss);     border-color: color-mix(in oklch, var(--moss) 45%, transparent); background: var(--moss-soft); }
+.chip--contested { color: var(--brass);    border-color: color-mix(in oklch, var(--brass) 45%, transparent); background: var(--brass-soft); }
+.chip--lost      { color: var(--cinnabar); border-color: color-mix(in oklch, var(--cinnabar) 45%, transparent); background: var(--cinnabar-soft); }
+.chip--inferred  { color: var(--winter);   border-color: color-mix(in oklch, var(--winter) 50%, transparent); background: var(--winter-soft); }
+.chip--stale     { color: var(--stone);    border-color: var(--rule-2); background: none; }
+.chip--recorded  { color: var(--stone);    border-color: color-mix(in oklch, var(--brass) 40%, transparent); background: none; }
+.chip--signed {
+  color: var(--gold-ink);
+  border-color: color-mix(in oklch, var(--gold) 60%, transparent);
+  background: var(--gold-glow);
+}
+
+/* ── Verdict words (inline, in table cells) ─────────────────────────── */
+.v { font-family: var(--font-mono); font-size: 13px; letter-spacing: var(--track-mono-label); }
+.v-uncond     { color: var(--moss); }
+.v-cond       { color: var(--brass); }
+.v-incomplete { color: var(--winter); }
+.v-lost       { color: var(--cinnabar); }
+.v-signed     { color: var(--gold-ink); }
+.v-none       { color: var(--ink-4); }
+
+/* ── Facet chips (filters) — real buttons ───────────────────────────── */
+.facets { display: flex; flex-wrap: wrap; gap: var(--s-1); align-items: center; }
+.facet {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  letter-spacing: var(--track-mono-label);
+  padding: 0.42em 0.75em;
+  cursor: pointer;
+  color: var(--ink-3);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full, 999px);
+}
+.facet:hover { color: var(--ink-1); border-color: var(--rule-2); }
+.facet[aria-pressed="true"] {
+  color: var(--ink-0);
+  border-color: var(--rule-3);
+  background: var(--paper-2);
+}
+.facet--disc[aria-pressed="true"] {
+  color: var(--cinnabar);
+  border-color: color-mix(in oklch, var(--cinnabar) 45%, transparent);
+  background: var(--cinnabar-soft);
+}
+
+/* ── Ledger tables ──────────────────────────────────────────────────── */
+table.ledger { border-collapse: collapse; width: 100%; font-size: var(--text-small); }
+.ledger caption { text-align: left; }
+.ledger thead th {
+  text-align: left;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: var(--s-1) var(--s-1) var(--s-1) 0;
+  border-bottom: 1px solid var(--rule-3);
+}
+.ledger td {
+  padding: 0.55rem var(--s-1) 0.55rem 0;
+  border-bottom: 1px solid var(--rule-1);
+  vertical-align: top;
+}
+.ledger .num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ── Funnel — instrument ruler ──────────────────────────────────────── */
+.funnel {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--s-2);
+  margin: 0 0 var(--s-5);
+  padding: var(--s-3) 0 var(--s-2);
+  border-top: 1px solid var(--rule-3);
+  border-bottom: 1px solid var(--rule-1);
+}
+.funnel li { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.funnel .n {
+  font-family: var(--font-mono);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  color: var(--ink-0);
+  line-height: 1;
+}
+.funnel li.flag .n { color: var(--cinnabar); }
+.funnel .l { font-size: 12px; color: var(--ink-3); line-height: 1.35; text-wrap: balance; }
+.funnel li { border-top: 2px solid var(--rule-2); padding-top: var(--s-1); }
+.funnel li.flag { border-top-color: color-mix(in oklch, var(--cinnabar) 55%, transparent); }
+
+/* ── Notary / reproduce blocks ──────────────────────────────────────── */
+.notary {
+  margin-top: var(--s-5);
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--rule-2);
+  font-size: var(--text-small);
+  color: var(--ink-3);
+}
+.repro {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  background: var(--paper-2);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--radius-sm);
+  padding: var(--s-2) var(--s-2);
+  overflow-x: auto;
+  margin: 0 0 var(--s-1);
+  white-space: pre;
+}
+
+/* ── Skeleton loading ───────────────────────────────────────────────── */
+.skeleton-row { height: 2.2rem; border-bottom: 1px solid var(--rule-1); position: relative; overflow: hidden; }
+.skeleton-row::after {
+  content: "";
+  position: absolute; inset: 0.6rem 40% 0.6rem 0;
+  background: var(--rule-1);
+  border-radius: var(--radius-xs);
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────── */
+.site-foot {
+  margin-top: var(--s-5);
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--rule-2);
+  color: var(--ink-3);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ── Detail definition lists (expanded rows, record fields) ─────────── */
+.fields { display: grid; grid-template-columns: 9rem 1fr; gap: 0.4rem var(--s-2); margin: 0; }
+.fields dt {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 0.15rem;
+}
+.fields dd { margin: 0; font-size: var(--text-small); }
+
+/* ── Mobile ─────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .page { padding: var(--s-3) var(--container-px) var(--s-5); }
+  .site-nav { margin-bottom: var(--s-4); gap: var(--s-2); flex-wrap: wrap; }
+  .funnel { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); }
+  .fields { grid-template-columns: 1fr; gap: 0.15rem; }
+  .fields dt { margin-top: var(--s-1); }
+}
+
+/* ── Print — the page is the artifact ───────────────────────────────── */
+@media print {
+  :root {
+    --paper-0: #fff; --paper-1: #fff; --paper-2: #f4f4f4; --paper-edge: #bbb;
+    --ink-0: #000; --ink-1: #111; --ink-2: #222; --ink-3: #444; --ink-4: #666;
+  }
+  .site-nav, .facets, .controls, .skeleton-row, .no-print { display: none !important; }
+  body { font-size: 11pt; }
+  a { text-decoration: none; color: inherit; }
+  .ledger td, .ledger th { border-color: #ccc; }
+  .chip { border-color: #999; background: none !important; }
+  tr, .chip, .repro { break-inside: avoid; }
+  .site-foot::after { content: " · " attr(data-url); }
+}

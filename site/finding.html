@@ -4,196 +4,214 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Finding · Erdős formal-proof fidelity audit</title>
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  :root{
-    color-scheme: light dark;
-    --paper:oklch(97.2% 0.008 248); --ink:oklch(25% 0.03 262);
-    --faint:oklch(48% 0.022 258); --hair:oklch(88% 0.012 250);
-    --accent:oklch(50% 0.13 35); --accent-bg:oklch(50% 0.13 35 / 0.07);
-    --ok:oklch(48% 0.08 145); --warn:oklch(55% 0.1 85); --gold:oklch(62% 0.12 86);
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --paper:oklch(21% 0.022 262); --ink:oklch(92% 0.012 250);
-           --faint:oklch(66% 0.016 255); --hair:oklch(33% 0.02 258);
-           --accent:oklch(70% 0.12 35); --accent-bg:oklch(70% 0.12 35 / 0.1);
-           --ok:oklch(72% 0.08 145); --warn:oklch(74% 0.09 85); --gold:oklch(74% 0.11 86); }
-  }
-  *{ box-sizing:border-box; }
-  body{ margin:0; background:var(--paper); color:var(--ink);
-    font:17px/1.6 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    -webkit-font-smoothing:antialiased; }
-  .wrap{ max-width:52rem; margin:0 auto; padding:4.5rem 1.6rem 6rem; }
-  code,.mono{ font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:.86em; }
-  a{ color:inherit; text-decoration-color:var(--hair); text-underline-offset:2px; }
-  a:hover{ text-decoration-color:var(--accent); }
-  .nav{ font-size:.85rem; color:var(--faint); margin-bottom:2.4rem; }
-  .nav a{ margin-right:1.1rem; }
-  h1{ font-size:2rem; font-weight:600; letter-spacing:-.01em; margin:0 0 .2rem; }
-  .sub{ color:var(--faint); font-size:1rem; margin:0 0 .8rem; }
-  .links{ font-size:.9rem; margin:0 0 2.2rem; }
-  .links a{ margin-right:1.1rem; white-space:nowrap; }
+  /* ── Record-page specifics ── */
+  .crumb { font-family: var(--font-mono); font-size: var(--text-meta); color: var(--ink-4); margin: 0 0 var(--s-2); }
+  .crumb a { text-decoration: none; color: inherit; }
+  .crumb a:hover { color: var(--ink-1); }
+  .idmeta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); margin: 0 0 0.4rem; overflow-wrap: anywhere; }
+  .decision { font-family: var(--font-display); font-style: italic; color: var(--ink-2); font-size: var(--text-lede); margin: 0 0 var(--s-3); }
 
-  .ribbon{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--hair);
-    border:1px solid var(--hair); border-radius:5px; overflow:hidden; margin:0 0 2.4rem; }
-  .cell{ background:var(--paper); padding:.9rem 1.1rem; }
-  .cell .k{ font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--faint); }
-  .cell .v{ font-size:1.02rem; margin-top:.15rem; }
-  .cell .d{ font-size:.85rem; color:var(--faint); margin-top:.1rem; }
-  .cell.wide{ grid-column:1 / -1; }
-  .v .cond, .v .axiom{ font-family:ui-monospace,monospace; font-size:.9em; color:var(--accent); }
-  .tag{ font-family:ui-monospace,monospace; font-size:.78rem; padding:.05rem .45rem; border-radius:3px; border:1px solid var(--hair); }
-  .tag.cond{ color:var(--accent); border-color:var(--accent); }
-  .tag.uncond{ color:var(--ok); border-color:var(--ok); }
-  .tag.warn{ color:var(--warn); border-color:var(--warn); }
-  .tag.none{ color:var(--faint); }
-  .repro{ font-family:ui-monospace,monospace; font-size:.8rem; background:var(--accent-bg);
-    padding:.5rem .7rem; border-radius:4px; margin-top:.35rem; white-space:pre-wrap; word-break:break-all; }
+  .ribbon { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); margin: 0 0 var(--s-4); }
+  .verdict { border-top: 1px solid var(--rule-3); padding-top: var(--s-2); }
+  .verdict .d { font-size: var(--text-small); color: var(--ink-3); margin-top: var(--s-1); }
+  .verdict .d code { font-size: 12px; }
+  .prov { font-size: 13px; color: var(--ink-3); margin: 0 0 var(--s-5); }
+  .prov .chip { margin-left: 0.5rem; }
 
-  h2{ font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--faint);
-    font-weight:600; margin:2.4rem 0 .7rem; padding-bottom:.35rem; border-bottom:1px solid var(--hair); }
-  .chain{ list-style:none; margin:0; padding:0; }
-  .chain li{ position:relative; padding:0 0 1rem 1.3rem; border-left:1px solid var(--hair); margin-left:.3rem; }
-  .chain li::before{ content:""; position:absolute; left:-4px; top:.5rem; width:7px; height:7px;
-    border-radius:50%; background:var(--faint); }
-  .chain li.on::before{ background:var(--accent); }
-  .chain .step{ font-size:.7rem; text-transform:uppercase; letter-spacing:.04em; color:var(--faint); }
-  .chain .body{ margin-top:.05rem; }
-  .chain .body .mono{ word-break:break-all; }
-  .neighbor{ font-size:.95rem; margin:.2rem 0 1rem; }
-  .neighbor .cn{ font-family:ui-monospace,monospace; color:var(--accent); }
-  .neighbor .sib a{ margin-right:.4rem; font-family:ui-monospace,monospace; font-size:.85rem; }
-  .claim{ font-size:.95rem; margin:.15rem 0; }
-  .claim .ai{ color:var(--faint); font-size:.85rem; }
-  .muted{ color:var(--faint); }
-  .foot{ margin-top:3rem; padding-top:1.4rem; border-top:1px solid var(--hair); color:var(--faint); font-size:.85rem; }
-  @media (max-width:640px){ .wrap{ padding:2.6rem 1.1rem 4rem; } .ribbon{ grid-template-columns:1fr; } .cell.wide{ grid-column:auto; } }
+  h2 { font-family: var(--font-sans); font-weight: 600; font-size: 11px;
+    letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-3);
+    margin: var(--s-4) 0 var(--s-2); padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule-2); }
+
+  .chain { list-style: none; margin: 0; padding: 0; }
+  .chain li { position: relative; padding: 0 0 var(--s-2) var(--s-3); }
+  .chain li::before { content: ""; position: absolute; left: 4px; top: 0.62rem; bottom: -0.3rem; width: 1px; background: var(--rule-2); }
+  .chain li:last-child::before { bottom: auto; height: 0; }
+  .chain li::after { content: ""; position: absolute; left: 0; top: 0.42rem; width: 9px; height: 9px;
+    border-radius: 50%; background: var(--paper-0); border: 1.5px solid var(--stone); }
+  .chain li.tick-moss::after { border-color: var(--moss); background: var(--moss-soft); }
+  .chain li.tick-brass::after { border-color: var(--brass); background: var(--brass-soft); }
+  .chain li.tick-gold::after { border-color: var(--gold); background: var(--gold-glow); }
+  .chain li.tick-winter::after { border-color: var(--winter); background: var(--winter-soft); }
+  .chain .step { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--track-label); color: var(--ink-4); }
+  .chain .body { margin-top: 0.15rem; font-size: var(--text-small); overflow-wrap: anywhere; }
+  .chain .cond-list { font-family: var(--font-mono); font-size: 12.5px; color: var(--brass); }
+  .seam { display: block; margin-top: 0.35rem; }
+
+  .neighbor { font-size: var(--text-small); margin: 0.2rem 0 var(--s-2); }
+  .neighbor .cn { font-family: var(--font-mono); font-size: 12.5px; color: var(--brass); }
+  .neighbor .sib a { margin-right: 0.4rem; font-family: var(--font-mono); font-size: 13px; }
+
+  .claim { font-size: var(--text-small); margin: 0.3rem 0; }
+  .claim .src { color: var(--ink-4); font-size: 12.5px; }
+  .muted { color: var(--ink-4); }
+
+  @media (max-width: 720px) {
+    .ribbon { grid-template-columns: 1fr; gap: var(--s-3); }
+  }
 </style>
 </head>
 <body>
-<div class="wrap" id="wrap">
-  <div class="nav"><a href="index.html">← Overview</a><a href="conditions.html">Conditions</a><a href="map.html">Map</a></div>
+<div class="page page--record">
+  <nav class="site-nav" aria-label="Site">
+    <a href="index.html">Audit</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="map.html">Map</a>
+    <a href="method.html">Method</a>
+    <a class="nav-mark" href="https://hub.constellate.science/entries/vfr_0a25edabc16db143">constellate · vfr_0a25edab</a>
+  </nav>
+  <noscript><p>This page needs JavaScript; the same data is in
+    <a href="verdicts.json">verdicts.json</a>.</p></noscript>
   <div id="content"><p class="muted">Loading…</p></div>
 </div>
 
+<script src="assets/site.js"></script>
 <script>
-const COLOR = {green:"🟢", yellow:"🟡", red:"🔴", white:"⚪"};
-const GPT = {
-  new_proof:"new proof", literature:"literature", partial_literature:"partial lit.",
-  typo:"typo", hidden_constraints:"hidden constraints", non_improving:"non-improving",
-  conditional_conjecture:"conditional on conjecture", subtle_error:"subtle error",
-};
-function esc(s){ return String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
-function condName(a){ return a.split(" : ").pop(); }
-
-function proofCell(r){
+function proofVerdict(r){
   const v = r.machine_verdict;
-  if(!v) return {tag:'<span class="tag none">not audited</span>', detail:"No hosted Lean proof was machine-audited."};
-  if(v==="unconditional") return {tag:'<span class="tag uncond">unconditional</span>',
-    detail:"Kernel-clean, with no undischarged hypothesis."};
-  if(v==="incomplete") return {tag:'<span class="tag warn">incomplete</span>', detail:"The proof contains <code>sorry</code>."};
-  // conditional
+  if(!v) return { chip: '<span class="chip chip--stale">not audited</span>',
+    detail: "No hosted Lean proof was machine-audited." };
+  if(v === "unconditional") return { chip: '<span class="chip chip--ok">unconditional</span>',
+    detail: "Kernel-clean, with no undischarged hypothesis." };
+  if(v === "incomplete") return { chip: '<span class="chip chip--inferred">incomplete</span>',
+    detail: "The proof contains <code>sorry</code>." };
   const inv = r.named_assumptions.length && !r.non_kernel_axioms.length;
-  const conds = r.named_assumptions.length
-    ? r.named_assumptions.map(a => `<span class="cond">${esc(condName(a))}</span>`).join(", ")
-    : r.non_kernel_axioms.map(a => `<span class="axiom">${esc(a)}</span>`).join(", ");
+  const conds = (r.named_assumptions.length
+    ? r.named_assumptions.map(a => esc(condName(a)))
+    : r.non_kernel_axioms.map(esc)).map(x => `<span class="cond-list">${x}</span>`).join(", ");
   const how = inv
-    ? "an undischarged hypothesis (invisible to <code>#print axioms</code>)"
+    ? "an undischarged hypothesis, invisible to <code>#print axioms</code>"
     : "a visible axiom in <code>#print axioms</code>";
-  return {tag:'<span class="tag cond">conditional</span>',
-    detail:`Holds only under ${conds} — ${how}.`};
+  return { chip: '<span class="chip chip--contested">conditional</span>',
+    detail: `Holds only under ${conds}: ${how}.` };
 }
-function stmtCell(r){
+function stmtVerdict(r){
   const v = r.signed_fidelity_verdict;
-  if(!v) return {tag:'<span class="tag none">unaudited</span>', detail:"No signed statement-fidelity verdict yet."};
-  const cls = v==="faithful"?"uncond":v==="variant"?"warn":"cond";
-  const by = r.signed_by ? `Signed ${esc(r.signed_by)}.` : "Awaiting a named reviewer.";
-  const note = r.fidelity_note ? " "+esc(r.fidelity_note) : "";
-  return {tag:`<span class="tag ${cls}">${esc(v)}</span>`, detail:by+note};
+  if(!v) return { chip: '<span class="chip chip--stale">unreviewed</span>',
+    detail: "No signed statement-fidelity verdict yet; blank is not assumed faithful." };
+  const cls = v === "faithful" ? "chip--signed" : v === "variant" ? "chip--contested" : "chip--lost";
+  const by = r.signed_by ? `Signed by <span class="mono" style="color:var(--gold-ink)">${esc(r.signed_by)}</span>.` : "Awaiting a named reviewer.";
+  const note = r.fidelity_note ? " " + esc(r.fidelity_note) : "";
+  return { chip: `<span class="chip ${cls}">${esc(v)}</span>`, detail: by + note };
 }
 
-function render(r, conds){
+function render(r, conds, generatedAt){
   const c = document.getElementById("content");
   document.title = `Erdős ${r.problem} · fidelity audit`;
-  const proof = proofCell(r), stmt = stmtCell(r);
-  const fcLink = r.fc_url ? `<a href="${esc(r.fc_url)}">Formal Conjectures</a>` : "";
+  const proof = proofVerdict(r), stmt = stmtVerdict(r);
   const src = r.machine_source ? `audited from <code>${esc(r.machine_source)}</code>` : "no machine source";
-  const srcLabel = {local:"the repo's signed frontier", hub:"the live hub", cache:"an offline snapshot"}[r.fidelity_source] || "an offline snapshot";
-  const fidsrc = r.signed_fidelity_verdict ? ` · fidelity from ${srcLabel}` : "";
+  const srcLabel = { local: "the repo’s signed frontier", hub: "the live hub", cache: "an offline snapshot" }[r.fidelity_source] || "an offline snapshot";
+  const fidsrc = r.signed_fidelity_verdict ? ` · fidelity verdict from ${srcLabel}` : "";
+  const discChip = r.discrepancy ? ` <span class="chip chip--lost">recorded solved · proof conditional</span>` : "";
   const reproCmd = r.machine_source
-    ? `# clone the proof repo, then, in its built .lake:\npython lean/extract_assumptions.py --repo ${esc(r.machine_source)}\n# the boxed theorem's own #print axioms is the ground truth`
+    ? `# clone the proof repo, then, in its built .lake:\npython lean/extract_assumptions.py --repo ${r.machine_source}\n# the boxed theorem's own #print axioms is the ground truth`
     : "No machine-audited proof to reproduce.";
 
-  // proof chain
   const chain = [];
-  chain.push(`<li class="on"><div class="step">Problem</div><div class="body"><a href="${esc(r.erdos_url)}">erdosproblems.com/${r.problem}</a></div></li>`);
-  if(r.fc_url) chain.push(`<li class="on"><div class="step">Formal statement</div><div class="body"><a href="${esc(r.fc_url)}" class="mono">${esc(r.fc_theorem||"Formal Conjectures")}</a></div></li>`);
-  const links = (r.proof_links&&r.proof_links.length) ? r.proof_links : (r.proof_link?[{url:r.proof_link,label:"hosted proof"}]:[]);
-  if(links.length) chain.push(`<li class="${r.machine_verdict?"on":""}"><div class="step">Hosted proof${links.length>1?"s":""}</div><div class="body">`
-    + links.map(p => `<a href="${esc(p.url||p.link)}" class="mono">${esc(p.label||p.source||"proof")}</a>${p.conditional?' <span class="tag cond" style="font-size:.7rem">conditional</span>':""}`).join("<br>")
-    + `</div></li>`);
-  const foot = r.machine_verdict==="conditional"
-    ? (r.named_assumptions.map(condName).concat(r.non_kernel_axioms)).map(x=>`<span class="mono cond" style="color:var(--accent)">${esc(x)}</span>`).join(", ")
-    : (r.machine_verdict==="unconditional" ? "kernel axioms only (propext, Classical.choice, Quot.sound)" : "—");
-  chain.push(`<li class="${r.machine_verdict==="conditional"?"on":""}"><div class="step">Axiom footprint</div><div class="body">${foot}</div></li>`);
-  if(r.signed_fidelity_verdict) chain.push(`<li class="on"><div class="step">Signed statement verdict</div><div class="body">${esc(r.signed_fidelity_verdict)}${r.signed_by?" · "+esc(r.signed_by):""}</div></li>`);
+  chain.push(`<li class="tick-moss"><div class="step">Problem</div><div class="body"><a href="${esc(r.erdos_url)}">erdosproblems.com/${r.problem}</a></div></li>`);
+  if(r.fc_url)
+    chain.push(`<li class="tick-moss"><div class="step">Formal statement</div><div class="body"><a href="${esc(r.fc_url)}" class="mono">${esc(r.fc_theorem || "Formal Conjectures")}</a></div></li>`);
+  const links = (r.proof_links && r.proof_links.length) ? r.proof_links
+    : (r.proof_link ? [{ url: r.proof_link, label: "hosted proof" }] : []);
+  if(links.length)
+    chain.push(`<li class="${r.machine_verdict === "conditional" ? "tick-brass" : r.machine_verdict ? "tick-moss" : ""}">`
+      + `<div class="step">Hosted proof${links.length > 1 ? "s" : ""}</div><div class="body">`
+      + links.map(p => `<a href="${esc(p.url || p.link)}" class="mono">${esc(p.label || p.source || "proof")}</a>`
+        + (p.conditional ? ' <span class="chip chip--contested" style="font-size:10.5px">conditional</span>' : "")).join("<br>")
+      + `</div></li>`);
+  const foot = r.machine_verdict === "conditional"
+    ? `<span class="cond-list">${(r.named_assumptions.map(condName).concat(r.non_kernel_axioms)).map(esc).join(", ")}</span>`
+    : (r.machine_verdict === "unconditional" ? "kernel axioms only (propext, Classical.choice, Quot.sound)" : "—");
+  chain.push(`<li class="${r.machine_verdict === "conditional" ? "tick-brass" : r.machine_verdict === "unconditional" ? "tick-moss" : "tick-winter"}">`
+    + `<div class="step">Axiom footprint</div><div class="body">${foot}</div></li>`);
+  if(r.signed_fidelity_verdict)
+    chain.push(`<li class="tick-gold"><div class="step">Signed statement verdict</div>`
+      + `<div class="body">${esc(r.signed_fidelity_verdict)}${r.signed_by ? ` · <span class="mono" style="color:var(--gold-ink)">${esc(r.signed_by)}</span>` : ""}`
+      + `<svg class="seam" width="140" height="2" aria-hidden="true"><line class="motion-gold-trace" style="--trace-length:140" x1="0" y1="1" x2="140" y2="1" stroke="var(--gold)" stroke-width="1.5"/></svg>`
+      + `</div></li>`);
 
-  // load-bearing neighborhood
   const mine = conds.filter(cd => cd.problems.includes(r.problem));
   const neigh = mine.length ? mine.map(cd => {
-    const sibs = cd.problems.filter(p => p!==r.problem);
-    const also = sibs.length ? ` — also assumed by ${sibs.map(p=>`<a href="finding.html?n=${p}">${p}</a>`).join(" ")}` : " — unique to this proof";
-    return `<div class="neighbor"><span class="cn">${esc(cd.name)}</span>${also} · <a href="conditions.html">map</a></div>`;
-  }).join("") : `<p class="muted">This proof assumes nothing beyond Lean's kernel.</p>`;
+    const sibs = cd.problems.filter(p => p !== r.problem);
+    const also = sibs.length
+      ? ` · also assumed by <span class="sib">${sibs.map(p => `<a href="finding.html?n=${p}">${p}</a>`).join(" ")}</span>`
+      : " · unique to this proof";
+    return `<div class="neighbor"><span class="cn">${esc(cd.name)}</span>${also} · <a href="conditions.html">all conditions</a></div>`;
+  }).join("") : `<p class="muted">This proof assumes nothing beyond Lean’s kernel.</p>`;
 
-  // recorded claims
   let claims = "";
   if(r.wiki_outcome){
-    const ai = (r.wiki_ai_systems||[]).join(", ");
-    claims += `<div class="claim">${COLOR[r.wiki_color]||""} AI-contributions wiki: ${esc(r.wiki_outcome)}`
-      + (ai?`<span class="ai"> — ${esc(ai)}</span>`:"")+`</div>`;
+    const ai = (r.wiki_ai_systems || []).join(", ");
+    claims += `<div class="claim"><span class="chip chip--recorded">${esc(r.wiki_outcome)}</span>`
+      + ` <span class="src">AI-contributions wiki, recorded${ai ? " · " + esc(ai) : ""}</span></div>`;
   }
-  if(r.gpt_erdos) claims += `<div class="claim">gpt-erdos review: ${esc(GPT[r.gpt_erdos]||r.gpt_erdos)}</div>`;
+  if(r.gpt_erdos)
+    claims += `<div class="claim"><span class="chip chip--stale">${esc(GPT_LABEL[r.gpt_erdos] || r.gpt_erdos)}</span>`
+      + ` <span class="src">gpt-erdos, independent human review of the informal argument</span></div>`;
   if(!claims) claims = `<p class="muted">No external claim recorded.</p>`;
 
   c.innerHTML =
-    `<h1>Erdős Problem ${r.problem}</h1>`
-    + `<p class="sub">${esc(r.erdos_state || "")}${r.fc_theorem?` · <span class="mono">${esc(r.fc_theorem)}</span>`:""}</p>`
-    + `<p class="links"><a href="${esc(r.erdos_url)}">erdosproblems.com</a>`
-    + `<a href="https://www.erdosproblems.com/forum/thread/${r.problem}">forum thread</a>${fcLink}</p>`
+    `<p class="crumb"><a href="index.html">audit</a> / problem ${r.problem}</p>`
+    + `<h1>Erdős Problem ${r.problem}</h1>`
+    + `<p class="idmeta">${esc(r.erdos_state || "")}${r.fc_theorem ? ` · ${esc(r.fc_theorem)}` : ""}</p>`
+    + `<p class="decision">Is the proof unconditional, and is that the right problem?</p>`
 
     + `<div class="ribbon">`
-    + `<div class="cell"><div class="k">Proof · Axis 1 (mechanical)</div><div class="v">${proof.tag}</div><div class="d">${proof.detail}</div></div>`
-    + `<div class="cell"><div class="k">Statement · Axis 2 (signed)</div><div class="v">${stmt.tag}</div><div class="d">${stmt.detail}</div></div>`
-    + `<div class="cell wide"><div class="k">Provenance</div><div class="d">${src}${fidsrc}${r.discrepancy?' · <span style="color:var(--accent)">recorded as solved, proof is conditional</span>':""}</div></div>`
-    + `<div class="cell wide"><div class="k">Reproduce</div><div class="repro">${esc(reproCmd)}</div></div>`
+    + `<div class="verdict"><p class="t-label">Proof · axis 1 · machine</p><p>${proof.chip}</p><p class="d">${proof.detail}</p></div>`
+    + `<div class="verdict"><p class="t-label">Statement · axis 2 · signed</p><p>${stmt.chip}</p><p class="d">${stmt.detail}</p></div>`
     + `</div>`
+    + `<p class="prov">${src}${fidsrc}${discChip}</p>`
 
     + `<h2>Proof chain</h2><ul class="chain">${chain.join("")}</ul>`
     + `<h2>Load-bearing conditions</h2>${neigh}`
     + `<h2>Recorded claims</h2>${claims}`
-    + `<h2>Cite this finding</h2>`
-    + `<div class="repro" style="white-space:pre;overflow-x:auto;">@misc{erdos_${r.problem}_fidelity,\n`
-    + `  title  = {Erdős problem ${r.problem}: formal-proof fidelity finding},\n`
-    + `  author = {Blair, William},\n`
-    + `  url    = {https://williamjblair.github.io/erdos-frontier/finding.html?n=${r.problem}},\n`
-    + `  note   = {Signed frontier vfr_0a25edabc16db143 · audit of ${esc((DGEN||"").slice(0,10))} ·\n`
-    + `            verify: git clone github.com/williamjblair/erdos-frontier && vela check . --strict}\n}`
-    + `</div>`
-    + `<p class="foot">The proof side is mechanical and reproducible; the statement verdict is signed by a named reviewer. `
+
+    + `<div class="notary"><h2 style="margin-top:0">Notary</h2>`
+    + `<p style="margin:0 0 var(--s-1)">Reproduce the proof audit:</p>`
+    + `<pre class="repro">${esc(reproCmd)}</pre>`
+    + `<p style="margin:0 0 var(--s-1)">Cite this finding:</p>`
+    + `<pre class="repro">@misc{erdos_${r.problem}_fidelity,
+  title  = {Erdős problem ${r.problem}: formal-proof fidelity finding},
+  author = {Blair, William},
+  url    = {https://williamjblair.github.io/erdos-frontier/finding.html?n=${r.problem}},
+  note   = {Signed frontier vfr_0a25edabc16db143 · audit of ${esc((generatedAt || "").slice(0, 10))} ·
+            verify: git clone github.com/williamjblair/erdos-frontier && vela check . --strict}
+}</pre>`
+    + `<p class="site-foot" style="margin-top:var(--s-2);border-top:0;padding-top:0" data-url="https://williamjblair.github.io/erdos-frontier/finding.html?n=${r.problem}">`
+    + `The proof side is mechanical and reproducible; the statement verdict is signed by a named reviewer. `
     + `Also served from the <a href="https://hub.constellate.science/entries/vfr_0a25edabc16db143">hub index</a>, re-derived by strict replay. `
-    + `<a href="index.html">Overview</a> · <a href="conditions.html">Conditions</a> · <a href="verdicts.json">feed</a></p>`;
+    + `Data: <a href="data/problems/${r.problem}.json">this problem</a> · <a href="verdicts.json">full feed</a></p>`
+    + `</div>`;
+
+  armFadeInUp();
+  requestAnimationFrame(() => requestAnimationFrame(() =>
+    document.querySelectorAll(".motion-gold-trace").forEach(el => el.classList.add("is-traced"))));
 }
 
-let DGEN = "";
-(function(){
+(async () => {
   const n = Number(new URLSearchParams(location.search).get("n"));
-  fetch("verdicts.json").then(r=>r.json()).then(d=>{
-    DGEN = d.generated_at || "";
-    const r = d.rows.find(x => x.problem===n);
-    if(!r){ document.getElementById("content").innerHTML =
-      `<h1>Problem ${n||"?"}</h1><p class="muted">Not in the audit feed. <a href="index.html">Browse all problems.</a></p>`; return; }
-    render(r, d.summary.conditions || []);
-  });
+  const fail = msg => { document.getElementById("content").innerHTML =
+    `<h1>Problem ${n || "?"}</h1><p class="muted">${msg} <a href="index.html">Browse all problems.</a></p>`; };
+  if(!n) return fail("No problem number given.");
+  try {
+    const summary = fetchJSON("data/summary.json");
+    let row;
+    try {
+      row = await fetchJSON(`data/problems/${n}.json`);
+    } catch {
+      const full = await fetchJSON("verdicts.json");
+      row = full.rows.find(x => x.problem === n);
+    }
+    const s = await summary;
+    if(!row) return fail("Not in the audit feed.");
+    render(row, s.summary.conditions || [], s.generated_at);
+  } catch (e) {
+    fail("The audit feed could not be loaded.");
+  }
 })();
 </script>
 </body>
