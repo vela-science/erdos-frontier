@@ -1,0 +1,89 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_017fb9633f657783",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_a7ddc526aa016edc"
+  },
+  "actor": {
+    "id": "agent:claude",
+    "type": "agent"
+  },
+  "created_at": "2026-07-02T14:40:39.130584+00:00",
+  "reason": "Manual finding added to frontier state",
+  "payload": {
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "The Formal Conjectures statement for Erdős problem 280 (FormalConjectures/ErdosProblems/280.lean, PR #4345) faithfully represents the informal problem.",
+        "type": "theoretical"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "Statement pinned at google-deepmind/formal-conjectures@8fd558fc8f3c76a5bd1972c10649ba320006d302 (sha256 7cf27520e75f190ba8fa0e528cc999cb44ca29cb850a496a9191866b5d9e233f); PR #4345 (open PR, statement subject to change until merge). Drafted pre-pipeline (batch-2b); gate evidence is the FC CI build on that commit. Requires fidelity review."
+      },
+      "confidence": {
+        "basis": "operator-supplied frontier prior; review required",
+        "extraction_confidence": 1.0,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.3
+      },
+      "created": "2026-07-02T14:40:39.130155+00:00",
+      "evidence": {
+        "evidence_spans": [],
+        "method": "manual state transition",
+        "model_system": "",
+        "replicated": false,
+        "replication_count": null,
+        "type": "theoretical"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_a7ddc526aa016edc",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "agent:claude",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-07-02T14:40:39.129995+00:00",
+          "extractor_version": "vela/0.729.0",
+          "method": "manual_curation",
+          "model": null,
+          "model_version": null
+        },
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "expert_assertion",
+        "title": "formal-conjectures PR #4345",
+        "url": "https://github.com/google-deepmind/formal-conjectures/blob/8fd558fc8f3c76a5bd1972c10649ba320006d302/FormalConjectures/ErdosProblems/280.lean",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    }
+  },
+  "source_refs": [],
+  "status": "pending_review",
+  "caveats": [
+    "Manual findings require evidence review before scientific use."
+  ]
+}

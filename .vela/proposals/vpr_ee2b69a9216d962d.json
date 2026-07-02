@@ -1,0 +1,89 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_ee2b69a9216d962d",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_677c497d96a411d5"
+  },
+  "actor": {
+    "id": "agent:claude",
+    "type": "agent"
+  },
+  "created_at": "2026-07-02T14:40:36.983331+00:00",
+  "reason": "Manual finding added to frontier state",
+  "payload": {
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "The Formal Conjectures statement for Erdős problem 199 (FormalConjectures/ErdosProblems/199.lean, merged #4343) faithfully represents the informal problem.",
+        "type": "theoretical"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "Statement pinned at google-deepmind/formal-conjectures@5beb6f5da3a93fd9fe69d946a06deec9b064bb3b (sha256 d09f943a01101e082d9491e8436d04df9834ba9c7015040118ed858f3f41873e); merged #4343 (merged). Drafted pre-pipeline (batch-2a); gate evidence is the FC CI build on that commit. Requires fidelity review."
+      },
+      "confidence": {
+        "basis": "operator-supplied frontier prior; review required",
+        "extraction_confidence": 1.0,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.3
+      },
+      "created": "2026-07-02T14:40:36.982919+00:00",
+      "evidence": {
+        "evidence_spans": [],
+        "method": "manual state transition",
+        "model_system": "",
+        "replicated": false,
+        "replication_count": null,
+        "type": "theoretical"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_677c497d96a411d5",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "agent:claude",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-07-02T14:40:36.982783+00:00",
+          "extractor_version": "vela/0.729.0",
+          "method": "manual_curation",
+          "model": null,
+          "model_version": null
+        },
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "expert_assertion",
+        "title": "formal-conjectures merged #4343",
+        "url": "https://github.com/google-deepmind/formal-conjectures/blob/5beb6f5da3a93fd9fe69d946a06deec9b064bb3b/FormalConjectures/ErdosProblems/199.lean",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    }
+  },
+  "source_refs": [],
+  "status": "pending_review",
+  "caveats": [
+    "Manual findings require evidence review before scientific use."
+  ]
+}
