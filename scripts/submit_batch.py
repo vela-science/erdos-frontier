@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import json
 import pathlib
 import re
@@ -180,12 +181,137 @@ def assemble(name: str) -> int:
     return 0
 
 
+def lean_review_view(path: pathlib.Path) -> str:
+    """The judgment surface: the module from `/-!` onward — verbatim
+    informal text, encoding notes, and the theorem. The license header
+    carries no signal for a fidelity call."""
+    text = path.read_text()
+    i = text.find("/-!")
+    return text[i:] if i >= 0 else text
+
+
+def build_rows(name: str) -> list[dict]:
+    """Pre-fill everything mechanical: the accepted finding id per
+    problem, refs, and the sha256 of the exact draft bytes the vsa_ will
+    bind. verdict + note stay empty — they are the human judgment."""
+    problems = batch_problems(name)
+    sha = subprocess.run(["git", "rev-parse", "--short=12", "HEAD"],
+                         capture_output=True, text=True).stdout.strip()
+    doc = json.loads(FRONTIER_JSON.read_text())
+    targets: dict[int, str] = {}
+    for f in doc.get("findings", []):
+        fd = f.get("finding", f)
+        text = (fd.get("assertion") or {}).get("text") or ""
+        for n in problems:
+            if text.startswith(f"FC statement draft for Erd\u0151s #{n}:") or \
+               text.startswith(f"FC statement draft for Erdős #{n}:"):
+                targets[n] = fd["id"]
+    missing = [n for n in problems if n not in targets]
+    if missing:
+        sys.exit(f"no accepted draft finding for {missing}; accept the batch proposals first")
+    rows = []
+    for n in problems:
+        data = (STAGING / str(n) / f"{n}.lean").read_bytes()
+        rows.append({
+            "target": targets[n],
+            "verdict": "",
+            "informal_ref": f"erdosproblems.com/{n}",
+            "formal_ref": f"williamjblair/erdos-frontier@{sha}:statements/{n}/{n}.lean",
+            "formal_statement_hash": hashlib.sha256(data).hexdigest(),
+            "note": "",
+        })
+    return rows
+
+
+VERDICT_KEYS = {"f": "faithful", "v": "variant", "u": "unfaithful"}
+
+
+def review(name: str) -> int:
+    """The whole human session, one command: show each draft, take the
+    verdict + note, sign everything in ONE key read, assemble the FC
+    branch. Resume-safe (answers are saved as you go); skipped problems
+    are excluded from signing and from the PR."""
+    problems = batch_problems(name)
+    vpath = STAGING / f"{name}-verdicts.json"
+    if vpath.exists():
+        rows = json.loads(vpath.read_text())["verdicts"]
+    else:
+        rows = build_rows(name)
+        vpath.write_text(json.dumps({"verdicts": rows}, indent=2) + "\n")
+
+    def prob(row):
+        return int(row["informal_ref"].rsplit("/", 1)[1])
+
+    pending = [r for r in rows if not r["verdict"]]
+    if pending:
+        print(f"{len(rows) - len(pending)}/{len(rows)} already answered; "
+              f"{len(pending)} to review. [f]aithful [v]ariant [u]nfaithful [s]kip [q]uit\n")
+    for row in rows:
+        if row["verdict"]:
+            continue
+        n = prob(row)
+        gates = json.loads((STAGING / str(n) / "gates.json").read_text())
+        print("─" * 72)
+        print(f"Erdős {n}   https://www.erdosproblems.com/{n}   "
+              f"gates: {'green' if gates.get('passed') else 'RED'}")
+        print("─" * 72)
+        print(lean_review_view(STAGING / str(n) / f"{n}.lean"))
+        while True:
+            ans = input(f"[{n}] verdict f/v/u/s/q: ").strip().lower()
+            if ans in ("q", "quit"):
+                vpath.write_text(json.dumps({"verdicts": rows}, indent=2) + "\n")
+                print("saved; re-run to resume.")
+                return 0
+            if ans in ("s", "skip"):
+                break
+            if ans in VERDICT_KEYS:
+                note = ""
+                while not note.strip():
+                    note = input(f"[{n}] note (why): ")
+                row["verdict"] = VERDICT_KEYS[ans]
+                row["note"] = note.strip()
+                break
+            print("  f=faithful v=variant u=unfaithful s=skip q=save+quit")
+        vpath.write_text(json.dumps({"verdicts": rows}, indent=2) + "\n")
+
+    filled = [r for r in rows if r["verdict"]]
+    skipped = [prob(r) for r in rows if not r["verdict"]]
+    print("\n" + "═" * 72)
+    for r in filled:
+        print(f"  {prob(r):>5}  {r['verdict']:<11} {r['note'][:70]}")
+    if skipped:
+        print(f"  skipped (not signed, not shipped): {skipped}")
+    if not filled:
+        sys.exit("no verdicts to sign")
+
+    yn = input(f"\nSign {len(filled)} verdict(s) as your key-custody act "
+               f"(one key read, self-publishes)? [y/N] ").strip().lower()
+    if yn != "y":
+        print(f"not signed; answers saved in {vpath}. Re-run to sign.")
+        return 0
+    import tempfile
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as tf:
+        json.dump({"verdicts": filled}, tf)
+        sign_path = tf.name
+    rc = subprocess.run([os.environ.get("VELA", "vela"), "review", str(HERE),
+                         "--batch", sign_path]).returncode
+    os.unlink(sign_path)
+    if rc != 0:
+        sys.exit(f"vela review failed (exit {rc}); nothing assembled")
+    print()
+    return assemble(name)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["prepare", "assemble"])
+    ap.add_argument("cmd", choices=["prepare", "review", "assemble"])
     ap.add_argument("batch")
     args = ap.parse_args()
-    return prepare(args.batch) if args.cmd == "prepare" else assemble(args.batch)
+    if args.cmd == "prepare":
+        return prepare(args.batch)
+    if args.cmd == "review":
+        return review(args.batch)
+    return assemble(args.batch)
 
 
 if __name__ == "__main__":
