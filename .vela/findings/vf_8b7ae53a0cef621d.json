@@ -1,0 +1,66 @@
+{
+  "id": "vf_8b7ae53a0cef621d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "FC statement draft for Erdős #497: gate green (lake build + extract_names + link rule)",
+    "type": "computational",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "computational",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "Record vrc_062cf9cfa9f849f2 (unsigned; recorded against head 31fd0952feb72e7c…, current head 0b44f595949892b3… — review the delta). Caveats: statement draft only; statement fidelity (vsa_) awaits human review. Artifacts: 2 hash-verified at propose.",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.3,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "title": "record:vrc_062cf9cfa9f849f2",
+    "authors": [
+      {
+        "name": "agent:swarm-497",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-02T06:33:32.134232+00:00",
+      "extractor_version": "vela/0.725.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-02T06:33:32.134237+00:00",
+  "updated": null
+}
