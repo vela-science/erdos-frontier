@@ -20,8 +20,8 @@ Agents may:
 
 Agents may not:
 
-- accept, reject, attest, or otherwise decide (`accept`, `accept-batch`,
-  `attest`, `proposals reject`) — key-custody human verbs, engine-enforced
+- accept, reject, review, or otherwise decide (`accept`, `accept-batch`,
+  `review`, `proposals reject`) — key-custody human verbs, engine-enforced
 - run any `vela` write without `VELA_ACTOR_ID=agent:<you>` set and
   `--author agent:<you>` given
 - hand-edit `.vela/`, `frontier.json`, `vela.lock`, or `proof/`
@@ -34,7 +34,7 @@ Agents may not:
 **Agents propose, attach evidence, and draft. Humans decide.** Every
 truth-bearing act — accepting a finding, rejecting a proposal, signing a
 statement-fidelity verdict — is a named human reviewer's key. The engine
-enforces this (an `agent:` actor is refused at accept, reject, and attest),
+enforces this (an `agent:` actor is refused at accept, reject, and review),
 but you must also hold up your side:
 
 - Set `VELA_ACTOR_ID=agent:<your-name>` in your environment before any
@@ -95,15 +95,15 @@ Regenerate derived views (reducer outputs, never authored):
 5. **Human session** (the only non-agent steps, 2–3 verbs):
        vela inbox .
        vela accept-batch . --all-pending --reason "batch-N reviewed" [--dry-run]
-       vela attest . --batch <verdicts.json> --as reviewer:<name>
-   You prepare the attest batch file from the reviewer's stated verdicts.
+       vela review . --batch <verdicts.json> --as reviewer:<name>
+   You prepare the review batch file from the reviewer's stated verdicts.
 6. **Submit to FC**: assemble the branch with plain git in the FC checkout,
    body in the #4319 format; the human pushes and opens the PR (their
    account, their voice). Claim batches by comment on FC issue #3998 first.
 
 ## Hard boundaries
 
-- Never `vela accept`, `accept-batch`, `attest`, or `proposals reject` — those
+- Never `vela accept`, `accept-batch`, `review`, or `proposals reject` — those
   are the human's verbs even when the CLI would let a configured key through.
 - Never edit `.vela/`, `frontier.json`, `vela.lock`, or `proof/` by hand;
   they replay from the signed log (`vela frontier materialize .`).
