@@ -3,7 +3,7 @@
  "note": "Derived index of what the ingested sources declare \u2014 typed in the Vela EdgeKind vocabulary with a trust tier per edge. Not signed state: the signed spine is .vela/ + frontier.json.",
  "source_locks": {
   "erdos": "sha256:17fd2e142",
-  "fidelity": "sha256:3b4ce1659",
+  "fidelity": "sha256:23b60ff35",
   "formal_conjectures": "sha256:73f757c22",
   "gpt_erdos": "sha256:c0f626a47",
   "jayyhk": "sha256:e2db2d0f2",
