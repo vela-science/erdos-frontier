@@ -68,3 +68,22 @@ batches:
   note: All ten drafted from the boxed text, gated (lake build + extract_names + link-rule)
     with SHA-pinned formal_proof links. Fidelity attested 2026-07-01 (two vsa_ per
     problem in the signed spine); PR opened the same day. Unreviewed.
+- name: batch-5
+  state: open
+  problems:
+  - 71
+  - 206
+  - 209
+  - 328
+  - 353
+  - 403
+  - 426
+  - 464
+  - 512
+  - 621
+  - 639
+  - 648
+  note: 'Declared 2026-07-02 from the statement bucket minus every problem
+    in an open FC PR (#4369, #4371, #4346 checked live); the swarm claims
+    seeds via leases and draft_statement.py re-checks collisions at draft
+    time.'
