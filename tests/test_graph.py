@@ -6,6 +6,8 @@ import pathlib
 import subprocess
 import sys
 
+import yaml
+
 HERE = pathlib.Path(__file__).parent.parent
 GRAPH = HERE / "graph" / "corpus-graph.json"
 
@@ -47,3 +49,27 @@ def test_signed_tier_matches_the_frontier():
     atts = frontier.get("statement_attestations") or []
     assert len(signed_edges) == len(atts), (
         "every signed edge must come from a real vsa_ in the spine, 1:1")
+
+
+def test_campaign_statements_are_in_the_graph():
+    """Every problem in a campaign batch that is past drafting (staged draft or
+    open PR) must have a statement node — the graph indexes the campaign's own
+    statements, not only what conjectures.json already lists."""
+    doc = json.loads(GRAPH.read_text())
+    ids = {n["id"] for n in doc["nodes"]}
+    camp = yaml.safe_load((HERE / "campaign.yaml").read_text())
+    missing = [p for b in camp["batches"] if b["state"] != "merged"
+               for p in b["problems"] if f"fc:{p}" not in ids]
+    assert not missing, f"campaign statements absent from the graph: {missing}"
+
+
+def test_attestations_land_on_the_statement_when_it_exists():
+    """A vsa edge may fall back to the erdos: problem only when no statement
+    node exists at all (e.g. fidelity verdicts on hosted proofs with no FC
+    file); it must never bypass an fc: node that is in the graph."""
+    doc = json.loads(GRAPH.read_text())
+    ids = {n["id"] for n in doc["nodes"]}
+    bypassed = [(e["from"], e["to"]) for e in doc["edges"]
+                if e["from"].startswith("vsa:") and e["to"].startswith("erdos:")
+                and e["to"].replace("erdos:", "fc:") in ids]
+    assert not bypassed, f"vsa edges bypass an existing statement: {bypassed}"

@@ -12,26 +12,26 @@
   "williamjblair_lean_proofs": "sha256:b0e681bf4"
  },
  "counts": {
-  "nodes": 2473,
-  "edges": 1073,
+  "nodes": 2677,
+  "edges": 1277,
   "by_node_kind": {
    "attestation": 25,
    "claim": 342,
    "condition": 24,
    "problem": 1217,
    "proof": 392,
-   "statement": 473
+   "statement": 677
   },
   "by_edge_kind": {
    "contradicts": 11,
    "depends_on": 26,
-   "derived_from": 473,
+   "derived_from": 677,
    "replicates": 165,
    "specializes": 2,
    "supports": 396
   },
   "by_trust": {
-   "declared": 672,
+   "declared": 876,
    "machine": 367,
    "recorded": 9,
    "signed": 25
@@ -9971,6 +9971,20 @@
    "linked": true
   },
   {
+   "id": "fc:1000",
+   "kind": "statement",
+   "label": "FC 1000 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1001",
+   "kind": "statement",
+   "label": "FC 1001 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1002",
    "kind": "statement",
    "label": "Erdos1002.erdos_1002",
@@ -9992,11 +10006,256 @@
    "linked": false
   },
   {
+   "id": "fc:1005",
+   "kind": "statement",
+   "label": "FC 1005 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1006",
+   "kind": "statement",
+   "label": "FC 1006 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1007",
+   "kind": "statement",
+   "label": "FC 1007 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1008",
+   "kind": "statement",
+   "label": "FC 1008 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1009",
+   "kind": "statement",
+   "label": "FC 1009 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:101",
    "kind": "statement",
    "label": "Erdos101.erdos_101",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos101.erdos_101",
    "linked": false
+  },
+  {
+   "id": "fc:1010",
+   "kind": "statement",
+   "label": "FC 1010 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1011",
+   "kind": "statement",
+   "label": "FC 1011 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1012",
+   "kind": "statement",
+   "label": "FC 1012 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1013",
+   "kind": "statement",
+   "label": "FC 1013 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1014",
+   "kind": "statement",
+   "label": "FC 1014 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
+   "id": "fc:1015",
+   "kind": "statement",
+   "label": "FC 1015 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1016",
+   "kind": "statement",
+   "label": "FC 1016 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1017",
+   "kind": "statement",
+   "label": "FC 1017 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1018",
+   "kind": "statement",
+   "label": "FC 1018 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1019",
+   "kind": "statement",
+   "label": "FC 1019 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:102",
+   "kind": "statement",
+   "label": "FC 102 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1020",
+   "kind": "statement",
+   "label": "FC 1020 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1021",
+   "kind": "statement",
+   "label": "FC 1021 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1022",
+   "kind": "statement",
+   "label": "FC 1022 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1023",
+   "kind": "statement",
+   "label": "FC 1023 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1024",
+   "kind": "statement",
+   "label": "FC 1024 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1025",
+   "kind": "statement",
+   "label": "FC 1025 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1026",
+   "kind": "statement",
+   "label": "FC 1026 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1027",
+   "kind": "statement",
+   "label": "FC 1027 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1028",
+   "kind": "statement",
+   "label": "FC 1028 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1029",
+   "kind": "statement",
+   "label": "FC 1029 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
+   "id": "fc:103",
+   "kind": "statement",
+   "label": "FC 103 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1030",
+   "kind": "statement",
+   "label": "FC 1030 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
+   "id": "fc:1031",
+   "kind": "statement",
+   "label": "FC 1031 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1032",
+   "kind": "statement",
+   "label": "FC 1032 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1033",
+   "kind": "statement",
+   "label": "FC 1033 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1034",
+   "kind": "statement",
+   "label": "FC 1034 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1035",
+   "kind": "statement",
+   "label": "FC 1035 (PR #4065)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4065"
+  },
+  {
+   "id": "fc:1036",
+   "kind": "statement",
+   "label": "FC 1036 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1037",
+   "kind": "statement",
+   "label": "FC 1037 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1038",
@@ -10006,11 +10265,39 @@
    "linked": false
   },
   {
+   "id": "fc:1039",
+   "kind": "statement",
+   "label": "FC 1039 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:104",
+   "kind": "statement",
+   "label": "FC 104 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1040",
+   "kind": "statement",
+   "label": "FC 1040 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1041",
    "kind": "statement",
    "label": "Erdos1041.erdos_1041",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1041.erdos_1041",
    "linked": false
+  },
+  {
+   "id": "fc:1042",
+   "kind": "statement",
+   "label": "FC 1042 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1043",
@@ -10020,11 +10307,60 @@
    "linked": true
   },
   {
+   "id": "fc:1044",
+   "kind": "statement",
+   "label": "FC 1044 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1045",
+   "kind": "statement",
+   "label": "FC 1045 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1046",
+   "kind": "statement",
+   "label": "FC 1046 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1047",
+   "kind": "statement",
+   "label": "FC 1047 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1048",
+   "kind": "statement",
+   "label": "FC 1048 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1049",
    "kind": "statement",
    "label": "Erdos1049.erdos_1049",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1049.erdos_1049",
    "linked": false
+  },
+  {
+   "id": "fc:105",
+   "kind": "statement",
+   "label": "FC 105 (PR #4354)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4354"
+  },
+  {
+   "id": "fc:1050",
+   "kind": "statement",
+   "label": "FC 1050 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1051",
@@ -10039,6 +10375,13 @@
    "label": "Erdos1052.even_of_isUnitaryPerfect",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1052.even_of_isUnitaryPerfect",
    "linked": true
+  },
+  {
+   "id": "fc:1053",
+   "kind": "statement",
+   "label": "FC 1053 (PR #4366)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4366"
   },
   {
    "id": "fc:1054",
@@ -10069,11 +10412,25 @@
    "linked": false
   },
   {
+   "id": "fc:1058",
+   "kind": "statement",
+   "label": "FC 1058 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1059",
    "kind": "statement",
    "label": "Erdos1059.erdos_1059",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1059.erdos_1059",
    "linked": false
+  },
+  {
+   "id": "fc:106",
+   "kind": "statement",
+   "label": "FC 106 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1060",
@@ -10118,6 +10475,13 @@
    "linked": false
   },
   {
+   "id": "fc:1066",
+   "kind": "statement",
+   "label": "FC 1066 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1067",
    "kind": "statement",
    "label": "Erdos1067.erdos_1067",
@@ -10132,11 +10496,25 @@
    "linked": false
   },
   {
+   "id": "fc:1069",
+   "kind": "statement",
+   "label": "FC 1069 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:107",
    "kind": "statement",
    "label": "Erdos107.erdos_107",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos107.erdos_107",
    "linked": false
+  },
+  {
+   "id": "fc:1070",
+   "kind": "statement",
+   "label": "FC 1070 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1071",
@@ -10167,11 +10545,39 @@
    "linked": true
   },
   {
+   "id": "fc:1075",
+   "kind": "statement",
+   "label": "FC 1075 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1076",
+   "kind": "statement",
+   "label": "FC 1076 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1077",
    "kind": "statement",
    "label": "Erdos1077.erdos_1077",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1077.erdos_1077",
    "linked": false
+  },
+  {
+   "id": "fc:1078",
+   "kind": "statement",
+   "label": "FC 1078 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1079",
+   "kind": "statement",
+   "label": "FC 1079 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:108",
@@ -10188,11 +10594,25 @@
    "linked": true
   },
   {
+   "id": "fc:1081",
+   "kind": "statement",
+   "label": "FC 1081 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1082",
    "kind": "statement",
    "label": "Erdos1082.erdos_1082.parts.ii",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1082.erdos_1082.parts.ii",
    "linked": true
+  },
+  {
+   "id": "fc:1083",
+   "kind": "statement",
+   "label": "FC 1083 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1084",
@@ -10209,6 +10629,34 @@
    "linked": false
   },
   {
+   "id": "fc:1086",
+   "kind": "statement",
+   "label": "FC 1086 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1087",
+   "kind": "statement",
+   "label": "FC 1087 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1088",
+   "kind": "statement",
+   "label": "FC 1088 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1089",
+   "kind": "statement",
+   "label": "FC 1089 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:109",
    "kind": "statement",
    "label": "Erdos109.erdos_109",
@@ -10221,6 +10669,13 @@
    "label": "Erdos1090.erdos_1090",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1090.erdos_1090",
    "linked": true
+  },
+  {
+   "id": "fc:1091",
+   "kind": "statement",
+   "label": "FC 1091 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1092",
@@ -10265,11 +10720,39 @@
    "linked": true
   },
   {
+   "id": "fc:1098",
+   "kind": "statement",
+   "label": "FC 1098 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1099",
+   "kind": "statement",
+   "label": "FC 1099 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:11",
    "kind": "statement",
    "label": "Erdos11.erdos_11",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos11.erdos_11",
    "linked": false
+  },
+  {
+   "id": "fc:110",
+   "kind": "statement",
+   "label": "FC 110 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1100",
+   "kind": "statement",
+   "label": "FC 1100 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1101",
@@ -10284,6 +10767,13 @@
    "label": "Erdos1102.erdos_1102.density_zero_of_P",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1102.erdos_1102.density_zero_of_P",
    "linked": true
+  },
+  {
+   "id": "fc:1103",
+   "kind": "statement",
+   "label": "FC 1103 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1104",
@@ -10321,6 +10811,41 @@
    "linked": false
   },
   {
+   "id": "fc:1109",
+   "kind": "statement",
+   "label": "FC 1109 (PR #3975)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3975"
+  },
+  {
+   "id": "fc:111",
+   "kind": "statement",
+   "label": "FC 111 (PR #3785)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3785"
+  },
+  {
+   "id": "fc:1110",
+   "kind": "statement",
+   "label": "FC 1110 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1111",
+   "kind": "statement",
+   "label": "FC 1111 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1112",
+   "kind": "statement",
+   "label": "FC 1112 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1113",
    "kind": "statement",
    "label": "Erdos1113.erdos_1113",
@@ -10328,11 +10853,88 @@
    "linked": false
   },
   {
+   "id": "fc:1114",
+   "kind": "statement",
+   "label": "FC 1114 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1115",
+   "kind": "statement",
+   "label": "FC 1115 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1116",
+   "kind": "statement",
+   "label": "FC 1116 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1117",
+   "kind": "statement",
+   "label": "FC 1117 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1118",
+   "kind": "statement",
+   "label": "FC 1118 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
    "id": "fc:1119",
    "kind": "statement",
    "label": "Erdos1119.erdos_1119",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1119.erdos_1119",
    "linked": false
+  },
+  {
+   "id": "fc:112",
+   "kind": "statement",
+   "label": "FC 112 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
+   "id": "fc:1120",
+   "kind": "statement",
+   "label": "FC 1120 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1121",
+   "kind": "statement",
+   "label": "FC 1121 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1122",
+   "kind": "statement",
+   "label": "FC 1122 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1123",
+   "kind": "statement",
+   "label": "FC 1123 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+  },
+  {
+   "id": "fc:1124",
+   "kind": "statement",
+   "label": "FC 1124 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1125",
@@ -10349,11 +10951,25 @@
    "linked": true
   },
   {
+   "id": "fc:1127",
+   "kind": "statement",
+   "label": "FC 1127 (PR #4221)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4221"
+  },
+  {
    "id": "fc:1128",
    "kind": "statement",
    "label": "Erdos1128.erdos_1128",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1128.erdos_1128",
    "linked": false
+  },
+  {
+   "id": "fc:1129",
+   "kind": "statement",
+   "label": "FC 1129 (PR #3422)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
   },
   {
    "id": "fc:1133",
@@ -10391,6 +11007,13 @@
    "linked": false
   },
   {
+   "id": "fc:114",
+   "kind": "statement",
+   "label": "FC 114 (PR #3958)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3958"
+  },
+  {
    "id": "fc:1141",
    "kind": "statement",
    "label": "Erdos1141.erdos_1141",
@@ -10403,6 +11026,13 @@
    "label": "Erdos1142.erdos_1142",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1142.erdos_1142",
    "linked": false
+  },
+  {
+   "id": "fc:1144",
+   "kind": "statement",
+   "label": "FC 1144 (PR #3587)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3587"
   },
   {
    "id": "fc:1145",
@@ -10433,11 +11063,88 @@
    "linked": false
   },
   {
+   "id": "fc:1151",
+   "kind": "statement",
+   "label": "FC 1151 (PR #3978)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3978"
+  },
+  {
+   "id": "fc:1154",
+   "kind": "statement",
+   "label": "FC 1154 (PR #3826)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3826"
+  },
+  {
+   "id": "fc:1155",
+   "kind": "statement",
+   "label": "FC 1155 (PR #3587)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3587"
+  },
+  {
+   "id": "fc:1156",
+   "kind": "statement",
+   "label": "FC 1156 (PR #3587)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3587"
+  },
+  {
    "id": "fc:1167",
    "kind": "statement",
    "label": "Erdos1167.erdos_1167",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1167.erdos_1167",
    "linked": false
+  },
+  {
+   "id": "fc:1168",
+   "kind": "statement",
+   "label": "FC 1168 (PR #3792)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3792"
+  },
+  {
+   "id": "fc:1169",
+   "kind": "statement",
+   "label": "FC 1169 (PR #4214)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4214"
+  },
+  {
+   "id": "fc:1170",
+   "kind": "statement",
+   "label": "FC 1170 (PR #4215)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4215"
+  },
+  {
+   "id": "fc:1171",
+   "kind": "statement",
+   "label": "FC 1171 (PR #3789)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3789"
+  },
+  {
+   "id": "fc:1172",
+   "kind": "statement",
+   "label": "FC 1172 (PR #3793)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3793"
+  },
+  {
+   "id": "fc:1173",
+   "kind": "statement",
+   "label": "FC 1173 (PR #3794)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3794"
+  },
+  {
+   "id": "fc:1174",
+   "kind": "statement",
+   "label": "FC 1174 (PR #4223)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4223"
   },
   {
    "id": "fc:1175",
@@ -10452,6 +11159,20 @@
    "label": "Erdos1176.erdos_1176",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1176.erdos_1176",
    "linked": false
+  },
+  {
+   "id": "fc:1177",
+   "kind": "statement",
+   "label": "FC 1177 (PR #3790)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3790"
+  },
+  {
+   "id": "fc:118",
+   "kind": "statement",
+   "label": "FC 118 (PR #4219)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4219"
   },
   {
    "id": "fc:119",
@@ -10496,6 +11217,13 @@
    "linked": false
   },
   {
+   "id": "fc:1200",
+   "kind": "statement",
+   "label": "FC 1200 (PR #3840)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3840"
+  },
+  {
    "id": "fc:1201",
    "kind": "statement",
    "label": "Erdos1201.erdos_1201",
@@ -10508,6 +11236,13 @@
    "label": "Erdos1203.erdos_1203",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1203.erdos_1203",
    "linked": false
+  },
+  {
+   "id": "fc:1208",
+   "kind": "statement",
+   "label": "FC 1208 (PR #4258)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4258"
   },
   {
    "id": "fc:1209",
@@ -10571,6 +11306,13 @@
    "label": "Erdos128.erdos_128",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos128.erdos_128",
    "linked": false
+  },
+  {
+   "id": "fc:129",
+   "kind": "statement",
+   "label": "FC 129 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
   },
   {
    "id": "fc:13",
@@ -10692,6 +11434,13 @@
    "linked": false
   },
   {
+   "id": "fc:159",
+   "kind": "statement",
+   "label": "FC 159 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
    "id": "fc:16",
    "kind": "statement",
    "label": "Erdos16.erdos_16",
@@ -10704,6 +11453,23 @@
    "label": "Erdos160.erdos_160.variants.known_lower",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos160.erdos_160.variants.known_lower",
    "linked": false
+  },
+  {
+   "id": "fc:164",
+   "kind": "statement",
+   "label": "Erdos164.erdos_164",
+   "stage": "draft",
+   "path": "statements/164/164.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
+   "id": "fc:165",
+   "kind": "statement",
+   "label": "FC 165 (PR #4236)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4236"
   },
   {
    "id": "fc:168",
@@ -10732,6 +11498,13 @@
    "label": "Erdos172.erdos_172",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos172.erdos_172",
    "linked": false
+  },
+  {
+   "id": "fc:175",
+   "kind": "statement",
+   "label": "FC 175 (PR #4315)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4315"
   },
   {
    "id": "fc:178",
@@ -10767,6 +11540,20 @@
    "label": "Erdos189.erdos_189",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos189.erdos_189",
    "linked": true
+  },
+  {
+   "id": "fc:19",
+   "kind": "statement",
+   "label": "FC 19 (PR #2155)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/2155"
+  },
+  {
+   "id": "fc:190",
+   "kind": "statement",
+   "label": "FC 190 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
   },
   {
    "id": "fc:193",
@@ -10809,6 +11596,20 @@
    "label": "Erdos198.erdos_198.variants.concrete",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos198.erdos_198.variants.concrete",
    "linked": true
+  },
+  {
+   "id": "fc:199",
+   "kind": "statement",
+   "label": "FC 199 (PR #4343)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+  },
+  {
+   "id": "fc:2",
+   "kind": "statement",
+   "label": "FC 2 (PR #4313)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4313"
   },
   {
    "id": "fc:20",
@@ -10860,6 +11661,13 @@
    "linked": false
   },
   {
+   "id": "fc:217",
+   "kind": "statement",
+   "label": "FC 217 (PR #4064)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4064"
+  },
+  {
    "id": "fc:218",
    "kind": "statement",
    "label": "Erdos218.erdos_218.variants.le",
@@ -10879,6 +11687,27 @@
    "label": "Erdos22.erdos_22",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos22.erdos_22",
    "linked": false
+  },
+  {
+   "id": "fc:221",
+   "kind": "statement",
+   "label": "FC 221 (PR #4338)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4338"
+  },
+  {
+   "id": "fc:224",
+   "kind": "statement",
+   "label": "FC 224 (PR #4343)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+  },
+  {
+   "id": "fc:226",
+   "kind": "statement",
+   "label": "FC 226 (PR #4343)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
   },
   {
    "id": "fc:228",
@@ -10937,6 +11766,16 @@
    "linked": false
   },
   {
+   "id": "fc:24",
+   "kind": "statement",
+   "label": "Erdos24.erdos_24",
+   "stage": "draft",
+   "path": "statements/24/24.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
    "id": "fc:241",
    "kind": "statement",
    "label": "Erdos241.erdos_241",
@@ -10970,6 +11809,13 @@
    "label": "Erdos245.erdos_245",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos245.erdos_245",
    "linked": false
+  },
+  {
+   "id": "fc:246",
+   "kind": "statement",
+   "label": "FC 246 (PR #4343)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
   },
   {
    "id": "fc:247",
@@ -11070,6 +11916,13 @@
    "linked": false
   },
   {
+   "id": "fc:261",
+   "kind": "statement",
+   "label": "FC 261 (PR #1902)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/1902"
+  },
+  {
    "id": "fc:263",
    "kind": "statement",
    "label": "Erdos263.erdos_263.parts.ii",
@@ -11168,6 +12021,20 @@
    "linked": false
   },
   {
+   "id": "fc:280",
+   "kind": "statement",
+   "label": "FC 280 (PR #4345)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4345"
+  },
+  {
+   "id": "fc:281",
+   "kind": "statement",
+   "label": "FC 281 (PR #4346)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4346"
+  },
+  {
    "id": "fc:282",
    "kind": "statement",
    "label": "Erdos282.erdos_282",
@@ -11231,6 +12098,13 @@
    "linked": false
   },
   {
+   "id": "fc:296",
+   "kind": "statement",
+   "label": "FC 296 (PR #4343)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+  },
+  {
    "id": "fc:298",
    "kind": "statement",
    "label": "Erdos298.erdos_298",
@@ -11287,6 +12161,13 @@
    "linked": true
   },
   {
+   "id": "fc:31",
+   "kind": "statement",
+   "label": "FC 31 (PR #4345)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4345"
+  },
+  {
    "id": "fc:312",
    "kind": "statement",
    "label": "Erdos312.erdos_312",
@@ -11299,6 +12180,26 @@
    "label": "Erdos313.erdos_313",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos313.erdos_313",
    "linked": false
+  },
+  {
+   "id": "fc:314",
+   "kind": "statement",
+   "label": "Erdos314.erdos_314",
+   "stage": "draft",
+   "path": "statements/314/314.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
+   "id": "fc:315",
+   "kind": "statement",
+   "label": "Erdos315.erdos_315",
+   "stage": "draft",
+   "path": "statements/315/315.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
   },
   {
    "id": "fc:316",
@@ -11404,6 +12305,23 @@
    "label": "Erdos332.erdos_332",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos332.erdos_332",
    "linked": false
+  },
+  {
+   "id": "fc:333",
+   "kind": "statement",
+   "label": "Erdos333.erdos_333",
+   "stage": "draft",
+   "path": "statements/333/333.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
+   "id": "fc:34",
+   "kind": "statement",
+   "label": "FC 34 (PR #4345)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4345"
   },
   {
    "id": "fc:340",
@@ -11525,6 +12443,13 @@
    "linked": false
   },
   {
+   "id": "fc:363",
+   "kind": "statement",
+   "label": "FC 363 (PR #4343)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+  },
+  {
    "id": "fc:364",
    "kind": "statement",
    "label": "Erdos364.erdos_364",
@@ -11539,6 +12464,23 @@
    "linked": false
   },
   {
+   "id": "fc:367",
+   "kind": "statement",
+   "label": "FC 367 (PR #4354)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4354"
+  },
+  {
+   "id": "fc:369",
+   "kind": "statement",
+   "label": "Erdos369.erdos_369",
+   "stage": "draft",
+   "path": "statements/369/369.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
    "id": "fc:370",
    "kind": "statement",
    "label": "Erdos370.erdos_370",
@@ -11551,6 +12493,13 @@
    "label": "Erdos371.erdos_371",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos371.erdos_371",
    "linked": false
+  },
+  {
+   "id": "fc:372",
+   "kind": "statement",
+   "label": "FC 372 (PR #4316)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4316"
   },
   {
    "id": "fc:373",
@@ -11707,11 +12656,28 @@
    "linked": false
   },
   {
+   "id": "fc:401",
+   "kind": "statement",
+   "label": "Erdos401.erdos_401",
+   "stage": "draft",
+   "path": "statements/401/401.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
    "id": "fc:402",
    "kind": "statement",
    "label": "Erdos402.erdos_402",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos402.erdos_402",
    "linked": false
+  },
+  {
+   "id": "fc:405",
+   "kind": "statement",
+   "label": "FC 405 (PR #3881)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3881"
   },
   {
    "id": "fc:406",
@@ -11784,6 +12750,13 @@
    "linked": true
   },
   {
+   "id": "fc:419",
+   "kind": "statement",
+   "label": "FC 419 (PR #4346)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4346"
+  },
+  {
    "id": "fc:42",
    "kind": "statement",
    "label": "Erdos42.erdos_42",
@@ -11805,11 +12778,25 @@
    "linked": false
   },
   {
+   "id": "fc:423",
+   "kind": "statement",
+   "label": "FC 423 (PR #4067)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4067"
+  },
+  {
    "id": "fc:424",
    "kind": "statement",
    "label": "Erdos424.erdos_424",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos424.erdos_424",
    "linked": false
+  },
+  {
+   "id": "fc:425",
+   "kind": "statement",
+   "label": "FC 425 (PR #4068)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4068"
   },
   {
    "id": "fc:427",
@@ -11826,6 +12813,16 @@
    "linked": false
   },
   {
+   "id": "fc:429",
+   "kind": "statement",
+   "label": "Erdos429.erdos_429",
+   "stage": "draft",
+   "path": "statements/429/429.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
    "id": "fc:43",
    "kind": "statement",
    "label": "Erdos43.erdos_43.parts.ii",
@@ -11833,11 +12830,35 @@
    "linked": false
   },
   {
+   "id": "fc:431",
+   "kind": "statement",
+   "label": "FC 431 (PR #4069)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4069"
+  },
+  {
+   "id": "fc:433",
+   "kind": "statement",
+   "label": "FC 433 (PR #4070)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4070"
+  },
+  {
    "id": "fc:434",
    "kind": "statement",
    "label": "Erdos434.erdos_434.parts.i",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos434.erdos_434.parts.i",
    "linked": true
+  },
+  {
+   "id": "fc:435",
+   "kind": "statement",
+   "label": "Erdos435.erdos_435",
+   "stage": "draft",
+   "path": "statements/435/435.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
   },
   {
    "id": "fc:44",
@@ -11861,11 +12882,39 @@
    "linked": false
   },
   {
+   "id": "fc:447",
+   "kind": "statement",
+   "label": "FC 447 (PR #4071)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4071"
+  },
+  {
    "id": "fc:448",
    "kind": "statement",
    "label": "Erdos448.erdos_448",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos448.erdos_448",
    "linked": false
+  },
+  {
+   "id": "fc:450",
+   "kind": "statement",
+   "label": "FC 450 (PR #4072)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4072"
+  },
+  {
+   "id": "fc:452",
+   "kind": "statement",
+   "label": "FC 452 (PR #4073)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4073"
+  },
+  {
+   "id": "fc:453",
+   "kind": "statement",
+   "label": "FC 453 (PR #4346)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4346"
   },
   {
    "id": "fc:454",
@@ -11910,11 +12959,32 @@
    "linked": true
   },
   {
+   "id": "fc:462",
+   "kind": "statement",
+   "label": "FC 462 (PR #4074)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4074"
+  },
+  {
    "id": "fc:463",
    "kind": "statement",
    "label": "Erdos463.erdos_463",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos463.erdos_463",
    "linked": false
+  },
+  {
+   "id": "fc:467",
+   "kind": "statement",
+   "label": "FC 467 (PR #4075)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4075"
+  },
+  {
+   "id": "fc:468",
+   "kind": "statement",
+   "label": "FC 468 (PR #4076)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4076"
   },
   {
    "id": "fc:469",
@@ -11924,6 +12994,13 @@
    "linked": false
   },
   {
+   "id": "fc:47",
+   "kind": "statement",
+   "label": "FC 47 (PR #4354)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4354"
+  },
+  {
    "id": "fc:470",
    "kind": "statement",
    "label": "Erdos470.erdos_470.parts.ii",
@@ -11931,11 +13008,39 @@
    "linked": false
   },
   {
+   "id": "fc:472",
+   "kind": "statement",
+   "label": "FC 472 (PR #4077)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4077"
+  },
+  {
+   "id": "fc:474",
+   "kind": "statement",
+   "label": "FC 474 (PR #4213)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4213"
+  },
+  {
+   "id": "fc:476",
+   "kind": "statement",
+   "label": "FC 476 (PR #4346)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4346"
+  },
+  {
    "id": "fc:477",
    "kind": "statement",
    "label": "Erdos477.erdos_477",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos477.erdos_477",
    "linked": false
+  },
+  {
+   "id": "fc:478",
+   "kind": "statement",
+   "label": "FC 478 (PR #4078)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4078"
   },
   {
    "id": "fc:479",
@@ -11957,6 +13062,20 @@
    "label": "Erdos480.erdos_480",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos480.erdos_480",
    "linked": false
+  },
+  {
+   "id": "fc:481",
+   "kind": "statement",
+   "label": "FC 481 (PR #4354)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4354"
+  },
+  {
+   "id": "fc:483",
+   "kind": "statement",
+   "label": "FC 483 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
   },
   {
    "id": "fc:486",
@@ -12006,6 +13125,13 @@
    "label": "Erdos499.erdos_499",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos499.erdos_499",
    "linked": true
+  },
+  {
+   "id": "fc:5",
+   "kind": "statement",
+   "label": "FC 5 (PR #238)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/238"
   },
   {
    "id": "fc:50",
@@ -12092,6 +13218,13 @@
    "linked": false
   },
   {
+   "id": "fc:519",
+   "kind": "statement",
+   "label": "FC 519 (PR #4346)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4346"
+  },
+  {
    "id": "fc:52",
    "kind": "statement",
    "label": "Erdos52.erdos_52",
@@ -12106,6 +13239,13 @@
    "linked": false
   },
   {
+   "id": "fc:521",
+   "kind": "statement",
+   "label": "FC 521 (PR #3587)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3587"
+  },
+  {
    "id": "fc:522",
    "kind": "statement",
    "label": "Erdos522.erdos_522",
@@ -12113,11 +13253,46 @@
    "linked": false
   },
   {
+   "id": "fc:524",
+   "kind": "statement",
+   "label": "FC 524 (PR #3787)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3787"
+  },
+  {
+   "id": "fc:529",
+   "kind": "statement",
+   "label": "FC 529 (PR #3587)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3587"
+  },
+  {
+   "id": "fc:530",
+   "kind": "statement",
+   "label": "FC 530 (PR #4044)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4044"
+  },
+  {
+   "id": "fc:531",
+   "kind": "statement",
+   "label": "FC 531 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
    "id": "fc:532",
    "kind": "statement",
    "label": "Erdos532.erdos_532",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos532.erdos_532",
    "linked": true
+  },
+  {
+   "id": "fc:533",
+   "kind": "statement",
+   "label": "FC 533 (PR #4293)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4293"
   },
   {
    "id": "fc:535",
@@ -12134,6 +13309,13 @@
    "linked": false
   },
   {
+   "id": "fc:538",
+   "kind": "statement",
+   "label": "FC 538 (PR #4079)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4079"
+  },
+  {
    "id": "fc:539",
    "kind": "statement",
    "label": "Erdos539.erdos_539",
@@ -12141,11 +13323,25 @@
    "linked": false
   },
   {
+   "id": "fc:540",
+   "kind": "statement",
+   "label": "FC 540 (PR #4346)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4346"
+  },
+  {
    "id": "fc:541",
    "kind": "statement",
    "label": "Erdos541.erdos_541",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos541.erdos_541",
    "linked": true
+  },
+  {
+   "id": "fc:555",
+   "kind": "statement",
+   "label": "FC 555 (PR #4080)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4080"
   },
   {
    "id": "fc:56",
@@ -12181,6 +13377,20 @@
    "label": "Erdos567.erdos_567.parts.ii",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos567.erdos_567.parts.ii",
    "linked": false
+  },
+  {
+   "id": "fc:568",
+   "kind": "statement",
+   "label": "FC 568 (PR #1607)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/1607"
+  },
+  {
+   "id": "fc:579",
+   "kind": "statement",
+   "label": "FC 579 (PR #4293)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4293"
   },
   {
    "id": "fc:587",
@@ -12239,6 +13449,13 @@
    "linked": false
   },
   {
+   "id": "fc:597",
+   "kind": "statement",
+   "label": "FC 597 (PR #4228)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4228"
+  },
+  {
    "id": "fc:598",
    "kind": "statement",
    "label": "Erdos598.erdos_598",
@@ -12260,11 +13477,39 @@
    "linked": false
   },
   {
+   "id": "fc:60",
+   "kind": "statement",
+   "label": "FC 60 (PR #4311)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4311"
+  },
+  {
+   "id": "fc:600",
+   "kind": "statement",
+   "label": "FC 600 (PR #3996)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3996"
+  },
+  {
+   "id": "fc:601",
+   "kind": "statement",
+   "label": "FC 601 (PR #3788)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3788"
+  },
+  {
    "id": "fc:602",
    "kind": "statement",
    "label": "Erdos602.erdos_602",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos602.erdos_602",
    "linked": false
+  },
+  {
+   "id": "fc:603",
+   "kind": "statement",
+   "label": "FC 603 (PR #3776)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3776"
   },
   {
    "id": "fc:61",
@@ -12316,6 +13561,20 @@
    "linked": false
   },
   {
+   "id": "fc:625",
+   "kind": "statement",
+   "label": "FC 625 (PR #570)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/570"
+  },
+  {
+   "id": "fc:628",
+   "kind": "statement",
+   "label": "FC 628 (PR #4311)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4311"
+  },
+  {
    "id": "fc:633",
    "kind": "statement",
    "label": "Erdos633.erdos_633",
@@ -12342,6 +13601,13 @@
    "label": "Erdos647.erdos_647",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos647.erdos_647",
    "linked": false
+  },
+  {
+   "id": "fc:650",
+   "kind": "statement",
+   "label": "FC 650 (PR #4081)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4081"
   },
   {
    "id": "fc:653",
@@ -12372,6 +13638,20 @@
    "linked": false
   },
   {
+   "id": "fc:663",
+   "kind": "statement",
+   "label": "FC 663 (PR #4082)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4082"
+  },
+  {
+   "id": "fc:667",
+   "kind": "statement",
+   "label": "FC 667 (PR #4370)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4370"
+  },
+  {
    "id": "fc:67",
    "kind": "statement",
    "label": "Erdos67.erdos_67",
@@ -12386,6 +13666,13 @@
    "linked": false
   },
   {
+   "id": "fc:676",
+   "kind": "statement",
+   "label": "FC 676 (PR #4083)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4083"
+  },
+  {
    "id": "fc:677",
    "kind": "statement",
    "label": "Erdos677.erdos_677",
@@ -12398,6 +13685,13 @@
    "label": "Erdos678.erdos_678",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos678.erdos_678",
    "linked": false
+  },
+  {
+   "id": "fc:679",
+   "kind": "statement",
+   "label": "FC 679 (PR #4084)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4084"
   },
   {
    "id": "fc:68",
@@ -12456,6 +13750,20 @@
    "linked": false
   },
   {
+   "id": "fc:691",
+   "kind": "statement",
+   "label": "FC 691 (PR #4085)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4085"
+  },
+  {
+   "id": "fc:693",
+   "kind": "statement",
+   "label": "FC 693 (PR #4086)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4086"
+  },
+  {
    "id": "fc:694",
    "kind": "statement",
    "label": "Erdos694.erdos_694",
@@ -12468,6 +13776,13 @@
    "label": "Erdos695.erdos_695",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos695.erdos_695",
    "linked": false
+  },
+  {
+   "id": "fc:696",
+   "kind": "statement",
+   "label": "FC 696 (PR #4029)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4029"
   },
   {
    "id": "fc:697",
@@ -12524,6 +13839,13 @@
    "label": "Erdos707.erdos_707",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos707.erdos_707",
    "linked": true
+  },
+  {
+   "id": "fc:711",
+   "kind": "statement",
+   "label": "FC 711 (PR #4088)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4088"
   },
   {
    "id": "fc:723",
@@ -12631,6 +13953,20 @@
    "linked": false
   },
   {
+   "id": "fc:768",
+   "kind": "statement",
+   "label": "FC 768 (PR #4089)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4089"
+  },
+  {
+   "id": "fc:77",
+   "kind": "statement",
+   "label": "FC 77 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
    "id": "fc:770",
    "kind": "statement",
    "label": "Erdos770.erdos_770.parts.ii",
@@ -12652,6 +13988,13 @@
    "linked": false
   },
   {
+   "id": "fc:78",
+   "kind": "statement",
+   "label": "FC 78 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
    "id": "fc:786",
    "kind": "statement",
    "label": "Erdos786.erdos_786.parts.i",
@@ -12664,6 +14007,20 @@
    "label": "Erdos789.erdos_789",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos789.erdos_789",
    "linked": false
+  },
+  {
+   "id": "fc:794",
+   "kind": "statement",
+   "label": "FC 794 (PR #1739)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/1739"
+  },
+  {
+   "id": "fc:810",
+   "kind": "statement",
+   "label": "FC 810 (PR #4090)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4090"
   },
   {
    "id": "fc:812",
@@ -12685,6 +14042,13 @@
    "label": "Erdos82.erdos_82",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos82.erdos_82",
    "linked": false
+  },
+  {
+   "id": "fc:821",
+   "kind": "statement",
+   "label": "FC 821 (PR #4351)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4351"
   },
   {
    "id": "fc:822",
@@ -12734,6 +14098,20 @@
    "label": "Erdos835.erdos_835",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos835.erdos_835",
    "linked": false
+  },
+  {
+   "id": "fc:838",
+   "kind": "statement",
+   "label": "FC 838 (PR #1706)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/1706"
+  },
+  {
+   "id": "fc:839",
+   "kind": "statement",
+   "label": "FC 839 (PR #3586)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3586"
   },
   {
    "id": "fc:845",
@@ -12834,11 +14212,25 @@
    "linked": false
   },
   {
+   "id": "fc:87",
+   "kind": "statement",
+   "label": "FC 87 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
    "id": "fc:871",
    "kind": "statement",
    "label": "Erdos871.erdos_871",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos871.erdos_871",
    "linked": true
+  },
+  {
+   "id": "fc:872",
+   "kind": "statement",
+   "label": "FC 872 (PR #4226)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4226"
   },
   {
    "id": "fc:873",
@@ -13016,6 +14408,16 @@
    "linked": true
   },
   {
+   "id": "fc:93",
+   "kind": "statement",
+   "label": "Erdos93.erdos_93",
+   "stage": "draft",
+   "path": "statements/93/93.lean",
+   "gates_passed": true,
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4369"
+  },
+  {
    "id": "fc:930",
    "kind": "statement",
    "label": "Erdos930.erdos_930",
@@ -13035,6 +14437,13 @@
    "label": "Erdos932.erdos_932",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos932.erdos_932",
    "linked": false
+  },
+  {
+   "id": "fc:933",
+   "kind": "statement",
+   "label": "FC 933 (PR #4353)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4353"
   },
   {
    "id": "fc:936",
@@ -13107,6 +14516,13 @@
    "linked": false
   },
   {
+   "id": "fc:948",
+   "kind": "statement",
+   "label": "FC 948 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
    "id": "fc:949",
    "kind": "statement",
    "label": "Erdos949.erdos_949.variants.sidon",
@@ -13133,6 +14549,20 @@
    "label": "Erdos952.erdos_952",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos952.erdos_952",
    "linked": false
+  },
+  {
+   "id": "fc:953",
+   "kind": "statement",
+   "label": "FC 953 (PR #3977)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3977"
+  },
+  {
+   "id": "fc:955",
+   "kind": "statement",
+   "label": "FC 955 (PR #4352)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4352"
   },
   {
    "id": "fc:96",
@@ -13168,6 +14598,13 @@
    "label": "Erdos968.erdos_968",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos968.erdos_968",
    "linked": false
+  },
+  {
+   "id": "fc:969",
+   "kind": "statement",
+   "label": "FC 969 (PR #4091)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4091"
   },
   {
    "id": "fc:97",
@@ -13240,11 +14677,32 @@
    "linked": false
   },
   {
+   "id": "fc:986",
+   "kind": "statement",
+   "label": "FC 986 (PR #3588)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3588"
+  },
+  {
+   "id": "fc:987",
+   "kind": "statement",
+   "label": "FC 987 (PR #4354)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4354"
+  },
+  {
    "id": "fc:99",
    "kind": "statement",
    "label": "Erdos99.erdos_99",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos99.erdos_99",
    "linked": false
+  },
+  {
+   "id": "fc:993",
+   "kind": "statement",
+   "label": "FC 993 (PR #4192)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4192"
   },
   {
    "id": "fc:996",
@@ -19185,6 +20643,20 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1000",
+   "to": "erdos:1000",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1001",
+   "to": "erdos:1001",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1002",
    "to": "erdos:1002",
    "kind": "derived_from",
@@ -19206,11 +20678,256 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1005",
+   "to": "erdos:1005",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1006",
+   "to": "erdos:1006",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1007",
+   "to": "erdos:1007",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1008",
+   "to": "erdos:1008",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1009",
+   "to": "erdos:1009",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:101",
    "to": "erdos:101",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1010",
+   "to": "erdos:1010",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1011",
+   "to": "erdos:1011",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1012",
+   "to": "erdos:1012",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1013",
+   "to": "erdos:1013",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1014",
+   "to": "erdos:1014",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
+   "from": "fc:1015",
+   "to": "erdos:1015",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1016",
+   "to": "erdos:1016",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1017",
+   "to": "erdos:1017",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1018",
+   "to": "erdos:1018",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1019",
+   "to": "erdos:1019",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:102",
+   "to": "erdos:102",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1020",
+   "to": "erdos:1020",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1021",
+   "to": "erdos:1021",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1022",
+   "to": "erdos:1022",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1023",
+   "to": "erdos:1023",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1024",
+   "to": "erdos:1024",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1025",
+   "to": "erdos:1025",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1026",
+   "to": "erdos:1026",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1027",
+   "to": "erdos:1027",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1028",
+   "to": "erdos:1028",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1029",
+   "to": "erdos:1029",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
+   "from": "fc:103",
+   "to": "erdos:103",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1030",
+   "to": "erdos:1030",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
+   "from": "fc:1031",
+   "to": "erdos:1031",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1032",
+   "to": "erdos:1032",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1033",
+   "to": "erdos:1033",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1034",
+   "to": "erdos:1034",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1035",
+   "to": "erdos:1035",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4065 proposes the statement"
+  },
+  {
+   "from": "fc:1036",
+   "to": "erdos:1036",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1037",
+   "to": "erdos:1037",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1038",
@@ -19220,11 +20937,39 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1039",
+   "to": "erdos:1039",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:104",
+   "to": "erdos:104",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1040",
+   "to": "erdos:1040",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1041",
    "to": "erdos:1041",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1042",
+   "to": "erdos:1042",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1043",
@@ -19234,11 +20979,60 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1044",
+   "to": "erdos:1044",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1045",
+   "to": "erdos:1045",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1046",
+   "to": "erdos:1046",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1047",
+   "to": "erdos:1047",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1048",
+   "to": "erdos:1048",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1049",
    "to": "erdos:1049",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:105",
+   "to": "erdos:105",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4354 proposes the statement"
+  },
+  {
+   "from": "fc:1050",
+   "to": "erdos:1050",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1051",
@@ -19253,6 +21047,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1053",
+   "to": "erdos:1053",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4366 proposes the statement"
   },
   {
    "from": "fc:1054",
@@ -19283,11 +21084,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1058",
+   "to": "erdos:1058",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1059",
    "to": "erdos:1059",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:106",
+   "to": "erdos:106",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1060",
@@ -19332,6 +21147,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1066",
+   "to": "erdos:1066",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1067",
    "to": "erdos:1067",
    "kind": "derived_from",
@@ -19346,11 +21168,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1069",
+   "to": "erdos:1069",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:107",
    "to": "erdos:107",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1070",
+   "to": "erdos:1070",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1071",
@@ -19381,11 +21217,39 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1075",
+   "to": "erdos:1075",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1076",
+   "to": "erdos:1076",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1077",
    "to": "erdos:1077",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1078",
+   "to": "erdos:1078",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1079",
+   "to": "erdos:1079",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:108",
@@ -19402,11 +21266,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1081",
+   "to": "erdos:1081",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1082",
    "to": "erdos:1082",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1083",
+   "to": "erdos:1083",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1084",
@@ -19423,6 +21301,34 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1086",
+   "to": "erdos:1086",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1087",
+   "to": "erdos:1087",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1088",
+   "to": "erdos:1088",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1089",
+   "to": "erdos:1089",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:109",
    "to": "erdos:109",
    "kind": "derived_from",
@@ -19435,6 +21341,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1091",
+   "to": "erdos:1091",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1092",
@@ -19479,11 +21392,39 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1098",
+   "to": "erdos:1098",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1099",
+   "to": "erdos:1099",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:11",
    "to": "erdos:11",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:110",
+   "to": "erdos:110",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1100",
+   "to": "erdos:1100",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1101",
@@ -19498,6 +21439,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1103",
+   "to": "erdos:1103",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1104",
@@ -19535,6 +21483,41 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1109",
+   "to": "erdos:1109",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3975 proposes the statement"
+  },
+  {
+   "from": "fc:111",
+   "to": "erdos:111",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3785 proposes the statement"
+  },
+  {
+   "from": "fc:1110",
+   "to": "erdos:1110",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1111",
+   "to": "erdos:1111",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1112",
+   "to": "erdos:1112",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1113",
    "to": "erdos:1113",
    "kind": "derived_from",
@@ -19542,11 +21525,88 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1114",
+   "to": "erdos:1114",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1115",
+   "to": "erdos:1115",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1116",
+   "to": "erdos:1116",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1117",
+   "to": "erdos:1117",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1118",
+   "to": "erdos:1118",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
    "from": "fc:1119",
    "to": "erdos:1119",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:112",
+   "to": "erdos:112",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
+   "from": "fc:1120",
+   "to": "erdos:1120",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1121",
+   "to": "erdos:1121",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1122",
+   "to": "erdos:1122",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1123",
+   "to": "erdos:1123",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
+  },
+  {
+   "from": "fc:1124",
+   "to": "erdos:1124",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1125",
@@ -19563,11 +21623,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1127",
+   "to": "erdos:1127",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4221 proposes the statement"
+  },
+  {
    "from": "fc:1128",
    "to": "erdos:1128",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1129",
+   "to": "erdos:1129",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3422 proposes the statement"
   },
   {
    "from": "fc:1133",
@@ -19605,6 +21679,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:114",
+   "to": "erdos:114",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3958 proposes the statement"
+  },
+  {
    "from": "fc:1141",
    "to": "erdos:1141",
    "kind": "derived_from",
@@ -19617,6 +21698,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1144",
+   "to": "erdos:1144",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3587 proposes the statement"
   },
   {
    "from": "fc:1145",
@@ -19647,11 +21735,88 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1151",
+   "to": "erdos:1151",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3978 proposes the statement"
+  },
+  {
+   "from": "fc:1154",
+   "to": "erdos:1154",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3826 proposes the statement"
+  },
+  {
+   "from": "fc:1155",
+   "to": "erdos:1155",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3587 proposes the statement"
+  },
+  {
+   "from": "fc:1156",
+   "to": "erdos:1156",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3587 proposes the statement"
+  },
+  {
    "from": "fc:1167",
    "to": "erdos:1167",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1168",
+   "to": "erdos:1168",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3792 proposes the statement"
+  },
+  {
+   "from": "fc:1169",
+   "to": "erdos:1169",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4214 proposes the statement"
+  },
+  {
+   "from": "fc:1170",
+   "to": "erdos:1170",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4215 proposes the statement"
+  },
+  {
+   "from": "fc:1171",
+   "to": "erdos:1171",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3789 proposes the statement"
+  },
+  {
+   "from": "fc:1172",
+   "to": "erdos:1172",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3793 proposes the statement"
+  },
+  {
+   "from": "fc:1173",
+   "to": "erdos:1173",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3794 proposes the statement"
+  },
+  {
+   "from": "fc:1174",
+   "to": "erdos:1174",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4223 proposes the statement"
   },
   {
    "from": "fc:1175",
@@ -19666,6 +21831,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1177",
+   "to": "erdos:1177",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3790 proposes the statement"
+  },
+  {
+   "from": "fc:118",
+   "to": "erdos:118",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4219 proposes the statement"
   },
   {
    "from": "fc:119",
@@ -19710,6 +21889,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:1200",
+   "to": "erdos:1200",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3840 proposes the statement"
+  },
+  {
    "from": "fc:1201",
    "to": "erdos:1201",
    "kind": "derived_from",
@@ -19722,6 +21908,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:1208",
+   "to": "erdos:1208",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4258 proposes the statement"
   },
   {
    "from": "fc:1209",
@@ -19785,6 +21978,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:129",
+   "to": "erdos:129",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
   },
   {
    "from": "fc:13",
@@ -19906,6 +22106,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:159",
+   "to": "erdos:159",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
    "from": "fc:16",
    "to": "erdos:16",
    "kind": "derived_from",
@@ -19918,6 +22125,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:164",
+   "to": "erdos:164",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
+   "from": "fc:165",
+   "to": "erdos:165",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4236 proposes the statement"
   },
   {
    "from": "fc:168",
@@ -19946,6 +22167,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:175",
+   "to": "erdos:175",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4315 proposes the statement"
   },
   {
    "from": "fc:178",
@@ -19981,6 +22209,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:19",
+   "to": "erdos:19",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #2155 proposes the statement"
+  },
+  {
+   "from": "fc:190",
+   "to": "erdos:190",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
   },
   {
    "from": "fc:193",
@@ -20023,6 +22265,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:199",
+   "to": "erdos:199",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4343 proposes the statement"
+  },
+  {
+   "from": "fc:2",
+   "to": "erdos:2",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4313 proposes the statement"
   },
   {
    "from": "fc:20",
@@ -20074,6 +22330,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:217",
+   "to": "erdos:217",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4064 proposes the statement"
+  },
+  {
    "from": "fc:218",
    "to": "erdos:218",
    "kind": "derived_from",
@@ -20093,6 +22356,27 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:221",
+   "to": "erdos:221",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4338 proposes the statement"
+  },
+  {
+   "from": "fc:224",
+   "to": "erdos:224",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4343 proposes the statement"
+  },
+  {
+   "from": "fc:226",
+   "to": "erdos:226",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4343 proposes the statement"
   },
   {
    "from": "fc:228",
@@ -20151,6 +22435,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:24",
+   "to": "erdos:24",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
    "from": "fc:241",
    "to": "erdos:241",
    "kind": "derived_from",
@@ -20184,6 +22475,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:246",
+   "to": "erdos:246",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4343 proposes the statement"
   },
   {
    "from": "fc:247",
@@ -20284,6 +22582,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:261",
+   "to": "erdos:261",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #1902 proposes the statement"
+  },
+  {
    "from": "fc:263",
    "to": "erdos:263",
    "kind": "derived_from",
@@ -20382,6 +22687,20 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:280",
+   "to": "erdos:280",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4345 proposes the statement"
+  },
+  {
+   "from": "fc:281",
+   "to": "erdos:281",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4346 proposes the statement"
+  },
+  {
    "from": "fc:282",
    "to": "erdos:282",
    "kind": "derived_from",
@@ -20445,6 +22764,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:296",
+   "to": "erdos:296",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4343 proposes the statement"
+  },
+  {
    "from": "fc:298",
    "to": "erdos:298",
    "kind": "derived_from",
@@ -20501,6 +22827,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:31",
+   "to": "erdos:31",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4345 proposes the statement"
+  },
+  {
    "from": "fc:312",
    "to": "erdos:312",
    "kind": "derived_from",
@@ -20513,6 +22846,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:314",
+   "to": "erdos:314",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
+   "from": "fc:315",
+   "to": "erdos:315",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
   },
   {
    "from": "fc:316",
@@ -20618,6 +22965,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:333",
+   "to": "erdos:333",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
+   "from": "fc:34",
+   "to": "erdos:34",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4345 proposes the statement"
   },
   {
    "from": "fc:340",
@@ -20739,6 +23100,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:363",
+   "to": "erdos:363",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4343 proposes the statement"
+  },
+  {
    "from": "fc:364",
    "to": "erdos:364",
    "kind": "derived_from",
@@ -20753,6 +23121,20 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:367",
+   "to": "erdos:367",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4354 proposes the statement"
+  },
+  {
+   "from": "fc:369",
+   "to": "erdos:369",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
    "from": "fc:370",
    "to": "erdos:370",
    "kind": "derived_from",
@@ -20765,6 +23147,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:372",
+   "to": "erdos:372",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4316 proposes the statement"
   },
   {
    "from": "fc:373",
@@ -20921,11 +23310,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:401",
+   "to": "erdos:401",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
    "from": "fc:402",
    "to": "erdos:402",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:405",
+   "to": "erdos:405",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3881 proposes the statement"
   },
   {
    "from": "fc:406",
@@ -20998,6 +23401,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:419",
+   "to": "erdos:419",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4346 proposes the statement"
+  },
+  {
    "from": "fc:42",
    "to": "erdos:42",
    "kind": "derived_from",
@@ -21019,11 +23429,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:423",
+   "to": "erdos:423",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4067 proposes the statement"
+  },
+  {
    "from": "fc:424",
    "to": "erdos:424",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:425",
+   "to": "erdos:425",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4068 proposes the statement"
   },
   {
    "from": "fc:427",
@@ -21040,6 +23464,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:429",
+   "to": "erdos:429",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
    "from": "fc:43",
    "to": "erdos:43",
    "kind": "derived_from",
@@ -21047,11 +23478,32 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:431",
+   "to": "erdos:431",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4069 proposes the statement"
+  },
+  {
+   "from": "fc:433",
+   "to": "erdos:433",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4070 proposes the statement"
+  },
+  {
    "from": "fc:434",
    "to": "erdos:434",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:435",
+   "to": "erdos:435",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
   },
   {
    "from": "fc:44",
@@ -21075,11 +23527,39 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:447",
+   "to": "erdos:447",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4071 proposes the statement"
+  },
+  {
    "from": "fc:448",
    "to": "erdos:448",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:450",
+   "to": "erdos:450",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4072 proposes the statement"
+  },
+  {
+   "from": "fc:452",
+   "to": "erdos:452",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4073 proposes the statement"
+  },
+  {
+   "from": "fc:453",
+   "to": "erdos:453",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4346 proposes the statement"
   },
   {
    "from": "fc:454",
@@ -21124,11 +23604,32 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:462",
+   "to": "erdos:462",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4074 proposes the statement"
+  },
+  {
    "from": "fc:463",
    "to": "erdos:463",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:467",
+   "to": "erdos:467",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4075 proposes the statement"
+  },
+  {
+   "from": "fc:468",
+   "to": "erdos:468",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4076 proposes the statement"
   },
   {
    "from": "fc:469",
@@ -21138,6 +23639,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:47",
+   "to": "erdos:47",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4354 proposes the statement"
+  },
+  {
    "from": "fc:470",
    "to": "erdos:470",
    "kind": "derived_from",
@@ -21145,11 +23653,39 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:472",
+   "to": "erdos:472",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4077 proposes the statement"
+  },
+  {
+   "from": "fc:474",
+   "to": "erdos:474",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4213 proposes the statement"
+  },
+  {
+   "from": "fc:476",
+   "to": "erdos:476",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4346 proposes the statement"
+  },
+  {
    "from": "fc:477",
    "to": "erdos:477",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:478",
+   "to": "erdos:478",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4078 proposes the statement"
   },
   {
    "from": "fc:479",
@@ -21171,6 +23707,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:481",
+   "to": "erdos:481",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4354 proposes the statement"
+  },
+  {
+   "from": "fc:483",
+   "to": "erdos:483",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
   },
   {
    "from": "fc:486",
@@ -21220,6 +23770,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:5",
+   "to": "erdos:5",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #238 proposes the statement"
   },
   {
    "from": "fc:50",
@@ -21306,6 +23863,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:519",
+   "to": "erdos:519",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4346 proposes the statement"
+  },
+  {
    "from": "fc:52",
    "to": "erdos:52",
    "kind": "derived_from",
@@ -21320,6 +23884,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:521",
+   "to": "erdos:521",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3587 proposes the statement"
+  },
+  {
    "from": "fc:522",
    "to": "erdos:522",
    "kind": "derived_from",
@@ -21327,11 +23898,46 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:524",
+   "to": "erdos:524",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3787 proposes the statement"
+  },
+  {
+   "from": "fc:529",
+   "to": "erdos:529",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3587 proposes the statement"
+  },
+  {
+   "from": "fc:530",
+   "to": "erdos:530",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4044 proposes the statement"
+  },
+  {
+   "from": "fc:531",
+   "to": "erdos:531",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
    "from": "fc:532",
    "to": "erdos:532",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:533",
+   "to": "erdos:533",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4293 proposes the statement"
   },
   {
    "from": "fc:535",
@@ -21348,6 +23954,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:538",
+   "to": "erdos:538",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4079 proposes the statement"
+  },
+  {
    "from": "fc:539",
    "to": "erdos:539",
    "kind": "derived_from",
@@ -21355,11 +23968,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:540",
+   "to": "erdos:540",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4346 proposes the statement"
+  },
+  {
    "from": "fc:541",
    "to": "erdos:541",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:555",
+   "to": "erdos:555",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4080 proposes the statement"
   },
   {
    "from": "fc:56",
@@ -21395,6 +24022,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:568",
+   "to": "erdos:568",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #1607 proposes the statement"
+  },
+  {
+   "from": "fc:579",
+   "to": "erdos:579",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4293 proposes the statement"
   },
   {
    "from": "fc:587",
@@ -21453,6 +24094,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:597",
+   "to": "erdos:597",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4228 proposes the statement"
+  },
+  {
    "from": "fc:598",
    "to": "erdos:598",
    "kind": "derived_from",
@@ -21474,11 +24122,39 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:60",
+   "to": "erdos:60",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4311 proposes the statement"
+  },
+  {
+   "from": "fc:600",
+   "to": "erdos:600",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3996 proposes the statement"
+  },
+  {
+   "from": "fc:601",
+   "to": "erdos:601",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3788 proposes the statement"
+  },
+  {
    "from": "fc:602",
    "to": "erdos:602",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:603",
+   "to": "erdos:603",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3776 proposes the statement"
   },
   {
    "from": "fc:61",
@@ -21530,6 +24206,20 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:625",
+   "to": "erdos:625",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #570 proposes the statement"
+  },
+  {
+   "from": "fc:628",
+   "to": "erdos:628",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4311 proposes the statement"
+  },
+  {
    "from": "fc:633",
    "to": "erdos:633",
    "kind": "derived_from",
@@ -21556,6 +24246,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:650",
+   "to": "erdos:650",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4081 proposes the statement"
   },
   {
    "from": "fc:653",
@@ -21586,6 +24283,20 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:663",
+   "to": "erdos:663",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4082 proposes the statement"
+  },
+  {
+   "from": "fc:667",
+   "to": "erdos:667",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4370 proposes the statement"
+  },
+  {
    "from": "fc:67",
    "to": "erdos:67",
    "kind": "derived_from",
@@ -21600,6 +24311,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:676",
+   "to": "erdos:676",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4083 proposes the statement"
+  },
+  {
    "from": "fc:677",
    "to": "erdos:677",
    "kind": "derived_from",
@@ -21612,6 +24330,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:679",
+   "to": "erdos:679",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4084 proposes the statement"
   },
   {
    "from": "fc:68",
@@ -21670,6 +24395,20 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:691",
+   "to": "erdos:691",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4085 proposes the statement"
+  },
+  {
+   "from": "fc:693",
+   "to": "erdos:693",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4086 proposes the statement"
+  },
+  {
    "from": "fc:694",
    "to": "erdos:694",
    "kind": "derived_from",
@@ -21682,6 +24421,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:696",
+   "to": "erdos:696",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4029 proposes the statement"
   },
   {
    "from": "fc:697",
@@ -21738,6 +24484,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:711",
+   "to": "erdos:711",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4088 proposes the statement"
   },
   {
    "from": "fc:723",
@@ -21845,6 +24598,20 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:768",
+   "to": "erdos:768",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4089 proposes the statement"
+  },
+  {
+   "from": "fc:77",
+   "to": "erdos:77",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
    "from": "fc:770",
    "to": "erdos:770",
    "kind": "derived_from",
@@ -21866,6 +24633,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:78",
+   "to": "erdos:78",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
    "from": "fc:786",
    "to": "erdos:786",
    "kind": "derived_from",
@@ -21878,6 +24652,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:794",
+   "to": "erdos:794",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #1739 proposes the statement"
+  },
+  {
+   "from": "fc:810",
+   "to": "erdos:810",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4090 proposes the statement"
   },
   {
    "from": "fc:812",
@@ -21899,6 +24687,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:821",
+   "to": "erdos:821",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4351 proposes the statement"
   },
   {
    "from": "fc:822",
@@ -21948,6 +24743,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:838",
+   "to": "erdos:838",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #1706 proposes the statement"
+  },
+  {
+   "from": "fc:839",
+   "to": "erdos:839",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3586 proposes the statement"
   },
   {
    "from": "fc:845",
@@ -22048,11 +24857,25 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:87",
+   "to": "erdos:87",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
    "from": "fc:871",
    "to": "erdos:871",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:872",
+   "to": "erdos:872",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4226 proposes the statement"
   },
   {
    "from": "fc:873",
@@ -22230,6 +25053,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:93",
+   "to": "erdos:93",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "staged campaign draft (statements/), mechanically gated"
+  },
+  {
    "from": "fc:930",
    "to": "erdos:930",
    "kind": "derived_from",
@@ -22249,6 +25079,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:933",
+   "to": "erdos:933",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4353 proposes the statement"
   },
   {
    "from": "fc:936",
@@ -22321,6 +25158,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:948",
+   "to": "erdos:948",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
    "from": "fc:949",
    "to": "erdos:949",
    "kind": "derived_from",
@@ -22347,6 +25191,20 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:953",
+   "to": "erdos:953",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3977 proposes the statement"
+  },
+  {
+   "from": "fc:955",
+   "to": "erdos:955",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4352 proposes the statement"
   },
   {
    "from": "fc:96",
@@ -22382,6 +25240,13 @@
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:969",
+   "to": "erdos:969",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4091 proposes the statement"
   },
   {
    "from": "fc:97",
@@ -22454,11 +25319,32 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:986",
+   "to": "erdos:986",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #3588 proposes the statement"
+  },
+  {
+   "from": "fc:987",
+   "to": "erdos:987",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4354 proposes the statement"
+  },
+  {
    "from": "fc:99",
    "to": "erdos:99",
    "kind": "derived_from",
    "trust": "declared",
    "evidence": "FormalConjectures file exists"
+  },
+  {
+   "from": "fc:993",
+   "to": "erdos:993",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4192 proposes the statement"
   },
   {
    "from": "fc:996",
@@ -26476,42 +29362,42 @@
   },
   {
    "from": "vsa:vsa_1f3d381599abb1ff",
-   "to": "erdos:333",
+   "to": "fc:333",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_286db47f558bdec1",
-   "to": "erdos:369",
+   "to": "fc:369",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_40c141d610daf5d4",
-   "to": "erdos:314",
+   "to": "fc:314",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_560014a2ef689aed",
-   "to": "erdos:164",
+   "to": "fc:164",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_56973ed9feca81cc",
-   "to": "erdos:429",
+   "to": "fc:429",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_5b64b43cdceb5588",
-   "to": "erdos:164",
+   "to": "fc:164",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -26525,70 +29411,70 @@
   },
   {
    "from": "vsa:vsa_705d7d58a8fe1816",
-   "to": "erdos:93",
+   "to": "fc:93",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_7510e45af9ee47fd",
-   "to": "erdos:314",
+   "to": "fc:314",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_7c835a596e46b58b",
-   "to": "erdos:24",
+   "to": "fc:24",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_879bd2c826515cbf",
-   "to": "erdos:333",
+   "to": "fc:333",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_9691f0035704c649",
-   "to": "erdos:401",
+   "to": "fc:401",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_96f98b83ba41c2e7",
-   "to": "erdos:315",
+   "to": "fc:315",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_9ce6beabb331c7f5",
-   "to": "erdos:93",
+   "to": "fc:93",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_a6dd8ad77d869095",
-   "to": "erdos:315",
+   "to": "fc:315",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_c1ba4a06c0a0bfce",
-   "to": "erdos:369",
+   "to": "fc:369",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_c974adb93cc0448c",
-   "to": "erdos:429",
+   "to": "fc:429",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -26602,28 +29488,28 @@
   },
   {
    "from": "vsa:vsa_d26afe685e264d30",
-   "to": "erdos:435",
+   "to": "fc:435",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_db083f4319ac62f7",
-   "to": "erdos:435",
+   "to": "fc:435",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_e7d5e9e9e1ec62cf",
-   "to": "erdos:24",
+   "to": "fc:24",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
    "from": "vsa:vsa_fd540ecebd0e4429",
-   "to": "erdos:401",
+   "to": "fc:401",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"

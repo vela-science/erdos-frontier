@@ -11,7 +11,9 @@ author truth-bearing findings):
                      every edge, rebuilt from source locks by the reducer
 
 Nodes  erdos:<n>        the boxed problem (1,217)
-       fc:<n>           the Formal Conjectures statement
+       fc:<n>           the Formal Conjectures statement — a merged FC file, a
+                        staged campaign draft (statements/<n>/), or a statement
+                        proposed by an open FC PR (the row's claims)
        proof:<src>:<n>  a hosted Lean proof artifact
        cond:<key>       a load-bearing condition (assumed theorem / hypothesis)
        wiki:<n>         the frozen AI-contributions wiki claim
@@ -38,6 +40,7 @@ from __future__ import annotations
 
 import json
 import pathlib
+import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -45,11 +48,30 @@ STATUS = HERE / "site" / "status.json"
 VERDICTS = HERE / "site" / "verdicts.json"
 FRONTIER = HERE / "frontier.json"
 LOCK = HERE / "sources.lock.json"
+STATEMENTS = HERE / "statements"
 OUT_DIR = HERE / "graph"
 SITE_GRAPH = HERE / "site" / "graph.json"
 
 VERDICT_EDGE = {"faithful": "supports", "unfaithful": "contradicts",
                 "variant": "specializes"}
+
+
+def staged_draft(n: int) -> dict | None:
+    """A campaign draft staged in statements/<n>/ — the statement exists in this
+    repo before it exists upstream, so the graph indexes it (trust: declared)."""
+    lean = STATEMENTS / str(n) / f"{n}.lean"
+    if not lean.exists():
+        return None
+    text = lean.read_text()
+    ns = re.search(r"^namespace\s+(\S+)", text, re.M)
+    thm = re.search(r"^theorem\s+([A-Za-z0-9_']+)", text, re.M)
+    label = (f"{ns.group(1)}.{thm.group(1)}" if ns and thm
+             else (thm.group(1) if thm else f"FC draft {n}"))
+    gates_path = STATEMENTS / str(n) / "gates.json"
+    gates = json.loads(gates_path.read_text()) if gates_path.exists() else None
+    return {"label": label, "path": f"statements/{n}/{n}.lean",
+            "gates_passed": (bool(gates.get("passed")) if gates else None),
+            "linked": "formal_proof" in text}
 
 
 def build() -> dict:
@@ -87,11 +109,31 @@ def build() -> dict:
                    url=row.get("erdos_url"))
 
         fc = row.get("fc") or {}
+        claims = row.get("claims") or []
+        draft = None if (fc.get("has_file") or fc.get("path")) else staged_draft(n)
         if fc.get("has_file") or fc.get("path"):
             fid = node(f"fc:{n}", "statement", fc.get("theorem") or f"FC {n}",
                        url=fc.get("fc_url"), linked=bool(fc.get("linked")))
             edge(fid, pid, "derived_from", "declared",
                  evidence="FormalConjectures file exists")
+        elif draft:
+            # staged campaign draft: the statement lives in this repo (and, once
+            # submitted, in an open FC PR) until conjectures.json reflects a merge
+            fid = node(f"fc:{n}", "statement", draft["label"], stage="draft",
+                       path=draft["path"], gates_passed=draft["gates_passed"],
+                       linked=draft["linked"],
+                       url=(claims[0].get("url") if claims else None))
+            edge(fid, pid, "derived_from", "declared",
+                 evidence="staged campaign draft (statements/), mechanically gated"
+                          if draft["gates_passed"]
+                          else "staged campaign draft (statements/)")
+        elif claims:
+            # an open FC PR proposes the statement; no file at HEAD yet
+            c = claims[0]
+            fid = node(f"fc:{n}", "statement", f"FC {n} (PR #{c.get('number')})",
+                       stage="in-pr", url=c.get("url"))
+            edge(fid, pid, "derived_from", "declared",
+                 evidence=f"open FC PR #{c.get('number')} proposes the statement")
 
         machine = row.get("machine") or {}
         proof_ids = []
