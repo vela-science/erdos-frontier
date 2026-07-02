@@ -26,5 +26,12 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "vs plby: plby states `G.cliqueNum = 3`; the problem text asks only that G 'contains no K_4', i.e. `G.CliqueFree 4` (jayyhk agrees). `cliqueNum = 3` is strictly stronger (it additionally asserts a triangle exists) and implies our conjunct, so the linked plby proof covers this statement.",
+    "vs both: hosted theorems are bare existentials; ours wraps the statement in `answer(True) ↔` per FC house style for solved yes/no problems.",
+    "vs both: hosted colour with `c : G.edgeSet → Bool`; ours uses `Fin 2`, the FC convention for r-colourings (cf. FC ErdosProblems/617.lean). `Bool ≃ Fin 2`, so the properties coincide.",
+    "vs both: hosted carry an extra `(_ : DecidableEq V)` binder; dropped as proof-irrelevant (classically available).",
+    "vs both: hosted quantify `V : Type`; ours uses `V : Type*` following FC precedent in ErdosProblems/595.lean (the infinite version of this problem).",
+    "vs problem text: the informal statement does not stipulate finiteness of G; we require `Fintype V` following both hosted theorems and the Folkman-number discussion (noted in the docstring)."
+  ]
 }

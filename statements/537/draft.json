@@ -1,6 +1,6 @@
 {
   "problem": 537,
-  "status": "staged",
+  "status": "drafted",
   "staged_at": "2026-07-02T06:24:01+00:00",
   "upstream_state": "disproved (Lean)",
   "latex_sha256": "65c28397bf28e663da15a86f15451e8552c5fbac68d1e3455f50beb1cc5cfc24",
@@ -26,5 +26,13 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "STATEMENT DIRECTION: the drafted theorem states the question positively as `answer(False) ↔ P` (upstream state 'disproved (Lean)' maps to FC category 'research solved' with answer False, cf. drafted 333/429). Both hosted theorems (plby erdos_537, jayyhk erdos_537) instead state the outright negation `¬(∀ ε > 0, …)`. Modulo the notes below, each hosted statement is exactly ¬P.",
+    "GROUND SET: the problem says $A\\subseteq \\{1,\\ldots,N\\}$; the draft uses `A ⊆ Finset.Icc 1 N`, agreeing with jayyhk. plby instead uses `A ⊆ Finset.range (N + 1)`, i.e. allows 0 ∈ A. The divergence is not vacuous: any A containing 0 satisfies the inner pattern trivially (a₁ = a₂ = a₃ = 0 with any distinct primes), so plby's universally-quantified proposition is weaker hypothesis-side; both negations still hold via the same Ruzsa counterexample, which lives in (N/2, N). We follow the text.",
+    "SUFFICIENTLY LARGE: '$N$ be sufficiently large' is rendered `∀ᶠ N : ℕ in atTop` (FC idiom, cf. FC 1057/1104); both hosted use the equivalent explicit threshold `∃ N₀, ∀ N ≥ N₀`. Same proposition up to Filter.eventually_atTop.",
+    "DENSITY HYPOTHESIS: `(A.card : ℝ) ≥ ε * N` — identical shape in both hosted theorems (real-cast card vs ε·N); no divergence.",
+    "DISTINCTNESS: only the primes p₁,p₂,p₃ carry pairwise-distinctness (three ≠ conjuncts), exactly as the problem text ('distinct primes') and both hosted theorems; the a_i are not required distinct (for a_i ≥ 1 their distinctness follows from that of the p_i anyway).",
+    "EQUATION CHAIN: $a_1p_1=a_2p_2=a_3p_3$ rendered as the two-conjunct chain `a₁ * p₁ = a₂ * p₂ ∧ a₂ * p₂ = a₃ * p₃` over ℕ, matching both hosted theorems.",
+    "FORMAL_PROOF PIN: link_allowed=true (machine verdict unconditional, source plby); the attribute pins plby at commit 1d7b3f00780b85ed0462e79a1cd5650ee9055655, whose Erdos537.lean sha256 = c9eaa545f4f872786520abf8ed0cc58fac4cb17c9483f41bdf27086a879f2a6f matches the audited hosted.file_sha256 in this draft.json exactly."
+  ]
 }

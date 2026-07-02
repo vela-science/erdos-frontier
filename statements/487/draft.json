@@ -26,5 +26,10 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "hypothesis (vs plby AND jayyhk): both hosted theorems assume `lowerDensity A > 0`; this draft reads the problem text's 'positive density' literally as `Set.HasPosDensity` (natural density exists and is positive), the FC house convention (cf. FC 741's literal-interpretation note, FC 318/330/418/424/968). HasPosDensity implies positive lower density, so the pinned plby proof (which explicitly proves the positive-lower-density version) covers this statement.",
+    "wrapper (vs plby AND jayyhk): hosted theorems fix `(A : Set ℕ)` as a parameter with no answer elaborator; this draft uses the FC solved-question shape `answer(True) ↔ ∀ A : Set ℕ, ...` (cf. FC-style drafts for 24/164/314/333).",
+    "conclusion: identical to both hosted theorems (same distinctness conjunct order `a ≠ b ∧ b ≠ c ∧ a ≠ c` and `Nat.lcm a b = c`).",
+    "formal_proof link pinned to commit 1d7b3f00780b85ed0462e79a1cd5650ee9055655 (batch-3 pin); Erdos487.lean at that commit sha256-matches draft.json hosted file_sha256 a5c8f8b10bfcce968add47fb0f198c121c095cee90d7e0d93e972f40f75bb441."
+  ]
 }

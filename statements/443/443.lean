@@ -21,19 +21,46 @@ import FormalConjectures.Util.ProblemImports
 
 *References:*
 - [erdosproblems.com/443](https://www.erdosproblems.com/443)
-<!-- DRAFTER: add cited papers from the solution line, [Xx00] style -->
+- [He25] Hegyvári, Norbert, *An elementary question of Erdős and Graham*.
+  arXiv:2503.24201 (2025).
 -/
 
 namespace Erdos443
 
 /--
-<!-- DRAFTER: the boxed problem text VERBATIM from inputs.md (do not rephrase);
-     for solved problems add the verbatim solution sentence + citations. -->
+The set $\{k(m-k) : 1\leq k\leq m/2\}$, where `m / 2` is `ℕ` floor division.
+
+Since $k(m-k)$ is symmetric under $k \mapsto m-k$, this is the same set of values as
+$\{r(m-r) : 1 \leq r \leq m-1\}$, the parametrisation used in the linked formal proof.
 -/
-@[category research solved, AMS 11]
-<!-- DRAFTER: fix AMS tags; add `formal_proof using lean4 at "<pinned-url>"`
-     ONLY if draft.json says link_allowed=true -->
-theorem erdos_443 : answer(sorry) := by
+def A (m : ℕ) : Finset ℕ := (Finset.Icc 1 (m / 2)).image fun k => k * (m - k)
+
+/--
+Let $m,n\geq 1$. What is
+\[\# \{ k(m-k) : 1\leq k\leq m/2\} \cap \{ l(n-l) : 1\leq l\leq n/2\}?\]
+Can it be arbitrarily large? Is it $\leq (mn)^{o(1)}$ for all sufficiently large $m,n$?
+
+This was solved independently by Hegyvári [He25] and Cambie (unpublished), who show that if
+$m>n$ then the set in question has size
+\[\leq m^{O(1/\log\log m)},\]
+and that for any integer $s$ there exist infinitely many pairs $(m,n)$ such that the set in
+question has size $s$.
+
+The answer to both questions is yes. Writing `A m` for $\{k(m-k) : 1\leq k\leq m/2\}$, the
+first conjunct says the intersection can be made arbitrarily large, and the second renders
+the $(mn)^{o(1)}$ bound: for every $\varepsilon > 0$ the intersection has size less than
+$(mn)^\varepsilon$ whenever $m > n$ are both sufficiently large.
+
+Both parts restrict to $n < m$: for $m = n$ the intersection is all of `A n`, which has size
+on the order of $n/2$, so the $(mn)^{o(1)}$ bound is meant for $m \neq n$ — by symmetry of
+the intersection, WLOG $n < m$ (the ordering under which [He25] proves the bound).
+-/
+@[category research solved, AMS 11,
+  formal_proof using lean4 at "https://github.com/plby/lean-proofs/blob/1d7b3f00780b85ed0462e79a1cd5650ee9055655/src/v4.29.1/ErdosProblems/Erdos443.lean"]
+theorem erdos_443 : answer(True) ↔
+    (∀ s : ℕ, ∃ m n : ℕ, n < m ∧ s ≤ (A n ∩ A m).card) ∧
+    (∀ ε : ℝ, 0 < ε → ∃ n₀ : ℕ, ∀ m n : ℕ, n₀ < n → n < m →
+      ((A n ∩ A m).card : ℝ) < ((m : ℝ) * n) ^ ε) := by
   sorry
 
 end Erdos443

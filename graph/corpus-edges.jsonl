@@ -412,6 +412,7 @@
 {"from": "fc:435", "to": "erdos:435", "kind": "derived_from"}
 {"from": "fc:44", "to": "erdos:44", "kind": "derived_from"}
 {"from": "fc:442", "to": "erdos:442", "kind": "derived_from"}
+{"from": "fc:443", "to": "erdos:443", "kind": "derived_from"}
 {"from": "fc:445", "to": "erdos:445", "kind": "derived_from"}
 {"from": "fc:447", "to": "erdos:447", "kind": "derived_from"}
 {"from": "fc:448", "to": "erdos:448", "kind": "derived_from"}
@@ -441,16 +442,21 @@
 {"from": "fc:480", "to": "erdos:480", "kind": "derived_from"}
 {"from": "fc:481", "to": "erdos:481", "kind": "derived_from"}
 {"from": "fc:483", "to": "erdos:483", "kind": "derived_from"}
+{"from": "fc:484", "to": "erdos:484", "kind": "derived_from"}
 {"from": "fc:486", "to": "erdos:486", "kind": "derived_from"}
+{"from": "fc:487", "to": "erdos:487", "kind": "derived_from"}
 {"from": "fc:488", "to": "erdos:488", "kind": "derived_from"}
 {"from": "fc:489", "to": "erdos:489", "kind": "derived_from"}
 {"from": "fc:493", "to": "erdos:493", "kind": "derived_from"}
 {"from": "fc:494", "to": "erdos:494", "kind": "derived_from"}
 {"from": "fc:495", "to": "erdos:495", "kind": "derived_from"}
+{"from": "fc:497", "to": "erdos:497", "kind": "derived_from"}
+{"from": "fc:498", "to": "erdos:498", "kind": "derived_from"}
 {"from": "fc:499", "to": "erdos:499", "kind": "derived_from"}
 {"from": "fc:5", "to": "erdos:5", "kind": "derived_from"}
 {"from": "fc:50", "to": "erdos:50", "kind": "derived_from"}
 {"from": "fc:501", "to": "erdos:501", "kind": "derived_from"}
+{"from": "fc:502", "to": "erdos:502", "kind": "derived_from"}
 {"from": "fc:503", "to": "erdos:503", "kind": "derived_from"}
 {"from": "fc:505", "to": "erdos:505", "kind": "derived_from"}
 {"from": "fc:507", "to": "erdos:507", "kind": "derived_from"}
@@ -474,6 +480,7 @@
 {"from": "fc:533", "to": "erdos:533", "kind": "derived_from"}
 {"from": "fc:535", "to": "erdos:535", "kind": "derived_from"}
 {"from": "fc:536", "to": "erdos:536", "kind": "derived_from"}
+{"from": "fc:537", "to": "erdos:537", "kind": "derived_from"}
 {"from": "fc:538", "to": "erdos:538", "kind": "derived_from"}
 {"from": "fc:539", "to": "erdos:539", "kind": "derived_from"}
 {"from": "fc:540", "to": "erdos:540", "kind": "derived_from"}
@@ -486,6 +493,7 @@
 {"from": "fc:567", "to": "erdos:567", "kind": "derived_from"}
 {"from": "fc:568", "to": "erdos:568", "kind": "derived_from"}
 {"from": "fc:579", "to": "erdos:579", "kind": "derived_from"}
+{"from": "fc:582", "to": "erdos:582", "kind": "derived_from"}
 {"from": "fc:587", "to": "erdos:587", "kind": "derived_from"}
 {"from": "fc:590", "to": "erdos:590", "kind": "derived_from"}
 {"from": "fc:591", "to": "erdos:591", "kind": "derived_from"}
@@ -507,6 +515,7 @@
 {"from": "fc:613", "to": "erdos:613", "kind": "derived_from"}
 {"from": "fc:615", "to": "erdos:615", "kind": "derived_from"}
 {"from": "fc:617", "to": "erdos:617", "kind": "derived_from"}
+{"from": "fc:618", "to": "erdos:618", "kind": "derived_from"}
 {"from": "fc:619", "to": "erdos:619", "kind": "derived_from"}
 {"from": "fc:623", "to": "erdos:623", "kind": "derived_from"}
 {"from": "fc:624", "to": "erdos:624", "kind": "derived_from"}
@@ -515,6 +524,7 @@
 {"from": "fc:633", "to": "erdos:633", "kind": "derived_from"}
 {"from": "fc:64", "to": "erdos:64", "kind": "derived_from"}
 {"from": "fc:645", "to": "erdos:645", "kind": "derived_from"}
+{"from": "fc:646", "to": "erdos:646", "kind": "derived_from"}
 {"from": "fc:647", "to": "erdos:647", "kind": "derived_from"}
 {"from": "fc:650", "to": "erdos:650", "kind": "derived_from"}
 {"from": "fc:653", "to": "erdos:653", "kind": "derived_from"}

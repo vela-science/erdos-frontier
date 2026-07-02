@@ -26,5 +26,13 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "problem text vs statement: the site asks 'What is the size of the largest A?' (exact maximum unknown; binom(n+1,2) <= max <= binom(n+2,2)); the upstream solved verdict and the plby machine-verified proof certify the Bannai-Bannai-Stanton upper bound, so erdos_502 states |A| <= (n+2).choose 2 rather than an IsGreatest/answer() form (an exact-value form would not be solved).",
+    "vs plby: bannai_bannai_stanton is stated for general s-distance sets (is_s_distance_set A s, bound Nat.choose (d+s) s); we specialise to s = 2 with bound (n+2).choose 2.",
+    "vs plby: plby assumes [Fintype A] and concludes Fintype.card A <= ...; we use Set.Finite + Set.ncard per FC house style (cf. FC ErdosProblems/503.lean, the sister problem).",
+    "vs plby: plby packages finiteness and the distance count in def is_s_distance_set (A.Finite AND ncard {d | exists x in A, exists y in A, x != y and dist x y = d} = s); we inline the same two conditions as hypotheses hA and hA2, with an identical distance-set expression.",
+    "vs jayyhk: the jayyhk excerpt in inputs.md shows only the polynomial-dimension infrastructure (polynomials_of_degree_le, restriction_map, dim_s, monomials_le, card_monomials_le; file truncated mid-proof) and no final Erdos-502 statement; we state the BBS cardinality bound directly rather than the monomial-dimension bound dim_s <= card (monomials_le d s).",
+    "formal_proof URL pinned to commit 1d7b3f00780b85ed0462e79a1cd5650ee9055655 (batch convention) instead of blob/main from inputs.md; the pinned file's sha256 ad81b7d8a4cec348ab3ba0558df7304e608c3cee587ba816df967e0bde1f654d matches hosted[plby].file_sha256 in this draft.json.",
+    "notation: EuclideanSpace R (Fin n) is written with the scoped EuclideanGeometry notation R^n (same type); distances between distinct points are automatically nonzero, so no explicit exclusion of 0 from the distance set is needed (plby's distances_finset subtracts {0} defensively; its is_s_distance_set, like our hypothesis, does not)."
+  ]
 }

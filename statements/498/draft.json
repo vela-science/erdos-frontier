@@ -26,5 +26,11 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "vs plby (littlewood_offord_complex_bound): plby strengthens the norm hypothesis to 1 < ‖z i‖ (problem text: 1 ≤ |z_i|) and uses the CLOSED disc Metric.closedBall c 1; our statement keeps the verbatim 1 ≤ ‖z i‖ and uses the OPEN disc Metric.ball c 1. With 1 ≤ the closed-disc reading is false (n=1, z=1: closed unit disc at 0 contains both ±1 > choose 1 0 = 1); Kleitman [Kl65] proves the open-disc form.",
+    "vs plby (structural): plby binds signs via a let-bound Finset ℤ := {-1,1} and membership ε i ∈ signs; ours quantifies ∀ i, ε i = -1 ∨ ε i = 1 directly. plby states the bound as a bare theorem named littlewood_offord_complex_bound; ours wraps in FC house form answer(True) ↔ with name erdos_498.",
+    "vs jayyhk (erdos_498): mathematically aligned (1 ≤ ‖z i‖, Metric.ball c 1, Set.ncard over sign vectors, bound n.choose (n / 2)). Structural only: jayyhk uses let-bound sets (signs/all_coeffs/valid_sums) and states the inequality directly, without the answer(True) ↔ wrapper.",
+    "both hosted proofs and our statement count sign patterns ε (sums with multiplicity), the standard Littlewood-Offord reading of 'the number of sums'; this implies the bound for distinct sum values.",
+    "disc formalized as ∀ centre c : ℂ ('an arbitrary disc of radius 1'); floor(n/2) rendered as Nat division n / 2."
+  ]
 }

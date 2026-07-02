@@ -1,0 +1,27 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_f0ef27f2abed8479",
+  "kind": "diff_pack.released",
+  "target": {
+    "type": "frontier",
+    "id": "vfr_0a25edabc16db143"
+  },
+  "actor": {
+    "id": "agent:swarm-582",
+    "type": "agent"
+  },
+  "timestamp": "2026-07-02T06:33:48.042254+00:00",
+  "reason": "swarm batch-4: Erdős #582 statement draft, gate green",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
+  "payload": {
+    "aggregate_kind": "mixed",
+    "frontier_id": "vfr_0a25edabc16db143",
+    "members": [
+      "vpr_29a03c58728b17c1"
+    ],
+    "pack_id": "vsd_d972a0ad767eb762",
+    "summary": "swarm batch-4: Erdős #582 statement draft, gate green"
+  },
+  "caveats": []
+}

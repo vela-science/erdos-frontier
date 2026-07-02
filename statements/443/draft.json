@@ -1,6 +1,6 @@
 {
   "problem": 443,
-  "status": "staged",
+  "status": "drafted",
   "staged_at": "2026-07-02T06:23:54+00:00",
   "upstream_state": "proved (Lean)",
   "latex_sha256": "9b26e236de1996684e76e091e1803c8cc4d309c38bde56e1eaff96a4adc688de",
@@ -26,5 +26,13 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "Index range of A: draft defines A m = (Finset.Icc 1 (m / 2)).image (k ↦ k * (m - k)), the problem text's 1 ≤ k ≤ m/2 with Nat floor division; both hosted proofs define A k = (Finset.Ioo 0 k).image (r ↦ r * (k - r)), i.e. 1 ≤ r ≤ k-1. The two images are equal for every m (k(m-k) is symmetric under k ↦ m-k, and each value at r > m/2 is repeated at m-r ≤ m/2; checked also at the edge cases m = 0, 1 where both are empty). Same set, so the hosted theorems transfer across a one-lemma glue.",
+    "Part one codomain: draft states s ≤ (A n ∩ A m).card in ℕ; hosted erdos_443_part_one casts to ℝ (s ≤ ((A n ∩ A m).card : ℝ)). Equivalent by Nat.cast_le.",
+    "Ordering n < m: the problem text says 'Let m,n ≥ 1' with no ordering, but for m = n the intersection is all of A n (size ~ n/2), so the (mn)^{o(1)} bound is only intended for m ≠ n — WLOG n < m by symmetry of the intersection, and [He25] proves the bound in the form m > n. Draft follows both hosted theorems in carrying n < m in both conjuncts (in part one it only strengthens the existence claim).",
+    "(mn)^{o(1)} rendering: draft unfolds 'is it ≤ (mn)^{o(1)} for all sufficiently large m,n' as ∀ ε > 0, ∃ n₀, ∀ m n, n₀ < n → n < m → card < ((m:ℝ)*n)^ε, identical to hosted erdos_443_part_two ('sufficiently large' in the smaller variable n; strict < absorbs the ≤ since ε is arbitrary). Real.rpow on the right-hand side.",
+    "Form: draft wraps as answer(True) ↔ (part one ∧ part two), FC house style for solved yes/no questions; plby hosts the two parts as separate bare theorems (erdos_443_part_one / erdos_443_part_two), jayyhk additionally packages their conjunction as a bare theorem erdos_443 whose body is exactly draft's right-hand side.",
+    "Hosted-vs-hosted: plby and jayyhk have byte-identical A and part_one/part_two statements; jayyhk's extra combined erdos_443 (#print axioms: propext, Classical.choice, Quot.sound) is the only structural difference. No disagreement.",
+    "formal_proof pin: draft.json lists the plby URL at branch main; draft pins commit 1d7b3f00780b85ed0462e79a1cd5650ee9055655 (the batch's standard plby pin), where Erdos443.lean is byte-identical to the audited file (sha256 fb57f803... matches draft.json file_sha256)."
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "problem": 618,
-  "status": "staged",
+  "status": "drafted",
   "staged_at": "2026-07-02T06:24:04+00:00",
   "upstream_state": "proved (Lean)",
   "latex_sha256": "bf7c2033895336d9785e3c423f4ed99c7cf17afc8354b5ac502a7aae68ae0ccc",
@@ -26,5 +26,17 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "Form: draft wraps the statement as answer(True) <-> forall (G : forall n, SimpleGraph (Fin n)), ... (FC house style for solved yes/no questions, matching the in-tree 134.lean); both hosted proofs state a bare theorem with the family, triangle-freeness, and the little-o bound as named hypotheses. Same content.",
+    "maxDegree: draft defines Erdos618.maxDegree as Finset.univ.sup (fun v => G.degree v) under `open scoped Classical in`; plby defines maxDegreeFin via `by classical exact` with an explicit @SimpleGraph.degree ... (G.neighborSetFintype v); jayyhk defines maxDegreeFin as Finset.univ.sup (fun v => (G.neighborFinset v).card). All three are the same natural number (degree = neighborFinset.card by definition).",
+    "h2: draft's set comprehension is identical to both hosted h2 definitions (supergraph G <= H, H.CliqueFree 3, every two distinct vertices adjacent or with a common neighbour, card of edgeFinset difference = k); draft writes it as a term-level sInf instead of `by exact`, which is elaboration-only. No divergence in content.",
+    "Exponent spelling: draft writes (n : R) ^ ((1 : R) / 2) using the HPow real-power notation; hosted write Real.rpow (n : R) ((1 : R) / 2). The notation unfolds to Real.rpow, so these are the same function. Draft writes (n : R) ^ 2 with a Nat literal exponent; hosted write (n : R) ^ (2 : Nat). Identical.",
+    "Divergence from the problem text (shared with both hosted theorems): 'has diameter 2' is formalized as diameter at most 2 (adjacent-or-common-neighbour for every pair of distinct vertices); the two readings coincide for triangle-free graphs on >= 3 vertices since a diameter-<2 (complete) graph is not triangle-free. Noted in the docstring.",
+    "Divergence from the problem text (shared with both hosted theorems): the site text asks whether h(G) = o(n^2); h(G) is read as h_2(G), the quantity the problem itself defines (site typo). Noted in the docstring.",
+    "Divergence from the problem text (shared with both hosted theorems): the o(.) hypothesis and conclusion are quantified along a family of triangle-free graphs G n on n vertices (the standard reading of the asymptotic claim, and the reading used by FC's in-tree 134.lean, the problem Alon observed is essentially identical).",
+    "sInf convention (shared with both hosted theorems): over Nat, sInf of the empty set is 0, so h2 G = 0 if G admits no triangle-free diameter-<=2 supergraph. Harmless for the little-o conclusion and identical to hosted; noted in the h2 docstring.",
+    "Hosted-vs-hosted: plby and jayyhk final statements are byte-identical up to the maxDegreeFin definition style noted above. No disagreement."
+  ],
+  "ams_rationale": "AMS 5 (combinatorics): extremal graph theory \u2014 augmenting triangle-free graphs to diameter 2; same tag as the essentially-identical in-tree problem 134.",
+  "category": "research solved"
 }

@@ -26,5 +26,10 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "vs plby: hosted final theorem states Real.logb 2 (A n) ~[atTop] (n.choose (n/2) : ℝ) via Asymptotics.IsEquivalent; draft states the source's exponential form directly — ∃ o =o[atTop] (1 : ℕ → ℝ), ∀ n, (antichainCount n : ℝ) = 2 ^ ((1 + o n) * (n.choose (n/2) : ℝ)) — per FC house style (cf. FC 285). Equivalent because antichainCount n ≥ 1 and n.choose (n/2) ≥ 1 for all n.",
+    "vs jayyhk: hosted final theorem uses ∃ ε with Filter.Tendsto ε atTop (nhds 0); draft expresses the same o(1) condition as o =o[atTop] (1 : ℕ → ℝ) (Asymptotics.isLittleO_one_iff).",
+    "vs both hosted: A n is defined there as ((PP n).powerset.filter (IsAntichain (· ⊆ ·) ·)).card, requiring classical decidability for filter; draft uses Nat.card of the subtype {𝒜 : Finset (Finset (Fin n)) // IsAntichain (· ⊆ ·) ↑𝒜} — the same count with no Decidable instance. Hosted auxiliary machinery (comparability graph G n, symmetric chain decompositions, graph containers) is proof apparatus and is omitted in the statement-only lane.",
+    "vs problem text: [n] rendered as Fin n (house standard); the literal condition 'if A,B ∈ F then A ⊄ B' applied at A = B would be unsatisfiable (A ⊆ A), so the antichain condition is imposed on distinct pairs via Mathlib's IsAntichain, matching both hosted formalizations."
+  ]
 }

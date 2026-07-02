@@ -21,19 +21,42 @@ import FormalConjectures.Util.ProblemImports
 
 *References:*
 - [erdosproblems.com/484](https://www.erdosproblems.com/484)
-<!-- DRAFTER: add cited papers from the solution line, [Xx00] style -->
+- [ESS89] Erdős, P., Sárközy, A., and Sós, V. T., *On a conjecture of Roth and some related
+  problems. I*. (1989), 47-59.
 -/
 
 namespace Erdos484
 
+open scoped Classical in
 /--
-<!-- DRAFTER: the boxed problem text VERBATIM from inputs.md (do not rephrase);
-     for solved problems add the verbatim solution sentence + citations. -->
+Prove that there exists an absolute constant $c>0$ such that, whenever $\{1,\ldots,N\}$ is
+$k$-coloured (and $N$ is large enough depending on $k$) then there are at least $cN$ many
+integers in $\{1,\ldots,N\}$ which are representable as a monochromatic sum (that is, $a+b$
+where $a,b\in \{1,\ldots,N\}$ are in the same colour class and $a\neq b$).
+
+A conjecture of Roth. Solved by Erdős, Sárközy, and Sós [ESS89], who in fact prove that
+there are at least $\frac{N}{2}-O(N^{1-1/2^{k+1}})$ many even numbers which are of this form.
+
+The $k$-colouring of $\{1,\ldots,N\}$ is formalised as a function `f : ℕ → Fin k`; only its
+values on `Finset.Icc 1 N` are inspected, and the monochromatic sums counted are those landing
+back in `Finset.Icc 1 N`.
 -/
-@[category research solved, AMS 11]
-<!-- DRAFTER: fix AMS tags; add `formal_proof using lean4 at "<pinned-url>"`
-     ONLY if draft.json says link_allowed=true -->
-theorem erdos_484 : answer(sorry) := by
+-- Divergences from the hosted theorems (plby and jayyhk state the identical
+-- `monochromatic_sums_linear` / `erdos_484` over an auxiliary `monochromaticSumSet`):
+-- * hosted bound is `(monochromaticSumSet N k f).card ≥ ⌊c * (N : ℝ)⌋₊`; here the bound is
+--   stated directly over ℝ as `c * N ≤ card`, matching the problem's "at least $cN$".
+--   The two forms are equivalent up to rescaling the existentially quantified `c`.
+-- * hosted proofs define `monochromaticSumSet` as a classical `Finset.filter`; here the same
+--   filter predicate is inlined verbatim (same `Finset.Icc 1 N` window, same
+--   `a ≠ b ∧ f a = f b ∧ a + b = n` condition), so no auxiliary definition is needed.
+-- * `0 < k` here vs `k ≥ 1` hosted (definitionally equal on ℕ).
+@[category research solved, AMS 5 11,
+  formal_proof using lean4 at "https://github.com/plby/lean-proofs/blob/1d7b3f00780b85ed0462e79a1cd5650ee9055655/src/v4.29.1/ErdosProblems/Erdos484.lean"]
+theorem erdos_484 :
+    ∃ c : ℝ, 0 < c ∧ ∀ k : ℕ, 0 < k → ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ f : ℕ → Fin k,
+      c * N ≤ (((Finset.Icc 1 N).filter fun n =>
+        ∃ a ∈ Finset.Icc 1 N, ∃ b ∈ Finset.Icc 1 N,
+          a ≠ b ∧ f a = f b ∧ a + b = n).card : ℝ) := by
   sorry
 
 end Erdos484

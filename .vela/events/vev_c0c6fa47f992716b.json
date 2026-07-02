@@ -1,0 +1,25 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_c0c6fa47f992716b",
+  "kind": "attempt.claimed",
+  "target": {
+    "type": "finding",
+    "id": "erdos:497"
+  },
+  "actor": {
+    "id": "agent:swarm-497",
+    "type": "agent"
+  },
+  "timestamp": "2026-07-02T06:27:19.693633+00:00",
+  "reason": "obligation lease (swarm coordination)",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
+  "payload": {
+    "claimant_actor": "agent:swarm-497",
+    "claimant_pubkey": "20bdb11023d76a9e373d46270bf8d8d63cd79aafd29845eaf48c5d4c1280acab",
+    "lease_ttl_seconds": 14400,
+    "obligation_id": "erdos:497"
+  },
+  "caveats": [],
+  "signature": "v1:87b3b585a6918b5e643c5053ab1151df3f26b59144bf2d27df7f2aaaac2a01b7f5fa42f796701c7adeb57545a324f9456fa091018608155e02b6893465faf700"
+}

@@ -26,5 +26,13 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "vs problem text: the k-colouring of {1,...,N} is formalised as a total function f : ℕ → Fin k; only values on Finset.Icc 1 N are inspected (both hosted theorems make the same move).",
+    "vs problem text: 'integers in {1,...,N}' rendered as Finset.Icc 1 N and 'at least cN many' as the real inequality c * N ≤ card (cast to ℝ).",
+    "vs plby (monochromatic_sums_linear): hosted bound is (monochromaticSumSet N k f).card ≥ ⌊c * (N : ℝ)⌋₊ (natural floor); draft states c * N ≤ card over ℝ directly. Equivalent up to rescaling the existentially quantified c; the draft form matches the problem's 'at least cN' verbatim.",
+    "vs plby: hosted uses a noncomputable auxiliary def monochromaticSumSet (classical Finset.filter); draft inlines the identical filter predicate (same Icc 1 N window, same a ≠ b ∧ f a = f b ∧ a + b = n condition) with decidable instances, no aux def.",
+    "vs plby: draft writes 0 < k where hosted writes k ≥ 1 (definitionally equal on ℕ).",
+    "vs jayyhk: the inputs.md excerpt truncates before jayyhk's final theorem; fetched the full hosted file (sha256 b4d302d3... matches draft.json) and its erdos_484 is statement-identical to plby's monochromatic_sums_linear (same monochromaticSumSet, same ⌊c * N⌋₊ bound), so the plby divergence notes apply verbatim to jayyhk.",
+    "formal_proof link pinned to plby commit 1d7b3f00780b85ed0462e79a1cd5650ee9055655 (same pin as batch statements 93/401); verified the file at that commit has sha256 fa18aacc... matching this draft.json's file_sha256."
+  ]
 }

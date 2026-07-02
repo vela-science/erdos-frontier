@@ -26,5 +26,13 @@
     "open_prs": [],
     "issues": []
   },
-  "divergence_notes": []
+  "divergence_notes": [
+    "Packaging of 'distinct primes': draft uses `S : Finset N` with `forall p in S, p.Prime` (distinctness is inherent in a Finset), byte-parallel to jayyhk's erdos_646. plby's infinitely_many_even_factorial_exponents instead takes an injective family `p : Fin k -> N` with `hp : forall i, (p i).Prime` and `Function.Injective p`. Equivalent: the image of an injective family is a Finset of the same primes, and any Finset can be enumerated injectively.",
+    "Parity spelling: draft uses `Even (padicValNat p (n !))`, identical to jayyhk. plby states `partial_sum k p n i = 0` where `def partial_sum k p n := fun i => (padicValNat (p i) (Nat.factorial n) : ZMod 2)` (verified in the pinned file); `(m : ZMod 2) = 0 <-> Even m`, so the conditions coincide.",
+    "Quantification: both hosted theorems take the prime family/set as theorem parameters; the draft quantifies `forall S` inside `answer(True) <->` because the FC yes/no form needs a closed proposition (same move as FC 24).",
+    "Interpretation: '$n!$ is divisible by an even power of each of the $p_i$' is read as 'the exponent of $p_i$ in the factorization of $n!$ is even' -- the reading of Berend's paper (title: On the parity of exponents in the factorization of n!) and of BOTH hosted theorems. The literal reading 'exists an even e with p^e | n!' is trivially true (e = 0), so it cannot be the intended question. Noted in the docstring.",
+    "Degenerate case: the draft's quantification includes S = empty (trivially true), as does jayyhk's S and plby's k = 0. The text's p_1,...,p_k suggests k >= 1 but no floor is imposed, matching both hosted theorems; the k = 0 instance is harmless.",
+    "Hosted-vs-hosted: plby and jayyhk agree modulo packaging (injective Fin k family vs Finset) and parity spelling (ZMod 2 vs Even); no disagreement on content.",
+    "The solution line's bounded-gaps strengthening (gaps bounded in terms of the initial set of primes) is quoted in the docstring but not formalized; neither hosted theorem formalizes it and the problem text asks only for infinitude."
+  ]
 }
