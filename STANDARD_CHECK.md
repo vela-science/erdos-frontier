@@ -80,6 +80,13 @@ only:
 This is the mechanical half of a review, precomputed. A reviewer opens the
 PR and the facts are already on the table.
 
+Parts of this are already community-requested:
+[FC#3973](https://github.com/google-deepmind/formal-conjectures/issues/3973)
+asks for exactly this class of metadata integrity checks in CI, and
+[FC#4367](https://github.com/google-deepmind/formal-conjectures/pull/4367)
+proposes automating erdos-status fixes on top of the same drift detector.
+L1 is a surface those efforts can share, not a competitor to them.
+
 ### L2. Behavioral probes
 
 The strongest known fidelity checks act on the statement rather than reading
@@ -158,6 +165,18 @@ deploy job itself is main-only. Step timings from two recent PR runs
 So roughly **two thirds of every PR's CI is building artifacts the PR can
 never deploy**. At 100+ runs of this workflow per week, that is on the order
 of 100 wasted runner-hours weekly.
+
+The maintainers are already attacking one term of this:
+[FC#4302](https://github.com/google-deepmind/formal-conjectures/pull/4302)
+(mo271) removes docgen outright, citing its build time, with Verso as the
+surviving doc system. The run data above says #4302 helps but does not fix
+the PR lane: Verso literate is the dominant per-PR cost (52–53 minutes,
+every run), docgen the smaller one, and
+[FC#4306](https://github.com/google-deepmind/formal-conjectures/issues/4306)
+proposes extending Verso to `FormalConjecturesForMathlib`, which grows it.
+The two changes compose: #4302 decides *which* doc artifacts exist; the
+gating below decides *when* they build. With both, PR CI is ~30 minutes
+regardless of how the docgen-vs-Verso question resolves.
 
 The cache design compounds it. The repository sits at GitHub's 10 GB cache
 limit with LRU eviction, and every PR run saves its own olean and doc cache
