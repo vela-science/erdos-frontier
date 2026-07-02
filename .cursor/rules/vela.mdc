@@ -19,8 +19,8 @@ Agents may:
 
 Agents may not:
 
-- accept, reject, review, or otherwise decide (`accept`, `accept-batch`,
-  `review`, `proposals reject`) — key-custody human verbs, engine-enforced
+- accept, reject, review, or otherwise decide (`accept`, `review`,
+  `proposals reject`) — key-custody human verbs, engine-enforced
 - run any `vela` write without `VELA_ACTOR_ID=agent:<you>` set and
   `--author agent:<you>` given
 - hand-edit `.vela/`, `frontier.json`, `vela.lock`, or `proof/`

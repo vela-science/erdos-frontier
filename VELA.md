@@ -20,8 +20,8 @@ Agents may:
 
 Agents may not:
 
-- accept, reject, review, or otherwise decide (`accept`, `accept-batch`,
-  `review`, `proposals reject`) — key-custody human verbs, engine-enforced
+- accept, reject, review, or otherwise decide (`accept`, `review`,
+  `proposals reject`) — key-custody human verbs, engine-enforced
 - run any `vela` write without `VELA_ACTOR_ID=agent:<you>` set and
   `--author agent:<you>` given
 - hand-edit `.vela/`, `frontier.json`, `vela.lock`, or `proof/`
@@ -94,7 +94,7 @@ Regenerate derived views (reducer outputs, never authored):
    `lean_kernel` verifier attachment.
 5. **Human session** (the only non-agent steps, 2–3 verbs):
        vela inbox .
-       vela accept-batch . --all-pending --reason "batch-N reviewed" [--dry-run]
+       vela accept . --all-pending --reason "batch-N reviewed" [--dry-run]
        vela review . --batch <verdicts.json> --as reviewer:<name>
    You prepare the review batch file from the reviewer's stated verdicts.
 6. **Submit to FC**: assemble the branch with plain git in the FC checkout,
@@ -103,7 +103,7 @@ Regenerate derived views (reducer outputs, never authored):
 
 ## Hard boundaries
 
-- Never `vela accept`, `accept-batch`, `review`, or `proposals reject` — those
+- Never `vela accept`, `vela review`, or `proposals reject` — those
   are the human's verbs even when the CLI would let a configured key through.
 - Never edit `.vela/`, `frontier.json`, `vela.lock`, or `proof/` by hand;
   they replay from the signed log (`vela frontier materialize .`).
