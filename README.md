@@ -85,6 +85,8 @@ the read-only Vela tool set over the signed frontier.
 Two paths, detailed in [CONTRIBUTING.md](CONTRIBUTING.md): host a proof the
 audit reads, or fork and propose a finding a maintainer accepts.
 [VISION.md](VISION.md) explains the two layers and the trust rule.
+[STANDARD_CHECK.md](STANDARD_CHECK.md) is the proposal for a layered
+statement-review check upstream in formal-conjectures.
 
 To review and sign a statement-fidelity verdict (reviewer key only, no AI
 signs):
