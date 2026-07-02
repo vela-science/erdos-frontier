@@ -1,217 +1,153 @@
 # erdos-frontier
 
-A formal-proof fidelity audit over the Erdős frontier: **which "formally solved"
-problems rest on an unconditional Lean proof, and which silently assume an unproven
-result.** Live at [erdos.constellate.science](https://erdos.constellate.science/).
+An audit of the formally solved Erdős problems: which rest on an unconditional
+Lean proof, and which silently assume an unproven result. Live at
+[erdos.constellate.science](https://erdos.constellate.science/).
 
-A proof can be `sorry`-free and `#print axioms`-clean and still prove the goal only
-*conditionally*, by taking a deep theorem as a hypothesis parameter the axiom check
-cannot see. This reads each hosted Lean proof mechanically and reports it, then:
+The gap it closes: a proof can be `sorry`-free and `#print axioms`-clean and still
+prove the goal only conditionally, by taking a deep theorem as a hypothesis
+parameter the axiom check never sees. The audit reads each hosted proof
+mechanically and reports its axiom set, its `sorry` state, and the Prop
+hypotheses it takes as parameters. Nine problems recorded as solved currently
+hold only under an unproven result
+([the discrepancy view](https://erdos.constellate.science/)).
 
-- **cross-references the [AI-contributions wiki](https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems)**
-  that Nat Sothanaphan created and maintained (frozen 2026-06-30) to surface problems it
-  records as a full solution where the proof is actually conditional: the discrepancy view;
-- **cross-references Neel Somani's [gpt-erdos](https://github.com/neelsomani/gpt-erdos)**, an
-  independent human classification of GPT-5.2 candidates, where the two reviews read
-  different artifacts and the divergences are the signal;
-- audits proofs across multiple Lean toolchains (plby 4.29.1, alphaproof-nexus 4.27.0)
-  via [`lean/`](lean/), keeping the strongest verdict per problem.
+Two axes, one trust rule:
 
-The machine layer carries no human or model judgment; signed verdicts carry a named
-reviewer. The underlying FC↔erdos proof-status join (below) is what the audit sits on.
+- **Axis 1, the proof.** Is it unconditional? Machine-checked, reproducible, no
+  human or model in the path.
+- **Axis 2, the statement.** Does the formal theorem state the boxed problem?
+  A human judgment, signed by a named reviewer. Never inferred, never
+  auto-filled: a problem with no signed verdict shows blank.
 
-## The signed frontier
+## Verify it yourself
 
-This repo is also a git-native Vela frontier (`vfr_0a25edabc16db143`). The
-statement-fidelity verdicts that carry a human judgment live as signed,
-content-addressed events under [`.vela/`](.vela/); `frontier.json` and `vela.lock`
-are replayed from that log. Everything under `site/`, plus `STATUS.md`,
-`status.json`, and `NEXT_BATCH.md`, is a **materialized view** — generated, not
-authored. You do not have to trust the dashboard:
+The dashboard is a materialized view. The authority is a signed, replayable
+event log under [`.vela/`](.vela/) (Vela frontier `vfr_0a25edabc16db143`):
 
 ```bash
-vela check . --strict     # replays the event log, verifies every signature
+git clone https://github.com/williamjblair/erdos-frontier
+cd erdos-frontier
+vela check . --strict     # replay the log, verify every signature
 ```
 
-To sign a new statement-fidelity verdict (a reviewer key, never an agent):
+Everything under [`site/`](site/), plus `frontier.json` and `vela.lock`, is
+generated from that log and the locked sources. Nothing there is hand-authored.
+
+## Sources
+
+The audit joins records that update independently and drift apart:
+
+| source | what it contributes |
+|---|---|
+| [erdosproblems.com](https://www.erdosproblems.com) (Thomas Bloom) | problem numbering, statements, upstream status |
+| [formal-conjectures](https://github.com/google-deepmind/formal-conjectures) (Google DeepMind) | formal statements, `@[category]` annotations, `formal_proof` links |
+| [plby/lean-proofs](https://github.com/plby/lean-proofs), [Jayyhk/erdos-lean](https://github.com/Jayyhk/erdos-lean), [williamjblair/lean-proofs](https://github.com/williamjblair/lean-proofs) | hosted Lean proofs and their own condition flags |
+| [AI-contributions wiki](https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems) (Nat Sothanaphan, frozen 2026-06-30) | recorded solution claims, carried over intact |
+| [gpt-erdos](https://github.com/neelsomani/gpt-erdos) (Neel Somani) | independent human classification of GPT-5.2 candidates |
+| signed fidelity verdicts | reviewer attestations on Axis 2, read from the frontier |
+
+Reconciling these by hand is what drifts: two people formalise the same problem,
+or a conditional proof gets linked as if it proved the boxed statement.
+
+## How it works
+
+[`erdos_frontier.py`](erdos_frontier.py) fetches the sources, joins them, folds
+in the machine verdicts from the Lean extractor ([`lean/`](lean/), multiple
+toolchains, strongest verdict per problem), applies
+[`overrides.yaml`](overrides.yaml) and any signed verdicts, and regenerates
+[`site/`](site/). A GitHub Action reruns it daily; the heavier Lean re-audit
+([`lean/reaudit.sh`](lean/reaudit.sh)) runs on demand.
+
+Machine-readable outputs, one URL each:
+
+- [`site/verdicts.json`](site/verdicts.json): the audit feed, one row per problem
+- [`site/status.json`](site/status.json) / [`site/STATUS.md`](site/STATUS.md): the proof-status join and bucket counts
+- [`site/NEXT_BATCH.md`](site/NEXT_BATCH.md): ranked safe `statement` candidates for FC
+- [`site/graph.json`](site/graph.json): the typed corpus graph
+
+The corpus graph holds the whole reconciled state (problems, statements, proofs,
+conditions, claims, verdicts) as typed edges with a trust tier on every edge
+(`signed` / `machine` / `recorded` / `declared`). It is a derived index, never
+signed state:
 
 ```bash
+bash scripts/graph.sh build                   # rebuild from the sources
+bash scripts/graph.sh blast cond:maynard-tao  # what does retracting an input unsettle?
+bash scripts/graph.sh serve                   # the frontier over HTTP
+```
+
+The repo also ships [`.mcp.json`](.mcp.json): any MCP client opened here gets
+the read-only Vela tool set over the signed frontier.
+
+## Contributing
+
+Two paths, detailed in [CONTRIBUTING.md](CONTRIBUTING.md): host a proof the
+audit reads, or fork and propose a finding a maintainer accepts.
+[VISION.md](VISION.md) explains the two layers and the trust rule.
+
+To review and sign a statement-fidelity verdict (reviewer key only, no AI
+signs):
+
+```bash
+python match_packet.py <n>    # three-panel review packet: upstream statement,
+                              # formal theorem, hosted theorem signature
 bash scripts/sign-fidelity.sh <problem> <faithful|variant|unfaithful> "<note>" --sign
 ```
 
-See [VISION.md](VISION.md) for the two layers and the trust rule, and
-[CONTRIBUTING.md](CONTRIBUTING.md) for the two ways to contribute (host a proof
-the audit reads, or fork and propose a finding a maintainer accepts).
+[`overrides.yaml`](overrides.yaml) is the only hand-maintained classification
+input. Use it for facts the sources cannot know: a mismatched quantifier, a
+non-problem hypothesis, a claim living in an issue comment, a maintainer
+wont-fix. Never hand-edit generated artifacts; change the input and regenerate.
 
-## The corpus graph
+## Develop locally
 
-Beside the signed spine sits the **corpus graph**: the whole reconciled state —
-problems, formal statements, hosted proofs, load-bearing conditions, recorded
-claims, signed verdicts — as one typed graph in the Vela edge vocabulary
-(`supports`, `depends_on`, `derived_from`, `replicates`, `contradicts`), with a
-trust tier on every edge (`signed` / `machine` / `recorded` / `declared`). It is
-a derived index rebuilt from the locked sources, never signed state: the
-substrate itself refuses agent-authored truth claims, so the graph carries what
-the sources *declare* and marks how each declaration is trusted.
-
-```bash
-bash scripts/graph.sh build                       # rebuild from the sources
-bash scripts/graph.sh blast cond:maynard-tao      # dependency impact: what does
-                                                  # retracting an input unsettle?
-bash scripts/graph.sh serve                       # the frontier over HTTP
+```sh
+uv sync --all-groups
+uv run pytest
+GH_TOKEN=$(gh auth token) uv run python erdos_frontier.py
+uv run python -m json.tool site/status.json >/dev/null
 ```
 
-`blast` runs the substrate's own analysis (`vela atlas decl-blast`) over
-[`graph/corpus-edges.jsonl`](graph/): retract the Maynard–Tao theorem and
-problems 237 and 997 lose their solved support, through their proofs, down to
-the wiki claim that recorded them. The browsable view is the
-[frontier map](https://erdos.constellate.science/map.html).
-
-**MCP:** the repo ships [`.mcp.json`](.mcp.json) — any MCP client opened here
-(Claude Code included) gets the read-only Vela tool set over the signed
-frontier: `frontier_stats`, `search_findings`, `frontier_graph`, `deep_trace`,
-`blast_radius`, `contradictions`, `trace_evidence_chain`, and ten more.
-
-## The proof-status join: drift
-
-An Erdős problem's "status" lives in several places that update independently:
-
-- **erdosproblems.com** — the upstream status (open / solved / formally solved).
-- **Formal Conjectures** — each file's `@[category ...]` annotation and `formal_proof` link.
-- **[plby/lean-proofs](https://github.com/plby/lean-proofs)** — hosted Lean proofs and
-  `conditional` / `partial` flags.
-- **[Jayyhk/erdos-lean](https://github.com/Jayyhk/erdos-lean)** — hosted Lean proofs and
-  `complete` / `axiomatic` / `trust_extended` states.
-- **[williamjblair/lean-proofs](https://github.com/williamjblair/lean-proofs)** — a small
-  CI-audited proof host whose manifest is checked by `#print axioms`.
-- **Statement-fidelity verdicts** — signed reviewer attestations of whether a formal theorem
-  faithfully states the boxed problem (`faithful` / `variant` / `unfaithful`). Read from a
-  snapshot URL when available, otherwise from a committed [`sources/fidelity_cache.json`](sources/fidelity_cache.json).
-- **Human review notes** — mismatch and claim judgments that live in issue comments or PR review,
-  not in any upstream data feed.
-
-Reconciling these by hand is what drifts. The cost is double-work (two people formalising the
-same problem) and mislabelling (a conditional or mismatched proof linked as if it proved the
-boxed statement).
-
-## What this does
-
-[`erdos_frontier.py`](erdos_frontier.py) computes the audit instead of tracking it. It fetches the
-proof corpora and erdos/FC status fresh, folds in the machine fidelity verdicts
-([`lean/`](lean/)), the frozen-wiki and gpt-erdos claim snapshots
-([`sources/`](sources/)), live open FC pull requests, human overrides
-([`overrides.yaml`](overrides.yaml)), and any signed reviewer verdicts, then writes the generated
-artifacts. A GitHub Action regenerates them daily; the heavier Lean re-audit
-([`lean/reaudit.sh`](lean/reaudit.sh)) runs on demand.
-
-It regenerates everything under [`site/`](site/) (the published surface, do not edit by hand):
-
-- **[site/verdicts.json](site/verdicts.json)** — the public audit feed, one row per problem,
-  that the [live page](site/index.html) renders.
-- **[site/STATUS.md](site/STATUS.md)** / **[site/status.json](site/status.json)** — the
-  proof-status join and bucket counts.
-- **[site/NEXT_BATCH.md](site/NEXT_BATCH.md)** — ranked safe `statement` candidates to link into FC.
-
-## Layout
+The token only reads open FC pull requests (the `in-pr` layer); everything else
+computes without it. `erdos_frontier.py` is importable, so the tests exercise
+classification and rendering offline.
 
 ```
-erdos_frontier.py     the audit: fetch, join, classify, render (importable + runnable)
-match_packet.py       human-review packets for the discrepancies (you sign, no AI signs)
-site/                 the published surface GitHub Pages serves
-  index.html          the live page (source; fetches verdicts.json)
-  verdicts.json …     generated feed + status.json + STATUS.md + NEXT_BATCH.md
-sources/              ingested claim sources, snapshotted + reproducible offline
-  wiki/               the frozen teorth AI-contributions wiki + its parser
-  gpt_erdos/          neelsomani/gpt-erdos classification + its parser
-  fidelity_cache.json offline fallback for signed statement-fidelity verdicts
-lean/                 the L1 Lean assumption-extractor (multi-toolchain) + its feeds
-  extract_assumptions.py  the extractor harness
-  audit_feed*.json        the committed machine verdicts (the audit joins on these)
-  reaudit.sh              re-run the heavy Lean audit + regenerate everything
+erdos_frontier.py     fetch, join, classify, render
+match_packet.py       human-review packets for the discrepancies
+site/                 the published surface (generated; GitHub Pages serves it)
+sources/              ingested claim snapshots (wiki, gpt-erdos, fidelity cache)
+lean/                 the Lean assumption-extractor + committed machine verdicts
 overrides.yaml        the only hand-maintained classification input
 staging_cleared.yaml  human clearances for held celebrated-proof flags
 ```
 
-## The status categories
+## Status categories
 
 | status | meaning |
 |---|---|
-| `statement` | a complete hosted proof exists, FC has no file — write the statement and link it |
+| `statement` | a complete hosted proof exists, FC has no file: write the statement and link it |
 | `link` | FC has the statement, the proof just isn't linked |
 | `needs-statement-update` | FC has a file, but this is not a trivial link-only update |
-| `needs-human-match-check` | a hosted proof exists, but theorem/boxed-statement match has not been audited |
+| `needs-human-match-check` | a hosted proof exists, but the theorem/boxed-statement match is unaudited |
 | `mismatch` | hosted proof is complete but does not prove the boxed FC statement |
-| `hypothesis-conditional` | `#print axioms` can be clean, but the theorem takes a non-problem hypothesis |
-| `docstring` | the hosted proof is conditional, axiomatic, or trust-extended — do not add `formal_proof` |
+| `hypothesis-conditional` | `#print axioms` is clean, but the theorem takes a non-problem hypothesis |
+| `docstring` | the hosted proof is conditional, axiomatic, or trust-extended; do not add `formal_proof` |
 | `partial` | the hosted proof proves a variant, not the full statement |
 | `blocked-claim` | a human issue-comment claim exists outside an open PR |
 | `in-pr` | an open FC pull request already touches this file |
-| `wont-fix` | maintainers marked the hosted proof/problem as not linkable |
+| `wont-fix` | maintainers marked it not linkable |
 | `defer` | explicit human deferral |
 | `done` | already linked in FC |
 | `no-proof` | no hosted Lean proof to link yet |
 
-See **[site/STATUS.md](site/STATUS.md)** for the live lists, each linked to erdosproblems.com.
-
-## Overrides
-
-[`overrides.yaml`](overrides.yaml) is the only hand-maintained input. Use it for facts that the
-machine-readable sources cannot know, such as:
-
-- a proof theorem is complete but proves a different quantified statement (`mismatch`);
-- a proof theorem has a non-problem hypothesis (`hypothesis-conditional`);
-- a problem is claimed in an issue comment rather than an open PR (`blocked-claim`);
-- a maintainer explicitly says not to link it (`wont-fix`).
-
-Do not hand-edit generated artifacts. Change `overrides.yaml` or the script, then regenerate.
-
-## Statement fidelity
-
-A signed statement-fidelity feed records, per problem, whether a formal theorem faithfully states
-the boxed problem. The script reads it from a snapshot URL when reachable and otherwise from the
-committed [`sources/fidelity_cache.json`](sources/fidelity_cache.json); if neither is present the
-column is simply empty and the run still succeeds. A signed verdict supersedes the computed bucket
-and any matching `overrides.yaml` row.
-
-Verdicts are signed with `vela attest` (per-target `--verdict`, or `--batch` for a filled file)
-against the `erdos-formalization` Vela frontier — only a human reviewer can sign one, no AI signs;
-they are not stored in this repo. Review the packet before signing:
-
-- [`match_packet.py`](match_packet.py) — writes a three-panel review packet (upstream statement,
-  formal theorem, hosted theorem signature) to `packets/match-check/erdos_<n>.md` for a problem
-  or for every row still needing a match-check.
-
-## Regenerate locally
-
-```sh
-uv sync --all-groups
-uv run pytest
-GH_TOKEN=$(gh auth token) uv run python erdos_frontier.py
-uv run python -m json.tool site/status.json >/dev/null
-```
-
-The token is only used to read open FC pull requests (the `in-pr` layer). Without it everything
-else still computes.
-
-## Development
-
-[`erdos_frontier.py`](erdos_frontier.py) is both the importable implementation — so tests can
-exercise classification and rendering without network access — and the entrypoint
-(`python erdos_frontier.py`). The tests are in [`tests/`](tests/).
-
-Before pushing:
-
-```sh
-uv sync --all-groups
-uv run pytest
-GH_TOKEN=$(gh auth token) uv run python erdos_frontier.py
-uv run python -m json.tool site/status.json >/dev/null
-git diff --check
-```
+Live lists, each linked to erdosproblems.com: [site/STATUS.md](site/STATUS.md).
 
 ## Context
 
-This supports [formal-conjectures#3998](https://github.com/google-deepmind/formal-conjectures/issues/3998)
-(syncing hosted Lean proofs into FC) and #4184 (the Jayyhk set). It is offered as a coordination
-aid. If the maintainers want it in-repo or wired into FC CI, the core is intentionally small and
-plain Python.
+Built to support
+[formal-conjectures#3998](https://github.com/google-deepmind/formal-conjectures/issues/3998)
+(syncing hosted Lean proofs into FC) and #4184 (the Jayyhk set). The core is
+small, plain Python; if the FC maintainers want it in-repo or wired into CI, it
+moves cleanly.
