@@ -1,0 +1,42 @@
+# Curated attack-channel taxonomy for the Erdős frontier.
+#
+# A channel is a named line of attack on a problem. Attempts opt in by
+# recording a `channel:<id>` named obstruction; an accepted finding closes a
+# channel by carrying a `channel`-namespace anchor. `vela status` derives
+# Open / Cold / Dead per channel from the attempt ledger — this file only
+# names the channels, it never adjudicates them.
+#
+# Curation notes (2026-07-03, starter taxonomy):
+# - 647: the prime-power / prime channel was ground to exhaustion internally
+#   (banked with a Lean certificate on the internal frontier); listed here so
+#   the closure can land as an accepted anchor rather than folklore.
+# - 242 (Erdős–Straus): channels follow the classical attack decomposition —
+#   covering congruences, parametric/polynomial identities, and finite
+#   computational confirmation (a verifier, NOT a solve).
+# - 617 is deliberately omitted: no statement-informed channel decomposition
+#   has been curated yet, and a made-up one would poison the fold key.
+
+schema: vela.channels.v0.1
+
+# A channel goes cold at this much age-weighted failure...
+cold_threshold: 3
+# ...but only from at least this many distinct producers.
+cold_min_producers: 2
+# Attempts older than this (vs the newest event in the log) weigh 0.5.
+decay_days: 45
+
+problems:
+  "647":
+    - id: "erdos647:prime"
+      title: "prime-power / prime channel"
+    - id: "erdos647:crt_cover"
+      title: "CRT covering systems"
+    - id: "erdos647:density"
+      title: "density / counting arguments"
+  "242":
+    - id: "erdos242:crt_cover"
+      title: "covering congruences (classical Erdős–Straus attack)"
+    - id: "erdos242:parametric"
+      title: "parametric / polynomial identity families"
+    - id: "erdos242:finite_confirm"
+      title: "finite computational confirmation (verifier, not a solve)"
