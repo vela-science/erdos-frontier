@@ -69,7 +69,8 @@ batches:
     with SHA-pinned formal_proof links. Fidelity attested 2026-07-01 (two vsa_ per
     problem in the signed spine); PR opened the same day. Unreviewed.
 - name: batch-5
-  state: open
+  state: pr-open
+  pr: https://github.com/google-deepmind/formal-conjectures/pull/4385
   problems:
   - 71
   - 206
