@@ -63,9 +63,9 @@ probes about 90%):
 
    | clause | source says | formal statement says | verdict |
    |---|---|---|---|
-   | *quantifier over n* | | | *found no mismatch* |
-   | *hypothesis: n ≥ 3* | | | *claimed: strict vs non-strict* |
-   | *conclusion* | | | |
+   | *each quantifier* | *quoted source text* | *the formal counterpart* | *found no mismatch, or claimed: …* |
+   | *each hypothesis* | *…* | *…* | *…* |
+   | *the conclusion* | *…* | *…* | *…* |
 
    If any clause gets corrected along the way, re-run the whole table.
 5. One full pass over both texts, then write the result in found/claimed
