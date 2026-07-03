@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02",
+  "generated_at": "2026-07-03",
   "rows": [
     {
       "bucket": "in-pr",
@@ -122,7 +122,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/5",
@@ -141,7 +141,7 @@
       "problem": 5,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -989,7 +989,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/31",
@@ -997,8 +997,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2b statement (PR #4345) for Erd\u0151s 31",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -1027,9 +1027,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/31/Erdos31.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "GPT"
@@ -1101,7 +1101,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/34",
@@ -1109,8 +1109,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2b statement (PR #4345) for Erd\u0151s 34",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -1139,9 +1139,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/34/Erdos34.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -1604,7 +1604,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/47",
@@ -1612,8 +1612,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2b statement (PR #4345) for Erd\u0151s 47",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -1642,9 +1642,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/47/Erdos47.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [],
       "wiki_claims_lean": false,
       "wiki_claims_solved": false,
@@ -4466,8 +4466,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos134.erdos_134",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos134.erdos_134",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 134",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -4497,8 +4497,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -5892,8 +5892,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos178.erdos_178",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos178.erdos_178",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 178",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -5923,8 +5923,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -6613,16 +6613,16 @@
       "wiki_outcome": "New proof found"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/199",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos199.erdos_199",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos199.erdos_199",
+      "fidelity_note": "batch-2a statement (merged #4343) for Erd\u0151s 199",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -6630,7 +6630,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 199,
-      "proof_link": null,
+      "proof_link": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos199.lean",
       "proof_links": [
         {
           "complete": true,
@@ -6651,9 +6651,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/199/Erdos199.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "No action.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -7419,14 +7419,14 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/221",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos221.erdos_221",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos221.erdos_221",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": null,
@@ -7436,7 +7436,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 221,
-      "proof_link": null,
+      "proof_link": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem221.lean",
       "proof_links": [
         {
           "complete": true,
@@ -7457,7 +7457,7 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/221/Erdos221.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -7530,16 +7530,16 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/224",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos224.erdos_224",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos224.erdos_224",
+      "fidelity_note": "batch-2a statement (merged #4343) for Erd\u0151s 224",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -7549,7 +7549,7 @@
       ],
       "non_kernel_axioms": [],
       "problem": 224,
-      "proof_link": null,
+      "proof_link": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos224.lean",
       "proof_links": [
         {
           "complete": true,
@@ -7570,9 +7570,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/224/Erdos224.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "No action.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Codex",
         "GPT-5.2 Thinking"
@@ -7614,16 +7614,16 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/226",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos226.erdos_226",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos226.erdos_226",
+      "fidelity_note": "batch-2a statement (merged #4343) for Erd\u0151s 226",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -7631,7 +7631,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 226,
-      "proof_link": null,
+      "proof_link": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos226.lean",
       "proof_links": [
         {
           "complete": true,
@@ -7652,9 +7652,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/226/Erdos226.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "No action.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -8293,16 +8293,16 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/246",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos246.erdos_246",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos246.erdos_246",
+      "fidelity_note": "batch-2a statement (merged #4343) for Erd\u0151s 246",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -8310,7 +8310,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 246,
-      "proof_link": null,
+      "proof_link": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos246.lean",
       "proof_links": [
         {
           "complete": true,
@@ -8331,9 +8331,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/246/Erdos246.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "No action.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -9439,7 +9439,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/280",
@@ -9447,8 +9447,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2b statement (PR #4345) for Erd\u0151s 280",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -9477,9 +9477,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/280/Erdos280.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -9490,7 +9490,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": true,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/281",
@@ -9498,8 +9498,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2c statement (PR #4346) for Erd\u0151s 281",
+      "fidelity_source": "local",
       "gpt_erdos": "new_proof",
       "held_for_review": false,
       "machine_source": "plby",
@@ -9530,9 +9530,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/281/Erdos281.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "GPT-5.2 Pro",
@@ -10026,16 +10026,16 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/296",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos296.erdos_296",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos296.erdos_296",
+      "fidelity_note": "batch-2a statement (merged #4343) for Erd\u0151s 296",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -10043,7 +10043,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 296,
-      "proof_link": null,
+      "proof_link": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos296.lean",
       "proof_links": [
         {
           "complete": true,
@@ -10064,9 +10064,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/296/Erdos296.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "No action.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -12428,16 +12428,16 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/363",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos363.erdos_363",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos363.erdos_363",
+      "fidelity_note": "batch-2a statement (merged #4343) for Erd\u0151s 363",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -12445,7 +12445,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 363,
-      "proof_link": null,
+      "proof_link": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos363.lean",
       "proof_links": [
         {
           "complete": true,
@@ -12466,9 +12466,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/363/Erdos363.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "No action.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -13277,7 +13277,7 @@
     {
       "bucket": "in-pr",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/387",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -14399,7 +14399,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "solved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/419",
@@ -14407,8 +14407,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2c statement (PR #4346) for Erd\u0151s 419",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -14437,9 +14437,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/419/Erdos419.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -15301,8 +15301,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 443",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -15332,8 +15332,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -15641,7 +15641,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/453",
@@ -15649,8 +15649,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2c statement (PR #4346) for Erd\u0151s 453",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -15679,9 +15679,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/453/Erdos453.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -16415,7 +16415,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/476",
@@ -16423,8 +16423,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2c statement (PR #4346) for Erd\u0151s 476",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -16453,9 +16453,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/476/Erdos476.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -16710,8 +16710,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 484",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -16741,8 +16741,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -16831,8 +16831,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 487",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -16862,8 +16862,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -17059,8 +17059,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos493.erdos_493",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos493.erdos_493",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 493",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -17090,8 +17090,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "GPT",
@@ -17202,8 +17202,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 497",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -17233,8 +17233,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -17253,8 +17253,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 498",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -17284,8 +17284,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "Claude Opus",
@@ -17422,8 +17422,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 502",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -17453,8 +17453,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -17996,7 +17996,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/519",
@@ -18004,8 +18004,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2c statement (PR #4346) for Erd\u0151s 519",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -18034,9 +18034,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/519/Erdos519.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -18427,8 +18427,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos532.erdos_532",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos532.erdos_532",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 532",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -18458,8 +18458,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [],
       "wiki_claims_lean": false,
       "wiki_claims_solved": false,
@@ -18468,14 +18468,14 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "disproved",
       "erdos_url": "https://www.erdosproblems.com/533",
       "fc_has_proof": false,
       "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_theorem": "Erdos533.erdos_533",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos533.erdos_533",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": "subtle_error",
@@ -18487,7 +18487,7 @@
       "problem": 533,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -18605,8 +18605,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 537",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -18636,8 +18636,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -18712,7 +18712,7 @@
       "wiki_outcome": "Partial result (Lean)"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "statement",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/540",
@@ -18720,8 +18720,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-2c statement (PR #4346) for Erd\u0151s 540",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -18750,9 +18750,9 @@
           "url": "https://github.com/Jayyhk/erdos-lean/blob/main/problems/540/Erdos540.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "recommended_action": "Write the FC statement and link the matching hosted proof.",
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -19929,14 +19929,14 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/579",
       "fc_has_proof": false,
       "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_theorem": "Erdos579.erdos_579",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos579.erdos_579",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": null,
@@ -19948,7 +19948,7 @@
       "problem": 579,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -20027,8 +20027,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 582",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -20058,8 +20058,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -21183,8 +21183,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 618",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -21214,8 +21214,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -22132,8 +22132,8 @@
       "fc_linked": false,
       "fc_theorem": null,
       "fc_url": null,
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "swarm batch-4 draft for Erd\u0151s 646",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -22163,8 +22163,8 @@
         }
       ],
       "recommended_action": "Write the FC statement and link the matching hosted proof.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -25016,8 +25016,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos729.erdos_729",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos729.erdos_729",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 729",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -25047,8 +25047,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "GPT-5.2 Pro"
@@ -28074,14 +28074,14 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/821",
       "fc_has_proof": false,
       "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_theorem": "Erdos821.erdos_821",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos821.erdos_821",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": null,
@@ -28093,7 +28093,7 @@
       "problem": 821,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -29519,7 +29519,7 @@
     {
       "bucket": "no-proof",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/865",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -29752,8 +29752,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos871.erdos_871",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos871.erdos_871",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 871",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -29783,8 +29783,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Claude Opus 4.5",
         "Gemini 3 Pro"
@@ -29796,14 +29796,14 @@
       "wiki_outcome": "Existing partial result upgraded to full solution (Lean)"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/872",
       "fc_has_proof": false,
       "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_theorem": "Erdos872.erdos_872.trivial_upper_bound",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos872.erdos_872.trivial_upper_bound",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": null,
@@ -29815,7 +29815,7 @@
       "problem": 872,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -30838,8 +30838,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos904.erdos_904",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos904.erdos_904",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 904",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": null,
@@ -30869,8 +30869,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -31499,8 +31499,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos923.erdos_923",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos923.erdos_923",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 923",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": null,
@@ -31530,8 +31530,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -31830,14 +31830,14 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/933",
       "fc_has_proof": false,
       "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_theorem": "Erdos933.erdos_933",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos933.erdos_933",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": null,
@@ -31849,7 +31849,7 @@
       "problem": 933,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -37274,8 +37274,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos1090.erdos_1090",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1090.erdos_1090",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 1090",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -37305,8 +37305,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle",
         "Gemini 3 Flash"
@@ -38450,8 +38450,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos1125.erdos_1125",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1125.erdos_1125",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 1125",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -38481,8 +38481,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -38501,8 +38501,8 @@
       "fc_linked": true,
       "fc_theorem": "Erdos1126.erdos_1126",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos1126.erdos_1126",
-      "fidelity_note": null,
-      "fidelity_source": null,
+      "fidelity_note": "batch-1 statement (merged #4319) for Erd\u0151s 1126",
+      "fidelity_source": "local",
       "gpt_erdos": null,
       "held_for_review": false,
       "machine_source": "plby",
@@ -38532,8 +38532,8 @@
         }
       ],
       "recommended_action": "No action.",
-      "signed_by": null,
-      "signed_fidelity_verdict": null,
+      "signed_by": "reviewer:will-blair",
+      "signed_fidelity_verdict": "faithful",
       "wiki_ai_systems": [
         "Aristotle"
       ],
@@ -41935,12 +41935,42 @@
         "verdict": "faithful"
       },
       {
+        "problem": 31,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 34,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 47,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
         "problem": 93,
         "reviewer": "reviewer:will-blair",
         "verdict": "faithful"
       },
       {
+        "problem": 134,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
         "problem": 164,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 178,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 199,
         "reviewer": "reviewer:will-blair",
         "verdict": "faithful"
       },
@@ -41955,7 +41985,37 @@
         "verdict": "unfaithful"
       },
       {
+        "problem": 224,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 226,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 246,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
         "problem": 258,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 280,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 281,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 296,
         "reviewer": "reviewer:will-blair",
         "verdict": "faithful"
       },
@@ -41980,6 +42040,11 @@
         "verdict": "unfaithful"
       },
       {
+        "problem": 363,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
         "problem": 369,
         "reviewer": "reviewer:will-blair",
         "verdict": "faithful"
@@ -41990,12 +42055,132 @@
         "verdict": "faithful"
       },
       {
+        "problem": 419,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
         "problem": 429,
         "reviewer": "reviewer:will-blair",
         "verdict": "faithful"
       },
       {
         "problem": 435,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 443,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 453,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 476,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 484,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 487,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 493,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 497,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 498,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 502,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 519,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 532,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 537,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 540,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 582,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 618,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 646,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 729,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 871,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 904,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 923,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 1090,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 1125,
+        "reviewer": "reviewer:will-blair",
+        "verdict": "faithful"
+      },
+      {
+        "problem": 1126,
         "reviewer": "reviewer:will-blair",
         "verdict": "faithful"
       },

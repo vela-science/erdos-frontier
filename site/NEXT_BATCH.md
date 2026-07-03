@@ -1,12 +1,12 @@
 # Next Erdős FC Sync Batch
 
-*Generated 2026-07-02 from [`status.json`](status.json).*
+*Generated 2026-07-03 from [`status.json`](status.json).*
 
 This file lists safe `statement` candidates only: no open PR claim, no human override, and at least one complete hosted proof source.
 
 ## Suggested Batch — 8 problem(s)
 
-[24](https://www.erdosproblems.com/24)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [93](https://www.erdosproblems.com/93)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [164](https://www.erdosproblems.com/164)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [206](https://www.erdosproblems.com/206)ᵖʲ [314](https://www.erdosproblems.com/314)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [315](https://www.erdosproblems.com/315)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [333](https://www.erdosproblems.com/333)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [369](https://www.erdosproblems.com/369)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369))
+[24](https://www.erdosproblems.com/24)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [31](https://www.erdosproblems.com/31)ᵖʲ ([#4345](https://github.com/google-deepmind/formal-conjectures/pull/4345)) [34](https://www.erdosproblems.com/34)ᵖʲ ([#4345](https://github.com/google-deepmind/formal-conjectures/pull/4345)) [47](https://www.erdosproblems.com/47)ᵖʲ ([#4354](https://github.com/google-deepmind/formal-conjectures/pull/4354), [#4345](https://github.com/google-deepmind/formal-conjectures/pull/4345)) [93](https://www.erdosproblems.com/93)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [164](https://www.erdosproblems.com/164)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [206](https://www.erdosproblems.com/206)ᵖʲ [280](https://www.erdosproblems.com/280)ᵖʲ ([#4345](https://github.com/google-deepmind/formal-conjectures/pull/4345))
 
 ## Top 20 Safe Candidates
 
@@ -20,6 +20,42 @@ This file lists safe `statement` candidates only: no open PR claim, no human ove
 ```bash
 gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/24" --state all
 gh issue list -R google-deepmind/formal-conjectures --search "24"
+```
+
+### Problem 31ᵖʲ
+
+- Problem: https://www.erdosproblems.com/31
+- LaTeX: https://www.erdosproblems.com/latex/31
+- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos31.lean
+- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/31/Erdos31.lean
+- Anti-collision:
+```bash
+gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/31" --state all
+gh issue list -R google-deepmind/formal-conjectures --search "31"
+```
+
+### Problem 34ᵖʲ
+
+- Problem: https://www.erdosproblems.com/34
+- LaTeX: https://www.erdosproblems.com/latex/34
+- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos34.lean
+- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/34/Erdos34.lean
+- Anti-collision:
+```bash
+gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/34" --state all
+gh issue list -R google-deepmind/formal-conjectures --search "34"
+```
+
+### Problem 47ᵖʲ
+
+- Problem: https://www.erdosproblems.com/47
+- LaTeX: https://www.erdosproblems.com/latex/47
+- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos47.lean
+- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/47/Erdos47.lean
+- Anti-collision:
+```bash
+gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/47" --state all
+gh issue list -R google-deepmind/formal-conjectures --search "47"
 ```
 
 ### Problem 93ᵖʲ
@@ -56,6 +92,30 @@ gh issue list -R google-deepmind/formal-conjectures --search "164"
 ```bash
 gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/206" --state all
 gh issue list -R google-deepmind/formal-conjectures --search "206"
+```
+
+### Problem 280ᵖʲ
+
+- Problem: https://www.erdosproblems.com/280
+- LaTeX: https://www.erdosproblems.com/latex/280
+- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos280.lean
+- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/280/Erdos280.lean
+- Anti-collision:
+```bash
+gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/280" --state all
+gh issue list -R google-deepmind/formal-conjectures --search "280"
+```
+
+### Problem 281ᵖʲ
+
+- Problem: https://www.erdosproblems.com/281
+- LaTeX: https://www.erdosproblems.com/latex/281
+- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos281.lean
+- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/281/Erdos281.lean
+- Anti-collision:
+```bash
+gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/281" --state all
+gh issue list -R google-deepmind/formal-conjectures --search "281"
 ```
 
 ### Problem 314ᵖʲ
@@ -118,6 +178,18 @@ gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/401" --
 gh issue list -R google-deepmind/formal-conjectures --search "401"
 ```
 
+### Problem 419ᵖʲ
+
+- Problem: https://www.erdosproblems.com/419
+- LaTeX: https://www.erdosproblems.com/latex/419
+- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos419.lean
+- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/419/Erdos419.lean
+- Anti-collision:
+```bash
+gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/419" --state all
+gh issue list -R google-deepmind/formal-conjectures --search "419"
+```
+
 ### Problem 426ᵖʲ
 
 - Problem: https://www.erdosproblems.com/426
@@ -166,87 +238,15 @@ gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/443" --
 gh issue list -R google-deepmind/formal-conjectures --search "443"
 ```
 
-### Problem 484ᵖʲ
+### Problem 453ᵖʲ
 
-- Problem: https://www.erdosproblems.com/484
-- LaTeX: https://www.erdosproblems.com/latex/484
-- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos484.lean
-- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/484/Erdos484.lean
+- Problem: https://www.erdosproblems.com/453
+- LaTeX: https://www.erdosproblems.com/latex/453
+- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos453.lean
+- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/453/Erdos453.lean
 - Anti-collision:
 ```bash
-gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/484" --state all
-gh issue list -R google-deepmind/formal-conjectures --search "484"
-```
-
-### Problem 487ᵖʲ
-
-- Problem: https://www.erdosproblems.com/487
-- LaTeX: https://www.erdosproblems.com/latex/487
-- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos487.lean
-- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/487/Erdos487.lean
-- Anti-collision:
-```bash
-gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/487" --state all
-gh issue list -R google-deepmind/formal-conjectures --search "487"
-```
-
-### Problem 497ᵖʲ
-
-- Problem: https://www.erdosproblems.com/497
-- LaTeX: https://www.erdosproblems.com/latex/497
-- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos497.lean
-- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/497/Erdos497.lean
-- Anti-collision:
-```bash
-gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/497" --state all
-gh issue list -R google-deepmind/formal-conjectures --search "497"
-```
-
-### Problem 498ᵖʲ
-
-- Problem: https://www.erdosproblems.com/498
-- LaTeX: https://www.erdosproblems.com/latex/498
-- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos498.lean
-- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/498/Erdos498.lean
-- Anti-collision:
-```bash
-gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/498" --state all
-gh issue list -R google-deepmind/formal-conjectures --search "498"
-```
-
-### Problem 502ᵖʲ
-
-- Problem: https://www.erdosproblems.com/502
-- LaTeX: https://www.erdosproblems.com/latex/502
-- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos502.lean
-- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/502/Erdos502.lean
-- Anti-collision:
-```bash
-gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/502" --state all
-gh issue list -R google-deepmind/formal-conjectures --search "502"
-```
-
-### Problem 537ᵖʲ
-
-- Problem: https://www.erdosproblems.com/537
-- LaTeX: https://www.erdosproblems.com/latex/537
-- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos537.lean
-- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/537/Erdos537.lean
-- Anti-collision:
-```bash
-gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/537" --state all
-gh issue list -R google-deepmind/formal-conjectures --search "537"
-```
-
-### Problem 582ᵖʲ
-
-- Problem: https://www.erdosproblems.com/582
-- LaTeX: https://www.erdosproblems.com/latex/582
-- plby/lean-proofs: https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos582.lean
-- Jayyhk/erdos-lean: https://github.com/Jayyhk/erdos-lean/blob/main/problems/582/Erdos582.lean
-- Anti-collision:
-```bash
-gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/582" --state all
-gh issue list -R google-deepmind/formal-conjectures --search "582"
+gh pr list -R google-deepmind/formal-conjectures --search "ErdosProblems/453" --state all
+gh issue list -R google-deepmind/formal-conjectures --search "453"
 ```
 
