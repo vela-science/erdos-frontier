@@ -1,30 +1,30 @@
 schema: vela.frontier_lock.v0.1
-generated_at: 2026-07-03T16:32:39Z
-vela_version: 0.735.0
+generated_at: 2026-07-03T17:52:14Z
+vela_version: 0.736.0
 carina_kernel: carina@0.1.0
 frontier_id: vfr_0a25edabc16db143
 canonicalization:
   json: vela-canonical-json-v0.1
   yaml: vela-yaml-v0.1
 reducer:
-  package: vela@0.735.0
-  digest: sha256:7c88e7f1b369f2ff7c230a876ace7f15a28b64edf8bb562d10ade79ac4673ad1
+  package: vela@0.736.0
+  digest: sha256:9f5865b94d78106c6a78b30af1f556e7e614fcf5e749c15a93167c5a9cdb5ad7
 verifiers:
-  package: vela-verify@0.735.0
-  digest: sha256:62f559817dd6ad24e0e28c735261eca523bb5da4e946098f0e9f38a35dd780b1
+  package: vela-verify@0.736.0
+  digest: sha256:ba3be9476ff89134fbcaf512b0a29c41a8f3eac0d26eb16c86dd5f9ae90f3b48
 carina:
   kernel: carina@0.1.0
   digest: sha256:2de6244bc3c695cd83adf7d17fd9c52b6586ce060874b37814cc35aff340d5ee
-snapshot_hash: sha256:a805fa40b32174662f7a33724c88318ad3e0114ed56fe2e852b5a01799cc026a
+snapshot_hash: sha256:41b695808cc9269a70801049ec37ad74d4e5a1ad6bd5ea8dc60a74cafa924825
 event_log_hash: sha256:a85a13ba9edbad019463623c811a56dc8a916c8de44e5e3f6aa76379fb1a2994
-proposal_state_hash: sha256:20e25249eefda61ca03029f915b1762cd76e49d82681c6e37d9d2a9463371d34
-sources_hash: sha256:32f6ebeb61142df1d7f180a0c31d0f0c12f3ef1adee6a73d1d3878a5d07f9e93
+proposal_state_hash: sha256:a4ccc5c7ae0eb44001a6cba08b6a78dba141088c40d1fa277351dc670e18e592
+sources_hash: sha256:77c958d5d58978627555c5dc07692c009d542e0e10070cf9ef71b540c302804d
 artifacts_hash: sha256:007ee8d7de4cfbbf0ba501062b50ccef1f523a068a675649a6082caea29581c1
 review_hash: sha256:bb74af13f787e6f1357d243a3ff50e8efea86aaa7bc83c5291ab04afd0533ace
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:532b4a1f3d5d43dae0a7caee3f76a20b5e647342005ecd3638d3d5e0d660598f
+  digest: sha256:6269c92326f928fb2e804e3d2b6120e0006e8cb50eee98f9fc28c2b873c37d62
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
