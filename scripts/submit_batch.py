@@ -243,9 +243,17 @@ def review(name: str) -> int:
         return int(row["informal_ref"].rsplit("/", 1)[1])
 
     pending = [r for r in rows if not r["verdict"]]
+    session_note = ""
     if pending:
         print(f"{len(rows) - len(pending)}/{len(rows)} already answered; "
               f"{len(pending)} to review. [f]aithful [v]ariant [u]nfaithful [s]kip [q]uit\n")
+        # The method is one review, applied twelve times: capture it once.
+        # Per problem, Enter reuses it; typing replaces it for that problem
+        # (divergent cases deserve their own words).
+        default_method = ("Read the draft docstring (verbatim boxed problem text) and "
+                          "encoding notes against the theorem statement; gates green.")
+        session_note = input(f"method note for this session\n  [Enter = \"{default_method}\"]: ").strip() \
+            or default_method
     for row in rows:
         if row["verdict"]:
             continue
@@ -265,11 +273,9 @@ def review(name: str) -> int:
             if ans in ("s", "skip"):
                 break
             if ans in VERDICT_KEYS:
-                note = ""
-                while not note.strip():
-                    note = input(f"[{n}] note (why): ")
+                note = input(f"[{n}] note [Enter = method note]: ").strip() or session_note
                 row["verdict"] = VERDICT_KEYS[ans]
-                row["note"] = note.strip()
+                row["note"] = note
                 break
             print("  f=faithful v=variant u=unfaithful s=skip q=save+quit")
         vpath.write_text(json.dumps({"verdicts": rows}, indent=2) + "\n")
