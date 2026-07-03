@@ -8,16 +8,16 @@ Discussion: [leanprover Zulip, #Formal conjectures](https://leanprover.zulipchat
 
 Merging a conjecture statement into
 [formal-conjectures](https://github.com/google-deepmind/formal-conjectures)
-requires a maintainer to read it carefully against the source. Yaël Dillies
-put numbers on it: about ten minutes per problem, a ~200-hour lower bound for
-the Erdős corpus alone. Reviewers currently spend many of those minutes on
+requires a maintainer to read it carefully against the source. A careful read
+is about ten minutes per problem; across the Erdős corpus alone that is a
+~200-hour lower bound. Reviewers currently spend many of those minutes on
 things a machine or the author could have caught first, instead of on the one
 question that actually needs a person: does the formal statement say what the
 problem says?
 
-Most review comments are repetitive. Moritz Firsching: "pretty much what we
-write during review is repetitive and should just be in a checklist for the
-Author or their agents to tick off." Meanwhile faithfulness, the property
+Most review comments are repetitive; as one maintainer put it, "pretty much
+what we write during review is repetitive and should just be in a checklist
+for the Author or their agents to tick off." Meanwhile faithfulness, the property
 reviewers are really there to judge, is invisible to the toolchain. A
 statement can elaborate, pass every linter, and still be wrong by meaning;
 when the miniF2F benchmark was re-audited
@@ -141,7 +141,7 @@ minutes total):
 Roughly two thirds of every PR's CI goes to artifacts the PR can never
 deploy, and the workflow runs 100+ times a week.
 
-Moritz is already working on part of this:
+Part of this is already in motion:
 [FC#4302](https://github.com/google-deepmind/formal-conjectures/pull/4302)
 removes docgen outright, citing its build time. The run data says #4302
 helps but doesn't fix the PR lane on its own. Verso literate is the dominant
