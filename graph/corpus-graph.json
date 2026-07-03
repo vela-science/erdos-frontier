@@ -2,9 +2,9 @@
  "schema": "erdos-frontier.corpus-graph.v1",
  "note": "Derived index of what the ingested sources declare \u2014 typed in the Vela EdgeKind vocabulary with a trust tier per edge. Not signed state: the signed spine is .vela/ + frontier.json.",
  "source_locks": {
-  "erdos": "sha256:17fd2e142",
-  "fidelity": "sha256:23b60ff35",
-  "formal_conjectures": "sha256:73f757c22",
+  "erdos": "sha256:7739effb0",
+  "fidelity": "sha256:9cfb449de",
+  "formal_conjectures": "sha256:6bd2d2434",
   "gpt_erdos": "sha256:c0f626a47",
   "jayyhk": "sha256:e2db2d0f2",
   "plby": "sha256:56caee303",
@@ -12,29 +12,29 @@
   "williamjblair_lean_proofs": "sha256:b0e681bf4"
  },
  "counts": {
-  "nodes": 2773,
-  "edges": 1373,
+  "nodes": 2784,
+  "edges": 1384,
   "by_node_kind": {
-   "attestation": 99,
+   "attestation": 111,
    "claim": 342,
    "condition": 24,
    "problem": 1217,
    "proof": 392,
-   "statement": 699
+   "statement": 698
   },
   "by_edge_kind": {
    "contradicts": 11,
    "depends_on": 26,
-   "derived_from": 699,
+   "derived_from": 698,
    "replicates": 165,
    "specializes": 2,
-   "supports": 470
+   "supports": 482
   },
   "by_trust": {
-   "declared": 898,
+   "declared": 897,
    "machine": 367,
    "recorded": 9,
-   "signed": 99
+   "signed": 111
   }
  },
  "nodes": [
@@ -2842,7 +2842,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 199",
    "state": "disproved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/199"
   },
   {
@@ -3050,7 +3050,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 221",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/221"
   },
   {
@@ -3074,7 +3074,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 224",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/224"
   },
   {
@@ -3090,7 +3090,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 226",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/226"
   },
   {
@@ -3266,7 +3266,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 246",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/246"
   },
   {
@@ -3570,7 +3570,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 280",
    "state": "disproved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/280"
   },
   {
@@ -3578,7 +3578,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 281",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/281"
   },
   {
@@ -3706,7 +3706,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 296",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/296"
   },
   {
@@ -3834,7 +3834,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 31",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/31"
   },
   {
@@ -4098,7 +4098,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 34",
    "state": "disproved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/34"
   },
   {
@@ -4306,7 +4306,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 363",
    "state": "disproved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/363"
   },
   {
@@ -4513,7 +4513,7 @@
    "id": "erdos:387",
    "kind": "problem",
    "label": "Erd\u0151s 387",
-   "state": "open",
+   "state": "solved",
    "bucket": "in-pr",
    "url": "https://www.erdosproblems.com/387"
   },
@@ -4802,7 +4802,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 419",
    "state": "solved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/419"
   },
   {
@@ -5106,7 +5106,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 453",
    "state": "disproved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/453"
   },
   {
@@ -5250,7 +5250,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 47",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/47"
   },
   {
@@ -5306,7 +5306,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 476",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/476"
   },
   {
@@ -5514,7 +5514,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 5",
    "state": "open",
-   "bucket": "in-pr",
+   "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/5"
   },
   {
@@ -5690,7 +5690,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 519",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/519"
   },
   {
@@ -5818,7 +5818,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 533",
    "state": "disproved",
-   "bucket": "in-pr",
+   "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/533"
   },
   {
@@ -5882,7 +5882,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 540",
    "state": "proved (Lean)",
-   "bucket": "in-pr",
+   "bucket": "statement",
    "url": "https://www.erdosproblems.com/540"
   },
   {
@@ -6218,7 +6218,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 579",
    "state": "open",
-   "bucket": "in-pr",
+   "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/579"
   },
   {
@@ -8378,7 +8378,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 821",
    "state": "open",
-   "bucket": "in-pr",
+   "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/821"
   },
   {
@@ -8761,7 +8761,7 @@
    "id": "erdos:865",
    "kind": "problem",
    "label": "Erd\u0151s 865",
-   "state": "open",
+   "state": "proved (Lean)",
    "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/865"
   },
@@ -8826,7 +8826,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 872",
    "state": "open",
-   "bucket": "in-pr",
+   "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/872"
   },
   {
@@ -9370,7 +9370,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 933",
    "state": "open",
-   "bucket": "in-pr",
+   "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/933"
   },
   {
@@ -11600,9 +11600,9 @@
   {
    "id": "fc:199",
    "kind": "statement",
-   "label": "FC 199 (PR #4343)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+   "label": "Erdos199.erdos_199",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos199.erdos_199",
+   "linked": true
   },
   {
    "id": "fc:2",
@@ -11709,23 +11709,23 @@
   {
    "id": "fc:221",
    "kind": "statement",
-   "label": "FC 221 (PR #4338)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4338"
+   "label": "Erdos221.erdos_221",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos221.erdos_221",
+   "linked": true
   },
   {
    "id": "fc:224",
    "kind": "statement",
-   "label": "FC 224 (PR #4343)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+   "label": "Erdos224.erdos_224",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos224.erdos_224",
+   "linked": true
   },
   {
    "id": "fc:226",
    "kind": "statement",
-   "label": "FC 226 (PR #4343)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+   "label": "Erdos226.erdos_226",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos226.erdos_226",
+   "linked": true
   },
   {
    "id": "fc:228",
@@ -11831,9 +11831,9 @@
   {
    "id": "fc:246",
    "kind": "statement",
-   "label": "FC 246 (PR #4343)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+   "label": "Erdos246.erdos_246",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos246.erdos_246",
+   "linked": true
   },
   {
    "id": "fc:247",
@@ -12118,9 +12118,9 @@
   {
    "id": "fc:296",
    "kind": "statement",
-   "label": "FC 296 (PR #4343)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+   "label": "Erdos296.erdos_296",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos296.erdos_296",
+   "linked": true
   },
   {
    "id": "fc:298",
@@ -12481,9 +12481,9 @@
   {
    "id": "fc:363",
    "kind": "statement",
-   "label": "FC 363 (PR #4343)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4343"
+   "label": "Erdos363.erdos_363",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos363.erdos_363",
+   "linked": true
   },
   {
    "id": "fc:364",
@@ -12935,7 +12935,8 @@
    "stage": "draft",
    "path": "statements/443/443.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:445",
@@ -13156,7 +13157,8 @@
    "stage": "draft",
    "path": "statements/484/484.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:486",
@@ -13172,7 +13174,8 @@
    "stage": "draft",
    "path": "statements/487/487.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:488",
@@ -13216,7 +13219,8 @@
    "stage": "draft",
    "path": "statements/497/497.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:498",
@@ -13225,7 +13229,8 @@
    "stage": "draft",
    "path": "statements/498/498.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:499",
@@ -13233,13 +13238,6 @@
    "label": "Erdos499.erdos_499",
    "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos499.erdos_499",
    "linked": true
-  },
-  {
-   "id": "fc:5",
-   "kind": "statement",
-   "label": "FC 5 (PR #238)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/238"
   },
   {
    "id": "fc:50",
@@ -13262,7 +13260,8 @@
    "stage": "draft",
    "path": "statements/502/502.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:503",
@@ -13416,9 +13415,9 @@
   {
    "id": "fc:533",
    "kind": "statement",
-   "label": "FC 533 (PR #4293)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4293"
+   "label": "Erdos533.erdos_533",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos533.erdos_533",
+   "linked": false
   },
   {
    "id": "fc:535",
@@ -13441,7 +13440,8 @@
    "stage": "draft",
    "path": "statements/537/537.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:538",
@@ -13523,9 +13523,9 @@
   {
    "id": "fc:579",
    "kind": "statement",
-   "label": "FC 579 (PR #4293)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4293"
+   "label": "Erdos579.erdos_579",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos579.erdos_579",
+   "linked": false
   },
   {
    "id": "fc:582",
@@ -13534,7 +13534,8 @@
    "stage": "draft",
    "path": "statements/582/582.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:587",
@@ -13690,7 +13691,8 @@
    "stage": "draft",
    "path": "statements/618/618.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:619",
@@ -13773,7 +13775,8 @@
    "stage": "draft",
    "path": "statements/646/646.lean",
    "gates_passed": true,
-   "linked": true
+   "linked": true,
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4371"
   },
   {
    "id": "fc:647",
@@ -14244,9 +14247,9 @@
   {
    "id": "fc:821",
    "kind": "statement",
-   "label": "FC 821 (PR #4351)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4351"
+   "label": "Erdos821.erdos_821",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos821.erdos_821",
+   "linked": false
   },
   {
    "id": "fc:822",
@@ -14426,9 +14429,9 @@
   {
    "id": "fc:872",
    "kind": "statement",
-   "label": "FC 872 (PR #4226)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4226"
+   "label": "Erdos872.erdos_872.trivial_upper_bound",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos872.erdos_872.trivial_upper_bound",
+   "linked": false
   },
   {
    "id": "fc:873",
@@ -14639,9 +14642,9 @@
   {
    "id": "fc:933",
    "kind": "statement",
-   "label": "FC 933 (PR #4353)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4353"
+   "label": "Erdos933.erdos_933",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos933.erdos_933",
+   "linked": false
   },
   {
    "id": "fc:936",
@@ -17738,6 +17741,13 @@
    "verdict": "faithful"
   },
   {
+   "id": "vsa:vsa_222982abc7b6b67a",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 209",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
    "id": "vsa:vsa_22ecb7e39b4cb63c",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 281",
@@ -17762,6 +17772,27 @@
    "id": "vsa:vsa_2e0814408d5194a9",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 618",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_301bb294f392ba27",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 648",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_3088bdf7e4e18bab",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 621",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_3241596b421a5eb5",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 403",
    "reviewer": "reviewer:will-blair",
    "verdict": "faithful"
   },
@@ -17941,6 +17972,13 @@
    "verdict": "faithful"
   },
   {
+   "id": "vsa:vsa_73d12ea3469f9b88",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 512",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
    "id": "vsa:vsa_7510e45af9ee47fd",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 314",
@@ -17979,6 +18017,13 @@
    "id": "vsa:vsa_7c921c75fd87ec5f",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 1125",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_82fe241df2bf64af",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 353",
    "reviewer": "reviewer:will-blair",
    "verdict": "faithful"
   },
@@ -18130,6 +18175,13 @@
    "verdict": "faithful"
   },
   {
+   "id": "vsa:vsa_a4f1d0fae74fe3f4",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 426",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
    "id": "vsa:vsa_a6912bf56bbf19ab",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 923",
@@ -18196,6 +18248,27 @@
    "id": "vsa:vsa_c1ba4a06c0a0bfce",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 369",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_c1f8c91f5391c31b",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 206",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_c693e13e88e8cf4c",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 639",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_c7baccc828e903b5",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 464",
    "reviewer": "reviewer:will-blair",
    "verdict": "faithful"
   },
@@ -18277,6 +18350,13 @@
    "verdict": "faithful"
   },
   {
+   "id": "vsa:vsa_dedac5c88bef03b9",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 328",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
    "id": "vsa:vsa_df047b6b07b5f9a7",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 498",
@@ -18329,6 +18409,13 @@
    "id": "vsa:vsa_f7fc76dcf01bb5c6",
    "kind": "attestation",
    "label": "signed faithful \u2014 Erd\u0151s 871",
+   "reviewer": "reviewer:will-blair",
+   "verdict": "faithful"
+  },
+  {
+   "id": "vsa:vsa_f81343638f6a9502",
+   "kind": "attestation",
+   "label": "signed faithful \u2014 Erd\u0151s 71",
    "reviewer": "reviewer:will-blair",
    "verdict": "faithful"
   },
@@ -22987,7 +23074,7 @@
    "to": "erdos:199",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4343 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:2",
@@ -23092,21 +23179,21 @@
    "to": "erdos:221",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4338 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:224",
    "to": "erdos:224",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4343 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:226",
    "to": "erdos:226",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4343 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:228",
@@ -23211,7 +23298,7 @@
    "to": "erdos:246",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4343 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:247",
@@ -23498,7 +23585,7 @@
    "to": "erdos:296",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4343 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:298",
@@ -23848,7 +23935,7 @@
    "to": "erdos:363",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4343 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:364",
@@ -24572,13 +24659,6 @@
    "evidence": "FormalConjectures file exists"
   },
   {
-   "from": "fc:5",
-   "to": "erdos:5",
-   "kind": "derived_from",
-   "trust": "declared",
-   "evidence": "open FC PR #238 proposes the statement"
-  },
-  {
    "from": "fc:50",
    "to": "erdos:50",
    "kind": "derived_from",
@@ -24751,7 +24831,7 @@
    "to": "erdos:533",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4293 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:535",
@@ -24856,7 +24936,7 @@
    "to": "erdos:579",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4293 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:582",
@@ -25563,7 +25643,7 @@
    "to": "erdos:821",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4351 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:822",
@@ -25745,7 +25825,7 @@
    "to": "erdos:872",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4226 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:873",
@@ -25955,7 +26035,7 @@
    "to": "erdos:933",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4353 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:936",
@@ -30294,6 +30374,13 @@
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
+   "from": "vsa:vsa_222982abc7b6b67a",
+   "to": "fc:209",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
    "from": "vsa:vsa_22ecb7e39b4cb63c",
    "to": "fc:281",
    "kind": "supports",
@@ -30317,6 +30404,27 @@
   {
    "from": "vsa:vsa_2e0814408d5194a9",
    "to": "fc:618",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_301bb294f392ba27",
+   "to": "fc:648",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_3088bdf7e4e18bab",
+   "to": "fc:621",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_3241596b421a5eb5",
+   "to": "fc:403",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -30497,6 +30605,13 @@
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
+   "from": "vsa:vsa_73d12ea3469f9b88",
+   "to": "fc:512",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
    "from": "vsa:vsa_7510e45af9ee47fd",
    "to": "fc:314",
    "kind": "supports",
@@ -30534,6 +30649,13 @@
   {
    "from": "vsa:vsa_7c921c75fd87ec5f",
    "to": "fc:1125",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_82fe241df2bf64af",
+   "to": "fc:353",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -30686,6 +30808,13 @@
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
+   "from": "vsa:vsa_a4f1d0fae74fe3f4",
+   "to": "fc:426",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
    "from": "vsa:vsa_a6912bf56bbf19ab",
    "to": "fc:923",
    "kind": "supports",
@@ -30751,6 +30880,27 @@
   {
    "from": "vsa:vsa_c1ba4a06c0a0bfce",
    "to": "fc:369",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_c1f8c91f5391c31b",
+   "to": "fc:206",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_c693e13e88e8cf4c",
+   "to": "fc:639",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_c7baccc828e903b5",
+   "to": "fc:464",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"
@@ -30833,6 +30983,13 @@
    "evidence": "vsa signed by reviewer:will-blair"
   },
   {
+   "from": "vsa:vsa_dedac5c88bef03b9",
+   "to": "fc:328",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
    "from": "vsa:vsa_df047b6b07b5f9a7",
    "to": "fc:498",
    "kind": "supports",
@@ -30884,6 +31041,13 @@
   {
    "from": "vsa:vsa_f7fc76dcf01bb5c6",
    "to": "fc:871",
+   "kind": "supports",
+   "trust": "signed",
+   "evidence": "vsa signed by reviewer:will-blair"
+  },
+  {
+   "from": "vsa:vsa_f81343638f6a9502",
+   "to": "fc:71",
    "kind": "supports",
    "trust": "signed",
    "evidence": "vsa signed by reviewer:will-blair"

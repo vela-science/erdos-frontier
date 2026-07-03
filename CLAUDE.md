@@ -11,7 +11,7 @@ Agents may:
 - inspect frontier state (`vela status/inbox/log/check`), the corpus graph
   (`scripts/graph.sh blast`), and every derived view
 - create keyless proposals (`vela finding add . --author agent:<you>`)
-- attach mechanical verifier evidence (`vela attach`, a process kind)
+- land results and verifier evidence (`vela land`, routed by the signed policy)
 - draft FC statements, run the lake gates, regenerate reducer outputs
 - assemble FC branches and PR bodies for the human to send
 
@@ -30,7 +30,7 @@ Agents may not:
 
 ```bash
 vela status .                                   # one-screen frontier state
-vela inbox .                                    # pending proposals
+vela sign --frontier . --json                   # what awaits the human key
 vela check . --strict                           # replay + verify every signature
 bash scripts/graph.sh blast cond:maynard-tao    # dependency impact over the corpus
 python erdos_frontier.py && uv run pytest -q    # regenerate the join + tests

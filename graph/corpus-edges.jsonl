@@ -1273,10 +1273,14 @@
 {"from": "fc:519", "to": "vsa:vsa_17209c4a7cd4c6bb", "kind": "supports"}
 {"from": "fc:258", "to": "vsa:vsa_18cdc4c446722c7e", "kind": "supports"}
 {"from": "fc:333", "to": "vsa:vsa_1f3d381599abb1ff", "kind": "supports"}
+{"from": "fc:209", "to": "vsa:vsa_222982abc7b6b67a", "kind": "supports"}
 {"from": "fc:281", "to": "vsa:vsa_22ecb7e39b4cb63c", "kind": "supports"}
 {"from": "fc:369", "to": "vsa:vsa_286db47f558bdec1", "kind": "supports"}
 {"from": "fc:419", "to": "vsa:vsa_2c8c6095d54a8a8c", "kind": "supports"}
 {"from": "fc:618", "to": "vsa:vsa_2e0814408d5194a9", "kind": "supports"}
+{"from": "fc:648", "to": "vsa:vsa_301bb294f392ba27", "kind": "supports"}
+{"from": "fc:621", "to": "vsa:vsa_3088bdf7e4e18bab", "kind": "supports"}
+{"from": "fc:403", "to": "vsa:vsa_3241596b421a5eb5", "kind": "supports"}
 {"from": "fc:280", "to": "vsa:vsa_3569311f03312968", "kind": "supports"}
 {"from": "fc:582", "to": "vsa:vsa_35eed8100f7ca57d", "kind": "supports"}
 {"from": "fc:532", "to": "vsa:vsa_3ea4e10f4eb777f1", "kind": "supports"}
@@ -1302,12 +1306,14 @@
 {"from": "fc:178", "to": "vsa:vsa_705a25c8086accd1", "kind": "supports"}
 {"from": "fc:93", "to": "vsa:vsa_705d7d58a8fe1816", "kind": "supports"}
 {"from": "fc:532", "to": "vsa:vsa_726918b611c7d404", "kind": "supports"}
+{"from": "fc:512", "to": "vsa:vsa_73d12ea3469f9b88", "kind": "supports"}
 {"from": "fc:314", "to": "vsa:vsa_7510e45af9ee47fd", "kind": "supports"}
 {"from": "fc:493", "to": "vsa:vsa_752b7506d96b3946", "kind": "supports"}
 {"from": "fc:453", "to": "vsa:vsa_77fbf4f62b2f2649", "kind": "supports"}
 {"from": "fc:47", "to": "vsa:vsa_784dda4f682d91d8", "kind": "supports"}
 {"from": "fc:24", "to": "vsa:vsa_7c835a596e46b58b", "kind": "supports"}
 {"from": "fc:1125", "to": "vsa:vsa_7c921c75fd87ec5f", "kind": "supports"}
+{"from": "fc:353", "to": "vsa:vsa_82fe241df2bf64af", "kind": "supports"}
 {"from": "fc:199", "to": "vsa:vsa_852400ac9582d107", "kind": "supports"}
 {"from": "fc:487", "to": "vsa:vsa_854b714ca238cb1d", "kind": "supports"}
 {"from": "fc:1126", "to": "vsa:vsa_8567fb7922110e09", "kind": "supports"}
@@ -1329,6 +1335,7 @@
 {"from": "fc:246", "to": "vsa:vsa_9a8fea611b8454b6", "kind": "supports"}
 {"from": "fc:93", "to": "vsa:vsa_9ce6beabb331c7f5", "kind": "supports"}
 {"from": "fc:476", "to": "vsa:vsa_9dc47d44d5a7f7e4", "kind": "supports"}
+{"from": "fc:426", "to": "vsa:vsa_a4f1d0fae74fe3f4", "kind": "supports"}
 {"from": "fc:923", "to": "vsa:vsa_a6912bf56bbf19ab", "kind": "supports"}
 {"from": "fc:315", "to": "vsa:vsa_a6dd8ad77d869095", "kind": "supports"}
 {"from": "fc:178", "to": "vsa:vsa_a74b65b56a3ee00b", "kind": "supports"}
@@ -1339,6 +1346,9 @@
 {"from": "fc:497", "to": "vsa:vsa_b92bf6a38a259821", "kind": "supports"}
 {"from": "fc:646", "to": "vsa:vsa_c09593a28229a32c", "kind": "supports"}
 {"from": "fc:369", "to": "vsa:vsa_c1ba4a06c0a0bfce", "kind": "supports"}
+{"from": "fc:206", "to": "vsa:vsa_c1f8c91f5391c31b", "kind": "supports"}
+{"from": "fc:639", "to": "vsa:vsa_c693e13e88e8cf4c", "kind": "supports"}
+{"from": "fc:464", "to": "vsa:vsa_c7baccc828e903b5", "kind": "supports"}
 {"from": "fc:429", "to": "vsa:vsa_c974adb93cc0448c", "kind": "supports"}
 {"from": "vsa:vsa_cce05f44f38a76ed", "to": "erdos:214", "kind": "contradicts"}
 {"from": "fc:646", "to": "vsa:vsa_cd27bd188fc79ade", "kind": "supports"}
@@ -1350,6 +1360,7 @@
 {"from": "fc:493", "to": "vsa:vsa_d8b06b28c78b8260", "kind": "supports"}
 {"from": "fc:363", "to": "vsa:vsa_d98524377fb6f3ba", "kind": "supports"}
 {"from": "fc:435", "to": "vsa:vsa_db083f4319ac62f7", "kind": "supports"}
+{"from": "fc:328", "to": "vsa:vsa_dedac5c88bef03b9", "kind": "supports"}
 {"from": "fc:498", "to": "vsa:vsa_df047b6b07b5f9a7", "kind": "supports"}
 {"from": "fc:871", "to": "vsa:vsa_e53c1d2cc6653a0e", "kind": "supports"}
 {"from": "fc:24", "to": "vsa:vsa_e7d5e9e9e1ec62cf", "kind": "supports"}
@@ -1358,6 +1369,7 @@
 {"from": "fc:498", "to": "vsa:vsa_f1a9b0465b04ca43", "kind": "supports"}
 {"from": "fc:224", "to": "vsa:vsa_f1b30d1f99e3e928", "kind": "supports"}
 {"from": "fc:871", "to": "vsa:vsa_f7fc76dcf01bb5c6", "kind": "supports"}
+{"from": "fc:71", "to": "vsa:vsa_f81343638f6a9502", "kind": "supports"}
 {"from": "fc:401", "to": "vsa:vsa_fd540ecebd0e4429", "kind": "supports"}
 {"from": "fc:199", "to": "vsa:vsa_ff5b1982fd123784", "kind": "supports"}
 {"from": "vsa:vsa_ffc0e460741d5d1b", "to": "erdos:337", "kind": "contradicts"}

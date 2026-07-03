@@ -14,7 +14,7 @@ Agents may:
 - inspect frontier state (`vela status/inbox/log/check`), the corpus graph
   (`scripts/graph.sh blast`), and every derived view
 - create keyless proposals (`vela finding add . --author agent:<you>`)
-- attach mechanical verifier evidence (`vela attach`, a process kind)
+- land results and verifier evidence (`vela land`, routed by the signed policy)
 - draft FC statements, run the lake gates, regenerate reducer outputs
 - assemble FC branches and PR bodies for the human to send
 
@@ -49,7 +49,7 @@ but you must also hold up your side:
 
 ```bash
 vela status .                                   # one-screen frontier state
-vela inbox .                                    # pending proposals
+vela sign --frontier . --json                   # what awaits the human key
 vela check . --strict                           # replay + verify every signature
 bash scripts/graph.sh blast cond:maynard-tao    # dependency impact over the corpus
 python erdos_frontier.py && uv run pytest -q    # regenerate the join + tests
@@ -60,7 +60,8 @@ python scripts/build_graph.py                   # rebuild the corpus graph
 
 Read state:
     vela status .            one-screen frontier state
-    vela inbox .             pending proposals
+    vela next .              the offer: ranked open targets
+    vela sign                what awaits the human key
     vela log .               recent signed events
     vela check . --strict    replay + verify every signature
     bash scripts/graph.sh blast <node>    dependency impact over the corpus
@@ -70,7 +71,7 @@ Write state (all keyless, all pending until a human accepts):
     vela finding add . --assertion "..." --type theoretical \
         --source "<where it came from>" --author agent:<you> \
         --url "<artifact at a pinned commit>" --json
-    vela attach . --target vf_<id> --attachment-file <verifier-attachment.json>
+    vela land <receipt.json>   # record -> propose -> policy-routed
         # mechanical evidence (lean_kernel etc.) — a process kind agents may land
 
 Regenerate derived views (reducer outputs, never authored):
@@ -90,11 +91,10 @@ Regenerate derived views (reducer outputs, never authored):
    link-rule in the FC checkout).
 4. **Propose**: `vela finding add .` per drafted problem (author agent:you,
    url = the draft at a pinned commit, the divergence digest in the
-   assertion's conditions), then `vela attach` the gate result as a
+   assertion's conditions), then `vela land` the gate result as a
    `lean_kernel` verifier attachment.
 5. **Human session** (the only non-agent steps, 2–3 verbs):
-       vela inbox .
-       vela accept . --all-pending --reason "batch-N reviewed" [--dry-run]
+       vela sign        # the one ceremony: decisions + verdicts + hygiene
        vela review . --batch <verdicts.json> --as reviewer:<name>
    You prepare the review batch file from the reviewer's stated verdicts.
 6. **Submit to FC**: assemble the branch with plain git in the FC checkout,
@@ -103,7 +103,7 @@ Regenerate derived views (reducer outputs, never authored):
 
 ## Hard boundaries
 
-- Never `vela accept`, `vela review`, or `proposals reject` — those
+- Never `vela sign` or `vela policy sign` — those
   are the human's verbs even when the CLI would let a configured key through.
 - Never edit `.vela/`, `frontier.json`, `vela.lock`, or `proof/` by hand;
   they replay from the signed log (`vela frontier materialize .`).
