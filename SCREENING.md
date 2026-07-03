@@ -31,6 +31,18 @@ That argues for more structure, not less.
 | 4 | say the check "**found** no mismatch" or "**claimed** a mismatch in clause X", never "the statement is faithful" | positive error reports are themselves unverified claims |
 | 5 | publish the transcript, with the standing disclaimer: a screening, not comprehensive, not a confirmation stamp | anyone can audit the prompt and the reasoning behind a verdict |
 
+```mermaid
+flowchart TB
+    F["fresh session: source text + formal statement, nothing else"] --> O["overview: both sides, in the model's own words"]
+    O --> R["rank the riskiest spots"]
+    R --> A["audit each spot"]
+    A --> T["fill the per-clause table"]
+    T -- "a clause gets corrected" --> V["re-verify every clause"]
+    V --> T
+    T -- "every clause has a verdict" --> P["one full pass over both texts"]
+    P --> W["write the result: found / claimed, publish the transcript"]
+```
+
 Statements are better targets for this than papers in one respect: they are
 short and their clauses are enumerable, so the per-clause table can be
 complete, and the length-dependent reliability decay that limits screening on
@@ -51,6 +63,10 @@ probes about 90%):
 
 ## Running one
 
+> [!IMPORTANT]
+> Fresh session, every time. If the model has already seen the statement's
+> authoring context, or its own earlier reading of it, start over.
+
 1. Open a fresh session with a capable model. Paste the problem's source
    text (from erdosproblems.com or the cited paper, not the repo's
    docstring) and the formal statement. Nothing else; no PR discussion, no
@@ -69,7 +85,13 @@ probes about 90%):
 
    If any clause gets corrected along the way, re-run the whole table.
 5. One full pass over both texts, then write the result in found/claimed
-   language and link the transcript.
+   language and link the transcript. A posted result, in template form:
+
+   > **Screening (statement fidelity), Erdős {N}.**
+   > The check **found no mismatch** across {k} clauses,
+   > *or* **claimed a mismatch** in {clause}: {one line on what differs}.
+   > Transcript: {link}. A screening is not comprehensive and is not a
+   > confirmation stamp.
 
 A screening on a statement takes minutes, not hours; the artifact is short
 and the clauses run out.
