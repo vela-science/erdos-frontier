@@ -1,30 +1,35 @@
 schema: vela.frontier_lock.v0.1
-generated_at: 2026-07-03T23:22:31Z
-vela_version: 0.740.1
+generated_at: 2026-07-04T20:59:41Z
+vela_version: 0.743.0
 carina_kernel: carina@0.1.0
 frontier_id: vfr_0a25edabc16db143
 canonicalization:
   json: vela-canonical-json-v0.1
   yaml: vela-yaml-v0.1
 reducer:
-  package: vela@0.740.1
-  digest: sha256:9ff9794523fbcc31e0ab83c993d14a039bd064d7cda896c5a2c99b84fe89cfd6
+  package: vela@0.743.0
+  digest: sha256:95feb6d85fdf56b073cdca51556b3981aff0d5e712d27964805120f679f4ca33
 verifiers:
-  package: vela-verify@0.740.1
-  digest: sha256:93486bd220d0838de6a35dc258bdeaf6eb58384a3d3d269d85999ffebecf022a
+  package: vela-verify@0.743.0
+  digest: sha256:285431fbb874640d6c974b6dfe2d26e5b8f8bd7fe342f5a5959531dcaac9c09e
+  kinds:
+  - costas
+  - gf2_sidon
+  - rook_directions
+  - union_free
 carina:
   kernel: carina@0.1.0
   digest: sha256:2de6244bc3c695cd83adf7d17fd9c52b6586ce060874b37814cc35aff340d5ee
-snapshot_hash: sha256:c4a7ccdf0808e4df2d5ad8868a6284a7b0d3f53eccd5075f2b48ed5f6e0022b4
-event_log_hash: sha256:d1da8eedadfec80c707aef66afc2d320d953ee51dfe37c004dea7de999fb7360
-proposal_state_hash: sha256:10f6f92f72c960294e3e77dd46ddb4ab859eec94ed36295615c4264899e1ab15
+snapshot_hash: sha256:9f719853d2f41c94141c86e92446964ad7d04a8bd73a572777d7245f768e8074
+event_log_hash: sha256:465247714b7275241ac1f203b5c65b3ca3fb9cca6e1cd5877bb8a07b508823bb
+proposal_state_hash: sha256:9721097db9c14f24063d0369741ce59bba0d07c59bc8b6f706561b17f75d2a72
 sources_hash: sha256:77c958d5d58978627555c5dc07692c009d542e0e10070cf9ef71b540c302804d
 artifacts_hash: sha256:007ee8d7de4cfbbf0ba501062b50ccef1f523a068a675649a6082caea29581c1
 review_hash: sha256:bb74af13f787e6f1357d243a3ff50e8efea86aaa7bc83c5291ab04afd0533ace
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:a18e09e41f5e226eba68be601ab6ab1acd56eb39b33933105be4637c73851ef2
+  digest: sha256:ad617cb3224ca4682786f0e0ebed73a095b92bbd3f4ebdb0cfd7908110944aa8
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
