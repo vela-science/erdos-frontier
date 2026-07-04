@@ -8,8 +8,8 @@ layers a signed frontier already holds.
 
 ```mermaid
 flowchart LR
-    P["proof object"] --> E["evidence layer<br/>machine, reproducible"]
-    S["formal statement"] --> F["faithfulness layer<br/>human, signed"]
+    P["proof object"] --> E["evidence layer: machine, reproducible"]
+    S["formal statement"] --> F["faithfulness layer: human, signed"]
     E --> C["certificate"]
     F --> C
 ```
