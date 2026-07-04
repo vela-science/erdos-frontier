@@ -81,7 +81,11 @@
     }
   },
   "source_refs": [],
-  "status": "pending_review",
+  "status": "applied",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-07-04T20:59:48.639756+00:00",
+  "decision_reason": "frozen-verifier-checked witness (batch-6 harvest)",
+  "applied_event_id": "vev_0d7ef6382a99c0ae",
   "caveats": [
     "Manual findings require evidence review before scientific use."
   ]

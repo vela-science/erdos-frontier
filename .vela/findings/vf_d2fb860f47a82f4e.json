@@ -1,0 +1,66 @@
+{
+  "id": "vf_d2fb860f47a82f4e",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "OEIS A347025 a(6) >= 22: a union-free family of 22 subsets of {1..6} (no member is the union of others). Frozen-verified by vela-verify (union_free kind).",
+    "type": "computational",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "computational",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "Manually added finding; requires evidence review before scientific use.",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 1.0,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "title": "vela campaign (discovery engine)",
+    "authors": [
+      {
+        "name": "agent:harvest",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-04T20:50:15.753048+00:00",
+      "extractor_version": "vela/0.743.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-04T20:50:15.753057+00:00",
+  "updated": null
+}
