@@ -1,0 +1,38 @@
+{
+  "id": "va_3ed313b01c1c3c6a",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos398-brocard (brocard_no_square)",
+  "content_hash": "sha256:53833d77f24d53ecfade945bfe4c0789b799ec01657a99429610a36cc23dee95",
+  "size_bytes": 38103,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/53833d77f24d53ecfade945bfe4c0789b799ec01657a99429610a36cc23dee95",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_484ed714dba000f6"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos398-brocard (brocard_no_square)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::brocard_no_square",
+    "witness_file": "erdos398-brocard.witness.json",
+    "witness_kind": "brocard_no_square"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-24T06:38:33.564467+00:00"
+}

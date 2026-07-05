@@ -1,0 +1,38 @@
+{
+  "id": "va_29aec6c2f51d9fa3",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos475-graham-p5 (distinct_partial_sums)",
+  "content_hash": "sha256:629d6ca6becd9eae5bb81d8acc20c8646714ef9f463608666514f7d800764904",
+  "size_bytes": 198,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/629d6ca6becd9eae5bb81d8acc20c8646714ef9f463608666514f7d800764904",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_ff69437d47ca4fb3"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos475-graham-p5 (distinct_partial_sums)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::distinct_partial_sums",
+    "witness_file": "erdos475-graham-p5.witness.json",
+    "witness_kind": "distinct_partial_sums"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-24T06:38:40.320546+00:00"
+}

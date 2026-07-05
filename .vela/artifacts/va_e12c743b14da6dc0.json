@@ -1,0 +1,38 @@
+{
+  "id": "va_e12c743b14da6dc0",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos366-2full-3full (two_full_three_full)",
+  "content_hash": "sha256:42cd947e92d2b1ae8da832bc633b1ec15b3120f9f82c520d894da0349872f1d6",
+  "size_bytes": 76,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/42cd947e92d2b1ae8da832bc633b1ec15b3120f9f82c520d894da0349872f1d6",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_d72bce755ab746a2"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos366-2full-3full (two_full_three_full)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::two_full_three_full",
+    "witness_file": "erdos366-2full-3full.witness.json",
+    "witness_kind": "two_full_three_full"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-24T06:38:32.096663+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "va_140c1c8af6e5291b",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos1093-new-examples (binom_deficiency)",
+  "content_hash": "sha256:40df0725ba18ef743ce1360c482c3dfd23cce0bf1b6b499c80fb194468ec0586",
+  "size_bytes": 366,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/40df0725ba18ef743ce1360c482c3dfd23cce0bf1b6b499c80fb194468ec0586",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_279e997d3b3da2ee"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos1093-new-examples (binom_deficiency)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::binom_deficiency",
+    "witness_file": "erdos1093-new-examples.witness.json",
+    "witness_kind": "binom_deficiency"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-17T06:47:13.150267+00:00"
+}

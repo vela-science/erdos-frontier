@@ -1,0 +1,38 @@
+{
+  "id": "va_8415915cd48c599a",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos203-crt-partial-cover (crt_partial_cover)",
+  "content_hash": "sha256:a657efb1e0d5bc01b92824c59ed1b20b8dfa56d9c51154d99bf9b59ddb8c9c8b",
+  "size_bytes": 2909,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/a657efb1e0d5bc01b92824c59ed1b20b8dfa56d9c51154d99bf9b59ddb8c9c8b",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_0d4ac181db98ceaa"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos203-crt-partial-cover (crt_partial_cover)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::crt_partial_cover",
+    "witness_file": "erdos203-crt-partial-cover.witness.json",
+    "witness_kind": "crt_partial_cover"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-17T06:47:32.955638+00:00"
+}

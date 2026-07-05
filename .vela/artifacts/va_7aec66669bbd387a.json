@@ -1,0 +1,38 @@
+{
+  "id": "va_7aec66669bbd387a",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos306-semiprime-egyptian (semiprime_egyptian)",
+  "content_hash": "sha256:d14dc898916449bf6c4ba07bd682aeaa9692c5e389a3f9e346e69a8f4c14e177",
+  "size_bytes": 2992,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/d14dc898916449bf6c4ba07bd682aeaa9692c5e389a3f9e346e69a8f4c14e177",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_f8fd3ed0562f3ca8"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos306-semiprime-egyptian (semiprime_egyptian)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::semiprime_egyptian",
+    "witness_file": "erdos306-semiprime-egyptian.witness.json",
+    "witness_kind": "semiprime_egyptian"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-24T06:38:29.365008+00:00"
+}

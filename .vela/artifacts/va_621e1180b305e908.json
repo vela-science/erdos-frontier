@@ -1,0 +1,38 @@
+{
+  "id": "va_621e1180b305e908",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos1094-exception-enum-k40 (binom_exception_enum)",
+  "content_hash": "sha256:a824eefe3b1b008d8e1458cf1e9ac89a1964403781f060c7efc9f15d969808b7",
+  "size_bytes": 390,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/a824eefe3b1b008d8e1458cf1e9ac89a1964403781f060c7efc9f15d969808b7",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_2d4edfce58578092"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos1094-exception-enum-k40 (binom_exception_enum)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::binom_exception_enum",
+    "witness_file": "erdos1094-exception-enum-k40.witness.json",
+    "witness_kind": "binom_exception_enum"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-17T06:47:23.049237+00:00"
+}

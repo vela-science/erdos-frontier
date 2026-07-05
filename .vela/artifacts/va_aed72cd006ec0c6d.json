@@ -1,0 +1,38 @@
+{
+  "id": "va_aed72cd006ec0c6d",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos364-powerful-triples (powerful_triples_none)",
+  "content_hash": "sha256:7162ed12237d0becf083f0dbc714d51b5a69e7d3377eec164ea9232581aa9fff",
+  "size_bytes": 87,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/7162ed12237d0becf083f0dbc714d51b5a69e7d3377eec164ea9232581aa9fff",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_15e987c69ec8a2d4"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos364-powerful-triples (powerful_triples_none)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::powerful_triples_none",
+    "witness_file": "erdos364-powerful-triples.witness.json",
+    "witness_kind": "powerful_triples_none"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-24T06:38:30.670387+00:00"
+}

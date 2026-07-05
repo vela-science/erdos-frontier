@@ -1,0 +1,38 @@
+{
+  "id": "va_e8cbd54f9841bbf2",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos617-balanced-k5-r2 (balanced_coloring)",
+  "content_hash": "sha256:bd59b83445c718c9d0c2be5cc1105cde4c74eade7cbcff5541e82d7e40bf4a5d",
+  "size_bytes": 191,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/bd59b83445c718c9d0c2be5cc1105cde4c74eade7cbcff5541e82d7e40bf4a5d",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_da8d51a6cae5ec11"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos617-balanced-k5-r2 (balanced_coloring)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::balanced_coloring",
+    "witness_file": "erdos617-balanced-k5-r2.witness.json",
+    "witness_kind": "balanced_coloring"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-17T06:47:40.882540+00:00"
+}

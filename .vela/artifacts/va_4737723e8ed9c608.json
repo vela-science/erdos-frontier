@@ -1,0 +1,38 @@
+{
+  "id": "va_4737723e8ed9c608",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos700-min-binom-gcd (min_binom_gcd)",
+  "content_hash": "sha256:187d6dc6a71fab7c750ab20b56c9aa47c870342a52504dce9858c5486ff6bd90",
+  "size_bytes": 398,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/187d6dc6a71fab7c750ab20b56c9aa47c870342a52504dce9858c5486ff6bd90",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_2db3437d1512c222"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos700-min-binom-gcd (min_binom_gcd)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::min_binom_gcd",
+    "witness_file": "erdos700-min-binom-gcd.witness.json",
+    "witness_kind": "min_binom_gcd"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-17T06:47:52.257923+00:00"
+}

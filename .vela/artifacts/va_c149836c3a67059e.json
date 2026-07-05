@@ -1,0 +1,40 @@
+{
+  "id": "va_c149836c3a67059e",
+  "kind": "source_file",
+  "name": "Theorem 8 (Erdős-Ginzburg-Ziv, n=2 case)",
+  "content_hash": "sha256:58dec20d4f8c474d222009c9d3b7cae2ef010bfac48fd5c2ad7c9c8d894428ec",
+  "size_bytes": 3361,
+  "media_type": "text/x-lean",
+  "storage_mode": "pointer",
+  "locator": "lean/Vela/EGZ.lean",
+  "license": "Apache-2.0 OR MIT",
+  "target_findings": [
+    "vf_e9e8b34f2a6a7b1d"
+  ],
+  "provenance": {
+    "source_type": "code_repository",
+    "doi": null,
+    "title": "Proof script for vf_e9e8b34f2a6a7b1d (lean4 4.29.1)",
+    "authors": [],
+    "year": null,
+    "license": "Apache-2.0 OR MIT",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "carina_kind": "proof_script",
+    "carina_proof_id": "vpf_f8e682ef7af06e88",
+    "carina_proof_target_finding": "vf_e9e8b34f2a6a7b1d",
+    "carina_proof_tool": "lean4",
+    "carina_proof_tool_version": "4.29.1"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-05-10T21:24:22.189533+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "va_72d0146b4854c414",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos684-kummer-no-carry (kummer_no_carry)",
+  "content_hash": "sha256:868678f82d5c0b180f84371c68e1c1a2d6127388b0e3401b76d7e528ba9ad87d",
+  "size_bytes": 408,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/868678f82d5c0b180f84371c68e1c1a2d6127388b0e3401b76d7e528ba9ad87d",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_ba50ac1f1f60aa27"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos684-kummer-no-carry (kummer_no_carry)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::kummer_no_carry",
+    "witness_file": "erdos684-kummer-no-carry.witness.json",
+    "witness_kind": "kummer_no_carry"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-17T06:47:44.242353+00:00"
+}

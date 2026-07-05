@@ -1,0 +1,15 @@
+{
+  "kind": "rook_directions",
+  "n": 8,
+  "perm": [
+    4,
+    1,
+    2,
+    7,
+    6,
+    3,
+    5,
+    8
+  ],
+  "claimed_directions": 14
+}

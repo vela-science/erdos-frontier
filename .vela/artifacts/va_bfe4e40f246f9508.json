@@ -1,0 +1,38 @@
+{
+  "id": "va_bfe4e40f246f9508",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos1056-k09 (interval_product)",
+  "content_hash": "sha256:4e6bbf77d06d07bdd5e2794403856d63a690d22e69fe3c68ba4cfef2f9232839",
+  "size_bytes": 172,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/4e6bbf77d06d07bdd5e2794403856d63a690d22e69fe3c68ba4cfef2f9232839",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_ae08f178d51bb99e"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos1056-k09 (interval_product)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::interval_product",
+    "witness_file": "erdos1056-k09.witness.json",
+    "witness_kind": "interval_product"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-17T06:46:03.689855+00:00"
+}

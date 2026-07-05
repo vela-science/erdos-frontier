@@ -1,0 +1,38 @@
+{
+  "id": "va_004d75cd0ddb592c",
+  "kind": "dataset",
+  "name": "Frozen-verifier witness: erdos242-straus-distinct (unit_fraction_decomp)",
+  "content_hash": "sha256:ff5fe881e33e31ebfeb8543bc8f9db29ed60efe845bfa8d0128485e280423b64",
+  "size_bytes": 569250,
+  "media_type": "application/json",
+  "storage_mode": "local_blob",
+  "locator": ".vela/artifact-blobs/sha256/ff5fe881e33e31ebfeb8543bc8f9db29ed60efe845bfa8d0128485e280423b64",
+  "license": "CC-BY-4.0",
+  "target_findings": [
+    "vf_41284d5868c13c2d"
+  ],
+  "provenance": {
+    "source_type": "data_release",
+    "doi": null,
+    "title": "Frozen-verifier witness: erdos242-straus-distinct (unit_fraction_decomp)",
+    "authors": [],
+    "year": null,
+    "license": "CC-BY-4.0",
+    "extraction": {
+      "method": "",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "metadata": {
+    "verifier": "vela-verify::unit_fraction_decomp",
+    "witness_file": "erdos242-straus-distinct.witness.json",
+    "witness_kind": "unit_fraction_decomp"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-24T06:38:27.973590+00:00"
+}
