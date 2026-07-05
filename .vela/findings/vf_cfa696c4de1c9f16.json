@@ -1,0 +1,56 @@
+{
+  "id": "vf_cfa696c4de1c9f16",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #768: declared status 'open'. Formalized: no. Let $A\\subset\\mathbb{N}$ be the set of $n$ such that for every prime $p\\mid n$ there exists some $d\\mid n$ with $d>1$ such that $d\\equiv 1\\pmod{p}$. Is it true that there exists some constant $c>0$ such that for all large $N$\\[\\frac{\\lvert A\\cap [1,N]\\rvert}{N}=\\exp(-(c+o(1))\\sqrt{\\log N}\\log\\log N).\\] Current best: Erd\\H{o}s could prove that there exists some constant $c>0$ such that for all large $N$\\[\\exp(-c\\sqrt{\\log N}\\log\\log N)\\leq \\frac{\\lvert A\\cap [1,N]\\rvert}{N}\\]and\\[\\frac{\\lvert A\\cap [1,N]\\rvert}{N}\\leq \\exp(-(1+o(1))\\sqrt{\\log N\\log\\log N}).\\]Erd\\H{o}s asked about this because $\\lvert A\\cap [1,N]\\rvert$ provides an upper bound for the number of integers $n\\leq N$ for which there is a non-cyclic simple group of order $n$. Prize: no. OEIS: A001034, A352287. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:768",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

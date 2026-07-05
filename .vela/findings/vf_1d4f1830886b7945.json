@@ -1,0 +1,56 @@
+{
+  "id": "vf_1d4f1830886b7945",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #670: declared status 'open'. Formalized: no. Let $A\\subseteq \\mathbb{R}^d$ be a set of $n$ points such that all pairwise distances differ by at least $1$. Is the diameter of $A$ at least $(1+o(1))n^2$? Current best: The lower bound of $\\binom{n}{2}$ for the diameter is trivial. Prize: no. Tags: distances, geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:670",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

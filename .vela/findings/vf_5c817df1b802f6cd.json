@@ -1,0 +1,56 @@
+{
+  "id": "vf_5c817df1b802f6cd",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #282: declared status 'open'. Formalized: yes. Let $A\\subseteq \\mathbb{N}$ be an infinite set and consider the following greedy algorithm for a rational $x\\in (0,1)$: choose the minimal $n\\in A$ such that $n\\geq 1/x$ and repeat with $x$ replaced by $x-\\frac{1}{n}$. If this terminates after finitely many steps then this produces a representation of $x$ as the sum of distinct unit fractions with denominators from $A$.\n\nDoes this process always terminate if $x$ has odd denominator and $A$ is the set of odd numbers? More generally, for which pairs $x$ and $A$ does this process terminate? Prize: no. Tags: number theory, unit fractions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:282",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

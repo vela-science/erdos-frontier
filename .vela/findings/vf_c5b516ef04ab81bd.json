@@ -1,0 +1,56 @@
+{
+  "id": "vf_c5b516ef04ab81bd",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1002: declared status 'open'. Formalized: yes. For any $0<\\alpha<1$, let\\[f(\\alpha,n)=\\frac{1}{\\log n}\\sum_{1\\leq k\\leq n}(\\tfrac{1}{2}-\\{ \\alpha k\\}).\\]Does $f(\\alpha,n)$ have an asymptotic distribution function?\n\nIn other words, is there a non-decreasing function $g$ such that $g(-\\infty)=0$, $g(\\infty)=1$,\nand\\[\\lim_{n\\to \\infty}\\lvert \\{ \\alpha\\in (0,1): f(\\alpha,n)\\leq c\\}\\rvert=g(c)?\\] Current best: Kesten \\cite{Ke60} proved that if\\[f(\\alpha,\\beta,n)=\\frac{1}{\\log n}\\sum_{1\\leq k\\leq n}(\\tfrac{1}{2}-\\{\\beta+\\alpha k\\})\\]then $f(\\alpha,\\beta,n)$ has asymptotic distribution function\\[g(c)=\\frac{1}{\\pi}\\int_{-\\infty}^{\\rho c}\\frac{1}{1+t^2}\\mathrm{d}t,\\]where $\\rho>0$ is an explicit constant. Prize: no. Tags: analysis, diophantine approximation.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1002",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

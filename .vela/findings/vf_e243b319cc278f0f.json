@@ -1,0 +1,56 @@
+{
+  "id": "vf_e243b319cc278f0f",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #665: declared status 'open'. Formalized: no. Is there some constant $c$ such that for every $n$ there are $A_1,\\ldots,A_m\\subseteq \\{1,\\ldots,n\\}$ such that $\\lvert A_i\\rvert >n^{1/2}-c$ for all $i$, and $\\lvert A_i\\cap A_j\\rvert \\leq 1$ for all $i\\neq j$, and every pair $1\\leq x<y\\leq n$ has $\\{x,y\\}\\subseteq A_i$ for some $i$? Current best: Shrikhande and Singhi \\cite{ShSi85} have proved that the answer is no conditional on the conjecture that the order of every projective plane is a prime power (see [723]), by proving that every pairwise balanced design on $n$ points in which each block is of size $\\geq n^{1/2}-c$ can be embedded in a projective plane of order $n+i$ for some $i\\leq c+2$, if $n$ is sufficiently large. Prize: no. Tags: combinatorics.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:665",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

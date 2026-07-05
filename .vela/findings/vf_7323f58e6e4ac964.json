@@ -1,0 +1,56 @@
+{
+  "id": "vf_7323f58e6e4ac964",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #953: declared status 'open'. Formalized: no. Let $A\\subset \\{ x\\in \\mathbb{R}^2 : \\lvert x\\rvert <r\\}$ be a measurable set with no integer distances, that is, such that $\\lvert a-b\\rvert \\not\\in \\mathbb{Z}$ for any distinct $a,b\\in A$. How large can the measure of $A$ be? Current best: The trivial upper bound is $O(r)$. Kovac has observed that S\\'{a}rk\\\"{o}zy's lower bound in [466] can be adapted to give a lower bound of $\\gg r^{0.26}$ for this problem. Prize: no. Tags: distances, geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:953",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

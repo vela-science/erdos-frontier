@@ -1,0 +1,56 @@
+{
+  "id": "vf_69abec7ebb52f2fd",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #787: declared status 'open'. Formalized: no. Let $g(n)$ be maximal such that given any set $A\\subset \\mathbb{R}$ with $\\lvert A\\rvert=n$ there exists some $B\\subseteq A$ of size $\\lvert B\\rvert\\geq g(n)$ such that $b_1+b_2\\not\\in A$ for all $b_1\\neq b_2\\in B$.\n\nEstimate $g(n)$. Current best: The current best bounds known are\\[(\\log n)^{1+c} \\ll g(n) \\ll \\exp(\\sqrt{\\log n})\\]for some constant $c>0$, the lower bound due to Sanders \\cite{Sa21} and the upper bound due to Ruzsa \\cite{Ru05}. Prize: no. Tags: additive combinatorics.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:787",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

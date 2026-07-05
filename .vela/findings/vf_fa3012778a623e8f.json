@@ -1,0 +1,56 @@
+{
+  "id": "vf_fa3012778a623e8f",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #386: declared status 'open'. Formalized: yes. Let $2\\leq k\\leq n-2$. Can $\\binom{n}{k}$ be the product of consecutive primes infinitely often? For example\\[\\binom{21}{2}=2\\cdot 3\\cdot 5\\cdot 7.\\] Current best: Erd\\H{o}s and Graham write that 'a proof that this cannot happen infinitely often for $\\binom{n}{2}$ seems hopeless; probably this can never happen for $\\binom{n}{k}$ if $3\\leq k\\leq n-3$.'  Weisenberg has provided four easy examples that show Erd\\H{o}s and Graham were too optimistic here:\\[\\binom{7}{3}=5\\cdot 7,\\]\\[\\binom{10}{4}= 2\\cdot 3\\cdot 5\\cdot 7,\\]\\[\\binom{14}{4} = 7\\cdot 11\\cdot 13,\\]and\\[\\binom{15}{6}=5\\cdot 7\\cdot 11\\cdot 13.\\]The known values of $n$ for which $\\binom{n}{2}$ is the product of consecutive primes are $4,6,15,21,715$ (see A280992). Prize: no. OEIS: A280992. Tags: binomial coefficients, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:386",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

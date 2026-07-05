@@ -1,0 +1,56 @@
+{
+  "id": "vf_b872635e4c48b5a6",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #650: declared status 'solved'. Formalized: no. Let $f(m)$ be such that if $A\\subseteq \\{1,\\ldots,N\\}$ has $\\lvert A\\rvert=m$ then every interval in $[1,\\infty)$ of length $2N$ contains $\\geq f(m)$ many distinct integers $b_1,\\ldots,b_r$ where each $b_i$ is divisible by some $a_i\\in A$, where $a_1,\\ldots,a_r$ are distinct.\n\nEstimate $f(m)$. In particular is it true that $f(m)\\ll m^{1/2}$? Prize: no. OEIS: A027434. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:650",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

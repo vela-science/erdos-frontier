@@ -1,0 +1,56 @@
+{
+  "id": "vf_5412e073649c06c5",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #687: declared status 'open'. Formalized: no. Let $Y(x)$ be the maximal $y$ such that there exists a choice of congruence classes $a_p$ for all primes $p\\leq x$ such that every integer in $[1,y]$ is congruent to at least one of the $a_p\\pmod{p}$.\n\nGive good estimates for $Y(x)$. In particular, can one prove that $Y(x)=o(x^2)$ or even $Y(x)\\ll x^{1+o(1)}$? Current best: The best known upper bound is due to Iwaniec \\cite{Iw78},\\[Y(x) \\ll x^2.\\]The best lower bound is due to Ford, Green, Konyagin, Maynard, and Tao \\cite{FGKMT18},\\[Y(x) \\gg x\\frac{\\log x\\log\\log\\log x}{\\log\\log x},\\]improving on a previous bound of Rankin \\cite{Ra38}. Prize: $1000. OEIS: A048670, A058989. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:687",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

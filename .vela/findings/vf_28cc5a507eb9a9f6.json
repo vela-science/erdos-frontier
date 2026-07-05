@@ -1,0 +1,56 @@
+{
+  "id": "vf_28cc5a507eb9a9f6",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1033: declared status 'open'. Formalized: no. Let $h(n)$ be such that every graph on $n$ vertices with $>n^2/4$ many edges contains a triangle whose vertices have degrees summing to at least $h(n)$. Estimate $h(n)$. In particular, is it true that\\[h(n)\\geq (2(\\sqrt{3}-1)-o(1))n?\\] Current best: The lower bound was improved to $\\frac{21}{16}n$ by Fan \\cite{Fa88}. Prize: no. Tags: graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1033",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

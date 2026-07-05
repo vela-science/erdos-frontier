@@ -1,0 +1,56 @@
+{
+  "id": "vf_7c15851964bcf043",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #920: declared status 'open'. Formalized: yes. Let $g_k(n)$ denote the largest possible chromatic number of a graph with $n$ vertices which contains no $K_k$.\n\nIs it true that, for $k\\geq 4$,\\[g_k(n) \\gg \\frac{n^{1-\\frac{1}{k-1}}}{(\\log n)^c}\\]for some constant $c>0$? Current best: Shearer's lower bound for $R(3,m)$ (see [165]) improves this to\\[g_3(n) \\gg \\left(\\frac{n}{\\log n}\\right)^{1/2}.\\]The lower bound $R(4,m) \\gg m^3/(\\log m)^4$ of Mattheus and Verstraete \\cite{MaVe23} (see [166]) implies\\[g_4(n) \\gg \\frac{n^{2/3}}{(\\log n)^{4/3}}.\\]In general it is known (see [986]) that\\[R(k,m)\\gg (\\log m)^{-O_k(1)}m^{\\frac{k+1}{2}}\\]which implies\\[g_k(n) \\gg \\frac{n^{1-\\frac{2}{k+1}}}{(\\log n)^{c_k}}.\\]See [1013] for the case $k=3$. Prize: no. Tags: chromatic number, graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:920",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

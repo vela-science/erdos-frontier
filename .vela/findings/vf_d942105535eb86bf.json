@@ -1,0 +1,56 @@
+{
+  "id": "vf_d942105535eb86bf",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #879: declared status 'open'. Formalized: no. Call a set $S\\subseteq \\{1,\\ldots,n\\}$ admissible if $(a,b)=1$ for all $a\\neq b\\in S$. Let\\[G(n) = \\max_{S\\subseteq \\{1,\\ldots,n\\}} \\sum_{a\\in S}a\\]and\\[H(n)=\\sum_{p<n}p+ n\\pi(n^{1/2}).\\]Is it true that\\[G(n) >H(n)-n^{1+o(1)}?\\]Is it true that, for every $k\\geq 2$, if $n$ is sufficiently large then the admissible set which maximises $G(n)$ contains at least one integer with at least $k$ prime factors? Prize: no. OEIS: A186736. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:879",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

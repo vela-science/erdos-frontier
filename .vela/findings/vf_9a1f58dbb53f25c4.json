@@ -1,0 +1,56 @@
+{
+  "id": "vf_9a1f58dbb53f25c4",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #33: declared status 'open'. Formalized: yes. Let $A\\subset\\mathbb{N}$ be such that every large integer can be written as $n^2+a$ for some $a\\in A$ and $n\\geq 0$. What is the smallest possible value of\\[\\limsup \\frac{\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert}{N^{1/2}}?\\]Is\\[\\liminf \\frac{\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert}{N^{1/2}}>1?\\] Current best: Moser \\cite{Mo65} proved that, for any such $A$,\\[\\liminf \\frac{\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert}{N^{1/2}}>1.06.\\]The best-known lower bound is\\[\\liminf \\frac{\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert}{N^{1/2}}\\geq\\frac{4}{\\pi}\\approx 1.273\\]proved by Cilleruelo \\cite{Ci93}, Habsieger \\cite{Ha95}, and Balasubramanian and Ramana \\cite{BaRa01}. Prize: no. Tags: additive basis, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:33",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

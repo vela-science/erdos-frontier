@@ -1,0 +1,56 @@
+{
+  "id": "vf_b5c114f9cc0d8c77",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1074: declared status 'open'. Formalized: yes. Let $S$ be the set of all $m\\geq 1$ such that there exists a prime $p\\not\\equiv 1\\pmod{m}$ such that $m!+1\\equiv 0\\pmod{p}$. Does\\[\\lim \\frac{\\lvert S\\cap [1,x]\\rvert}{x}\\]exist? What is it?\n\nSimilarly, if $P$ is the set of all primes $p$ such that there exists an $m$ with $p\\not\\equiv 1\\pmod{m}$ such that $m!+1\\equiv 0\\pmod{p}$, then does\\[\\lim \\frac{\\lvert P\\cap [1,x]\\rvert}{\\pi(x)}\\]exist? What is it? Current best: The frequency with which the EHS numbers occur - most often in long sequences of consecutive integers - makes us believe that their asymptotic density exists and is unity. Prize: no. OEIS: A063980, A064164. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1074",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_d7073d46fe6e0b5b",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #872: declared status 'open'. Formalized: no. Consider the two-player game in which players alternately choose integers from $\\{2,3,\\ldots,n\\}$ to be included in some set $A$ (the same set for both players) such that no $a\\mid b$ for $a\\neq b\\in A$.\n\nThe game ends when no legal move is possible. One player wants the game to last as long as possible, the other wants the game to end quickly. How long can the game be guaranteed to last for?\n\nAt least $\\epsilon n$ moves? (For $\\epsilon>0$ and $n$ sufficiently large.) At least $(1-\\epsilon)\\frac{n}{2}$ moves? Current best: Jacob, An upper bound on the extremal version of Hajnal's triangle-free game. Prize: no. Tags: number theory, primitive sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:872",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_da7c4cff9da083d7",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1004: declared status 'open'. Formalized: yes. Let $c>0$. If $x$ is sufficiently large then does there exist $n\\leq x$ such that the values of $\\phi(n+k)$ are all distinct for $1\\leq k\\leq (\\log x)^c$, where $\\phi$ is the Euler totient function? Current best: Erd\\H{o}s, Pomerenace, and S\\'{a}rk\\\"{o}zy \\cite{EPS87} proved that if $\\phi(n+k)$ are all distinct for $1\\leq k\\leq K$ then\\[K \\leq \\frac{n}{\\exp(c(\\log n)^{1/3})}\\]for some constant $c>0$. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1004",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

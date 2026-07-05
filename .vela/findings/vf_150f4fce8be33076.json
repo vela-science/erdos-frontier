@@ -1,0 +1,56 @@
+{
+  "id": "vf_150f4fce8be33076",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #233: declared status 'open'. Formalized: yes. Let $d_n=p_{n+1}-p_n$, where $p_n$ is the $n$th prime. Prove that\\[\\sum_{1\\leq n\\leq N}d_n^2 \\ll N(\\log N)^2.\\] Current best: Cramer \\cite{Cr36} proved an upper bound of $O(N(\\log N)^4)$ conditional on the Riemann hypothesis. Selberg \\cite{Se43} improved this slightly (still assuming the Riemann hypothesis) to\\[\\sum_{1\\leq n\\leq N}\\frac{d_n^2}{n}\\ll (\\log N)^4.\\]The prime number theorem immediately implies a lower bound of\\[\\sum_{1\\leq n\\leq N}d_n^2\\gg N(\\log N)^2.\\]The values of the sum are listed at A074741 on the OEIS. Prize: no. OEIS: A074741. Tags: number theory, primes.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:233",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_36ae122df4d7c793",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #124: declared status 'open'. Formalized: yes. For any $d\\geq 1$ and $k\\geq 0$ let $P(d,k)$ be the set of integers which are the sum of distinct powers $d^i$ with $i\\geq k$. Let $3\\leq d_1<d_2<\\cdots <d_r$ be integers such that\\[\\sum_{1\\leq i\\leq r}\\frac{1}{d_r-1}\\geq 1.\\]Can all sufficiently large integers be written as a sum of the shape $\\sum_i c_ia_i$ where $c_i\\in \\{0,1\\}$ and $a_i\\in P(d_i,0)$?\n\nIf we further have $\\mathrm{gcd}(d_1,\\ldots,d_r)=1$ then, for any $k\\geq 1$, can all sufficiently large integers be written as a sum of the shape $\\sum_i c_ia_i$ where $c_i\\in \\{0,1\\}$ and $a_i\\in P(d_i,k)$? Current best: In \\cite{BEGL96} they record that Pomerance observed that the condition $\\sum 1/(d_i-1)\\geq 1$ is necessary (for both questions), but give no details. Prize: no. Tags: base representations, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:124",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

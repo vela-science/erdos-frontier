@@ -1,0 +1,56 @@
+{
+  "id": "vf_72aecc13c951630c",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #919: declared status 'open'. Formalized: no. Is there a graph $G$ with vertex set $\\omega_2^2$ and chromatic number $\\aleph_2$ such that every subgraph whose vertices have a lesser type has chromatic number $\\leq \\aleph_0$?\n\nWhat if instead we ask for $G$ to have chromatic number $\\aleph_1$? Current best: Erd\\H{o}s and Hajnal showed this does not generalise to higher cardinals - they (see \\cite{Er69b}) constructed a set on $\\omega_1^2$ with chromatic number $\\aleph_1$ such that every strictly smaller subgraph has chromatic number $\\leq \\aleph_0$ as follows: the vertices of $G$ are the pairs $(x_\\alpha,y_\\beta)$ for $1\\leq \\alpha,\\beta <\\omega_1$, ordered lexicographically. Prize: no. Tags: chromatic number, graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:919",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

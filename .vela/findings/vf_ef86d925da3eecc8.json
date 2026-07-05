@@ -1,0 +1,56 @@
+{
+  "id": "vf_ef86d925da3eecc8",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #956: declared status 'open'. Formalized: no. If $C,D\\subseteq \\mathbb{R}^2$ then the distance between $C$ and $D$ is defined by\\[\\delta(C,D)=\\inf_{\\substack{c\\in C\\\\ d\\in D}}\\| c-d\\|.\\]Let $h(n)$ be the maximal number of unit distances between disjoint convex translates. That is, the maximal $m$ such that there is a compact convex set $C\\subset \\mathbb{R}^2$ and a set $X$ of size $n$ such that all $(C+x)_{x\\in X}$ are disjoint and there are $m$ pairs $x_1,x_2\\in X$ such that\\[\\delta(C+x_1,C+x_2)=1.\\]Determine $h(n)$ - in particular, prove that there exists a constant $c>0$ such that $h(n)>n^{1+c}$ for all large $n$. Current best: They also consider the related function where we consider $n$ disjoint convex sets (not necessarily translates), for which they give an upper bound of $\\ll n^{7/5}$. Prize: no. Tags: convex, distances, geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:956",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

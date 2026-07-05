@@ -1,0 +1,56 @@
+{
+  "id": "vf_b83f7ffefc816eb4",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #685: declared status 'open'. Formalized: no. Let $\\epsilon>0$ and $n$ be large depending on $\\epsilon$. Is it true that for all $n^\\epsilon<k\\leq n^{1-\\epsilon}$ the number of distinct prime divisors of $\\binom{n}{k}$ is\\[(1+o(1))k\\sum_{k<p<n}\\frac{1}{p}?\\]Or perhaps even when $k \\geq (\\log n)^c$? Current best: It is trivial that the number of prime factors is\\[>\\frac{\\log \\binom{n}{k}}{\\log n},\\]and this inequality becomes (asymptotic) equality if $k>n^{1-o(1)}$. Prize: no. Tags: binomial coefficients, number theory, primes.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:685",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_30df562ae99388bc",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1094: declared status 'open'. Formalized: yes. For all $n\\geq 2k$ the least prime factor of $\\binom{n}{k}$ is $\\leq \\max(n/k,k)$, with only finitely many exceptions. Current best: Selfridge \\cite{Se77} further conjectured that this always happens if $n\\geq k^2-1$, except $\\binom{62}{6}$. More precisely, in \\cite{ELS88} they conjecture that if $n\\geq 2k$ then the least prime factor of $\\binom{n}{k}$ is $\\leq \\max(n/k,k)$ with the following $14$ exceptions:\\[\\binom{7}{3},\\binom{13}{4},\\binom{23}{5},\\binom{14}{4},\\binom{44}{8},\\binom{46}{10},\\binom{47}{10},\\]\\[\\binom{47}{11},\\binom{62}{6},\\binom{74}{10},\\binom{94}{10},\\binom{95}{10},\\binom{241}{16},\\binom{284}{28}.\\]They also suggest the stronger conjecture that, with a finite number of exceptions, the least prime factor is $\\leq \\max(n/k,\\sqrt{k})$, or perhaps even $\\leq \\max(n/k,O(\\log k))$. Discussed in problem B31 and B33 of Guy's collection \\cite{Gu04} - there Guy credits Selfridge with the conjecture that if $n> 17.125k$ then $\\binom{n}{k}$ has a prime factor $p\\leq n/k$. Prize: no. Tags: binomial coefficients, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1094",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

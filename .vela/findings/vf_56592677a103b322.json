@@ -1,0 +1,56 @@
+{
+  "id": "vf_56592677a103b322",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #123: declared status 'open'. Formalized: yes. Let $a,b,c$ be three integers which are pairwise coprime. Is every large integer the sum of distinct integers of the form $a^kb^lc^m$ ($k,l,m\\geq 0$), none of which divide any other? Current best: As a partial record of progress so far, the sequence $\\{a^kb^lc^m\\}$ is known to be $d$-complete when: {UL} {LI}$a=3$, $b=5$, $c=7$ (Erd\\H{o}s and Lewin \\cite{ErLe96}).{/LI} {LI}$a=2$, $b=5$, $c\\in \\{7,11,13,17,19\\}$ (Erd\\H{o}s and Lewin \\cite{ErLe96}).{/LI} {LI}$a=2$, $b=5$, $c\\in \\{9,21,23,27,29,31\\}$ - more generally, $a=2$, $b=5$, and any $c>6$ with $(c,10)=1$ such that there exists $N$ where every integer in $(N,25cN)$ is the sum of distinct elements of $\\{2^k3^lc^m\\}$, none of which divide any other (Ma and Chen \\cite{MaCh16}).{/LI} {LI} $a=2$, $b=5$, $3\\leq c\\leq 87$ with $(c,10)=1$, or $a=2$, $b=7$, $3\\leq c\\leq 33$ with $(c,14)=1$, or $a=3$, $b=5$, $2\\leq c\\leq 14$ with $(c,15)=1$ (Chen and Yu \\cite{ChYu23b}).{/LI} {/UL} In \\cite{Er92b} Erd\\H{o}s makes the stronger conjecture (for $a=2$, $b=3$, and $c=5$) that, for any $\\epsilon>0$, all large integers $n$ can be written as the sum of distinct integers $b_1<\\cdots <b_t$ of the form $2^k3^l5^m$ where $b_t<(1+\\epsilon)b_1$. Prize: $250. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:123",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_6caebf9408b2a3fa",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #514: declared status 'open'. Formalized: no. Let $f(z)$ be an entire function. Does there exist a path $L$ so that, for every $n$,\\[\\lvert f(z)/z^n\\rvert \\to \\infty\\]as $z\\to \\infty$ along $L$?\n\nCan the length of this path be estimated in terms of $M(r)=\\max_{\\lvert z\\rvert=r}\\lvert f(z)\\rvert$? Does there exist a path along which $\\lvert f(z)\\rvert$ tends to $\\infty$ faster than a fixed function of $M(r)$ (such that $M(r)^\\epsilon$)? Prize: no. Tags: analysis.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:514",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_292d7ad79b021a64",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #354: declared status 'open'. Formalized: yes. Let $\\alpha,\\beta\\in \\mathbb{R}_{>0}$ such that $\\alpha/\\beta$ is irrational. Is the multiset\\[\\{ \\lfloor \\alpha\\rfloor,\\lfloor 2\\alpha\\rfloor,\\lfloor 4\\alpha\\rfloor,\\ldots\\}\\cup \\{ \\lfloor \\beta\\rfloor,\\lfloor 2\\beta\\rfloor,\\lfloor 4\\beta\\rfloor,\\ldots\\}\\]complete? That is, can all sufficiently large natural numbers $n$ be written as\\[n=\\sum_{s\\in S}\\lfloor 2^s\\alpha\\rfloor+\\sum_{t\\in T}\\lfloor 2^t\\beta\\rfloor\\]for some finite $S,T\\subset \\mathbb{N}$?\n\nWhat if $2$ is replaced by some $\\gamma\\in(1,2)$? Current best: Hegyv\\'{a}ri \\cite{He89} proved that the sequence is not complete if $\\alpha\\geq 2$ and $\\beta =2^k\\alpha$ for some $k\\geq 0$. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:354",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_68e7f59e503afe2d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1130: declared status 'proved'. Formalized: no. For $x_1,\\ldots,x_n\\in [-1,1]$ let\\[l_k(x)=\\frac{\\prod_{i\\neq k}(x-x_i)}{\\prod_{i\\neq k}(x_k-x_i)},\\]which are such that $l_k(x_k)=1$ and $l_k(x_i)=0$ for $i\\neq k$.\n\nLet $x_0=-1$ and $x_{n+1}=1$ and\\[\\Upsilon(x_1,\\ldots,x_n)=\\min_{0\\leq i\\leq n}\\max_{x\\in[x_i,x_{i+1}]} \\sum_k \\lvert l_k(x)\\rvert.\\]Is it true that\\[\\Upsilon(x_1,\\ldots,x_n)\\ll \\log n?\\]Describe which choice of $x_i$ maximise $\\Upsilon(x_1,\\ldots,x_n)$. Current best: Erd\\H{o}s \\cite{Er47} could prove\\[\\Upsilon(x_1,\\ldots,x_n)< \\sqrt{n}.\\]Erd\\H{o}s thought that the maximising choice is characterised by the property that the sums\\[\\max_{x\\in [x_i,x_{i+1}]}\\sum_k \\lvert l_k(x)\\rvert\\]are all equal for $0\\leq i\\leq n$ (where $x_0=-1$ and $x_{n+1}=1$), which would be the same (conjectured) characterisation as [1129]. Prize: no. Tags: analysis, polynomials.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1130",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

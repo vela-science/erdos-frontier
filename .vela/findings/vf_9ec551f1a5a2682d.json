@@ -1,0 +1,56 @@
+{
+  "id": "vf_9ec551f1a5a2682d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #202: declared status 'solved'. Formalized: no. Let $n_1<\\cdots < n_r\\leq N$ with associated $a_i\\pmod{n_i}$ such that the congruence classes are disjoint (that is, every integer is $\\equiv a_i\\pmod{n_i}$ for at most one $1\\leq i\\leq r$). How large can $r$ be in terms of $N$? Current best: Erd\\H{o}s believed the lower bound is closer to the truth. These bounds were further improved by Chen \\cite{Ch05} and then by de la Bret\\'{e}che, Ford, and Vandehey \\cite{BFV13} to\\[\\frac{N}{L(N)^{1+o(1)}}<f(N) < \\frac{N}{L(N)^{\\sqrt{3}/2+o(1)}}.\\]The latter authors conjecture that the lower bound here is the truth. Prize: no. OEIS: A389975. Tags: covering systems.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:202",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

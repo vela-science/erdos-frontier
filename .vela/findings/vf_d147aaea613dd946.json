@@ -1,0 +1,56 @@
+{
+  "id": "vf_d147aaea613dd946",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #572: declared status 'open'. Formalized: no. Show that for $k\\geq 3$\\[\\mathrm{ex}(n;C_{2k})\\gg n^{1+\\frac{1}{k}}.\\] Current best: It is easy to see that $\\mathrm{ex}(n;C_{2k+1})=\\lfloor n^2/4\\rfloor$ for any $k\\geq 1$ (and $n>2k+1$) (since no bipartite graph contains an odd cycle). Lazebnik, Ustimenko, and Woldar \\cite{LUW95} have shown that, for arbitrary $k\\geq 3$,\\[\\mathrm{ex}(n;C_{2k})\\gg n^{1+\\frac{2}{3k-3+\\nu}},\\]where $\\nu=0$ if $k$ is odd and $\\nu=1$ if $k$ is even. Prize: no. Tags: graph theory, turan number.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:572",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

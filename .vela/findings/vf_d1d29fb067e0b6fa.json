@@ -1,0 +1,56 @@
+{
+  "id": "vf_d1d29fb067e0b6fa",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #269: declared status 'open'. Formalized: yes. Let $P$ be a finite set of primes with $\\lvert P\\rvert \\geq 2$ and let $\\{a_1<a_2<\\cdots\\}=\\{ n\\in \\mathbb{N} : \\textrm{if }p\\mid n\\textrm{ then }p\\in P\\}$. Is the sum\\[\\sum_{n=1}^\\infty \\frac{1}{[a_1,\\ldots,a_n]},\\]where $[a_1,\\ldots,a_n]$ is the lowest common multiple of $a_1,\\ldots,a_n$, irrational? Prize: no. Tags: irrationality.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:269",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

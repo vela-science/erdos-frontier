@@ -1,0 +1,56 @@
+{
+  "id": "vf_f5e763f0c18fabb9",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #119: declared status 'open'. Formalized: yes. Let $z_i$ be an infinite sequence of complex numbers such that $\\lvert z_i\\rvert=1$ for all $i\\geq 1$, and for $n\\geq 1$ let\\[p_n(z)=\\prod_{i\\leq n} (z-z_i).\\]Let $M_n=\\max_{\\lvert z\\rvert=1}\\lvert p_n(z)\\rvert$.\n\nIs it true that $\\limsup M_n=\\infty$?\n\nIs it true that there exists $c>0$ such that for infinitely many $n$ we have $M_n > n^c$?\n\nIs it true that there exists $c>0$ such that, for all large $n$,\\[\\sum_{k\\leq n}M_k > n^{1+c}?\\] Current best: The second question was answered by Beck \\cite{Be91}, who proved that there exists some $c>0$ such that\\[\\max_{n\\leq N} M_n > N^c.\\]Erd\\H{o}s (e.g. see \\cite{Ha74}) gave a construction of a sequence with $M_n\\leq n+1$ for all $n$. Linden \\cite{Li77} improved this to give a sequence with $M_n\\ll n^{1-c}$ for some $c>0$. Prize: $100. Tags: analysis, polynomials.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:119",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_12b1bb0a752ca8ac",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #976: declared status 'open'. Formalized: no. Let $f\\in \\mathbb{Z}[x]$ be an irreducible polynomial of degree $d\\geq 2$. Let $F_f(n)$ be maximal such that there exists $1\\leq m\\leq n$ with $f(m)$ is divisible by a prime $\\geq F_f(n)$. Equivalently, $F_f(n)$ is the greatest prime divisor of\\[\\prod_{1\\leq m\\leq n}f(m).\\]Estimate $F_f(n)$. In particular, is it true that $F_f(n)\\gg n^{1+c}$ for some constant $c>0$? Or even $\\gg n^d$? Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:976",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

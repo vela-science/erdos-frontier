@@ -1,0 +1,56 @@
+{
+  "id": "vf_e62a4bbb9cfd466d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #528: declared status 'open'. Formalized: no. Let $f(n,k)$ count the number of self-avoiding walks of $n$ steps (beginning at the origin) in $\\mathbb{Z}^k$ (i.e. those walks which do not intersect themselves). Determine\\[C_k=\\lim_{n\\to\\infty}f(n,k)^{1/n}.\\] Current best: Hammersley and Morton \\cite{HM54} showed that this limit exists, and it is trivial that $k\\leq C_k\\leq 2k-1$. Conway and Guttmann \\cite{CG93} showed that $C_2\\geq 2.62$ and Alm \\cite{Al93} showed that $C_2\\leq 2.696$. J., Lower bound on the connective constant for square lattice self-avoiding walks. Prize: no. OEIS: A156816, A387897. Tags: geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:528",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

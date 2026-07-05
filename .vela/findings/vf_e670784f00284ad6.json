@@ -1,0 +1,56 @@
+{
+  "id": "vf_e670784f00284ad6",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #30: declared status 'open'. Formalized: yes. Let $h(N)$ be the maximum size of a Sidon set in $\\{1,\\ldots,N\\}$. Is it true that, for every $\\epsilon>0$,\\[h(N) = N^{1/2}+O_\\epsilon(N^\\epsilon)?\\] Current best: Erd\\H{o}s and Tur\\'{a}n \\cite{ErTu41} proved an upper bound of $N^{1/2}+O(N^{1/4})$, with an alternative proof by Lindstr\\\"{o}m \\cite{Li69}. The current record is\\[h(N)\\leq N^{1/2}+0.98183N^{1/4}+O(1),\\]due to Carter, Hunter, and O'Bryant \\cite{CHO25}. and Roy, S., An upper bound on the size of Sidon sets. Prize: $1000. OEIS: A003022, A143824, A227590. Tags: additive combinatorics, number theory, sidon sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:30",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

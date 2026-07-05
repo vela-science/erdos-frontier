@@ -1,0 +1,56 @@
+{
+  "id": "vf_1b255ac9c0f7b227",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1011: declared status 'open'. Formalized: no. Let $f_r(n)$ be minimal such that every graph on $n$ vertices with $\\geq f_r(n)$ edges and chromatic number $\\geq r$ contains a triangle. Determine $f_r(n)$. Current best: Simonovits \\cite{Si74} notes\\[\\frac{\\log r}{\\log\\log r}r^2 \\ll g(r) \\ll (\\log r)^2r^2.\\]Hunter in the comments has noted that other results imply $g(r)\\asymp r^2\\log r$ - in fact\\[(1/2-o(1))r^2\\log r\\leq g(r)\\leq (2+o(1))r^2\\log r.\\]The lower bound follows from work of Davies and Illingworth \\cite{DaIl22} (see [1104]). The upper bound follows from work of Hefty, Horn, King, and Pfender \\cite{HHKP25} on $R(3,k)$. Ren, Wang, Wang, and Yang \\cite{RWWY24} showed that, for $n\\geq 150$,\\[f_4(n)=\\left\\lfloor\\frac{(n-3)^2}{4}\\right\\rfloor+6.\\]  References  [DaIl22] Davies, Ewan and Illingworth, Freddie, The {$\\chi$}-{R}amsey problem for triangle-free graphs. Prize: no. Tags: graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1011",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

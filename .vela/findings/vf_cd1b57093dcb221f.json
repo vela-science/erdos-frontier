@@ -1,0 +1,56 @@
+{
+  "id": "vf_cd1b57093dcb221f",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #529: declared status 'open'. Formalized: no. Let $d_k(n)$ be the expected distance from the origin after taking $n$ random steps from the origin in $\\mathbb{Z}^k$ (conditional on no self intersections) - that is, a self-avoiding walk. Is it true that\\[\\lim_{n\\to \\infty}\\frac{d_2(n)}{n^{1/2}}= \\infty?\\]Is it true that\\[d_k(n)\\ll n^{1/2}\\]for $k\\geq 3$? Current best: Hara and Slade (\\cite{HaSl91} and \\cite{HaSl92}) proved this for all $k\\geq 5$. Prize: no. Tags: geometry, probability.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:529",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

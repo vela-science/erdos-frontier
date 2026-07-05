@@ -1,0 +1,56 @@
+{
+  "id": "vf_e4e6ab7c06c15530",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #503: declared status 'open'. Formalized: yes. What is the size of the largest $A\\subseteq \\mathbb{R}^d$ such that every three points from $A$ determine an isosceles triangle? That is, for any three points $x,y,z$ from $A$, at least two of the distances $\\lvert x-y\\rvert,\\lvert y-z\\rvert,\\lvert x-z\\rvert$ are equal. Current best: The best upper bound known in general is due to Blokhuis \\cite{Bl84} who showed that\\[\\lvert A\\rvert \\leq \\binom{d+2}{2}.\\]Alweiss has observed a lower bound of $\\binom{d+1}{2}$ follows from considering the subset of $\\mathbb{R}^{d+1}$ formed of all vectors $e_i+e_j$ where $e_i,e_j$ are distinct coordinate vectors. Weisenberg observed in the comments that an additional point can be added to Alweiss' construction, giving a lower bound of $\\binom{d+1}{2}+1$. Prize: no. OEIS: A175769. Tags: distances, geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:503",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

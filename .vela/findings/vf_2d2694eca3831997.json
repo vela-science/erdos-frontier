@@ -1,0 +1,56 @@
+{
+  "id": "vf_2d2694eca3831997",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #271: declared status 'open'. Formalized: no. For any $n$, let $A(n)=\\{0<n<\\cdots\\}$ be the infinite sequence with $a_0=0$ and $a_1=n$, and  for $k\\geq 1$ we define $a_{k+1}$ as the least integer such that there is no three-term arithmetic progression in $\\{a_0,\\ldots,a_{k+1}\\}$.\n\nCan the $a_k$ be explicitly determined? How fast do they grow? Current best: Odlyzko and Stanley \\cite{OdSt78} have found similar characterisations are known for $A(3^k)$ and $A(2\\cdot 3^k)$ for any $k\\geq 0$ and conjectured in general that such a sequence always eventually either satisfies\\[a_k\\asymp k^{\\log_23}\\]or\\[a_k \\asymp \\frac{k^2}{\\log k}.\\]There is no known sequence which satisfies the second growth rate, but Lindhurst \\cite{Li90} gives data which suggests that $A(4)$ has such growth ($A(4)$ is given as A005487 in the OEIS). Moy \\cite{Mo11} has proved that, for all such sequences, for all $\\epsilon>0$, $a_k\\leq (\\frac{1}{2}+\\epsilon)k^2$ for all sufficiently large $k$. van Doorn and Sothanaphan have noted in the comment section that Moy's proof can be upgraded to give a fully explicit result of\\[a_k\\leq \\frac{(k-1)(k+2)}{2}+n\\]for all $k\\geq 0$. Prize: no. OEIS: A005487. Tags: additive combinatorics, arithmetic progressions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:271",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_cc9994e4469679a7",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1005: declared status 'open'. Formalized: no. Let $\\frac{a_1}{b_1},\\frac{a_2}{b_2},\\ldots$ be the Farey fractions of order $n\\geq 4$. Let $f(n)$ be the largest integer such that if $1\\leq k<l\\leq k+f(n)$ then $\\frac{a_k}{b_k}$ and $\\frac{a_l}{b_l}$ are similarly ordered - in other words,\\[(a_k-a_l)(b_k-b_l)\\geq 0.\\]Estimate $f(n)$ - in particular, is there a constant $c>0$ such that $f(n)=(c+o(1))n$ for all large $n$? Current best: van Doorn \\cite{vD25b} has proved that\\[\\left(\\frac{1}{12}-o(1)\\right)n\\leq f(n) \\leq \\frac{1}{4}n+O(1),\\]and conjectures that the upper bound is optimal. Prize: no. OEIS: A386893. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1005",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_b5f4631f699fda00",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #373: declared status 'open'. Formalized: yes. Show that the equation\\[n! = a_1!a_2!\\cdots a_k!,\\]with $n-1>a_1\\geq a_2\\geq \\cdots \\geq a_k\\geq 2$, has only finitely many solutions. Current best: More generally, Hickerson (as reported in \\cite{Er76d}) conjectured that the only non-trivial solutions to the equation in the problem statement are\\[9!=2!3!3!7!,\\]\\[10!=6!7!,\\]\\[10!=3!5!7!,\\]and\\[16!=14!5!2!.\\]Luca \\cite{Lu07b} has shown that there are only finitely many solutions, conditional on the ABC conjecture, and proved unconditionally that the number of $n\\leq x$ which admit a non-trivial solution is\\[\\leq \\exp \\bigg(f(x)\\frac{\\log (x)}{\\log\\log (x)}\\bigg)\\]for any function $f(x)$ which tends to infinity. In the case when $k=2$, Erd\\H{o}s \\cite{Er93} proved that if $n!=a_1!a_2!$ with $n-1>a_1\\geq a_2$ then\\[a_1\\geq n-5\\log\\log n,\\]and says it 'would be nice' to prove $a_1\\geq n-o(\\log\\log n)$. Bhat and Ramachandra \\cite{BhRa10} replace the $5$ with $(1+o(1))\\frac{1}{\\log 2}$, and also prove that the same bound holds for arbitrary $k\\geq 2$. Numerical investigations on solutions to $n!=a_1!a_2!$ have been carried out by Caldwell \\cite{Ca94} and Habsieger \\cite{Ha}, and it is known that there are no solutions aside from $10!=6!7!$ for $n\\leq 10^{3000}$. Prize: no. OEIS: A003135. Tags: factorials, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:373",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

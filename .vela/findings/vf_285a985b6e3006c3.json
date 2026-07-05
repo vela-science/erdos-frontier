@@ -1,0 +1,56 @@
+{
+  "id": "vf_285a985b6e3006c3",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #177: declared status 'open'. Formalized: no. Find the smallest $h(d)$ such that the following holds. There exists a function $f:\\mathbb{N}\\to\\{-1,1\\}$ such that, for every $d\\geq 1$,\\[\\max_{P_d}\\left\\lvert \\sum_{n\\in P_d}f(n)\\right\\rvert\\leq h(d),\\]where $P_d$ ranges over all finite arithmetic progressions with common difference $d$. Current best: Roth's famous discrepancy lower bound \\cite{Ro64} implies that $h(d)\\gg d^{1/2}$. Prize: no. Tags: arithmetic progressions, discrepancy.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:177",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

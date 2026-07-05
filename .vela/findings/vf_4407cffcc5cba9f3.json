@@ -1,0 +1,56 @@
+{
+  "id": "vf_4407cffcc5cba9f3",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1109: declared status 'open'. Formalized: no. Let $f(N)$ be the size of the largest subset $A\\subseteq \\{1,\\ldots,N\\}$ such that every $n\\in A+A$ is squarefree. Estimate $f(N)$. In particular, is it true that $f(N)\\leq N^{o(1)}$, or even $f(N) \\leq (\\log N)^{O(1)}$? Current best: First studied by Erd\\H{o}s and S\\'{a}rk\\\"{o}zy \\cite{ErSa87}, who proved\\[\\log N \\ll f(N) \\ll N^{3/4}\\log N,\\]and guessed the lower bound is nearer the truth. Konyagin \\cite{Ko04} improved this to\\[ \\log\\log N(\\log N)^2\\ll f(N) \\ll N^{11/15+o(1)}.\\]The infinite analogue of this problem is [1103]. Prize: no. OEIS: A392164, A392165. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1109",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

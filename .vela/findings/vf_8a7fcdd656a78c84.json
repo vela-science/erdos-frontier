@@ -1,0 +1,56 @@
+{
+  "id": "vf_8a7fcdd656a78c84",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #975: declared status 'open'. Formalized: yes. Let $f\\in \\mathbb{Z}[x]$ be an irreducible non-constant polynomial such that $f(n)\\geq 1$ for all large $n\\in\\mathbb{N}$. Does there exist a constant $c=c(f)>0$ such that\\[\\sum_{n\\leq X} \\tau(f(n))\\sim cX\\log X,\\]where $\\tau$ is the divisor function? Current best: Van der Corput \\cite{Va39} proved that\\[\\sum_{n\\leq X} \\tau(f(n))\\gg_f X\\log X.\\]Erd\\H{o}s \\cite{Er52b} proved using elementary methods that\\[\\sum_{n\\leq X} \\tau(f(n))\\ll_f X\\log X.\\]Such an asymptotic formula is known whenever $f$ is an irreducible quadratic, as proved by Hooley \\cite{Ho63}. For example,\\[\\sum_{n\\leq x}\\tau(n^2+1)=\\frac{3}{\\pi}x\\log x+O(x).\\]Tao has a blog post on this topic. Prize: no. OEIS: A147807. Tags: divisors, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:975",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

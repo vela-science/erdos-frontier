@@ -1,0 +1,56 @@
+{
+  "id": "vf_f3531c12da05b7da",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #596: declared status 'open'. Formalized: yes. For which graphs $G_1,G_2$ is it true that\n{UL}\n{LI} for every $n\\geq 1$ there is a graph $H$ without a $G_1$ but if the edges of $H$ are $n$-coloured then there is a monochromatic copy of $G_2$, and yet{/LI}\n{LI} for every graph $H$ without a $G_1$ there is an $\\aleph_0$-colouring of the edges of $H$ without a monochromatic $G_2$.\n{/UL} Prize: no. Tags: graph theory, ramsey theory, set theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:596",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_b4ab9e3f49ff2655",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #148: declared status 'open'. Formalized: no. Let $F(k)$ be the number of solutions to\\[ 1= \\frac{1}{n_1}+\\cdots+\\frac{1}{n_k},\\]where $1\\leq n_1<\\cdots<n_k$ are distinct integers. Find good estimates for $F(k)$. Current best: The lower bound is due to Konyagin \\cite{Ko14} and the upper bound to Elsholtz and Planitzer \\cite{ElPl21}. V., Double exponential lower bound for the number of representations of unity by Egyptian fractions. Prize: no. OEIS: A006585, A076393. Tags: number theory, unit fractions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:148",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

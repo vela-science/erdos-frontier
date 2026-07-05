@@ -1,0 +1,56 @@
+{
+  "id": "vf_a4725dd07850ce5d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1086: declared status 'open'. Formalized: no. Let $g(n)$ be minimal such that any set of $n$ points in $\\mathbb{R}^2$ contains the vertices of at most $g(n)$ many triangles with the same area. Estimate $g(n)$. Current best: Erd\\H{o}s and Purdy \\cite{ErPu71} proved\\[n^2\\log\\log n \\ll g(n) \\ll n^{5/2},\\]and believed the lower bound to be closer to the truth. The upper bound has been improved a number of times - by Pach and Sharir \\cite{PaSh92}, Dumitrescu, Sharir, and T\\'{o}th \\cite{DST09}, Apfelbaum and Sharir \\cite{ApSh10}, and Apfaulbaum \\cite{Ap13}. The best known bound is\\[g(n) \\ll n^{20/9}\\]by Raz and Sharir \\cite{RaSh17}. An observation of Oppenheim (using a construction of Lenz) detailed in \\cite{ErPu71} shows that\\[g_{2k+2}^k(n)\\geq \\left(\\frac{1}{(k+1)^{k+1}}+o(1)\\right)n^{k+1}\\]and Erd\\H{o}s and Purdy conjecture this is the best possible. Prize: no. Tags: distances, geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1086",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

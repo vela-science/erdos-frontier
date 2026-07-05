@@ -1,0 +1,56 @@
+{
+  "id": "vf_3a489be8c36d79c8",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #301: declared status 'open'. Formalized: no. Let $f(N)$ be the size of the largest $A\\subseteq \\{1,\\ldots,N\\}$ such that there are no solutions to\\[\\frac{1}{a}\\neq \\frac{1}{b_1}+\\cdots+\\frac{1}{b_k}\\]with distinct $a,b_1,\\ldots,b_k\\in A$?\n\nEstimate $f(N)$. In particular, is $f(N)=(\\tfrac{1}{2}+o(1))N$? Current best: All such $S_a$ are disjoint and, if $A$ has no solutions to the given equation, then $A$ must omit at least two elements of $S_a$ when $a\\leq N/12$ and at least one element of $S_a$ when $N/12<a\\leq N/6$, and an elementary calculation concludes the proof. Prize: no. OEIS: A390394. Tags: number theory, unit fractions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:301",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_f1d45a2d21a01803",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #36: declared status 'open'. Formalized: yes. Find the optimal constant $c>0$ such that the following holds.\n\nFor all sufficiently large $N$, if $A\\sqcup B=\\{1,\\ldots,2N\\}$ is a partition into two equal parts, so that $\\lvert A\\rvert=\\lvert B\\rvert=N$, then there is some $x$ such that the number of solutions to $a-b=x$ with $a\\in A$ and $b\\in B$ is at least $cN$. Current best: The example (with $N$ even) $A=\\{N/2+1,\\ldots,3N/2\\}$ shows that $c\\leq 1/2$ (indeed, Erd\\H{o}s initially conjectured that $c=1/2$). The lower bound of $c\\geq 1/4$ is trivial, and Scherk improved this to $1-1/\\sqrt{2}=0.29\\cdots$. The current records are\\[0.379005 < c < 0.380924,\\]the lower bound due to White \\cite{Wh22} and the upper bound due to AlphaEvolve \\cite{GGTW25}, improving slightly on an upper bound due to Haugland \\cite{Ha16}. Prize: no. OEIS: A393584. Tags: additive combinatorics, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:36",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_a4ffce7710077e7d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #261: declared status 'open'. Formalized: no. Are there infinitely many $n$ such that there exists some $t\\geq 2$ and distinct integers $a_1,\\ldots,a_t\\geq 1$ such that\\[\\frac{n}{2^n}=\\sum_{1\\leq k\\leq t}\\frac{a_k}{2^{a_k}}?\\]Is this true for all $n$? Is there a rational $x$ such that\\[x = \\sum_{k=1}^\\infty \\frac{a_k}{2^{a_k}}\\]has at least $2^{\\aleph_0}$ solutions? Current best: Erd\\H{o}s does not record what this was, but a later paper by Borwein and Loring \\cite{BoLo90} provides the following proof: for every positive integer $m$ and $n=2^{m+1}-m-2$ we have\\[\\frac{n}{2^n}=\\sum_{n<k\\leq n+m}\\frac{k}{2^k}.\\]Tengely, Ulas, and Zygadlo \\cite{TUZ20} have verified that all $n\\leq 10000$ have the required property. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:261",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

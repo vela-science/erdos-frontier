@@ -1,0 +1,56 @@
+{
+  "id": "vf_67411ffc929591c2",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1016: declared status 'open'. Formalized: no. Let $h(n)$ be minimal such that there is a graph on $n$ vertices with $n+h(n)$ edges which contains a cycle on $k$ vertices, for all $3\\leq k\\leq n$. Estimate $h(n)$. In particular, is it true that\\[h(n) \\geq \\log_2n+\\log_*n-O(1),\\]where $\\log_*n$ is the iterated logarithmic function? Current best: A problem of Bondy \\cite{Bo71}, who claimed a proof (without details) of\\[\\log_2(n-1)-1\\leq h(n) \\leq \\log_2n+\\log_*n+O(1).\\]Erd\\H{o}s \\cite{Er71} believed the upper bound is closer to the truth, but could not even prove $h(n)-\\log_2n\\to \\infty$. A proof of the above lower bound is provided by Griffin \\cite{Gr13}. The first published proof of the upper bound appears to be in Chapter 4.5 of George, Khodkar, and Wallis \\cite{GKW16}. Prize: no. OEIS: A105206. Tags: cycles, graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1016",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_e73b8515e9b26298",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1063: declared status 'open'. Formalized: yes. Let $k\\geq 2$ and define $n_k\\geq 2k$ to be the least value of $n$ such that $n-i$ divides $\\binom{n}{k}$ for all but one $0\\leq i<k$. Estimate $n_k$. Current best: Erd\\H{o}s and Selfridge noted (and a proof can be found in \\cite{Mo85}) that if $n\\geq 2k$ then there must exist at least one $0\\leq i<k$ such that $n-i$ does not divide $\\binom{n}{k}$. Monier \\cite{Mo85} observed that $n_k\\leq k!$ for $k\\geq 3$, since $\\binom{k!}{k}$ is divisible by $k!-i$ for $1\\leq i<k$. Cambie observes in the comments that this can be improved to\\[n_k\\leq k[2,3,\\ldots,k-1]\\leq e^{(1+o(1))k},\\]where $[\\cdots]$ is the least common multiple. Prize: no. OEIS: A389360. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1063",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

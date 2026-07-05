@@ -1,0 +1,56 @@
+{
+  "id": "vf_91131c974ee815e2",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1032: declared status 'open'. Formalized: no. We say that a graph is $4$-chromatic critical if it has chromatic number $4$, and removing any edge decreases the chromatic number to $3$.\n\nIs there, for arbitrarily large $n$, a $4$-chromatic critical graph on $n$ vertices with minimum degree $\\gg n$? Current best: Toft conjectured that a $4$-chromatic critical graph on $n$ vertices has at least $(\\frac{5}{3}+o(1))n$ vertices, and has examples to show this would be the best possible. Prize: no. Tags: chromatic number, graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1032",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

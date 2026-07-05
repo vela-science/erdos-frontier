@@ -1,0 +1,56 @@
+{
+  "id": "vf_6b8cb04b6e5e5cf0",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #420: declared status 'open'. Formalized: no. If $\\tau(n)$ counts the number of divisors of $n$ then let\\[F(f,n)=\\frac{\\tau((n+\\lfloor f(n)\\rfloor)!)}{\\tau(n!)}.\\]Is it true that\\[\\lim_{n\\to \\infty}F((\\log n)^C,n)=\\infty\\]for large $C$?\n\nIs it true that $F(\\log n,n)$ is everywhere dense in $(1,\\infty)$?\n\nMore generally, if $f(n)\\leq \\log n$ is a monotonic function such that $f(n)\\to \\infty$ as $n\\to \\infty$, then is $F(f,n)$ everywhere dense? Current best: Erd\\H{o}s, Graham, Ivi\\'{c}, and Pomerance \\cite{EGIP96} have proved that\\[\\liminf F(c\\log n, n) = 1\\]for any $c>0$, and\\[\\lim F(n^{4/9},n)=\\infty.\\](The exponent $4/9$ can be improved slightly.) They also prove that, if $f(n)=o((\\log n)^2)$, then for almost all $n$\\[F(f,n)\\sim 1.\\]van Doorn notes in the comments that the existence of infinitely many bounded prime gaps implies\\[\\limsup_{n\\to \\infty}F(g(n),n)=\\infty\\]for any $g(n)\\to \\infty$, and that Cram\\'{e}r's conjecture implies\\[\\lim F(g(n)(\\log n)^2, n)=\\infty\\]for any $g(n)\\to \\infty$>  References  [EGIP96] Erd\\H{o}s, Paul and Graham, S. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:420",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_caec125014c711d0",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #475 [status: decidable; formalized: no]. Let $p$ be a prime. Given any finite set $A\\subseteq \\mathbb{F}_p\\backslash \\{0\\}$, is there always a rearrangement $A=\\{a_1,\\ldots,a_t\\}$ such that all partial sums $\\sum_{1\\leq k\\leq m}a_{k}$ are distinct, for all $1\\leq m\\leq t$? Current best: This has been proved for $t\\leq 12$ (see Costa and Pellegrini \\cite{CoPe20} and the references therein) and for $p-3\\leq t\\leq p-1$ (see Hicks, Ollis, and Schmitt \\cite{HOS19} and the references therein). Prize: no. Tags: additive combinatorics, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:475",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

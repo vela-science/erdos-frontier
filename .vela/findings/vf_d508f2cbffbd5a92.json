@@ -1,0 +1,56 @@
+{
+  "id": "vf_d508f2cbffbd5a92",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #142: declared status 'open'. Formalized: yes. Let $r_k(N)$ be the largest possible size of a subset of $\\{1,\\ldots,N\\}$ that does not contain any non-trivial $k$-term arithmetic progression. Prove an asymptotic formula for $r_k(N)$. Current best: The best known upper bounds for $r_k(N)$ are due to Kelley and Meka \\cite{KeMe23} for $k=3$, Green and Tao \\cite{GrTa17} for $k=4$, and Leng, Sah, and Sawhney \\cite{LSS24} for $k\\geq 5$. An asymptotic formula is still far out of reach, even for $k=3$. Prize: $10000. OEIS: A003002, A003003, A003004, A003005. Tags: additive combinatorics, arithmetic progressions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:142",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

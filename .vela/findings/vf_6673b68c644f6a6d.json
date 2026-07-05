@@ -1,0 +1,56 @@
+{
+  "id": "vf_6673b68c644f6a6d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1131: declared status 'open'. Formalized: no. For $x_1,\\ldots,x_n\\in [-1,1]$ let\\[l_k(x)=\\frac{\\prod_{i\\neq k}(x-x_i)}{\\prod_{i\\neq k}(x_k-x_i)},\\]which are such that $l_k(x_k)=1$ and $l_k(x_i)=0$ for $i\\neq k$.\n\nWhat is the minimal value of\\[I(x_1,\\ldots,x_n)=\\int_{-1}^1 \\sum_k \\lvert l_k(x)\\rvert^2\\mathrm{d}x?\\]In particular, is it true that\\[\\min I =2-(1+o(1))\\frac{1}{n}?\\] Current best: Erd\\H{o}s, Szabados, Varma, and V\\'{e}rtesi \\cite{ESVV94} proved that\\[2-O\\left(\\frac{(\\log n)^2}{n}\\right)\\leq \\min I\\leq 2-\\frac{2}{2n-1}\\]where the upper bound is witnessed by the roots of the integral of the Legendre polynomial as above. Prize: no. Tags: analysis, polynomials.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1131",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

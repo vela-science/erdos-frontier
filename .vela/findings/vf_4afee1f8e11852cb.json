@@ -1,0 +1,56 @@
+{
+  "id": "vf_4afee1f8e11852cb",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #714: declared status 'open'. Formalized: no. Is it true that\\[\\mathrm{ex}(n; K_{r,r}) \\gg n^{2-1/r}?\\] Current best: K\\\"{o}v\\'{a}ri, S\\'{o}s, and Tur\\'{a}n \\cite{KST54} proved\\[\\mathrm{ex}(n; K_{r,r}) \\ll n^{2-1/r}\\]for all $r\\geq 2$. Brown \\cite{Br66} and, independently, Erd\\H{o}s, R\\'{e}nyi, and S\\'{o}s \\cite{ERS66}, proved the conjectured lower bound when $r=3$. When $r=2$ it is known that\\[\\mathrm{ex}(n;K_{2,2})=\\left(\\frac{1}{2}+o(1)\\right)n^{3/2}\\](see [768], since $K_{2,2}=C_4$). Prize: no. Tags: graph theory, turan number.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:714",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

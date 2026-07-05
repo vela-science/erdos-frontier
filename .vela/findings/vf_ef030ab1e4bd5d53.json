@@ -1,0 +1,56 @@
+{
+  "id": "vf_ef030ab1e4bd5d53",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #340: declared status 'open'. Formalized: yes. Let $A=\\{1,2,4,8,13,21,31,45,66,81,97,\\ldots\\}$ be the greedy Sidon sequence: we begin with $1$ and iteratively include the next smallest integer that preserves the Sidon property (i.e. there are no non-trivial solutions to $a+b=c+d$). What is the order of growth of $A$? Is it true that\\[\\lvert A\\cap \\{1,\\ldots,N\\}\\rvert \\gg N^{1/2-\\epsilon}\\]for all $\\epsilon>0$ and large $N$? Prize: no. OEIS: A005282, A080200. Tags: additive combinatorics, number theory, sidon sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:340",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_b09a3a0a25bda432",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #161: declared status 'open'. Formalized: no. Let $\\alpha\\in[0,1/2)$ and $n,t\\geq 1$. Let $F^{(t)}(n,\\alpha)$ be the largest $m$ such that we can $2$-colour the edges of the complete $t$-uniform hypergraph on $n$ vertices such that if $X\\subseteq [n]$ with $\\lvert X\\rvert \\geq m$ then there are at least $\\alpha \\binom{\\lvert X\\rvert}{t}$ many $t$-subsets of $X$ of each colour.\n\nFor fixed $n,t$ as we change $\\alpha$ from $0$ to $1/2$ does $F^{(t)}(n,\\alpha)$ increase continuously or are there jumps? Only one jump? Current best: A conjecture of Erd\\H{o}s, Hajnal, and Rado (see [562]) implies that\\[ F^{(t)}(n,0)\\asymp \\log_{t-1} n\\]and results of Erd\\H{o}s and Spencer imply that\\[F^{(t)}(n,\\alpha) \\gg_\\alpha (\\log n)^{\\frac{1}{t-1}}\\]for all $\\alpha>0$, and a similar upper bound holds for $\\alpha$ close to $1/2$. Conlon, Fox, and Sudakov \\cite{CFS11} have proved that, for any fixed $\\alpha>0$,\\[F^{(3)}(n,\\alpha) \\ll_\\alpha \\sqrt{\\log n}.\\]Coupled with the lower bound above, this implies that there is only one jump for fixed $\\alpha$ when $t=3$, at $\\alpha=0$. For all $\\alpha>0$ it is known that\\[F^{(t)}(n,\\alpha)\\gg_t (\\log n)^{c_\\alpha}.\\]See also [563]. Prize: $500. Tags: combinatorics, discrepancy, ramsey theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:161",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

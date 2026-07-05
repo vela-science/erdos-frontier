@@ -1,0 +1,56 @@
+{
+  "id": "vf_96835b790f07dc3e",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #954: declared status 'open'. Formalized: no. Let $1=a_1<a_2<\\cdots$ be the sequence of integers defined by $a_1=1$ and $a_{k+1}$ is the smallest integer $n$ for which the number of solutions to $a_i+a_j \\leq n$ (with $i\\leq j\\leq k$) is less than $n-k$.\n\nIs the number of solutions to $a_i+a_j \\leq x$ equal to $x+O(x^{1/4+o(1)})$? Current best: Note that the number of solutions to $a_i+a_j\\leq x$ is always at least $x$ by construction. Erd\\H{o}s and Rosen could not even prove whether the number of solutions to $a_i+a_j\\leq x$ satisfies is at most $(1+o(1))x$. Prize: no. OEIS: A390642. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:954",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

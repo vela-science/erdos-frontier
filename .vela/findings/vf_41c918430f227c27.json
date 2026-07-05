@@ -1,0 +1,56 @@
+{
+  "id": "vf_41c918430f227c27",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #821: declared status 'open'. Formalized: no. Let $g(n)$ count the number of $m$ such that $\\phi(m)=n$. Is it true that, for every $\\epsilon>0$, there exist infinitely many $n$ such that\\[g(n) > n^{1-\\epsilon}?\\] Current best: The best known bound is that there are infinitely many $n$ such that\\[g(n) > n^{0.71568\\cdots},\\]obtained by Lichtman \\cite{Li22} as a consequence of proving that there are $\\geq \\frac{x}{(\\log x)^{O(1)}}$ many primes $p\\leq x$ such that all prime factors of $p-1$ are $\\leq x^{0.2843\\cdots}$ (which improves a number of previous exponents, most recently Baker and Harman \\cite{BaHa98}). Prize: no. OEIS: A014197. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:821",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

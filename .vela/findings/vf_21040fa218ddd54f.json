@@ -1,0 +1,56 @@
+{
+  "id": "vf_21040fa218ddd54f",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #96: declared status 'open'. Formalized: yes. If $n$ points in $\\mathbb{R}^2$ form a convex polygon then there are $O(n)$ many pairs which are distance $1$ apart. Current best: In \\cite{Er92e} Erd\\H{o}s credits the conjecture that the true upper bound is $2n$ to himself and Fishburn. F\\\"{u}redi \\cite{Fu90} proved an upper bound of $O(n\\log n)$. The best known upper bound is\\[\\leq n\\log_2n+4n,\\]due to Aggarwal \\cite{Ag15}. [EdHa91] Edelsbrunner, Herbert and Hajnal, P\\'{e}ter, A lower bound on the number of unit distances between the vertices of a convex polygon. Prize: no. Tags: convex, distances, geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:96",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

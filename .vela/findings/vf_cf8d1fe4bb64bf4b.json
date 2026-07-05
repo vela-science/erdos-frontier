@@ -1,0 +1,56 @@
+{
+  "id": "vf_cf8d1fe4bb64bf4b",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1095: declared status 'open'. Formalized: yes. Let $g(k)>k+1$ be the smallest $n$ such that all prime factors of $\\binom{n}{k}$ are $>k$. Estimate $g(k)$. Current best: In \\cite{EES74} they further conjecture that\\[\\limsup \\frac{g(k+1)}{g(k)}=\\infty\\]and\\[\\liminf \\frac{g(k+1)}{g(k)}=0.\\]The lower bound was improved by Erd\\H{o}s, Lacampagne, and Selfridge \\cite{ELS93} and Granville and Ramar\\'{e} \\cite{GrRa96}. The current record is\\[g(k) \\gg \\exp(c(\\log k)^2)\\]for some $c>0$, due to Konyagin \\cite{Ko99b}. Prize: no. OEIS: A003458. Tags: binomial coefficients, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1095",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

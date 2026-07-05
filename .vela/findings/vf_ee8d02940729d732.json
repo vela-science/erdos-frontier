@@ -1,0 +1,56 @@
+{
+  "id": "vf_ee8d02940729d732",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #538: declared status 'open'. Formalized: no. Let $r\\geq 2$ and suppose that $A\\subseteq\\{1,\\ldots,N\\}$ is such that, for any $m$, there are at most $r$ solutions to $m=pa$ where $p$ is prime and $a\\in A$. Give the best possible upper bound for\\[\\sum_{n\\in A}\\frac{1}{n}.\\] Current best: Erd\\H{o}s observed that\\[\\sum_{n\\in A}\\frac{1}{n}\\sum_{p\\leq N}\\frac{1}{p}\\leq r\\sum_{m\\leq N^2}\\frac{1}{m}\\ll r\\log N,\\]and hence\\[\\sum_{n\\in A}\\frac{1}{n} \\ll r\\frac{\\log N}{\\log\\log N}.\\]See also [536] and [537]. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:538",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

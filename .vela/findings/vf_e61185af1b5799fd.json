@@ -1,0 +1,56 @@
+{
+  "id": "vf_e61185af1b5799fd",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #408: declared status 'open'. Formalized: no. Let $\\phi(n)$ be the Euler totient function and $\\phi_k(n)$ be the iterated $\\phi$ function, so that $\\phi_1(n)=\\phi(n)$ and $\\phi_k(n)=\\phi(\\phi_{k-1}(n))$. Let\\[f(n) = \\min \\{ k : \\phi_k(n)=1\\}.\\]Does $f(n)/\\log n$ have a distribution function? Is $f(n)/\\log n$ almost always constant? What can be said about the largest prime factor of $\\phi_k(n)$ when, say, $k=\\log\\log n$? Prize: no. OEIS: A049108. Tags: iterated functions, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:408",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

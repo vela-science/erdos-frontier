@@ -1,0 +1,56 @@
+{
+  "id": "vf_445f9ebbb9624527",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #864: declared status 'open'. Formalized: no. Let $A\\subseteq \\{1,\\ldots N\\}$ be a set such that there exists at most one $n$ with more than one solution to $n=a+b$ (with $a\\leq b\\in A$). Estimate the maximal possible size of $\\lvert A\\rvert$ - in particular, is it true that\\[\\lvert A\\rvert \\leq (1+o(1))\\frac{2}{\\sqrt{3}}N^{1/2}?\\] Prize: no. OEIS: A389182. Tags: additive combinatorics, number theory, sidon sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:864",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

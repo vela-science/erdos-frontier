@@ -1,0 +1,56 @@
+{
+  "id": "vf_70853cc8079da99f",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #757: declared status 'open'. Formalized: yes. Let $A\\subset \\mathbb{R}$ be a set of size $n$ such that every subset $B\\subseteq A$ with $\\lvert B\\rvert =4$ has $\\lvert B-B\\rvert\\geq 11$. Find the best constant $c>0$ such that $A$ must always contain a Sidon set of size $\\geq cn$. Current best: Erd\\H{o}s and S\\'{o}s proved that $c\\geq 1/2$. Gy\\'{a}rf\\'{a}s and Lehel \\cite{GyLe95} proved\\[\\frac{1}{2}<c<\\frac{3}{5}.\\](The example proving the upper bound is the set of the first $n$ Fibonacci numbers.)  References  [GyLe95] Gy\\'{a}rf\\'{a}s, Andr\\'{a}s and Lehel, Jen\\H{o}, Linear sets with five distinct differences among any four elements. Prize: no. Tags: distances, geometry, sidon sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:757",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

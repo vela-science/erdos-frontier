@@ -1,0 +1,64 @@
+{
+  "id": "vf_3cc7d1e7d274ac23",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Formal-Conjectures statement: Erdos303.erdos_303 https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos303.erdos_303.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_corpus",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_corpus:fc:303",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [
+    {
+      "target": "vf_cc94646d81e648ca",
+      "type": "synthesized_from",
+      "note": "derived_from [declared]: FormalConjectures file exists",
+      "inferred_by": "compiler",
+      "created_at": "2026-07-05T02:19:18.461424+00:00"
+    }
+  ],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

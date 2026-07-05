@@ -1,0 +1,56 @@
+{
+  "id": "vf_7a5d167299b01908",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #876: declared status 'open'. Formalized: no. Let $A=\\{a_1<a_2<\\cdots\\}\\subset \\mathbb{N}$ be an infinite sum-free set - that is, there are no solutions to\\[a=b_1+\\cdots+b_r\\]with $b_1<\\cdots<b_r<a\\in A$. How small can $a_{n+1}-a_n$ be? Is it possible that $a_{n+1}-a_n<n$? Current best: Luczak and Schoen \\cite{LuSc00} have proved that, for all large $N$,\\[\\lvert A\\cap [1,N]\\rvert\\ll (N\\log N)^{1/2},\\]and that there exists a sum-free set $B$ such that\\[\\lvert B\\cap [1,N]\\rvert \\gg \\frac{N^{1/2}}{(\\log N)^{1/2+o(1)}}\\]for all large $N$. Prize: no. Tags: additive combinatorics.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:876",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

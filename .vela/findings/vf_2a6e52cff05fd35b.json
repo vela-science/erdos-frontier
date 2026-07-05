@@ -1,0 +1,56 @@
+{
+  "id": "vf_2a6e52cff05fd35b",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #357: declared status 'open'. Formalized: yes. Let $1\\leq a_1<\\cdots <a_k\\leq n$ be integers such that all sums of the shape $\\sum_{u\\leq i\\leq v}a_i$ are distinct. Let $f(n)$ be the maximal such $k$.\n\nHow does $f(n)$ grow? Is $f(n)=o(n)$? Current best: If $g(n)$ is the maximal $k$ such that there are $1\\leq a_1,\\ldots,a_k\\leq n$ with all consecutive sums distinct (i.e. we drop the monotonicity assumption in the definition of $f$) then Hegyv\\'{a}ri \\cite{He86} has proved that\\[\\left(\\frac{1}{3}+o(1)\\right) n\\leq g(n)\\leq \\left(\\frac{2}{3}+o(1)\\right)n.\\]The upper bound of Coppersmith and Phillips in [867] implies\\[g(n) \\leq \\left(\\frac{2}{3}-\\frac{1}{512}+o(1)\\right)n.\\]A similar question can be asked if we replace strict monotonicity with weak monotonicity (i.e. Prize: no. OEIS: A364132, A364153. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:357",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

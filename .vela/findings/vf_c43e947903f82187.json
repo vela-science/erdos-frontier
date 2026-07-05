@@ -1,0 +1,56 @@
+{
+  "id": "vf_c43e947903f82187",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #856: declared status 'open'. Formalized: no. Let $k\\geq 3$ and $f_k(N)$ be the maximum value of $\\sum_{n\\in A}\\frac{1}{n}$, where $A$ ranges over all subsets of $\\{1,\\ldots,N\\}$ which contain no subset of size $k$ with the same pairwise least common multiple.\n\nEstimate $f_k(N)$. Current best: Improved bounds have been given by Tang and Zhang \\cite{TaZh25}, who proved bounds of the shape\\[(\\log N)^{b_k-o(1)}\\leq f_k(N)\\leq (\\log N)^{c_k+o(1)}\\]for some constants $0<b_k\\leq c_k\\leq 1$, and in particular\\[(\\log N)^{0.438}\\leq f_3(N)\\leq (\\log N)^{0.889},\\]say, for all large $N$. For example, the exponents $c_k$ are $<1$ (and so the upper bound above is non-trivial) if and only if [857] holds for $k$-sunflowers. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:856",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

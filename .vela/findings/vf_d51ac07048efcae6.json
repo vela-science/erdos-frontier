@@ -1,0 +1,56 @@
+{
+  "id": "vf_d51ac07048efcae6",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1108: declared status 'open'. Formalized: yes. Let\\[A = \\left\\{ \\sum_{n\\in S}n! : S\\subset \\mathbb{N}\\textrm{ finite}\\right\\}.\\]If $k\\geq 2$, then does $A$ contain only finitely many $k$th powers? Does it contain only finitely many powerful numbers? Current best: This was motivated in part by a problem of Mahler which he discussed with Erd\\H{o}s a few days before his death in 1988: if $k\\geq 5$ and\\[A_k= \\left\\{ \\sum_{n\\in S}k^n : S\\subset \\mathbb{N}\\textrm{ finite}\\right\\}\\]then does $A_k$ contain only finitely many squares? Mahler showed that there are infinitely many squares in $A_k$ for $k\\leq 4$, and found only one square for $k\\geq 5$, namely\\[1+7+7^2+7^3=400.\\]Brindza and Erd\\H{o}s \\cite{BrEr91} proved that, for any $r$, if $n_1!+\\cdots+n_r!$ is powerful then $n_1\\ll_r 1$. Prize: no. OEIS: A025494, A051761, A115645. Tags: factorials, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1108",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

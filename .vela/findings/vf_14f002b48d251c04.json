@@ -1,0 +1,56 @@
+{
+  "id": "vf_14f002b48d251c04",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #371: declared status 'open'. Formalized: yes. Let $P(n)$ denote the largest prime factor of $n$. Show that the set of $n$ with $P(n)<P(n+1)$ has density $1/2$. Current best: The best unconditional lower bound available is due to L\\\"{u} and Wang \\cite{LuWa25}, who prove that\\[\\#\\{ n<x :P(n)<P(n+1)\\} > (0.2017-o(1))x,\\]and the same lower bound for the complement. Tao and Ter\\\"{a}v\\\"{a}inen \\cite{TaTe19} have proved that the asymptotic density is $1/2$ at 'almost all scales'. More generally, for any $0\\leq \\alpha \\leq1$, Ter\\\"{a}v\\\"{a}inen \\cite{Te18} proved that the logarithmic density of the set of $n$ for which $P(n+1)>P(n)n^\\alpha$ exists and is equal to\\[\\int_{[0,1]^2}1_{y\\geq x+\\alpha}u(x)u(y)\\mathrm{d}x\\mathrm{d}y\\]where $u(x)=x^{-1}\\rho(x^{-1}-1)$ and $\\rho$ is the Dickman function. Wang \\cite{Wa21} has proved the same value holds for the asymptotic density (and in particular provided an affirmative answer to the original question)  conditional on the Elliott-Halberstam conjecture for friable integers. Prize: no. OEIS: A070089. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:371",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

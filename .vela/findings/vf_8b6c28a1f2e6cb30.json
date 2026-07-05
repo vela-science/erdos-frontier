@@ -1,0 +1,56 @@
+{
+  "id": "vf_8b6c28a1f2e6cb30",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #500: declared status 'open'. Formalized: no. What is $\\mathrm{ex}_3(n,K_4^3)$? That is, the largest number of $3$-edges which can placed on $n$ vertices so that there exists no $K_4^3$, a set of 4 vertices which is covered by all 4 possible $3$-edges. Current best: The current best upper bound is\\[\\mathrm{ex}_3(n,K_4^3)\\leq 0.5611666\\binom{n}{3},\\]due to Razborov \\cite{Ra10}. Prize: $500. OEIS: A140462. Tags: graph theory, hypergraphs, turan number.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:500",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

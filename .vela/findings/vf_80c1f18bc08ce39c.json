@@ -1,0 +1,56 @@
+{
+  "id": "vf_80c1f18bc08ce39c",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #318: declared status 'solved'. Formalized: yes. Let $A\\subseteq \\mathbb{N}$ be an infinite arithmetic progression and $f:A\\to \\{-1,1\\}$ be a non-constant function. Must there exist a finite non-empty $S\\subset A$ such that\\[\\sum_{n\\in S}\\frac{f(n)}{n}=0?\\]What about if $A$ is an arbitrary set of positive density? What if $A$ is the set of squares excluding $1$? Current best: For the squares $1$ must be excluded or the result is trivially false, since\\[\\sum_{k\\geq 2}\\frac{1}{k^2}<1.\\]This is false for some sets $A$ of positive density - indeed, it fails for any set $A$ containing exactly one even number. Prize: no. Tags: number theory, unit fractions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:318",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

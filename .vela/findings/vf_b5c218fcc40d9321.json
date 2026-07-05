@@ -1,0 +1,56 @@
+{
+  "id": "vf_b5c218fcc40d9321",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #835 [status: verifiable; formalized: yes]. Does there exist a $k>2$ such that the $k$-sized subsets of $\\{1,\\ldots,2k\\}$ can be coloured with $k+1$ colours such that for every $A\\subset \\{1,\\ldots,2k\\}$ with $\\lvert A\\rvert=k+1$ all $k+1$ colours appear among the $k$-sized subsets of $A$? Current best: The chromatic numbers listed at this website show that this is false for $3\\leq k\\leq 8$. Prize: no. Tags: graph theory, hypergraphs.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:835",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

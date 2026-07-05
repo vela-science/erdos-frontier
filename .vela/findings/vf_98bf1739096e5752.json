@@ -1,0 +1,56 @@
+{
+  "id": "vf_98bf1739096e5752",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #944: declared status 'open'. Formalized: yes. A critical vertex, edge, or set of edges, is one whose deletion lowers the chromatic number.\n\nLet $k\\geq 4$ and $r\\geq 1$. Must there exist a graph $G$ with chromatic number $k$ such that every vertex is critical, yet every critical set of edges has size $>r$? Current best: This was conjectured by Dirac in 1970 for $k\\geq 4$ and $r=1$. Independently, Jensen \\cite{Je02} gave an alternative construction for all $k\\geq 5$. Martinsson and Steiner \\cite{MaSt25} proved this is true for every $r\\geq 1$ if $k$ is sufficiently large, depending on $r$. Skottova and Steiner \\cite{SkSt25} have improved this, proving that such graphs exist for all $k\\geq 5$ and $r\\geq 1$. Prize: no. Tags: chromatic number, graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:944",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_ea088f13ed98d3c2",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #236: declared status 'open'. Formalized: yes. Let $f(n)$ count the number of solutions to $n=p+2^k$ for prime $p$ and $k\\geq 0$. Is it true that $f(n)=o(\\log n)$? Current best: Mientka and Weitzenkamp \\cite{MiWe69} have proved there are no other such $n\\leq 2^{44}$. Vaughan \\cite{Va73} has proved that the number of $n\\leq N$ such that $n-2^k$ is prime for all $2^k<n$ is\\[< \\exp\\left(-c\\frac{\\log \\log \\log N}{\\log\\log N}\\log N\\right)N\\]for some constant $c>0$. Prize: no. OEIS: A039669, A109925. Tags: number theory, primes.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:236",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

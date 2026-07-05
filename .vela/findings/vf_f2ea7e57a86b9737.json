@@ -1,0 +1,56 @@
+{
+  "id": "vf_f2ea7e57a86b9737",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #394: declared status 'open'. Formalized: yes. Let $t_k(n)$ denote the least $m$ such that\\[n\\mid m(m+1)(m+2)\\cdots (m+k-1).\\]Is it true that\\[\\sum_{n\\leq x}t_2(n)\\ll \\frac{x^2}{(\\log x)^c}\\]for some $c>0$?\n\nIs it true that, for $k\\geq 2$,\\[\\sum_{n\\leq x}t_{k+1}(n) =o\\left(\\sum_{n\\leq x}t_k(n)\\right)?\\] Current best: This was proved by Erd\\H{o}s and Hall \\cite{ErHa78}, who proved that in fact\\[\\sum_{n\\leq x}t_2(n)\\ll \\frac{\\log\\log\\log x}{\\log\\log x}x^2.\\]Erd\\H{o}s and Hall conjecture that the sum is $o(x^2/(\\log x)^c)$ for any $c<\\log 2$. Since $t_2(p)=p-1$ for prime $p$ it is trivial that\\[\\sum_{n\\leq x}t_2(n)\\gg \\frac{x^2}{\\log x}.\\]Erd\\H{o}s and Hall \\cite{ErHa78} also note that $t_{n-1}(n!)=2$ and $t_{n-2}(n!)\\ll n$, which $n=2^r$ shows is the best possible. They ask about the behaviour of $t_{n-3}(n!)$ and also ask ask whether, for infinitely many $n$,\\[t_k(n!)< t_{k-1}(n!)-1\\]for all $1\\leq k<n$. Prize: no. OEIS: A344005. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:394",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_3b25d58e8c717b9b",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #176: declared status 'open'. Formalized: no. Let $N(k,\\ell)$ be the minimal $N$ such that for any $f:\\{1,\\ldots,N\\}\\to\\{-1,1\\}$ there must exist a $k$-term arithmetic progression $P$ such that\\[ \\left\\lvert \\sum_{n\\in P}f(n)\\right\\rvert\\geq \\ell.\\]Find good upper bounds for $N(k,\\ell)$. Is it true that for any $c>0$ there exists some $C>1$ such that\\[N(k,ck)\\leq C^k?\\]What about\\[N(k,2)\\leq C^k\\]or\\[N(k,\\sqrt{k})\\leq C^k?\\] Prize: no. Tags: additive combinatorics, arithmetic progressions, discrepancy.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:176",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

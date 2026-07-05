@@ -1,0 +1,56 @@
+{
+  "id": "vf_fb7ed44003f27629",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #380: declared status 'proved'. Formalized: no. We call an interval $[u,v]$ 'bad' if the greatest prime factor of $\\prod_{u\\leq m\\leq v}m$ occurs with an exponent greater than $1$. Let $B(x)$ count the number of $n\\leq x$ which are contained in at least one bad interval. Is it true that\\[B(x)\\sim \\#\\{ n\\leq x: P(n)^2\\mid n\\},\\]where $P(n)$ is the largest prime factor of $n$? Current best: Similarly, we call an interval $[u,v]$ 'very bad' if $\\prod_{u\\leq m\\leq v}m$ is powerful. The number of integers $n\\leq x$ contained in at least one very bad interval should be $\\ll x^{1/2}$. In fact, it should be asymptotic to the number of powerful numbers $\\leq x$. We have\\[\\#\\{ n\\leq x: P(n)^2\\mid n\\}=\\frac{x}{\\exp((c+o(1))\\sqrt{\\log x\\log\\log x})}\\]for some constant $c>0$. Prize: no. OEIS: A070003, A387054, A388654, A389100. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:380",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

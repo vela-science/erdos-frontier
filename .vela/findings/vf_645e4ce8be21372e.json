@@ -1,0 +1,56 @@
+{
+  "id": "vf_645e4ce8be21372e",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #704: declared status 'open'. Formalized: no. Let $G_n$ be the unit distance graph in $\\mathbb{R}^n$, with two vertices joined by an edge if and only if the distance between them is $1$.\n\nEstimate the chromatic number $\\chi(G_n)$. Does it grow exponentially in $n$? Does\\[\\lim_{n\\to \\infty}\\chi(G_n)^{1/n}\\]exist? Current best: Prosanov \\cite{Pr20} has given an alternative proof of this upper bound. [Pr20] Prosanov, Roman, A new proof of the Larman-Rogers upper bound for the chromatic number of the Euclidean space. Prize: no. Tags: chromatic number, geometry, graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:704",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

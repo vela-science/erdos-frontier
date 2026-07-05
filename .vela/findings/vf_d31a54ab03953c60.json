@@ -1,0 +1,56 @@
+{
+  "id": "vf_d31a54ab03953c60",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #933: declared status 'open'. Formalized: no. If $n(n+1)=2^k3^lm$, where $(m,6)=1$, then is it true that\\[\\limsup_{n\\to \\infty} \\frac{2^k3^l}{n\\log n}=\\infty?\\] Current best: Mahler proved (a more general result that implies in particular) that\\[2^k3^l<n^{1+o(1)}.\\]Erd\\H{o}s \\cite{Er76d} wrote 'it is easy to see' that for infinitely many $n$\\[2^k3^l>n\\log n.\\]Steinerberger has noted a simple proof of this fact follows from taking $n=2^{3^r}$ for any integer $r\\geq 1$, when $k=3^r$ and $l=r+1$. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:933",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

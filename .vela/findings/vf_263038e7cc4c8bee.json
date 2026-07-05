@@ -1,0 +1,56 @@
+{
+  "id": "vf_263038e7cc4c8bee",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #892: declared status 'open'. Formalized: no. Is there a necessary and sufficient condition for a sequence of integers $b_1<b_2<\\cdots$ that ensures there exists a primitive sequence $a_1<a_2<\\cdots$ (i.e. no element divides another) with $a_n \\ll b_n$ for all $n$?\n\nIn particular, is this always possible if there are no non-trivial solutions to $(b_i,b_j)=b_k$? Current best: It is known that\\[\\sum \\frac{1}{b_n\\log b_n}<\\infty\\]and\\[\\sum_{b_n<x}\\frac{1}{b_n} =o\\left(\\frac{\\log x}{\\sqrt{\\log\\log x}}\\right)\\]are both necessary. Prize: no. Tags: number theory, primitive sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:892",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

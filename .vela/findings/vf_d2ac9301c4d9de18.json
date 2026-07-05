@@ -1,0 +1,56 @@
+{
+  "id": "vf_d2ac9301c4d9de18",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1022: declared status 'proved'. Formalized: no. Is there a constant $c_t$, where $c_t\\to \\infty$ as $t\\to \\infty$, such that if $\\mathcal{F}$ is a finite family of finite sets, all of size at least $t$, and for every set $X$ there are $<c_t\\lvert X\\rvert$ many $A\\in \\mathcal{F}$ with $A\\subseteq X$, then $\\mathcal{F}$ has chromatic number $2$ (in other words, has property B)? Prize: no. Tags: combinatorics, hypergraphs.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1022",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

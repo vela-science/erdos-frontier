@@ -1,0 +1,56 @@
+{
+  "id": "vf_d65c616d9b68508a",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #531: declared status 'open'. Formalized: no. Let $F(k)$ be the minimal $N$ such that if we two-colour $\\{1,\\ldots,N\\}$ there is a set $A$ of size $k$ such that all subset sums $\\sum_{a\\in S}a$ (for $\\emptyset\\neq S\\subseteq A$) are monochromatic. Estimate $F(k)$. Current best: Balogh, Eberhrad, Narayanan, Treglown, and Wagner \\cite{BENTW17} have improved this to\\[F(k) \\geq 2^{2^{k-1}/k}.\\]  References  [BENTW17] Balogh, J\\'{o}zsef and Eberhard, Sean and Narayanan, Bhargav and Treglown, Andrew and Wagner, Adam Zsolt, An improved lower bound for Folkman's theorem. Prize: no. Tags: number theory, ramsey theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:531",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

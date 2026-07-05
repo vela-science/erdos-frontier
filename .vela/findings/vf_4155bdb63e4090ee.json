@@ -1,0 +1,56 @@
+{
+  "id": "vf_4155bdb63e4090ee",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #726: declared status 'open'. Formalized: no. As $n\\to \\infty$ ranges over integers\\[\\sum_{p\\leq n}1_{n\\in (p/2,p)\\pmod{p}}\\frac{1}{p}\\sim \\frac{\\log\\log n}{2}.\\] Current best: For comparison the classical estimate of Mertens states that\\[\\sum_{p\\leq n}\\frac{1}{p}\\sim \\log\\log n.\\]By $n\\in (p/2,p)\\pmod{p}$ we mean $n\\equiv r\\pmod{p}$ for some integer $r$ with $p/2<r<p$. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:726",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

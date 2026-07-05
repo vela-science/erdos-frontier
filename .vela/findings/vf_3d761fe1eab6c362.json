@@ -1,0 +1,56 @@
+{
+  "id": "vf_3d761fe1eab6c362",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #289: declared status 'open'. Formalized: yes. Is it true that, for all sufficiently large $k$, there exist finite intervals $I_1,\\ldots,I_k\\subset \\mathbb{N}$, distinct, not overlapping or adjacent, with $\\lvert I_i\\rvert \\geq 2$ for $1\\leq i\\leq k$ such that\\[1=\\sum_{i=1}^k \\sum_{n\\in I_i}\\frac{1}{n}?\\] Prize: no. Tags: number theory, unit fractions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:289",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

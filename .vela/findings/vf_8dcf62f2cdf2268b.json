@@ -1,0 +1,56 @@
+{
+  "id": "vf_8dcf62f2cdf2268b",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #359: declared status 'open'. Formalized: yes. Let $a_1<a_2<\\cdots$ be an infinite sequence of integers such that $a_1=n$ and $a_{i+1}$ is the least integer which is not a sum of consecutive earlier $a_j$s. What can be said about the density of this sequence?\n\nIn particular, in the case $n=1$, can one prove that $a_k/k\\to \\infty$ and $a_k/k^{1+c}\\to 0$ for any $c>0$? Current best: Andrews conjectures\\[a_k\\sim \\frac{k\\log k}{\\log\\log k}.\\]Porubsky \\cite{Po77} proved that, for any $\\epsilon>0$, there are infinitely many $k$ such that\\[a_k < (\\log k)^\\epsilon \\frac{k\\log k}{\\log\\log k},\\]and also that if $A(x)$ counts the number of $a_i\\leq x$ then\\[\\limsup \\frac{A(x)}{\\pi(x)}\\geq \\frac{1}{\\log 2}\\]where $\\pi(x)$ counts the number of primes $\\leq x$. Prize: no. OEIS: A002048. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:359",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

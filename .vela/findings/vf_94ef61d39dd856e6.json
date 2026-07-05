@@ -1,0 +1,56 @@
+{
+  "id": "vf_94ef61d39dd856e6",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #696: declared status 'solved'. Formalized: no. Let $h(n)$ be the largest $\\ell$ such that there is a sequence of primes $p_1<\\cdots < p_\\ell$ all dividing $n$ with $p_{i+1}\\equiv 1\\pmod{p_i}$. Let $H(n)$ be the largest $u$ such that there is a sequence of integers $d_1<\\cdots < d_u$ all dividing $n$ with $d_{i+1}\\equiv 1\\pmod{d_i}$.\n\nEstimate $h(n)$ and $H(n)$. Is it true that $H(n)/h(n)\\to \\infty$ for almost all $n$? Prize: no. Tags: divisors, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:696",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

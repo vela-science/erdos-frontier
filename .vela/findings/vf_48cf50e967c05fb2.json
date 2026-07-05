@@ -1,0 +1,56 @@
+{
+  "id": "vf_48cf50e967c05fb2",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #701: declared status 'open'. Formalized: yes. Let $\\mathcal{F}$ be a family of sets closed under taking subsets (i.e. if $B\\subseteq A\\in\\mathcal{F}$ then $B\\in \\mathcal{F}$). There exists some element $x$ such that whenever $\\mathcal{F}'\\subseteq \\mathcal{F}$ is an intersecting subfamily we have\\[\\lvert \\mathcal{F}'\\rvert \\leq \\lvert \\{ A\\in \\mathcal{F} : x\\in A\\}\\rvert.\\] Current best: A problem of Chv\\'{a}tal \\cite{Ch74}, who proved it replacing the closed under subsets condition with the (stronger) condition that, assuming all sets in $\\mathcal{F}$ are subsets of $\\{1,\\ldots,n\\}$, whenever $A\\in \\mathcal{F}$ and there is an injection $f:B\\to A$ such that $x\\leq f(x)$ for all $x\\in B$, then $B\\in \\mathcal{F}$. Sterboul \\cite{St74} proved this when, letting $\\mathcal{G}$ be the maximal sets (under inclusion) in $\\mathcal{F}$, all sets in $\\mathcal{G}$ have the same size, $\\lvert A\\cap B\\rvert\\leq 1$ for all $A\\neq B\\in \\mathcal{G}$, and at least two sets in $\\mathcal{G}$ have non-empty intersection. Prize: no. Tags: combinatorics, intersecting family.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:701",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_b2da6a944f70ad72",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #400: declared status 'open'. Formalized: yes. For any $k\\geq 2$ let $g_k(n)$ denote the maximum value of\\[(a_1+\\cdots+a_k)-n\\]where $a_1,\\ldots,a_k$ are integers such that $a_1!\\cdots a_k! \\mid n!$. Can one show that\\[\\sum_{n\\leq x}g_k(n) \\sim c_k x\\log x\\]for some constant $c_k$? Is it true that there is a constant $c_k$ such that for almost all $n<x$ we have\\[g_k(n)=c_k\\log x+o(\\log x)?\\] Current best: Erd\\H{o}s and Graham write that it is easy to show that $g_k(n) \\ll_k \\log n$ always, but the best possible constant is unknown. Prize: no. Tags: factorials, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:400",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

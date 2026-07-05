@@ -1,0 +1,56 @@
+{
+  "id": "vf_45c3bb930c645aee",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #840: declared status 'open'. Formalized: no. Let $f(N)$ be the size of the largest quasi-Sidon subset $A\\subset\\{1,\\ldots,N\\}$, where we say that $A$ is quasi-Sidon if\\[\\lvert A+A\\rvert=(1+o(1))\\binom{\\lvert A\\rvert}{2}.\\]How does $f(N)$ grow? Current best: The lower bound is taking a genuine Sidon set $B\\subset [1,N/3]$ of size $\\sim N^{1/2}/\\sqrt{3}$ and taking the union with $\\{N-b : b\\in B\\}$. The upper bound was improved by Pikhurko \\cite{Pi06} to\\[f(N) \\leq \\left(\\left(\\frac{1}{4}+\\frac{1}{(\\pi+2)^2}\\right)^{-1/2}+o(1)\\right)N^{1/2}\\](the constant here is $=1.863\\cdots$). Prize: no. Tags: additive combinatorics, sidon sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:840",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

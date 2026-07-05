@@ -1,0 +1,56 @@
+{
+  "id": "vf_769ee9f05a3a8a6a",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #65: declared status 'open'. Formalized: no. Let $G$ be a graph with $n$ vertices and $kn$ edges, and $a_1<a_2<\\cdots $ be the lengths of cycles in $G$. Is it true that\\[\\sum\\frac{1}{a_i}\\gg \\log k?\\]Is the sum $\\sum\\frac{1}{a_i}$ minimised when $G$ is a complete bipartite graph? Current best: Liu and Montgomery \\cite{LiMo20} have proved the asymptotically sharp lower bound of $\\geq (\\tfrac{1}{2}-o(1))\\log k$. Prize: no. Tags: cycles, graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:65",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

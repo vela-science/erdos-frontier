@@ -1,0 +1,56 @@
+{
+  "id": "vf_96e0c95be2fda2ec",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #713: declared status 'open'. Formalized: no. Is it true that, for every bipartite graph $G$, there exists some $\\alpha\\in [1,2)$ and $c>0$ such that\\[\\mathrm{ex}(n;G)\\sim cn^\\alpha?\\]Must $\\alpha$ be rational? Current best: Erd\\H{o}s sometimes asked this in the weaker version with just\\[\\mathrm{ex}(n;G)\\asymp n^{\\alpha}.\\]Erd\\H{o}s \\cite{Er67d} had initially conjectured that, for any bipartite graph $G$, $\\mathrm{ex}(n;G)\\sim cn^{\\alpha}$ for some constant $c>0$ and $\\alpha$ of the shape $1+\\frac{1}{k}$ or $2-\\frac{1}{k}$ for some integer $k\\geq 2$. A simplified proof was given by F\\\"{u}redi and Gerbner \\cite{FuGe21}, who extended it to a counterexample for all $k\\geq 5$. Prize: $500. Tags: graph theory, turan number.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:713",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

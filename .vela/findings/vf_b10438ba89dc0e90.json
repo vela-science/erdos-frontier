@@ -1,0 +1,56 @@
+{
+  "id": "vf_b10438ba89dc0e90",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #657: declared status 'open'. Formalized: no. Is it true that if $A\\subset \\mathbb{R}^2$ is a set of $n$ points such that every subset of $3$ points determines $3$ distinct distances (i.e. $A$ has no isosceles triangles) then $A$ must determine at least $f(n)n$ distinct distances, for some $f(n)\\to \\infty$? Current best: Straus has observed that if $2^k\\geq n$ then there exist $n$ points in $\\mathbb{R}^k$ which contain no isosceles triangle and determine at most $n-1$ distances. Prize: no. Tags: distances, geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:657",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

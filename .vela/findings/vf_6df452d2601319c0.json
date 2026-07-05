@@ -1,0 +1,56 @@
+{
+  "id": "vf_6df452d2601319c0",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #52: declared status 'open'. Formalized: yes. Let $A$ be a finite set of integers. Is it true that for every $\\epsilon>0$\\[\\max( \\lvert A+A\\rvert,\\lvert AA\\rvert)\\gg_\\epsilon \\lvert A\\rvert^{2-\\epsilon}?\\] Current best: Erd\\H{o}s and Szemer\\'{e}di \\cite{ErSz83} proved a lower bound of $\\lvert A\\rvert^{1+c}$ for some constant $c>0$, and an upper bound of\\[\\lvert A\\rvert^2 \\exp\\left(-c\\frac{\\log\\lvert A\\rvert}{\\log\\log \\lvert A\\rvert}\\right)\\]for some constant $c>0$. The lower bound has been improved a number of times. The current record is\\[\\max( \\lvert A+A\\rvert,\\lvert AA\\rvert)\\gg\\lvert A\\rvert^{\\frac{1270}{951}-o(1)}\\]due to Bloom \\cite{Bl25} (note $1270/951=1.33543\\cdots$). The best bound for complex numbers is\\[\\max( \\lvert A+A\\rvert,\\lvert AA\\rvert)\\gg\\lvert A\\rvert^{\\frac{4}{3}+c}\\]for some absolute constant $c>0$, due to Basit and Lund \\cite{BaLu19}. Prize: $250. OEIS: A263996. Tags: additive combinatorics, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:52",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

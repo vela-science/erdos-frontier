@@ -1,0 +1,56 @@
+{
+  "id": "vf_92f6c82b885106b8",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #486: declared status 'open'. Formalized: yes. Let $A\\subseteq \\mathbb{N}$, and for each $n\\in A$ choose some $X_n\\subseteq \\mathbb{Z}/n\\mathbb{Z}$. Let\\[B = \\{ m\\in \\mathbb{N} : m\\not\\in X_n\\pmod{n}\\textrm{ for all }n\\in A\\textrm{ with }m>n\\}.\\]Must $B$ have a logarithmic density, i.e. is it true that\\[\\lim_{x\\to \\infty} \\frac{1}{\\log x}\\sum_{\\substack{m\\in B\\\\ m<x}}\\frac{1}{m}\\]exists? Prize: no. Tags: number theory, primitive sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:486",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

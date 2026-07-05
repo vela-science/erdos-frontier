@@ -1,0 +1,56 @@
+{
+  "id": "vf_e5506f4206f70654",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #589: declared status 'open'. Formalized: no. Let $g(n)$ be maximal such that in any set of $n$ points in $\\mathbb{R}^2$ with no four points on a line there exists a subset on $g(n)$ points with no three points on a line. Estimate $g(n)$. Current best: A similar question can be asked for a set with no $k$ points on a line, searching for a subset with no $l$ points on a line, for any $3\\leq l<k$. F\\\"{u}eredi \\cite{Fu91b} proved\\[n^{1/2}\\log n\\ll g(n)=o(n).\\]Balogh and Solymosi \\cite{BaSo18} improved the upper bound to\\[g(n) \\ll n^{5/6+o(1)}.\\]  References  [BaSo18] Balogh, J\\'{o}zsef and Solymosi, J\\'{o}zsef, On the number of points in general position in the plane. Prize: no. Tags: geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:589",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

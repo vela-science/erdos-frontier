@@ -1,0 +1,56 @@
+{
+  "id": "vf_e4a46f86c0636f15",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #791: declared status 'open'. Formalized: no. Let $g(n)$ be minimal such that there exists $A\\subseteq \\{0,\\ldots,n\\}$ of size $g(n)$ with $\\{0,\\ldots,n\\}\\subseteq A+A$. Estimate $g(n)$. In particular is it true that $g(n)\\sim 2n^{1/2}$? Current best: The current best-known bounds are\\[(2.181\\cdots+o(1))n\\leq g(n)^2 \\leq (3.458\\cdots+o(1))n.\\]The lower bound is due to Yu \\cite{Yu15}, and the upper bound is due to Kohonen \\cite{Ko17}. (The disproof of $g(n)\\sim 2n^{1/2}$ was accomplished by Mrose \\cite{Mr79}, who gave a construction implying $g(n)^2 \\leq \\frac{7}{2}n$.)  References  [Ko17] Kohonen, Jukka, An improved lower bound for finite additive 2-bases. [Yu15] Yu, Gang, A new upper bound for finite additive {$h$}-bases. Prize: no. OEIS: A066063. Tags: additive combinatorics.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:791",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

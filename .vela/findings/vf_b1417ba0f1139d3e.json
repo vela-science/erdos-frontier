@@ -1,0 +1,56 @@
+{
+  "id": "vf_b1417ba0f1139d3e",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #272: declared status 'open'. Formalized: yes. Let $N\\geq 1$. What is the largest $t$ such that there are $A_1,\\ldots,A_t\\subseteq \\{1,\\ldots,N\\}$ with $A_i\\cap A_j$ a non-empty arithmetic progression for all $i\\neq j$? Current best: Simonovits and S\\'{o}s \\cite{SiSo81} have shown that $t\\ll N^2$. If we drop the non-empty requirement then Graham, Simonovits, and S\\'{o}s \\cite{GSS80} have shown that\\[t\\leq \\binom{N}{3}+\\binom{N}{2}+\\binom{N}{1}+1\\]and this is best possible. Szabo \\cite{Sz99} proved that the maximal such $t$ is equal to\\[\\frac{N^2}{2}+O(N^{5/3}(\\log N)^3),\\]resolving the asymptotic question. On the other hand, Szabo showed that the conjecture of Simonovits and S\\'{o}s that $\\binom{n}{2}+1$ is best possible is false, giving a construction which yields\\[t \\geq \\binom{N}{2}+\\left\\lfloor\\frac{N-1}{4}\\right\\rfloor+1.\\]Szabo conjectures that the asymptotic $t=\\binom{N}{2}+O(N)$ holds, and that in any extremal example there is an integer contained in all sets. Prize: no. Tags: additive combinatorics, arithmetic progressions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:272",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

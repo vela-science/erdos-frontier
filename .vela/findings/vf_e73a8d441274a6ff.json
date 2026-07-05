@@ -1,0 +1,56 @@
+{
+  "id": "vf_e73a8d441274a6ff",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #634: declared status 'open'. Formalized: no. Find all $n$ such that there is at least one triangle which can be cut into $n$ congruent triangles. Current best: Zhang \\cite{Zh25}, among other results, has proved that for any integers $a \\geq b$, if\\[n\\geq 3\\left\\lceil \\frac{a^2+b^2+ab-a-b}{ab}\\right\\rceil\\]then $n^2ab$ has this property (indeed, they explicitly show that an equilateral triangle can be tiled with $n^2ab$ many triangles of side lengths $a,b,\\sqrt{a^2+b^2+2+ab}$). Prize: $25. Tags: geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:634",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vf_d239b02fc4cc6e40",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #793: declared status 'open'. Formalized: no. Let $F(n)$ be the maximum possible size of a subset $A\\subseteq\\{1,\\ldots,n\\}$ such that $a\\nmid bc$ whenever $a,b,c\\in A$ with $a\\neq b$ and $a\\neq c$. Is there a constant $C$ such that\\[F(n)=\\pi(n)+(C+o(1))n^{2/3}(\\log n)^{-2}?\\] Current best: Erd\\H{o}s \\cite{Er38} proved there exist constants $0<c_1\\leq c_2$ such that\\[\\pi(n)+c_1n^{2/3}(\\log n)^{-2}\\leq F(n) \\leq \\pi(n)+c_2n^{2/3}(\\log n)^{-2}.\\]Erd\\H{o}s \\cite{Er69} gave a simple proof that $F(n) \\leq \\pi(n)+n^{2/3}$: define a graph with vertex set the union of those integers in $[1,n^{2/3}]$ with all primes $p\\in (n^{2/3},n]$. It is easy to see that every $m\\leq n$ can be written as $uv$ where $u\\leq n^{2/3}$ and $v$ is either prime or $\\leq n^{2/3}$, and hence there are $\\geq \\lvert A\\rvert$ many edges. This can be improved to give the upper bound mentioned by using a subset of integers in $[1,n^{2/3}]$. More generally, one can ask for such an asymptotic for the size of sets such that no $a\\in A$ divides the product of $r$ distinct other elements of $A$, with the exponent $2/3$ replaced by $\\frac{2}{r+1}$. Prize: no. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:793",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

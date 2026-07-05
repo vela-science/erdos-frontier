@@ -1,0 +1,56 @@
+{
+  "id": "vf_e85e3b042dd15157",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #612: declared status 'open'. Formalized: no. Let $G$ be a connected graph with $n$ vertices, minimum degree $d$, and diameter $D$. Show if that $G$ contains no $K_{2r}$ and $(r-1)(3r+2)\\mid d$ then\\[D\\leq \\frac{2(r-1)(3r+2)}{2r^2-1}\\frac{n}{d}+O(1),\\]and if $G$ contains no $K_{2r+1}$ and $3r-1 \\mid d$ then\\[D\\leq \\frac{3r-1}{r}\\frac{n}{d}+O(1).\\] Current best: It is known (see \\cite{EPPT89} for example) that any connected graph on $n$ vertices with minimum degree $d$ has diameter\\[D\\leq 3\\frac{n}{d+1}+O(1).\\]This was disproven for the case of $K_{2r}$-free graphs with $r\\geq 2$ by Czabarka, Singgih, and Sz\\'{e}kely \\cite{CSS21}, who constructed arbitrarily large connected graphs on $n$ vertices which contain no $K_{2r}$ and have minimum degree $d$, and diameter\\[\\frac{6r-5}{(2r-1)d+2r-3}n+O(1),\\]which contradicts the above conjecture for each fixed $r$ as $d\\to \\infty$. Prize: no. Tags: graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:612",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

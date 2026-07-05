@@ -1,0 +1,56 @@
+{
+  "id": "vf_09d11bf5df816cd7",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #865: declared status 'open'. Formalized: yes. There exists a constant $C>0$ such that, for all large $N$, if $A\\subseteq \\{1,\\ldots,N\\}$ has size at least $\\frac{5}{8}N+C$ then there are distinct $a,b,c\\in A$ such that $a+b,a+c,b+c\\in A$. Current best: Erd\\H{o}s and S\\'{o}s conjectured that\\[f_k(N)\\sim \\frac{1}{2}\\left(1+\\sum_{1\\leq r\\leq k-2}\\frac{1}{4^r}\\right) N,\\]and a similar example shows that this would be best possible. Choi, Erd\\H{o}s, and Szemer\\'{e}di \\cite{CES75} have proved that, for all $k\\geq 3$, there exists $\\epsilon_k>0$ such that (for large enough $N$)\\[f_k(N)\\leq \\left(\\frac{2}{3}-\\epsilon_k\\right)N.\\]  References  [CES75] Choi, S. Prize: no. Tags: additive combinatorics, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:865",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

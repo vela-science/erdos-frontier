@@ -1,0 +1,56 @@
+{
+  "id": "vf_b75e685c8fc8e4ab",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #352: declared status 'open'. Formalized: yes. Is there some $c>0$ such that every measurable $A\\subseteq \\mathbb{R}^2$ of measure $\\geq c$ contains the vertices of a triangle of area 1? Current best: In \\cite{Er78d} and \\cite{Er83d} he speculated that perhaps $C=4\\pi/\\sqrt{27}\\approx 2.418$ works, which would be the best possible, as witnessed by a circle of radius $<2\\cdot 3^{-3/4}$. Freiling and Mauldin (see \\cite{Ma13}) have proved this conjecture if $1\\leq n\\leq 3$. Prize: no. Tags: geometry.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:352",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

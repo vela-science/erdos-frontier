@@ -1,0 +1,71 @@
+{
+  "id": "vf_b2524d62fd0f9d21",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Hosted Lean proof: jayyhk proof of 1014 (state complete) https://github.com/Jayyhk/erdos-lean/blob/main/problems/1014/Erdos1014.lean.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_corpus",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_corpus:proof:jayyhk:1014",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [
+    {
+      "target": "vf_bdb051dc1bee70b3",
+      "type": "supports",
+      "note": "supports [declared]: producer-declared complete; not yet machine-audited",
+      "inferred_by": "compiler",
+      "created_at": "2026-07-05T02:19:18.461860+00:00"
+    },
+    {
+      "target": "vf_530d9c93e313a352",
+      "type": "replicates",
+      "note": "replicates [machine]: independent hosted proof of the same problem",
+      "inferred_by": "compiler",
+      "created_at": "2026-07-05T02:19:18.461861+00:00"
+    }
+  ],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

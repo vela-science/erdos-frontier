@@ -1,0 +1,56 @@
+{
+  "id": "vf_746f07a37008323a",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1072: declared status 'open'. Formalized: yes. For any prime $p$, let $f(p)$ be the least integer such that $f(p)!+1\\equiv 0\\pmod{p}$.\n\nIs it true that there are infinitely many $p$ for which $f(p)=p-1$?\nIs it true that $f(p)/p\\to 0$ for almost all $p$? Current best: Questions formulated by Erd\\H{o}s, Hardy, and Subbarao \\cite{HaSu02}, who believed that the number of $p\\leq x$ for which $f(p)=p-1$ is $o(x/\\log x)$. Prize: no. OEIS: A072937, A073944, A154554. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1072",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

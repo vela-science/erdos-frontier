@@ -1,0 +1,56 @@
+{
+  "id": "vf_230a2035cdaecd32",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #700: declared status 'open'. Formalized: no. Let\\[f(n)=\\min_{1<k\\leq n/2}\\textrm{gcd}\\left(n,\\binom{n}{k}\\right).\\]{UL}\n{LI}Characterise those composite $n$ such that $f(n)=n/P(n)$, where $P(n)$ is the largest prime dividing $n$.{/LI}\n{LI}Are there infinitely many composite $n$ such that $f(n)>n^{1/2}$?{/LI}\n{LI} Is it true that, for every composite $n$,\\[f(n) \\ll_A \\frac{n}{(\\log n)^A}\\]for every $A>0$?{/LI}\n{/UL} Current best: This implies\\[f(n) \\leq (1+o(1))\\frac{n}{\\log n}.\\]It is known that $f(n)=n/P(n)$ when $n$ is the product of two primes. Prize: no. OEIS: A091963. Tags: binomial coefficients, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:700",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

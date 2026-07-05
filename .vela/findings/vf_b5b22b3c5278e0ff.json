@@ -1,0 +1,56 @@
+{
+  "id": "vf_b5b22b3c5278e0ff",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #935: declared status 'open'. Formalized: no. For any integer $n=\\prod p^{k_p}$ let $Q_2(n)$ be the powerful part of $n$, so that\\[Q_2(n) = \\prod_{\\substack{p\\\\ k_p\\geq 2}}p^{k_p}.\\]Is it true that, for every $\\epsilon>0$ and $\\ell\\geq 1$, if $n$ is sufficiently large then\\[Q_2(n(n+1)\\cdots(n+\\ell))<n^{2+\\epsilon}?\\]If $\\ell\\geq 2$ then is\\[\\limsup_{n\\to \\infty}\\frac{Q_2(n(n+1)\\cdots(n+\\ell))}{n^2}\\]infinite?\n\nIf $\\ell\\geq 2$ then is\\[\\lim_{n\\to \\infty}\\frac{Q_2(n(n+1)\\cdots(n+\\ell))}{n^{\\ell+1}}=0?\\] Current best: A result of Mahler implies, for every $\\ell\\geq 1$,\\[\\limsup_{n\\to \\infty}\\frac{Q_2(n(n+1)\\cdots(n+\\ell))}{n^2}\\geq 1.\\]All these questions can be asked replacing $Q_2$ by $Q_r$ for $r>2$, only keeping those prime powers with exponent $\\geq r$. Prize: no. OEIS: A057521, A389244. Tags: number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:935",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

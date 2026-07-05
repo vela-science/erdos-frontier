@@ -1,0 +1,56 @@
+{
+  "id": "vf_3b9cd542fd44ba79",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #291: declared status 'open'. Formalized: no. Let $n\\geq 1$ and define $L_n$ to be the least common multiple of $\\{1,\\ldots,n\\}$ and $a_n$ by\\[\\sum_{1\\leq k\\leq n}\\frac{1}{k}=\\frac{a_n}{L_n}.\\]Is it true that $(a_n,L_n)=1$ and $(a_n,L_n)>1$ both occur for infinitely many $n$? Current best: There is in fact a necessary and sufficient condition: a prime $p\\leq n$ divides $(a_n,L_n)$ if and only if $p$ divides the numerator of $1+\\cdots+\\frac{1}{k}$, where $k$ is the leading digit of $n$ in base $p$. Prize: no. OEIS: A110566. Tags: number theory, unit fractions.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:291",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

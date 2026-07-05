@@ -1,0 +1,56 @@
+{
+  "id": "vf_5838c218e5a8c539",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #620: declared status 'open'. Formalized: no. If $G$ is a graph on $n$ vertices without a $K_4$ then how large a triangle-free induced subgraph must $G$ contain? Current best: Bollob\\'{a}s and Hind \\cite{BoHi91} proved\\[n^{1/2} \\ll f(n) \\ll n^{7/10+o(1)}.\\]Krivelevich \\cite{Kr94} improved this to\\[n^{1/2}(\\log\\log n)^{1/2} \\ll f(n) \\ll n^{2/3}(\\log n)^{1/3}.\\]Wolfovitz \\cite{Wo13} proved\\[f(n) \\ll n^{1/2}(\\log n)^{120}.\\]The best bounds currently known are\\[n^{1/2}\\frac{(\\log n)^{1/2}}{\\log\\log n}\\ll f(n) \\ll n^{1/2}\\log n.\\]The lower bound follows from results of Shearer \\cite{Sh95}, and the upper bound was proved by Mubayi and Verstraete \\cite{MuVe24}. Prize: no. Tags: graph theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:620",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

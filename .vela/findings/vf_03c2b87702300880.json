@@ -1,0 +1,56 @@
+{
+  "id": "vf_03c2b87702300880",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #252: declared status 'open'. Formalized: yes. Let $k\\geq 1$ and $\\sigma_k(n)=\\sum_{d\\mid n}d^k$. Is\\[\\sum \\frac{\\sigma_k(n)}{n!}\\]irrational? Current best: This is known now for $1\\leq k\\leq 4$. It is known that this sum is irrational for all $k\\geq 1$ conditional on either Schinzel's conjecture (Schlage-Puchta \\cite{ScPu06}) or the prime tuples conjecture (Friedlander, Luca, and Stoiciu \\cite{FLC07}). Prize: no. OEIS: A227988, A227989. Tags: irrationality, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:252",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

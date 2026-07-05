@@ -1,0 +1,56 @@
+{
+  "id": "vf_7c586a3dbd94a61f",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #510: declared status 'open'. Formalized: yes. If $A\\subset \\mathbb{Z}$ is a finite set of size $N$ then is there some absolute constant $c>0$ and $\\theta$ such that\\[\\sum_{n\\in A}\\cos(n\\theta) < -cN^{1/2}?\\] Current best: Ruzsa \\cite{Ru04} (improving on an earlier result of Bourgain \\cite{Bo86}), proved an upper bound of\\[-\\exp(O(\\sqrt{\\log N})).\\]Polynomial bounds were proved independently by Bedert \\cite{Be25c} and Jin, Milojevi\\'{c}, Tomon, and Zhang \\cite{JMTZ25}. The best bound follows from the method of Bedert \\cite{Be25c}, which proved the existence of some $c>0$ such that, for all $A$ of size $N$,\\[\\sum_{n\\in A}\\cos(n\\theta) < -cN^{1/7}.\\]The example $A=B-B$, where $B$ is a Sidon set, shows that $N^{1/2}$ would be the best possible here. Prize: no. Tags: analysis.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:510",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

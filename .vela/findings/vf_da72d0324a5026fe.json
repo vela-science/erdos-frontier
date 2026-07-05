@@ -1,0 +1,56 @@
+{
+  "id": "vf_da72d0324a5026fe",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #43: declared status 'disproved'. Formalized: yes. If $A,B\\subset \\{1,\\ldots,N\\}$ are two Sidon sets such that $(A-A)\\cap(B-B)=\\{0\\}$ then is it true that\\[ \\binom{\\lvert A\\rvert}{2}+\\binom{\\lvert B\\rvert}{2}\\leq\\binom{f(N)}{2}+O(1),\\]where $f(N)$ is the maximum possible size of a Sidon set in $\\{1,\\ldots,N\\}$? If $\\lvert A\\rvert=\\lvert B\\rvert$ then can this bound be improved to\\[\\binom{\\lvert A\\rvert}{2}+\\binom{\\lvert B\\rvert}{2}\\leq (1-c+o(1))\\binom{f(N)}{2}\\]for some constant $c>0$? Current best: Since it is known that $f(N)\\sim \\sqrt{N}$ (see [30]) the latter question is equivalent to asking whether, if $\\lvert A\\rvert=\\lvert B\\rvert$,\\[\\lvert A\\rvert \\leq \\left(\\frac{1}{\\sqrt{2}}-c+o(1)\\right)\\sqrt{N}\\]for some constant $c>0$. In the comments Tao has given a proof of this upper bound without the $-c$. Prize: $100. OEIS: A003022, A143824, A227590. Tags: additive combinatorics, number theory, sidon sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:43",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

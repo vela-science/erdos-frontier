@@ -1,0 +1,56 @@
+{
+  "id": "vf_97937d23f057d918",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #863: declared status 'proved'. Formalized: no. Let $r\\geq 2$ and let $A\\subseteq \\{1,\\ldots,N\\}$ be a set of maximal size such that there are at most $r$ solutions to $n=a+b$ with $a\\leq b$ for any $n$. (That is, $A$ is a $B_2[r]$ set.)\n\nSimilarly, let $B\\subseteq \\{1,\\ldots,N\\}$ be a set of maximal size such that there are at most $r$ solutions to $n=a-b$ for any $n$.\n\nIf $\\lvert A\\rvert\\sim c_rN^{1/2}$ as $N\\to \\infty$ and $\\lvert B\\rvert \\sim c_r'N^{1/2}$ as $N\\to \\infty$ then is it true that $c_r\\neq c_r'$ for $r\\geq 2$? Is it true that $c_r'<c_r$? Prize: no. Tags: additive combinatorics, number theory, sidon sets.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:863",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

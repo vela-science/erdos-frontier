@@ -1,0 +1,56 @@
+{
+  "id": "vf_386015829ed1aff3",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1066: declared status 'open'. Formalized: no. Let $G$ be a graph given by $n$ points in $\\mathbb{R}^2$, where any two distinct points are at least distance $1$ apart, and we draw an edge between two points if they are distance $1$ apart.\n\nLet $g(n)$ be maximal such that any such graph always has an independent set on at least $g(n)$ vertices. Estimate $g(n)$, or perhaps $\\lim \\frac{g(n)}{n}$. Current best: This lower bound has been improved to $\\frac{9}{35}n$ by Csizmadia \\cite{Cs98} and then $\\frac{8}{31}n$ by Swanepoel \\cite{Sw02}. The current record bounds are therefore\\[\\frac{8}{31}n \\approx 0.258n \\leq g(n) \\leq 0.3125n=\\frac{5}{16}n.\\]Pollack \\cite{Po85} also reports a letter from Erd\\H{o}s which poses the more general problem of, given $n$ points in $\\mathbb{R}^d$ with minimum distance $1$, let $g_d(n)$ be maximal such that there always exist at least $g_d(n)$ many points which have minimum distance $>1$. Is it true that $g_d(n) \\gg n/d$ in general? The upper bound $g_d(n) \\ll n/d$ is trivial, considering widely spaced unit simplices. Prize: no. Tags: graph theory, planar graphs.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1066",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}

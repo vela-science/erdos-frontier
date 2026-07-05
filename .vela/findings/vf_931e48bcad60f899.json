@@ -1,0 +1,56 @@
+{
+  "id": "vf_931e48bcad60f899",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős Problem #1113: declared status 'open'. Formalized: yes. A positive odd integer $m$ such that none of $2^km+1$ are prime for $k\\geq 0$ is called a Sierpinski number. We say that a set of primes $P$ is a covering set for $m$ if every $2^km+1$ is divisible by some $p\\in P$.\n\nAre there Sierpinski numbers with no finite covering set of primes? Current best: Erd\\H{o}s and Graham \\cite{ErGr80} asked whether there are Sierpinski numbers for which a covering system is not 'responsible', for which the best interpretation seems to be the above question. They also prove that for every $l\\geq 1$ there is an $m$ such that $2^km^i+1$ is composite for all $1\\leq i\\leq l$ and $k\\geq 0$. Prize: no. OEIS: A076336. Tags: covering systems, number theory.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "n/a",
+    "method": "erdos_deep",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "external catalogue record",
+    "method": "llm_initial",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "database_record",
+    "doi": null,
+    "title": "erdos_deep:1113",
+    "authors": [],
+    "year": null,
+    "extraction": {
+      "method": "database_import",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "",
+      "extractor_version": ""
+    },
+    "review": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-16T00:00:00Z",
+  "updated": null
+}
