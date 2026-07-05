@@ -1,17 +1,17 @@
 schema: vela.frontier_lock.v0.1
-generated_at: 2026-07-05T03:10:19Z
-vela_version: 0.745.0
+generated_at: 2026-07-05T22:55:45Z
+vela_version: 0.751.0
 carina_kernel: carina@0.1.0
 frontier_id: vfr_0a25edabc16db143
 canonicalization:
   json: vela-canonical-json-v0.1
   yaml: vela-yaml-v0.1
 reducer:
-  package: vela@0.745.0
-  digest: sha256:8fa90a4b17fa597efd2d82cc47f78ea6f56dda4d37f41d9374535a753b3a92a2
+  package: vela@0.751.0
+  digest: sha256:cb5a4cbbb7f2613ad7dab18dc70cddc93ef95f7182a6ad1d7ef9ee5ad3c22c31
 verifiers:
-  package: vela-verify@0.745.0
-  digest: sha256:11fc8c0322694bdb42643d6bd9afc8c39926afc475b4bb27cbd728ec6be8a581
+  package: vela-verify@0.751.0
+  digest: sha256:a7364ac6757e60b2a1ae334945190059e06d8e69aae22c1859ad05b266ec4b79
   kinds:
   - balanced_coloring
   - binom_deficiency
@@ -34,16 +34,16 @@ verifiers:
 carina:
   kernel: carina@0.1.0
   digest: sha256:2de6244bc3c695cd83adf7d17fd9c52b6586ce060874b37814cc35aff340d5ee
-snapshot_hash: sha256:4d73712e9e5b9cd4d50d8c2fad26833b2e52ed9136cad46afa6185b0152e7a2f
+snapshot_hash: sha256:92fb818dab8532f8f362b1a98c7cc081e1a4a79d014d9587955c0b70e62a77aa
 event_log_hash: sha256:e0fbce4d2cdfd3802d7686ed7f2c4cc1957ae6bf2483e566a358fbcac6957393
-proposal_state_hash: sha256:43ec9271c96143751dff1366e484e46f76dc46a640a353cb0f8c49fba4c13e35
-sources_hash: sha256:77c958d5d58978627555c5dc07692c009d542e0e10070cf9ef71b540c302804d
+proposal_state_hash: sha256:c15a6cd7ea9032aa487516b96d8e203842eabe3b051b44684b38d0f2c4de8c04
+sources_hash: sha256:dddea39aa89321d064df1f4e9d9c749d9a97d4920faa0e5afafae085eb1ca627
 artifacts_hash: sha256:007ee8d7de4cfbbf0ba501062b50ccef1f523a068a675649a6082caea29581c1
 review_hash: sha256:bb74af13f787e6f1357d243a3ff50e8efea86aaa7bc83c5291ab04afd0533ace
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:c0f9bb3e256c8f470bfb6c719e8fef625684650c5a7689b111e5901e0e361754
+  digest: sha256:59e9cc8c1c4df8e4a5b28e02080fba83e21288801ca5498296e67370fae416c0
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl

@@ -1,74 +1,74 @@
 {
- "id": "vf_ba50ac1f1f60aa27",
- "version": 1,
- "previous_version": null,
- "assertion": {
-  "text": "OBLIGATION (Erdos #684). BANKED: f(M_K-1) > K verified for K=3..12 via Kummer no-carry (effective, subsequential lower bound). OPEN: promote the subsequential bound to the full claim for all n.",
-  "type": "theoretical",
-  "relation": null,
-  "direction": null
- },
- "evidence": {
-  "type": "theoretical",
-  "model_system": "",
-  "method": "manual state transition",
-  "replicated": false,
-  "replication_count": null,
-  "evidence_spans": []
- },
- "conditions": {
-  "text": "Manually added finding; requires evidence review before scientific use.",
-  "duration": null
- },
- "confidence": {
-  "kind": "frontier_epistemic",
-  "score": 0.5,
-  "basis": "operator-supplied frontier prior; review required",
-  "method": "expert_judgment",
-  "extraction_confidence": 1.0
- },
- "provenance": {
-  "source_type": "expert_assertion",
-  "doi": null,
-  "title": "manual finding",
-  "authors": [
-   {
-    "name": "reviewer:will-blair",
-    "orcid": null
-   }
-  ],
-  "year": null,
-  "extraction": {
-   "method": "manual_curation",
-   "model": null,
-   "model_version": null,
-   "extracted_at": "2026-06-10T06:44:07.329017+00:00",
-   "extractor_version": "vela/0.691.0"
+  "id": "vf_ba50ac1f1f60aa27",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "OBLIGATION (Erdos #684). BANKED: f(M_K-1) > K verified for K=3..12 via Kummer no-carry (effective, subsequential lower bound). OPEN: promote the subsequential bound to the full claim for all n.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
   },
-  "review": {
-   "reviewed": false,
-   "reviewer": null,
-   "reviewed_at": null,
-   "corrections": []
-  }
- },
- "flags": {
-  "gap": true,
-  "negative_space": false,
-  "contested": false,
-  "retracted": false,
-  "declining": false,
-  "gravity_well": false
- },
- "links": [
-  {
-   "target": "vf_712b63cb8d91e817",
-   "type": "supports",
-   "note": "finite computational confirmation of Erd\u0151s #684 (bounded case; the general question is open)",
-   "inferred_by": "compiler",
-   "created_at": "2026-06-16T00:00:00Z"
-  }
- ],
- "created": "2026-06-10T06:44:07.329032+00:00",
- "updated": null
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "Manually added finding; requires evidence review before scientific use.",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "expert_assertion",
+    "doi": null,
+    "title": "manual finding",
+    "authors": [
+      {
+        "name": "reviewer:will-blair",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-06-10T06:44:07.329017+00:00",
+      "extractor_version": "vela/0.691.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": true,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [
+    {
+      "target": "vf_712b63cb8d91e817",
+      "type": "supports",
+      "note": "finite computational confirmation of Erdős #684 (bounded case; the general question is open)",
+      "inferred_by": "compiler",
+      "created_at": "2026-06-16T00:00:00Z"
+    }
+  ],
+  "created": "2026-06-10T06:44:07.329032+00:00",
+  "updated": null
 }

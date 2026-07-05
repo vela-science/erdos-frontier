@@ -1,74 +1,74 @@
 {
- "id": "vf_279e997d3b3da2ee",
- "version": 1,
- "previous_version": null,
- "assertion": {
-  "text": "OBLIGATION (Erdos #1093). BANKED: three delta=1 examples beyond ELS93 (k=106/126/129) verified; the density model leans finite. OPEN: prove finiteness of the delta=1 deficiency cases (the density argument is heuristic, not a proof).",
-  "type": "theoretical",
-  "relation": null,
-  "direction": null
- },
- "evidence": {
-  "type": "theoretical",
-  "model_system": "",
-  "method": "manual state transition",
-  "replicated": false,
-  "replication_count": null,
-  "evidence_spans": []
- },
- "conditions": {
-  "text": "Manually added finding; requires evidence review before scientific use.",
-  "duration": null
- },
- "confidence": {
-  "kind": "frontier_epistemic",
-  "score": 0.5,
-  "basis": "operator-supplied frontier prior; review required",
-  "method": "expert_judgment",
-  "extraction_confidence": 1.0
- },
- "provenance": {
-  "source_type": "expert_assertion",
-  "doi": null,
-  "title": "manual finding",
-  "authors": [
-   {
-    "name": "reviewer:will-blair",
-    "orcid": null
-   }
-  ],
-  "year": null,
-  "extraction": {
-   "method": "manual_curation",
-   "model": null,
-   "model_version": null,
-   "extracted_at": "2026-06-10T06:44:04.959645+00:00",
-   "extractor_version": "vela/0.691.0"
+  "id": "vf_279e997d3b3da2ee",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "OBLIGATION (Erdos #1093). BANKED: three delta=1 examples beyond ELS93 (k=106/126/129) verified; the density model leans finite. OPEN: prove finiteness of the delta=1 deficiency cases (the density argument is heuristic, not a proof).",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
   },
-  "review": {
-   "reviewed": false,
-   "reviewer": null,
-   "reviewed_at": null,
-   "corrections": []
-  }
- },
- "flags": {
-  "gap": true,
-  "negative_space": false,
-  "contested": false,
-  "retracted": false,
-  "declining": false,
-  "gravity_well": false
- },
- "links": [
-  {
-   "target": "vf_279e997d3b3da2ee",
-   "type": "supports",
-   "note": "finite computational confirmation of Erd\u0151s #1093 (bounded case; the general question is open)",
-   "inferred_by": "compiler",
-   "created_at": "2026-06-16T00:00:00Z"
-  }
- ],
- "created": "2026-06-10T06:44:04.959659+00:00",
- "updated": null
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "Manually added finding; requires evidence review before scientific use.",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.5,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "expert_assertion",
+    "doi": null,
+    "title": "manual finding",
+    "authors": [
+      {
+        "name": "reviewer:will-blair",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-06-10T06:44:04.959645+00:00",
+      "extractor_version": "vela/0.691.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": true,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [
+    {
+      "target": "vf_279e997d3b3da2ee",
+      "type": "supports",
+      "note": "finite computational confirmation of Erdős #1093 (bounded case; the general question is open)",
+      "inferred_by": "compiler",
+      "created_at": "2026-06-16T00:00:00Z"
+    }
+  ],
+  "created": "2026-06-10T06:44:04.959659+00:00",
+  "updated": null
 }
