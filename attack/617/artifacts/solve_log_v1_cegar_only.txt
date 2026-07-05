@@ -1,0 +1,12 @@
+15:57:08 [I] P=[0, 1, 2, 3] Q=[4, 5, 6, 7, 8] hit3=True ePmax=None eQmax=6 core_clauses=48648
+15:57:09 [I] iter 10: +six 2 +sat 3 +tau4 0 +cover 1 clauses=199639 t=1.5s
+15:57:11 [I] iter 20: +six 1 +sat 3 +tau4 0 +cover 1 clauses=356938 t=3.6s
+15:57:17 [I] iter 30: +six 1 +sat 3 +tau4 0 +cover 1 clauses=528392 t=9.6s
+15:57:21 [I] iter 40: +six 7 +sat 0 +tau4 1 +cover 1 clauses=670942 t=13.7s
+15:57:44 [I] iter 50: +six 1 +sat 3 +tau4 0 +cover 1 clauses=813249 t=36.5s
+15:58:01 [II.k0] P=[0, 1, 2, 3] Q=[4, 5, 6, 7] hit3=False ePmax=6 eQmax=6 core_clauses=48846
+15:58:01 [II.k4] P=[0, 1, 2, 3] Q=[0, 1, 2, 3] hit3=False ePmax=2 eQmax=2 core_clauses=48882
+15:58:09 [I] iter 60: +six 1 +sat 3 +tau4 0 +cover 1 clauses=949759 t=61.5s
+15:58:11 [II.k0] iter 10: +six 7 +sat 1 +tau4 0 +cover 1 clauses=192476 t=10.7s
+15:59:27 [II.k0] iter 20: +six 7 +sat 0 +tau4 1 +cover 1 clauses=369135 t=86.1s
+15:59:27 [I] iter 70: +six 1 +sat 3 +tau4 0 +cover 1 clauses=1067557 t=139.1s

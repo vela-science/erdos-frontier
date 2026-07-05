@@ -1,0 +1,4257 @@
+{
+  "object": "PlbyProofIndexIngest",
+  "version": 1,
+  "source": "github.com/plby/lean-proofs",
+  "source_commit": "82bb8878962f3c986fb4da42bcc3bd7c6ef39326",
+  "reconciled_against": {
+    "repo": "github.com/google-deepmind/formal-conjectures",
+    "mathlib": "4.27.0"
+  },
+  "note": "plby's curated formal-proof index ingested as a frontier source and reconciled per-theorem against FC. fc_status/link_class are Vela-derived; 'vela_verified' is present ONLY where the proof was independently re-derived kernel-clean this session (not plby self-report). proof_variants preserves every source/version plby lists per problem.",
+  "counts": {
+    "missing_link": 4,
+    "missing_statement": 128,
+    "partial_conditional": 12,
+    "already_synced": 33,
+    "forum_only": 15,
+    "reproduced_kernel_clean": 76
+  },
+  "problems": {
+    "16": {
+      "number": 16,
+      "ref": "erdosproblems.com/16",
+      "fc_status": "missing_link",
+      "open_sorry_thms": [
+        "erdos_16.variant.romanoff",
+        "erdos_16.variant.erdos"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://github.com/danielchin/proofs/blob/main/Proofs/ErdosProblems/Erdos16.lean",
+            "https://www.erdosproblems.com/forum/thread/16#post-4464"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/danielchin/proofs/blob/main/Proofs/ErdosProblems/Erdos16.lean",
+        "content_hash": "sha256:7494a330853f981e37e1cf8fa89102113af5fd863ddcff271aab8c5d23f3d689",
+        "locator": ".vela/artifact-blobs/sha256/7494a330853f981e37e1cf8fa89102113af5fd863ddcff271aab8c5d23f3d689",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "24": {
+      "number": 24,
+      "ref": "erdosproblems.com/24",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/24#post-5732",
+            "https://gist.githubusercontent.com/madeve-unipi/683739094ab7a5079a2bc2647c47743b/raw/6164255a2f1ed85df3f01b75d2f8b35a1330aacb/Erdos24.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "native_decide_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/683739094ab7a5079a2bc2647c47743b/raw/6164255a2f1ed85df3f01b75d2f8b35a1330aacb/Erdos24.lean",
+        "content_hash": "sha256:a46142f4e0694a8b58856084ad73ac5290053f3b6b15d344a2a7c39157699f5f",
+        "locator": ".vela/artifact-blobs/sha256/a46142f4e0694a8b58856084ad73ac5290053f3b6b15d344a2a7c39157699f5f",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "26": {
+      "number": 26,
+      "ref": "erdosproblems.com/26",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_26.variants.rusza"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/26",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos26.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "31": {
+      "number": 31,
+      "ref": "erdosproblems.com/31",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/31",
+            "https://www.erdosproblems.com/forum/thread/31#post-1779",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos31.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "34": {
+      "number": 34,
+      "ref": "erdosproblems.com/34",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/34",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos34.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "38": {
+      "number": 38,
+      "ref": "erdosproblems.com/38",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/38#post-6131",
+            "https://gist.githubusercontent.com/madeve-unipi/690d2bd8f6e8304ba8b456f9db559747/raw/481e3c35de8dce7af70ec440e4e121f084a61860/Erdos38.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/690d2bd8f6e8304ba8b456f9db559747/raw/481e3c35de8dce7af70ec440e4e121f084a61860/Erdos38.lean",
+        "content_hash": "sha256:a1fc6bfcf7f03d0794fe48c3415acc31e6966b75efbf7cc8a9adb7c4ca7f49e4",
+        "locator": ".vela/artifact-blobs/sha256/a1fc6bfcf7f03d0794fe48c3415acc31e6966b75efbf7cc8a9adb7c4ca7f49e4",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "42": {
+      "number": 42,
+      "ref": "erdosproblems.com/42",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/42#post-6370",
+            "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P42/CompactCayley/Proof.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/42.lean",
+            "https://raw.githubusercontent.com/Shashi456/erdos-formalizations/refs/heads/main/Erdos/P42/CompactCayley/Proof.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P42/CompactCayley/Proof.lean",
+        "content_hash": "sha256:8286145f40352c0b2a34286f9beddb3728fe446a1055d5a52e5861d52b072cac",
+        "locator": ".vela/artifact-blobs/sha256/8286145f40352c0b2a34286f9beddb3728fe446a1055d5a52e5861d52b072cac",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "45": {
+      "number": 45,
+      "ref": "erdosproblems.com/45",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "3.42.1",
+          "proof_urls": [
+            "https://github.com/b-mehta/unit-fractions"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "46": {
+      "number": 46,
+      "ref": "erdosproblems.com/46",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "3.42.1",
+          "proof_urls": [
+            "https://github.com/b-mehta/unit-fractions"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "47": {
+      "number": 47,
+      "ref": "erdosproblems.com/47",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "3.42.1",
+          "proof_urls": [
+            "https://github.com/b-mehta/unit-fractions"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "56": {
+      "number": 56,
+      "ref": "erdosproblems.com/56",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/56",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos56.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "93": {
+      "number": 93,
+      "ref": "erdosproblems.com/93",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/93#post-4346"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "94": {
+      "number": 94,
+      "ref": "erdosproblems.com/94",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.21.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/94#post-3208",
+            "https://github.com/SpringSense-Innovation-Institute/ai-for-math-lean/blob/main/erdos-problems/erdos94/erdos94.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.22.0",
+        "pinned_env": "envs/mathlib-v4.22.0",
+        "proof_url": "https://github.com/SpringSense-Innovation-Institute/ai-for-math-lean/blob/main/erdos-problems/erdos94/erdos94.lean",
+        "content_hash": "sha256:097f6ee92137779c2fb642c60a4c2a2ca78f8f07d931c47e6631cd7863375e38",
+        "locator": ".vela/artifact-blobs/sha256/097f6ee92137779c2fb642c60a4c2a2ca78f8f07d931c47e6631cd7863375e38",
+        "method": "vela pinned-env batch reproduction"
+      }
+    },
+    "105": {
+      "number": 105,
+      "ref": "erdosproblems.com/105",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/105#post-1430",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos105.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "115": {
+      "number": 115,
+      "ref": "erdosproblems.com/115",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/115#post-4555"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "124": {
+      "number": 124,
+      "ref": "erdosproblems.com/124",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/124",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos124b.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "125": {
+      "number": 125,
+      "ref": "erdosproblems.com/125",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.22.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/125#post-4448",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/125.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/300bf771bdbef43d7b9aa2521e633a50fd54dd28/FormalConjectures/ErdosProblems/125.lean"
+          ],
+          "link_class": "circular_into_fc",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "not_self_contained",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "134": {
+      "number": 134,
+      "ref": "erdosproblems.com/134",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/134",
+            "https://web.math.princeton.edu/~nalon/PDFS/remark1901.pdf",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos134.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "150": {
+      "number": 150,
+      "ref": "erdosproblems.com/150",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/150#post-5145",
+            "https://gist.githubusercontent.com/pitmonticone/d8558d3361ad2d673b5405239ea30700/raw/c966009555b83985762dac9faaf705aad3f48199/Erdos150.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/pitmonticone/d8558d3361ad2d673b5405239ea30700/raw/c966009555b83985762dac9faaf705aad3f48199/Erdos150.lean",
+        "content_hash": "sha256:406fefc561d4bdaf11107b8a7ef6d301a4f86d091cbe3b2aa6d7d0eed15b939b",
+        "locator": ".vela/artifact-blobs/sha256/406fefc561d4bdaf11107b8a7ef6d301a4f86d091cbe3b2aa6d7d0eed15b939b",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "154": {
+      "number": 154,
+      "ref": "erdosproblems.com/154",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/154#post-4218",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem154.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem154.lean",
+        "content_hash": "sha256:b2079bccfd9f4cdd27ceb660a9285afaf8232a80a5468283e54570a672cfe905",
+        "locator": ".vela/artifact-blobs/sha256/b2079bccfd9f4cdd27ceb660a9285afaf8232a80a5468283e54570a672cfe905",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "164": {
+      "number": 164,
+      "ref": "erdosproblems.com/164",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/164",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos164.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "178": {
+      "number": 178,
+      "ref": "erdosproblems.com/178",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/178#post-5685",
+            "https://gist.githubusercontent.com/madeve-unipi/ca9c3d1f94fe124c15726d836e1cd623/raw/a272de656847d3956e1c228c833ff3c591dc4872/Erdos178.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/ca9c3d1f94fe124c15726d836e1cd623/raw/a272de656847d3956e1c228c833ff3c591dc4872/Erdos178.lean",
+        "content_hash": "sha256:99b66e9ebfaf20b21966bff39e449724135bec243163aa9f332052ddf6552f5a",
+        "locator": ".vela/artifact-blobs/sha256/99b66e9ebfaf20b21966bff39e449724135bec243163aa9f332052ddf6552f5a",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "189": {
+      "number": 189,
+      "ref": "erdosproblems.com/189",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_189.variants.square"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/189",
+            "https://web.math.pmf.unizg.hr/~vjekovac/EP/EP189/Erdos189_blueprint.tex",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos189.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "194": {
+      "number": 194,
+      "ref": "erdosproblems.com/194",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/194#post-5430",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/194.lean",
+            "https://gist.githubusercontent.com/ster-oc/ffe9e4fa1b813111f40c0e417bbe8be0/raw/6f748a76e55d47e24ca319a9c00fd20ab79422bb/Erdos194.lean"
+          ],
+          "link_class": "circular_into_fc",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "198": {
+      "number": 198,
+      "ref": "erdosproblems.com/198",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/198",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos198.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "199": {
+      "number": 199,
+      "ref": "erdosproblems.com/199",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/199#post-4442"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "202": {
+      "number": 202,
+      "ref": "erdosproblems.com/202",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/202#post-6456",
+            "https://boonsuan.github.io/erdos202.pdf",
+            "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P202/Proof.lean",
+            "https://raw.githubusercontent.com/Shashi456/erdos-formalizations/refs/heads/main/Erdos/P202/Proof.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P202/Proof.lean",
+        "content_hash": "sha256:4ffb324c4d79fc9fdcd2695f9b579d9a3b81ed732c5c5a72e7ee003fe05b7e40",
+        "locator": ".vela/artifact-blobs/sha256/4ffb324c4d79fc9fdcd2695f9b579d9a3b81ed732c5c5a72e7ee003fe05b7e40",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "204": {
+      "number": 204,
+      "ref": "erdosproblems.com/204",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/204#post-4790",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem204.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/204.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem204.lean",
+        "content_hash": "sha256:25c1515511fe3b8e0c76f7215497340424c9a24d5d2224db7aeb7b1d56bfcfd3",
+        "locator": ".vela/artifact-blobs/sha256/25c1515511fe3b8e0c76f7215497340424c9a24d5d2224db7aeb7b1d56bfcfd3",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "205": {
+      "number": 205,
+      "ref": "erdosproblems.com/205",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/205",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos205.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "206": {
+      "number": 206,
+      "ref": "erdosproblems.com/206",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/206#post-5989",
+            "https://gist.githubusercontent.com/madeve-unipi/0920783513a1a00af4a14660852df60e/raw/522569070c2ec3a0fc7d8dfd7f95f3de2b2e3103/Erdos206.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/0920783513a1a00af4a14660852df60e/raw/522569070c2ec3a0fc7d8dfd7f95f3de2b2e3103/Erdos206.lean",
+        "content_hash": "sha256:185600bfc16791bfd46e6a12a7824902781cf01d82dc4100b7d990f4062bc88e",
+        "locator": ".vela/artifact-blobs/sha256/185600bfc16791bfd46e6a12a7824902781cf01d82dc4100b7d990f4062bc88e",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "214": {
+      "number": 214,
+      "ref": "erdosproblems.com/214",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/214#post-4547",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem214FourPoints.lean",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem214TwelvePoints.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "timeout",
+        "lean_version": "4.24.0",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "221": {
+      "number": 221,
+      "ref": "erdosproblems.com/221",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/221#post-3991",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem221.lean",
+            "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/802ABD868A907C2ADB78C580C73C86FC/S0008439500061348a.pdf/on-a-problem-of-p-erdos.pdf"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem221.lean",
+        "content_hash": "sha256:770c634fc1db3a1883a8d0dae5bbaeec6f2655a41a40604f0399d44d301dd9e8",
+        "locator": ".vela/artifact-blobs/sha256/770c634fc1db3a1883a8d0dae5bbaeec6f2655a41a40604f0399d44d301dd9e8",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "224": {
+      "number": 224,
+      "ref": "erdosproblems.com/224",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.25.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/224#post-3157",
+            "https://github.com/SpringSense-Innovation-Institute/ai-for-math-lean/blob/main/erdos-problems/erdos224/Erdos224.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "drift_or_error",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "226": {
+      "number": 226,
+      "ref": "erdosproblems.com/226",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/226",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos226.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "229": {
+      "number": 229,
+      "ref": "erdosproblems.com/229",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "theorem_1"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/229",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos229.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "237": {
+      "number": 237,
+      "ref": "erdosproblems.com/237",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/237#post-5240",
+            "https://gist.githubusercontent.com/pitmonticone/8ea0d1cdb963b6213ac639b11d33f811/raw/98a5824d16da14313f65d77eeab5563dd874613a/Erdos237.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/pitmonticone/8ea0d1cdb963b6213ac639b11d33f811/raw/98a5824d16da14313f65d77eeab5563dd874613a/Erdos237.lean",
+        "content_hash": "sha256:57f5039b4a21bc9837263ce31aecbe2eb3a8c1c7b61b6dd9a0b14e0c3bad2e61",
+        "locator": ".vela/artifact-blobs/sha256/57f5039b4a21bc9837263ce31aecbe2eb3a8c1c7b61b6dd9a0b14e0c3bad2e61",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "246": {
+      "number": 246,
+      "ref": "erdosproblems.com/246",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/246",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos246.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "258": {
+      "number": 258,
+      "ref": "erdosproblems.com/258",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_258.variants.monotone",
+        "erdos_258.variants.constant"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/258",
+            "https://www.ulam.ai/research/erdos258.pdf",
+            "https://www.ulam.ai/research/erdos258.tar.gz",
+            "https://gist.githubusercontent.com/ster-oc/2b7adcf9d753cf6e29d782f7374cc57e/raw/689a8483895cbe147634dfbf2d7b1db93a3b5b5f/Erdos258.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/258.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/ster-oc/2b7adcf9d753cf6e29d782f7374cc57e/raw/689a8483895cbe147634dfbf2d7b1db93a3b5b5f/Erdos258.lean",
+        "content_hash": "sha256:01c7c494120fcb7d4cd3776b1066604435b28ca15000ea0ea9cd7f474c5c0236",
+        "locator": ".vela/artifact-blobs/sha256/01c7c494120fcb7d4cd3776b1066604435b28ca15000ea0ea9cd7f474c5c0236",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "259": {
+      "number": 259,
+      "ref": "erdosproblems.com/259",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/259#post-5683",
+            "https://gist.githubusercontent.com/ster-oc/c7429943f6b3a634797dc8b2a3b01f2d/raw/8c6b5b7f08021f0aed2312542dd2e9ee7beaa6d6/Erdos259.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/259.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/ster-oc/c7429943f6b3a634797dc8b2a3b01f2d/raw/8c6b5b7f08021f0aed2312542dd2e9ee7beaa6d6/Erdos259.lean",
+        "content_hash": "sha256:78b738421eb2b353b80d37622faf95ee6c14c59c6b82a24281d5894d7fcb389b",
+        "locator": ".vela/artifact-blobs/sha256/78b738421eb2b353b80d37622faf95ee6c14c59c6b82a24281d5894d7fcb389b",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "264": {
+      "number": 264,
+      "ref": "erdosproblems.com/264",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_264.parts.i",
+        "erdos_264.variants.example",
+        "erdos_264.variants.ko_tao_neg",
+        "erdos_264.variants.ko_tao_pos"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/264#post-2258",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos264.md",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos264.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/264.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        },
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/264#post-2236",
+            "https://web.math.pmf.unizg.hr/~vjekovac/EP/EP264/Erdos264_blueprint.tex",
+            "https://web.math.pmf.unizg.hr/~vjekovac/EP/EP264/Erdos264_converted.pdf",
+            "https://github.com/VjekoKovac/erdosproblems/blob/main/Erdos264.lean",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos264b.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/264.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/VjekoKovac/erdosproblems/blob/main/Erdos264.lean",
+        "content_hash": "sha256:c83f952597171dcabbf1d64c2f56464d625d364f7d42904b5d96d9d8566bac6b",
+        "locator": ".vela/artifact-blobs/sha256/c83f952597171dcabbf1d64c2f56464d625d364f7d42904b5d96d9d8566bac6b",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "268": {
+      "number": 268,
+      "ref": "erdosproblems.com/268",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/268#post-5359",
+            "https://gist.githubusercontent.com/madeve-unipi/62a8f68cdb4864b85b81a6752dcb0aa4/raw/5793aaa51089c25c37d8d63f60540367f6abe506/Erdos268.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/268.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "native_decide_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/62a8f68cdb4864b85b81a6752dcb0aa4/raw/5793aaa51089c25c37d8d63f60540367f6abe506/Erdos268.lean",
+        "content_hash": "sha256:c4bd3b940fbb99cedddf4aee9ef8180d3e16cf01f8d78b2fae73e25bf79a4d8c",
+        "locator": ".vela/artifact-blobs/sha256/c4bd3b940fbb99cedddf4aee9ef8180d3e16cf01f8d78b2fae73e25bf79a4d8c",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "275": {
+      "number": 275,
+      "ref": "erdosproblems.com/275",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/275",
+            "https://www.ams.org/journals/proc/1970-024-03/S0002-9939-1970-0258719-2/home.html",
+            "https://link.springer.com/article/10.1007/s10474-019-00980-z",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos275.md",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/275.lean"
+          ],
+          "link_class": "circular_into_fc",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "not_self_contained",
+        "lean_version": "4.24.0",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "280": {
+      "number": 280,
+      "ref": "erdosproblems.com/280",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/280#post-5595",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/2dda92a192c15c24263c8a258979e7e3/raw/b9f4c664a42977075e361da17759bd0f71998ff8/Erdos280.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/LorenzoLuccioli/2dda92a192c15c24263c8a258979e7e3/raw/b9f4c664a42977075e361da17759bd0f71998ff8/Erdos280.lean",
+        "content_hash": "sha256:dbb5ad625c83b7eae65a7ff4e3c973f6e39c3f67222da6986e70c7dace92af40",
+        "locator": ".vela/artifact-blobs/sha256/dbb5ad625c83b7eae65a7ff4e3c973f6e39c3f67222da6986e70c7dace92af40",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "281": {
+      "number": 281,
+      "ref": "erdosproblems.com/281",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/281#post-3445",
+            "https://chatgpt.com/share/696ac45b-70d8-8003-9ca4-320151e0816e"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "283": {
+      "number": 283,
+      "ref": "erdosproblems.com/283",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_283.variants.graham",
+        "erdos_283.variants.graham_alpha",
+        "erdos_283.variants.cassels",
+        "erdos_283.variants.burr",
+        "erdos_283.variants.alekseyev",
+        "erdos_283.variants.van_doorn_linear",
+        "erdos_283.variants.van_doorn_quadratic"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "['4.27.0', '4.28.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/283#post-6290",
+            "https://www.overleaf.com/read/gdmnffbshxsq#ef2000",
+            "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P283/Proof_flat.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/283.lean",
+            "https://raw.githubusercontent.com/Shashi456/erdos-formalizations/refs/heads/main/Erdos/P283/Proof_flat.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        },
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/283#post-260",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem283.lean",
+            "https://github.com/Woett/A-normal-paper-is-probably-fine/blob/main/The%20binomial%20case%20of%20Graham's%20conjecture%20on%20polynomial%20representations%20with%20prescribed%20sum%20of%20reciprocals.pdf"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "theorems": [
+          "Erdos283.erdos_283"
+        ],
+        "proof_url": "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P283/Proof_flat.lean",
+        "lean_version": "4.27.0",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "method": "vela foundry lean-run (lake env lean + #print axioms) vs FC Mathlib 4.27.0",
+        "result": "kernel_clean",
+        "content_hash": "sha256:171db4cb66f908b275acfec45ed2871258f2b98290811c044f1c1adf58a7abcb",
+        "locator": ".vela/artifact-blobs/sha256/171db4cb66f908b275acfec45ed2871258f2b98290811c044f1c1adf58a7abcb"
+      }
+    },
+    "290": {
+      "number": 290,
+      "ref": "erdosproblems.com/290",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/290#post-3180",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem290.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem290.lean",
+        "content_hash": "sha256:270a81b75364c2fb85fa053978d01b17c0f7d8c2ad70d51b9478cde891ad81fd",
+        "locator": ".vela/artifact-blobs/sha256/270a81b75364c2fb85fa053978d01b17c0f7d8c2ad70d51b9478cde891ad81fd",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "291": {
+      "number": 291,
+      "ref": "erdosproblems.com/291",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_291.parts.ii",
+        "erdos_291.variants.steinerberger_generalization",
+        "erdos_291.variants.wu_yan"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/291#post-4219",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem291.lean",
+            "https://github.com/Woett/Miscellaneous/blob/main/Generalized%20harmonic%20sums%20have%20arbitrarily%20large%20prime%20factors.pdf",
+            "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem291.lean",
+        "content_hash": "sha256:fae39aa4d0534a38068e4c18f036a98dab0f3615d6bb7b8e14449281b7979064",
+        "locator": ".vela/artifact-blobs/sha256/fae39aa4d0534a38068e4c18f036a98dab0f3615d6bb7b8e14449281b7979064",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "296": {
+      "number": 296,
+      "ref": "erdosproblems.com/296",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/296#post-5713",
+            "https://gist.githubusercontent.com/JohnEdwardJennings/d1ba8d7b8c63cc7eade1243e19e2eb35/raw/7402a8e36283841cbc7e0588760d701a4e84c3a2/Erdos296.lean",
+            "https://github.com/b-mehta/unit-fractions/blob/master/src/final_results.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/JohnEdwardJennings/d1ba8d7b8c63cc7eade1243e19e2eb35/raw/7402a8e36283841cbc7e0588760d701a4e84c3a2/Erdos296.lean",
+        "content_hash": "sha256:b0ec58005e406abfedd41d8544c3a8fa9f94957220c953a78b90534390e9723d",
+        "locator": ".vela/artifact-blobs/sha256/b0ec58005e406abfedd41d8544c3a8fa9f94957220c953a78b90534390e9723d",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "298": {
+      "number": 298,
+      "ref": "erdosproblems.com/298",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_298.variants.upper_density"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "3.42.1",
+          "proof_urls": [
+            "https://github.com/b-mehta/unit-fractions"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "299": {
+      "number": 299,
+      "ref": "erdosproblems.com/299",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_299.variants.density"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "3.42.1",
+          "proof_urls": [
+            "https://github.com/b-mehta/unit-fractions"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "303": {
+      "number": 303,
+      "ref": "erdosproblems.com/303",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/330#post-2334",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos303.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "314": {
+      "number": 314,
+      "ref": "erdosproblems.com/314",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/314#post-5193",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem314.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem314.lean",
+        "content_hash": "sha256:04e7fde42f58e4e7cf0974b2bcfe77050b5209c5a04da178e3ff34355c6f533d",
+        "locator": ".vela/artifact-blobs/sha256/04e7fde42f58e4e7cf0974b2bcfe77050b5209c5a04da178e3ff34355c6f533d",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "315": {
+      "number": 315,
+      "ref": "erdosproblems.com/315",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/315",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos315.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "316": {
+      "number": 316,
+      "ref": "erdosproblems.com/316",
+      "fc_status": "missing_link",
+      "open_sorry_thms": [
+        "erdos_316.variants.generalized"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.27.0",
+          "proof_urls": [
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/316.lean"
+          ],
+          "link_class": "circular_into_fc",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "331": {
+      "number": 331,
+      "ref": "erdosproblems.com/331",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/331#post-4019",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem331.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/331.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem331.lean",
+        "content_hash": "sha256:18d2443129ae7fda43c238f3ede7bb249f2e87dcaea53d174594498383c1e6ef",
+        "locator": ".vela/artifact-blobs/sha256/18d2443129ae7fda43c238f3ede7bb249f2e87dcaea53d174594498383c1e6ef",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "333": {
+      "number": 333,
+      "ref": "erdosproblems.com/333",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.1",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/333#post-2403",
+            "https://chatgpt.com/s/t_69467152e8808191b9140d006994f284",
+            "https://chatgpt.com/s/t_694c90df3c908191a192f6233c2b14b9"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "337": {
+      "number": 337,
+      "ref": "erdosproblems.com/337",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/337",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos337.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "347": {
+      "number": 347,
+      "ref": "erdosproblems.com/347",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/347#post-3606",
+            "https://github.com/ebarschkis/ErdosProblem/blob/main/Problem347/347.pdf",
+            "https://github.com/ebarschkis/ErdosProblem/blob/main/Problem347/note.tex",
+            "https://github.com/ebarschkis/ErdosProblem/blob/main/Problem347/Formalization.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "native_decide_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/ebarschkis/ErdosProblem/blob/main/Problem347/Formalization.lean",
+        "content_hash": "sha256:629af35802c6a217d7ed6fb29f95b64bf6a07148f9052aa68b4016dc41804fd2",
+        "locator": ".vela/artifact-blobs/sha256/629af35802c6a217d7ed6fb29f95b64bf6a07148f9052aa68b4016dc41804fd2",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "350": {
+      "number": 350,
+      "ref": "erdosproblems.com/350",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_350.variants.strengthening"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/350",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos350.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "351": {
+      "number": 351,
+      "ref": "erdosproblems.com/351",
+      "fc_status": "missing_link",
+      "open_sorry_thms": [
+        "erdos_351.variants.X_sq"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "['4.27.0', '4.28.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/283#post-6290",
+            "https://www.overleaf.com/read/gdmnffbshxsq#ef2000",
+            "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P283/Proof_flat.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/351.lean",
+            "https://raw.githubusercontent.com/Shashi456/erdos-formalizations/refs/heads/main/Erdos/P283/Proof_flat.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "theorems": [
+          "Erdos351.erdos_351"
+        ],
+        "proof_url": "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P283/Proof_flat.lean",
+        "lean_version": "4.27.0",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "method": "vela foundry lean-run (lake env lean + #print axioms) vs FC Mathlib 4.27.0",
+        "result": "kernel_clean",
+        "content_hash": "sha256:171db4cb66f908b275acfec45ed2871258f2b98290811c044f1c1adf58a7abcb",
+        "locator": ".vela/artifact-blobs/sha256/171db4cb66f908b275acfec45ed2871258f2b98290811c044f1c1adf58a7abcb"
+      }
+    },
+    "355": {
+      "number": 355,
+      "ref": "erdosproblems.com/355",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/355#post-4741",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem355.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/355.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem355.lean",
+        "content_hash": "sha256:8e87eff186e36fc41e10a7eac1a687a00331b7c5a466046632b5d55bde4d0620",
+        "locator": ".vela/artifact-blobs/sha256/8e87eff186e36fc41e10a7eac1a687a00331b7c5a466046632b5d55bde4d0620",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "363": {
+      "number": 363,
+      "ref": "erdosproblems.com/363",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/363#post-4709",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem363.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem363.lean",
+        "content_hash": "sha256:54b97c9e87a74f5f5e7525a4fde858c42fdfa971bd12699c604984f5d6aa8d14",
+        "locator": ".vela/artifact-blobs/sha256/54b97c9e87a74f5f5e7525a4fde858c42fdfa971bd12699c604984f5d6aa8d14",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "367": {
+      "number": 367,
+      "ref": "erdosproblems.com/367",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/367#post-1766",
+            "https://www.erdosproblems.com/forum/thread/367#post-1776",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos367.md",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos367.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos367.lean",
+        "content_hash": "sha256:81acd2dc31218fcd3c705243948257e303cda946f743181d1fa3e3f79435474a",
+        "locator": ".vela/artifact-blobs/sha256/81acd2dc31218fcd3c705243948257e303cda946f743181d1fa3e3f79435474a",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "368": {
+      "number": 368,
+      "ref": "erdosproblems.com/368",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/368#post-4335",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos368.md",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos368b.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos368b.lean",
+        "content_hash": "sha256:52cb00c3e91536a8425677878d3802e92190b5c912953db65de387af85fd0914",
+        "locator": ".vela/artifact-blobs/sha256/52cb00c3e91536a8425677878d3802e92190b5c912953db65de387af85fd0914",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "369": {
+      "number": 369,
+      "ref": "erdosproblems.com/369",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/369#post-5058",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem369.lean",
+            "https://drive.google.com/file/d/1MxgrA2haXKv_NKSa7sqUI2hZYyZ5JmfP/view"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "370": {
+      "number": 370,
+      "ref": "erdosproblems.com/370",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/370",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos370.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "379": {
+      "number": 379,
+      "ref": "erdosproblems.com/379",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.22.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/379#post-2350"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "392": {
+      "number": 392,
+      "ref": "erdosproblems.com/392",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_392.variants.lower",
+        "erdos_392.variants.implication"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/392#post-4410",
+            "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/blob/main/PrimeNumberTheoremAnd/Erdos392.lean",
+            "https://alexkontorovich.github.io/PrimeNumberTheoremAnd/blueprint/sect0009.html#a0000000039"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "397": {
+      "number": 397,
+      "ref": "erdosproblems.com/397",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/397#post-2940",
+            "https://www.erdosproblems.com/forum/thread/397#post-2936",
+            "https://gist.githubusercontent.com/llllvvuu/40d68cfa9de9f43eece07ff4fdc3b0ef/raw/966750065320fe126fbe5a8a7ea50439d7519c6c/397.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://gist.githubusercontent.com/llllvvuu/40d68cfa9de9f43eece07ff4fdc3b0ef/raw/966750065320fe126fbe5a8a7ea50439d7519c6c/397.lean",
+        "content_hash": "sha256:2177cb9f2734d28d735f81f4f0cd309fadc7440ec7c8eec99d8440a092e2f3e5",
+        "locator": ".vela/artifact-blobs/sha256/2177cb9f2734d28d735f81f4f0cd309fadc7440ec7c8eec99d8440a092e2f3e5",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "399": {
+      "number": 399,
+      "ref": "erdosproblems.com/399",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_399.variants.erdos_oblath",
+        "erdos_399.variants.pollack_shapiro",
+        "erdos_399.variants.cambie",
+        "erdos_399.variants.sum_two_squares"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.22.0",
+          "proof_urls": [
+            "https://github.com/google-deepmind/formal-conjectures/commit/ce390075c49403db77b955a3f3a8bf4c4de99cbe"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "401": {
+      "number": 401,
+      "ref": "erdosproblems.com/401",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/401#post-2977",
+            "https://www.erdosproblems.com/forum/thread/401#post-3002",
+            "https://chatgpt.com/s/t_6963cf5fca208191a220cf21965a12e8",
+            "https://drive.google.com/file/d/1SY_LjPToevYaFl5eNl-rUxJrjrP5u4RC/view",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos401b.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos401b.lean",
+        "content_hash": "sha256:b050725c9a1d4e7ef3da61c591151c949c52052b92a98b0e143e6386ca36f58a",
+        "locator": ".vela/artifact-blobs/sha256/b050725c9a1d4e7ef3da61c591151c949c52052b92a98b0e143e6386ca36f58a",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "418": {
+      "number": 418,
+      "ref": "erdosproblems.com/418",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_418.variants.sigma",
+        "erdos_418.variants.soln"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/418",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos418.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "419": {
+      "number": 419,
+      "ref": "erdosproblems.com/419",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/419",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos419.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "426": {
+      "number": 426,
+      "ref": "erdosproblems.com/426",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/426#post-5643",
+            "https://www.erdosproblems.com/forum/thread/426#post-5775",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/7c10c6803e56a3271ca6ebfc9cfb89ad/raw/9aa347c235591c53684d9ac06050c18b183aea23/Erdos426.lean",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/6740274ef8c8bd77a6c966887a72b198/raw/656e1c8330a75a6fd003efef2a8bcae1966482df/Erdos426.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "427": {
+      "number": 427,
+      "ref": "erdosproblems.com/427",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_427.variants.shiu",
+        "erdos_427.variants.of_shiu"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/427#post-5920",
+            "https://gist.githubusercontent.com/JohnEdwardJennings/e2c6ef0daab55857b7cc9d340de7af84/raw/8ff97800e38582c71246a238e7541a9d69488cbd/Erdos427.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/JohnEdwardJennings/e2c6ef0daab55857b7cc9d340de7af84/raw/8ff97800e38582c71246a238e7541a9d69488cbd/Erdos427.lean",
+        "content_hash": "sha256:792a4b5fab29e5855fbcb1115d54e28a054d8fcf7ee2bd5589834a73b387c052",
+        "locator": ".vela/artifact-blobs/sha256/792a4b5fab29e5855fbcb1115d54e28a054d8fcf7ee2bd5589834a73b387c052",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "429": {
+      "number": 429,
+      "ref": "erdosproblems.com/429",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/429#post-3910",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem429.lean",
+            "https://math.colgate.edu/~integers/y89/y89.pdf"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem429.lean",
+        "content_hash": "sha256:17fc5cef5c950f54157092ca3cc3c088c85f256245d7aafb5445e16009479bb0",
+        "locator": ".vela/artifact-blobs/sha256/17fc5cef5c950f54157092ca3cc3c088c85f256245d7aafb5445e16009479bb0",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "433": {
+      "number": 433,
+      "ref": "erdosproblems.com/433",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/433#post-4436",
+            "https://github.com/YaelDillies/MiscYD/blob/master/MiscYD/AddCombi/Kneser/Kneser.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "drift_or_error",
+        "lean_version": "4.24.0",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "434": {
+      "number": 434,
+      "ref": "erdosproblems.com/434",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/434#post-4437"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "435": {
+      "number": 435,
+      "ref": "erdosproblems.com/435",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/435",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos435.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "443": {
+      "number": 443,
+      "ref": "erdosproblems.com/443",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/443",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos443.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "447": {
+      "number": 447,
+      "ref": "erdosproblems.com/447",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/447",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos447.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "453": {
+      "number": 453,
+      "ref": "erdosproblems.com/453",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/453",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos453.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "457": {
+      "number": 457,
+      "ref": "erdosproblems.com/457",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/457#post-4668",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem457.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/457.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "has_sorry",
+        "lean_version": "4.24.0",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "459": {
+      "number": 459,
+      "ref": "erdosproblems.com/459",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/459#post-4716",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem459.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem459.lean",
+        "content_hash": "sha256:4c5583809c518471714143b7ea5c9c1c3ab67c1f2c27a5add460b065c25017ed",
+        "locator": ".vela/artifact-blobs/sha256/4c5583809c518471714143b7ea5c9c1c3ab67c1f2c27a5add460b065c25017ed",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "476": {
+      "number": 476,
+      "ref": "erdosproblems.com/476",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/476",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos476.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "481": {
+      "number": 481,
+      "ref": "erdosproblems.com/481",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.1",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/481#post-1930"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "484": {
+      "number": 484,
+      "ref": "erdosproblems.com/484",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/484#post-5448"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "485": {
+      "number": 485,
+      "ref": "erdosproblems.com/485",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/485#post-4030",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem485.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem485.lean",
+        "content_hash": "sha256:57c0eb900a8501544c0af057c239a3b7e6ec9b5ae6b1175cd610458debfc864d",
+        "locator": ".vela/artifact-blobs/sha256/57c0eb900a8501544c0af057c239a3b7e6ec9b5ae6b1175cd610458debfc864d",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "487": {
+      "number": 487,
+      "ref": "erdosproblems.com/487",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/487",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos487.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "490": {
+      "number": 490,
+      "ref": "erdosproblems.com/490",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/490#post-6497",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem490.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem490.lean",
+        "content_hash": "sha256:fb5f996eff3c765444b79525abe70414470bf2f0253165bb78cf4d96cb6e7aa6",
+        "locator": ".vela/artifact-blobs/sha256/fb5f996eff3c765444b79525abe70414470bf2f0253165bb78cf4d96cb6e7aa6",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "493": {
+      "number": 493,
+      "ref": "erdosproblems.com/493",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/493",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos493.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "497": {
+      "number": 497,
+      "ref": "erdosproblems.com/497",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/497",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos497.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "498": {
+      "number": 498,
+      "ref": "erdosproblems.com/498",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/498#post-3844"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "499": {
+      "number": 499,
+      "ref": "erdosproblems.com/499",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/499",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos499.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "502": {
+      "number": 502,
+      "ref": "erdosproblems.com/502",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/502#post-4106"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "505": {
+      "number": 505,
+      "ref": "erdosproblems.com/505",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_505.small_dim"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/505",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos505.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "519": {
+      "number": 519,
+      "ref": "erdosproblems.com/519",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/519#post-5599",
+            "https://gist.githubusercontent.com/JohnEdwardJennings/db1e0cb00b7d6866193c12f1c70a1813/raw/e629fcf1976d5b241d628c0b65e2b1e3701f51a6/Erdos519.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/JohnEdwardJennings/db1e0cb00b7d6866193c12f1c70a1813/raw/e629fcf1976d5b241d628c0b65e2b1e3701f51a6/Erdos519.lean",
+        "content_hash": "sha256:592c4be29f41afff21d183c642d360d39e5db98d3971ead63d27d077c13bd37a",
+        "locator": ".vela/artifact-blobs/sha256/592c4be29f41afff21d183c642d360d39e5db98d3971ead63d27d077c13bd37a",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "532": {
+      "number": 532,
+      "ref": "erdosproblems.com/532",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.1",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/532#post-4004",
+            "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Hindman.html",
+            "https://github.com/leanprover-community/mathlib4/blob/20c3a51ac9205f8eeb30886a4f1744a22e981ebe/Mathlib/Combinatorics/Hindman.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.29.1",
+        "pinned_env": "envs/mathlib-v4.29.1",
+        "proof_url": "https://github.com/leanprover-community/mathlib4/blob/20c3a51ac9205f8eeb30886a4f1744a22e981ebe/Mathlib/Combinatorics/Hindman.lean",
+        "content_hash": "sha256:3c6543596fc152542077d8b4c0ddcd12062b29cb5de3ac75afc0361f133a7df4",
+        "locator": ".vela/artifact-blobs/sha256/3c6543596fc152542077d8b4c0ddcd12062b29cb5de3ac75afc0361f133a7df4",
+        "method": "vela pinned-env batch reproduction"
+      }
+    },
+    "537": {
+      "number": 537,
+      "ref": "erdosproblems.com/537",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/537",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos537.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "540": {
+      "number": 540,
+      "ref": "erdosproblems.com/540",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/540#post-5410",
+            "https://gist.githubusercontent.com/madeve-unipi/e5b448ddfb84f4c5427d22555f19b1e6/raw/77b2c8499a2e858e84832d72dcbe8a2e04b6a451/Erdos540.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/e5b448ddfb84f4c5427d22555f19b1e6/raw/77b2c8499a2e858e84832d72dcbe8a2e04b6a451/Erdos540.lean",
+        "content_hash": "sha256:5c4f6b0bc1da3c696ada024fb5961017d4fb4ad0cf315c837135eb2062c9b2bf",
+        "locator": ".vela/artifact-blobs/sha256/5c4f6b0bc1da3c696ada024fb5961017d4fb4ad0cf315c837135eb2062c9b2bf",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "541": {
+      "number": 541,
+      "ref": "erdosproblems.com/541",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_541.variants.general_moduli",
+        "erdos_541.variants.large_primes"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/541",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos541.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "582": {
+      "number": 582,
+      "ref": "erdosproblems.com/582",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/582",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos582.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "613": {
+      "number": 613,
+      "ref": "erdosproblems.com/613",
+      "fc_status": "missing_link",
+      "open_sorry_thms": [
+        "erdos_613"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.0-rc8",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/613#post-1678",
+            "https://github.com/teorth/analysis/blob/main/Analysis/Misc/erdos_613.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.29.1",
+        "pinned_env": "envs/mathlib-v4.29.1",
+        "proof_url": "https://github.com/teorth/analysis/blob/main/Analysis/Misc/erdos_613.lean",
+        "content_hash": "sha256:374c1375871f13a8ed1ab1e12428a72a5c9addb7ae9085893e9e9f5392df98c2",
+        "locator": ".vela/artifact-blobs/sha256/374c1375871f13a8ed1ab1e12428a72a5c9addb7ae9085893e9e9f5392df98c2",
+        "method": "vela pinned-env batch reproduction"
+      }
+    },
+    "618": {
+      "number": 618,
+      "ref": "erdosproblems.com/618",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/618",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos618.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "621": {
+      "number": 621,
+      "ref": "erdosproblems.com/621",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/621#post-5605",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/71247a0c86fa35cb1e000160baef0bba/raw/eff1f49238af6ae9119b879ee91ff36ec6ee6b31/Erdos621.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/LorenzoLuccioli/71247a0c86fa35cb1e000160baef0bba/raw/eff1f49238af6ae9119b879ee91ff36ec6ee6b31/Erdos621.lean",
+        "content_hash": "sha256:9846f46efa7123570f9de99a047703cf5609b3dcd56fadf4a98cbdb5d8cb4a72",
+        "locator": ".vela/artifact-blobs/sha256/9846f46efa7123570f9de99a047703cf5609b3dcd56fadf4a98cbdb5d8cb4a72",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "639": {
+      "number": 639,
+      "ref": "erdosproblems.com/639",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/639#post-6189",
+            "https://gist.githubusercontent.com/Parcly-Taxel/f9a6a963d1057880633e4034294aa98e/raw/885ce8aa2d80d8ac598b98126de3321b5b8842ff/Erdos639.lean",
+            "https://gist.githubusercontent.com/Parcly-Taxel/f9a6a963d1057880633e4034294aa98e/raw/885ce8aa2d80d8ac598b98126de3321b5b8842ff/Erdos639.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/Parcly-Taxel/f9a6a963d1057880633e4034294aa98e/raw/885ce8aa2d80d8ac598b98126de3321b5b8842ff/Erdos639.lean",
+        "content_hash": "sha256:8413a05c106a652a8ec12e8c7527dca0681bcf5c83663745ba3bfda5ecca480d",
+        "locator": ".vela/artifact-blobs/sha256/8413a05c106a652a8ec12e8c7527dca0681bcf5c83663745ba3bfda5ecca480d",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "645": {
+      "number": 645,
+      "ref": "erdosproblems.com/645",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "['4.20.0-rc5', '4.24.0']",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/645",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos645.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "646": {
+      "number": 646,
+      "ref": "erdosproblems.com/646",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/646#post-4507"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "648": {
+      "number": 648,
+      "ref": "erdosproblems.com/648",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/648",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos648.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "649": {
+      "number": 649,
+      "ref": "erdosproblems.com/649",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/649",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos649.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "650": {
+      "number": 650,
+      "ref": "erdosproblems.com/650",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/650#post-4683",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem650.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem650.lean",
+        "content_hash": "sha256:a42e78b06de572e11a996baac29d45c9a476b60c4a658c954c90ba803e8ac4d1",
+        "locator": ".vela/artifact-blobs/sha256/a42e78b06de572e11a996baac29d45c9a476b60c4a658c954c90ba803e8ac4d1",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "658": {
+      "number": 658,
+      "ref": "erdosproblems.com/658",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/658#post-5654",
+            "https://www.erdosproblems.com/forum/thread/658#post-5677",
+            "https://gist.githubusercontent.com/JohnEdwardJennings/ca7d49761fb51d28613bafc956742fbc/raw/c326fd7918276292e641af92c32d3ecbe3c31ee0/Erdos658.lean",
+            "https://gist.githubusercontent.com/JohnEdwardJennings/ca7d49761fb51d28613bafc956742fbc/raw/93dbf493e26aa377f7e78390903be146745fa7ec/Erdos658.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "659": {
+      "number": 659,
+      "ref": "erdosproblems.com/659",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_659"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/659",
+            "https://adamsheffer.wordpress.com/2014/07/16/point-sets-with-few-distinct-distances/",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos659.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "666": {
+      "number": 666,
+      "ref": "erdosproblems.com/666",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/666",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos666.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "674": {
+      "number": 674,
+      "ref": "erdosproblems.com/674",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/674#post-2118"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "678": {
+      "number": 678,
+      "ref": "erdosproblems.com/678",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_678"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/678",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos678.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "692": {
+      "number": 692,
+      "ref": "erdosproblems.com/692",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/692#post-5204",
+            "https://gist.githubusercontent.com/pitmonticone/96516af9100a37a1da81908dc0b0410c/raw/a1d6ca7f3835c58b257e5e715c8fdf3a224e1bd0/Erdos692.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/pitmonticone/96516af9100a37a1da81908dc0b0410c/raw/a1d6ca7f3835c58b257e5e715c8fdf3a224e1bd0/Erdos692.lean",
+        "content_hash": "sha256:24158e568d19ab94367d006eb5ca0553f7c9f8858ccc2ace34c51235a066d367",
+        "locator": ".vela/artifact-blobs/sha256/24158e568d19ab94367d006eb5ca0553f7c9f8858ccc2ace34c51235a066d367",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "694": {
+      "number": 694,
+      "ref": "erdosproblems.com/694",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_694",
+        "erdos_694.variants.inf_unique"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/694#post-6202",
+            "https://www.overleaf.com/read/fgmhvywvdjkt#54ca5d",
+            "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P694/Proof.lean",
+            "https://raw.githubusercontent.com/Shashi456/erdos-formalizations/refs/heads/main/Erdos/P694/Proof.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "698": {
+      "number": 698,
+      "ref": "erdosproblems.com/698",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/698#post-3276",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem698.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem698.lean",
+        "content_hash": "sha256:5173798286221c6548ab76360f7432b86b4514764aa2e94bc0eda09c7fb23170",
+        "locator": ".vela/artifact-blobs/sha256/5173798286221c6548ab76360f7432b86b4514764aa2e94bc0eda09c7fb23170",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "707": {
+      "number": 707,
+      "ref": "erdosproblems.com/707",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_707.variants.prime_power",
+        "erdos_707.variants.prime",
+        "erdos_707.variants.counterexample_prime",
+        "erdos_707.variants.counterexample_mian_chowla",
+        "erdos_707.variants.counterexample_hall"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/707",
+            "https://borisalexeev.com/papers/erdos707.html",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos707.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "728": {
+      "number": 728,
+      "ref": "erdosproblems.com/728",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/728#post-2828",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos728b.lean",
+            "https://www.erdosproblems.com/forum/thread/728#post-2783"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        },
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/728#post-3652",
+            "https://math.dartmouth.edu/~carlp/binom.pdf",
+            "https://raw.githubusercontent.com/plby/lean-proofs/refs/heads/main/src/v4.24.0/ErdosProblems/Erdos728p.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos728b.lean",
+        "content_hash": "sha256:40f4cbf2ccaefa5d84fc44ece63d1e4c3fed3e47b631057ef337fc92465d7b9f",
+        "locator": ".vela/artifact-blobs/sha256/40f4cbf2ccaefa5d84fc44ece63d1e4c3fed3e47b631057ef337fc92465d7b9f",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "729": {
+      "number": 729,
+      "ref": "erdosproblems.com/729",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/729#post-2899"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "741": {
+      "number": 741,
+      "ref": "erdosproblems.com/741",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.27.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/741#post-5135",
+            "https://github.com/mo271/formal-conjectures/blob/486bc8afae062b6711cd16d3466d651ee2880a52/FormalConjectures/ErdosProblems/741.lean#L1449",
+            "https://github.com/mo271/formal-conjectures/blob/486bc8afae062b6711cd16d3466d651ee2880a52/FormalConjectures/ErdosProblems/741.lean#L1629"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        },
+        {
+          "lean_version": "4.29.1",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/741#post-5771",
+            "https://www.ulam.ai/research/erdos741.pdf",
+            "https://www.ulam.ai/research/erdos741.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "theorems": [
+          "Erdos741.erdos_741.parts.i",
+          "Erdos741.erdos_741.parts.ii"
+        ],
+        "proof_url": "https://github.com/mo271/formal-conjectures/blob/486bc8afae062b6711cd16d3466d651ee2880a52/FormalConjectures/ErdosProblems/741.lean",
+        "lean_version": "4.27.0",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "method": "vela foundry lean-run (lake env lean + #print axioms) vs FC Mathlib 4.27.0",
+        "result": "kernel_clean",
+        "content_hash": "sha256:e5c9beacb4bf765bdf1d10210d370771382ff6ca0a46773f78c057c970807ebe",
+        "locator": ".vela/artifact-blobs/sha256/e5c9beacb4bf765bdf1d10210d370771382ff6ca0a46773f78c057c970807ebe"
+      }
+    },
+    "751": {
+      "number": 751,
+      "ref": "erdosproblems.com/751",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.23.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/751#post-3835",
+            "https://people.clas.ufl.edu/avince/files/Cycles.pdf",
+            "https://github.com/SpringSense-Innovation-Institute/ai-for-math-lean/tree/main/erdos-problems/erdos751"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "753": {
+      "number": 753,
+      "ref": "erdosproblems.com/753",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/753#post-5373",
+            "https://gist.githubusercontent.com/madeve-unipi/80eaf8008c7c798b4f7b5baeb8c1812b/raw/70704b54755e9012597c99bab7db153786abfa8a/Erdos753.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/80eaf8008c7c798b4f7b5baeb8c1812b/raw/70704b54755e9012597c99bab7db153786abfa8a/Erdos753.lean",
+        "content_hash": "sha256:55f867e0683dc9a4de23edb1096eaf42d052ab335278ec73be15c749206aeebb",
+        "locator": ".vela/artifact-blobs/sha256/55f867e0683dc9a4de23edb1096eaf42d052ab335278ec73be15c749206aeebb",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "756": {
+      "number": 756,
+      "ref": "erdosproblems.com/756",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/756#post-4792",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem756.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem756.lean",
+        "content_hash": "sha256:09d42f981ccd506981de4f731b4e8b8d0dfe4363cc6d4de177fc303b8a607387",
+        "locator": ".vela/artifact-blobs/sha256/09d42f981ccd506981de4f731b4e8b8d0dfe4363cc6d4de177fc303b8a607387",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "760": {
+      "number": 760,
+      "ref": "erdosproblems.com/760",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/760#post-5727",
+            "https://gist.githubusercontent.com/madeve-unipi/a7ae50d445f95e73c360f442c3c84143/raw/e85a4b6a72e797488822bb5cbdfe68d9834e835c/Erdos760.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "native_decide_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/madeve-unipi/a7ae50d445f95e73c360f442c3c84143/raw/e85a4b6a72e797488822bb5cbdfe68d9834e835c/Erdos760.lean",
+        "content_hash": "sha256:8856420a0f07047562db3ffa3483cd4a404b4c18ab6fdfda1b52e4c7bbf9423a",
+        "locator": ".vela/artifact-blobs/sha256/8856420a0f07047562db3ffa3483cd4a404b4c18ab6fdfda1b52e4c7bbf9423a",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "762": {
+      "number": 762,
+      "ref": "erdosproblems.com/762",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/762",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos762.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "775": {
+      "number": 775,
+      "ref": "erdosproblems.com/775",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/775#post-5619",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/dc7dac92dff47aac05b50f2562dbe8c1/raw/2c53e497b3d685bc4883c0a2394b5f10ecb367a0/Erdos775.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/LorenzoLuccioli/dc7dac92dff47aac05b50f2562dbe8c1/raw/2c53e497b3d685bc4883c0a2394b5f10ecb367a0/Erdos775.lean",
+        "content_hash": "sha256:601c2daf277d7889a11b2273b5fbdac6bef3ba820c61b73c10146b68dabcf9c8",
+        "locator": ".vela/artifact-blobs/sha256/601c2daf277d7889a11b2273b5fbdac6bef3ba820c61b73c10146b68dabcf9c8",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "785": {
+      "number": 785,
+      "ref": "erdosproblems.com/785",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/785#post-4642",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem785.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "timeout",
+        "lean_version": "4.24.0",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "794": {
+      "number": 794,
+      "ref": "erdosproblems.com/794",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/794",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos794.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "798": {
+      "number": 798,
+      "ref": "erdosproblems.com/798",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/798#post-6329",
+            "https://gist.githubusercontent.com/Parcly-Taxel/757ca8323d74784da1a776795b9c90a9/raw/3a9724b1f6cd2504b809cf3c66f843b89d375e8b/Erdos798.lean",
+            "https://gist.githubusercontent.com/Parcly-Taxel/757ca8323d74784da1a776795b9c90a9/raw/3a9724b1f6cd2504b809cf3c66f843b89d375e8b/Erdos798.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/Parcly-Taxel/757ca8323d74784da1a776795b9c90a9/raw/3a9724b1f6cd2504b809cf3c66f843b89d375e8b/Erdos798.lean",
+        "content_hash": "sha256:6a1b80fc17d569bb0f55401ec9e4c19aa3a69dd6b13c4ab9e1388c98593e9398",
+        "locator": ".vela/artifact-blobs/sha256/6a1b80fc17d569bb0f55401ec9e4c19aa3a69dd6b13c4ab9e1388c98593e9398",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "818": {
+      "number": 818,
+      "ref": "erdosproblems.com/818",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/818#post-5890",
+            "https://gist.githubusercontent.com/tomaz1502/d8f3632157bae289e5d0ed68ccdc9433/raw/fa7570f83d63ead268ebe5478670f6c06142edcd/Erdos_818.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/tomaz1502/d8f3632157bae289e5d0ed68ccdc9433/raw/fa7570f83d63ead268ebe5478670f6c06142edcd/Erdos_818.lean",
+        "content_hash": "sha256:45ff7817c15d78cd49c208f920a55ee325918607bc5184b0106bd7071b4b3845",
+        "locator": ".vela/artifact-blobs/sha256/45ff7817c15d78cd49c208f920a55ee325918607bc5184b0106bd7071b4b3845",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "844": {
+      "number": 844,
+      "ref": "erdosproblems.com/844",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/844#post-5919",
+            "https://users.encs.concordia.ca/~chvatal/conjecture.pdf",
+            "https://gist.githubusercontent.com/JohnEdwardJennings/e32f2c412b0225091e7519d60741bd2d/raw/7d811ea413e2f7c0c0442749958aaac421eb6807/Erdos844.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/JohnEdwardJennings/e32f2c412b0225091e7519d60741bd2d/raw/7d811ea413e2f7c0c0442749958aaac421eb6807/Erdos844.lean",
+        "content_hash": "sha256:ac2b3a9dc1e19a03b6dc0af1f4dd01301052bb326aa19f6e0ea1f489f5cdb2a2",
+        "locator": ".vela/artifact-blobs/sha256/ac2b3a9dc1e19a03b6dc0af1f4dd01301052bb326aa19f6e0ea1f489f5cdb2a2",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "845": {
+      "number": 845,
+      "ref": "erdosproblems.com/845",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/845",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos845.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "846": {
+      "number": 846,
+      "ref": "erdosproblems.com/846",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.22.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/846#post-4447",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/846.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/2404258180688283e5141021c75464dc2acfb798/FormalConjectures/ErdosProblems/846.lean"
+          ],
+          "link_class": "circular_into_fc",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "not_self_contained",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "862": {
+      "number": 862,
+      "ref": "erdosproblems.com/862",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/862",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos862.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "866": {
+      "number": 866,
+      "ref": "erdosproblems.com/866",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/866#post-6229",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem866.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem866.lean",
+        "content_hash": "sha256:043731e35444d446ad8effeb8a5f1febdc904991bf9b9312c3acc2c17ca9845e",
+        "locator": ".vela/artifact-blobs/sha256/043731e35444d446ad8effeb8a5f1febdc904991bf9b9312c3acc2c17ca9845e",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "867": {
+      "number": 867,
+      "ref": "erdosproblems.com/867",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/867#post-5279",
+            "https://gist.githubusercontent.com/pitmonticone/5c1b173e3140f869d7425d8f1003ac70/raw/2ae361451c92d1b033d144bc50212dc8e76abdc9/Erdos867.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/pitmonticone/5c1b173e3140f869d7425d8f1003ac70/raw/2ae361451c92d1b033d144bc50212dc8e76abdc9/Erdos867.lean",
+        "content_hash": "sha256:e4957eb6357064f993a376737884ecc207f4744dc5cd7349d028b910f3337458",
+        "locator": ".vela/artifact-blobs/sha256/e4957eb6357064f993a376737884ecc207f4744dc5cd7349d028b910f3337458",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "871": {
+      "number": 871,
+      "ref": "erdosproblems.com/871",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/871",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos871.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "897": {
+      "number": 897,
+      "ref": "erdosproblems.com/897",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_897.variants.log_growth"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/897",
+            "https://archivara.org/paper/df04f023-6ef0-4c52-bd12-18cdaa8f0741",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos897.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "898": {
+      "number": 898,
+      "ref": "erdosproblems.com/898",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/898#post-3882"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "904": {
+      "number": 904,
+      "ref": "erdosproblems.com/904",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/904#post-5573",
+            "https://gist.githubusercontent.com/Parcly-Taxel/876d4eadd49a0d29db91ed2e790db733/raw/f33e0451100317b6eda0dd48c971e8105ff8ea75/E904.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/Parcly-Taxel/876d4eadd49a0d29db91ed2e790db733/raw/f33e0451100317b6eda0dd48c971e8105ff8ea75/E904.lean",
+        "content_hash": "sha256:44cf129bf912ffcc566f77610de296af20ee665539cccba540f81813b8693fde",
+        "locator": ".vela/artifact-blobs/sha256/44cf129bf912ffcc566f77610de296af20ee665539cccba540f81813b8693fde",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "905": {
+      "number": 905,
+      "ref": "erdosproblems.com/905",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/905#post-5276"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "907": {
+      "number": 907,
+      "ref": "erdosproblems.com/907",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/907#post-5277",
+            "https://gist.githubusercontent.com/pitmonticone/f419ac0a78259498f93fd60d49c0b3ea/raw/959cb0ef93596d9ade256e3cd0f4141e66176e04/Erdos907.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/pitmonticone/f419ac0a78259498f93fd60d49c0b3ea/raw/959cb0ef93596d9ade256e3cd0f4141e66176e04/Erdos907.lean",
+        "content_hash": "sha256:b561c518fdd777b8307d01cba80a87b94ab47c096b06e138d8ebc1109e3cc5e1",
+        "locator": ".vela/artifact-blobs/sha256/b561c518fdd777b8307d01cba80a87b94ab47c096b06e138d8ebc1109e3cc5e1",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "914": {
+      "number": 914,
+      "ref": "erdosproblems.com/914",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/914#post-5403",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem914.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem914.lean",
+        "content_hash": "sha256:3f420f95f2af111f9446e189b05ae7cabc6ed3ad8f764c72c55336c96b650986",
+        "locator": ".vela/artifact-blobs/sha256/3f420f95f2af111f9446e189b05ae7cabc6ed3ad8f764c72c55336c96b650986",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "923": {
+      "number": 923,
+      "ref": "erdosproblems.com/923",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/923#post-5628",
+            "https://gist.githubusercontent.com/Parcly-Taxel/28b95db1e5d3e77077d30c07afc55992/raw/8069e58aa1abcbcff57e1c99addfbdeb8f32f302/E923-aristotle.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/Parcly-Taxel/28b95db1e5d3e77077d30c07afc55992/raw/8069e58aa1abcbcff57e1c99addfbdeb8f32f302/E923-aristotle.lean",
+        "content_hash": "sha256:f1d9b57cfbe65a7696a58746fff3fb3fee25742780fa1381af398ef468512bf8",
+        "locator": ".vela/artifact-blobs/sha256/f1d9b57cfbe65a7696a58746fff3fb3fee25742780fa1381af398ef468512bf8",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "947": {
+      "number": 947,
+      "ref": "erdosproblems.com/947",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/947#post-4068",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem947.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem947.lean",
+        "content_hash": "sha256:d97c7e580a2efd5ef772946de089e8bcd4b1672c124bcae4b2768319e7bf9c43",
+        "locator": ".vela/artifact-blobs/sha256/d97c7e580a2efd5ef772946de089e8bcd4b1672c124bcae4b2768319e7bf9c43",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "958": {
+      "number": 958,
+      "ref": "erdosproblems.com/958",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/958",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos958.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "964": {
+      "number": 964,
+      "ref": "erdosproblems.com/964",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/964#post-4280",
+            "https://raw.githubusercontent.com/danielchin/proofs/refs/heads/main/Proofs/ErdosProblems/Erdos964.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://raw.githubusercontent.com/danielchin/proofs/refs/heads/main/Proofs/ErdosProblems/Erdos964.lean",
+        "content_hash": "sha256:f1ea006a66cee580a06d6002a2d0d12fb36aa0950ddde40fc9f3db6417728cac",
+        "locator": ".vela/artifact-blobs/sha256/f1ea006a66cee580a06d6002a2d0d12fb36aa0950ddde40fc9f3db6417728cac",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "966": {
+      "number": 966,
+      "ref": "erdosproblems.com/966",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/966#post-4472"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "967": {
+      "number": 967,
+      "ref": "erdosproblems.com/967",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/967#post-2303",
+            "https://gist.githubusercontent.com/llllvvuu/d25f037d1f1000bdabd6ca928c74c9bb/raw/50871c3840af1e49c4e5acabefac6604c9b65c65/967.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://gist.githubusercontent.com/llllvvuu/d25f037d1f1000bdabd6ca928c74c9bb/raw/50871c3840af1e49c4e5acabefac6604c9b65c65/967.lean",
+        "content_hash": "sha256:6b379e4f9622c7b477a52f80ca8247327c68a965d7d7dddc1212738d3bf1919c",
+        "locator": ".vela/artifact-blobs/sha256/6b379e4f9622c7b477a52f80ca8247327c68a965d7d7dddc1212738d3bf1919c",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "974": {
+      "number": 974,
+      "ref": "erdosproblems.com/974",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/974#post-5944",
+            "https://www.erdosproblems.com/forum/thread/974#post-640",
+            "https://gist.githubusercontent.com/Parcly-Taxel/a44cbf9a214a5358bf584d05265aec4c/raw/40bea6d343e4563e8f1c3d17b423deb72b3f8265/Erdos974.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/Parcly-Taxel/a44cbf9a214a5358bf584d05265aec4c/raw/40bea6d343e4563e8f1c3d17b423deb72b3f8265/Erdos974.lean",
+        "content_hash": "sha256:8154842731374367a80e197d7a7fbdf5a5ea398c370254662a1997050b747dca",
+        "locator": ".vela/artifact-blobs/sha256/8154842731374367a80e197d7a7fbdf5a5ea398c370254662a1997050b747dca",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "990": {
+      "number": 990,
+      "ref": "erdosproblems.com/990",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.0",
+          "proof_urls": [
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos990.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        },
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/990#post-5312",
+            "https://github.com/yuta0x89/ErdosProblems/blob/main/Erdos990.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/yuta0x89/ErdosProblems/blob/main/Erdos990.lean",
+        "content_hash": "sha256:bab963c3f27a9eddfbe3297f4dda5da205c2ed3fdde9a4118a5712999904644a",
+        "locator": ".vela/artifact-blobs/sha256/bab963c3f27a9eddfbe3297f4dda5da205c2ed3fdde9a4118a5712999904644a",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "997": {
+      "number": 997,
+      "ref": "erdosproblems.com/997",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_997.variants.lacunary",
+        "erdos_997.variants.irrational"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/997#post-5189",
+            "https://gist.githubusercontent.com/pitmonticone/016f2ed66b4cd1c4c4b9998095170e60/raw/b7dfc05c525ae385b5835f89f1ada721443e4305/Erdos997.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/pitmonticone/016f2ed66b4cd1c4c4b9998095170e60/raw/b7dfc05c525ae385b5835f89f1ada721443e4305/Erdos997.lean",
+        "content_hash": "sha256:8e25731d664e2a4e0bb6e36960f9dc6a67380c29196196ac89e1d767092a5f11",
+        "locator": ".vela/artifact-blobs/sha256/8e25731d664e2a4e0bb6e36960f9dc6a67380c29196196ac89e1d767092a5f11",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1000": {
+      "number": 1000,
+      "ref": "erdosproblems.com/1000",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1000",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1000.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1007": {
+      "number": 1007,
+      "ref": "erdosproblems.com/1007",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1007",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1007.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1008": {
+      "number": 1008,
+      "ref": "erdosproblems.com/1008",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1008",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1008.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1014": {
+      "number": 1014,
+      "ref": "erdosproblems.com/1014",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.0",
+          "proof_urls": [
+            "https://openai.com/index/introducing-gpt-5-5/",
+            "https://cdn.openai.com/pdf/6dc7175d-d9e7-4b8d-96b8-48fe5798cd5b/Ramsey.pdf",
+            "https://www.erdosproblems.com/forum/thread/1014#post-5749"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1022": {
+      "number": 1022,
+      "ref": "erdosproblems.com/1022",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1022",
+            "https://www.erdosproblems.com/forum/thread/1022#post-2004",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1022.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1023": {
+      "number": 1023,
+      "ref": "erdosproblems.com/1023",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1023",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1023.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1026": {
+      "number": 1026,
+      "ref": "erdosproblems.com/1026",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1026",
+            "https://terrytao.wordpress.com/2025/12/08/the-story-of-erdos-problem-126/",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1026.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1028": {
+      "number": 1028,
+      "ref": "erdosproblems.com/1028",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1028",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1028.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1034": {
+      "number": 1034,
+      "ref": "erdosproblems.com/1034",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1034",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1034.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1036": {
+      "number": 1036,
+      "ref": "erdosproblems.com/1036",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1036",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1036.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1037": {
+      "number": 1037,
+      "ref": "erdosproblems.com/1037",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1037",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1037.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1043": {
+      "number": 1043,
+      "ref": "erdosproblems.com/1043",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_1043.variants.weak"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1043",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1043.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1044": {
+      "number": 1044,
+      "ref": "erdosproblems.com/1044",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1044#post-6012",
+            "https://github.com/QuanyuTang/erdos-problem-1044/blob/main/On_Erd%C5%91s_Problem_1044.pdf",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/c3ace69881872112109a6c31b7a87cfc/raw"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1047": {
+      "number": 1047,
+      "ref": "erdosproblems.com/1047",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1047",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1047.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1048": {
+      "number": 1048,
+      "ref": "erdosproblems.com/1048",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1048",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1048.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        },
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1048#post-3891",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos1048b.lean",
+            "https://raw.githubusercontent.com/plby/lean-proofs/refs/heads/main/src/v4.24.0/ErdosProblems/Erdos1048b.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "has_sorry",
+        "lean_version": "4.24.0",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "1051": {
+      "number": 1051,
+      "ref": "erdosproblems.com/1051",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_1051.variants.rapid_growth"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.27.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1051#post-3931",
+            "https://arxiv.org/abs/2601.21442"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1056": {
+      "number": 1056,
+      "ref": "erdosproblems.com/1056",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1056#post-2713",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/62c1534cff0ae0268f4e5fb92f3f5ae2/raw/b5f2abd33e6a90bbd7693089f14babbddbefcdb7/1056_aristotle.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "not_self_contained",
+        "lean_version": "4.24.0",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "1067": {
+      "number": 1067,
+      "ref": "erdosproblems.com/1067",
+      "fc_status": "forum_only",
+      "open_sorry_thms": [
+        "erdos_1067.variants.infinite_edge_connectivity"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1067",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1067.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1071": {
+      "number": 1071,
+      "ref": "erdosproblems.com/1071",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1071",
+            "https://www.erdosproblems.com/forum/thread/1071#post-4258",
+            "https://bsky.app/profile/ewhowe.com/post/3mbktyzvyak2e",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1071.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1080": {
+      "number": 1080,
+      "ref": "erdosproblems.com/1080",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1080",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1080.md"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1090": {
+      "number": 1090,
+      "ref": "erdosproblems.com/1090",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1090#post-4523"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1095": {
+      "number": 1095,
+      "ref": "erdosproblems.com/1095",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_1095.variants.lower_solved"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1095#post-2605",
+            "https://github.com/plby/lean-proofs/blob/main/ErdosProblems/Erdos1095.md",
+            "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos1095b.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/3d6dc14ba924f82ab5200288f6c6ee1be1326a2d/FormalConjectures/ErdosProblems/1095.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos1095b.lean",
+        "content_hash": "sha256:6b39329ec6e60b0ba30b4f6272a0e3b7657efaac8c5fa8fb55fa9b169e44a6dd",
+        "locator": ".vela/artifact-blobs/sha256/6b39329ec6e60b0ba30b4f6272a0e3b7657efaac8c5fa8fb55fa9b169e44a6dd",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1098": {
+      "number": 1098,
+      "ref": "erdosproblems.com/1098",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1098#post-5863",
+            "https://gist.githubusercontent.com/JohnEdwardJennings/783dce98df9fa6c333c24617ef07403b/raw/4963c590ee551175a3734014a8f08e8b86674e76/Erdos1098.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/JohnEdwardJennings/783dce98df9fa6c333c24617ef07403b/raw/4963c590ee551175a3734014a8f08e8b86674e76/Erdos1098.lean",
+        "content_hash": "sha256:1608bf8cba4cd41ef75c25293a1598a706d1205857f387a846283f9117b8724e",
+        "locator": ".vela/artifact-blobs/sha256/1608bf8cba4cd41ef75c25293a1598a706d1205857f387a846283f9117b8724e",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1100": {
+      "number": 1100,
+      "ref": "erdosproblems.com/1100",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1100#post-1659",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1100.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.24.0",
+        "pinned_env": "envs/mathlib-v4.24.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1100.lean",
+        "content_hash": "sha256:46444b19e6edd26c176321d80c59b235e0fd8f5e11e583494ca49d81c4e63954",
+        "locator": ".vela/artifact-blobs/sha256/46444b19e6edd26c176321d80c59b235e0fd8f5e11e583494ca49d81c4e63954",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1102": {
+      "number": 1102,
+      "ref": "erdosproblems.com/1102",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1102#post-4415",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1102PropertyP.lean",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1102PropertyQDensity.lean",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1102PropertyOverP.lean",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1102PropertyQFastGrowing.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1102.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1102PropertyP.lean",
+        "content_hash": "sha256:0e534122bb00bdd52c8c8e95ddda6166c3e7c2ebd287ba909a3e6d10d0a8c49e",
+        "locator": ".vela/artifact-blobs/sha256/0e534122bb00bdd52c8c8e95ddda6166c3e7c2ebd287ba909a3e6d10d0a8c49e",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1121": {
+      "number": 1121,
+      "ref": "erdosproblems.com/1121",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1121#post-5504"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1125": {
+      "number": 1125,
+      "ref": "erdosproblems.com/1125",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1125#post-5332",
+            "https://gist.githubusercontent.com/ster-oc/18384e6202ffe054cbc76ff2d0b1afde/raw/4d89f4dce1b6ae4aedde501bfbcbc4f9f81a8549/Erdos1125.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/ster-oc/18384e6202ffe054cbc76ff2d0b1afde/raw/4d89f4dce1b6ae4aedde501bfbcbc4f9f81a8549/Erdos1125.lean",
+        "content_hash": "sha256:994687dfe2faf035b4d276a7195109877a779a27ec9fea837c9a4f4bda59b37a",
+        "locator": ".vela/artifact-blobs/sha256/994687dfe2faf035b4d276a7195109877a779a27ec9fea837c9a4f4bda59b37a",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1126": {
+      "number": 1126,
+      "ref": "erdosproblems.com/1126",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.24.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1126#post-4524"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "claimed_complete"
+        }
+      ]
+    },
+    "1136": {
+      "number": 1136,
+      "ref": "erdosproblems.com/1136",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1136#post-5688",
+            "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1136.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/Woett/Lean-files/blob/main/ErdosProblem1136.lean",
+        "content_hash": "sha256:ac6f77e0e340f0873cb3bdd65c97c25c10e632fe954c056429e5453d5d45d466",
+        "locator": ".vela/artifact-blobs/sha256/ac6f77e0e340f0873cb3bdd65c97c25c10e632fe954c056429e5453d5d45d466",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1138": {
+      "number": 1138,
+      "ref": "erdosproblems.com/1138",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1138#post-6243",
+            "https://gist.githubusercontent.com/LorenzoLuccioli/c7fbdd9809a616974b5587ee526c163b/raw"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "1141": {
+      "number": 1141,
+      "ref": "erdosproblems.com/1141",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1141#post-5335",
+            "https://github.com/yuta0x89/ErdosProblems/blob/a1319f732cdee5140faf47d984e2c451c1184803/Erdos1141.lean",
+            "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1141.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://github.com/yuta0x89/ErdosProblems/blob/a1319f732cdee5140faf47d984e2c451c1184803/Erdos1141.lean",
+        "content_hash": "sha256:1528560483aaab91242001bba4a877492bc0dc0b7e7683788eb2887d714fe008",
+        "locator": ".vela/artifact-blobs/sha256/1528560483aaab91242001bba4a877492bc0dc0b7e7683788eb2887d714fe008",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1148": {
+      "number": 1148,
+      "ref": "erdosproblems.com/1148",
+      "fc_status": "partial_conditional",
+      "open_sorry_thms": [
+        "erdos_1148",
+        "erdos_1148.variants.weaker"
+      ],
+      "proof_variants": [
+        {
+          "lean_version": "4.27.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1148#post-4849",
+            "https://www.ulam.ai/research/erdos1148-full.pdf",
+            "https://github.com/ulamai/ulamai"
+          ],
+          "link_class": "forum_or_nonfile",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    },
+    "1187": {
+      "number": 1187,
+      "ref": "erdosproblems.com/1187",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.29.1",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1187#post-6429",
+            "https://github.com/KitaKen1/erdos-1187-lean",
+            "https://github.com/KitaKen1/erdos-1187-lean/blob/main/SecondSolution.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.29.1",
+        "pinned_env": "envs/mathlib-v4.29.1",
+        "proof_url": "https://github.com/KitaKen1/erdos-1187-lean/blob/main/SecondSolution.lean",
+        "content_hash": "sha256:a18aa0b91604e7e877a0530810282a06e8c1ec47fe34739946f8b854517949b9",
+        "locator": ".vela/artifact-blobs/sha256/a18aa0b91604e7e877a0530810282a06e8c1ec47fe34739946f8b854517949b9",
+        "method": "vela pinned-env batch reproduction"
+      }
+    },
+    "1190": {
+      "number": 1190,
+      "ref": "erdosproblems.com/1190",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.27.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1190#post-5988",
+            "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P1190/Proof.lean",
+            "https://raw.githubusercontent.com/Shashi456/erdos-formalizations/refs/heads/main/Erdos/P1190/Proof.lean"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "not_self_contained",
+        "note": "imports Shashi456-internal Erdos.* modules; needs the full repo pinned to reproduce"
+      }
+    },
+    "1193": {
+      "number": 1193,
+      "ref": "erdosproblems.com/1193",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1193#post-5360",
+            "https://gist.githubusercontent.com/pitmonticone/c2658d464f8f5ca0e7fa40ed6fb78a5d/raw/793317d6a959dca24f5f313364c49c4c75fc5c01/Erdos1193.lean"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "kernel_clean",
+        "lean_version": "4.28.0",
+        "pinned_env": "envs/mathlib-v4.28.0",
+        "proof_url": "https://gist.githubusercontent.com/pitmonticone/c2658d464f8f5ca0e7fa40ed6fb78a5d/raw/793317d6a959dca24f5f313364c49c4c75fc5c01/Erdos1193.lean",
+        "content_hash": "sha256:c970ccb889fa27046ffdbfd2456275538854f3817c2cdafbefb57f7ae89c396f",
+        "locator": ".vela/artifact-blobs/sha256/c970ccb889fa27046ffdbfd2456275538854f3817c2cdafbefb57f7ae89c396f",
+        "method": "vela pinned-env batch reproduction (scripts/fc-batch-reproduce.py)"
+      }
+    },
+    "1196": {
+      "number": 1196,
+      "ref": "erdosproblems.com/1196",
+      "fc_status": "already_synced",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.30.0-rc1",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1196#post-5469",
+            "https://github.com/math-inc/Erdos1196/tree/02fba13be7487cc51315f68d8fa7ef277633d3c8",
+            "https://github.com/math-inc/Erdos1196/blob/02fba13be7487cc51315f68d8fa7ef277633d3c8/PrimitiveSetsAboveX/FormalConjecturesErdos1196.lean",
+            "https://github.com/math-inc/Erdos1196/blob/02fba13be7487cc51315f68d8fa7ef277633d3c8/source.tex"
+          ],
+          "link_class": "immutable_lean",
+          "completeness": "claimed_complete"
+        }
+      ],
+      "vela_verified": {
+        "result": "drift_or_error",
+        "method": "vela pinned-env reproduction \u2014 honest non-result"
+      }
+    },
+    "1197": {
+      "number": 1197,
+      "ref": "erdosproblems.com/1197",
+      "fc_status": "missing_statement",
+      "open_sorry_thms": [],
+      "proof_variants": [
+        {
+          "lean_version": "4.28.0",
+          "proof_urls": [
+            "https://www.erdosproblems.com/forum/thread/1197#post-5362",
+            "https://github.com/ebarschkis/ErdosProblem/blob/main/Problem1197/Solution.pdf",
+            "https://github.com/ebarschkis/ErdosProblem/blob/main/Problem1197/Solution.tex",
+            "https://github.com/ebarschkis/ErdosProblem/blob/main/Problem1197/Formalization.lean",
+            "https://github.com/Tomodovodoo/Erdos_1197"
+          ],
+          "link_class": "mutable_lean",
+          "completeness": "partial_or_conditional"
+        }
+      ]
+    }
+  }
+}

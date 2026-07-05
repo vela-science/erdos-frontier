@@ -1,0 +1,38 @@
+{
+ "star": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "chair": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "K13K2": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "P5": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "P4K2": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "P3P3": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "C4": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "K3K2": {
+  "status": "INFEASIBLE",
+  "holes": null
+ },
+ "paw": {
+  "status": "INFEASIBLE",
+  "holes": null
+ }
+}

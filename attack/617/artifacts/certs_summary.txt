@@ -1,0 +1,6 @@
+I VERIFIED glucose42-drat+drat-trim 103s final_I.cnf/final_I.drat
+II.k0 VERIFIED glucose42-drat+drat-trim 161s final_II.k0.cnf/final_II.k0.drat
+II.k1 VERIFIED glucose42-drat+drat-trim 3471s final_II.k1.cnf/final_II.k1.drat
+II.k4 VERIFIED glucose42-drat+drat-trim 500s final_II.k4.cnf/final_II.k4.drat
+II.k3 VERIFIED glucose42-drat+drat-trim 2548s final_II.k3.cnf/final_II.k3.drat
+II.k2 VERIFIED glucose42-drat+drat-trim 7826s final_II.k2.cnf/final_II.k2.drat

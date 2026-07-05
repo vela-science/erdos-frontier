@@ -1,0 +1,2058 @@
+{
+  "schema": "vela.frontier-bounds.v1",
+  "source": "erdos-problems",
+  "note": "Typed current-best bounds projected from the erdos-deep adapter (problem `current_best` prose). value/direction are a best-effort parse; source_text is authoritative. Every bound is UNATTESTED (accepted=false) until a human key holder attests it; this sidecar is additive and does not affect any accepted finding or `vela reproduce`.",
+  "bounds": [
+    {
+      "problem": "erdos/1",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "The trivial lower bound is $N \\gg 2^{n}/n$, since all $2^n$ distinct subset sums must lie in $[0,Nn)$. Erd\\H{o}s and Moser \\cite{Er56} proved\\[ N\\geq (\\tfrac{1}{4}-o(1))\\frac{2^n}{\\sqrt{n}}.\\](In \\cite{Er85c} Erd\\H{o}s offered \\$100 for any improvement of the constant $1/4$ here.)  A number of improvements of the constant have been given (see \\cite{St23} for a history), with the current record $\\sqrt{2/\\pi}$ first proved in unpublished work of Elkies and Gleason. Two proofs achieving this constant are provided by Dubroff, Fox, and Xu \\cite{DFX21}, who in fact prove the exact bound $N\\geq \\binom{n}{\\lfloor n/2\\rfloor}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/100",
+      "direction": "lower",
+      "source_text": "The bounds on the distinct distance problem [89] proved by Guth and Katz \\cite{GuKa15} imply a lower bound of $\\gg n/\\log n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1002",
+      "direction": "upper",
+      "source_text": "Kesten \\cite{Ke60} proved that if\\[f(\\alpha,\\beta,n)=\\frac{1}{\\log n}\\sum_{1\\leq k\\leq n}(\\tfrac{1}{2}-\\{\\beta+\\alpha k\\})\\]then $f(\\alpha,\\beta,n)$ has asymptotic distribution function\\[g(c)=\\frac{1}{\\pi}\\int_{-\\infty}^{\\rho c}\\frac{1}{1+t^2}\\mathrm{d}t,\\]where $\\rho>0$ is an explicit constant.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1003",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er85e} says that, presumably, for every $k\\geq 1$ the equation\\[\\phi(n)=\\phi(n+1)=\\cdots=\\phi(n+k)\\]has infinitely many solutions. Erd\\H{o}s, Pomerance, and S\\'{a}rk\\\"{o}zy \\cite{EPS87} proved that the number of $n\\leq x$ with $\\phi(n)=\\phi(n+1)$ is at most\\[\\frac{x}{\\exp((\\log x)^{1/3})}.\\]See [946] for the analogous question with the divisor function.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1004",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s, Pomerenace, and S\\'{a}rk\\\"{o}zy \\cite{EPS87} proved that if $\\phi(n+k)$ are all distinct for $1\\leq k\\leq K$ then\\[K \\leq \\frac{n}{\\exp(c(\\log n)^{1/3})}\\]for some constant $c>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1005",
+      "direction": "upper",
+      "source_text": "van Doorn \\cite{vD25b} has proved that\\[\\left(\\frac{1}{12}-o(1)\\right)n\\leq f(n) \\leq \\frac{1}{4}n+O(1),\\]and conjectures that the upper bound is optimal.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1011",
+      "direction": "upper",
+      "source_text": "Simonovits \\cite{Si74} notes\\[\\frac{\\log r}{\\log\\log r}r^2 \\ll g(r) \\ll (\\log r)^2r^2.\\]Hunter in the comments has noted that other results imply $g(r)\\asymp r^2\\log r$ - in fact\\[(1/2-o(1))r^2\\log r\\leq g(r)\\leq (2+o(1))r^2\\log r.\\]The lower bound follows from work of Davies and Illingworth \\cite{DaIl22} (see [1104]). The upper bound follows from work of Hefty, Horn, King, and Pfender \\cite{HHKP25} on $R(3,k)$. Ren, Wang, Wang, and Yang \\cite{RWWY24} showed that, for $n\\geq 150$,\\[f_4(n)=\\left\\lfloor\\frac{(n-3)^2}{4}\\right\\rfloor+6.\\]  References  [DaIl22] Davies, Ewan and Illingworth, Freddie, The {$\\chi$}-{R}amsey problem for triangle-free graphs.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1013",
+      "direction": "upper",
+      "source_text": "It is known that\\[\\frac{\\log k}{\\log\\log k}k^2 \\ll h_3(k) \\ll (\\log k)k^2.\\]The lower bound is due to Graver and Yackel \\cite{GrYa68}, the upper bound follows from Shearer's upper bound for $R(3,k)$ (see [165]). The function $h_r(k)$ for $r\\geq 4$ is the subject of [920].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1016",
+      "direction": "upper",
+      "source_text": "A problem of Bondy \\cite{Bo71}, who claimed a proof (without details) of\\[\\log_2(n-1)-1\\leq h(n) \\leq \\log_2n+\\log_*n+O(1).\\]Erd\\H{o}s \\cite{Er71} believed the upper bound is closer to the truth, but could not even prove $h(n)-\\log_2n\\to \\infty$. A proof of the above lower bound is provided by Griffin \\cite{Gr13}. The first published proof of the upper bound appears to be in Chapter 4.5 of George, Khodkar, and Wallis \\cite{GKW16}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1017",
+      "direction": "upper",
+      "source_text": "Lov\\'{a}sz \\cite{Lo68} proved that every graph on $n$ vertices and $k$ edges is the union of $\\binom{n}{2}-k+t$ complete graphs, where $t$ is maximal such that $t^2-t\\leq \\binom{n}{2}-k$, but without the assumption that the complete graphs are edge disjoint.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/102",
+      "direction": "upper",
+      "source_text": "It is easy to see that $h_c(n) \\ll_c n^{1/2}$, and Erd\\H{o}s at one point \\cite{Er95} suggested that perhaps a similar lower bound $h_c(n)\\gg_c n^{1/2}$ holds.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1020",
+      "direction": "lower",
+      "source_text": "The conjectured form of $f(n;r,k)$ is the best possible, as witnessed by two examples: all $r$-edges on a set of $rk-1$ many vertices, and all edges on a set of $n$ vertices which contain at least one element of a fixed set of $k-1$ vertices. Note that the second term in the maximum dominates when $n\\geq (r+1)k$. For small $n$: {UL} {LI}The conjecture is trivially true if $n<kr$.{/LI} {LI}Kleitman \\cite{Kl68} when $n=kr$.{/LI} {LI}Frankl \\cite{Fr17} when\\[kr \\leq n\\leq k\\left(r+\\frac{1}{2r^{2r+1}}\\right).\\]{/LI} {LI}Kolupaev and Kupavskii \\cite{KoKu23} when $r\\geq 5$, $k>101r^3$, and\\[kr \\leq n < k\\left(r+\\frac{1}{100r}\\right).\\]{/LI} {/UL} For large $n$: {UL} {LI}Erd\\H{o}s \\cite{Er65d} when $n>kc_r$ (where $c_r$ depends on $r$ in some unspecified fashion).{/LI} {LI} Frankl and F\\\"{u}redi \\cite{Fr87} when $n>100 k^2r$.{/LI} {LI} Bollob\\'{a}s, Daykin, and Erd\\H{o}s \\cite{BDE76} when $n\\geq 2kr^3$.{/LI} {LI} Frankl, R\\\"{o}dl, and Ruci\\'{n}ski \\cite{FRR12} when $r=3$ and $n\\geq 4k$.{/LI} {LI} Huang, Loh, and Sudakov \\cite{HLS12} when $n\\geq 3kr^2$.{/LI} {LI} Frankl, Luczak, and Mieczkowska \\cite{FLM12} when $n> 2k\\frac{r^2}{\\log r}$.{/LI} {LI} Luczak and Mieczkowska \\cite{LuMi14} when",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1029",
+      "direction": "unknown",
+      "source_text": "[Sp75] Spencer, Joel, Ramsey's theorem---a new lower bound.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1032",
+      "direction": "unknown",
+      "source_text": "Toft conjectured that a $4$-chromatic critical graph on $n$ vertices has at least $(\\frac{5}{3}+o(1))n$ vertices, and has examples to show this would be the best possible.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1033",
+      "direction": "unknown",
+      "source_text": "The lower bound was improved to $\\frac{21}{16}n$ by Fan \\cite{Fa88}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1038",
+      "value": 3.0,
+      "direction": "lower",
+      "source_text": "A problem of Erd\\H{o}s, Herzog, and Piranian \\cite{EHP58}, who proved that the measure of the set in question is always at most $2\\sqrt{2}$ under the assumption that all the roots are in $\\{-1,1\\}$, and conjecture this is the best possible upper bound. They also note that the infimum of the set in question is less than $2$, as witnessed by $f(x)=(x+1)(x-1)^m$ for $m\\geq 3$. They further conjectured that, if the roots are restricted to $[-2,2]$, then\\[\\lvert \\{ x\\in \\mathbb{R} : \\lvert f(x)\\rvert < 1\\}\\rvert\\geq n^{-c}\\]for an absolute constant $c>0$. The current best known bounds (see the discussion in the comments) are\\[1.519\\approx 2^{4/3}-1\\leq \\inf \\leq 1.835\\cdots\\]and\\[\\sup = 2\\sqrt{2}\\approx 2.828.\\]  References  [EHP58] Erd\\H{o}s, P.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/104",
+      "direction": "unknown",
+      "source_text": "Erd\\H{o}s claims in a number of places this produces the upper bound $n(n-1)$, but Harborth and Mengerson \\cite{HaMe86} note that in fact this delivers an upper bound of $\\frac{n(n-1)}{3}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1045",
+      "value": 4.0,
+      "direction": "lower",
+      "source_text": "Cambie (also in the comments) showed that, in general, the vertices of a regular polygon are not a maximiser for all even $n\\geq 4$. Sothanaphan, An improved lower bound to Erdos' problem concerning products of distances for fixed diameter.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1049",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er48} proved that this is true if $t\\geq 2$ is an integer.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1053",
+      "value": 3.0,
+      "direction": "lower",
+      "source_text": "Guy further writes 'It has even been suggested that there may be only finitely many $k$-perfect numbers with $k\\geq 3$.' The largest $k$ for which a $k$-perfect number has been found is $k=11$ - see this page for more information.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1054",
+      "value": 6.0,
+      "direction": "lower",
+      "source_text": "The function $f(n)$ is undefined for $n=2$ and $n=5$, but is likely well-defined for all $n\\geq 6$ (which would follow from a strong form of Goldbach's conjecture).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1057",
+      "direction": "lower",
+      "source_text": "The best-known lower bound to date is\\[C(x)> x^{0.33336704},\\]due to Harman \\cite{Ha08}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1059",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s suggested it may be easier to show that there are infinitely many $n$ such that, if $l!<n\\leq (l+1)!$, then all the prime factors of $n$ are $>l$, and all the numbers $n-k!$ are composite for $1\\leq k\\leq l$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/106",
+      "direction": "lower",
+      "source_text": "Hal\\'{a}sz \\cite{Ha84} gives a construction that shows $f(k^2+2)\\geq k+\\frac{1}{k+1}$, and in general, for any $c\\geq 1$,\\[f(k^2+2c+1)\\geq k+\\frac{c}{k}\\]and\\[f(k^2+2c)\\geq k+\\frac{c}{k+1}.\\]Hal\\'{a}sz also considers the variants where we replace a square by a parallelogram or triangle. Erd\\H{o}s and Soifer \\cite{ErSo95} and Campbell and Staton \\cite{CaSt05} have conjectured that, in general, for any integer $-k<c<k$, $f(k^2+2c+1)=k+\\frac{c}{k}$, and proved the corresponding lower bound.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1063",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s and Selfridge noted (and a proof can be found in \\cite{Mo85}) that if $n\\geq 2k$ then there must exist at least one $0\\leq i<k$ such that $n-i$ does not divide $\\binom{n}{k}$. Monier \\cite{Mo85} observed that $n_k\\leq k!$ for $k\\geq 3$, since $\\binom{k!}{k}$ is divisible by $k!-i$ for $1\\leq i<k$. Cambie observes in the comments that this can be improved to\\[n_k\\leq k[2,3,\\ldots,k-1]\\leq e^{(1+o(1))k},\\]where $[\\cdots]$ is the least common multiple.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1066",
+      "direction": "upper",
+      "source_text": "This lower bound has been improved to $\\frac{9}{35}n$ by Csizmadia \\cite{Cs98} and then $\\frac{8}{31}n$ by Swanepoel \\cite{Sw02}. The current record bounds are therefore\\[\\frac{8}{31}n \\approx 0.258n \\leq g(n) \\leq 0.3125n=\\frac{5}{16}n.\\]Pollack \\cite{Po85} also reports a letter from Erd\\H{o}s which poses the more general problem of, given $n$ points in $\\mathbb{R}^d$ with minimum distance $1$, let $g_d(n)$ be maximal such that there always exist at least $g_d(n)$ many points which have minimum distance $>1$. Is it true that $g_d(n) \\gg n/d$ in general? The upper bound $g_d(n) \\ll n/d$ is trivial, considering widely spaced unit simplices.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/107",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Szekeres proved the bounds\\[2^{n-2}+1\\leq f(n)\\leq \\binom{2n-4}{n-2}+1.\\](\\cite{ErSz60} and \\cite{ErSz35} respectively). There were several improvements of the upper bound, but all of the form $4^{(1+o(1))n}$, until Suk \\cite{Su17} proved\\[f(n) \\leq 2^{(1+o(1))n}.\\]The current best bound is due to Holmsen, Mojarrad, Pach, and Tardos \\cite{HMPT20}, who prove\\[f(n) \\leq 2^{n+O(\\sqrt{n\\log n})}.\\]In \\cite{Er97e} Erd\\H{o}s clarifies that the \\$500 is for a proof, and only offers \\$100 for a disproof.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1070",
+      "direction": "lower",
+      "source_text": "If $\\omega$ is the independence number and $\\chi$ is the chromatic number then $\\omega \\chi\\geq n$, and hence $f(n)\\geq n/\\chi$, where $\\chi$ is the answer to the Hadwiger-Nelson problem [508]. Larman and Rogers \\cite{LaRo72} noted that if $m_1$ is the supremum of the upper densities of measurable subsets of $\\mathbb{R}^2$ which have no unit distance pairs then\\[f(n)\\geq m_1n.\\]Croft \\cite{Cr67} gave the best-known lower bound of $m_1\\geq 0.22936$ and hence\\[0.22936n \\leq f(n) \\leq \\frac{2}{7}n\\approx 0.285n.\\]Ambrus, Csisz\\'{a}rik, Matolcsi, Varga, and Zs\\'{a}mboki \\cite{ACMVZ23} have proved that $m_1\\leq 0.247$, and hence this approach cannot achieve $f(n)\\geq n/4$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1072",
+      "direction": "upper",
+      "source_text": "Questions formulated by Erd\\H{o}s, Hardy, and Subbarao \\cite{HaSu02}, who believed that the number of $p\\leq x$ for which $f(p)=p-1$ is $o(x/\\log x)$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1074",
+      "direction": "unknown",
+      "source_text": "The frequency with which the EHS numbers occur - most often in long sequences of consecutive integers - makes us believe that their asymptotic density exists and is unity.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1083",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er46b} proved\\[n^{1/d}\\ll_d f_d(n)\\ll_d n^{2/d},\\]the upper bound construction being given by a set of lattice points. {UL} {LI} Clarkson, Edelsbrunner, Gubias, Sharir, and Welzl \\cite{CEGSW90} proved $f_3(n)\\gg n^{1/2}$.{/LI} {LI}Aronov, Pach, Sharir, and Tardos \\cite{APST04} proved $f_d(n)\\gg n^{\\frac{1}{d-90/77}-o(1)}$ for any $d\\geq 3$ (for example, $f_3(n)\\gg n^{0.546}$).{/LI} {LI}Solymosi and Vu \\cite{SoVu08} proved $f_3(n) \\gg n^{3/5}$ and\\[ f_d(n)\\gg_d n^{\\frac{2}{d}-\\frac{c}{d^2}}\\]for all $d\\geq 4$ for some constant $c>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1084",
+      "value": 3.0,
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er46b} showed\\[f_2(n)<3n-cn^{1/2}\\]for some constant $c>0$, which the triangular lattice shows is the best possible up to the value of $c$. In \\cite{Er75f} he speculated that the triangular lattice is exactly the best possible, and in particular\\[f_2(3n^2+3n+1)=9n^2+6n.\\]In \\cite{Er75f} he claims the existence of $c_1,c_2>0$ such that\\[6n-c_1n^{2/3}< f_3(n) < 6n-c_2n^{2/3}.\\]See [223] for the analogous problem with maximal distance $1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1085",
+      "direction": "upper",
+      "source_text": "When $d=2$ this is the unit distance problem [90], and the best known bounds are\\[n^{1+\\frac{c}{\\log\\log n}}< f_2(n) \\ll n^{4/3}\\]for some constant $c>0$, the lower bound by Erd\\H{o}s \\cite{Er46b} and the upper bound by Spencer, Szemer\\'{e}di, and Trotter \\cite{SST84}. When $d=3$ the best known bounds are\\[n^{4/3}\\log\\log n \\ll f_3(n) \\ll n^{3/2}\\beta(n)\\]where $\\beta(n)$ is a very slowly growing function, the lower bound by Erd\\H{o}s \\cite{Er60b} and the upper bound by Clarkson, Edelsbrunner, Guibas, Sharir, and Welzl \\cite{CEGSW90}. A construction of Lenz (taking points on orthogonal circles) shows that, for $d\\geq 4$,\\[f_d(n)\\geq \\frac{p-1}{2p}n^2-O(1)\\]with $p=\\lfloor d/2\\rfloor$. Erd\\H{o}s \\cite{Er60b} showed that the Erd\\H{o}s-Stone theorem implies\\[f_d(n) \\leq \\left(\\frac{p-1}{2p}+o(1)\\right)n^2\\]for $d\\geq 4$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1086",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Purdy \\cite{ErPu71} proved\\[n^2\\log\\log n \\ll g(n) \\ll n^{5/2},\\]and believed the lower bound to be closer to the truth. The upper bound has been improved a number of times - by Pach and Sharir \\cite{PaSh92}, Dumitrescu, Sharir, and T\\'{o}th \\cite{DST09}, Apfelbaum and Sharir \\cite{ApSh10}, and Apfaulbaum \\cite{Ap13}. The best known bound is\\[g(n) \\ll n^{20/9}\\]by Raz and Sharir \\cite{RaSh17}. An observation of Oppenheim (using a construction of Lenz) detailed in \\cite{ErPu71} shows that\\[g_{2k+2}^k(n)\\geq \\left(\\frac{1}{(k+1)^{k+1}}+o(1)\\right)n^{k+1}\\]and Erd\\H{o}s and Purdy conjecture this is the best possible.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1092",
+      "direction": "lower",
+      "source_text": "Tang notes in the comments that a construction of R\\\"{o}dl \\cite{Ro82} disproves the first question, so that $f_2(n)\\not\\gg n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1093",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "In \\cite{ELS93} they prove that if the deficiency exists and is $\\geq 1$ then $n\\ll 2^k\\sqrt{k}$. The following have deficiency $1$ (there are $58$ examples with $n\\leq 10^5$):\\[\\binom{7}{3},\\binom{13}{4},\\binom{14}{4},\\binom{23}{5},\\binom{62}{6},\\binom{94}{10},\\binom{95}{10}.\\]The examples which follow are the only known examples with deficiency $>1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1094",
+      "direction": "lower",
+      "source_text": "Selfridge \\cite{Se77} further conjectured that this always happens if $n\\geq k^2-1$, except $\\binom{62}{6}$. More precisely, in \\cite{ELS88} they conjecture that if $n\\geq 2k$ then the least prime factor of $\\binom{n}{k}$ is $\\leq \\max(n/k,k)$ with the following $14$ exceptions:\\[\\binom{7}{3},\\binom{13}{4},\\binom{23}{5},\\binom{14}{4},\\binom{44}{8},\\binom{46}{10},\\binom{47}{10},\\]\\[\\binom{47}{11},\\binom{62}{6},\\binom{74}{10},\\binom{94}{10},\\binom{95}{10},\\binom{241}{16},\\binom{284}{28}.\\]They also suggest the stronger conjecture that, with a finite number of exceptions, the least prime factor is $\\leq \\max(n/k,\\sqrt{k})$, or perhaps even $\\leq \\max(n/k,O(\\log k))$. Discussed in problem B31 and B33 of Guy's collection \\cite{Gu04} - there Guy credits Selfridge with the conjecture that if $n> 17.125k$ then $\\binom{n}{k}$ has a prime factor $p\\leq n/k$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1095",
+      "direction": "lower",
+      "source_text": "In \\cite{EES74} they further conjecture that\\[\\limsup \\frac{g(k+1)}{g(k)}=\\infty\\]and\\[\\liminf \\frac{g(k+1)}{g(k)}=0.\\]The lower bound was improved by Erd\\H{o}s, Lacampagne, and Selfridge \\cite{ELS93} and Granville and Ramar\\'{e} \\cite{GrRa96}. The current record is\\[g(k) \\gg \\exp(c(\\log k)^2)\\]for some $c>0$, due to Konyagin \\cite{Ko99b}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1096",
+      "direction": "upper",
+      "source_text": "In \\cite{EJK90} Erd\\H{o}, Jo\\'{o}, and Komornik prove that any Pisot-Vijayaraghavan number cannot have this property, and also prove that, for any $1<q\\leq 2$,  $x_{k+1}-x_k\\leq 1$ for all $k$. Bugeaud \\cite{Bu96} proved that $1<q\\leq 2$ is a Pisot-Vijayaraghavan number if and only if\\[\\liminf (x_{k+1}^m-x_k^m)>0\\]for all $m\\geq 1$, where $x_k^m$ is the set of those numbers which can be written as a finite sum $\\sum_{n\\geq 0}c_nq^n$ for some $c_n\\in \\{0,\\ldots,m\\}$ (so that the sequence in the question is $x_k^1$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1097",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "He states that Erd\\H{o}s and Ruzsa gave an explicit construction which achieved $n^{1+c}$ for some $c>0$, and Erd\\H{o}s and Spencer gave a probabilistic proof which achieved $n^{3/2}$, and speculated this may be the best possible. The current best bounds known are thus\\[1.77898\\cdots \\leq c \\leq 11/6 \\approx 1.833.\\]The upper bound is due to Katz and Tao \\cite{KaTa99}. The lower bound is due to Lemm \\cite{Le15} (with a very small improvement found by AlphaEvolve \\cite{GGTW25}).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1103",
+      "direction": "upper",
+      "source_text": "In \\cite{Er81h} he asked whether there is an infinite sequence of integers $A$ such that, for every $a\\in A$ and prime $p$, if\\[a\\equiv t\\pmod{p^2}\\]then $1\\leq t<p^2/2$. A superior lower bound of $a_j \\gg j^{15/11-o(1)}$ had earlier been found by Konyagin \\cite{Ko04} when considering the finite case [1109].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1104",
+      "direction": "upper",
+      "source_text": "The best bounds available are\\[(1-o(1))(n/\\log n)^{1/2}\\leq f(n) \\leq (2+o(1))(n/\\log n)^{1/2}.\\]The upper bound is due to Davies and Illingworth \\cite{DaIl22}, the lower bound follows from a construction of Hefty, Horn, King, and Pfender \\cite{HHKP25}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1105",
+      "direction": "lower",
+      "source_text": "In this paper they announced proofs of the claimed formula for $\\mathrm{AR}(n,P_k)$ for $n\\geq \\frac{5}{4}k+C$ for some large constant $C$, and also for all $n\\geq k$ if $k$ is sufficiently large, but these never appeared. Simonovits and S\\'{o}s \\cite{SiSo84} published a proof that the claimed formula for $\\mathrm{AR}(n,P_k)$ is true for $n\\geq ck^2$ for some constant $c>0$. A proof of the formula for $\\mathrm{AR}(n,P_k)$ for all $n\\geq k\\geq 5$ has been announced by Yuan \\cite{Yu21}  References  [ESS75] Erd\\H{o}s, P.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1106",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Schinzel noted in the Oberwolfach problem book that $F(n)\\to \\infty$ follows from the asymptotic formula for $p(n)$ and a result of Tijdeman \\cite{Ti73}. Ono \\cite{On00} has proved that every prime divides $p(n)$ for some $n\\geq 1$ (indeed this holds, for any fixed prime, for a positive density set of $n$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1108",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "This was motivated in part by a problem of Mahler which he discussed with Erd\\H{o}s a few days before his death in 1988: if $k\\geq 5$ and\\[A_k= \\left\\{ \\sum_{n\\in S}k^n : S\\subset \\mathbb{N}\\textrm{ finite}\\right\\}\\]then does $A_k$ contain only finitely many squares? Mahler showed that there are infinitely many squares in $A_k$ for $k\\leq 4$, and found only one square for $k\\geq 5$, namely\\[1+7+7^2+7^3=400.\\]Brindza and Erd\\H{o}s \\cite{BrEr91} proved that, for any $r$, if $n_1!+\\cdots+n_r!$ is powerful then $n_1\\ll_r 1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1109",
+      "direction": "upper",
+      "source_text": "First studied by Erd\\H{o}s and S\\'{a}rk\\\"{o}zy \\cite{ErSa87}, who proved\\[\\log N \\ll f(N) \\ll N^{3/4}\\log N,\\]and guessed the lower bound is nearer the truth. Konyagin \\cite{Ko04} improved this to\\[ \\log\\log N(\\log N)^2\\ll f(N) \\ll N^{11/15+o(1)}.\\]The infinite analogue of this problem is [1103].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/111",
+      "direction": "upper",
+      "source_text": "In \\cite{Er81} Erd\\H{o}s conjectured that this can be improved to $\\ll n^{1+\\epsilon}$ for every $\\epsilon>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1110",
+      "direction": "upper",
+      "source_text": "Yu and Chen \\cite{YuCh22} proved\\[\\frac{n}{(\\log n)^{\\log_23}}\\ll f(n) \\ll \\frac{n}{\\log n}.\\]Yang and Zhao \\cite{YaZh25} improved the lower bound to $f(n)\\gg n/\\log n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1111",
+      "direction": "upper",
+      "source_text": "A problem of El Zahar and Erd\\H{o}s \\cite{ElEr85}, who show that it suffices to consider the case $t\\leq c$. Nguyen, Scott, and Seymour \\cite{NSS24} prove that if $t,c\\geq 1$ then there exists $d\\geq 1$ such that if $\\chi(G)\\geq d$ and $\\omega(G)<t$ then there are anticomplete sets $A,B$ with $\\chi(B)\\geq c$ and such that the minimum degree of the induced graph on $A$ is at least $c$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1112",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Graham \\cite{ErGr80} noted that if $B=\\{b_1<b_2<\\cdots\\}$ with $b_1\\geq 5$ and $b_{i+1}\\geq 2b_i$ then there is a set $A=\\{a_1<a_2<\\cdots\\}$ with $2\\leq a_{k+1}-a_k\\leq 3$ for all $k$ such that $(A+A)\\cap B=\\emptyset$. Bollob\\'{a}s, Hegyv\\'{a}ri, and Jin \\cite{BHJ97} provide a negative answer in that, for any sequence of integers $1\\leq r_1<r_2<\\cdots$, there is a $B$ as above with $b_{i+1}\\geq r_ib_i$ such that $(A+A+A)\\cap B\\neq\\emptyset$ for any $A$ with $2\\leq a_{i+1}-a_i\\leq 3$. They define, more generally, $r_k(d_1,d_2)$ as the smallest $r$ (if it exists) such that if $b_{i+1}\\geq rb_i$ then there exists $A$ with $d_1\\leq a_{i+1}-a_i\\leq d_2$ such that $(kA)\\cap B=\\emptyset$, where $kA$ is the $k$-fold sumset. The more general question of existence of $r_k(a,b)$ for $k\\geq 3$ remains open.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1113",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s and Graham \\cite{ErGr80} asked whether there are Sierpinski numbers for which a covering system is not 'responsible', for which the best interpretation seems to be the above question. They also prove that for every $l\\geq 1$ there is an $m$ such that $2^km^i+1$ is composite for all $1\\leq i\\leq l$ and $k\\geq 0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/112",
+      "direction": "upper",
+      "source_text": "Zach Hunter has observed that\\[R(n,m) \\leq k(n,m)\\leq R(n,m,m),\\]which in particular proves the upper bound $k(n,m)\\leq 3^{n+2m}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1120",
+      "direction": "unknown",
+      "source_text": "The trivial lower bound for the length of this path is $1$, which is achieved for $f(z)=z^n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1129",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er61c} improved this to\\[\\Lambda(x_1,\\ldots,x_n)> \\frac{2}{\\pi}\\log n-O(1).\\]This is best possible, since taking the $x_i$ as the roots of the $n$th Chebyshev polynomial yields\\[\\Lambda(x_1,\\ldots,x_n)< \\frac{2}{\\pi}\\log n+O(1).\\]Erd\\H{o}s thought that the minimising choice is characterised by the property that the sums\\[\\max_{x\\in [x_i,x_{i+1}]}\\sum_k \\lvert l_k(x)\\rvert\\]are all equal for $0\\leq i\\leq n$ (where $x_0=-1$ and $x_{n+1}=1$). (Such a choice is called canonical.)  The minimising canonical choice is known only for $n\\leq 4$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1130",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er47} could prove\\[\\Upsilon(x_1,\\ldots,x_n)< \\sqrt{n}.\\]Erd\\H{o}s thought that the maximising choice is characterised by the property that the sums\\[\\max_{x\\in [x_i,x_{i+1}]}\\sum_k \\lvert l_k(x)\\rvert\\]are all equal for $0\\leq i\\leq n$ (where $x_0=-1$ and $x_{n+1}=1$), which would be the same (conjectured) characterisation as [1129].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1131",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s, Szabados, Varma, and V\\'{e}rtesi \\cite{ESVV94} proved that\\[2-O\\left(\\frac{(\\log n)^2}{n}\\right)\\leq \\min I\\leq 2-\\frac{2}{2n-1}\\]where the upper bound is witnessed by the roots of the integral of the Legendre polynomial as above.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1132",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er61c} proved that, for any fixed $x_1,\\ldots,x_n\\in [-1,1]$,\\[\\max_{x\\in [-1,1]}\\sum_{1\\leq k\\leq n}\\lvert l_k(x)\\rvert>\\frac{2}{\\pi}\\log n-O(1).\\]See also [1129] for more on $L_n(x)$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/1133",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s proved that, for any $C>0$, there exists $\\epsilon>0$ such that if $n$ is sufficiently large and $m=\\lfloor (1+\\epsilon)n\\rfloor$ then for any $x_1,\\ldots,x_m\\in [-1,1]$ there is a polynomial $P$ of degree $n$ such that $\\lvert P(x_i)\\rvert\\leq 1$ for $1\\leq i\\leq m$ and\\[\\max_{x\\in [-1,1]}\\lvert P(x)\\rvert>C.\\]The conjectured statement would also imply this, but Erd\\H{o}s in \\cite{Er67} says he could not even prove it for $m=n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/114",
+      "value": 1.0,
+      "direction": "upper",
+      "source_text": "{/UL}  Erd\\H{o}s, Herzog, and Piranian \\cite{EHP58} also ask whether the length is at least $2\\pi$ if $\\{ z: \\lvert f(z)\\rvert<1\\}$ is connected (which $z^n$ shows is the best possible).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/117",
+      "direction": "unknown",
+      "source_text": "Erd\\H{o}s \\cite{Er97f} writes that the lower bound was already known to Isaacs.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/119",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "The second question was answered by Beck \\cite{Be91}, who proved that there exists some $c>0$ such that\\[\\max_{n\\leq N} M_n > N^c.\\]Erd\\H{o}s (e.g. see \\cite{Ha74}) gave a construction of a sequence with $M_n\\leq n+1$ for all $n$. Linden \\cite{Li77} improved this to give a sequence with $M_n\\ll n^{1-c}$ for some $c>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/12",
+      "direction": "lower",
+      "source_text": "Elsholtz and Planitzer \\cite{ElPl17} have constructed such an $A$ with\\[\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert\\gg \\frac{N^{1/2}}{(\\log N)^{1/2}(\\log\\log N)^2(\\log\\log\\log N)^2}.\\]Schoen \\cite{Sc01} proved that if all elements in $A$ are pairwise coprime then\\[\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert \\ll N^{2/3}\\]for infinitely many $N$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/123",
+      "value": 6.0,
+      "direction": "lower",
+      "source_text": "As a partial record of progress so far, the sequence $\\{a^kb^lc^m\\}$ is known to be $d$-complete when: {UL} {LI}$a=3$, $b=5$, $c=7$ (Erd\\H{o}s and Lewin \\cite{ErLe96}).{/LI} {LI}$a=2$, $b=5$, $c\\in \\{7,11,13,17,19\\}$ (Erd\\H{o}s and Lewin \\cite{ErLe96}).{/LI} {LI}$a=2$, $b=5$, $c\\in \\{9,21,23,27,29,31\\}$ - more generally, $a=2$, $b=5$, and any $c>6$ with $(c,10)=1$ such that there exists $N$ where every integer in $(N,25cN)$ is the sum of distinct elements of $\\{2^k3^lc^m\\}$, none of which divide any other (Ma and Chen \\cite{MaCh16}).{/LI} {LI} $a=2$, $b=5$, $3\\leq c\\leq 87$ with $(c,10)=1$, or $a=2$, $b=7$, $3\\leq c\\leq 33$ with $(c,14)=1$, or $a=3$, $b=5$, $2\\leq c\\leq 14$ with $(c,15)=1$ (Chen and Yu \\cite{ChYu23b}).{/LI} {/UL} In \\cite{Er92b} Erd\\H{o}s makes the stronger conjecture (for $a=2$, $b=3$, and $c=5$) that, for any $\\epsilon>0$, all large integers $n$ can be written as the sum of distinct integers $b_1<\\cdots <b_t$ of the form $2^k3^l5^m$ where $b_t<(1+\\epsilon)b_1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/124",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "In \\cite{BEGL96} they record that Pomerance observed that the condition $\\sum 1/(d_i-1)\\geq 1$ is necessary (for both questions), but give no details.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/126",
+      "direction": "upper",
+      "source_text": "Investigated by Erd\\H{o}s and Tur\\'{a}n \\cite{ErTu34} (prompted by a question of L\\'{a}z\\'{a}r and Gr\\\"{u}nwald) in their first joint paper, where they proved that\\[\\log n \\ll f(n) \\ll n/\\log n\\](the upper bound is trivial, taking $A=\\{1,\\ldots,n\\}$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/129",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s thought it likely that for all $r,k\\geq 2$ there exists some $C_1,C_2>1$ (depending only on $r$) such that\\[ C_1^{n^{1/k-1}}< R(n;k,r) < C_2^{n^{1/k-1}}.\\]Antonio Girao has pointed out that this problem as written is easily disproved, and indeed $R(n;3,2) \\geq C^{n}$:  The obvious probabilistic construction (randomly colour the edges red/blue independently uniformly at random) yields a 2-colouring of the edges of $K_N$ such every set on $n$ vertices contains a red triangle and a blue triangle (using that every set of $n$ vertices contains $\\gg n^2$ edge-disjoint triangles), provided $N \\leq C^n$ for some absolute constant $C>1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/132",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er84c} believed that for $n\\geq 5$ there must always exist at least two such distances.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/138",
+      "value": 2.0,
+      "direction": "upper",
+      "source_text": "Gowers \\cite{Go01} has proved\\[W(k) \\leq 2^{2^{2^{2^{2^{k+9}}}}}.\\]The best general lower bound is $W(k)\\gg 2^k$, due to Kozik and Shabanov \\cite{KoSh16}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/141",
+      "value": 10.0,
+      "direction": "upper",
+      "source_text": "The existence of such progressions for small $k$ has been verified for $k\\leq 10$, see the Wikipedia page.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/142",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "The best known upper bounds for $r_k(N)$ are due to Kelley and Meka \\cite{KeMe23} for $k=3$, Green and Tao \\cite{GrTa17} for $k=4$, and Leng, Sah, and Sawhney \\cite{LSS24} for $k\\geq 5$. An asymptotic formula is still far out of reach, even for $k=3$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/143",
+      "direction": "upper",
+      "source_text": "Note that if $A$ is a set of integers then the condition implies that $A$ is a primitive set (that is, no element of $A$ is divisible by any other), for which the convergence of $\\sum_{n\\in A}\\frac{1}{n\\log n}$ was proved by Erd\\H{o}s \\cite{Er35}, and the upper bound\\[\\sum_{n<x}\\frac{1}{n}\\ll \\frac{\\log x}{\\sqrt{\\log\\log x}}\\]was proved by Behrend \\cite{Be35}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/145",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er51} proved this for all $0\\leq \\alpha \\leq 2$, and Hooley \\cite{Ho73} extended this to all $\\alpha \\leq 3$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/148",
+      "direction": "unknown",
+      "source_text": "The lower bound is due to Konyagin \\cite{Ko14} and the upper bound to Elsholtz and Planitzer \\cite{ElPl21}. V., Double exponential lower bound for the number of representations of unity by Egyptian fractions.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/149",
+      "direction": "upper",
+      "source_text": "This bound would be the best possible, as witnessed by a blowup of $C_5$. The best bound currently available is\\[1.772\\Delta^2,\\]proved by Hurley, de Joannis de Verclos, and Kang \\cite{HJK22}. Mahdian has, in their Masters' thesis, proved an upper bound of $(2+o(1))\\frac{\\Delta^2}{\\log \\Delta}$ under the additional assumption that $G$ is $C_4$-free. Faron and Postle \\cite{FaPo19} proved $\\omega\\leq \\frac{4}{3}\\Delta^2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/15",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Sawhney has provided the following proof that this series converges absolutely for $c>2$: note that, whenever $c>1$, the contribution to the sum from gaps $p_{n+1}-p_n\\geq \\log n$ is convergent, so it suffices to consider only small gaps. The number of $n\\leq X$ such that $p_{n+1}-p_n\\in [\\epsilon\\log n,2\\epsilon \\log n)$ is bounded above by $\\ll \\epsilon X$ (this can be proved via the Selberg sieve).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/159",
+      "direction": "upper",
+      "source_text": "The current bounds are\\[ \\frac{n^{3/2}}{(\\log n)^{3/2}}\\ll R(C_4,K_n)\\ll \\frac{n^2}{(\\log n)^2}.\\]The upper bound is due to Szemer\\'{e}di (mentioned in \\cite{EFRS78}), and the lower bound is due to Spencer \\cite{Sp77}. [Sp77] Spencer, J., Asymptotic lower bounds for Ramsey functions.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/161",
+      "direction": "lower",
+      "source_text": "A conjecture of Erd\\H{o}s, Hajnal, and Rado (see [562]) implies that\\[ F^{(t)}(n,0)\\asymp \\log_{t-1} n\\]and results of Erd\\H{o}s and Spencer imply that\\[F^{(t)}(n,\\alpha) \\gg_\\alpha (\\log n)^{\\frac{1}{t-1}}\\]for all $\\alpha>0$, and a similar upper bound holds for $\\alpha$ close to $1/2$. Conlon, Fox, and Sudakov \\cite{CFS11} have proved that, for any fixed $\\alpha>0$,\\[F^{(3)}(n,\\alpha) \\ll_\\alpha \\sqrt{\\log n}.\\]Coupled with the lower bound above, this implies that there is only one jump for fixed $\\alpha$ when $t=3$, at $\\alpha=0$. For all $\\alpha>0$ it is known that\\[F^{(t)}(n,\\alpha)\\gg_t (\\log n)^{c_\\alpha}.\\]See also [563].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/165",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "It is known that there exists some constant $c>0$ such that for large $k$\\[(c+o(1))\\frac{k^2}{\\log k}\\leq R(3,k) \\leq (1+o(1))\\frac{k^2}{\\log k}.\\]The lower bound is due to Kim \\cite{Ki95}, the upper bound is due to Shearer \\cite{Sh83}, improving an earlier bound of Ajtai, Koml\\'{o}s, and Szemer\\'{e}di \\cite{AKS80}. The value of $c$ in the lower bound has seen a number of improvements. Kim's original proof gave $c\\geq 1/162$. The bound $c\\geq 1/4$ was proved independently by Bohman and Keevash \\cite{BoKe21} and Pontiveros, Griffiths and Morris \\cite{PGM20}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/167",
+      "value": 3.0,
+      "direction": "upper",
+      "source_text": "The trivial bound of $\\leq 3k$ was improved to $\\leq (3-\\frac{3}{23}+o(1))k$ by Haxell \\cite{Ha99}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/169",
+      "value": 3.00849,
+      "direction": "lower",
+      "source_text": "The current record for $f(3)$ is $f(3)\\geq 3.00849$, due to Wr\\'{o}blewski \\cite{Wr84}. Walker \\cite{Wa25} has shown that it suffices to consider Kempner sets (that is, sets of integers defined as all those whose base $b$ digits are contained in some $S\\subset \\{0,\\ldots,b-1\\}$ for fixed $b$ and $S$), in the sense that for any $k\\geq 3$ and $\\epsilon>0$ there is a Kempner set $A$ lacking $k$-term arithmetic progressions such that\\[\\sum_{n\\in A}\\frac{1}{n}\\geq f(k)-\\epsilon.\\]  References  [Be68] Berlekamp, E.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/170",
+      "direction": "unknown",
+      "source_text": "The lower bound is due to Leech \\cite{Le56}, the upper bound is due to Wichmann \\cite{Wi63}. Computational evidence by Pegg \\cite{Pe20} suggests that the upper bound is the truth.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/177",
+      "direction": "lower",
+      "source_text": "Roth's famous discrepancy lower bound \\cite{Ro64} implies that $h(d)\\gg d^{1/2}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/180",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "This is trivially true if $\\mathcal{F}$ does not contain any bipartite graphs, since by the Erd\\H{o}s-Stone theorem if $H\\in\\mathcal{F}$ has minimal chromatic number $r\\geq 2$ then\\[\\mathrm{ex}(n;H)=\\mathrm{ex}(n;\\mathcal{F})=\\left(\\frac{r-2}{r-1}+o(1)\\right)\\binom{n}{2}.\\]Erd\\H{o}s and Simonovits observe that this is false for infinite families $\\mathcal{F}$, e.g. Hunter has provided the following 'folklore counterexample': if $\\mathcal{F}=\\{H_1,H_2\\}$ where $H_1$ is a star and $H_2$ is a matching, both with at least two edges, then $\\mathrm{ex}(n;\\mathcal{F})\\ll 1$, but $\\mathrm{ex}(n;H_i)\\asymp n$ for $1\\leq i\\leq 2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/181",
+      "direction": "upper",
+      "source_text": "The trivial bound is\\[R(Q_n) \\leq R(K_{2^n})\\leq C^{2^n}\\]for some constant $C>1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/183",
+      "value": 380.0,
+      "direction": "lower",
+      "source_text": "The best-known upper bounds are all of the form $ck!+O(1)$, and arise from this type of inductive relationship and computational bounds for $R(3;k)$ for small $k$. The best-known lower bound (coming from lower bounds for Schur numbers) is\\[R(3,k)\\geq (380)^{k/5}-O(1),\\]due to Ageron, Casteras, Pellerin, Portella, Rimmel, and Tomasik \\cite{ACPPRT21} (improving previous bounds of Exoo \\cite{Ex94} and Fredricksen and Sweet \\cite{FrSw00}). [Ex94] Exoo, G., A lower bound for Schur numbers and multicolor Ramsey numbers.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/184",
+      "direction": "unknown",
+      "source_text": "The best bound available is due to Buci\\'{c} and Montgomery \\cite{BM22}, who prove that $O(n\\log^*n)$ many cycles and edges suffice, where $\\log^*$ is the iterated logarithm function.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/188",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s, Graham, Montgomery, Rothschild, Spencer, and Straus \\cite{EGMRSS75} proved $k\\geq 5$. Tsaturian \\cite{Ts17} improved this to $k\\geq 6$. Erd\\H{o}s and Graham claim that $k\\leq 10000000$ ('more or less'), but give no proof.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/195",
+      "value": 5.0,
+      "direction": "upper",
+      "source_text": "Geneson \\cite{Ge19} proved that $k\\leq 5$. Adenwalla \\cite{Ad22} proved that $k\\leq 4$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/20",
+      "direction": "upper",
+      "source_text": "Kostochka \\cite{Ko97} improved this slightly (in particular establishing an upper bound of $o(n!)$, for which Erd\\H{o}s awarded him the consolation prize of \\$100), but the bound stood at $n^{(1+o(1))n}$ for a long time until Alweiss, Lovett, Wu, and Zhang \\cite{ALWZ20} proved\\[f(n,k) < (Ck\\log n\\log\\log n)^n\\]for some constant $C>1$. This was refined slightly, independently by Rao \\cite{Ra20}, Frankston, Kahn, Narayanan, and Park \\cite{FKNP19}, and Bell, Chueluecha, and Warnke \\cite{BCW21}, leading to the current record of\\[f(n,k) < (Ck\\log n)^n\\]for some constant $C>1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/202",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s believed the lower bound is closer to the truth. These bounds were further improved by Chen \\cite{Ch05} and then by de la Bret\\'{e}che, Ford, and Vandehey \\cite{BFV13} to\\[\\frac{N}{L(N)^{1+o(1)}}<f(N) < \\frac{N}{L(N)^{\\sqrt{3}/2+o(1)}}.\\]The latter authors conjecture that the lower bound here is the truth.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/208",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er51} showed that there are infinitely many $n$ such that\\[s_{n+1}-s_n > (1+o(1))\\frac{\\pi^2}{6}\\frac{\\log s_n}{\\log\\log s_n},\\]so this bound would be the best possible. Filaseta and Trifonov \\cite{FiTr92} proved an upper bound of $s_n^{1/5+o(1)}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/213",
+      "direction": "unknown",
+      "source_text": "The best construction to date, due to Kreisel and Kurz \\cite{KK08}, has $n=7$. Ascher, Braune, and Turchet \\cite{ABT20} have shown that there is a uniform upper bound on the size of such a set, conditional on the Bombieri-Lang conjecture.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/217",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s originally believed this was impossible for $n\\geq 5$, but Pomerance constructed a set with $n=5$ (see \\cite{Er83c} for a description), and Pal\\'{a}sti has proved such sets exist for all $n\\leq 8$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/222",
+      "direction": "upper",
+      "source_text": "The best known upper bound is due to Bambah and Chowla \\cite{BaCh47}, who proved that\\[n_{k+1}-n_k \\ll n_k^{1/4}.\\]The differences are listed at A256435 on the OEIS.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/23",
+      "direction": "unknown",
+      "source_text": "The blow-up of $C_5$ shows that this would be the best possible. The best known bound is due to Balogh, Clemen, and Lidicky \\cite{BCL21}, who proved that deleting at most $1.064n^2$ edges suffices.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/233",
+      "direction": "upper",
+      "source_text": "Cramer \\cite{Cr36} proved an upper bound of $O(N(\\log N)^4)$ conditional on the Riemann hypothesis. Selberg \\cite{Se43} improved this slightly (still assuming the Riemann hypothesis) to\\[\\sum_{1\\leq n\\leq N}\\frac{d_n^2}{n}\\ll (\\log N)^4.\\]The prime number theorem immediately implies a lower bound of\\[\\sum_{1\\leq n\\leq N}d_n^2\\gg N(\\log N)^2.\\]The values of the sum are listed at A074741 on the OEIS.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/236",
+      "value": 2.0,
+      "direction": "upper",
+      "source_text": "Mientka and Weitzenkamp \\cite{MiWe69} have proved there are no other such $n\\leq 2^{44}$. Vaughan \\cite{Va73} has proved that the number of $n\\leq N$ such that $n-2^k$ is prime for all $2^k<n$ is\\[< \\exp\\left(-c\\frac{\\log \\log \\log N}{\\log\\log N}\\log N\\right)N\\]for some constant $c>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/241",
+      "direction": "upper",
+      "source_text": "Bose and Chowla \\cite{BoCh62} provided a construction proving one half of this, namely\\[(1+o(1))N^{1/3}\\leq f(N).\\]The best upper bound known to date is due to Green \\cite{Gr01},\\[f(N) \\leq ((7/2)^{1/3}+o(1))N^{1/3}\\](note that $(7/2)^{1/3}\\approx 1.519$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/242",
+      "direction": "upper",
+      "source_text": "Schinzel conjectured the generalisation that, for any fixed $a$, if $n$ is sufficiently large in terms of $a$ then there exist distinct integers $1\\leq x<y<z$ such that\\[\\frac{a}{n} = \\frac{1}{x}+\\frac{1}{y}+\\frac{1}{z}.\\]This problem has been formalised in Lean as part of the Google DeepMind Formal Conjectures project.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/247",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er75c} proved the answer is yes under the stronger condition that $\\limsup n_k/k^t=\\infty$ for all $t\\geq 1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/251",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er58b} proved that $\\sum \\frac{p_n^k}{n!}$ is irrational for every $k\\geq 1$. In \\cite{Er88c} he further conjectures that $\\sum \\frac{p_n^k}{2^n}$ is irrational for every $k$, and that if $g_n\\geq 2$ and $g_n=o(p_n)$ then\\[\\sum_{n=1}^\\infty \\frac{p_n}{g_1\\cdots g_n}\\]is irrational.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/252",
+      "direction": "upper",
+      "source_text": "This is known now for $1\\leq k\\leq 4$. It is known that this sum is irrational for all $k\\geq 1$ conditional on either Schinzel's conjecture (Schlage-Puchta \\cite{ScPu06}) or the prime tuples conjecture (Friedlander, Luca, and Stoiciu \\cite{FLC07}).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/256",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s proved an upper bound of $\\log f(n) \\ll n^{1-c}$ for some constant $c>0$ with probabilistic methods.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/257",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "There is nothing special about $2$ here, and this sum is likely irrational with $2$ replaced by any integer $t\\geq 2$. This was disproved by Kova\\v{c} and Tao \\cite{KoTa24}, and in the comments Kova\\v{c} has sketched a proof that there exists some choice of $t_n$ with $1\\leq t_n\\leq 6$ such that this sum is rational.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/258",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er48} proved that $\\sum_n \\frac{d(n)}{t^n}$ is irrational for any integer $t\\geq 2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/261",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s does not record what this was, but a later paper by Borwein and Loring \\cite{BoLo90} provides the following proof: for every positive integer $m$ and $n=2^{m+1}-m-2$ we have\\[\\frac{n}{2^n}=\\sum_{n<k\\leq n+m}\\frac{k}{2^k}.\\]Tengely, Ulas, and Zygadlo \\cite{TUZ20} have verified that all $n\\leq 10000$ have the required property.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/265",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "If we replace $-1$ by a different constant then higher degree polynomials can be used - for example if we consider $\\sum_{n\\geq 2}\\frac{1}{a_n}$ and $\\sum_{n\\geq 2}\\frac{1}{a_n-12}$ then $a_n=n^3+6n^2+5n$ is an example of both series being rational.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/271",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Odlyzko and Stanley \\cite{OdSt78} have found similar characterisations are known for $A(3^k)$ and $A(2\\cdot 3^k)$ for any $k\\geq 0$ and conjectured in general that such a sequence always eventually either satisfies\\[a_k\\asymp k^{\\log_23}\\]or\\[a_k \\asymp \\frac{k^2}{\\log k}.\\]There is no known sequence which satisfies the second growth rate, but Lindhurst \\cite{Li90} gives data which suggests that $A(4)$ has such growth ($A(4)$ is given as A005487 in the OEIS). Moy \\cite{Mo11} has proved that, for all such sequences, for all $\\epsilon>0$, $a_k\\leq (\\frac{1}{2}+\\epsilon)k^2$ for all sufficiently large $k$. van Doorn and Sothanaphan have noted in the comment section that Moy's proof can be upgraded to give a fully explicit result of\\[a_k\\leq \\frac{(k-1)(k+2)}{2}+n\\]for all $k\\geq 0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/272",
+      "direction": "upper",
+      "source_text": "Simonovits and S\\'{o}s \\cite{SiSo81} have shown that $t\\ll N^2$. If we drop the non-empty requirement then Graham, Simonovits, and S\\'{o}s \\cite{GSS80} have shown that\\[t\\leq \\binom{N}{3}+\\binom{N}{2}+\\binom{N}{1}+1\\]and this is best possible. Szabo \\cite{Sz99} proved that the maximal such $t$ is equal to\\[\\frac{N^2}{2}+O(N^{5/3}(\\log N)^3),\\]resolving the asymptotic question. On the other hand, Szabo showed that the conjecture of Simonovits and S\\'{o}s that $\\binom{n}{2}+1$ is best possible is false, giving a construction which yields\\[t \\geq \\binom{N}{2}+\\left\\lfloor\\frac{N-1}{4}\\right\\rfloor+1.\\]Szabo conjectures that the asymptotic $t=\\binom{N}{2}+O(N)$ holds, and that in any extremal example there is an integer contained in all sets.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/279",
+      "direction": "lower",
+      "source_text": "This may be true with the primes replaced by any set $A\\subseteq \\mathbb{N}$ such that\\[\\lvert A\\cap [1,N]\\rvert \\gg N/\\log N\\]and\\[\\sum_{\\substack{n\\in A\\\\ n\\leq N}}\\frac{1}{n} -\\log\\log N\\to \\infty\\]as $N\\to \\infty$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/283",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Burr has proved this if $p(x)=x^k$ with $k\\geq 1$ and if we allow $n_i=n_j$. van Doorn, Partitions with prescribed sum of rationals: asymptotic bounds.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/287",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "The lower bound of $\\geq 2$ is equivalent to saying that $1$ is not the sum of reciprocals of consecutive integers, proved by Erd\\H{o}s \\cite{Er32}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/291",
+      "direction": "upper",
+      "source_text": "There is in fact a necessary and sufficient condition: a prime $p\\leq n$ divides $(a_n,L_n)$ if and only if $p$ divides the numerator of $1+\\cdots+\\frac{1}{k}$, where $k$ is the leading digit of $n$ in base $p$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/293",
+      "direction": "upper",
+      "source_text": "An elementary inductive argument shows that $n_k\\leq ku_k$ where $u_1=1$ and $u_{i+1}=u_i(u_i+1)$, and hence\\[v(k) \\leq kc_0^{2^k},\\]where\\[c_0=\\lim_n u_n^{1/2^n}=1.26408\\cdots\\]is the 'Vardi constant' (small improvements on this are possible as in [148]).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/30",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Tur\\'{a}n \\cite{ErTu41} proved an upper bound of $N^{1/2}+O(N^{1/4})$, with an alternative proof by Lindstr\\\"{o}m \\cite{Li69}. The current record is\\[h(N)\\leq N^{1/2}+0.98183N^{1/4}+O(1),\\]due to Carter, Hunter, and O'Bryant \\cite{CHO25}. and Roy, S., An upper bound on the size of Sidon sets.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/301",
+      "direction": "upper",
+      "source_text": "All such $S_a$ are disjoint and, if $A$ has no solutions to the given equation, then $A$ must omit at least two elements of $S_a$ when $a\\leq N/12$ and at least one element of $S_a$ when $N/12<a\\leq N/6$, and an elementary calculation concludes the proof.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/304",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er50c} proved that\\[\\log\\log b \\ll N(b) \\ll \\frac{\\log b}{\\log\\log b}.\\]The upper bound was improved by Vose \\cite{Vo85} to\\[N(b) \\ll \\sqrt{\\log b}.\\]One can also investigate the average of $N(a,b)$ for fixed $b$, and it is known that\\[\\frac{1}{b}\\sum_{1\\leq a<b}N(a,b) \\gg \\log\\log b.\\]Related to [18].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/317",
+      "direction": "unknown",
+      "source_text": "This fails for small $n$, for example\\[\\frac{1}{2}-\\frac{1}{3}-\\frac{1}{4}=-\\frac{1}{12}.\\]Arguments of Kovac and van Doorn in the comment section prove a weak version of the first question, with an upper bound of\\[2^{-n\\frac{(\\log\\log\\log n)^{1+o(1)}}{\\log n}},\\]and van Doorn gives a heuristic that suggests this may be the true order of magnitude.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/318",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "For the squares $1$ must be excluded or the result is trivially false, since\\[\\sum_{k\\geq 2}\\frac{1}{k^2}<1.\\]This is false for some sets $A$ of positive density - indeed, it fails for any set $A$ containing exactly one even number.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/319",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Adenwalla has observed that a lower bound of\\[\\lvert A\\rvert\\geq (1-\\tfrac{1}{e}+o(1))N\\]follows from the main result of Croot \\cite{Cr01}, which states that there exists some set of integers $B\\subset [(\\frac{1}{e}-o(1))N,N]$ such that $\\sum_{b\\in B}\\frac{1}{b}=1$. Since the sum of $\\frac{1}{m}$ for $m\\in [c_1N,c_2N]$ is asymptotic to $\\log(c_2/c_1)$ we must have $\\lvert B\\rvert \\geq (1-\\tfrac{1}{e}+o(1))N$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/32",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er54} proved that such a set $A$ exists with $\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert\\ll (\\log N)^2$ (improving a previous result of Lorentz \\cite{Lo54} who achieved $\\ll (\\log N)^3$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/320",
+      "direction": "lower",
+      "source_text": "Bleicher and Erd\\H{o}s \\cite{BlEr75} proved the lower bound\\[\\log S(N)\\geq \\frac{N}{\\log N}\\left(\\log 2\\prod_{i=3}^k\\log_iN\\right),\\]valid for $k\\geq 4$ and $\\log_kN\\geq k$, and also \\cite{BlEr76b} proved the upper bound\\[\\log S(N)\\leq \\frac{N}{\\log N}\\left(\\log_r N \\prod_{i=3}^r \\log_iN\\right),\\]valid for $r\\geq 1$ and $\\log_{2r}N\\geq 1$. (In these bounds $\\log_in$ denotes the $i$-fold iterated logarithm.)  Bettin, Greni\\'{e}, Molteni, and Sanna \\cite{BGMS25} improved the lower bound to\\[\\log S(N) \\geq  \\frac{N}{\\log N}\\left(2\\log 2\\left(1-\\frac{3/2}{\\log_kN}\\right)\\prod_{i=3}^k\\log_iN\\right),\\]valid for $k\\geq 4$ and $\\log_kN\\geq 3/2$. (In particular this goes to infinity faster than the lower bound of Bleicher and Erd\\H{o}s.)  See also [321]. Sanna, A lower bound for the number of Egyptian fractions.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/321",
+      "direction": "upper",
+      "source_text": "Results of Bleicher and Erd\\H{o}s from \\cite{BlEr75} and \\cite{BlEr76b} imply that\\[\\frac{N}{\\log N}\\prod_{i=3}^k\\log_iN\\leq R(N)\\leq \\frac{1}{\\log 2}\\log_r N\\left(\\frac{N}{\\log N} \\prod_{i=3}^r \\log_iN\\right),\\]valid for any $k\\geq 4$ with $\\log_kN\\geq k$ and any $r\\geq 1$ with $\\log_{2r}N\\geq 1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/322",
+      "value": 4.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s believed Hypothesis $K$ fails for all $k\\geq 4$, but this is unknown. Hardy and Littlewood made the weaker Hypothesis $K^*$ that for all $N$ and $\\epsilon>0$\\[\\sum_{n\\leq N}1_A^{(k)}(n)^2 \\ll_\\epsilon N^{1+\\epsilon}.\\]Erd\\H{o}s and Graham remark: 'This is probably true but no doubt very deep. However, it would suffice for most applications.'  Independently Erd\\H{o}s \\cite{Er36} and Chowla proved that for all $k\\geq 3$ and infinitely many $n$\\[1_A^{(k)}(n) \\gg n^{c/\\log\\log n}\\]for some constant $c>0$ (depending on $k$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/324",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "The Lander, Parkin, and Selfridge conjecture would imply that $f(x)=x^n$ has this property for all $n\\geq 5$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/325",
+      "direction": "lower",
+      "source_text": "For $k=3$ the best known is due to Wooley \\cite{Wo15},\\[f_{3,3}(x) \\gg x^{0.917\\cdots}.\\]This problem has been formalised in Lean as part of the Google DeepMind Formal Conjectures project.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/329",
+      "direction": "upper",
+      "source_text": "where the number of solutions to $n=a_1+a_2$ with $a_1\\leq a_2$ is at most $g$ for all $n$, so that a $B_2[1]$ set is a Sidon set).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/33",
+      "direction": "lower",
+      "source_text": "Moser \\cite{Mo65} proved that, for any such $A$,\\[\\liminf \\frac{\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert}{N^{1/2}}>1.06.\\]The best-known lower bound is\\[\\liminf \\frac{\\lvert A\\cap\\{1,\\ldots,N\\}\\rvert}{N^{1/2}}\\geq\\frac{4}{\\pi}\\approx 1.273\\]proved by Cilleruelo \\cite{Ci93}, Habsieger \\cite{Ha95}, and Balasubramanian and Ramana \\cite{BaRa01}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/334",
+      "direction": "upper",
+      "source_text": "This is known, and the best bound is due to Balog \\cite{Ba89} who proved that\\[f(n) \\ll_\\epsilon n^{\\frac{4}{9\\sqrt{e}}+\\epsilon}\\]for all $\\epsilon>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/336",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "A simple example of the order of a basis differing from the exact order is given by $A=\\cup_{k\\geq 0}(2^{2k},2^{2k+1}]$, which has order $2$ but exact order $3$. They also proved that\\[\\frac{1}{4}\\leq \\lim_r \\frac{h(r)}{r^2}\\leq \\frac{5}{4}.\\]The best bounds known for the limit are\\[\\frac{1}{3}\\leq \\lim_r \\frac{h(r)}{r^2}\\leq \\frac{1}{2},\\]the lower bound originally due to Grekos \\cite{Gr88} and the upper bound to Nash \\cite{Na93}. The value of $h(4)$ is unknown, but it is known \\cite{Pl04} that $10\\leq h(4)\\leq 11$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/338",
+      "value": 3.0,
+      "direction": "lower",
+      "source_text": "Bateman has observed that for $h\\geq 3$ there is a basis of order $h$ with no restricted order, taking\\[A=\\{1\\}\\cup \\{x>0 : h\\mid x\\}.\\]Kelly \\cite{Ke57} has shown that any basis of order $2$ has restricted order at most $4$ and conjectured it always has restricted order at most $3$ (which he proved under the additional assumption that the basis has positive lower density). [He05] Hennecart, Fran\\c cois, On the restricted order of asymptotic bases of order two.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/345",
+      "direction": "unknown",
+      "source_text": "It is known that\\[T(n)=1, T(n^2)=128, T(n^3)=12758,\\]\\[T(n^4)=5134240,\\textrm{ and }T(n^5)=67898771.\\]Erd\\H{o}s and Graham remark that a good candidate for the $n$ in the question are $k=2^t$ for large $t$, perhaps even $t=3$, because of the highly restricted values of $n^{2^t}$ modulo $2^{t+1}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/348",
+      "direction": "upper",
+      "source_text": "van Doorn has shown that no such sequence exists for $2\\leq m<n$ if we interpret complete in the strong sense that\\[\\left\\{ \\sum_{n\\in B}n : \\textrm{ for all finite }B\\subset A\\right\\}=\\mathbb{N}.\\]Erd\\H{o}s and Graham most likely meant the weaker notion of completeness which allows finitely many exceptions, however.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/352",
+      "value": 2.0,
+      "direction": "upper",
+      "source_text": "In \\cite{Er78d} and \\cite{Er83d} he speculated that perhaps $C=4\\pi/\\sqrt{27}\\approx 2.418$ works, which would be the best possible, as witnessed by a circle of radius $<2\\cdot 3^{-3/4}$. Freiling and Mauldin (see \\cite{Ma13}) have proved this conjecture if $1\\leq n\\leq 3$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/354",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Hegyv\\'{a}ri \\cite{He89} proved that the sequence is not complete if $\\alpha\\geq 2$ and $\\beta =2^k\\alpha$ for some $k\\geq 0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/357",
+      "direction": "upper",
+      "source_text": "If $g(n)$ is the maximal $k$ such that there are $1\\leq a_1,\\ldots,a_k\\leq n$ with all consecutive sums distinct (i.e. we drop the monotonicity assumption in the definition of $f$) then Hegyv\\'{a}ri \\cite{He86} has proved that\\[\\left(\\frac{1}{3}+o(1)\\right) n\\leq g(n)\\leq \\left(\\frac{2}{3}+o(1)\\right)n.\\]The upper bound of Coppersmith and Phillips in [867] implies\\[g(n) \\leq \\left(\\frac{2}{3}-\\frac{1}{512}+o(1)\\right)n.\\]A similar question can be asked if we replace strict monotonicity with weak monotonicity (i.e.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/359",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Andrews conjectures\\[a_k\\sim \\frac{k\\log k}{\\log\\log k}.\\]Porubsky \\cite{Po77} proved that, for any $\\epsilon>0$, there are infinitely many $k$ such that\\[a_k < (\\log k)^\\epsilon \\frac{k\\log k}{\\log\\log k},\\]and also that if $A(x)$ counts the number of $a_i\\leq x$ then\\[\\limsup \\frac{A(x)}{\\pi(x)}\\geq \\frac{1}{\\log 2}\\]where $\\pi(x)$ counts the number of primes $\\leq x$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/36",
+      "value": 1.0,
+      "direction": "upper",
+      "source_text": "The example (with $N$ even) $A=\\{N/2+1,\\ldots,3N/2\\}$ shows that $c\\leq 1/2$ (indeed, Erd\\H{o}s initially conjectured that $c=1/2$). The lower bound of $c\\geq 1/4$ is trivial, and Scherk improved this to $1-1/\\sqrt{2}=0.29\\cdots$. The current records are\\[0.379005 < c < 0.380924,\\]the lower bound due to White \\cite{Wh22} and the upper bound due to AlphaEvolve \\cite{GGTW25}, improving slightly on an upper bound due to Haugland \\cite{Ha16}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/367",
+      "value": 3.0,
+      "direction": "lower",
+      "source_text": "It would also be interesting to find upper and lower bounds for the analogous product with $B_r$ for $r\\geq 3$, where $B_r(n)$ is the $r$-full part of $n$ (that is, the product of prime powers $p^a \\mid n$ such that $p^{a+1}\\nmid n$ and $a\\geq r$). Is it true that, for every fixed $r,k\\geq 2$ and $\\epsilon>0$,\\[\\limsup \\frac{\\prod_{n\\leq m<n+k}B_r(m) }{n^{1+\\epsilon}}\\to\\infty?\\]van Doorn notes in the comments that for $k\\leq 2$ we trivially have\\[\\prod_{n\\leq m<n+k}B_2(m) \\ll n^{2},\\]but that this fails for all $k\\geq 3$, and in fact\\[\\prod_{n\\leq m<n+3}B_2(m) \\gg n^{2}\\log n\\]infinitely often.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/369",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "If this is the problem then the answer is yes, which follows from a result of Balog and Wooley \\cite{BaWo98}: for any $\\epsilon>0$ and $k\\geq 2$ there exist infinitely many $m$ such that $m+1,\\ldots,m+k$ are all $m^\\epsilon$-smooth.{/LI} {LI}Each $m\\in P$ must be in $[n/2,n]$ (say).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/371",
+      "direction": "upper",
+      "source_text": "The best unconditional lower bound available is due to L\\\"{u} and Wang \\cite{LuWa25}, who prove that\\[\\#\\{ n<x :P(n)<P(n+1)\\} > (0.2017-o(1))x,\\]and the same lower bound for the complement. Tao and Ter\\\"{a}v\\\"{a}inen \\cite{TaTe19} have proved that the asymptotic density is $1/2$ at 'almost all scales'. More generally, for any $0\\leq \\alpha \\leq1$, Ter\\\"{a}v\\\"{a}inen \\cite{Te18} proved that the logarithmic density of the set of $n$ for which $P(n+1)>P(n)n^\\alpha$ exists and is equal to\\[\\int_{[0,1]^2}1_{y\\geq x+\\alpha}u(x)u(y)\\mathrm{d}x\\mathrm{d}y\\]where $u(x)=x^{-1}\\rho(x^{-1}-1)$ and $\\rho$ is the Dickman function. Wang \\cite{Wa21} has proved the same value holds for the asymptotic density (and in particular provided an affirmative answer to the original question)  conditional on the Elliott-Halberstam conjecture for friable integers.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/373",
+      "direction": "upper",
+      "source_text": "More generally, Hickerson (as reported in \\cite{Er76d}) conjectured that the only non-trivial solutions to the equation in the problem statement are\\[9!=2!3!3!7!,\\]\\[10!=6!7!,\\]\\[10!=3!5!7!,\\]and\\[16!=14!5!2!.\\]Luca \\cite{Lu07b} has shown that there are only finitely many solutions, conditional on the ABC conjecture, and proved unconditionally that the number of $n\\leq x$ which admit a non-trivial solution is\\[\\leq \\exp \\bigg(f(x)\\frac{\\log (x)}{\\log\\log (x)}\\bigg)\\]for any function $f(x)$ which tends to infinity. In the case when $k=2$, Erd\\H{o}s \\cite{Er93} proved that if $n!=a_1!a_2!$ with $n-1>a_1\\geq a_2$ then\\[a_1\\geq n-5\\log\\log n,\\]and says it 'would be nice' to prove $a_1\\geq n-o(\\log\\log n)$. Bhat and Ramachandra \\cite{BhRa10} replace the $5$ with $(1+o(1))\\frac{1}{\\log 2}$, and also prove that the same bound holds for arbitrary $k\\geq 2$. Numerical investigations on solutions to $n!=a_1!a_2!$ have been carried out by Caldwell \\cite{Ca94} and Habsieger \\cite{Ha}, and it is known that there are no solutions aside from $10!=6!7!$ for $n\\leq 10^{3000}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/375",
+      "value": 2.0,
+      "direction": "upper",
+      "source_text": "Note this is trivial when $k\\leq 2$. Grimm proved that this is true if $k\\ll \\log n/\\log\\log n$. Erd\\H{o}s and Selfridge improved this to $k\\leq (1+o(1))\\log n$. Ramachandra, Shorey, and Tijdeman \\cite{RST75} have improved this to\\[k\\ll\\left(\\frac{\\log n}{\\log\\log n}\\right)^3.\\]This is problem B32 in Guy's collection \\cite{Gu04}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/376",
+      "direction": "upper",
+      "source_text": "The best result in this direction is due to Bloom and Croot \\cite{BlCr25}, who proved that, if $p_1,p_2,p_3$ are sufficiently large primes, then there are infinitely many $n$ such that almost all of the base $p_i$ digits are $<p_i/2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/377",
+      "direction": "upper",
+      "source_text": "A question of Erd\\H{o}s, Graham, Ruzsa, and Straus \\cite{EGRS75}, who proved that if $f(n)$ is the sum in question then\\[\\lim_{x\\to \\infty}\\frac{1}{x}\\sum_{n\\leq x}f(n) = \\sum_{k=2}^\\infty \\frac{\\log k}{2^k}=\\gamma_0\\]and\\[\\lim_{x\\to \\infty}\\frac{1}{x}\\sum_{n\\leq x}f(n)^2 = \\gamma_0^2,\\]so that for almost all integers $f(m)=\\gamma_0+o(1)$. (It is trivial from Mertens estimates that $f(n)\\leq (1+o(1))\\log\\log n$.)  A positive answer would imply that\\[\\sum_{p\\leq n}1_{p\\mid \\binom{2n}{n}}\\frac{1}{p}=(1-o(1))\\log\\log n,\\]and Erd\\H{o}s, Graham, Ruzsa, and Straus say there is 'no doubt' this latter claim is true.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/38",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er36c} proved that if $B$ is an additive basis of order $k$ then, for any set $A$ of Schnirelmann density $\\alpha$, for every $N$ there exists some integer $b\\in B$ such that\\[\\lvert (A\\cup (A+b))\\cap \\{1,\\ldots,N\\}\\rvert\\geq \\left(\\alpha+\\frac{\\alpha(1-\\alpha)}{2k}\\right)N.\\]It seems an interesting question (not one that Erd\\H{o}s appears to have asked directly, although see [35]) to improve the lower bound here, even in the case $B=\\mathbb{N}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/380",
+      "direction": "upper",
+      "source_text": "Similarly, we call an interval $[u,v]$ 'very bad' if $\\prod_{u\\leq m\\leq v}m$ is powerful. The number of integers $n\\leq x$ contained in at least one very bad interval should be $\\ll x^{1/2}$. In fact, it should be asymptotic to the number of powerful numbers $\\leq x$. We have\\[\\#\\{ n\\leq x: P(n)^2\\mid n\\}=\\frac{x}{\\exp((c+o(1))\\sqrt{\\log x\\log\\log x})}\\]for some constant $c>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/382",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Graham report it follows from results of Ramachandra that $v-u\\leq v^{1/2+o(1)}$. For any fixed $k$, there is therefore a positive 'probability' that there are $k$ consecutive integers around $q^2$ (for a prime $q$) all of whose prime divisors are bounded above by $q$, when $v-u\\geq k$. A similar argument applies if we replace multiplicity $2$ with multiplicity $r$, for any fixed $r\\geq 2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/386",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Graham write that 'a proof that this cannot happen infinitely often for $\\binom{n}{2}$ seems hopeless; probably this can never happen for $\\binom{n}{k}$ if $3\\leq k\\leq n-3$.'  Weisenberg has provided four easy examples that show Erd\\H{o}s and Graham were too optimistic here:\\[\\binom{7}{3}=5\\cdot 7,\\]\\[\\binom{10}{4}= 2\\cdot 3\\cdot 5\\cdot 7,\\]\\[\\binom{14}{4} = 7\\cdot 11\\cdot 13,\\]and\\[\\binom{15}{6}=5\\cdot 7\\cdot 11\\cdot 13.\\]The known values of $n$ for which $\\binom{n}{2}$ is the product of consecutive primes are $4,6,15,21,715$ (see A280992).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/387",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Faulkner \\cite{Fa66} proved that, if $p$ is the least prime $>2k$ and $n\\geq p$, then $\\binom{n}{k}$ has a prime divisor $\\geq p$ (except $\\binom{9}{2}$ and $\\binom{10}{3}$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/388",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "More generally, if $k_1>2$ then for fixed $a$ and $b$\\[a\\prod_{1\\leq i\\leq k_1}(m_1+i)=b\\prod_{1\\leq j\\leq k_2}(m_2+j)\\]should have only a finite number of solutions.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/389",
+      "direction": "upper",
+      "source_text": "For example when $n=2$ we have $k=5$:\\[2\\times 3 \\times 4 \\times 5\\times 6 \\mid 7 \\times 8 \\times 9\\times 10\\times 11.\\]and when $n=3$ we have $k=4$:\\[3\\times 4\\times 5\\times 6 \\mid 7\\times 8\\times 9\\times 10.\\]Bhavik Mehta has computed the minimal such $k$ for $1\\leq n\\leq 18$ (now available as A375071 on the OEIS).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/393",
+      "direction": "upper",
+      "source_text": "Let $F_m(N)$ count the number of $n\\leq N$ such that $f(n)=m$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/394",
+      "direction": "upper",
+      "source_text": "This was proved by Erd\\H{o}s and Hall \\cite{ErHa78}, who proved that in fact\\[\\sum_{n\\leq x}t_2(n)\\ll \\frac{\\log\\log\\log x}{\\log\\log x}x^2.\\]Erd\\H{o}s and Hall conjecture that the sum is $o(x^2/(\\log x)^c)$ for any $c<\\log 2$. Since $t_2(p)=p-1$ for prime $p$ it is trivial that\\[\\sum_{n\\leq x}t_2(n)\\gg \\frac{x^2}{\\log x}.\\]Erd\\H{o}s and Hall \\cite{ErHa78} also note that $t_{n-1}(n!)=2$ and $t_{n-2}(n!)\\ll n$, which $n=2^r$ shows is the best possible. They ask about the behaviour of $t_{n-3}(n!)$ and also ask ask whether, for infinitely many $n$,\\[t_k(n!)< t_{k-1}(n!)-1\\]for all $1\\leq k<n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/396",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Pomerance \\cite{Po14} has shown that for any $k\\geq 0$ there are infinitely many $n$ such that $n-k\\mid\\binom{2n}{n}$, although the set of such $n$ has upper density $<1/3$. Pomerance also shows that the set of $n$ such that\\[\\prod_{1\\leq i\\leq k}(n+i)\\mid \\binom{2n}{n}\\]has density $1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/397",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "In fact, for any $a\\geq 2$, if $c=8a^2+8a+1$,\\[\\binom{2a}{a}\\binom{4a+4}{2a+2}\\binom{2c}{c}= \\binom{2a+2}{a+1}\\binom{4a}{2a}\\binom{2c+2}{c+1}.\\]Further families of solutions are given in the comments by SharkyKesa.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/400",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Graham write that it is easy to show that $g_k(n) \\ll_k \\log n$ always, but the best possible constant is unknown.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/406",
+      "direction": "upper",
+      "source_text": "Saye \\cite{Sa22} has computed that $2^n$ contains every possible ternary digit for $16\\leq n \\leq 5.9\\times 10^{21}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/41",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s proved that if the pairwise sums $a+b$ are all distinct aside from the trivial coincidences then\\[\\liminf \\frac{\\lvert A\\cap \\{1,\\ldots,N\\}\\rvert}{N^{1/2}}=0.\\]This is discussed in problem C11 of Guy's collection \\cite{Gu04}, in which Guy says Erd\\H{o}s offered \\$500 for the general problem of whether, for all $h\\geq 2$,\\[\\liminf \\frac{\\lvert A\\cap \\{1,\\ldots,N\\}\\rvert}{N^{1/h}}=0\\]whenever the sum of $h$ terms in $A$ are distinct.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/411",
+      "value": 6.0,
+      "direction": "lower",
+      "source_text": "Selfridge and Weintraub found solutions to $g_{k+9}(n)=9g_k(n)$ and Weintraub found\\[g_{k+25}(3114)=729g_k(3114)\\]for all $k\\geq 6$. Steinerberger \\cite{St25} has observed that, for $r=2$, this problem is equivalent to asking for solutions to\\[\\phi(n)+\\phi(n+\\phi(n))=n,\\]and has shown that if this holds then either the odd part of $n$ is in $\\{1,3,5,7,35,47\\}$, or is equal to $8m+7$ or $6m+5$, where $8m+7\\geq 10^{10}$ is a prime number and $\\phi(6m+5)=4m+4$. Cambie conjectures that the only solutions have $r=2$ and $n=2^lp$ for some $l\\geq 1$ and $p\\in \\{2,3,5,7,35,47\\}$. Cambie has shown this problem is reducible to the question of which integers $r,t\\geq 1$ and primes $p\\equiv 7\\pmod{8}$ satisfy $g_k(2p^t)=4p^t$, and conjectures there are no solutions to this except when $t=1$ and $p\\in \\{7,47\\}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/416",
+      "direction": "upper",
+      "source_text": "Unfortunately this falls just short of an asymptotic formula for $V(x)$ and determining whether $V(2x)/V(x)\\to 2$. In \\cite{Er79e} Erd\\H{o}s asks further to estimate the number of $n\\leq x$ such that the smallest solution to $\\phi(m)=n$ satisfies $kx<m\\leq (k+1)x$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/420",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s, Graham, Ivi\\'{c}, and Pomerance \\cite{EGIP96} have proved that\\[\\liminf F(c\\log n, n) = 1\\]for any $c>0$, and\\[\\lim F(n^{4/9},n)=\\infty.\\](The exponent $4/9$ can be improved slightly.) They also prove that, if $f(n)=o((\\log n)^2)$, then for almost all $n$\\[F(f,n)\\sim 1.\\]van Doorn notes in the comments that the existence of infinitely many bounded prime gaps implies\\[\\limsup_{n\\to \\infty}F(g(n),n)=\\infty\\]for any $g(n)\\to \\infty$, and that Cram\\'{e}r's conjecture implies\\[\\lim F(g(n)(\\log n)^2, n)=\\infty\\]for any $g(n)\\to \\infty$>  References  [EGIP96] Erd\\H{o}s, Paul and Graham, S.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/425",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er68} proved that there exist some constants $0<c_1\\leq c_2$ such that\\[\\pi(n)+c_1 n^{3/4}(\\log n)^{-3/2}\\leq F(n)\\leq \\pi(n)+c_2 n^{3/4}(\\log n)^{-3/2}.\\]This problem can also be considered in the real numbers: that is, what is the size of the  the largest $A\\subset [1,x]$ such that for any distinct $a,b,c,d\\in A$ we have $\\lvert ab-cd\\rvert \\geq 1$? Erd\\H{o}s had conjectured (see \\cite{Er73} and \\cite{Er77c}) that $\\lvert A\\rvert=o(x)$. In \\cite{ErGr80} Erd\\H{o}s and Graham report that Alexander had given a construction disproving this conjecture, establishing that $\\lvert A\\rvert\\gg x$ is possible.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/43",
+      "direction": "upper",
+      "source_text": "Since it is known that $f(N)\\sim \\sqrt{N}$ (see [30]) the latter question is equivalent to asking whether, if $\\lvert A\\rvert=\\lvert B\\rvert$,\\[\\lvert A\\rvert \\leq \\left(\\frac{1}{\\sqrt{2}}-c+o(1)\\right)\\sqrt{N}\\]for some constant $c>0$. In the comments Tao has given a proof of this upper bound without the $-c$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/431",
+      "direction": "upper",
+      "source_text": "The best result in this direction is due to Elsholtz and Harper \\cite{ElHa15}, who showed that if $A,B$ are such sets then for all large $x$ we must have\\[\\frac{x^{1/2}}{\\log x\\log\\log x} \\ll \\lvert A \\cap [1,x]\\rvert \\ll x^{1/2}\\log\\log x\\]and similarly for $B$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/436",
+      "value": 1048909.0,
+      "direction": "upper",
+      "source_text": "Lehmer and Lehmer proved that $\\Lambda(k,3)=\\infty$ for all even $k$ and $\\Lambda(k,4)=\\infty$ for all $k\\leq 1048909$. Graham \\cite{Gr64g} proved that $\\Lambda(k,l)=\\infty$ for all $k\\geq 2$ and $l\\geq 4$. Hildebrand \\cite{Hi91} resolved the first question, proving that $\\Lambda(k,2)$ is finite for all $k$: in other words, for any $k\\geq 2$, if $p$ is sufficiently large then there exists a pair of consecutive $k$th power residues modulo $p$ in $[1,O_k(1)]$. The remaining questions are to examine whether $\\Lambda(k,3)$ is finite for all odd $k\\geq 5$, and the growth rate of $\\Lambda(k,2)$ and $\\Lambda(k,3)$ as functions of $k$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/450",
+      "value": 1.0,
+      "direction": "upper",
+      "source_text": "On the other hand, Cambie has observed that if $\\epsilon\\ll 1/n$ then $y(\\epsilon,n)\\sim 2n$: indeed, if $y<2n$ then this is impossible taking $x+n$ to be a multiple of the lowest common multiple of $\\{n+1,\\ldots,2n-1\\}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/451",
+      "direction": "upper",
+      "source_text": "Adenwalla observes that an easy upper bound is $n_k\\leq \\prod_{k<p<2k}p=e^{O(k)}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/456",
+      "direction": "upper",
+      "source_text": "Linnik's theorem implies that $p_n\\leq n^{O(1)}$. It is trivial that $m_n\\leq p_n$ always. van Doorn in the comments has noted that if $n=2^{2k+1}$ then $m_n\\leq 2n$ and $p_n\\geq 2n+1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/457",
+      "direction": "upper",
+      "source_text": "More generally, let $q(n,k)$ denote the least prime which does not divide $\\prod_{1\\leq i\\leq k}(n+i)$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/460",
+      "direction": "upper",
+      "source_text": "This question arose in work of Eggleton, Erd\\H{o}s, and Selfridge, who could prove that $a_k <k^{2+o(1)}$ for $k$ large enough depending on $n$, but conjectured that in fact $a_k\\ll k\\log k$ is true.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/475",
+      "value": 12.0,
+      "direction": "upper",
+      "source_text": "This has been proved for $t\\leq 12$ (see Costa and Pellegrini \\cite{CoPe20} and the references therein) and for $p-3\\leq t\\leq p-1$ (see Hicks, Ollis, and Schmitt \\cite{HOS19} and the references therein).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/478",
+      "direction": "lower",
+      "source_text": "The best known lower bound is due to Grebennikov, Sagdeev, Semchankau, and Vasilevskii \\cite{GSSV24},\\[\\lvert A_p\\rvert \\geq (\\sqrt{2}-o(1))p^{1/2},\\]which follows from proving that $\\lvert A_pA_p\\rvert=(1+o(1))p$. Wilson's theorem implies $(p-2)!\\equiv 1\\pmod{p}$, and hence $\\lvert A_p\\rvert\\leq p-2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/479",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s and Graham report that Graham, Lehmer, and Lehmer have proved this for $k=2^i$ for $i\\geq 1$, or if $k=-1$, but I cannot find such a paper.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/483",
+      "direction": "upper",
+      "source_text": "The best-known bounds for large $k$ are\\[(380)^{k/5}-O(1)\\leq f(k) \\leq \\lfloor(e-\\tfrac{1}{24}) k!\\rfloor-1.\\]The lower bound is due to Ageron, Casteras, Pellerin, Portella, Rimmel, and Tomasik \\cite{ACPPRT21} (improving previous bounds of Exoo \\cite{Ex94} and Fredricksen and Sweet \\cite{FrSw00}) and the upper bound is due to Whitehead \\cite{Wh73}. [Ex94] Exoo, G., A lower bound for Schur numbers and multicolor Ramsey numbers.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/488",
+      "direction": "unknown",
+      "source_text": "The constant $2$ would be the best possible here, as witnessed by taking $A=\\{a\\}$, $n=2a-1$, and $m=2a$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/500",
+      "value": 0.5611666,
+      "direction": "upper",
+      "source_text": "The current best upper bound is\\[\\mathrm{ex}_3(n,K_4^3)\\leq 0.5611666\\binom{n}{3},\\]due to Razborov \\cite{Ra10}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/503",
+      "direction": "upper",
+      "source_text": "The best upper bound known in general is due to Blokhuis \\cite{Bl84} who showed that\\[\\lvert A\\rvert \\leq \\binom{d+2}{2}.\\]Alweiss has observed a lower bound of $\\binom{d+1}{2}$ follows from considering the subset of $\\mathbb{R}^{d+1}$ formed of all vectors $e_i+e_j$ where $e_i,e_j$ are distinct coordinate vectors. Weisenberg observed in the comments that an additional point can be added to Alweiss' construction, giving a lower bound of $\\binom{d+1}{2}+1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/507",
+      "direction": "upper",
+      "source_text": "The current best bounds are\\[\\frac{\\log n}{n^2}\\ll \\alpha(n) \\ll \\frac{1}{n^{7/6+o(1)}}.\\]The lower bound is due to Koml\\'{o}s, Pintz, and Szemer\\'{e}di \\cite{KPS82}. The upper bound is due to Cohen, Pohoata, and Zakharov \\cite{CPZ24} (improving on their earlier work \\cite{CPZ23} which itself improves an exponent of $8/7$ due to Koml\\'{o}s, Pintz, and Szemer\\'{e}di \\cite{KPS81}). and Zakharov, D., A new upper bound for the Heilbronn triangle problem. [KPS82] Koml\\'{o}s, J\\'{a}nos and Pintz, J\\'{a}nos and Szemer\\'{e}di, Endre, A lower bound for Heilbronn's problem.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/508",
+      "value": 3.0,
+      "direction": "lower",
+      "source_text": "An equilateral triangle trivially shows that $\\chi\\geq 3$. There are several small graphs that show $\\chi\\geq 4$ (in particular the Moser spindle and Golomb graph). The best bounds currently known are\\[5 \\leq \\chi \\leq 7.\\]The lower bound is due to de Grey \\cite{dG18}. The upper bound can be seen by colouring the plane by tesselating by hexagons with diameter slightly less than $1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/510",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Ruzsa \\cite{Ru04} (improving on an earlier result of Bourgain \\cite{Bo86}), proved an upper bound of\\[-\\exp(O(\\sqrt{\\log N})).\\]Polynomial bounds were proved independently by Bedert \\cite{Be25c} and Jin, Milojevi\\'{c}, Tomon, and Zhang \\cite{JMTZ25}. The best bound follows from the method of Bedert \\cite{Be25c}, which proved the existence of some $c>0$ such that, for all $A$ of size $N$,\\[\\sum_{n\\in A}\\cos(n\\theta) < -cN^{1/7}.\\]The example $A=B-B$, where $B$ is a Sidon set, shows that $N^{1/2}$ would be the best possible here.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/52",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s and Szemer\\'{e}di \\cite{ErSz83} proved a lower bound of $\\lvert A\\rvert^{1+c}$ for some constant $c>0$, and an upper bound of\\[\\lvert A\\rvert^2 \\exp\\left(-c\\frac{\\log\\lvert A\\rvert}{\\log\\log \\lvert A\\rvert}\\right)\\]for some constant $c>0$. The lower bound has been improved a number of times. The current record is\\[\\max( \\lvert A+A\\rvert,\\lvert AA\\rvert)\\gg\\lvert A\\rvert^{\\frac{1270}{951}-o(1)}\\]due to Bloom \\cite{Bl25} (note $1270/951=1.33543\\cdots$). The best bound for complex numbers is\\[\\max( \\lvert A+A\\rvert,\\lvert AA\\rvert)\\gg\\lvert A\\rvert^{\\frac{4}{3}+c}\\]for some absolute constant $c>0$, due to Basit and Lund \\cite{BaLu19}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/520",
+      "direction": "upper",
+      "source_text": "Wintner \\cite{Wi44} proved that, almost surely,\\[\\sum_{m\\leq N}f(m)\\ll N^{1/2+o(1)},\\]and Erd\\H{o}s improved the right-hand side to $N^{1/2}(\\log N)^{O(1)}$. Lau, Tenenbaum, and Wu \\cite{LTW13} have shown that, almost surely,\\[\\sum_{m\\leq N}f(m)\\ll N^{1/2}(\\log\\log N)^{2+o(1)}.\\]Caich \\cite{Ca24b} has improved this to\\[\\sum_{m\\leq N}f(m)\\ll N^{1/2}(\\log\\log N)^{3/4+o(1)}.\\]Harper \\cite{Ha13} has shown that the sum is almost surely not $O(N^{1/2}/(\\log\\log N)^{5/2+o(1)})$, and conjectured that in fact Erd\\H{o}s' conjecture is false, and almost surely\\[\\sum_{m\\leq N}f(m) \\ll N^{1/2}(\\log\\log N)^{1/4+o(1)}.\\]  References  [Ca24b] R. Caich, Almost sure upper bound for random multiplicative functions.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/528",
+      "direction": "upper",
+      "source_text": "Hammersley and Morton \\cite{HM54} showed that this limit exists, and it is trivial that $k\\leq C_k\\leq 2k-1$. Conway and Guttmann \\cite{CG93} showed that $C_2\\geq 2.62$ and Alm \\cite{Al93} showed that $C_2\\leq 2.696$. J., Lower bound on the connective constant for square lattice self-avoiding walks.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/529",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "Hara and Slade (\\cite{HaSl91} and \\cite{HaSl92}) proved this for all $k\\geq 5$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/530",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s noted the bounds\\[N^{1/3} \\ll \\ell(N) \\leq (1+o(1))N^{1/2}\\](the upper bound following from the case $A=\\{1,\\ldots,N\\}$). The lower bound was improved to $N^{1/2}\\ll \\ell(N)$ by Koml\\'{o}s, Sulyok, and Szemer\\'{e}di \\cite{KSS75}. The correct constant is unknown, but it is likely that the upper bound is true, so that $\\ell(N)\\sim N^{1/2}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/531",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Balogh, Eberhrad, Narayanan, Treglown, and Wagner \\cite{BENTW17} have improved this to\\[F(k) \\geq 2^{2^{k-1}/k}.\\]  References  [BENTW17] Balogh, J\\'{o}zsef and Eberhard, Sean and Narayanan, Bhargav and Treglown, Andrew and Wagner, Adam Zsolt, An improved lower bound for Folkman's theorem.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/535",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er64} proved the lower bound\\[f_3(N) > N^{\\frac{c}{\\log\\log N}}\\]for some constant $c>0$, and conjectured this should also be an upper bound. Indeed, the conjectured upper bound would follow from the following stronger version of the sunflower problem: estimate the size of the largest set of integers $A$ such that $\\omega(n)=k$ for all $n\\in A$ and there does not exist $a_1,\\ldots,a_r\\in A$ and an integer $d$ such that $(a_i,a_j)=d$ for all $i\\neq j$ and $(a_i/d,d)=1$ for all $i$. The conjectured upper bound for $f_r(N)$ would follow if the size of such an $A$ must be at most $c_r^k$. The original sunflower proof of Erd\\H{o}s and Rado gives the upper bound $c_r^kk!$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/538",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s observed that\\[\\sum_{n\\in A}\\frac{1}{n}\\sum_{p\\leq N}\\frac{1}{p}\\leq r\\sum_{m\\leq N^2}\\frac{1}{m}\\ll r\\log N,\\]and hence\\[\\sum_{n\\in A}\\frac{1}{n} \\ll r\\frac{\\log N}{\\log\\log N}.\\]See also [536] and [537].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/545",
+      "direction": "upper",
+      "source_text": "(This is true, and was proved by Sudakov \\cite{Su11}.)  LouisD in the comments has noted this fails for small $m$ (in particular for $2\\leq m\\leq 5$ and $7\\leq m\\leq 9$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/552",
+      "direction": "upper",
+      "source_text": "It is known that\\[ n+\\sqrt{n}-6n^{11/40} \\leq R(C_4,S_n)\\leq n+\\lceil\\sqrt{n}\\rceil+1.\\]The lower bound is due to \\cite{BEFRS89}, the upper bound is due to Parsons \\cite{Pa75}. The lower bound of \\cite{BEFRS89} is related to gaps between primes, and assuming e.g. Cramer's conjecture on gaps between primes their lower bound would be $n+\\sqrt{n}-n^{o(1)}$. This has been extended in various works, all in the cases $n=q^2\\pm t$ for some $0\\leq t\\leq q$ and prime power $q$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/558",
+      "direction": "upper",
+      "source_text": "Chung and Graham \\cite{ChGr75} prove the general bounds\\[(2\\pi\\sqrt{st})^{\\frac{1}{s+t}}\\left(\\frac{s+t}{e^2}\\right)k^{\\frac{st-1}{s+t}}\\leq R(K_{s,t};k)\\leq (t-1)(k+k^{1/s})^s\\]and determined\\[R(K_{2,2},k)=(1+o(1))k^2.\\]Alon, R\\'{o}nyai, and Szab\\'{o} \\cite{ARS99} have proved that\\[R(K_{3,3},k)=(1+o(1))k^3\\]and that if $s\\geq (t-1)!+1$ then\\[R(K_{s,t},k)\\asymp k^t.\\]This problem is #27 in Ramsey Theory in the graphs problem collection.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/560",
+      "direction": "upper",
+      "source_text": "We know that\\[\\frac{1}{60}n^22^n<\\hat{R}(K_{n,n})< \\frac{3}{2}n^32^n.\\]The lower bound (which holds for $n\\geq 6$) was proved by Erd\\H{o}s and Rousseau \\cite{ErRo93}. The upper bound was proved by Erd\\H{o}s, Faudree, Rousseau, and Schelp \\cite{EFRS78b} and Ne\\v{s}et\\v{r}il and R\\\"{o}dl \\cite{NeRo78}. Conlon, Fox, and Wigderson \\cite{CFW23} have proved that, for any $s\\leq t$,\\[\\hat{R}(K_{s,t})\\gg s^{2-\\frac{s}{t}}t2^s,\\]and prove that when $t\\gg s\\log s$ we have $\\hat{R}(K_{s,t})\\asymp s^2t2^s$. They conjecture that this should hold for all $s\\leq t$, and so in particular we should have $\\hat{R}(K_{n,n})\\asymp n^32^n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/563",
+      "direction": "upper",
+      "source_text": "It is easy to show that, for every $0\\leq \\alpha\\leq 1/2$,\\[F(n,\\alpha)\\asymp_\\alpha \\log n.\\]Note that when $\\alpha=0$ this is just asking for a $2$-colouring of the edges of $K_n$ which contains no monochromatic clique of size $m$, and hence we recover the classical Ramsey numbers.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/564",
+      "direction": "unknown",
+      "source_text": "Erd\\H{o}s, Hajnal, M\\'{a}t\\'{e}, and Rado \\cite{EHMR84} have proved a doubly exponential lower bound for the corresponding problem with $4$ colours.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/571",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Known Tur\\'{a}n exponents are: {UL} {LI} $\\frac{3}{2}-\\frac{1}{2s}$ for $s\\geq 2$ (Conlon, Janzer, and Lee \\cite{CJL21}).{/LI} {LI} $\\frac{4}{3}-\\frac{1}{3s}$ and $\\frac{5}{4}-\\frac{1}{4s}$ for $s\\geq 2$ (Jiang and Qiu \\cite{JiQi20}).{/LI} {LI} $2-\\frac{a}{b}$ for $\\lfloor b/a\\rfloor^3 \\leq a\\leq \\frac{b}{\\lfloor b/a\\rfloor+1}+1$ (Jiang, Jiang, and Ma \\cite{JJM20}).{/LI} {LI} $2-\\frac{a}{b}$ with $b>a\\geq 1$ and $b\\equiv \\pm 1\\pmod{a}$ (Kang, Kim, and Liu \\cite{KKL21}).{/LI} {LI} $1+a/b$ with $b>a^2$ (Jiang and Qiu \\cite{JiQi23}),{/LI} {LI} $2-\\frac{2}{2b+1}$ for $b\\geq 2$ or $7/5$ (Jiang, Ma, and Yepremyan \\cite{JMY22}).{/LI} {LI} $2-a/b$ with $b\\geq (a-1)^2$ (Conlon and Janzer \\cite{CoJa22}).{/LI} {/UL}  See also [713] and the entry in the graphs problem collection.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/572",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "It is easy to see that $\\mathrm{ex}(n;C_{2k+1})=\\lfloor n^2/4\\rfloor$ for any $k\\geq 1$ (and $n>2k+1$) (since no bipartite graph contains an odd cycle). Lazebnik, Ustimenko, and Woldar \\cite{LUW95} have shown that, for arbitrary $k\\geq 3$,\\[\\mathrm{ex}(n;C_{2k})\\gg n^{1+\\frac{2}{3k-3+\\nu}},\\]where $\\nu=0$ if $k$ is odd and $\\nu=1$ if $k$ is even.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/585",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Indeed, they prove that there exists a constant $C>0$ such that for any $k\\geq 2$ there is a $c_k$ such that if a graph has $n$ vertices and at least $c_kn(\\log n)^{C}$ many edges then it contains $k$ pairwise edge-disjoint cycles with the same vertex set.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/588",
+      "value": 4.0,
+      "direction": "lower",
+      "source_text": "The restriction to $k\\geq 4$ is necessary since Sylvester has shown that $f_3(n)= n^2/6+O(n)$. (See also Burr, Gr\\\"{u}nbaum, and Sloane \\cite{BGS74} and F\\\"{u}redi and Pal\\'{a}sti \\cite{FuPa84} for constructions which show that $f_3(n)\\geq(1/6+o(1))n^2$.)  For $k\\geq 4$, K\\'{a}rteszi \\cite{Ka63} proved\\[f_k(n)\\gg_k n\\log n\\](resolving a conjecture of Erd\\H{o}s that $f_k(n)/n\\to \\infty$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/589",
+      "direction": "upper",
+      "source_text": "A similar question can be asked for a set with no $k$ points on a line, searching for a subset with no $l$ points on a line, for any $3\\leq l<k$. F\\\"{u}eredi \\cite{Fu91b} proved\\[n^{1/2}\\log n\\ll g(n)=o(n).\\]Balogh and Solymosi \\cite{BaSo18} improved the upper bound to\\[g(n) \\ll n^{5/6+o(1)}.\\]  References  [BaSo18] Balogh, J\\'{o}zsef and Solymosi, J\\'{o}zsef, On the number of points in general position in the plane.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/591",
+      "direction": "upper",
+      "source_text": "For comparison, Specker \\cite{Sp57} proved this property holds when $\\alpha=\\omega^2$ and false when $\\alpha=\\omega^n$ for $3\\leq n<\\omega$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/592",
+      "direction": "upper",
+      "source_text": "This property holds for $\\beta=2$ and not for $3\\leq \\beta <\\omega$ (Specker \\cite{Sp57}) and for $\\beta=\\omega$ (Chang \\cite{Ch72}). Galvin and Larson \\cite{GaLa74} have shown that if $\\beta\\geq 3$ has this property then $\\beta$ must be 'additively indecomposable', so that in particular $\\beta=\\omega^\\gamma$ for some $\\gamma<\\omega_1$. Galvin and Larson conjecture that every $\\beta\\geq 3$ of this form has this property.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/595",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Folkman \\cite{Fo70} and Ne\\v{s}et\\v{r}il and R\\\"{o}dl \\cite{NeRo75} have proved that for every $n\\geq 1$ there is a graph $G$ which contains no $K_4$ and is not the union of $n$ triangle-free graphs.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/604",
+      "direction": "lower",
+      "source_text": "The best known bound is\\[\\gg n^{c-o(1)},\\]due to Katz and Tardos \\cite{KaTa04}, where\\[c=\\frac{48-14e}{55-16e}=0.864137\\cdots.\\]  References  [Er75f] Erd\\H{o}s, Paul, On some problems of elementary and combinatorial geometry.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/609",
+      "direction": "unknown",
+      "source_text": "The trivial upper bound is $2^n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/610",
+      "direction": "upper",
+      "source_text": "A problem of Erd\\H{o}s, Gallai, and Tuza \\cite{EGT92}, who proved that\\[\\tau(G) \\leq n-\\sqrt{2n}+O(1).\\]This would be best possible, since there exist triangle-free graphs with all independent sets of size $O(\\sqrt{n\\log n})$, which follows from the lower bound for $R(3,k)$ by Kim \\cite{Ki95} (see [165]).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/612",
+      "value": 3.0,
+      "direction": "upper",
+      "source_text": "It is known (see \\cite{EPPT89} for example) that any connected graph on $n$ vertices with minimum degree $d$ has diameter\\[D\\leq 3\\frac{n}{d+1}+O(1).\\]This was disproven for the case of $K_{2r}$-free graphs with $r\\geq 2$ by Czabarka, Singgih, and Sz\\'{e}kely \\cite{CSS21}, who constructed arbitrarily large connected graphs on $n$ vertices which contain no $K_{2r}$ and have minimum degree $d$, and diameter\\[\\frac{6r-5}{(2r-1)d+2r-3}n+O(1),\\]which contradicts the above conjecture for each fixed $r$ as $d\\to \\infty$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/620",
+      "direction": "upper",
+      "source_text": "Bollob\\'{a}s and Hind \\cite{BoHi91} proved\\[n^{1/2} \\ll f(n) \\ll n^{7/10+o(1)}.\\]Krivelevich \\cite{Kr94} improved this to\\[n^{1/2}(\\log\\log n)^{1/2} \\ll f(n) \\ll n^{2/3}(\\log n)^{1/3}.\\]Wolfovitz \\cite{Wo13} proved\\[f(n) \\ll n^{1/2}(\\log n)^{120}.\\]The best bounds currently known are\\[n^{1/2}\\frac{(\\log n)^{1/2}}{\\log\\log n}\\ll f(n) \\ll n^{1/2}\\log n.\\]The lower bound follows from results of Shearer \\cite{Sh95}, and the upper bound was proved by Mubayi and Verstraete \\cite{MuVe24}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/625",
+      "direction": "upper",
+      "source_text": "It is known that almost surely\\[\\frac{n}{2\\log_2n}\\leq \\zeta(G)\\leq \\chi(G)\\leq (1+o(1))\\frac{n}{2\\log_2n}.\\](The final upper bound is due to Bollob\\'{a}s \\cite{Bo88}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/626",
+      "direction": "upper",
+      "source_text": "It is known that\\[\\frac{1}{4\\log k}\\log n\\leq g_k(n) \\leq \\frac{2}{\\log(k-2)}\\log n+1,\\]the lower bound due to Kostochka \\cite{Ko88} and the upper bound to Erd\\H{o}s \\cite{Er59b}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/633",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "It is easy to see (see for example \\cite{So09}) that any triangle can be cut into $n^2$ congruent triangles (for any $n\\geq 1$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/634",
+      "direction": "lower",
+      "source_text": "Zhang \\cite{Zh25}, among other results, has proved that for any integers $a \\geq b$, if\\[n\\geq 3\\left\\lceil \\frac{a^2+b^2+ab-a-b}{ab}\\right\\rceil\\]then $n^2ab$ has this property (indeed, they explicitly show that an equilateral triangle can be tiled with $n^2ab$ many triangles of side lengths $a,b,\\sqrt{a^2+b^2+2+ab}$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/64",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Conjectured by Erd\\H{o}s and Gy\\'{a}rf\\'{a}s, who believed the answer must be negative, and in fact for every $r$ there must be a graph of minimum degree at least $r$ without a cycle of length $2^k$ for any $k\\geq 2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/643",
+      "direction": "upper",
+      "source_text": "More generally, F\\\"{u}redi \\cite{Fu84} proved that\\[\\binom{n-1}{t-1}+\\left\\lfloor\\frac{n-1}{t}\\right\\rfloor\\leq f(n;t) < \\frac{7}{2}\\binom{n}{t-1},\\]and conjectured the lower bound is sharp for $t\\geq 4$. Pikhurko and Verstra\\\"{e}te \\cite{PiVe09} have proved that\\[1 \\leq \\limsup_{n\\to \\infty} \\frac{f(n;t)}{\\binom{n}{t-1}}\\leq \\min\\left(\\frac{7}{4},1+\\frac{2}{\\sqrt{t}}\\right)\\]for all $t\\geq 3$. F\\\"{u}redi \\cite{Fu84} proved that $f(n;3)/\\binom{n}{2}$ converges as $n\\to \\infty$, but the existence of the limit for $t\\geq 4$ is unknown.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/65",
+      "direction": "lower",
+      "source_text": "Liu and Montgomery \\cite{LiMo20} have proved the asymptotically sharp lower bound of $\\geq (\\tfrac{1}{2}-o(1))\\log k$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/654",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "In \\cite{Er87b} and \\cite{ErPa90} Erd\\H{o}s and Pach ask this under the additional assumption that there are no three points on a line (so that the points are in general position), although they only ask the weaker question whether there is a lower bound of the shape $(\\tfrac{1}{3}+c)n$ for some constant $c>0$. They suggest the lower bound $(1-o(1))n$ is true under the assumption that any circle around a point $x_i$ contains at most $2$ other $x_j$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/657",
+      "direction": "lower",
+      "source_text": "Straus has observed that if $2^k\\geq n$ then there exist $n$ points in $\\mathbb{R}^k$ which contain no isosceles triangle and determine at most $n-1$ distances.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/665",
+      "direction": "lower",
+      "source_text": "Shrikhande and Singhi \\cite{ShSi85} have proved that the answer is no conditional on the conjecture that the order of every projective plane is a prime power (see [723]), by proving that every pairwise balanced design on $n$ points in which each block is of size $\\geq n^{1/2}-c$ can be embedded in a projective plane of order $n+i$ for some $i\\leq c+2$, if $n$ is sufficiently large.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/668",
+      "direction": "upper",
+      "source_text": "Computational evidence of Engel, Hammond-Lee, Su, Varga, and Zs\\'{a}mboki \\cite{EHSVZ25} and Alexeev, Mixon, and Parshall \\cite{AMP25} suggests that this count is $=1$ for various other $5\\leq n\\leq 21$ (although these calculations were checking only up to graph isomorphism, rather than congruency).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/669",
+      "direction": "upper",
+      "source_text": "Burr, Gr\\\"{u}nbaum, and Sloane \\cite{BGS74} have proved that\\[f_3(n)=\\frac{n^2}{6}-O(n)\\]and\\[F_3(n)=\\frac{n^2}{6}-O(n).\\]There is a trivial upper bound of $F_k(n) \\leq \\binom{n}{2}/\\binom{k}{2}$, and hence\\[\\lim F_k(n)/n^2 \\leq \\frac{1}{k(k-1)}.\\]See also [101].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/670",
+      "direction": "unknown",
+      "source_text": "The lower bound of $\\binom{n}{2}$ for the diameter is trivial.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/671",
+      "direction": "upper",
+      "source_text": "Bernstein \\cite{Be31} proved that for any choice of $a_i^n$ there exists $x_0\\in [-1,1]$ such that\\[\\limsup_{n\\to \\infty} \\sum_{1\\leq i\\leq n}\\lvert p_{i}^n(x)\\rvert=\\infty.\\]Erd\\H{o}s and V\\'{e}rtesi \\cite{ErVe80} proved that for any choice of $a_i^n$ there exists a continuous $f:[-1,1]\\to \\mathbb{R}$ such that\\[\\limsup_{n\\to \\infty} \\lvert \\mathcal{L}^nf(x)\\rvert=\\infty\\]for almost all $x\\in [-1,1]$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/672",
+      "direction": "upper",
+      "source_text": "Considering the question of whether the product of an arithmetic progression of length $k$ can be equal to an $\\ell$th power: {UL} {LI}Euler proved this is impossible when $k=4$ and $\\ell=2$,{/LI} {LI}Obl\\'{a}th \\cite{Ob51} proved this is impossible when $(k,l)=(5,2),(3,3),(3,4),(3,5)$.{/LI} {LI}Marszalek \\cite{Ma85} proved that this is only possible for $k\\ll_d 1$, where $d$ is the common difference of the arithmetic progression.{/LI} {LI}Gy\\\"{o}ry, Hajdu, and Saradha \\cite{GHS04} proved this is impossible for $4\\leq k\\leq 5$. {LI}Bennett, Bruin, Gy\\\"{o}ry, and Hajdu \\cite{BBGH06} proved this is impossible for $4\\leq k\\leq 11$, and also impossible for $k$ sufficiently large depending only on the number of prime divisors of $d$.{/LI} {LI} Gy\\\"{o}ry, Hajdu, and Pint\\'{e}r \\cite{GHP09} have proved this is impossible for $4\\leq k\\leq 34$.{/LI} {/UL} Jakob F\\\"{u}hrer has observed this is possible for integers in general, for example $(-6)\\cdot(-1)\\cdot 4\\cdot 9=6^3$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/676",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Most generally, given some infinite set $A\\subseteq \\mathbb{N}$ and function $f:A\\to \\mathbb{N}$ one can ask for sufficient conditions on $A$ and $f$ that guarantee every large number (or almost all numbers) can be written as\\[am^2+b\\]for some $m\\in A$ and $a\\geq 1$ and $0\\leq b<f(m)$. In another direction, one can ask what is the minimal $c_n$ such that $n$ can be written as $n=ap^2+b$ with $0\\leq b<c_np$ for some $p\\leq \\sqrt{n}$. This problem asks whether $c_n\\leq 1$ eventually, but in \\cite{Er79d} Erd\\H{o}s suggests that in fact $\\limsup c_n=\\infty$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/677",
+      "direction": "lower",
+      "source_text": "The Thue-Siegel theorem implies that, for fixed $k$, there are only finitely many $m,n$ such that $m\\geq n+k$ and $M(n,k)=M(m,k)$. In general, how many solutions does $M(n,k)=M(m,l)$ have when $m\\geq n+k$ and $l>1$? Erd\\H{o}s expects very few (and none when $l\\geq k$). In \\cite{Er79d} Erd\\H{o}s conjectures the stronger fact that (aside from a finite number of exceptions) if $k>2$ and $m\\geq n+k$ then $\\prod_{i\\leq k}(n+i)$ and $\\prod_{i\\leq k}(m+i)$ cannot have the same set of prime factors.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/68",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Weisenberg has observed that this sum can also be written as\\[\\sum_{k\\geq 1}\\sum_{n\\geq 2}\\frac{1}{(n!)^k}.\\]Erd\\H{o}s \\cite{Er88c} notes that $\\sum \\frac{1}{n!+t}$ should be transcendental for every integer $t$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/683",
+      "direction": "lower",
+      "source_text": "A theorem of Sylvester and Schur (see \\cite{Er34}) states that $P(\\binom{n}{k})>k$ if $k\\leq n/2$. Erd\\H{o}s \\cite{Er55d} proved that there exists some $c>0$ such that, whenever $k\\leq n/2$,\\[P\\left(\\binom{n}{k}\\right)\\gg k\\log k.\\]Erd\\H{o}s \\cite{Er79d} writes it 'seems certain' that this holds for every $c>0$, with only a finite number of exceptions (depending on $c$). Standard heuristics on prime gaps suggest that the largest prime divisor of $\\binom{n}{k}$ is, for $k\\leq n/2$, in fact\\[>e^{c\\sqrt{k}}\\]for some constant $c>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/685",
+      "direction": "lower",
+      "source_text": "It is trivial that the number of prime factors is\\[>\\frac{\\log \\binom{n}{k}}{\\log n},\\]and this inequality becomes (asymptotic) equality if $k>n^{1-o(1)}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/687",
+      "direction": "upper",
+      "source_text": "The best known upper bound is due to Iwaniec \\cite{Iw78},\\[Y(x) \\ll x^2.\\]The best lower bound is due to Ford, Green, Konyagin, Maynard, and Tao \\cite{FGKMT18},\\[Y(x) \\gg x\\frac{\\log x\\log\\log\\log x}{\\log\\log x},\\]improving on a previous bound of Rankin \\cite{Ra38}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/690",
+      "direction": "upper",
+      "source_text": "Cambie \\cite{Ca25} has shown that $d_k(p)$ is unimodular for $1\\leq k\\leq 3$ and is not unimodular for $4\\leq k\\leq 20$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/691",
+      "direction": "upper",
+      "source_text": "For example suppose $A$ is the union of $(n_k,(1+\\eta_k)n_k)\\cap \\mathbb{Z}$ where $1\\leq n_1<n_2<\\cdots$ is a lacunary sequence.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/695",
+      "direction": "upper",
+      "source_text": "If we take the obvious 'greedy' chain with $2=p_1$ and $p_{i+1}$ is the smallest prime $\\equiv 1\\pmod{p_i}$ then Linnik's theorem implies that this sequence grows like\\[p_k \\leq e^{e^{O(k)}}.\\]It is conjectured that, for any prime $p$, there is a prime $p'\\leq p(\\log p)^{O(1)}$ which is congruent to $1\\pmod{p}$, which would imply this sequence grows like\\[p_k\\leq \\exp(k(\\log k)^{1+o(1)}).\\]An extensive study of the growth of finite prime chains was carried out by Ford, Konyagin, and Luca \\cite{FKL10}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/699",
+      "direction": "upper",
+      "source_text": "A theorem of Sylvester and Schur says that for any $1\\leq i\\leq n/2$ there exists some prime $p>i$ which divides $\\binom{n}{i}$. Erd\\H{o}s and Szekeres further conjectured that $p\\geq i$ can be improved to $p>i$ except in a few special cases. They also found some counterexamples when $i=3$, but only one counterexample when $i\\geq 4$:\\[\\textrm{gcd}\\left(\\binom{28}{5},\\binom{28}{14}\\right)=2^3\\cdot 3^3\\cdot 5.\\]This is mentioned in problem B31 of Guy's collection \\cite{Gu04}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/70",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Rado proved that $\\mathfrak{c}\\to (\\omega+n,4)_2^3$ for any $2\\leq n<\\omega$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/700",
+      "value": 1.0,
+      "direction": "upper",
+      "source_text": "This implies\\[f(n) \\leq (1+o(1))\\frac{n}{\\log n}.\\]It is known that $f(n)=n/P(n)$ when $n$ is the product of two primes.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/701",
+      "direction": "upper",
+      "source_text": "A problem of Chv\\'{a}tal \\cite{Ch74}, who proved it replacing the closed under subsets condition with the (stronger) condition that, assuming all sets in $\\mathcal{F}$ are subsets of $\\{1,\\ldots,n\\}$, whenever $A\\in \\mathcal{F}$ and there is an injection $f:B\\to A$ such that $x\\leq f(x)$ for all $x\\in B$, then $B\\in \\mathcal{F}$. Sterboul \\cite{St74} proved this when, letting $\\mathcal{G}$ be the maximal sets (under inclusion) in $\\mathcal{F}$, all sets in $\\mathcal{G}$ have the same size, $\\lvert A\\cap B\\rvert\\leq 1$ for all $A\\neq B\\in \\mathcal{G}$, and at least two sets in $\\mathcal{G}$ have non-empty intersection.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/704",
+      "direction": "unknown",
+      "source_text": "Prosanov \\cite{Pr20} has given an alternative proof of this upper bound. [Pr20] Prosanov, Roman, A new proof of the Larman-Rogers upper bound for the chromatic number of the Euclidean space.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/706",
+      "direction": "upper",
+      "source_text": "The case $r=1$ is the Hadwiger-Nelson problem, for which it is known that $5\\leq L(1)\\leq 7$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/708",
+      "direction": "upper",
+      "source_text": "Their lower bound construction takes $A$ as the set of $p_ip_j$ for $i\\neq j$, where $p_1<\\cdots <p_\\ell$ is some set of primes such that $2p_1^2>p_\\ell^2$. (In 1992 1000 rupees was worth approximately \\$38.60.)  Erd\\H{o}s and Sur\\'{a}nyi similarly asked what is the smallest $c_n\\geq 1$ such that in any interval $I\\subset [0,\\infty)$ of length $c_n\\max(A)$ there exists some $B\\subseteq I\\cap \\mathbb{N}$ with $\\lvert B\\rvert=n$ such that\\[\\prod_{a\\in A} a \\mid \\prod_{b\\in B}b.\\]They prove $c_2=1$ and $c_3=\\sqrt{2}$, but have no good upper or lower bounds in general.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/710",
+      "direction": "upper",
+      "source_text": "A problem of Erd\\H{o}s and Pomerance \\cite{ErPo80}, who proved\\[(2/\\sqrt{e}+o(1))n\\left(\\frac{\\log n}{\\log\\log n}\\right)^{1/2}\\leq f(n)\\leq (1.7398\\cdots+o(1))n(\\log n)^{1/2}.\\]In \\cite{Er92c} Erd\\H{o}s offered 2000 rupees for an asymptotic formula; for uniform comparison across prizes I have converted this using the 1992 exchange rates.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/713",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s sometimes asked this in the weaker version with just\\[\\mathrm{ex}(n;G)\\asymp n^{\\alpha}.\\]Erd\\H{o}s \\cite{Er67d} had initially conjectured that, for any bipartite graph $G$, $\\mathrm{ex}(n;G)\\sim cn^{\\alpha}$ for some constant $c>0$ and $\\alpha$ of the shape $1+\\frac{1}{k}$ or $2-\\frac{1}{k}$ for some integer $k\\geq 2$. A simplified proof was given by F\\\"{u}redi and Gerbner \\cite{FuGe21}, who extended it to a counterexample for all $k\\geq 5$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/714",
+      "direction": "upper",
+      "source_text": "K\\\"{o}v\\'{a}ri, S\\'{o}s, and Tur\\'{a}n \\cite{KST54} proved\\[\\mathrm{ex}(n; K_{r,r}) \\ll n^{2-1/r}\\]for all $r\\geq 2$. Brown \\cite{Br66} and, independently, Erd\\H{o}s, R\\'{e}nyi, and S\\'{o}s \\cite{ERS66}, proved the conjectured lower bound when $r=3$. When $r=2$ it is known that\\[\\mathrm{ex}(n;K_{2,2})=\\left(\\frac{1}{2}+o(1)\\right)n^{3/2}\\](see [768], since $K_{2,2}=C_4$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/723",
+      "value": 11.0,
+      "direction": "upper",
+      "source_text": "This conjecture has been proved for $n\\leq 11$, but it is open whether there exists a projective plane of order $12$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/724",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Euler conjectured that $f(n)=1$ when $n\\equiv 2\\pmod{4}$, but this was disproved by Bose, Parker, and Shrikhande \\cite{BPS60} who proved $f(n)\\geq 2$ for $n\\geq 7$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/725",
+      "direction": "upper",
+      "source_text": "Yamamoto \\cite{Ya51} extended this to $k\\leq n^{1/3-o(1)}$. References  [ErKa46] Erd\\\"{o}s, Paul and Kaplansky, Irving, The asymptotic number of Latin rectangles. [Ya51] Yamamoto, Koichi, On the asymptotic number of Latin rectangles.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/726",
+      "direction": "upper",
+      "source_text": "For comparison the classical estimate of Mertens states that\\[\\sum_{p\\leq n}\\frac{1}{p}\\sim \\log\\log n.\\]By $n\\in (p/2,p)\\pmod{p}$ we mean $n\\equiv r\\pmod{p}$ for some integer $r$ with $p/2<r<p$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/727",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er68c} proved that if $a!b!\\mid n!$ then $a+b\\leq n+O(\\log n)$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/730",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "It is not known whether there are such pairs of the shape $(n,n+k)$ for every $k\\geq 1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/734",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s and de Bruijn \\cite{dBEr48} proved that if $A_1,\\ldots,A_m\\subseteq \\{1,\\ldots,n\\}$ is a pairwise balanced block design then $m\\geq n$, and this implies there must be some $t$ such that there are $\\gg n^{1/2}$ many $t$ with $\\lvert A_i\\rvert=t$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/743",
+      "value": 9.0,
+      "direction": "upper",
+      "source_text": "Fishburn \\cite{Fi83} proved this for $n\\leq 9$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/757",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s and S\\'{o}s proved that $c\\geq 1/2$. Gy\\'{a}rf\\'{a}s and Lehel \\cite{GyLe95} proved\\[\\frac{1}{2}<c<\\frac{3}{5}.\\](The example proving the upper bound is the set of the first $n$ Fibonacci numbers.)  References  [GyLe95] Gy\\'{a}rf\\'{a}s, Andr\\'{a}s and Lehel, Jen\\H{o}, Linear sets with five distinct differences among any four elements.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/768",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s could prove that there exists some constant $c>0$ such that for all large $N$\\[\\exp(-c\\sqrt{\\log N}\\log\\log N)\\leq \\frac{\\lvert A\\cap [1,N]\\rvert}{N}\\]and\\[\\frac{\\lvert A\\cap [1,N]\\rvert}{N}\\leq \\exp(-(1+o(1))\\sqrt{\\log N\\log\\log N}).\\]Erd\\H{o}s asked about this because $\\lvert A\\cap [1,N]\\rvert$ provides an upper bound for the number of integers $n\\leq N$ for which there is a non-cyclic simple group of order $n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/769",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "A problem first investigated by Hadwiger, who proved the lower bound\\[c(n) \\geq 2^n+2^{n-1}.\\]It is easy to see that $c(2)=6$. Connor and Marmorino \\cite{CoMa18} proved that\\[c(n) \\geq 2^{n+1}-1\\]for all $n\\geq 3$,\\[c(n) \\leq 1.8n^{n+1}\\]if $n+1$ is prime, and\\[c(n) \\leq e^2n^n\\]otherwise.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/77",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s proved\\[\\sqrt{2}\\leq \\liminf_{k\\to \\infty}R(k)^{1/k}\\leq \\limsup_{k\\to \\infty}R(k)^{1/k}\\leq 4.\\]The upper bound has been improved to $4-\\tfrac{1}{128}$ by Campos, Griffiths, Morris, and Sahasrabudhe \\cite{CGMS23}. A shorter and simpler proof of an upper bound of the strength $4-c$ for some constant $c>0$ (and a generalisation to the case of more than two colours) was given by Balister, Bollob\\'{a}s, Campos, Griffiths, Hurley, Morris, Sahasrabudhe, and Tiba \\cite{BBCGHMST24}. See also [1029] for a problem concerning a lower bound for $R(k)$ and discussion of lower bounds in general. and Wei, L., Optimizing the CGMS upper bound on Ramsey numbers.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/773",
+      "direction": "lower",
+      "source_text": "The lower bound was improved to\\[\\lvert A\\rvert \\gg N^{2/3}\\]by Lefmann and Thiele \\cite{LeTh95}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/779",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s expects that the least such prime is much smaller than $P$, and in fact satisfies $p\\leq n^{O(1)}$. Deaconescu has verified this conjecture for $n\\leq 1000$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/787",
+      "direction": "upper",
+      "source_text": "The current best bounds known are\\[(\\log n)^{1+c} \\ll g(n) \\ll \\exp(\\sqrt{\\log n})\\]for some constant $c>0$, the lower bound due to Sanders \\cite{Sa21} and the upper bound due to Ruzsa \\cite{Ru05}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/791",
+      "direction": "upper",
+      "source_text": "The current best-known bounds are\\[(2.181\\cdots+o(1))n\\leq g(n)^2 \\leq (3.458\\cdots+o(1))n.\\]The lower bound is due to Yu \\cite{Yu15}, and the upper bound is due to Kohonen \\cite{Ko17}. (The disproof of $g(n)\\sim 2n^{1/2}$ was accomplished by Mrose \\cite{Mr79}, who gave a construction implying $g(n)^2 \\leq \\frac{7}{2}n$.)  References  [Ko17] Kohonen, Jukka, An improved lower bound for finite additive 2-bases. [Yu15] Yu, Gang, A new upper bound for finite additive {$h$}-bases.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/792",
+      "direction": "lower",
+      "source_text": "The best lower bound known is\\[f(n)\\geq \\frac{n}{3}+c\\log\\log n\\]for some constant $c>0$, due to Bedert \\cite{Be25b}. The best upper bound known is\\[f(n) \\leq \\frac{n}{3}+o(n),\\]due to Eberhard, Green, and Manners \\cite{EGM14}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/793",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er38} proved there exist constants $0<c_1\\leq c_2$ such that\\[\\pi(n)+c_1n^{2/3}(\\log n)^{-2}\\leq F(n) \\leq \\pi(n)+c_2n^{2/3}(\\log n)^{-2}.\\]Erd\\H{o}s \\cite{Er69} gave a simple proof that $F(n) \\leq \\pi(n)+n^{2/3}$: define a graph with vertex set the union of those integers in $[1,n^{2/3}]$ with all primes $p\\in (n^{2/3},n]$. It is easy to see that every $m\\leq n$ can be written as $uv$ where $u\\leq n^{2/3}$ and $v$ is either prime or $\\leq n^{2/3}$, and hence there are $\\geq \\lvert A\\rvert$ many edges. This can be improved to give the upper bound mentioned by using a subset of integers in $[1,n^{2/3}]$. More generally, one can ask for such an asymptotic for the size of sets such that no $a\\in A$ divides the product of $r$ distinct other elements of $A$, with the exponent $2/3$ replaced by $\\frac{2}{r+1}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/796",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er64d} proved that if $2^{r-1}<k\\leq 2^r$ then\\[g_k(n) \\sim \\frac{(\\log\\log n)^{r-1}}{(r-1)!\\log n}n\\](which is the asymptotic count of those integers $\\leq n$ with $r$ distinct prime factors). For $k=3$ he could prove the existence of some $0<c_1\\leq c_2$ such that\\[\\frac{\\log\\log n}{\\log n}n+c_1\\frac{n}{(\\log n)^2}\\leq g_3(n)\\leq \\frac{\\log\\log n}{\\log n}n+c_2\\frac{n}{(\\log n)^2}.\\]The special case $k=2$ is the subject of [425].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/80",
+      "direction": "unknown",
+      "source_text": "The best known lower bounds for $f_c(n)$ are those from Szemer\\'{e}di's regularity lemma, and as such remain very poor.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/81",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Asked by Erd\\H{o}s, Ordman, and Zalcstein \\cite{EOZ93}, who proved an upper bound of $(1/4-\\epsilon)n^2$ many cliques (for some very small $\\epsilon>0$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/811",
+      "value": 4.0,
+      "direction": "lower",
+      "source_text": "They conjecture that $K_m$ lacks this property for all $m\\geq 4$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/812",
+      "value": 4.0,
+      "direction": "lower",
+      "source_text": "Burr, Erd\\H{o}s, Faudree, and Schelp \\cite{BEFS89} proved that\\[R(n+1)-R(n) \\geq 4n-8\\]for all $n\\geq 2$. The lower bound of [165] implies that\\[R(n+2)-R(n) \\gg n^{2-o(1)}.\\]  References  [BEFS89] Burr, S.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/82",
+      "direction": "unknown",
+      "source_text": "It is known that $F(5)=3$ and $F(7)=4$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/820",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "van Doorn in the comments sketches a proof of the lower bound: that there exists some constant $c>0$ and infinitely many $n$ such that\\[H(n) > \\exp(n^{c/\\log\\log n}).\\]The sequence $H(n)$ for $1\\leq n\\leq 10$ is\\[3,3,3,6,3,18,3,6,3,12.\\]The sequence of $n$ for which $(2^n-1,3^n-1)=1$ is A263647 in the OEIS.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/821",
+      "direction": "lower",
+      "source_text": "The best known bound is that there are infinitely many $n$ such that\\[g(n) > n^{0.71568\\cdots},\\]obtained by Lichtman \\cite{Li22} as a consequence of proving that there are $\\geq \\frac{x}{(\\log x)^{O(1)}}$ many primes $p\\leq x$ such that all prime factors of $p-1$ are $\\leq x^{0.2843\\cdots}$ (which improves a number of previous exponents, most recently Baker and Harman \\cite{BaHa98}).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/825",
+      "direction": "unknown",
+      "source_text": "In other words, this problem asks for an upper bound for the abundancy index of weird numbers. A similar argument shows that either there are infinitely many primitive weird numbers or there is an upper bound for the abundancy index of all weird numbers.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/827",
+      "direction": "upper",
+      "source_text": "Martinez and Rold\\'{a}n-Pensado give a corrected argument that proves $n_k\\ll k^9$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/835",
+      "direction": "upper",
+      "source_text": "The chromatic numbers listed at this website show that this is false for $3\\leq k\\leq 8$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/837",
+      "direction": "upper",
+      "source_text": "It is known that\\[A_2 = \\left\\{ 1-\\frac{1}{k} : k\\geq 1\\right\\}.\\]",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/840",
+      "direction": "upper",
+      "source_text": "The lower bound is taking a genuine Sidon set $B\\subset [1,N/3]$ of size $\\sim N^{1/2}/\\sqrt{3}$ and taking the union with $\\{N-b : b\\in B\\}$. The upper bound was improved by Pikhurko \\cite{Pi06} to\\[f(N) \\leq \\left(\\left(\\frac{1}{4}+\\frac{1}{(\\pi+2)^2}\\right)^{-1/2}+o(1)\\right)N^{1/2}\\](the constant here is $=1.863\\cdots$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/849",
+      "value": 5.0,
+      "direction": "lower",
+      "source_text": "There are no known examples for $t\\geq 5$. Both Erd\\H{o}s and Singmaster believed the answer to this question is no, and in fact that there exists an absolute upper bound on the number of solutions. Matomäki, Radziwill, Shao, Tao, and Teräväinen \\cite{MRSTT22} have proved that there are always at most two solutions if we restrict $k$ to\\[k\\geq \\exp((\\log n)^{2/3+\\epsilon}),\\]assuming $a$ is sufficiently large depending on $\\epsilon>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/85",
+      "direction": "upper",
+      "source_text": "The function $f(n)$ is a reformulation of the Ramsey number $R(C_4,K_{1,n})$, in that\\[R(C_4,K_{1,n})=\\min\\{ m : f(m)\\leq m-n\\}\\]and\\[f(n)=\\min\\{ m : m\\geq R(C_4, K_{1,n-m})\\}.\\]The behaviour of this Ramsey number more generally is [552].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/854",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s first thought that (for large enough $k$) all even $t\\leq \\max(a_{i+1}-a_i)$ can be written as $t=a_{j+1}-a_j$ for some $j$, but in \\cite{Ob1} writes 'perhaps this is false', and reports some computations of Lacampagne and Selfridge that this fails for $n_k=2\\cdot 3\\cdot 5\\cdot 7\\cdot 11\\cdot 13$ which 'show some doubt on [his] conjecture', and says it could fail for all or infinitely many $k$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/855",
+      "direction": "upper",
+      "source_text": "Hardy and Littlewood proved\\[\\pi(x+y) \\leq \\pi(x)+O(\\pi(y)).\\]The best known in this direction is a result of Montgomery and Vaughan \\cite{MoVa73}, which shows\\[\\pi(x+y) \\leq \\pi(x)+2\\frac{y}{\\log y}.\\]This is discussed in problem A9 of Guy's collection \\cite{Gu04}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/856",
+      "direction": "upper",
+      "source_text": "Improved bounds have been given by Tang and Zhang \\cite{TaZh25}, who proved bounds of the shape\\[(\\log N)^{b_k-o(1)}\\leq f_k(N)\\leq (\\log N)^{c_k+o(1)}\\]for some constants $0<b_k\\leq c_k\\leq 1$, and in particular\\[(\\log N)^{0.438}\\leq f_3(N)\\leq (\\log N)^{0.889},\\]say, for all large $N$. For example, the exponents $c_k$ are $<1$ (and so the upper bound above is non-trivial) if and only if [857] holds for $k$-sunflowers.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/865",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and S\\'{o}s conjectured that\\[f_k(N)\\sim \\frac{1}{2}\\left(1+\\sum_{1\\leq r\\leq k-2}\\frac{1}{4^r}\\right) N,\\]and a similar example shows that this would be best possible. Choi, Erd\\H{o}s, and Szemer\\'{e}di \\cite{CES75} have proved that, for all $k\\geq 3$, there exists $\\epsilon_k>0$ such that (for large enough $N$)\\[f_k(N)\\leq \\left(\\frac{2}{3}-\\epsilon_k\\right)N.\\]  References  [CES75] Choi, S.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/868",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s and Nathanson \\cite{ErNa89} proved that, for any $t$, there exists $A$ such that $1_A\\ast 1_A(n)\\geq t$ for all large $n$ and yet $A$ does not contain a minimal asymptotic basis of order $2$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/87",
+      "value": 4.0,
+      "direction": "upper",
+      "source_text": "Since $R(k)\\leq 4^k$ this is trivial for $\\epsilon\\geq 3/4$. Yuval Wigderson points out that $R(G)\\gg 2^{k/2}$ for any $G$ with chromatic number $k$ (via a random colouring), which asymptotically matches the best-known lower bounds for $R(k)$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/872",
+      "direction": "unknown",
+      "source_text": "Jacob, An upper bound on the extremal version of Hajnal's triangle-free game.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/876",
+      "direction": "upper",
+      "source_text": "Luczak and Schoen \\cite{LuSc00} have proved that, for all large $N$,\\[\\lvert A\\cap [1,N]\\rvert\\ll (N\\log N)^{1/2},\\]and that there exists a sum-free set $B$ such that\\[\\lvert B\\cap [1,N]\\rvert \\gg \\frac{N^{1/2}}{(\\log N)^{1/2+o(1)}}\\]for all large $N$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/878",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er84e} proved that\\[\\max_{n\\leq x}f(n)\\sim \\frac{x\\log x}{\\log\\log x}\\]for a sequence of $x\\to \\infty$. It may be true that, for almost all $n$,\\[F(n)\\sim \\frac{1}{2}n\\log\\log n.\\]Erd\\H{o}s notes that $f(n)/n$ 'almost behaves as a conventional additive function', but unusually $f(n)/n$ does not have a mean value - indeed,\\[\\limsup \\frac{1}{x}\\sum_{n<x}\\frac{f(n)}{n}=\\infty\\]but\\[\\liminf \\frac{1}{x}\\sum_{n<x}\\frac{f(n)}{n}<\\infty.\\]Erd\\H{o}s \\cite{Er84e} proved that\\[x\\log\\log\\log\\log x\\ll H(x) \\ll x\\log\\log\\log x.\\]See also [879].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/883",
+      "direction": "upper",
+      "source_text": "This threshold is the best possible, since one could take $A$ to be the set of $m\\leq n$ which are divisible by either $2$ or $3$, in which case $G(A)$ contains no triangles.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/889",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "A question of Erd\\H{o}s and Selfridge \\cite{ErSe67}, who could only show that $v_0(n)\\geq 2$ for $n\\geq 17$. More generally, they conjecture that\\[v_l(n)=\\max_{k\\geq l}v(n,k)\\to \\infty\\]as $n\\to \\infty$, for every fixed $l$, but could not even prove that $v_1(n)\\geq 2$ for all large $n$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/89",
+      "direction": "unknown",
+      "source_text": "A $\\sqrt{n}\\times\\sqrt{n}$ integer grid shows that this would be the best possible.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/890",
+      "direction": "upper",
+      "source_text": "A question of Erd\\H{o}s and Selfridge \\cite{ErSe67}, who observe that\\[\\liminf_{n\\to \\infty}\\sum_{0\\leq i<k}\\omega(n+i)\\geq k+\\pi(k)-1\\]for every $k$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/891",
+      "direction": "upper",
+      "source_text": "By Dickson's conjecture there are infinitely many $n'$ such that $\\frac{L_k}{m}n'+1$ is prime for all $1\\leq m<p_1\\cdots p_k$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/892",
+      "direction": "upper",
+      "source_text": "It is known that\\[\\sum \\frac{1}{b_n\\log b_n}<\\infty\\]and\\[\\sum_{b_n<x}\\frac{1}{b_n} =o\\left(\\frac{\\log x}{\\sqrt{\\log\\log x}}\\right)\\]are both necessary.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/893",
+      "direction": "unknown",
+      "source_text": "Erd\\H{o}s \\cite{Er98} says that 'probably there is no simple asymptotic formula for $f(n)$ since $f(n)$ increases too fast'.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/90",
+      "direction": "unknown",
+      "source_text": "In \\cite{Er82e} he offers \\$300 for the upper bound $n^{1+o(1)}$. This would be the best possible, as is shown by a set of lattice points. The best known upper bound is $O(n^{4/3})$, due to Spencer, Szemer\\'{e}di, and Trotter \\cite{SST84}. In \\cite{Er83c} and \\cite{Er85} Erd\\H{o}s offers \\$250 for an upper bound of the form $n^{1+o(1)}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/901",
+      "direction": "upper",
+      "source_text": "It is known that $m(2)=3$, $m(3)=7$, and $m(4)=23$. Erd\\H{o}s proved\\[2^n \\ll m(n) \\ll n^2 2^n\\](the lower bound in \\cite{Er63b} and the upper bound in \\cite{Er64e}).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/91",
+      "direction": "upper",
+      "source_text": "In \\cite{Er87b} Erd\\H{o}s says that there are at least two non-similar examples for $6\\leq n\\leq 9$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/917",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er69b} observed that Dirac's construction generalises to show that, if $3\\mid k$, there are infinitely many values of $n$ (those of the shape $mk/3$ where $m$ is odd) such that\\[f_k(n) \\geq \\frac{1}{2}\\left(1-\\frac{1}{k/3}\\right)n^2 + n.\\]Toft \\cite{To70} proved that $f_k(n)\\gg_k n^2$ for $k\\geq 4$. Constructions of Stiebitz \\cite{St87} show that, for $k\\geq 6$, there exist infinitely many values of $n$ such that\\[f_k(n) \\geq \\frac{1}{2}\\left(1-\\frac{1}{\\lfloor k/3\\rfloor+\\delta_k}\\right)n^2\\]where $\\delta_k=0$ if $k\\equiv 0\\pmod{3}$, $\\delta_k=1/7$ if $k\\equiv 1\\pmod{3}$, and $\\delta_k\\equiv 24/69$ if $k\\equiv 2\\pmod{3}$, which disproves Erd\\H{o}s' conjectured asympotic for $k\\not\\equiv 0\\pmod{3}$. Stiebitz also proved the general upper bound\\[f_k(n) < \\mathrm{ex}(n;K_{k-1})\\sim \\frac{1}{2}\\left(1-\\frac{1}{k-2}\\right)n^2\\]for large $n$. Luo, Ma, and Yang \\cite{LMY23} have improved this upper bound to\\[f_k(n) \\leq \\frac{1}{2}\\left(1-\\frac{1}{k-2}-\\frac{1}{36(k-1)^2}+o(1)\\right)n^2\\]See also [944] and [1032].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/919",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s and Hajnal showed this does not generalise to higher cardinals - they (see \\cite{Er69b}) constructed a set on $\\omega_1^2$ with chromatic number $\\aleph_1$ such that every strictly smaller subgraph has chromatic number $\\leq \\aleph_0$ as follows: the vertices of $G$ are the pairs $(x_\\alpha,y_\\beta)$ for $1\\leq \\alpha,\\beta <\\omega_1$, ordered lexicographically.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/920",
+      "direction": "lower",
+      "source_text": "Shearer's lower bound for $R(3,m)$ (see [165]) improves this to\\[g_3(n) \\gg \\left(\\frac{n}{\\log n}\\right)^{1/2}.\\]The lower bound $R(4,m) \\gg m^3/(\\log m)^4$ of Mattheus and Verstraete \\cite{MaVe23} (see [166]) implies\\[g_4(n) \\gg \\frac{n^{2/3}}{(\\log n)^{4/3}}.\\]In general it is known (see [986]) that\\[R(k,m)\\gg (\\log m)^{-O_k(1)}m^{\\frac{k+1}{2}}\\]which implies\\[g_k(n) \\gg \\frac{n^{1-\\frac{2}{k+1}}}{(\\log n)^{c_k}}.\\]See [1013] for the case $k=3$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/929",
+      "direction": "upper",
+      "source_text": "The best bound on large gaps between primes due to Ford, Green, Konyagin, Maynard, and Tao \\cite{FGKMT18} (see [4]) implies\\[S(k) \\ll k \\frac{\\log\\log\\log k}{\\log\\log k\\log\\log\\log\\log k}.\\]  References  [FGKMT18] Ford, Kevin and Green, Ben and Konyagin, Sergei and Maynard, James and Tao, Terence, Long gaps between primes.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/933",
+      "direction": "upper",
+      "source_text": "Mahler proved (a more general result that implies in particular) that\\[2^k3^l<n^{1+o(1)}.\\]Erd\\H{o}s \\cite{Er76d} wrote 'it is easy to see' that for infinitely many $n$\\[2^k3^l>n\\log n.\\]Steinerberger has noted a simple proof of this fact follows from taking $n=2^{3^r}$ for any integer $r\\geq 1$, when $k=3^r$ and $l=r+1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/934",
+      "value": 3.0,
+      "direction": "lower",
+      "source_text": "They also conjecture that, for all $t\\geq 3$, $h_t(d)\\geq (1-o(1))d^t$ for infinitely many $d$ and $h_t(d)\\leq (1+o(1))d^t$ for all $d$ (where the $o(1)$ term $\\to 0$ as $d\\to \\infty$). The same authors prove that, if $t$ is large, then there are infinitely many $d$ such that $h_t(d) \\geq 0.629^td^t$, and that for all $t\\geq 1$ we have\\[h_t(d) \\leq \\tfrac{3}{2}d^t+1.\\]  References  [BBPP83] Bermond, J.-C.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/935",
+      "value": 1.0,
+      "direction": "lower",
+      "source_text": "A result of Mahler implies, for every $\\ell\\geq 1$,\\[\\limsup_{n\\to \\infty}\\frac{Q_2(n(n+1)\\cdots(n+\\ell))}{n^2}\\geq 1.\\]All these questions can be asked replacing $Q_2$ by $Q_r$ for $r>2$, only keeping those prime powers with exponent $\\geq r$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/936",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Cushing and Pascoe \\cite{CuPa16} have shown the answer to the second question is yes assuming the abc conjecture - in fact, for any fixed $k\\geq 0$, there are only finitely many $n$ and powerful $x$ such that $\\lvert x-n!\\rvert \\leq k$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/944",
+      "value": 4.0,
+      "direction": "lower",
+      "source_text": "This was conjectured by Dirac in 1970 for $k\\geq 4$ and $r=1$. Independently, Jensen \\cite{Je02} gave an alternative construction for all $k\\geq 5$. Martinsson and Steiner \\cite{MaSt25} proved this is true for every $r\\geq 1$ if $k$ is sufficiently large, depending on $r$. Skottova and Steiner \\cite{SkSt25} have improved this, proving that such graphs exist for all $k\\geq 5$ and $r\\geq 1$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/945",
+      "direction": "upper",
+      "source_text": "A problem of Erd\\H{o}s and Mirsky \\cite{ErMi52}, who proved that\\[\\frac{(\\log x)^{1/2}}{\\log\\log x}\\ll F(x) \\ll \\exp\\left(O\\left(\\frac{(\\log x)^{1/2}}{\\log\\log x}\\right)\\right).\\]Erd\\H{o}s \\cite{Er85e} claimed that the lower bound could be improved via their method 'with some more work' to $(\\log x)^{1-o(1)}$. Beker has improved the upper bound to\\[F(x) \\ll \\exp\\left(O\\left((\\log x)^{1/3+o(1)}\\right)\\right).\\]Cambie has observed that Cram\\'{er's conjecture} implies that $F(x) \\ll (\\log x)^2$, and furthermore if every interval in $[x,2x]$ of length $\\gg \\log x$ contains a squarefree number (see [208]) then every interval of length $\\gg (\\log x)^2$ contains two numbers with the same number of divisors, whence\\[F(x) \\ll (\\log x)^2.\\]See [1004] for the analogous problem with the Euler totient function.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/948",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s initially asked whether this is possible with the set being monochromatic, but Galvin showed that this is not always possible, considering the two colouring where, writing $n=2^km$ with $m$ odd, we colour $n$ red if $m\\geq F(k)$ and blue if $m<F(k)$ (for some sufficiently quickly growing $F$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/953",
+      "direction": "lower",
+      "source_text": "The trivial upper bound is $O(r)$. Kovac has observed that S\\'{a}rk\\\"{o}zy's lower bound in [466] can be adapted to give a lower bound of $\\gg r^{0.26}$ for this problem.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/954",
+      "direction": "upper",
+      "source_text": "Note that the number of solutions to $a_i+a_j\\leq x$ is always at least $x$ by construction. Erd\\H{o}s and Rosen could not even prove whether the number of solutions to $a_i+a_j\\leq x$ satisfies is at most $(1+o(1))x$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/955",
+      "direction": "upper",
+      "source_text": "Pollack, Pomerance, and Thompson \\cite{PPT18} prove that if $\\epsilon(x)=o(1)$ and $A\\subset \\mathbb{N}$ has size at most $x^{1/2+\\epsilon(x)}$ then\\[\\#\\{ n\\leq x: s(n)\\in A\\} =o(x)\\]as $x\\to \\infty$. It follows that (using $s(n)\\ll n\\log\\log n$) if $A$ grows like $\\lvert A\\cap [1,x]\\rvert\\leq x^{1/2+o(1)}$ then $s^{-1}(A)$ has density $0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/956",
+      "direction": "upper",
+      "source_text": "They also consider the related function where we consider $n$ disjoint convex sets (not necessarily translates), for which they give an upper bound of $\\ll n^{7/5}$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/959",
+      "direction": "lower",
+      "source_text": "More generally, one can ask about\\[\\max (f(d_r)-f(d_{r+1})).\\]Clemen, Dumitrescu, and Liu \\cite{CDL25}, have shown that\\[\\max (f(d_1)-f(d_2))\\gg n\\log n.\\]More generally, for any $1\\leq k\\leq \\log n$, there exists a set $A$ of $n$ points such that\\[f(d_r)-f(d_{r+1})\\gg \\frac{n\\log n}{r}.\\]They conjecture that $n\\log n$ can be improved to $n^{1+c/\\log\\log n}$ for some constant $c>0$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/96",
+      "direction": "upper",
+      "source_text": "In \\cite{Er92e} Erd\\H{o}s credits the conjecture that the true upper bound is $2n$ to himself and Fishburn. F\\\"{u}redi \\cite{Fu90} proved an upper bound of $O(n\\log n)$. The best known upper bound is\\[\\leq n\\log_2n+4n,\\]due to Aggarwal \\cite{Ag15}. [EdHa91] Edelsbrunner, Herbert and Hajnal, P\\'{e}ter, A lower bound on the number of unit distances between the vertices of a convex polygon.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/962",
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er65} wrote it is 'not hard to prove' that\\[k(n)\\gg_\\epsilon \\exp((\\log n)^{1/2-\\epsilon})\\]and it 'seems likely' that $k(n)=o(n^\\epsilon)$, but had no non-trivial upper bound for $k(n)$. Tang has proved a lower bound of\\[k(n)\\geq \\exp\\left(\\left(\\frac{1}{\\sqrt{2}}-o(1)\\right)\\sqrt{\\log n\\log\\log n}\\right).\\]  References  [Er65] Erd\\H{o}s, P., Extremal problems in number theory.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/969",
+      "direction": "upper",
+      "source_text": "The best known unconditional upper bound is of the shape $x^{1/2-o(1)}$, due to Walfisz \\cite{Wa63}. Conditional on this assumption, the best known upper bound is\\[E(x)\\ll x^{\\frac{11}{35}+o(1)},\\]due to Liu \\cite{Li16}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/97",
+      "direction": "unknown",
+      "source_text": "Indeed, if this problem holds for $k+1$ vertices then, by induction, this implies an upper bound of $kn$ for [96].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/970",
+      "direction": "upper",
+      "source_text": "Iwaniec \\cite{Iw78} proved\\[h(k) \\ll (k\\log k)^2.\\]The best lower bound known is\\[h(k) \\gg \\frac{(\\log k)(\\log\\log\\log k)}{(\\log\\log k)^2}k,\\]due to Ford, Green, Konyagin, Maynard, and Tao \\cite{FGKMT18}.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/973",
+      "value": 1.0,
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s proved (as described on p.35 of \\cite{Tu84b}) that such a sequence does exist with $\\lvert z_i\\rvert\\leq 1$. In \\cite{Er92f} (a different) Erd\\H{o}s refines this analysis, proving that if\\[M_2=\\min_{z_j} \\max_{2\\leq k\\leq n+1} \\left\\lvert \\sum_{1\\leq j\\leq n}z_j^k\\right\\rvert,\\]where the minimum is take over all $z_j\\in \\mathbb{C}$ with $\\max \\lvert z_j\\rvert=1$, then\\[(1.746)^{-n} < M_2 < (1.745)^{-n}.\\]Tang notes in the comments that Theorem 6.1 of \\cite{Tu84b} implies that, if $\\lvert z_i\\rvert \\geq 1$ for all $i$, then\\[\\max_{2\\leq k\\leq n+1}\\left\\lvert \\sum_{1\\leq i\\leq n}z_i^k\\right\\rvert \\geq (2e)^{-(1+o(1))n}.\\]See also [519].",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/975",
+      "direction": "upper",
+      "source_text": "Van der Corput \\cite{Va39} proved that\\[\\sum_{n\\leq X} \\tau(f(n))\\gg_f X\\log X.\\]Erd\\H{o}s \\cite{Er52b} proved using elementary methods that\\[\\sum_{n\\leq X} \\tau(f(n))\\ll_f X\\log X.\\]Such an asymptotic formula is known whenever $f$ is an irreducible quadratic, as proved by Hooley \\cite{Ho63}. For example,\\[\\sum_{n\\leq x}\\tau(n^2+1)=\\frac{3}{\\pi}x\\log x+O(x).\\]Tao has a blog post on this topic.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/978",
+      "direction": "upper",
+      "source_text": "Hooley \\cite{Ho67} settled the first question, in fact providing a precise asymptotic for the number of such $n\\leq x$. Heath-Brown \\cite{He06} proved the answer to the second question is yes when $k\\geq 10$, and Browning \\cite{Br11} extended this to $k\\geq 9$ (in fact establishing an asymptotic formula for the number of such $n$).",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/982",
+      "direction": "unknown",
+      "source_text": "The regular polygon shows that $\\lfloor n/2\\rfloor$ is the best possible here.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/986",
+      "direction": "upper",
+      "source_text": "The best general bounds available are\\[\\frac{n^{\\frac{k+1}{2}}}{(\\log n)^{\\frac{1}{k-2}-\\frac{k+1}{2}}}\\ll_k R(k,n) \\ll_k \\frac{n^{k-1}}{(\\log n)^{k-2}}.\\]The lower bound was proved by Bohman and Keevash \\cite{BoKe10}. The upper bound was proved by Ajtai, Koml\\'{o}s, and Szemer\\'{e}di \\cite{AKS80}. Li, Rousseau, and Zang \\cite{LRZ01} have shown that $\\ll_k$ in the upper bound can be improved to $\\leq (1+o(1))$. and Zang, Wenan, Asymptotic upper bounds for {R}amsey functions.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/987",
+      "direction": "upper",
+      "source_text": "Erd\\H{o}s \\cite{Er64b} remarks it is 'easy to see' that\\[\\limsup_{k\\to \\infty}\\left(\\sup_n\\left\\lvert \\sum_{j\\leq n} e(kx_j)\\right\\rvert\\right)=\\infty.\\]Erd\\H{o}s \\cite{Er65b} later found a 'very easy' proof that $A_k\\gg \\log k$ for infinitely many $k$. Clunie \\cite{Cl67} proved that $A_k\\gg k^{1/2}$ infinitely often, and that there exist sequences with $A_k\\leq k$ for all $k$. Tao has independently found a proof that $A_k\\gg k^{1/2}$ infinitely often (see the comment section). Liu \\cite{Li69} showed that, for any $\\epsilon>0$, $A_k\\gg k^{1-\\epsilon}$ infinitely often, under the additional assumption that there are only a finite number of distinct points.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/990",
+      "direction": "unknown",
+      "source_text": "Erd\\H{o}s and Tur\\'{a}n \\cite{ErTu50} proved such an upper bound with $n$ replaced by $d$.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/995",
+      "value": 0.0,
+      "direction": "lower",
+      "source_text": "Erd\\H{o}s \\cite{Er49d} constructed a lacunary sequence and $f\\in L^2([0,1])$ such that, for every $\\epsilon>0$, for almost all $\\alpha$\\[\\limsup_{N\\to \\infty}\\frac{1}{N(\\log\\log N)^{\\frac{1}{2}-\\epsilon}}\\sum_{1\\leq k\\leq N}f(\\{\\alpha n_k\\})=\\infty.\\]Erd\\H{o}s also proved that, for every lacunary sequence and $f\\in L^2$, for every $\\epsilon>0$, for almost all $\\alpha$,\\[\\sum_{1\\leq k\\leq N}\\sum_{1\\leq k\\leq N}f(\\{\\alpha n_k\\})=o( N(\\log N)^{\\frac{1}{2}+\\epsilon}).\\]Erd\\H{o}s \\cite{Er64b} thought that his lower bound was closer to the truth.",
+      "accepted": false
+    },
+    {
+      "problem": "erdos/996",
+      "value": 2.0,
+      "direction": "lower",
+      "source_text": "Raikov proved the conclusion always holds (for every $f\\in L^2([0,1])$, with no assumption on $\\| f-f_n\\|_2$) if $n_k=a^k$ for some integer $a\\geq 2$.",
+      "accepted": false
+    }
+  ]
+}

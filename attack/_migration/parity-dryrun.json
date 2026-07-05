@@ -1,0 +1,1767 @@
+{
+  "records": 219,
+  "digest_mismatches": [],
+  "malformed": [],
+  "split_mismatches": [],
+  "rows": [
+    {
+      "att_id": "att_ecab16a7fa140c31",
+      "projected_vf": "vf_0e238d5c6571ee0b",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_881114484d919f2b",
+      "projected_vf": "vf_6dbe44e832903a6a",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_74921b8d9a4d3cd2",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_43dffa63427a0562",
+      "projected_vf": "vf_aaee4374693f513d",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_17263d48ce0ed0b9",
+      "projected_vf": "vf_5e5b481549836f31",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_ce606f2e709ba1a8",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_97f2eb93755ced71",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_6b88c6c8889f58a4",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_34186a288295c43d",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_2a49dfaac72d60fb",
+      "projected_vf": "vf_f713a4dd353b5213",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_f67cb3a94d9fd146",
+      "projected_vf": "vf_5e5b481549836f31",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_6d6ff27f57708d32",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_8e3d8efdf7516946",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_92c0892a649f28c8",
+      "projected_vf": "vf_5e5b481549836f31",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_623c15a88228ca3a",
+      "projected_vf": "vf_2c779142d2d86984",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_8f118f23c24b8920",
+      "projected_vf": "vf_f713a4dd353b5213",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_6ba6154f2ce22b91",
+      "projected_vf": "vf_2c779142d2d86984",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_91844ffcbadd827f",
+      "projected_vf": "vf_5e5b481549836f31",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_1cf04d346251df7c",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_b11246da41581b25",
+      "projected_vf": "vf_2c779142d2d86984",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_2f55a9014834ce8f",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_151d682861664f8f",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_2c11f36ee072ef95",
+      "projected_vf": "vf_2c779142d2d86984",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_0b0c5965a1d1f51b",
+      "projected_vf": "vf_b01b91a7a273605c",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_00e496e00c134e7b",
+      "projected_vf": "vf_27bb2dca4e5a0122",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_68dcabac2b315cfd",
+      "projected_vf": "vf_8ea72725062884ce",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_21917b2f843361cd",
+      "projected_vf": "vf_b01b91a7a273605c",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_11f8d1637a3b169d",
+      "projected_vf": "vf_2c779142d2d86984",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_cc83f43e9e7c469a",
+      "projected_vf": "vf_5568cb0aea406004",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_907cafda90f1ebbc",
+      "projected_vf": "vf_b01b91a7a273605c",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_1f0a256511fd0b14",
+      "projected_vf": "vf_5568cb0aea406004",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_3159933b2b9597a8",
+      "projected_vf": "vf_f713a4dd353b5213",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_e2a9820ea9ec786a",
+      "projected_vf": "vf_4a5c17d7f02b6905",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_cbc707ca85bc389b",
+      "projected_vf": "vf_701539d4c9b1b72e",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_2fa5ba98ff09cd83",
+      "projected_vf": "vf_9b175ae95bbd24b8",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_913e8bc70f5f0fae",
+      "projected_vf": "vf_815ef4476828735f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_cec63fe30c79261d",
+      "projected_vf": "vf_4f29274387942794",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_5b90d6b0e9df810f",
+      "projected_vf": "vf_7bab875308508f51",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_c16c08ba44d145cb",
+      "projected_vf": "vf_662c500a9eb427e4",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_da45e965ee28ebe3",
+      "projected_vf": "vf_018e4c374059e0cd",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_b4ac5035597898bc",
+      "projected_vf": "vf_df420bac7df11ddc",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_f21c725904b8bee2",
+      "projected_vf": "vf_10d5e6dc0519b1ee",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_f4f1148c13231c5e",
+      "projected_vf": "vf_c2e7ce41b6fbb79f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_0167190a509a4a4f",
+      "projected_vf": "vf_e0c407e6c543905c",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_658a4e5e0f56bbcb",
+      "projected_vf": "vf_c87bf8043d88a129",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_db3585892bb3e4de",
+      "projected_vf": "vf_f3f16b246814d10d",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_0167f047170ab324",
+      "projected_vf": "vf_6654b0cf54a92db6",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_a04c6632e09e2f4f",
+      "projected_vf": "vf_a467c6ccd03a55cc",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_14546a6d4e00bb7c",
+      "projected_vf": "vf_f50aa52a10db3a88",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_892c036aa0fb0118",
+      "projected_vf": "vf_c0553480c6508d77",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_77c475e1ecd2adc2",
+      "projected_vf": "vf_c0553480c6508d77",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_30e573983a1b6a3a",
+      "projected_vf": "vf_c0553480c6508d77",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_043c663367ce09aa",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_f141d525491844f5",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_d48f4f53fcd87db4",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_3da5e7afe39059f8",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_ca4cb785895be3d7",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_55ec76001c9c7795",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_4dbcdc1efb61f57b",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_c27d897a442ec40f",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_f73d2eddef5a17b1",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_199c2138b5955093",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_ed874dffcf83fa4f",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_5d4b326e5f7444e5",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_8956f5b8efe5de2d",
+      "projected_vf": "vf_22bd26b0f275b89f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_f66f51688b8f230b",
+      "projected_vf": "vf_a761f879a69ada78",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_395a03e2105f072d",
+      "projected_vf": "vf_bd3a7a4a886d1673",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_cf59fd4dcb6bb38c",
+      "projected_vf": "vf_108fce64eef7dd75",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_ff81f63ad25ad111",
+      "projected_vf": "vf_22fce34fcef0ee25",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_28afa6de7420e6f9",
+      "projected_vf": "vf_2802c6f4d74f6a28",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_ddd53411d6a03fdd",
+      "projected_vf": "vf_616c5865b567e6d9",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_b795483c41c3118e",
+      "projected_vf": "vf_79fd3af78084591f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_e9ea6758fbad444a",
+      "projected_vf": "vf_68621d81bd18962e",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_7199d8341d2c33b9",
+      "projected_vf": "vf_8cde866ef564087e",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_7e9e05062b8d0d0d",
+      "projected_vf": "vf_0c2d69d0e17cefe6",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_7d49e23c54de0241",
+      "projected_vf": "vf_4062e01c5f0020e9",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_523b9dc76c85b7d2",
+      "projected_vf": "vf_88f7b51950556a47",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_5a000c91096dfd4f",
+      "projected_vf": "vf_eab000336ac86127",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_18cd6580d686fe6f",
+      "projected_vf": "vf_43cc3e33245d876d",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_2fef63bb6e4da56e",
+      "projected_vf": "vf_0bd7e3ce0ecf30bf",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_5ac79b9091d1877c",
+      "projected_vf": "vf_f838cf77ff22eccf",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_ed2447eb38bf729b",
+      "projected_vf": "vf_d4c1c8a532136090",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_011c53c48428b07a",
+      "projected_vf": "vf_fd13886dd153248f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_dd67ad2458f08b65",
+      "projected_vf": "vf_88233ae7ea5b1166",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_ef5affc112c6b377",
+      "projected_vf": "vf_ad5e3382cb65493e",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_ae49d2a67398cb13",
+      "projected_vf": "vf_204d276ca680a82b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_be6bc124fc00a2e0",
+      "projected_vf": "vf_758e96d73bd5d0e6",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_2c6ae692527b1c6c",
+      "projected_vf": "vf_3a550518f2fe835e",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_785163c947342832",
+      "projected_vf": "vf_10d158d23e4e8861",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_f61ed81137dd7478",
+      "projected_vf": "vf_9c29cc1461d4d930",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_fb43d4cf44f8ae5a",
+      "projected_vf": "vf_b3d0c9467a80a838",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_183e5eaadd9730f9",
+      "projected_vf": "vf_8bab00013078e200",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_be414f582e505a40",
+      "projected_vf": "vf_002f127bb58fdffe",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_dff109da6348a113",
+      "projected_vf": "vf_4b4a8c74897fb3cd",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_f6046ac354adac64",
+      "projected_vf": "vf_4d1b5bc5363f06c5",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_30f72c9438c6e6f8",
+      "projected_vf": "vf_44cf8fdaf5dcde21",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_5a4d12b157364d7f",
+      "projected_vf": "vf_813aac339a39b556",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_24ca4b78340c3bc9",
+      "projected_vf": "vf_2cab1aa5e15537e6",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_75210637be1c42c5",
+      "projected_vf": "vf_7024407ffce77845",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_66a291aa59ed36a6",
+      "projected_vf": "vf_d12ab9f117dcdee1",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_ff09c3859e3d7ff0",
+      "projected_vf": "vf_0670ae70b5a9ec01",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_2b154124e550b938",
+      "projected_vf": "vf_e33081fbddb2ff67",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_294a3edda4af10ea",
+      "projected_vf": "vf_adfde24ad772f839",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_d772cdbd3cedf9b6",
+      "projected_vf": "vf_797c5bc13cfabd50",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_480ea5c038280157",
+      "projected_vf": "vf_ce4fdf451d4a4546",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_8a9de2b4791c51d1",
+      "projected_vf": "vf_4324e926f464cb49",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_50d493f623c207b5",
+      "projected_vf": "vf_fbbf27e5e893bbeb",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_c36425bcbf9ddce8",
+      "projected_vf": "vf_d41bf7288375961c",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_2f9f4661217a897f",
+      "projected_vf": "vf_daa172a62b5ddc39",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_a200bcd0cf00c234",
+      "projected_vf": "vf_48ac69715cac281c",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_862cf08623db7b35",
+      "projected_vf": "vf_327943fb5ad480b9",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_822f452f62c2be66",
+      "projected_vf": "vf_1825ec0c22fdb99f",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_15f698c2c8864055",
+      "projected_vf": "vf_50c088e7b63c5592",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_06316fb7898fb843",
+      "projected_vf": "vf_bfc28388a75dc246",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_fedc653d93c871bf",
+      "projected_vf": "vf_c516359e00effebc",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_76db6c90cd0dd7fd",
+      "projected_vf": "vf_d8260522a15d5e49",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_67bd3df2d623ce79",
+      "projected_vf": "vf_1debe0767035aba8",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_4616e33389a98478",
+      "projected_vf": "vf_91676654f0b676eb",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_4d4866287c70418f",
+      "projected_vf": "vf_83a4cc2c558b1a69",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_04482bd7f356c638",
+      "projected_vf": "vf_9339c9b47039f4b2",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_248376d20c4aef55",
+      "projected_vf": "vf_ecaf118817b982ea",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_3e0474621ad90df1",
+      "projected_vf": "vf_e292ca752e6ea4a7",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_33e478fba252e8f8",
+      "projected_vf": "vf_1aec78e914b13594",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "new_oeis_term"
+    },
+    {
+      "att_id": "att_c0183a189580cd8b",
+      "projected_vf": "vf_22c47c2b9901fd57",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_9b74c027f3570ca4",
+      "projected_vf": "vf_65714fd84742a65a",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_829a69463ae826c3",
+      "projected_vf": "vf_c292c4ff318fed0b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_2cf299f250996e0e",
+      "projected_vf": "vf_286cef1438667949",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_5186b883e03a1daa",
+      "projected_vf": "vf_4564fdbb95595df3",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_3117fc4e6e2c5007",
+      "projected_vf": "vf_f3b07fe4d79e29f3",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_83e001dbdd38027a",
+      "projected_vf": "vf_38230c35d96b9098",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_39dc99caab0ce895",
+      "projected_vf": "vf_f4bb77b4d2b25c2e",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_d01cc61c45b353d5",
+      "projected_vf": "vf_b6621e899802b86b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_782f4c4b2305fd63",
+      "projected_vf": "vf_0167ea7d51853a98",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_61df49c6d6ade6a3",
+      "projected_vf": "vf_dedb69dbac0866b3",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_1f15d7e468458e15",
+      "projected_vf": "vf_0b72b9b753b874b0",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_2a916c23408f4350",
+      "projected_vf": "vf_97eba4e6d6c0f335",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_252a91af2aa946ff",
+      "projected_vf": "vf_bfa303572a7d0c9b",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_6fba8db9c5992ca7",
+      "projected_vf": "vf_549c9597c7a42bd1",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_3da9f26a21f9901d",
+      "projected_vf": "vf_6ba1e9c981b07797",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_542e62f85852e843",
+      "projected_vf": "vf_9578c8ba94259399",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_4d4c25478e82c096",
+      "projected_vf": "vf_21b5e71b5406b6a7",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_b357fce7c3a99286",
+      "projected_vf": "vf_fa64ae448097f83e",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_46f132b2fb077951",
+      "projected_vf": "vf_9c42d7669f00aa82",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_09937c62bc8593a6",
+      "projected_vf": "vf_55ffc36bdb1a726b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_0f6ad7b281820ab3",
+      "projected_vf": "vf_6e0c0479311fa800",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_98c7ccd8a1f8dbc5",
+      "projected_vf": "vf_82cb4f175680d20a",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_767389b4c2a3ad54",
+      "projected_vf": "vf_588b12d0d7afa242",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_298c624c91dfa318",
+      "projected_vf": "vf_002e5090978c764a",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_091bbefb25b9b617",
+      "projected_vf": "vf_4170eb8581afffc3",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_4d20ba9ab22b5777",
+      "projected_vf": "vf_b41b51df6415217e",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_fe635c1c870f9c40",
+      "projected_vf": "vf_73a7858eff942e60",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_c86e895defd78b14",
+      "projected_vf": "vf_f6a25eb9dcfc349c",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_4ec7148a9c7eadca",
+      "projected_vf": "vf_5dea73f51d67d229",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_d527a4b31fbc84a5",
+      "projected_vf": "vf_4919636113bf6f74",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_b3bcc9670711d818",
+      "projected_vf": "vf_2f5526496bf09d27",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_a777d04becc062d5",
+      "projected_vf": "vf_221d1338e950ffd5",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_e37c5a7871d4d18e",
+      "projected_vf": "vf_47d341eaffec3e6a",
+      "claim_digest_match": true,
+      "attachment_count": 0,
+      "projected_gate_status": "needs_verification",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_0fd925ad6a8e7174",
+      "projected_vf": "vf_3e4323fa896d317e",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_bbe2fa7f9f61c08b",
+      "projected_vf": "vf_4ca7a462e2030f82",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_6323fe390eb718b1",
+      "projected_vf": "vf_fb21b8f83de516d2",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_b42293d174e1db85",
+      "projected_vf": "vf_3ae5ed69ce4c90bd",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_7beb86a84cc530ec",
+      "projected_vf": "vf_eba7484f2ff7626c",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_f6dce5a0735251c4",
+      "projected_vf": "vf_a48cd2dd2bc154b0",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_dada2a070dc7dede",
+      "projected_vf": "vf_1fc2687809a6ba34",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_ed9ed7479a4e00a4",
+      "projected_vf": "vf_a255c0dfe497ac96",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_e22fba0dfbc2bccf",
+      "projected_vf": "vf_817234e2f2eed068",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_0670a527e5b6947d",
+      "projected_vf": "vf_fd6169f3faa6685b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_911dd113081f3e74",
+      "projected_vf": "vf_108335764fdd761b",
+      "claim_digest_match": true,
+      "attachment_count": 1,
+      "projected_gate_status": "needs_verification",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_7b695fec0ef97dd1",
+      "projected_vf": "vf_97e98ac1db470797",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_b2dfb5a925a425f8",
+      "projected_vf": "vf_5334d470db3d9f0c",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_6b897cfb0c6ce7b8",
+      "projected_vf": "vf_f803bca8f8af84ef",
+      "claim_digest_match": true,
+      "attachment_count": 7,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_ea5ba1aa938d0e48",
+      "projected_vf": "vf_d39a00d5d433703d",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_9b9f85b529e4243d",
+      "projected_vf": "vf_a2b258c07bf6831e",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_9c20152754234526",
+      "projected_vf": "vf_abb24d339b9797a3",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_500d3435c96d4548",
+      "projected_vf": "vf_368da1ea7fb24724",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_ac7890f6b3bf663a",
+      "projected_vf": "vf_af959384ac919167",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_0d0843b89407d581",
+      "projected_vf": "vf_102eacf0bb74ec87",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_249bab45696b4b36",
+      "projected_vf": "vf_9d6ae31aa6ff11e0",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_2f6ea04fc508e9a5",
+      "projected_vf": "vf_57a30aedd4d7087e",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_4ae27dd8d6030e13",
+      "projected_vf": "vf_006d37e621726b9b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_8a2420033e6acb08",
+      "projected_vf": "vf_2ebdc61cdb39a3ed",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_d12f184a5c5389d6",
+      "projected_vf": "vf_4279b925e0ef5b90",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_15c6f8d0695c0c59",
+      "projected_vf": "vf_cebff6b73eb06ea0",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_21929f0161c967b4",
+      "projected_vf": "vf_82a4c0698af0e347",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_3710d5b389de35ed",
+      "projected_vf": "vf_d71126ef5fe42857",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_9e51f4ff2a57fb65",
+      "projected_vf": "vf_b1d364b4dfdc407b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_d6f9c531894b12a7",
+      "projected_vf": "vf_5e2941427fa716be",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "new_oeis_term"
+    },
+    {
+      "att_id": "att_5e83a4dbbabefcdf",
+      "projected_vf": "vf_94838d274545e0aa",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "new_oeis_term"
+    },
+    {
+      "att_id": "att_372e1dede866a97c",
+      "projected_vf": "vf_6045eb8718d2aa82",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_4786e4516a93f968",
+      "projected_vf": "vf_d82c9f60b7be97ed",
+      "claim_digest_match": true,
+      "attachment_count": 3,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_5cfde0ba44d6cbac",
+      "projected_vf": "vf_920d6c3b3c358890",
+      "claim_digest_match": true,
+      "attachment_count": 3,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_13abaf6ae36688cc",
+      "projected_vf": "vf_7764033b688cc387",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_574b795d0b92fc4c",
+      "projected_vf": "vf_d2749ee84a6695da",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_74ca93a03adaf379",
+      "projected_vf": "vf_23582d4f7e813900",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_b99697a2d8a32cd8",
+      "projected_vf": "vf_0952b227aa001075",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_8c4c8b60210f476f",
+      "projected_vf": "vf_7cd168245b4d3a74",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_erdos267_badea_ge_two_lean_bridge",
+      "projected_vf": "vf_4cb1d17afb488df6",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_erdos319_mitm_exact_table",
+      "projected_vf": "vf_44e2932d3425c04e",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_erdos417_hidden_totient_decomposition",
+      "projected_vf": "vf_fb78760a8b3e5309",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_erdos463_margin_prefix_obstruction",
+      "projected_vf": "vf_f9240b08ae7bfbdd",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_erdos302_base241920_prefix139_scip_monotone_tail",
+      "projected_vf": "vf_541ad8844527b099",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "improved_published_bound"
+    },
+    {
+      "att_id": "att_6dab79c192e47495",
+      "projected_vf": "vf_6c74278dd31a9220",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_498d0afeab612155",
+      "projected_vf": "vf_ad9263f1335febad",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_92ad080d34a481c5",
+      "projected_vf": "vf_aa1519e65f1d5f5c",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_8e5212d0a85ae0c7",
+      "projected_vf": "vf_3a916cf6ad34d7f4",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "honest_null"
+    },
+    {
+      "att_id": "att_61ff8f87c2f692b0",
+      "projected_vf": "vf_79cab6163190d0e6",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_3cb5d7fd4f326b5b",
+      "projected_vf": "vf_4cc4d252b6d949a8",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "lean_fragment"
+    },
+    {
+      "att_id": "att_7eba29f25c2bd57c",
+      "projected_vf": "vf_d774bef65355aaee",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_cc286adad5113583",
+      "projected_vf": "vf_4272e47893f0c769",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_11b77a7879a6a452",
+      "projected_vf": "vf_9fb5ce40abf04952",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_d76a51a8a4ff297a",
+      "projected_vf": "vf_fc22dc4b488f7c32",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "partial_proof"
+    },
+    {
+      "att_id": "att_5ed73bd903b3ec0d",
+      "projected_vf": "vf_49e77ee140ca0d15",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "extends_prior_work"
+    },
+    {
+      "att_id": "att_0a14e45cbb28c9a7",
+      "projected_vf": "vf_9ed33b83e115b88f",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_04e3cd7d251a2bab",
+      "projected_vf": "vf_07ca382a18f6538b",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_9fbaf1aa96de6f20",
+      "projected_vf": "vf_5e6af75ba4ff6337",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_69182d6435696069",
+      "projected_vf": "vf_1af518c2da4b9146",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_7f76def046229444",
+      "projected_vf": "vf_2fea3541f7b48835",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    },
+    {
+      "att_id": "att_30d923783e359629",
+      "projected_vf": "vf_f54768cea2df9d13",
+      "claim_digest_match": true,
+      "attachment_count": 2,
+      "projected_gate_status": "verified",
+      "grade": "obstruction_map"
+    },
+    {
+      "att_id": "att_07b78ee6f3be9a0b",
+      "projected_vf": "vf_f73d16a407ed912a",
+      "claim_digest_match": true,
+      "attachment_count": 5,
+      "projected_gate_status": "verified",
+      "grade": "verified_reduction"
+    }
+  ],
+  "current_split": {
+    "needs_verification": 127,
+    "superseded": 4,
+    "verified": 88
+  },
+  "projected_verified": 88,
+  "stored_verified": 88
+}

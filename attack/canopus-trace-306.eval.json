@@ -1,0 +1,281 @@
+{
+  "version": 2,
+  "schema": "inspect.eval.v2 (canopus-compatible)",
+  "eval": {
+    "task": "canopus/erdos-loop",
+    "model": "Opus 4.8 (claude-opus-4-8)",
+    "dataset": {
+      "name": "attempt-ledger.v1",
+      "samples": 1
+    }
+  },
+  "plan": {
+    "steps": [
+      "retrieve",
+      "propose",
+      "verify",
+      "bank",
+      "gate"
+    ]
+  },
+  "results": {
+    "scorer": "gate_verified",
+    "metrics": {
+      "accuracy": 1.0
+    },
+    "total_samples": 1,
+    "completed_samples": 1
+  },
+  "stats": {
+    "started_at": "2026-06-04T23:55:36Z"
+  },
+  "samples": [
+    {
+      "id": "erdos-306",
+      "epoch": 1,
+      "input": "=== COMPOUNDING CONTEXT for Erd\u0151s #306 (Vela retrieve) ===\nSTATEMENT: Let $\\frac a b\\in \\mathbb{Q}_{>0}$ with $b$ squarefree. Are there integers $1 < n_1 < \\dots < n_k$, each the product of two distinct primes, such that $\\frac{a}{b}=\\frac{1}{n_1}+\\cdots+\\frac{1}{n_k}$?\nFORMAL: erdos_306: answer(sorry) \u2194 \u2200 (q : \u211a), 0 < q \u2192 Squarefree q.den \u2192 \u2203 k : \u2115, \u2203 (n : Fin (k + 1) \u2192 \u2115), n 0 = 1 \u2227 StrictMono n \u2227 (\u2200 i \u2208 Finset.Icc 1 (Fin.last k), \u03c9 (n i) = 2 \u2227 \u03a9 (n i) = 2) \u2227 q = \u2211 i \u2208 Finset.Icc 1 (Fin.last k), (1 : \u211a) / (n i); erdos_306: \u2115) (h : 0 < m) : \u2203 k > (0 : \u2115), \u2203 (n : Fin (k + \nKNOWN: # Erd\u0151s Problem 306 *Reference:* erdosproblems.com/306 | Every positive integer can be expressed as an Egyptian fraction where each denominator is the product of three distinct primes.\nSHAPE-GATE: elementary_special_case (conf 0.40) -> LOOP-ELIGIBLE\n\nGATE-VERIFIED prior results (independent re-derivation + surviving probe; build on these, do NOT re-derive):\n  - [obstruction_map] Integer-forcing lemma (verified): for a cone certificate of 1/b, if the local congruences C_j + b*sum_{i~j} q_i^{-1} \u2261 0 mod q_j hold at every auxiliary vertex AND 0<T<2 (T=normalized mass), then T=1 automatically \u2014 the certificate",
+      "target": "trusted",
+      "output": {
+        "record_id": "att_5a000c91096dfd4f",
+        "claim": "Integer-forcing lemma (verified): for a cone certificate of 1/b, if the local congruences C_j + b*sum_{i~j} q_i^{-1} \u2261 0 mod q_j hold at every auxiliary vertex AND 0<T<2 (T=normalized mass), then T=1 ",
+        "deliverable_grade": "obstruction_map"
+      },
+      "scores": {
+        "gate_verified": {
+          "value": "C",
+          "answer": "trusted",
+          "explanation": "all gates passed"
+        }
+      },
+      "events": [
+        {
+          "name": "canopus.loop",
+          "context": {
+            "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+            "span_id": "326d7eeaa3834e5e"
+          },
+          "parent_id": null,
+          "kind": "INTERNAL",
+          "start_time_unix_ms": 33279366.484,
+          "end_time_unix_ms": 33279371.56,
+          "attributes": {
+            "canopus.problem": 306,
+            "gen_ai.operation.name": "loop",
+            "gen_ai.system": "vela.canopus"
+          },
+          "events": [],
+          "status": {
+            "status_code": "OK"
+          }
+        },
+        {
+          "name": "canopus.retrieve",
+          "context": {
+            "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+            "span_id": "3477a36ea49b4314"
+          },
+          "parent_id": "326d7eeaa3834e5e",
+          "kind": "CLIENT",
+          "start_time_unix_ms": 33279366.492,
+          "end_time_unix_ms": 33279371.451,
+          "attributes": {
+            "canopus.problem": 306,
+            "canopus.neighbors": [
+              148,
+              242,
+              295,
+              302,
+              307,
+              312,
+              458,
+              931,
+              1056
+            ],
+            "canopus.verified_prior": 8,
+            "canopus.draft_prior": 18,
+            "canopus.retracted_prior": 0,
+            "canopus.external_traces": 3,
+            "gen_ai.system": "vela.canopus",
+            "gen_ai.operation.name": "retrieve"
+          },
+          "events": [
+            {
+              "name": "context_assembled",
+              "time_ms": 33279371.449625004,
+              "attributes": {
+                "prior_attempts": 26,
+                "neighbor_attempts": 40
+              }
+            }
+          ],
+          "status": {
+            "status_code": "OK"
+          }
+        },
+        {
+          "name": "canopus.propose",
+          "context": {
+            "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+            "span_id": "9d5daacd220b4e1a"
+          },
+          "parent_id": "326d7eeaa3834e5e",
+          "kind": "INTERNAL",
+          "start_time_unix_ms": 33279371.474,
+          "end_time_unix_ms": 33279371.522,
+          "attributes": {
+            "gen_ai.system": "vela.canopus",
+            "gen_ai.request.model": "Opus 4.8 (claude-opus-4-8)",
+            "canopus.engine": "Opus 4.8 (claude-opus-4-8)",
+            "canopus.deliverable_grade": "obstruction_map",
+            "canopus.handoff_digest": "de01d53eb520f498",
+            "canopus.claim_digest": "405568c42f1e8e7b",
+            "gen_ai.operation.name": "propose"
+          },
+          "events": [
+            {
+              "name": "grade_gate",
+              "time_ms": 33279371.520499997,
+              "attributes": {
+                "passed": true,
+                "reason": "ok"
+              }
+            }
+          ],
+          "status": {
+            "status_code": "OK"
+          }
+        },
+        {
+          "name": "canopus.verify",
+          "context": {
+            "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+            "span_id": "362ad2b575934b31"
+          },
+          "parent_id": "326d7eeaa3834e5e",
+          "kind": "CLIENT",
+          "start_time_unix_ms": 33279371.531,
+          "end_time_unix_ms": 33279371.551,
+          "attributes": {
+            "canopus.problem": 306,
+            "canopus.attachments": 2,
+            "canopus.attachment_methods": [
+              "computational_search",
+              "exact_arithmetic_recompute"
+            ],
+            "canopus.adversarial_probes": 1,
+            "canopus.gate_pass": true,
+            "canopus.gate_reasons": [],
+            "gen_ai.system": "vela.canopus",
+            "gen_ai.operation.name": "verify"
+          },
+          "events": [
+            {
+              "name": "adversarial_probe",
+              "time_ms": 33279371.534375,
+              "attributes": {
+                "kind": "boundary_dual_feasibility",
+                "result": "survived",
+                "note": ""
+              }
+            },
+            {
+              "name": "gate_independence",
+              "time_ms": 33279371.547458,
+              "attributes": {
+                "condition": "G1",
+                "passed": true,
+                "reason": ""
+              }
+            },
+            {
+              "name": "gate_claim_match",
+              "time_ms": 33279371.548625,
+              "attributes": {
+                "condition": "G2",
+                "passed": true,
+                "reason": ""
+              }
+            },
+            {
+              "name": "gate_adversarial",
+              "time_ms": 33279371.549333002,
+              "attributes": {
+                "condition": "G3",
+                "passed": true,
+                "reason": ""
+              }
+            },
+            {
+              "name": "gate_well_formed",
+              "time_ms": 33279371.549833,
+              "attributes": {
+                "condition": "G4",
+                "passed": true,
+                "reason": ""
+              }
+            },
+            {
+              "name": "verdict",
+              "time_ms": 33279371.550791003,
+              "attributes": {
+                "verified": true,
+                "reasons": []
+              }
+            }
+          ],
+          "status": {
+            "status_code": "OK"
+          }
+        },
+        {
+          "name": "canopus.bank",
+          "context": {
+            "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+            "span_id": "2989c560918649c8"
+          },
+          "parent_id": "326d7eeaa3834e5e",
+          "kind": "INTERNAL",
+          "start_time_unix_ms": 33279371.557,
+          "end_time_unix_ms": 33279371.56,
+          "attributes": {
+            "canopus.problem": 306,
+            "canopus.disposition": "trusted",
+            "canopus.record_id": "att_5a000c91096dfd4f",
+            "canopus.legacy_status": "verified_computationally",
+            "canopus.gate_pass": true,
+            "gen_ai.system": "vela.canopus",
+            "gen_ai.operation.name": "bank"
+          },
+          "events": [
+            {
+              "name": "banked",
+              "time_ms": 33279371.559,
+              "attributes": {
+                "disposition": "trusted",
+                "superseded": false
+              }
+            }
+          ],
+          "status": {
+            "status_code": "OK"
+          }
+        }
+      ],
+      "metadata": {
+        "problem": 306,
+        "engine": "Opus 4.8 (claude-opus-4-8)",
+        "neighbors": [
+          148,
+          242,
+          295,
+          302,
+          307,
+          312,
+          458,
+          931,
+          1056
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+16:08:27 [I] P=[0, 1, 2, 3] Q=[4, 5, 6, 7, 8] hit3=True ePmax=None eQmax=6 core_clauses=1128523
+16:08:28 [II.k0] P=[0, 1, 2, 3] Q=[4, 5, 6, 7] hit3=False ePmax=6 eQmax=6 core_clauses=1128672
+16:08:29 [II.k1] P=[0, 1, 2, 3] Q=[0, 4, 5, 6] hit3=False ePmax=5 eQmax=5 core_clauses=1128674
+16:08:31 [II.k2] P=[0, 1, 2, 3] Q=[0, 1, 4, 5] hit3=False ePmax=4 eQmax=4 core_clauses=1128700
+16:45:22 [I] P=[0, 1, 2, 3] Q=[4, 5, 6, 7, 8] hit3=True ePmax=None eQmax=6 core_clauses=413653
+16:45:23 [II.k0] P=[0, 1, 2, 3] Q=[4, 5, 6, 7] hit3=False ePmax=6 eQmax=6 core_clauses=355572
+17:43:47 [I] P=[0, 1, 2, 3] Q=[4, 5, 6, 7, 8] hit3=True ePmax=None eQmax=6 core_clauses=415189
+17:43:48 [II.k0] P=[0, 1, 2, 3] Q=[4, 5, 6, 7] hit3=False ePmax=6 eQmax=6 core_clauses=357108
+17:44:30 [I] UNSAT after 1 solver calls, 415189 clauses, 44.3s (lazy: six=0 sat=0 tau4=0 cover=0)
+17:44:30 [I] final CNF dumped to artifacts/final_I.cnf
+17:44:30 SUMMARY {"I": "UNSAT"}
+17:45:48 [II.k0] UNSAT after 1 solver calls, 357108 clauses, 121.3s (lazy: six=0 sat=0 tau4=0 cover=0)
+17:45:49 [II.k0] final CNF dumped to artifacts/final_II.k0.cnf
+17:45:49 SUMMARY {"II.k0": "UNSAT"}
+17:54:37 [II.k1] P=[0, 1, 2, 3] Q=[0, 4, 5, 6] hit3=False ePmax=5 eQmax=5 core_clauses=410474
+18:00:59 [II.k1] UNSAT after 1 solver calls, 410474 clauses, 382.7s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:00:59 [II.k1] final CNF dumped to artifacts/final_II.k1.cnf
+18:00:59 SUMMARY {"II.k1": "UNSAT"}
+18:01:01 [II.k2] P=[0, 1, 2, 3] Q=[0, 1, 4, 5] hit3=False ePmax=4 eQmax=4 core_clauses=477226
+18:11:32 [II.k2] UNSAT after 1 solver calls, 477226 clauses, 633.3s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:11:33 [II.k2] final CNF dumped to artifacts/final_II.k2.cnf
+18:11:33 SUMMARY {"II.k2": "UNSAT"}
+18:11:35 [II.k3] P=[0, 1, 2, 3] Q=[0, 1, 2, 4] hit3=False ePmax=3 eQmax=3 core_clauses=560304
+18:15:28 [II.k3] UNSAT after 1 solver calls, 560304 clauses, 234.6s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:15:28 [II.k3] final CNF dumped to artifacts/final_II.k3.cnf
+18:15:28 SUMMARY {"II.k3": "UNSAT"}
+18:15:30 [II.k4] P=[0, 1, 2, 3] Q=[0, 1, 2, 3] hit3=False ePmax=2 eQmax=2 core_clauses=663690
+18:18:11 [II.k4] UNSAT after 1 solver calls, 663690 clauses, 163.0s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:18:12 [II.k4] final CNF dumped to artifacts/final_II.k4.cnf
+18:18:12 SUMMARY {"II.k4": "UNSAT"}
+18:20:08 [I] P=[0, 1, 2, 3] Q=[4, 5, 6, 7, 8] hit3=True ePmax=None eQmax=6 cuts=False rT=True core_clauses=406230
+18:20:12 [I] P=[0, 1, 2, 3] Q=[4, 5, 6, 7, 8] hit3=True ePmax=None eQmax=6 cuts=True rT=False core_clauses=1130059
+18:20:48 [I] UNSAT after 1 solver calls, 406230 clauses, 41.3s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:20:48 [I] final CNF dumped to artifacts/final_I_nocuts.cnf
+18:20:48 SUMMARY {"I": "UNSAT"}
+18:20:50 [II.k0] P=[0, 1, 2, 3] Q=[4, 5, 6, 7] hit3=False ePmax=6 eQmax=6 cuts=False rT=True core_clauses=348018
+18:23:01 [II.k0] UNSAT after 1 solver calls, 348018 clauses, 133.4s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:23:02 [II.k0] final CNF dumped to artifacts/final_II.k0_nocuts.cnf
+18:23:02 SUMMARY {"II.k0": "UNSAT"}
+18:23:04 [II.k1] P=[0, 1, 2, 3] Q=[0, 4, 5, 6] hit3=False ePmax=5 eQmax=5 cuts=False rT=True core_clauses=401384
+18:23:36 [I] UNSAT after 1 solver calls, 1130059 clauses, 208.0s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:23:37 [I] final CNF dumped to artifacts/final_I_fullT.cnf
+18:23:37 SUMMARY {"I": "UNSAT"}
+18:23:40 [II.k0] P=[0, 1, 2, 3] Q=[4, 5, 6, 7] hit3=False ePmax=6 eQmax=6 cuts=True rT=False core_clauses=1130388
+18:31:02 [II.k0] UNSAT after 1 solver calls, 1130388 clauses, 444.6s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:31:03 [II.k0] final CNF dumped to artifacts/final_II.k0_fullT.cnf
+18:31:03 SUMMARY {"II.k0": "UNSAT"}
+18:31:07 [II.k1] P=[0, 1, 2, 3] Q=[0, 4, 5, 6] hit3=False ePmax=5 eQmax=5 cuts=True rT=False core_clauses=1130294
+18:34:14 [II.k1] UNSAT after 1 solver calls, 401384 clauses, 671.8s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:34:14 [II.k1] final CNF dumped to artifacts/final_II.k1_nocuts.cnf
+18:34:14 SUMMARY {"II.k1": "UNSAT"}
+18:34:16 [II.k2] P=[0, 1, 2, 3] Q=[0, 1, 4, 5] hit3=False ePmax=4 eQmax=4 cuts=False rT=True core_clauses=468136
+18:49:56 [II.k2] UNSAT after 1 solver calls, 468136 clauses, 941.5s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:49:57 [II.k2] final CNF dumped to artifacts/final_II.k2_nocuts.cnf
+18:49:57 SUMMARY {"II.k2": "UNSAT"}
+18:49:59 [II.k3] P=[0, 1, 2, 3] Q=[0, 1, 2, 4] hit3=False ePmax=3 eQmax=3 cuts=False rT=True core_clauses=551214
+18:51:05 [II.k1] UNSAT after 1 solver calls, 1130294 clauses, 1201.5s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:51:06 [II.k1] final CNF dumped to artifacts/final_II.k1_fullT.cnf
+18:51:06 SUMMARY {"II.k1": "UNSAT"}
+18:51:10 [II.k2] P=[0, 1, 2, 3] Q=[0, 1, 4, 5] hit3=False ePmax=4 eQmax=4 cuts=True rT=False core_clauses=1130320
+18:55:25 [II.k3] UNSAT after 1 solver calls, 551214 clauses, 328.0s (lazy: six=0 sat=0 tau4=0 cover=0)
+18:55:25 [II.k3] final CNF dumped to artifacts/final_II.k3_nocuts.cnf
+18:55:25 SUMMARY {"II.k3": "UNSAT"}
+18:55:28 [II.k4] P=[0, 1, 2, 3] Q=[0, 1, 2, 3] hit3=False ePmax=2 eQmax=2 cuts=False rT=True core_clauses=654600
+18:57:57 [II.k4] P=[0, 1, 2, 3] Q=[0, 1, 2, 3] hit3=False ePmax=2 eQmax=2 cuts=False rT=True core_clauses=654600
+18:58:00 [I] P=[0, 1, 2, 3] Q=[4, 5, 6, 7, 8] hit3=True ePmax=None eQmax=6 cuts=False rT=False core_clauses=1121100
+19:00:02 [I] UNSAT after 1 solver calls, 1121100 clauses, 127.1s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:00:03 [I] final CNF dumped to artifacts/final_I_nocuts_fullT.cnf
+19:00:03 SUMMARY {"I": "UNSAT"}
+19:00:06 [II.k0] P=[0, 1, 2, 3] Q=[4, 5, 6, 7] hit3=False ePmax=6 eQmax=6 cuts=False rT=False core_clauses=1121298
+19:00:13 [II.k4] UNSAT after 1 solver calls, 654600 clauses, 139.3s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:00:13 [II.k4] final CNF dumped to artifacts/final_II.k4_nocuts.cnf
+19:00:13 SUMMARY {"II.k4": "UNSAT"}
+19:00:16 [II.k2] P=[0, 1, 2, 3] Q=[0, 1, 4, 5] hit3=False ePmax=4 eQmax=4 cuts=True rT=False core_clauses=1130320
+19:06:15 [II.k0] UNSAT after 1 solver calls, 1121298 clauses, 371.9s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:06:15 [II.k0] final CNF dumped to artifacts/final_II.k0_nocuts_fullT.cnf
+19:06:15 SUMMARY {"II.k0": "UNSAT"}
+19:06:18 [II.k1] P=[0, 1, 2, 3] Q=[0, 4, 5, 6] hit3=False ePmax=5 eQmax=5 cuts=False rT=False core_clauses=1121204
+19:16:43 [II.k2] UNSAT after 1 solver calls, 1130320 clauses, 989.7s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:16:44 [II.k2] final CNF dumped to artifacts/final_II.k2_fullT.cnf
+19:16:44 SUMMARY {"II.k2": "UNSAT"}
+19:16:46 [II.k3] P=[0, 1, 2, 3] Q=[0, 1, 2, 4] hit3=False ePmax=3 eQmax=3 cuts=True rT=False core_clauses=1130328
+19:20:23 [II.k1] UNSAT after 1 solver calls, 1121204 clauses, 846.9s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:20:23 [II.k1] final CNF dumped to artifacts/final_II.k1_nocuts_fullT.cnf
+19:20:23 SUMMARY {"II.k1": "UNSAT"}
+19:20:26 [II.k2] P=[0, 1, 2, 3] Q=[0, 1, 4, 5] hit3=False ePmax=4 eQmax=4 cuts=False rT=False core_clauses=1121230
+19:24:58 [II.k3] UNSAT after 1 solver calls, 1130328 clauses, 493.8s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:24:58 [II.k3] final CNF dumped to artifacts/final_II.k3_fullT.cnf
+19:24:58 SUMMARY {"II.k3": "UNSAT"}
+19:25:01 [II.k4] P=[0, 1, 2, 3] Q=[0, 1, 2, 3] hit3=False ePmax=2 eQmax=2 cuts=True rT=False core_clauses=1130520
+19:31:40 [II.k4] UNSAT after 1 solver calls, 1130520 clauses, 401.2s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:31:40 [II.k4] final CNF dumped to artifacts/final_II.k4_fullT.cnf
+19:31:40 SUMMARY {"II.k4": "UNSAT"}
+19:36:41 [II.k2] UNSAT after 1 solver calls, 1121230 clauses, 977.7s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:36:42 [II.k2] final CNF dumped to artifacts/final_II.k2_nocuts_fullT.cnf
+19:36:42 SUMMARY {"II.k2": "UNSAT"}
+19:36:44 [II.k3] P=[0, 1, 2, 3] Q=[0, 1, 2, 4] hit3=False ePmax=3 eQmax=3 cuts=False rT=False core_clauses=1121238
+19:44:42 [II.k3] UNSAT after 1 solver calls, 1121238 clauses, 479.9s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:44:42 [II.k3] final CNF dumped to artifacts/final_II.k3_nocuts_fullT.cnf
+19:44:42 SUMMARY {"II.k3": "UNSAT"}
+19:44:45 [II.k4] P=[0, 1, 2, 3] Q=[0, 1, 2, 3] hit3=False ePmax=2 eQmax=2 cuts=False rT=False core_clauses=1121430
+19:51:09 [II.k4] UNSAT after 1 solver calls, 1121430 clauses, 386.5s (lazy: six=0 sat=0 tau4=0 cover=0)
+19:51:10 [II.k4] final CNF dumped to artifacts/final_II.k4_nocuts_fullT.cnf
+19:51:10 SUMMARY {"II.k4": "UNSAT"}

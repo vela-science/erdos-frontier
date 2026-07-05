@@ -1,0 +1,216 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator{\ee}{e}
+\newcommand{\mstar}{m^{*}}
+\newcommand{\Kn}[1]{K_{#1}}
+
+\title{A single colour-class lower bound for the first open\\ case of the Erd\H{o}s--Gy\'arf\'as problem}
+\author{William Blair\thanks{\texttt{william.blair0708@gmail.com}. Code, certificates, and the
+finite decision model are public at
+\url{https://github.com/willblair0708/verified-combinatorics/tree/076cb35b37ff7d91efe8fc7ff1826d5d898d1ea1/erdos-617}.}}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The first open case of the Erd\H{o}s--Gy\'arf\'as generalized Ramsey problem
+\cite{ErGy97} asks whether $\Kn{26}$ admits a \emph{balanced} $5$-colouring: one
+in which every $6$ vertices see all $5$ colours on their $15$ pairs. A counting
+argument reduces a proof of impossibility to the single colour-class bound
+$\mstar \ge 66$, where $\mstar$ is the least number of edges of a graph on $26$
+vertices with independence number at most $5$ in which every $6$ vertices span at
+most $11$ edges. We prove $\mstar \ge 63$, unconditionally, improving the
+elementary Tur\'an bound $\mstar \ge 55$ by eight. The proof is a finite
+F\"uredi-stability ``rung'' argument whose case analysis is discharged by a
+full-specification constraint (SAT/CP) decision model, independently validated.
+A closing section localizes the remaining gap to $\mstar \ge 66$ and shows that it
+provably resists the cheap (fractional and clique) methods, so that closing it is
+a matter of computation rather than of a missing idea.
+\end{abstract}
+
+\section{The problem and the reduction}
+
+Erd\H{o}s and Gy\'arf\'as \cite{ErGy97} ask, for $r \ge 3$: if the edges of
+$K_{r^2+1}$ are $r$-coloured, must some $r+1$ vertices induce a $K_{r+1}$ missing a
+colour? The cases $r = 3, 4$ are theirs; $r \ge 5$ is open. The first open case is
+$r = 5$, on $\Kn{26}$. Call a $5$-colouring \emph{balanced} if every $6$ vertices
+see all $5$ colours on their $15$ pairs; the conjecture is that none exists.
+
+Fix a colour $c$ and let $G = G_c$ be its colour class. Restricted to one class,
+balancedness says exactly two things:
+\begin{itemize}
+  \item[\textbf{(A)}] $\alpha(G) \le 5$: every $6$-set carries a $c$-edge, so there
+    is no independent $6$-set;
+  \item[\textbf{(B)}] every $6$-set spans at most $11$ edges of colour $c$, leaving
+    room for the other four colours on its $15$ pairs.
+\end{itemize}
+
+Write $\mstar$ for the minimum of $\ee(G)$ over all graphs $G$ on $26$ vertices
+satisfying (A) and (B). The five colour classes partition the $\binom{26}{2} = 325$
+edges of $\Kn{26}$, so if
+\[
+  \mstar \ge 66 \quad\Longrightarrow\quad 5 \cdot 66 = 330 > 325,
+\]
+no balanced colouring can exist and the $r = 5$ case is settled. The naive bound is
+$\mstar \ge 55$ (Tur\'an applied to the complement). Our result is the following
+eight-edge improvement.
+
+\begin{theorem}\label{thm:main}
+In any balanced $5$-colouring of $\Kn{26}$, every colour class has at least
+$63$ edges; that is, $\mstar \ge 63$.
+\end{theorem}
+
+The bound is unconditional, resting only on F\"uredi's stability theorem
+\cite{Fu15} and a finite, machine-checked case analysis (Sections~\ref{sec:rung}
+and~\ref{sec:model}). It falls four short of the value $\mstar \ge 66$ that would
+settle the case; Section~\ref{sec:gap} explains precisely what the remaining gap
+requires.
+
+\section{The complement and the rung method}\label{sec:rung}
+
+Pass to the complement $H = \overline{G}$ on the same $26$ vertices. Conditions
+(A) and (B) become:
+\begin{itemize}
+  \item $H$ is $\Kn{6}$-free (a $6$-clique in $H$ is an independent $6$-set in $G$);
+  \item every $6$-set spans \emph{at least} $4$ edges in $H$ (since $15 - 11 = 4$).
+\end{itemize}
+As $\ee(G) + \ee(H) = 325$, proving $\mstar \ge 63$ is proving $\ee(H) \le 262$ for
+every such $H$.
+
+Suppose $\ee(H) = 270 - q$. By F\"uredi's theorem (\cite{Fu15}, Theorem~1: a
+$\Kn{p+1}$-free graph with $\ee(T_{n,p}) - t$ edges contains a $p$-partite subgraph
+within $t$ edges), applied with $p = 5$ and $n = 26$ where $\ee(T_{26,5}) = 270$,
+the graph $H$ admits a $5$-partition whose number of internal (within-part) edges
+$I$ is at most $q$. For a partition with part sizes $(n_0, \dots, n_4)$, set the
+defect
+\[
+  d \;=\; \sum_{i=0}^{4} \binom{n_i}{2} - 55,
+\]
+where $55 = \binom{6}{2} + 4\binom{5}{2}$ is the number of within-part pairs of the
+balanced Tur\'an partition $(6,5,5,5,5)$. Counting cross-pairs against
+$\ee(H) = 270 - q$ gives the exact identity
+\begin{equation}\label{eq:cap}
+  \#\{\text{absent cross-pairs}\} \;=\; I + q - d \;=:\; \mathrm{cap}.
+\end{equation}
+
+So each \emph{rung} $q$ is a finite question. Over the partition shapes admissible
+at that $q$ --- those with $\sum_i f(n_i) \le q$, where $f(n)$ is the least number
+of internal edges a part of size $n$ must carry so that its own $6$-subsets each
+span at least $4$ edges --- and over every internal configuration, is there a
+placement of at most $\mathrm{cap}$ absent cross-pairs that keeps $H$ both
+$\Kn{6}$-free and at least $4$ on every $6$-set? If the answer is \emph{no} at
+every admissible (shape, configuration) for a rung, that rung is impossible.
+Killing the rungs $q = 0, 1, \dots, 7$ forces $\ee(H) \le 262$, hence
+$\mstar \ge 63$.
+
+\begin{itemize}
+  \item $q \le 3$: the size-$6$ part forced by any admissible partition needs
+    $f(6) = 4$ internal edges, but only $I \le q < 4$ are available. Immediate.
+  \item $q = 4, 5, 6, 7$: each admissible shape and internal configuration is
+    decided by the finite model of Section~\ref{sec:model}. The shapes are
+    $(6,5,5,5,5)$ at every rung and, from $q = 6$, also $(7,5,5,5,4)$; their
+    internal configurations are enumerated up to isomorphism ($96$ of
+    $(6,5,5,5,5)$ at $q = 6$; $249 + 52$ across both shapes at $q = 7$). Every one
+    is infeasible.
+\end{itemize}
+
+The lower rungs were also closed by hand: an elementary hole-budget, grid, and
+pinning argument disposes of $q = 4$ ($\mstar \ge 60$) and $q = 5$
+($\mstar \ge 61$) without a solver, and the machine reproduces them.
+
+\section{The finite decision model and its validation}\label{sec:model}
+
+Each rung-question is a Boolean decision. With the partition and the internal edges
+fixed, introduce one variable per cross-pair (present or absent) and enforce, for
+every $6$-set, that it spans at least $4$ edges and at most $14$ (the latter is
+$\Kn{6}$-freeness), together with the absent-pair budget~\eqref{eq:cap}. The
+encoder is full-specification, with no lemma shortcuts in the trust base.
+
+The model is validated three ways before any infeasibility is trusted.
+\begin{enumerate}
+  \item \textbf{It reproduces a known value.} The Case-A $C_4$ configuration of
+    $(6,5,5,5,5)$ has minimum $34$ absent pairs under both an independent checker
+    and the production encoder.
+  \item \textbf{It is not vacuously infeasible.} At a loose budget the model is
+    satisfiable and the returned witness passes an independent verifier.
+  \item \textbf{The isomorphism reduction is exact.} An early version keyed
+    configuration deduplication on a Weisfeiler--Leman hash, which collides on
+    non-isomorphic regular graphs ($C_8$, $C_4 + C_4$, $C_3 + C_5$); the defect was
+    caught against the validated rung count and corrected to an exact
+    isomorphism-class identity. Without the fix the enumeration silently merges
+    configurations and could report a false closure.
+\end{enumerate}
+The dense, high-budget configurations at $q = 7$ were confirmed by extended
+single-instance runs (one required roughly $40$ minutes of solver time); all
+returned infeasible and none feasible.
+
+\section{Status, trust base, and reproduction}
+
+\paragraph{Proven, unconditional.} $\mstar \ge 63$ (Theorem~\ref{thm:main}).
+
+\paragraph{Trust base.} (i) F\"uredi's 2015 stability theorem \cite{Fu15},
+Theorem~1, a published result whose statement was checked verbatim; and (ii) the
+full-specification finite model above, validated as in Section~\ref{sec:model}. No
+part of the chain depends on any earlier, superseded reduction.
+
+\paragraph{Reproduction.} The decision model and the per-rung campaigns are public
+in the repository linked from the title. Each rung is a self-contained constraint
+decision; the headline values $a(11)$\ldots\ are reproduced by the calibration
+suite, and the rung enumerations by the multi-shape engine.
+
+\section{What $\mstar \ge 66$ would still require}\label{sec:gap}
+
+The route to the full $r = 5$ case ($\mstar \ge 66$) remains open, but it is now
+sharply localized. Killing rungs $q = 8, 9, 10$ reduces, after the elementary and
+stability lemmas, to deciding the configurations whose internal graph is
+\emph{triangle-free and concentrated in one or two parts} ($K_{2,3}$, $C_4$, $C_5$,
+paths). Three independent facts pin down this residue.
+\begin{itemize}
+  \item The route is \textbf{alive}: the canonical hardest configuration --- a star
+    in the $6$-part together with a $K_{2,3}$ in one $5$-part, at $q = 10$ --- has
+    minimum absent-pairs at least $27$, exceeding its cap of $20$, so it is
+    infeasible, consistent with the conjecture.
+  \item The clique-core hand lemmas (a Case-A argument, an empty-$4$-part
+    $\Kn{6}$-forcing lemma, and triangle/$K_4/K_5$ core bounds with
+    machine-exact constants) close the configurations that carry a clique, and an
+    explicit fractional $\Kn{6}$-packing closes the \emph{diffuse} triangle-free
+    configurations.
+  \item However, \textbf{fractional and clique methods provably cannot close the
+    concentrated triangle-free residue}: its packing optimum is approximately $13$
+    against a cap of $20$, and the gap is inherent. The load-bearing blocking
+    constant $\mathrm{BLOCK}(3,3,3,3) = 18$ is an integer fact whose linear
+    relaxation is only $9$.
+\end{itemize}
+
+So $\mstar \ge 66$ is reachable as a hybrid --- hand lemmas and the packing for the
+clique-bearing and diffuse families, full-specification constraint search for the
+concentrated triangle-free core --- but that core is the genuine obstruction: each
+of its configurations needs a heavy individual solver run, and no cheap closed form
+exists. Proving it is a matter of computation, not of a missing idea.
+
+\begin{thebibliography}{9}
+
+\bibitem{ErGy97}
+P.~Erd\H{o}s and A.~Gy\'arf\'as,
+\emph{A variant of the classical Ramsey problem},
+Combinatorica \textbf{17} (1997), no.~4, 459--467.
+
+\bibitem{Fu15}
+Z.~F\"uredi,
+\emph{A proof of the stability of extremal graphs, Simonovits' stability from
+Szemer\'edi's regularity},
+Combinatorica \textbf{35} (2015), no.~6, 685--708; arXiv:1501.03129.
+
+\end{thebibliography}
+
+\end{document}

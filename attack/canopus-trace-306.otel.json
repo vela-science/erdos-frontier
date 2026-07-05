@@ -1,0 +1,235 @@
+{
+  "schema": "vela.canopus.trace.otel.v1",
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": {
+          "service.name": "canopus-loop",
+          "gen_ai.system": "vela.canopus"
+        }
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "canopus.trace",
+            "version": "1"
+          },
+          "spans": [
+            {
+              "name": "canopus.loop",
+              "context": {
+                "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+                "span_id": "326d7eeaa3834e5e"
+              },
+              "parent_id": null,
+              "kind": "INTERNAL",
+              "start_time_unix_ms": 33279366.484,
+              "end_time_unix_ms": 33279371.56,
+              "attributes": {
+                "canopus.problem": 306,
+                "gen_ai.operation.name": "loop",
+                "gen_ai.system": "vela.canopus"
+              },
+              "events": [],
+              "status": {
+                "status_code": "OK"
+              }
+            },
+            {
+              "name": "canopus.retrieve",
+              "context": {
+                "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+                "span_id": "3477a36ea49b4314"
+              },
+              "parent_id": "326d7eeaa3834e5e",
+              "kind": "CLIENT",
+              "start_time_unix_ms": 33279366.492,
+              "end_time_unix_ms": 33279371.451,
+              "attributes": {
+                "canopus.problem": 306,
+                "canopus.neighbors": [
+                  148,
+                  242,
+                  295,
+                  302,
+                  307,
+                  312,
+                  458,
+                  931,
+                  1056
+                ],
+                "canopus.verified_prior": 8,
+                "canopus.draft_prior": 18,
+                "canopus.retracted_prior": 0,
+                "canopus.external_traces": 3,
+                "gen_ai.system": "vela.canopus",
+                "gen_ai.operation.name": "retrieve"
+              },
+              "events": [
+                {
+                  "name": "context_assembled",
+                  "time_ms": 33279371.449625004,
+                  "attributes": {
+                    "prior_attempts": 26,
+                    "neighbor_attempts": 40
+                  }
+                }
+              ],
+              "status": {
+                "status_code": "OK"
+              }
+            },
+            {
+              "name": "canopus.propose",
+              "context": {
+                "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+                "span_id": "9d5daacd220b4e1a"
+              },
+              "parent_id": "326d7eeaa3834e5e",
+              "kind": "INTERNAL",
+              "start_time_unix_ms": 33279371.474,
+              "end_time_unix_ms": 33279371.522,
+              "attributes": {
+                "gen_ai.system": "vela.canopus",
+                "gen_ai.request.model": "Opus 4.8 (claude-opus-4-8)",
+                "canopus.engine": "Opus 4.8 (claude-opus-4-8)",
+                "canopus.deliverable_grade": "obstruction_map",
+                "canopus.handoff_digest": "de01d53eb520f498",
+                "canopus.claim_digest": "405568c42f1e8e7b",
+                "gen_ai.operation.name": "propose"
+              },
+              "events": [
+                {
+                  "name": "grade_gate",
+                  "time_ms": 33279371.520499997,
+                  "attributes": {
+                    "passed": true,
+                    "reason": "ok"
+                  }
+                }
+              ],
+              "status": {
+                "status_code": "OK"
+              }
+            },
+            {
+              "name": "canopus.verify",
+              "context": {
+                "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+                "span_id": "362ad2b575934b31"
+              },
+              "parent_id": "326d7eeaa3834e5e",
+              "kind": "CLIENT",
+              "start_time_unix_ms": 33279371.531,
+              "end_time_unix_ms": 33279371.551,
+              "attributes": {
+                "canopus.problem": 306,
+                "canopus.attachments": 2,
+                "canopus.attachment_methods": [
+                  "computational_search",
+                  "exact_arithmetic_recompute"
+                ],
+                "canopus.adversarial_probes": 1,
+                "canopus.gate_pass": true,
+                "canopus.gate_reasons": [],
+                "gen_ai.system": "vela.canopus",
+                "gen_ai.operation.name": "verify"
+              },
+              "events": [
+                {
+                  "name": "adversarial_probe",
+                  "time_ms": 33279371.534375,
+                  "attributes": {
+                    "kind": "boundary_dual_feasibility",
+                    "result": "survived",
+                    "note": ""
+                  }
+                },
+                {
+                  "name": "gate_independence",
+                  "time_ms": 33279371.547458,
+                  "attributes": {
+                    "condition": "G1",
+                    "passed": true,
+                    "reason": ""
+                  }
+                },
+                {
+                  "name": "gate_claim_match",
+                  "time_ms": 33279371.548625,
+                  "attributes": {
+                    "condition": "G2",
+                    "passed": true,
+                    "reason": ""
+                  }
+                },
+                {
+                  "name": "gate_adversarial",
+                  "time_ms": 33279371.549333002,
+                  "attributes": {
+                    "condition": "G3",
+                    "passed": true,
+                    "reason": ""
+                  }
+                },
+                {
+                  "name": "gate_well_formed",
+                  "time_ms": 33279371.549833,
+                  "attributes": {
+                    "condition": "G4",
+                    "passed": true,
+                    "reason": ""
+                  }
+                },
+                {
+                  "name": "verdict",
+                  "time_ms": 33279371.550791003,
+                  "attributes": {
+                    "verified": true,
+                    "reasons": []
+                  }
+                }
+              ],
+              "status": {
+                "status_code": "OK"
+              }
+            },
+            {
+              "name": "canopus.bank",
+              "context": {
+                "trace_id": "fd6ecd79dfd44646834ee7cb47c27950",
+                "span_id": "2989c560918649c8"
+              },
+              "parent_id": "326d7eeaa3834e5e",
+              "kind": "INTERNAL",
+              "start_time_unix_ms": 33279371.557,
+              "end_time_unix_ms": 33279371.56,
+              "attributes": {
+                "canopus.problem": 306,
+                "canopus.disposition": "trusted",
+                "canopus.record_id": "att_5a000c91096dfd4f",
+                "canopus.legacy_status": "verified_computationally",
+                "canopus.gate_pass": true,
+                "gen_ai.system": "vela.canopus",
+                "gen_ai.operation.name": "bank"
+              },
+              "events": [
+                {
+                  "name": "banked",
+                  "time_ms": 33279371.559,
+                  "attributes": {
+                    "disposition": "trusted",
+                    "superseded": false
+                  }
+                }
+              ],
+              "status": {
+                "status_code": "OK"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
