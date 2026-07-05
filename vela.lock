@@ -1,5 +1,5 @@
 schema: vela.frontier_lock.v0.1
-generated_at: 2026-07-05T22:57:03Z
+generated_at: 2026-07-05T22:57:08Z
 vela_version: 0.751.0
 carina_kernel: carina@0.1.0
 frontier_id: vfr_0a25edabc16db143
@@ -34,16 +34,16 @@ verifiers:
 carina:
   kernel: carina@0.1.0
   digest: sha256:2de6244bc3c695cd83adf7d17fd9c52b6586ce060874b37814cc35aff340d5ee
-snapshot_hash: sha256:70ff330022bef10c2f0aae9fef660ee6489632912a73b0a69f36cc303066b1e2
-event_log_hash: sha256:90c8d16afd7d141762661cad4860cc68fe566b2cc0f908f415806e2da8e6a0c8
-proposal_state_hash: sha256:efe552a3da50b0b3ff1322fb5f30ecfce00b0c29f6f61471e26af76318544dad
+snapshot_hash: sha256:bf1023d0733ceb0ff47f1cedb2592d14dde882891cadcac55b459f4dd15bab83
+event_log_hash: sha256:00927f44196e505d0c70c22051adc902666139af91b50c9229916750f30238e6
+proposal_state_hash: sha256:c30e0670a46618fdae583cff56c53b8af0b6d3ff009d5dab50915b31c6feba3e
 sources_hash: sha256:dddea39aa89321d064df1f4e9d9c749d9a97d4920faa0e5afafae085eb1ca627
 artifacts_hash: sha256:007ee8d7de4cfbbf0ba501062b50ccef1f523a068a675649a6082caea29581c1
 review_hash: sha256:bb74af13f787e6f1357d243a3ff50e8efea86aaa7bc83c5291ab04afd0533ace
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:d809d14315ad1072a6068bb93bfacca6b7323358107a8510e136ec2ed34cd3a8
+  digest: sha256:e2bda2f3dbba3fa251b07b4345aa39e370437ce58b6122109efad4ba6faec9a3
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
