@@ -1,0 +1,88 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_2ee5fdab44dfd341",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_790426293ee41b08"
+  },
+  "actor": {
+    "id": "agent:claude-fable",
+    "type": "agent"
+  },
+  "created_at": "2026-07-05T22:56:05.716297+00:00",
+  "reason": "Manual finding added to frontier state",
+  "payload": {
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "Erdős #366, finite confirmation: no 2-full n with n+1 3-full in [1, 10000000]. The question over all integers is the open problem.",
+        "type": "computational"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "Record vrc_9920ea978e744dae (signed; recorded against the current head). Caveats: Finite confirmation over [1,10000000]; the question over all integers is open.. Artifacts: 1 hash-verified at propose."
+      },
+      "confidence": {
+        "basis": "operator-supplied frontier prior; review required",
+        "extraction_confidence": 1.0,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.3
+      },
+      "created": "2026-07-05T22:56:05.716284+00:00",
+      "evidence": {
+        "evidence_spans": [],
+        "method": "manual state transition",
+        "model_system": "",
+        "replicated": false,
+        "replication_count": null,
+        "type": "computational"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_790426293ee41b08",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "agent:claude-fable",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-07-05T22:56:05.716282+00:00",
+          "extractor_version": "vela/0.751.0",
+          "method": "manual_curation",
+          "model": null,
+          "model_version": null
+        },
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "record:vrc_9920ea978e744dae",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    }
+  },
+  "source_refs": [],
+  "status": "pending_review",
+  "caveats": [
+    "Manual findings require evidence review before scientific use."
+  ]
+}
