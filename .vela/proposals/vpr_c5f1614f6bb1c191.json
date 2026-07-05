@@ -81,7 +81,11 @@
     }
   },
   "source_refs": [],
-  "status": "pending_review",
+  "status": "applied",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-07-05T22:57:17.211179+00:00",
+  "decision_reason": "accepted via sign",
+  "applied_event_id": "vev_dbd057ac3069fcda",
   "caveats": [
     "Manual findings require evidence review before scientific use."
   ]
