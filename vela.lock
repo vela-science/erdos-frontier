@@ -1,17 +1,17 @@
 schema: vela.frontier_lock.v0.1
-generated_at: 2026-07-06T00:40:56Z
-vela_version: 0.754.0
+generated_at: 2026-07-06T00:32:40.419143+00:00
+vela_version: 0.757.0
 carina_kernel: carina@0.1.0
 frontier_id: vfr_0a25edabc16db143
 canonicalization:
   json: vela-canonical-json-v0.1
   yaml: vela-yaml-v0.1
 reducer:
-  package: vela@0.754.0
-  digest: sha256:f778be7dd6fa9075549d35cb0be079f939f137ed40af983ecc372086403cf846
+  package: vela@0.757.0
+  digest: sha256:852962067b9bd1aa5a7e0d780001303f7889b582514bb67b1b816e01fdef7bad
 verifiers:
-  package: vela-verify@0.754.0
-  digest: sha256:2281ed786aa75b949b9f6ff75d3db2b7158bcc1288606a3907abd8571246c241
+  package: vela-verify@0.757.0
+  digest: sha256:e86bceea149e7888678bd325e6bf94ef1dcc668749e51cf4c65063f7e6c4ca98
   kinds:
   - balanced_coloring
   - binom_deficiency
@@ -43,7 +43,7 @@ review_hash: sha256:bb74af13f787e6f1357d243a3ff50e8efea86aaa7bc83c5291ab04afd053
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:672c319025fdb133e3034abed5297a068f3a565719792ab0ec8e44acaf53bd45
+  digest: sha256:f9dd0b6a849b421f3b061a8b605fda2117f75ca9f8ea80e87bb4459361c5a73d
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
