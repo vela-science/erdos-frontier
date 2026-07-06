@@ -34,7 +34,7 @@ jobs:
           - { tc: "v4.30.0 v4.30.0-rc1 v4.25.0-rc2", shard: 0, of: 1 }
           - { tc: "v4.22.0 v4.21.0 v4.23.0", shard: 0, of: 1 }
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install elan
         run: |
@@ -76,7 +76,7 @@ jobs:
     needs: audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/download-artifact@v4
         with:
           path: partial-feeds

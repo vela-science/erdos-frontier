@@ -32,7 +32,7 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: constellate-science/vela@main
         with:
           # vela-version defaults to the vela_version pinned in vela.lock, so
