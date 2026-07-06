@@ -1,12 +1,12 @@
 # Erdős frontier — proof status
 
-*Regenerated 2026-07-05 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
+*Regenerated 2026-07-06 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
 
 This is a **computed** view, not a hand-kept list. It joins erdosproblems.com, Formal Conjectures, hosted Lean proof indexes, live open PRs, and explicit human overrides on the problem number so the status cannot drift silently.
 
 Proof-source marks: ᵖ = [`plby/lean-proofs`](https://github.com/plby/lean-proofs), ʲ = [`Jayyhk/erdos-lean`](https://github.com/Jayyhk/erdos-lean), ʷ = [`williamjblair/lean-proofs`](https://github.com/williamjblair/lean-proofs).
 
-> ⚠️ **Coverage gap:** investigate [987](https://www.erdosproblems.com/987)
+**Coverage:** all 486 problems Bloom marks formalized are tracked by plby ∪ Jayyhk ∪ williamjblair/lean-proofs ∪ FC. No gap.
 
 Reconciled **1217** problems.
 
@@ -21,11 +21,11 @@ Reconciled **1217** problems.
 | `docstring` | 8 | **Docstring note, not a `formal_proof` tag.** The hosted proof is conditional, axiomatic, or trust-extended. |
 | `partial` | 7 | **Partial proof.** Proves a variant, not the full erdosproblems statement. |
 | `blocked-claim` | 3 | **Claimed outside an open PR.** Skip until the claim is resolved. |
-| `in-pr` | 301 | **Claimed by an open FC PR.** Skip to avoid collisions. |
+| `in-pr` | 303 | **Claimed by an open FC PR.** Skip to avoid collisions. |
 | `wont-fix` | 1 | **Maintainer marked `won't fix`.** Skip. |
 | `defer` | 0 | **Deferred.** A human override says to leave this out of the next batch. |
-| `done` | 98 | Already linked in FC. |
-| `no-proof` | 711 | No hosted Lean proof to link yet. |
+| `done` | 99 | Already linked in FC. |
+| `no-proof` | 708 | No hosted Lean proof to link yet. |
 
 Human override judgments live in [`overrides.yaml`](overrides.yaml). They encode known claims, theorem mismatches, and conditional-proof traps that are not visible in the upstream machine-readable sources.
 

@@ -5,21 +5,19 @@
     "blocked-claim": 3,
     "defer": 0,
     "docstring": 8,
-    "done": 98,
+    "done": 99,
     "hypothesis-conditional": 7,
-    "in-pr": 301,
+    "in-pr": 303,
     "link": 0,
     "mismatch": 2,
     "needs-human-match-check": 2,
     "needs-statement-update": 1,
-    "no-proof": 711,
+    "no-proof": 708,
     "partial": 7,
     "statement": 76,
     "wont-fix": 1
   },
-  "coverage_gap": [
-    987
-  ],
+  "coverage_gap": [],
   "discrepancies": [
     90,
     258,
@@ -31,7 +29,7 @@
     1148,
     1197
   ],
-  "generated_at": "2026-07-05",
+  "generated_at": "2026-07-06",
   "held_for_review": [],
   "hosted_proofs_tracked": 211,
   "rows": [
@@ -15147,12 +15145,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "codex/erdos-387-status-sync",
-          "number": 4374,
-          "title": "ErdosProblems/387: sync solved status",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4374"
-        },
-        {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
           "title": "chore(FormalConjectures): use LaTeX rather than markdown in docstrings",
@@ -17799,9 +17791,16 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "patch-1",
+          "number": 4399,
+          "title": "Add OEIS A397433 reference to Erd\u0151s problem 448",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4399"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "disproved",
       "erdos_url": "https://www.erdosproblems.com/448",
@@ -17822,7 +17821,7 @@
       "problem": 448,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -23765,7 +23764,7 @@
         }
       ],
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/603",
       "fc": {
         "fc_url": null,
@@ -26958,12 +26957,6 @@
         "source": "gpt-erdos"
       },
       "claims": [
-        {
-          "head_ref": "codex/erdos686-lemmaT",
-          "number": 4359,
-          "title": "Fix Erd\u0151s 686 four_three docstring",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4359"
-        },
         {
           "head_ref": "bump_v4.31",
           "number": 4356,
@@ -30948,9 +30941,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-793",
+          "number": 4401,
+          "title": "feat(ErdosProblems): 793",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4401"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/793",
@@ -30971,7 +30971,7 @@
       "problem": 793,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -36535,7 +36535,7 @@
         }
       ],
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/948",
       "fc": {
         "fc_url": null,
@@ -38035,9 +38035,15 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "erdos-campaign-batch-5",
+          "number": 4385,
+          "title": "ErdosProblems: add 71, 206, 209, 328, 353, 403, 426, 464, 512, 621, 639, 648 (#3998 sync)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4385"
+        },
         {
           "head_ref": "codex/add-erdos-formalizations",
           "number": 4354,
@@ -38049,13 +38055,13 @@
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/987",
       "fc": {
-        "fc_url": null,
-        "formal_proof_link": null,
-        "has_file": false,
-        "has_proof": false,
-        "linked": false,
-        "path": null,
-        "theorem": null
+        "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos987.erdos_987.variants.sqrt_log_upper_bound",
+        "formal_proof_link": "https://github.com/Marti2203/formal-conjectures/blob/19c63d48acce3099c242b059518c49bf8dc0eab8/FormalConjectures/ErdosProblems/987.lean",
+        "has_file": true,
+        "has_proof": true,
+        "linked": true,
+        "path": "FormalConjectures/ErdosProblems/987.lean",
+        "theorem": "Erdos987.erdos_987.variants.sqrt_log_upper_bound"
       },
       "fidelity": null,
       "held_for_review": false,
@@ -38065,7 +38071,7 @@
       "problem": 987,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -42327,6 +42333,12 @@
       "candidate_claims": null,
       "claims": [
         {
+          "head_ref": "Edros1083",
+          "number": 4402,
+          "title": "feat(Erdos): Erdos Problem 1083",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4402"
+        },
+        {
           "head_ref": "erdos-all",
           "number": 3422,
           "title": "feat(ErdosProblems): All 1179 Erd\u0151s conjectures formalized",
@@ -43391,9 +43403,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "codex/add-erdos-formalizations",
+          "number": 4354,
+          "title": "Add survey-backed Erd\u0151s formalizations",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4354"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1108",
@@ -43414,7 +43433,7 @@
       "problem": 1108,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },

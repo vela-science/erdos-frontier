@@ -2,9 +2,9 @@
  "schema": "erdos-frontier.corpus-graph.v1",
  "note": "Derived index of what the ingested sources declare \u2014 typed in the Vela EdgeKind vocabulary with a trust tier per edge. Not signed state: the signed spine is .vela/ + frontier.json.",
  "source_locks": {
-  "erdos": "sha256:7739effb0",
-  "fidelity": "sha256:4fb5819ae",
-  "formal_conjectures": "sha256:6bd2d2434",
+  "erdos": "sha256:bceff49b5",
+  "fidelity": "sha256:0a96bf33f",
+  "formal_conjectures": "sha256:d176db747",
   "gpt_erdos": "sha256:c0f626a47",
   "jayyhk": "sha256:09cbf636f",
   "plby": "sha256:56caee303",
@@ -12,26 +12,26 @@
   "williamjblair_lean_proofs": "sha256:b0e681bf4"
  },
  "counts": {
-  "nodes": 2789,
-  "edges": 1388,
+  "nodes": 2790,
+  "edges": 1389,
   "by_node_kind": {
    "attestation": 111,
    "claim": 342,
    "condition": 24,
    "problem": 1217,
    "proof": 393,
-   "statement": 702
+   "statement": 703
   },
   "by_edge_kind": {
    "contradicts": 11,
    "depends_on": 26,
-   "derived_from": 702,
+   "derived_from": 703,
    "replicates": 165,
    "specializes": 2,
    "supports": 482
   },
   "by_trust": {
-   "declared": 901,
+   "declared": 902,
    "machine": 367,
    "recorded": 9,
    "signed": 111
@@ -1194,7 +1194,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 1108",
    "state": "open",
-   "bucket": "no-proof",
+   "bucket": "in-pr",
    "url": "https://www.erdosproblems.com/1108"
   },
   {
@@ -5058,7 +5058,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 448",
    "state": "disproved",
-   "bucket": "no-proof",
+   "bucket": "in-pr",
    "url": "https://www.erdosproblems.com/448"
   },
   {
@@ -6441,7 +6441,7 @@
    "id": "erdos:603",
    "kind": "problem",
    "label": "Erd\u0151s 603",
-   "state": "open",
+   "state": "solved",
    "bucket": "in-pr",
    "url": "https://www.erdosproblems.com/603"
   },
@@ -8122,7 +8122,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 793",
    "state": "open",
-   "bucket": "no-proof",
+   "bucket": "in-pr",
    "url": "https://www.erdosproblems.com/793"
   },
   {
@@ -9497,7 +9497,7 @@
    "id": "erdos:948",
    "kind": "problem",
    "label": "Erd\u0151s 948",
-   "state": "open",
+   "state": "solved",
    "bucket": "in-pr",
    "url": "https://www.erdosproblems.com/948"
   },
@@ -9842,7 +9842,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 987",
    "state": "proved",
-   "bucket": "in-pr",
+   "bucket": "done",
    "url": "https://www.erdosproblems.com/987"
   },
   {
@@ -10610,9 +10610,9 @@
   {
    "id": "fc:1083",
    "kind": "statement",
-   "label": "FC 1083 (PR #3422)",
+   "label": "FC 1083 (PR #4402)",
    "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/3422"
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4402"
   },
   {
    "id": "fc:1084",
@@ -14250,6 +14250,13 @@
    "linked": false
   },
   {
+   "id": "fc:793",
+   "kind": "statement",
+   "label": "FC 793 (PR #4401)",
+   "stage": "in-pr",
+   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4401"
+  },
+  {
    "id": "fc:794",
    "kind": "statement",
    "label": "FC 794 (PR #1739)",
@@ -14927,9 +14934,9 @@
   {
    "id": "fc:987",
    "kind": "statement",
-   "label": "FC 987 (PR #4354)",
-   "stage": "in-pr",
-   "url": "https://github.com/google-deepmind/formal-conjectures/pull/4354"
+   "label": "Erdos987.erdos_987.variants.sqrt_log_upper_bound",
+   "url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos987.erdos_987.variants.sqrt_log_upper_bound",
+   "linked": true
   },
   {
    "id": "fc:99",
@@ -22134,7 +22141,7 @@
    "to": "erdos:1083",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #3422 proposes the statement"
+   "evidence": "open FC PR #4402 proposes the statement"
   },
   {
    "from": "fc:1084",
@@ -25679,6 +25686,13 @@
    "evidence": "FormalConjectures file exists"
   },
   {
+   "from": "fc:793",
+   "to": "erdos:793",
+   "kind": "derived_from",
+   "trust": "declared",
+   "evidence": "open FC PR #4401 proposes the statement"
+  },
+  {
    "from": "fc:794",
    "to": "erdos:794",
    "kind": "derived_from",
@@ -26355,7 +26369,7 @@
    "to": "erdos:987",
    "kind": "derived_from",
    "trust": "declared",
-   "evidence": "open FC PR #4354 proposes the statement"
+   "evidence": "FormalConjectures file exists"
   },
   {
    "from": "fc:99",

@@ -599,6 +599,7 @@
 {"from": "fc:78", "to": "erdos:78", "kind": "derived_from"}
 {"from": "fc:786", "to": "erdos:786", "kind": "derived_from"}
 {"from": "fc:789", "to": "erdos:789", "kind": "derived_from"}
+{"from": "fc:793", "to": "erdos:793", "kind": "derived_from"}
 {"from": "fc:794", "to": "erdos:794", "kind": "derived_from"}
 {"from": "fc:810", "to": "erdos:810", "kind": "derived_from"}
 {"from": "fc:812", "to": "erdos:812", "kind": "derived_from"}

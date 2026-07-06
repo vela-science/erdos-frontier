@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05",
+  "generated_at": "2026-07-06",
   "rows": [
     {
       "bucket": "in-pr",
@@ -15485,7 +15485,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "disproved",
       "erdos_url": "https://www.erdosproblems.com/448",
@@ -15504,7 +15504,7 @@
       "problem": 448,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -20681,7 +20681,7 @@
     {
       "bucket": "in-pr",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/603",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -27172,7 +27172,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/793",
@@ -27191,7 +27191,7 @@
       "problem": 793,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -32334,7 +32334,7 @@
     {
       "bucket": "in-pr",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/948",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -33648,14 +33648,14 @@
       "wiki_outcome": "Full solution"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/987",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos987.erdos_987.variants.sqrt_log_upper_bound",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos987.erdos_987.variants.sqrt_log_upper_bound",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": null,
@@ -33665,9 +33665,9 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 987,
-      "proof_link": null,
+      "proof_link": "https://github.com/Marti2203/formal-conjectures/blob/19c63d48acce3099c242b059518c49bf8dc0eab8/FormalConjectures/ErdosProblems/987.lean",
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -37925,7 +37925,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1108",
@@ -37944,7 +37944,7 @@
       "problem": 1108,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
