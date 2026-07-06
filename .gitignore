@@ -9,3 +9,6 @@ lean/extract_*.lean
 lean/assumptions*.jsonl
 # review packets — regenerated on demand by match_packet.py (a local worklist)
 packets/
+# transient search-witness scratch — vac_ search.candidate records from harvest
+# runs; the accepted findings are what we commit, not the candidate stream
+activity/
