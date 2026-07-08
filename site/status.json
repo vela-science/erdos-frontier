@@ -7,13 +7,13 @@
     "docstring": 8,
     "done": 109,
     "hypothesis-conditional": 7,
-    "in-pr": 303,
+    "in-pr": 304,
     "link": 0,
     "mismatch": 2,
     "needs-human-match-check": 2,
     "needs-statement-update": 1,
     "no-proof": 708,
-    "partial": 7,
+    "partial": 6,
     "statement": 66,
     "wont-fix": 1
   },
@@ -29,7 +29,7 @@
     1148,
     1197
   ],
-  "generated_at": "2026-07-07",
+  "generated_at": "2026-07-08",
   "held_for_review": [],
   "hosted_proofs_tracked": 211,
   "rows": [
@@ -11131,9 +11131,16 @@
       }
     },
     {
-      "bucket": "partial",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-formal-proof-links-4x",
+          "number": 4407,
+          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/291",
@@ -11171,7 +11178,7 @@
       "proof_sources": [
         "plby"
       ],
-      "recommended_action": "Only link a correctly stated variant after a per-problem review.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "\u1d56",
       "wiki": null
     },
@@ -15636,6 +15643,12 @@
       "candidate_claims": null,
       "claims": [
         {
+          "head_ref": "erdos-formal-proof-links-4x",
+          "number": 4407,
+          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
+        },
+        {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
           "title": "chore(FormalConjectures): use LaTeX rather than markdown in docstrings",
@@ -19676,6 +19689,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "erdos-formal-proof-links-4x",
+          "number": 4407,
+          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
+        },
         {
           "head_ref": "fill-sorry-6-problems",
           "number": 3525,
@@ -43519,6 +43538,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "erdos-formal-proof-links-4x",
+          "number": 4407,
+          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
+        },
         {
           "head_ref": "erdos-all",
           "number": 3422,

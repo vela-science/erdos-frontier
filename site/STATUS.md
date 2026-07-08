@@ -1,6 +1,6 @@
 # Erdős frontier — proof status
 
-*Regenerated 2026-07-07 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
+*Regenerated 2026-07-08 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
 
 This is a **computed** view, not a hand-kept list. It joins erdosproblems.com, Formal Conjectures, hosted Lean proof indexes, live open PRs, and explicit human overrides on the problem number so the status cannot drift silently.
 
@@ -19,9 +19,9 @@ Reconciled **1217** problems.
 | `mismatch` | 2 | **Skip for now.** The hosted proof is complete, but it does not prove the boxed FC statement. |
 | `hypothesis-conditional` | 7 | **Do not link as complete.** The theorem carries a non-problem hypothesis even if `#print axioms` is clean. |
 | `docstring` | 8 | **Docstring note, not a `formal_proof` tag.** The hosted proof is conditional, axiomatic, or trust-extended. |
-| `partial` | 7 | **Partial proof.** Proves a variant, not the full erdosproblems statement. |
+| `partial` | 6 | **Partial proof.** Proves a variant, not the full erdosproblems statement. |
 | `blocked-claim` | 3 | **Claimed outside an open PR.** Skip until the claim is resolved. |
-| `in-pr` | 303 | **Claimed by an open FC PR.** Skip to avoid collisions. |
+| `in-pr` | 304 | **Claimed by an open FC PR.** Skip to avoid collisions. |
 | `wont-fix` | 1 | **Maintainer marked `won't fix`.** Skip. |
 | `defer` | 0 | **Deferred.** A human override says to leave this out of the next batch. |
 | `done` | 109 | Already linked in FC. |
@@ -80,11 +80,11 @@ _none_
 
 [192](https://www.erdosproblems.com/192)ʲ [231](https://www.erdosproblems.com/231)ʲ [237](https://www.erdosproblems.com/237)ᵖʲ [490](https://www.erdosproblems.com/490)ᵖʲ [610](https://www.erdosproblems.com/610)ʲ [659](https://www.erdosproblems.com/659)ᵖʲ [694](https://www.erdosproblems.com/694)ᵖʲ [1197](https://www.erdosproblems.com/1197)ᵖʲ
 
-## `partial` — 7 problem(s)
+## `partial` — 6 problem(s)
 
 **Partial proof.** Proves a variant, not the full erdosproblems statement.
 
-[264](https://www.erdosproblems.com/264)ᵖ [291](https://www.erdosproblems.com/291)ᵖ [368](https://www.erdosproblems.com/368)ᵖ [485](https://www.erdosproblems.com/485)ᵖ [866](https://www.erdosproblems.com/866)ᵖ [1056](https://www.erdosproblems.com/1056)ᵖ [1095](https://www.erdosproblems.com/1095)ᵖ
+[264](https://www.erdosproblems.com/264)ᵖ [368](https://www.erdosproblems.com/368)ᵖ [485](https://www.erdosproblems.com/485)ᵖ [866](https://www.erdosproblems.com/866)ᵖ [1056](https://www.erdosproblems.com/1056)ᵖ [1095](https://www.erdosproblems.com/1095)ᵖ
 
 ## `blocked-claim` — 3 problem(s)
 

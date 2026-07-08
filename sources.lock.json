@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-07T10:03:20+00:00",
+  "generated_at": "2026-07-08T08:46:08+00:00",
   "sources": {
     "erdos": {
-      "commit": "6dc24ad8f74f94d07264fcdec085e136a6e891d5",
+      "commit": "52b288fdda37b6f14b54f39eb6fb93d2e643a101",
       "kind": "problem_registry",
       "ref": "main",
       "repo": "teorth/erdosproblems",
-      "sha256": "sha256:0b817a8f0bc786a24613063d93defe5a862f5fde144a0198cc79455808dfb523",
+      "sha256": "sha256:7108dc960b65c891afd4c9555ef76d6607418b321a786a0457f863d75a7a2605",
       "url": "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
     },
     "fidelity": {
