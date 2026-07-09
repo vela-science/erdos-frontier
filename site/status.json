@@ -29,7 +29,7 @@
     1148,
     1197
   ],
-  "generated_at": "2026-07-08",
+  "generated_at": "2026-07-09",
   "held_for_review": [],
   "hosted_proofs_tracked": 211,
   "rows": [
@@ -3554,6 +3554,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "proofs/erdos-92-bddabove",
+          "number": 4411,
+          "title": "feat(ErdosProblems/92): prove possible_f_values_BddAbove",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4411"
+        },
         {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
