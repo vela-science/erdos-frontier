@@ -1,6 +1,6 @@
 # Erdős frontier — proof status
 
-*Regenerated 2026-07-10 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
+*Regenerated 2026-07-11 by [`erdos_frontier.py`](../erdos_frontier.py). Do not edit by hand.*
 
 This is a **computed** view, not a hand-kept list. It joins erdosproblems.com, Formal Conjectures, hosted Lean proof indexes, live open PRs, and explicit human overrides on the problem number so the status cannot drift silently.
 
@@ -13,7 +13,7 @@ Reconciled **1217** problems.
 | status | count | meaning |
 |---|---:|---|
 | `statement` | 66 | **Write the FC statement + link.** A complete hosted proof exists, FC has no file yet. |
-| `link` | 0 | **Add the `formal_proof` link.** FC already has the statement; the hosted proof just is not linked. |
+| `link` | 1 | **Add the `formal_proof` link.** FC already has the statement; the hosted proof just is not linked. |
 | `needs-statement-update` | 1 | **Not a trivial link.** FC has a file, but the statement or answer needs a human update before linking. |
 | `needs-human-match-check` | 2 | **Needs match-check.** A hosted proof exists, but the proof/statement relation has not been audited. |
 | `mismatch` | 2 | **Skip for now.** The hosted proof is complete, but it does not prove the boxed FC statement. |
@@ -25,7 +25,7 @@ Reconciled **1217** problems.
 | `wont-fix` | 1 | **Maintainer marked `won't fix`.** Skip. |
 | `defer` | 0 | **Deferred.** A human override says to leave this out of the next batch. |
 | `done` | 109 | Already linked in FC. |
-| `no-proof` | 708 | No hosted Lean proof to link yet. |
+| `no-proof` | 707 | No hosted Lean proof to link yet. |
 
 Human override judgments live in [`overrides.yaml`](overrides.yaml). They encode known claims, theorem mismatches, and conditional-proof traps that are not visible in the upstream machine-readable sources.
 
@@ -36,11 +36,11 @@ Human override judgments live in [`overrides.yaml`](overrides.yaml). They encode
 
 [24](https://www.erdosproblems.com/24)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [71](https://www.erdosproblems.com/71)ʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [93](https://www.erdosproblems.com/93)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [164](https://www.erdosproblems.com/164)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [206](https://www.erdosproblems.com/206)ᵖʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [209](https://www.erdosproblems.com/209)ʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [314](https://www.erdosproblems.com/314)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [315](https://www.erdosproblems.com/315)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [328](https://www.erdosproblems.com/328)ʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [333](https://www.erdosproblems.com/333)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [353](https://www.erdosproblems.com/353)ʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [369](https://www.erdosproblems.com/369)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [401](https://www.erdosproblems.com/401)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [403](https://www.erdosproblems.com/403)ʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [426](https://www.erdosproblems.com/426)ᵖʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [429](https://www.erdosproblems.com/429)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [435](https://www.erdosproblems.com/435)ᵖʲ ([#4369](https://github.com/google-deepmind/formal-conjectures/pull/4369)) [443](https://www.erdosproblems.com/443)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [464](https://www.erdosproblems.com/464)ʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [484](https://www.erdosproblems.com/484)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [487](https://www.erdosproblems.com/487)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [497](https://www.erdosproblems.com/497)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [498](https://www.erdosproblems.com/498)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [502](https://www.erdosproblems.com/502)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [512](https://www.erdosproblems.com/512)ʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [537](https://www.erdosproblems.com/537)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [582](https://www.erdosproblems.com/582)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [618](https://www.erdosproblems.com/618)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [621](https://www.erdosproblems.com/621)ᵖʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [639](https://www.erdosproblems.com/639)ᵖʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [646](https://www.erdosproblems.com/646)ᵖʲ ([#4371](https://github.com/google-deepmind/formal-conjectures/pull/4371)) [648](https://www.erdosproblems.com/648)ᵖʲ ([#4385](https://github.com/google-deepmind/formal-conjectures/pull/4385)) [649](https://www.erdosproblems.com/649)ᵖʲ [658](https://www.erdosproblems.com/658)ᵖʲ [666](https://www.erdosproblems.com/666)ᵖʲ [674](https://www.erdosproblems.com/674)ᵖʲ [692](https://www.erdosproblems.com/692)ᵖʲ [698](https://www.erdosproblems.com/698)ᵖʲ [716](https://www.erdosproblems.com/716)ʲ [751](https://www.erdosproblems.com/751)ᵖʲ [753](https://www.erdosproblems.com/753)ᵖʲ [756](https://www.erdosproblems.com/756)ᵖʲ [760](https://www.erdosproblems.com/760)ᵖʲ [762](https://www.erdosproblems.com/762)ᵖʲ [765](https://www.erdosproblems.com/765)ʲ [775](https://www.erdosproblems.com/775)ᵖʲ [798](https://www.erdosproblems.com/798)ᵖʲ [818](https://www.erdosproblems.com/818)ᵖʲ [844](https://www.erdosproblems.com/844)ᵖʲ [862](https://www.erdosproblems.com/862)ᵖʲ [867](https://www.erdosproblems.com/867)ᵖʲ [898](https://www.erdosproblems.com/898)ᵖʲ [905](https://www.erdosproblems.com/905)ᵖʲ [907](https://www.erdosproblems.com/907)ᵖʲ [914](https://www.erdosproblems.com/914)ᵖʲ [927](https://www.erdosproblems.com/927)ʲ [947](https://www.erdosproblems.com/947)ᵖʲ [958](https://www.erdosproblems.com/958)ᵖʲ [966](https://www.erdosproblems.com/966)ᵖʲ [967](https://www.erdosproblems.com/967)ᵖʲ [974](https://www.erdosproblems.com/974)ᵖʲ [990](https://www.erdosproblems.com/990)ᵖʲ [1134](https://www.erdosproblems.com/1134)ʲ [1136](https://www.erdosproblems.com/1136)ᵖʲ [1190](https://www.erdosproblems.com/1190)ᵖʲ [1193](https://www.erdosproblems.com/1193)ᵖʲ
 
-## `link` — 0 problem(s)
+## `link` — 1 problem(s)
 
 **Add the `formal_proof` link.** FC already has the statement; the hosted proof just is not linked.
 
-_none_
+[617](https://www.erdosproblems.com/617)ʷ
 
 ## `needs-statement-update` — 1 problem(s)
 

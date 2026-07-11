@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T09:55:44+00:00",
+  "generated_at": "2026-07-11T08:16:18+00:00",
   "sources": {
     "erdos": {
       "commit": "8b46f270eeef01ac6904f2d8053a4ea1df2c7c0c",
@@ -49,11 +49,11 @@
       "sha256": "sha256:65f7f510a2f2edaafbb73b6a26e365394228bc48b18d3c54e2dee5c01b7bb092"
     },
     "williamjblair_lean_proofs": {
-      "commit": "800493c37d67364c8454d21c3d6adbf4e36c86aa",
+      "commit": "6d21d5a4131491a24ab68469fdc44d664ce27346",
       "kind": "proof_manifest",
       "ref": "main",
       "repo": "williamjblair/lean-proofs",
-      "sha256": "sha256:b0e681bf49f2282f410a7e4c46047ff2241a879f7bfd03c816387f2ca58bc9df",
+      "sha256": "sha256:3e22489c9cdb4b009ede4e974609b883cdf18121139353f08a80ce5a227c56d6",
       "url": "https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml"
     }
   }

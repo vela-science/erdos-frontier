@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10",
+  "generated_at": "2026-07-11",
   "rows": [
     {
       "bucket": "in-pr",
@@ -720,7 +720,17 @@
       "non_kernel_axioms": [],
       "problem": 23,
       "proof_link": null,
-      "proof_links": [],
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos23GapGBSeries.lean"
+        }
+      ],
       "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
@@ -21145,7 +21155,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "link",
       "discrepancy": false,
       "erdos_state": "falsifiable",
       "erdos_url": "https://www.erdosproblems.com/617",
@@ -21163,8 +21173,18 @@
       "non_kernel_axioms": [],
       "problem": 617,
       "proof_link": null,
-      "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos617.lean"
+        }
+      ],
+      "recommended_action": "Check theorem match, then add the formal_proof link.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -23565,7 +23585,17 @@
       "non_kernel_axioms": [],
       "problem": 686,
       "proof_link": null,
-      "proof_links": [],
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686AllOwnerAssembly.lean"
+        }
+      ],
       "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
@@ -25084,7 +25114,17 @@
       "non_kernel_axioms": [],
       "problem": 730,
       "proof_link": null,
-      "proof_links": [],
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos730FirstPowerRoutes.lean"
+        }
+      ],
       "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,

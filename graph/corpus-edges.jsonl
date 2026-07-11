@@ -1268,6 +1268,10 @@
 {"from": "erdos:997", "to": "proof:plby:997", "kind": "supports"}
 {"from": "erdos:154", "to": "proof:vlp:154", "kind": "supports"}
 {"from": "proof:vlp:154", "to": "proof:plby:154", "kind": "replicates"}
+{"from": "erdos:23", "to": "proof:vlp:23", "kind": "supports"}
+{"from": "erdos:617", "to": "proof:vlp:617", "kind": "supports"}
+{"from": "erdos:686", "to": "proof:vlp:686", "kind": "supports"}
+{"from": "erdos:730", "to": "proof:vlp:730", "kind": "supports"}
 {"from": "fc:246", "to": "vsa:vsa_00afe5b9d83c8343", "kind": "supports"}
 {"from": "fc:904", "to": "vsa:vsa_082702df03318584", "kind": "supports"}
 {"from": "fc:31", "to": "vsa:vsa_091ed4c5a5fc0f93", "kind": "supports"}

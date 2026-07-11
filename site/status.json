@@ -8,11 +8,11 @@
     "done": 109,
     "hypothesis-conditional": 7,
     "in-pr": 304,
-    "link": 0,
+    "link": 1,
     "mismatch": 2,
     "needs-human-match-check": 2,
     "needs-statement-update": 1,
-    "no-proof": 708,
+    "no-proof": 707,
     "partial": 6,
     "statement": 66,
     "wont-fix": 1
@@ -29,9 +29,9 @@
     1148,
     1197
   ],
-  "generated_at": "2026-07-10",
+  "generated_at": "2026-07-11",
   "held_for_review": [],
-  "hosted_proofs_tracked": 211,
+  "hosted_proofs_tracked": 215,
   "rows": [
     {
       "bucket": "in-pr",
@@ -882,10 +882,22 @@
       "machine": null,
       "override": null,
       "problem": 23,
-      "proof_links": [],
-      "proof_sources": [],
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos23GapGBSeries.lean"
+        }
+      ],
+      "proof_sources": [
+        "vlp"
+      ],
       "recommended_action": "Skip because an open PR already touches this problem.",
-      "source_tags": "",
+      "source_tags": "\u02b7",
       "wiki": null
     },
     {
@@ -24220,7 +24232,7 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "link",
       "candidate_claims": null,
       "claims": [],
       "discrepancy": false,
@@ -24241,10 +24253,22 @@
       "machine": null,
       "override": null,
       "problem": 617,
-      "proof_links": [],
-      "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
-      "source_tags": "",
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos617.lean"
+        }
+      ],
+      "proof_sources": [
+        "vlp"
+      ],
+      "recommended_action": "Check theorem match, then add the formal_proof link.",
+      "source_tags": "\u02b7",
       "wiki": null
     },
     {
@@ -26963,10 +26987,22 @@
       "machine": null,
       "override": null,
       "problem": 686,
-      "proof_links": [],
-      "proof_sources": [],
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686AllOwnerAssembly.lean"
+        }
+      ],
+      "proof_sources": [
+        "vlp"
+      ],
       "recommended_action": "Skip because an open PR already touches this problem.",
-      "source_tags": "",
+      "source_tags": "\u02b7",
       "wiki": {
         "ai_systems": [
           "AlphaProof",
@@ -28680,10 +28716,22 @@
       "machine": null,
       "override": null,
       "problem": 730,
-      "proof_links": [],
-      "proof_sources": [],
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "williamjblair/lean-proofs",
+          "partial": false,
+          "source": "vlp",
+          "state": "axioms_clean",
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos730FirstPowerRoutes.lean"
+        }
+      ],
+      "proof_sources": [
+        "vlp"
+      ],
       "recommended_action": "Skip because an open PR already touches this problem.",
-      "source_tags": "",
+      "source_tags": "\u02b7",
       "wiki": {
         "ai_systems": [
           "GPT-5.5 Pro"

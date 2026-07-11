@@ -9,17 +9,17 @@
   "jayyhk": "sha256:0a52b5572",
   "plby": "sha256:56caee303",
   "wiki": "sha256:65f7f510a",
-  "williamjblair_lean_proofs": "sha256:b0e681bf4"
+  "williamjblair_lean_proofs": "sha256:3e22489c9"
  },
  "counts": {
-  "nodes": 2790,
-  "edges": 1390,
+  "nodes": 2794,
+  "edges": 1394,
   "by_node_kind": {
    "attestation": 111,
    "claim": 342,
    "condition": 24,
    "problem": 1217,
-   "proof": 393,
+   "proof": 397,
    "statement": 703
   },
   "by_edge_kind": {
@@ -28,10 +28,10 @@
    "derived_from": 703,
    "replicates": 165,
    "specializes": 2,
-   "supports": 483
+   "supports": 487
   },
   "by_trust": {
-   "declared": 903,
+   "declared": 907,
    "machine": 367,
    "recorded": 9,
    "signed": 111
@@ -6562,7 +6562,7 @@
    "kind": "problem",
    "label": "Erd\u0151s 617",
    "state": "falsifiable",
-   "bucket": "no-proof",
+   "bucket": "link",
    "url": "https://www.erdosproblems.com/617"
   },
   {
@@ -17715,6 +17715,34 @@
    "kind": "proof",
    "label": "vlp proof of 154",
    "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos154Sumset.lean",
+   "state": "axioms_clean"
+  },
+  {
+   "id": "proof:vlp:23",
+   "kind": "proof",
+   "label": "vlp proof of 23",
+   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos23GapGBSeries.lean",
+   "state": "axioms_clean"
+  },
+  {
+   "id": "proof:vlp:617",
+   "kind": "proof",
+   "label": "vlp proof of 617",
+   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos617.lean",
+   "state": "axioms_clean"
+  },
+  {
+   "id": "proof:vlp:686",
+   "kind": "proof",
+   "label": "vlp proof of 686",
+   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686AllOwnerAssembly.lean",
+   "state": "axioms_clean"
+  },
+  {
+   "id": "proof:vlp:730",
+   "kind": "proof",
+   "label": "vlp proof of 730",
+   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos730FirstPowerRoutes.lean",
    "state": "axioms_clean"
   },
   {
@@ -30391,6 +30419,34 @@
    "kind": "replicates",
    "trust": "machine",
    "evidence": "independent hosted proof of the same problem"
+  },
+  {
+   "from": "proof:vlp:23",
+   "to": "erdos:23",
+   "kind": "supports",
+   "trust": "declared",
+   "evidence": "producer-declared complete; not yet machine-audited"
+  },
+  {
+   "from": "proof:vlp:617",
+   "to": "erdos:617",
+   "kind": "supports",
+   "trust": "declared",
+   "evidence": "producer-declared complete; not yet machine-audited"
+  },
+  {
+   "from": "proof:vlp:686",
+   "to": "erdos:686",
+   "kind": "supports",
+   "trust": "declared",
+   "evidence": "producer-declared complete; not yet machine-audited"
+  },
+  {
+   "from": "proof:vlp:730",
+   "to": "erdos:730",
+   "kind": "supports",
+   "trust": "declared",
+   "evidence": "producer-declared complete; not yet machine-audited"
   },
   {
    "from": "vsa:vsa_00afe5b9d83c8343",
