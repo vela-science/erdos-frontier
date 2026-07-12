@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11",
+  "generated_at": "2026-07-12",
   "rows": [
     {
       "bucket": "in-pr",
@@ -728,7 +728,7 @@
           "partial": false,
           "source": "vlp",
           "state": "axioms_clean",
-          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos23GapGBSeries.lean"
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos23GapGBLayerCapacity.lean"
         }
       ],
       "recommended_action": "Skip because an open PR already touches this problem.",

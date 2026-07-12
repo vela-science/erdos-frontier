@@ -29,7 +29,7 @@
     1148,
     1197
   ],
-  "generated_at": "2026-07-11",
+  "generated_at": "2026-07-12",
   "held_for_review": [],
   "hosted_proofs_tracked": 215,
   "rows": [
@@ -890,7 +890,7 @@
           "partial": false,
           "source": "vlp",
           "state": "axioms_clean",
-          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos23GapGBSeries.lean"
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos23GapGBLayerCapacity.lean"
         }
       ],
       "proof_sources": [
