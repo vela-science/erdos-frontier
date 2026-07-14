@@ -3,13 +3,13 @@
  "note": "Derived index of what the ingested sources declare \u2014 typed in the Vela EdgeKind vocabulary with a trust tier per edge. Not signed state: the signed spine is .vela/ + frontier.json.",
  "source_locks": {
   "erdos": "sha256:7108dc960",
-  "fidelity": "sha256:1ea3e6ca0",
+  "fidelity": "sha256:5446f89ae",
   "formal_conjectures": "sha256:208647c4f",
   "gpt_erdos": "sha256:c0f626a47",
   "jayyhk": "sha256:0a52b5572",
   "plby": "sha256:56caee303",
   "wiki": "sha256:65f7f510a",
-  "williamjblair_lean_proofs": "sha256:e6e68819a"
+  "williamjblair_lean_proofs": "sha256:3d0711b33"
  },
  "counts": {
   "nodes": 2794,
@@ -17735,14 +17735,14 @@
    "id": "proof:vlp:686",
    "kind": "proof",
    "label": "vlp proof of 686",
-   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686FinalResidual.lean",
+   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686EvenCenterGapCofactor.lean",
    "state": "axioms_clean"
   },
   {
    "id": "proof:vlp:730",
    "kind": "proof",
    "label": "vlp proof of 730",
-   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos730FirstPowerRoutes.lean",
+   "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos730FullDensityTheorem.lean",
    "state": "axioms_clean"
   },
   {

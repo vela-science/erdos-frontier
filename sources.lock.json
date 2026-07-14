@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T09:49:46+00:00",
+  "generated_at": "2026-07-14T08:31:05+00:00",
   "sources": {
     "erdos": {
       "commit": "8b46f270eeef01ac6904f2d8053a4ea1df2c7c0c",
@@ -13,7 +13,7 @@
     "fidelity": {
       "home": "self (.vela/ -> frontier.json)",
       "kind": "statement_attestations",
-      "sha256": "sha256:1ea3e6ca049fbaa147470025c1403ead81f7e62e6695283762fee3ac974da53b"
+      "sha256": "sha256:5446f89aea62eefa21ad4d39d528dfe27e534d8f3a577863732d1f36d198ca2a"
     },
     "formal_conjectures": {
       "kind": "formal_statement_registry",
@@ -25,7 +25,9 @@
       "commit": "21b48ae6b97279e9fe6781e3744e1cdd835e2cc1",
       "kind": "frozen_snapshot",
       "path": "sources/gpt_erdos/registry.json",
-      "paths": ["README.md"],
+      "paths": [
+        "README.md"
+      ],
       "repo": "neelsomani/gpt-erdos",
       "sha256": "sha256:c0f626a4792d6b150b79268807ea2f9316f2b09be5475fb6ee1b14f630bc1136"
     },
@@ -39,7 +41,7 @@
       "url": "https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml"
     },
     "plby": {
-      "commit": "97957fb9083d6b321843fbb3c1cbff82e076aa66",
+      "commit": "1c781f165e1ec943c1d2318dd51b5373460bc543",
       "kind": "proof_manifest",
       "path": "data/sources.yaml",
       "ref": "main",
@@ -51,16 +53,19 @@
       "commit": "c8ad4309d20120c67cb97faa86daa1443acee018",
       "kind": "frozen_snapshot",
       "path": "sources/wiki/registry.json",
-      "paths": ["AI-contributions-to-Erdős-problems.md"],
+      "paths": [
+        "AI-contributions-to-Erd\u0151s-problems.md"
+      ],
       "repo": "teorth/erdosproblems.wiki",
       "sha256": "sha256:65f7f510a2f2edaafbb73b6a26e365394228bc48b18d3c54e2dee5c01b7bb092"
     },
     "williamjblair_lean_proofs": {
-      "commit": "56e218f3a82f2b4d08e23c1271a9d6689f6acaaa",
+      "commit": "8c85623069b3923afe418876d06459dbc4d24a51",
       "kind": "proof_manifest",
+      "path": "proofs.yaml",
       "ref": "main",
       "repo": "williamjblair/lean-proofs",
-      "sha256": "sha256:e6e68819ab9f803ff2409639e04e5830864ab4947a68ed6d994a6fee92394ac3",
+      "sha256": "sha256:3d0711b3325ef6de77a13ea75e93fb11abd68688f40c570265d2c5a2dbde27cd",
       "url": "https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml"
     }
   },
@@ -78,19 +83,29 @@
     },
     "formal_conjectures_frontier": {
       "commit": "a143c351f8488e0c621598307e248373d9dc3374",
-      "paths": ["frontier.json", "frontier.yaml", "vela.lock"],
+      "paths": [
+        "frontier.json",
+        "frontier.yaml",
+        "vela.lock"
+      ],
       "repo": "constellate-science/formal-conjectures-frontier",
       "sha256": "sha256:826ac6da667709f93b3084ab0fd2db62126a34d85162d2c98cea0508098adc1b"
     },
     "formal_conjectures_work": {
       "commit": "8f6648ff0fbd771db53859cd436d37a8d6a68a57",
-      "paths": ["FormalConjectures/ErdosProblems"],
+      "paths": [
+        "FormalConjectures/ErdosProblems"
+      ],
       "repo": "williamjblair/formal-conjectures",
       "sha256": "sha256:6d0afbf6609d6c019d2d8c3cc13bcbe5c8de6d5573e9322ca4e94be2c98a2928"
     },
     "lean_proofs_work": {
       "commit": "eab646ceae7f270c024d5d08a8917305b07fd35d",
-      "paths": ["ErdosProblems", "proofs.yaml", "attestations.json"],
+      "paths": [
+        "ErdosProblems",
+        "proofs.yaml",
+        "attestations.json"
+      ],
       "repo": "williamjblair/lean-proofs",
       "sha256": "sha256:4776f7a203c0b70ea6ee59744fc9d2bf554e6ff86874e6b5bda6336a841cc179"
     },
@@ -106,7 +121,11 @@
     },
     "verified_combinatorics": {
       "commit": "3f84ebc061123ec29a5147204b269ab83162af34",
-      "paths": ["erdos-617", "erdos-686", "erdos-993"],
+      "paths": [
+        "erdos-617",
+        "erdos-686",
+        "erdos-993"
+      ],
       "repo": "willblair0708/verified-combinatorics",
       "sha256": "sha256:2c5d531556d13e1c750695d9ae55e0703a57278db2d69009860eb80bda9076be"
     }

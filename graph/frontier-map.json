@@ -4793,7 +4793,7 @@
       "relation": "pins",
       "source": "repo:plby_lean_proofs",
       "source_root": "sha256:56caee303150d0c3b320a8ba3fe6444e345ac5bed2f0b6728cf8bd279bf13507",
-      "target": "commit:plby_lean_proofs:97957fb9083d6b321843fbb3c1cbff82e076aa66",
+      "target": "commit:plby_lean_proofs:1c781f165e1ec943c1d2318dd51b5373460bc543",
       "trust": "recorded"
     },
     {
@@ -48841,11 +48841,11 @@
       "trust": "recorded"
     },
     {
-      "id": "commit:plby_lean_proofs:97957fb9083d6b321843fbb3c1cbff82e076aa66",
+      "id": "commit:plby_lean_proofs:1c781f165e1ec943c1d2318dd51b5373460bc543",
       "inferred": false,
       "kind": "commit",
-      "label": "97957fb9083d",
-      "path": "https://github.com/plby/lean-proofs/commit/97957fb9083d6b321843fbb3c1cbff82e076aa66",
+      "label": "1c781f165e1e",
+      "path": "https://github.com/plby/lean-proofs/commit/1c781f165e1ec943c1d2318dd51b5373460bc543",
       "source_root": "sha256:56caee303150d0c3b320a8ba3fe6444e345ac5bed2f0b6728cf8bd279bf13507",
       "trust": "recorded"
     },
@@ -94981,7 +94981,7 @@
       "sha256": "sha256:4776f7a203c0b70ea6ee59744fc9d2bf554e6ff86874e6b5bda6336a841cc179"
     },
     "plby_lean_proofs": {
-      "commit": "97957fb9083d6b321843fbb3c1cbff82e076aa66",
+      "commit": "1c781f165e1ec943c1d2318dd51b5373460bc543",
       "path": "data/sources.yaml",
       "repo": "plby/lean-proofs",
       "sha256": "sha256:56caee303150d0c3b320a8ba3fe6444e345ac5bed2f0b6728cf8bd279bf13507",
