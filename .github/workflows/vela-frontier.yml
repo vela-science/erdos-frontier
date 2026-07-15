@@ -1,8 +1,9 @@
 name: Verify the signed frontier
 
-# The git-native gate: every main push and pull request runs the released Vela
-# action. It re-derives state from a clean checkout and proves replay + hash
-# parity. It never signs or supplies a scientific verdict.
+# The git-native gate: every main push and pull request installs the exact Vela
+# release recorded in vela.lock, replays the event log, proves materialized hash
+# parity, and reproduces witnesses. It never signs or supplies a scientific
+# verdict.
 on:
   push:
     branches: [main]
@@ -12,13 +13,131 @@ on:
 permissions:
   contents: read
 
+env:
+  VELA_VERSION: v0.800.9
+  VELA_RELEASE_COMMIT: ce52b8bdafbcfa5b3a97a8264c695081266899c3
+  VELA_INSTALLER_SHA256: 0196f7e42aa140e6f8ba592585efbbc2ea5f24f8a6fbf66e037122649659fc77
+  VELA_LINUX_SHA256: de946f4554a0de2e2501e49b76f9a74f745875d158cc44f8cede1fc3582f0720
+
 jobs:
   verify:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-      - uses: vela-science/vela@v0.800.9
-        with:
-          vela-version: v0.800.9
+
+      - name: Install the lock-matching Vela release
+        shell: bash
+        run: |
+          set -euo pipefail
+          lock_version="$(awk '/^vela_version:/{print $2}' vela.lock)"
+          requested="${VELA_VERSION#v}"
+          if [ -z "$lock_version" ] || [ "$lock_version" != "$requested" ]; then
+            echo "::error::vela.lock version '$lock_version' does not match requested Vela '$requested'"
+            exit 1
+          fi
+
+          installer="$(mktemp)"
+          trap 'rm -f "$installer"' EXIT
+          curl -fsSL \
+            "https://raw.githubusercontent.com/vela-science/vela/${VELA_RELEASE_COMMIT}/install.sh" \
+            -o "$installer"
+          echo "${VELA_INSTALLER_SHA256}  $installer" | sha256sum -c -
+          VELA_VERSION="$VELA_VERSION" \
+            VELA_INSTALL_BINDIR="$HOME/.local/bin" \
+            bash "$installer"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+          version_output="$("$HOME/.local/bin/vela" --version)"
+          installed="${version_output##* }"
+          installed="${installed#v}"
+          if [ "$installed" != "$lock_version" ]; then
+            echo "::error::installed Vela '$installed' does not match vela.lock '$lock_version'"
+            exit 1
+          fi
+          echo "${VELA_LINUX_SHA256}  $HOME/.local/bin/vela" | sha256sum -c -
+          echo "$version_output (version and release bytes pinned)"
+
+      - name: Replay and verify signatures
+        run: vela check .
+
+      - name: Prove materialized hash parity
+        shell: bash
+        run: |
+          set -euo pipefail
+          committed_snapshot="$(awk '/^snapshot_hash:/{print $2}' vela.lock)"
+          committed_events="$(awk '/^event_log_hash:/{print $2}' vela.lock)"
+
+          restore_materialized() {
+            git restore --source=HEAD --worktree -- frontier.json vela.lock proof
+          }
+          trap restore_materialized EXIT
+          materialized="$(vela frontier materialize . --json)"
+          recomputed_snapshot="$(printf '%s' "$materialized" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("snapshot_hash", ""))')"
+          recomputed_events="$(printf '%s' "$materialized" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("event_log_hash", ""))')"
+
+          echo "committed:  snapshot=$committed_snapshot event_log=$committed_events"
+          echo "recomputed: snapshot=$recomputed_snapshot event_log=$recomputed_events"
+          if [ -z "$recomputed_snapshot" ] || \
+             [ "$recomputed_snapshot" != "$committed_snapshot" ] || \
+             [ "$recomputed_events" != "$committed_events" ]; then
+            echo "::error::committed materialized state does not reproduce from the event log"
+            exit 1
+          fi
+          restore_materialized
+          trap - EXIT
+          git diff --exit-code -- frontier.json vela.lock proof
+
+      - name: Report bounded strict proof-readiness debt
+        shell: bash
+        run: |
+          set +e
+          vela check . --strict --json > "$RUNNER_TEMP/vela-strict.json"
+          strict_rc=$?
+          set -e
+          python3 - "$strict_rc" "$RUNNER_TEMP/vela-strict.json" <<'PY'
+          import json
+          import os
+          import sys
+
+          rc = int(sys.argv[1])
+          report = json.load(open(sys.argv[2], encoding="utf-8"))
+          if rc == 0:
+              message = "Strict proof-readiness now passes; the declared-condition debt is clear."
+              print(message)
+              with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:
+                  out.write(f"### Vela strict diagnostic\n\n{message}\n")
+              raise SystemExit(0)
+          if rc != 1:
+              raise SystemExit(f"vela check --strict exited unexpectedly with {rc}")
+
+          failed = {check["id"]: check for check in report["checks"] if check["status"] != "pass"}
+          blocking = [signal for signal in report["signals"] if "strict_check" in signal.get("blocks", [])]
+          known_debt = [signal for signal in blocking if signal.get("kind") == "missing_conditions"]
+          summary = report["summary"]
+          signals_check = failed.get("signals", {})
+          if (
+              set(failed) != {"signals"}
+              or len(blocking) != len(known_debt)
+              or len(known_debt) > 1511
+              or signals_check.get("failed") != len(known_debt)
+              or summary.get("errors") != 0
+              or summary.get("invalid_findings") != 0
+          ):
+              raise SystemExit(
+                  "strict check contains new or expanded debt: "
+                  f"failed_checks={sorted(failed)} blockers={len(blocking)} "
+                  f"missing_conditions={len(known_debt)} errors={summary.get('errors')} "
+                  f"invalid_findings={summary.get('invalid_findings')}"
+              )
+
+          message = (
+              f"Strict remains intentionally diagnostic: {len(known_debt)} findings "
+              "lack declared condition boundaries; every structural and policy check passes."
+          )
+          print(f"::warning::{message}")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:
+              out.write(f"### Vela strict diagnostic\n\n{message}\n")
+          PY
+
       - name: Reproduce every witness from scratch
         run: vela reproduce .
