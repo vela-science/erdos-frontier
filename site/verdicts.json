@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15",
+  "generated_at": "2026-07-16",
   "rows": [
     {
       "bucket": "in-pr",
@@ -25750,7 +25750,7 @@
     {
       "bucket": "no-proof",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/750",
       "fc_has_proof": false,
       "fc_linked": false,

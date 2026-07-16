@@ -29,7 +29,7 @@
     1148,
     1197
   ],
-  "generated_at": "2026-07-15",
+  "generated_at": "2026-07-16",
   "held_for_review": [],
   "hosted_proofs_tracked": 216,
   "rows": [
@@ -14500,7 +14500,7 @@
         {
           "head_ref": "draft/erdos-367-scaffold",
           "number": 2771,
-          "title": "ErdosProblems/367: add initial conjecture scaffold",
+          "title": "feat(ErdosProblems): 367",
           "url": "https://github.com/google-deepmind/formal-conjectures/pull/2771"
         }
       ],
@@ -25596,6 +25596,12 @@
       },
       "claims": [
         {
+          "head_ref": "erdos-formal-proof-links-4x",
+          "number": 4407,
+          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
+        },
+        {
           "head_ref": "erdos-647-modular-840",
           "number": 3851,
           "title": "Add Erd\u0151s Problem #647 modular ladder: 840 \u2223 n proven for n > 54",
@@ -29583,7 +29589,7 @@
       "candidate_claims": null,
       "claims": [],
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/750",
       "fc": {
         "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos750.erdos_750",

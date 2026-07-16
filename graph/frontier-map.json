@@ -4603,8 +4603,8 @@
       "inferred": false,
       "relation": "pins",
       "source": "repo:erdosproblems",
-      "source_root": "sha256:f3722cb9ddc03683dbf87071191e6f49d7b0a1dd0e2d83bf560fceed78b40bcd",
-      "target": "commit:erdosproblems:bc249a9d31024640b865925c0153d928269d8e87",
+      "source_root": "sha256:84e940d075638bf6c3199e008b9f78ba2eb1159b37e18fddfaeedfa61304d3b1",
+      "target": "commit:erdosproblems:27d936d0ae13827f51258b68b2b1f6945d236017",
       "trust": "recorded"
     },
     {
@@ -4793,7 +4793,7 @@
       "relation": "pins",
       "source": "repo:plby_lean_proofs",
       "source_root": "sha256:4769f97155f15319f43a15480218767eb36f1987020e575f9320d4b66aee432f",
-      "target": "commit:plby_lean_proofs:11198fa2062d910c9919c964463b41768a1b414c",
+      "target": "commit:plby_lean_proofs:dea7dcdeb33f88f8f045a61c177f1785e451355b",
       "trust": "recorded"
     },
     {
@@ -48787,12 +48787,12 @@
       "trust": "recorded"
     },
     {
-      "id": "commit:erdosproblems:bc249a9d31024640b865925c0153d928269d8e87",
+      "id": "commit:erdosproblems:27d936d0ae13827f51258b68b2b1f6945d236017",
       "inferred": false,
       "kind": "commit",
-      "label": "bc249a9d3102",
-      "path": "https://github.com/teorth/erdosproblems/commit/bc249a9d31024640b865925c0153d928269d8e87",
-      "source_root": "sha256:f3722cb9ddc03683dbf87071191e6f49d7b0a1dd0e2d83bf560fceed78b40bcd",
+      "label": "27d936d0ae13",
+      "path": "https://github.com/teorth/erdosproblems/commit/27d936d0ae13827f51258b68b2b1f6945d236017",
+      "source_root": "sha256:84e940d075638bf6c3199e008b9f78ba2eb1159b37e18fddfaeedfa61304d3b1",
       "trust": "recorded"
     },
     {
@@ -48841,11 +48841,11 @@
       "trust": "recorded"
     },
     {
-      "id": "commit:plby_lean_proofs:11198fa2062d910c9919c964463b41768a1b414c",
+      "id": "commit:plby_lean_proofs:dea7dcdeb33f88f8f045a61c177f1785e451355b",
       "inferred": false,
       "kind": "commit",
-      "label": "11198fa2062d",
-      "path": "https://github.com/plby/lean-proofs/commit/11198fa2062d910c9919c964463b41768a1b414c",
+      "label": "dea7dcdeb33f",
+      "path": "https://github.com/plby/lean-proofs/commit/dea7dcdeb33f88f8f045a61c177f1785e451355b",
       "source_root": "sha256:4769f97155f15319f43a15480218767eb36f1987020e575f9320d4b66aee432f",
       "trust": "recorded"
     },
@@ -59326,7 +59326,7 @@
       "plane": "reference",
       "source_root": "sha256:a4d62c3b7a2ca0a02a1bf4ce1b4ad0ffb06b6f2f61ff9f5b58ed8ee07d8b2bf1",
       "trust": "declared",
-      "upstream_state": "open"
+      "upstream_state": "proved"
     },
     {
       "id": "erdos:751",
@@ -63352,7 +63352,7 @@
       "label": "teorth/erdosproblems",
       "path": "https://github.com/teorth/erdosproblems.git",
       "role": "external_reference",
-      "source_root": "sha256:f3722cb9ddc03683dbf87071191e6f49d7b0a1dd0e2d83bf560fceed78b40bcd",
+      "source_root": "sha256:84e940d075638bf6c3199e008b9f78ba2eb1159b37e18fddfaeedfa61304d3b1",
       "trust": "recorded"
     },
     {
@@ -94930,10 +94930,10 @@
       "sha256": "sha256:210e6e1b2ca15973f38386a512f1f8fa66bbae72bb1b9acb1daf2e669ab279c7"
     },
     "erdosproblems": {
-      "commit": "bc249a9d31024640b865925c0153d928269d8e87",
+      "commit": "27d936d0ae13827f51258b68b2b1f6945d236017",
       "path": "data/problems.yaml",
       "repo": "teorth/erdosproblems",
-      "sha256": "sha256:f3722cb9ddc03683dbf87071191e6f49d7b0a1dd0e2d83bf560fceed78b40bcd",
+      "sha256": "sha256:84e940d075638bf6c3199e008b9f78ba2eb1159b37e18fddfaeedfa61304d3b1",
       "url": "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
     },
     "formal_conjectures": {
@@ -94981,7 +94981,7 @@
       "sha256": "sha256:4776f7a203c0b70ea6ee59744fc9d2bf554e6ff86874e6b5bda6336a841cc179"
     },
     "plby_lean_proofs": {
-      "commit": "11198fa2062d910c9919c964463b41768a1b414c",
+      "commit": "dea7dcdeb33f88f8f045a61c177f1785e451355b",
       "path": "data/sources.yaml",
       "repo": "plby/lean-proofs",
       "sha256": "sha256:4769f97155f15319f43a15480218767eb36f1987020e575f9320d4b66aee432f",

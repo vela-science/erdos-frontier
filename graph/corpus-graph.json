@@ -2,8 +2,8 @@
  "schema": "erdos-frontier.corpus-graph.v1",
  "note": "Derived index of what the ingested sources declare \u2014 typed in the Vela EdgeKind vocabulary with a trust tier per edge. Not signed state: the signed spine is .vela/ + frontier.json.",
  "source_locks": {
-  "erdos": "sha256:f3722cb9d",
-  "fidelity": "sha256:5446f89ae",
+  "erdos": "sha256:84e940d07",
+  "fidelity": "sha256:cc970c3c2",
   "formal_conjectures": "sha256:208647c4f",
   "gpt_erdos": "sha256:c0f626a47",
   "jayyhk": "sha256:0a52b5572",
@@ -7745,7 +7745,7 @@
    "id": "erdos:750",
    "kind": "problem",
    "label": "Erd\u0151s 750",
-   "state": "open",
+   "state": "proved (Lean)",
    "bucket": "no-proof",
    "url": "https://www.erdosproblems.com/750"
   },
