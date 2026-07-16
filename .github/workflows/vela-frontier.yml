@@ -14,10 +14,10 @@ permissions:
   contents: read
 
 env:
-  VELA_VERSION: v0.800.17
-  VELA_RELEASE_COMMIT: 4c963ba66026d5e699419d074db3c18a5bc12233
+  VELA_VERSION: v0.800.19
+  VELA_RELEASE_COMMIT: 5a270f8b5ec038ade7c1274dc64a33dd99117851
   VELA_INSTALLER_SHA256: 0196f7e42aa140e6f8ba592585efbbc2ea5f24f8a6fbf66e037122649659fc77
-  VELA_LINUX_SHA256: 766402ab20c82645740ff579d8360a5454395cd0d07c2c96486169a952a354cc
+  VELA_LINUX_SHA256: 51743b4e0fdd5a53471eed5faf1cc862ee06c36ee75251824a9bfb3d5ee19806
 
 jobs:
   verify:
@@ -57,7 +57,7 @@ jobs:
           echo "${VELA_LINUX_SHA256}  $HOME/.local/bin/vela" | sha256sum -c -
           echo "$version_output (version and release bytes pinned)"
 
-      - name: Replay, verify signatures, and preserve the human policy gate
+      - name: Replay and verify the applied policy retirement
         shell: bash
         run: |
           set +e
@@ -72,49 +72,44 @@ jobs:
 
           rc = int(sys.argv[1])
           report = json.load(open(sys.argv[2], encoding="utf-8"))
-          if rc == 0:
-              message = "Replay, signatures, and active policy all pass."
-              print(message)
-              with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:
-                  out.write(f"### Vela replay and policy\n\n{message}\n")
-              raise SystemExit(0)
-          if rc != 1:
+          if rc != 0:
               raise SystemExit(f"vela check exited unexpectedly with {rc}")
 
-          expected_error = (
-              "active policy id does not re-derive: stored "
-              "vap_e0abc750544408e637bd90e0661bac15, sealed "
-              "vap_dbbc9caf67767317e42e217c65bab979"
-          )
           failed = {check["id"]: check for check in report["checks"] if check["status"] != "pass"}
-          active = failed.get("active_policy", {})
+          checks = {check["id"]: check for check in report["checks"]}
+          active = checks.get("active_policy", {})
           proposal = json.loads(
               Path(".vela/proposals/vpr_12b236db3fc0b409.json").read_text(encoding="utf-8")
           )
           if (
-              set(failed) != {"signals", "active_policy"}
-              or active.get("errors") != [expected_error]
-              or active.get("reason_codes") != ["active_policy_broken"]
-              or report["summary"].get("errors") != 1
+              set(failed) != {"signals"}
+              or active.get("status") != "pass"
+              or active.get("state") != "absent"
+              or active.get("permit_readiness") != "human_only"
+              or active.get("reason_codes") != ["policy_absent"]
+              or report["summary"].get("errors") != 0
               or report["summary"].get("invalid_findings") != 0
               or proposal.get("kind") != "governance.policy_legacy_retirement"
-              or proposal.get("status") != "pending_review"
+              or proposal.get("status") != "applied"
+              or proposal.get("reviewed_by") != "reviewer:will-blair"
               or proposal.get("payload", {}).get("policy_id")
                  != "vap_e0abc750544408e637bd90e0661bac15"
+              or Path(".vela/policies/active.json").exists()
+              or Path(".vela/policies/active.sig.json").exists()
           ):
               raise SystemExit(
-                  "check contains a failure beyond the exact pending human policy retirement: "
-                  f"failed_checks={sorted(failed)} active_errors={active.get('errors')} "
+                  "applied retirement or replay contract drifted: "
+                  f"failed_checks={sorted(failed)} active={active} "
                   f"errors={report['summary'].get('errors')} "
                   f"invalid_findings={report['summary'].get('invalid_findings')}"
               )
 
           message = (
-              "Replay and signatures pass. Landing remains blocked by the exact known "
-              "prelaunch active-policy identity mismatch; retirement proposal "
-              "vpr_12b236db3fc0b409 is pending a human `vela sign` ceremony."
+              "Replay integrity passes. The human-applied legacy-policy retirement "
+              "is present, the unsupported active bytes are absent, and future "
+              "truth-bearing decisions remain human-only."
           )
-          print(f"::warning::{message}")
+          print(message)
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:
               out.write(f"### Vela replay and policy\n\n{message}\n")
           PY
@@ -169,41 +164,45 @@ jobs:
           if rc != 1:
               raise SystemExit(f"vela check --strict exited unexpectedly with {rc}")
 
-          expected_error = (
-              "active policy id does not re-derive: stored "
-              "vap_e0abc750544408e637bd90e0661bac15, sealed "
-              "vap_dbbc9caf67767317e42e217c65bab979"
-          )
           failed = {check["id"]: check for check in report["checks"] if check["status"] != "pass"}
+          checks = {check["id"]: check for check in report["checks"]}
           blocking = [signal for signal in report["signals"] if "strict_check" in signal.get("blocks", [])]
-          known_debt = [signal for signal in blocking if signal.get("kind") == "missing_conditions"]
-          policy_errors = [signal for signal in blocking if signal.get("kind") == "check_error"]
+          condition_debt = [signal for signal in blocking if signal.get("kind") == "missing_conditions"]
+          legacy_unsigned = [
+              signal for signal in blocking
+              if signal.get("kind") == "unsigned_registered_actor"
+          ]
           summary = report["summary"]
           signals_check = failed.get("signals", {})
-          active = failed.get("active_policy", {})
+          active = checks.get("active_policy", {})
           if (
-              set(failed) != {"signals", "active_policy"}
-              or len(policy_errors) != 1
-              or policy_errors[0].get("reason") != expected_error
-              or len(blocking) != len(known_debt) + 1
-              or len(known_debt) > 1511
+              set(failed) != {"signals"}
+              or len(blocking) != len(condition_debt) + len(legacy_unsigned)
+              or len(condition_debt) > 1511
+              or len(legacy_unsigned) > 81
               or signals_check.get("failed") != len(blocking)
-              or active.get("errors") != [expected_error]
-              or active.get("reason_codes") != ["active_policy_broken"]
-              or summary.get("errors") != 1
+              or active.get("status") != "pass"
+              or active.get("state") != "absent"
+              or active.get("permit_readiness") != "human_only"
+              or active.get("reason_codes") != ["policy_absent"]
+              or summary.get("errors") != 0
               or summary.get("invalid_findings") != 0
           ):
               raise SystemExit(
                   "strict check contains new or expanded debt: "
                   f"failed_checks={sorted(failed)} blockers={len(blocking)} "
-                  f"missing_conditions={len(known_debt)} errors={summary.get('errors')} "
+                  f"missing_conditions={len(condition_debt)} "
+                  f"unsigned_registered_actor={len(legacy_unsigned)} "
+                  f"errors={summary.get('errors')} "
                   f"invalid_findings={summary.get('invalid_findings')}"
               )
 
           message = (
-              f"Strict remains intentionally diagnostic: {len(known_debt)} findings "
-              "lack declared condition boundaries; the only error is the exact pending "
-              "human active-policy retirement."
+              f"Strict remains intentionally diagnostic: {len(condition_debt)} findings "
+              "lack declared condition boundaries and "
+              f"{len(legacy_unsigned)} immutable pre-registration events from the now-"
+              "registered reviewer remain unsigned. Replay passes and policy is absent/"
+              "human-only."
           )
           print(f"::warning::{message}")
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:

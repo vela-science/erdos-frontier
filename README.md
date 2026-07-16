@@ -30,17 +30,17 @@ in the source registry:
 ```bash
 git clone https://github.com/vela-science/erdos-frontier
 cd erdos-frontier
-vela check . --json       # replay/signatures; exits 1 only for the named human policy gate
+vela check . --json       # replay and the applied retirement event pass
 vela status . --json
 ```
 
 `vela check . --strict` also promotes the catalogue's declared-data condition
-debt to a failing proof-readiness gate. The current 1,217-problem import keeps
-that debt visible rather than pretending every reference row is proof-ready.
-The check also reports the known prelaunch active-policy identity mismatch.
-Proposal `vpr_12b236db3fc0b409` fingerprints and retires that unsupported byte
-pair without changing the scientific snapshot; it remains `pending_review`
-until a key-custody human performs the ordinary `vela sign` ceremony.
+debt and historical unsigned writes to a failing proof-readiness gate. The
+current 1,217-problem import keeps that debt visible rather than pretending
+every reference row is proof-ready. On 2026-07-16 a key-custody human applied
+proposal `vpr_12b236db3fc0b409`, retiring the unsupported prelaunch active-policy
+byte pair without changing scientific state. The frontier now has no active
+policy and is intentionally human-only for future truth-bearing decisions.
 
 Everything under [`site/`](site/), plus `frontier.json` and `vela.lock`, is
 generated from the event log and locked sources. Nothing there confers
