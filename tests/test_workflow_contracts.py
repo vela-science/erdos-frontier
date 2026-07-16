@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import re
+import subprocess
 
 import yaml
 
@@ -34,3 +35,22 @@ def test_frontier_workflow_uses_the_lock_matching_released_vela():
     assert workflow["env"]["VELA_LINUX_SHA256"] == (
         "766402ab20c82645740ff579d8360a5454395cd0d07c2c96486169a952a354cc"
     )
+
+
+def test_artifact_hash_cannot_depend_on_ignored_workspace_files():
+    ignored = subprocess.run(
+        [
+            "git",
+            "ls-files",
+            "--others",
+            "--ignored",
+            "--exclude-standard",
+            "artifacts",
+        ],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    ).stdout.splitlines()
+
+    assert ignored == []
