@@ -1,0 +1,29 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_27922b9c8dab0575",
+  "kind": "review.accepted",
+  "target": {
+    "type": "proposal",
+    "id": "vpr_12b236db3fc0b409"
+  },
+  "actor": {
+    "id": "reviewer:will-blair",
+    "type": "human"
+  },
+  "timestamp": "2026-07-16T14:07:45.145352000Z",
+  "reason": "Retire unsupported prelaunch policy bytes without changing scientific state.",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
+  "payload": {
+    "proposal_id": "vpr_12b236db3fc0b409",
+    "proposal_kind": "governance.policy_legacy_retirement",
+    "provenance": {
+      "input_refs": [
+        "urn:vela:decision-root:sha256:b2b7d2998a45627d53b61396e48692a67aee0d619b413b473732305cb35fa448"
+      ]
+    },
+    "verdict": "accepted"
+  },
+  "caveats": [],
+  "signature": "v1:37446ba918163b3bd528e19f11564037c95c93c5a03cb070df8e149dfd4415f06996300a6ce663123073b4d5f6b69e6a332435e6ea625966e345e7b8a9ff6506"
+}

@@ -20,7 +20,11 @@
     "signature_bytes_root": "sha256:591e951b49e7426b592dce8c0201d96ef526a1b4fec5d7e8240c08ad840823ca"
   },
   "source_refs": [],
-  "status": "pending_review",
+  "status": "applied",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-07-16T14:07:45.145352000Z",
+  "decision_reason": "Retire unsupported prelaunch policy bytes without changing scientific state.",
+  "applied_event_id": "vev_27922b9c8dab0575",
   "caveats": [
     "This proposal fingerprints unsupported prelaunch bytes; it does not validate their signature or grant policy authority."
   ]

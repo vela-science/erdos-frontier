@@ -1,5 +1,5 @@
 schema: vela.frontier_lock.v0.1
-generated_at: 2026-07-13T19:26:22.000710+00:00
+generated_at: 2026-07-16T14:07:45.145352000Z
 vela_version: 0.800.17
 frontier_id: vfr_0a25edabc16db143
 canonicalization:
@@ -30,16 +30,16 @@ verifiers:
   - union_free
   - unit_fraction_decomp
   - unsat_cert
-snapshot_hash: sha256:61a6817b0f5ba3620faaf99061a7d356b9dc38c3cfe0a4b7796fcdb690dd16fb
-event_log_hash: sha256:e16e57f2e39957ddc2fb529e1b715547c27935fa04730e3c78b4a997eb6f4678
-proposal_state_hash: sha256:3819f3e4492ce20432485841c7ed1703156a884f23e88fee913456b771b28b02
+snapshot_hash: sha256:8877c4a27dd75ef8525566b0dd11b94ccd1ea00af95a204dc7b34a22a41d3125
+event_log_hash: sha256:dea8bb4583376851a63587551205be3916c19cb28a609c8d81ba8321853cc6b3
+proposal_state_hash: sha256:8d7eaa08e77d6e8b2d6bdbbc79962778e467535cd0c572fa6f5b5ab7446d89ce
 sources_hash: sha256:a7498dfa9aa43c5309bdcfd67041ecd884ccb409d9b1804358185bd82a50646a
 artifacts_hash: sha256:30b0464b441ac63b81db4dfd652478d8d292bdb4ec6882b420a715fb04672075
 review_hash: sha256:4d2dea43f30482364752cf60a24d68ccc915b1f2aee6946f474a268a1e3968d3
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:d92f6b9398103a8e50f337ac91f2bc16b7666176359b892a3b378efbf52a7ec7
+  digest: sha256:b9bd6352b7cd324fdae92d0a6e77cd657634499492b7ea840ab6d6d5125622a6
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
