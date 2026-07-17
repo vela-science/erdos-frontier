@@ -119,7 +119,10 @@
     "records/review/sha256/6010cf159e7ee5d7867a6553b9f44eb5a1b153f87c38f09b9505d5656a943373.json",
     "sha256:6010cf159e7ee5d7867a6553b9f44eb5a1b153f87c38f09b9505d5656a943373"
   ],
-  "status": "pending_review",
+  "status": "rejected",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-07-17T19:09:26.386492000Z",
+  "decision_reason": "The producer Receipt and bounded result remain preserved, but the durable Engine gate has zero independent attachments and no surviving adversarial probe. Verifier success alone is not scientific acceptance.",
   "caveats": [
     "Manual findings require evidence review before scientific use."
   ]
