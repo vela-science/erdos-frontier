@@ -1,10 +1,10 @@
 {
-  "event_count": 2188,
-  "event_log_hash": "sha256:1e88846f042451428d4aeade2f26d45253db9db669aab9a28bba1a4e95d6c8b8",
+  "event_count": 2189,
+  "event_log_hash": "sha256:a06797bc0d1b0e3c88a2f97507fe0832661e3992d8df41187a0aa6d3ceee9bde",
   "freshness": "fresh",
-  "frontier_hash": "sha256:2c8318dc84ec44240018b272a5bb2f99bc4479a378a9a5a50f0b78f2c19e772f",
+  "frontier_hash": "sha256:7fe71b4e13c8d97da02b93ce2d9ee7762986da93111bfa1d0bcc4c47fa2b5864",
   "frontier_id": "vfr_0a25edabc16db143",
-  "materialized_at": "2026-07-17T19:09:26.386492000Z",
+  "materialized_at": "2026-07-19T01:45:09.736495+00:00",
   "paths": {
     "events_authority": ".vela/events/",
     "events_manifest": "proof/events.manifest.jsonl",
