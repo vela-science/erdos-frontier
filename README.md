@@ -1,8 +1,11 @@
-# erdos-frontier
+# Erdős Problems Frontier
 
-An audit of the formally solved Erdős problems: which rest on an unconditional
-Lean proof, and which silently assume an unproven result. Live at
-[erdos.constellate.science](https://erdos.constellate.science/).
+A standalone Vela custody source for the Erdős-problem audit and bounded
+research state. The read-only published projection is available in
+[Vela Observatory](https://app.vela.space/frontiers/erdos).
+
+The audit asks which formally solved Erdős problems rest on an unconditional
+Lean proof and which silently assume an unproven result.
 
 The gap it closes: a proof can be `sorry`-free and `#print axioms`-clean and still
 prove the goal only conditionally, by taking a deep theorem as a hypothesis
@@ -10,7 +13,7 @@ parameter the axiom check never sees. The audit reads each hosted proof
 mechanically and reports its axiom set, its `sorry` state, and the Prop
 hypotheses it takes as parameters. Nine problems recorded as solved currently
 hold only under an unproven result
-([the discrepancy view](https://erdos.constellate.science/)).
+([published frontier](https://app.vela.space/frontiers/erdos)).
 
 Two axes, one trust rule:
 
