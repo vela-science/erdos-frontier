@@ -15,8 +15,7 @@ permissions:
 
 env:
   VELA_VERSION: v0.901.0
-  VELA_RELEASE_COMMIT: 5a270f8b5ec038ade7c1274dc64a33dd99117851
-  VELA_INSTALLER_SHA256: 0196f7e42aa140e6f8ba592585efbbc2ea5f24f8a6fbf66e037122649659fc77
+  VELA_LINUX_ARCHIVE_SHA256: 29ff6001374196a24fba3766462474f09fc197721cc38e353dabca01eecad2fa
   VELA_LINUX_SHA256: cf30a1dc5f575e74055396a9afde59f9b64fb82fc01e58a3e1863a5e36d6444e
 
 jobs:
@@ -36,15 +35,17 @@ jobs:
             exit 1
           fi
 
-          installer="$(mktemp)"
-          trap 'rm -f "$installer"' EXIT
+          archive="$(mktemp)"
+          extracted="$(mktemp -d)"
+          trap 'rm -f "$archive"; rm -rf "$extracted"' EXIT
           curl -fsSL \
-            "https://raw.githubusercontent.com/vela-science/vela/${VELA_RELEASE_COMMIT}/install.sh" \
-            -o "$installer"
-          echo "${VELA_INSTALLER_SHA256}  $installer" | sha256sum -c -
-          VELA_VERSION="$VELA_VERSION" \
-            VELA_INSTALL_BINDIR="$HOME/.local/bin" \
-            bash "$installer"
+            "https://github.com/vela-science/vela/releases/download/${VELA_VERSION}/vela-linux-x86_64.tar.gz" \
+            -o "$archive"
+          echo "${VELA_LINUX_ARCHIVE_SHA256}  $archive" | sha256sum -c -
+          tar -xzf "$archive" -C "$extracted"
+          echo "${VELA_LINUX_SHA256}  $extracted/vela" | sha256sum -c -
+          mkdir -p "$HOME/.local/bin"
+          install "$extracted/vela" "$HOME/.local/bin/vela"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
           version_output="$("$HOME/.local/bin/vela" --version)"

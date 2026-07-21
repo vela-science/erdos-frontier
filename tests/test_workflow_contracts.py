@@ -29,8 +29,8 @@ def test_frontier_workflow_uses_the_lock_matching_released_vela():
 
     assert lock_version is not None
     assert workflow["env"]["VELA_VERSION"] == f"v{lock_version.group(1)}"
-    assert workflow["env"]["VELA_RELEASE_COMMIT"] == (
-        "5a270f8b5ec038ade7c1274dc64a33dd99117851"
+    assert workflow["env"]["VELA_LINUX_ARCHIVE_SHA256"] == (
+        "29ff6001374196a24fba3766462474f09fc197721cc38e353dabca01eecad2fa"
     )
     assert workflow["env"]["VELA_LINUX_SHA256"] == (
         "cf30a1dc5f575e74055396a9afde59f9b64fb82fc01e58a3e1863a5e36d6444e"
