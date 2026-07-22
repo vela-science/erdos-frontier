@@ -112,6 +112,7 @@ jobs:
           # human review of that diff IS the act. Main is never pushed directly.
           uv run python -c "import json; from erdos_frontier import load_machine_audit; json.dump({str(p):r['machine_verdict'] for p,r in sorted(load_machine_audit().items())}, open('tests/golden_machine_verdicts.json','w'), indent=2, sort_keys=True)"
           uv run python scripts/build_graph.py
+          uv run python scripts/build_work_inventory.py --check
           uv run pytest -q
 
       # Open a PR rather than pushing main: the golden-drift diff is the review
@@ -125,7 +126,7 @@ jobs:
           if git diff --quiet; then echo "No feed changes."; exit 0; fi
           BRANCH="jayyhk-matrix-$(date -u +%Y%m%d-%H%M)"
           git checkout -b "$BRANCH"
-          git add lean/audit_feed_jayyhk.json site/ graph/ tests/golden_machine_verdicts.json sources.lock.json
+          git add lean/audit_feed_jayyhk.json site/ graph/ tests/golden_machine_verdicts.json sources.lock.json targets.json
           git commit -m "Jayyhk matrix audit: merged verdicts ($(date -u +%Y-%m-%d))"
           git push -u origin "$BRANCH"
           gh pr create --title "Jayyhk matrix audit ($(date -u +%Y-%m-%d))" \

@@ -95,13 +95,14 @@ jobs:
           uv run python lean/extract_assumptions.py --repo jayyhk
           uv run python erdos_frontier.py
           uv run python scripts/build_graph.py
+          uv run python scripts/build_work_inventory.py --check
           uv run pytest -q
 
       - name: Commit regenerated feeds if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lean/audit_feed*.json site/ graph/ sources.lock.json
+          git add lean/audit_feed*.json site/ graph/ sources.lock.json targets.json
           if git diff --staged --quiet; then
             echo "Audit feeds unchanged."
           else
