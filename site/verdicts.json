@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16",
+  "generated_at": "2026-07-22",
   "rows": [
     {
       "bucket": "in-pr",
@@ -306,7 +306,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/11",
@@ -325,7 +325,7 @@
       "problem": 11,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -2118,7 +2118,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/62",
@@ -2137,7 +2137,7 @@
       "problem": 62,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -3625,7 +3625,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/108",
@@ -3644,7 +3644,7 @@
       "problem": 108,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -3655,7 +3655,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/109",
@@ -3674,7 +3674,7 @@
       "problem": 109,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -3983,9 +3983,9 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "link",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/119",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -4001,8 +4001,18 @@
       "non_kernel_axioms": [],
       "problem": 119,
       "proof_link": null,
-      "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "plby/lean-proofs",
+          "partial": false,
+          "source": "plby",
+          "state": "complete",
+          "url": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos119.lean"
+        }
+      ],
+      "recommended_action": "Check theorem match, then add the formal_proof link.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -4105,12 +4115,12 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "link",
+      "bucket": "done",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/123",
-      "fc_has_proof": false,
-      "fc_linked": false,
+      "fc_has_proof": true,
+      "fc_linked": true,
       "fc_theorem": "Erdos123.erdos_123",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos123.erdos_123",
       "fidelity_note": null,
@@ -4122,7 +4132,7 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 123,
-      "proof_link": null,
+      "proof_link": "https://github.com/plby/lean-proofs/blob/a28a04b6b8ce43d5260a7466677c1f23833bfc38/src/latest/ErdosProblems/Erdos123.lean",
       "proof_links": [
         {
           "complete": true,
@@ -4134,7 +4144,7 @@
           "url": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos123.lean"
         }
       ],
-      "recommended_action": "Check theorem match, then add the formal_proof link.",
+      "recommended_action": "No action.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -4298,7 +4308,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "falsifiable",
       "erdos_url": "https://www.erdosproblems.com/128",
@@ -4317,7 +4327,7 @@
       "problem": 128,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -8801,7 +8811,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/260",
@@ -8820,7 +8830,7 @@
       "problem": 260,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -9258,14 +9268,14 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/274",
-      "fc_has_proof": false,
-      "fc_linked": false,
-      "fc_theorem": "Erdos274.erdos_274",
-      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos274.erdos_274",
+      "fc_has_proof": true,
+      "fc_linked": true,
+      "fc_theorem": "Erdos274.erdos_274.variants.abelian",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos274.erdos_274.variants.abelian",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": "hidden_constraints",
@@ -9275,9 +9285,9 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 274,
-      "proof_link": null,
+      "proof_link": "https://github.com/Jostamon/erdos274-hs-abelian/blob/2ab8a2e39e7dd7836adf577b52555f069244466f/Erdos274/Main.lean",
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -10916,7 +10926,7 @@
     {
       "bucket": "no-proof",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/320",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -10944,9 +10954,9 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/321",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -10963,7 +10973,7 @@
       "problem": 321,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -16225,7 +16235,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "link",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/469",
@@ -16243,8 +16253,18 @@
       "non_kernel_axioms": [],
       "problem": 469,
       "proof_link": null,
-      "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "plby/lean-proofs",
+          "partial": false,
+          "source": "plby",
+          "state": "complete",
+          "url": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos469.lean"
+        }
+      ],
+      "recommended_action": "Check theorem match, then add the formal_proof link.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -17370,7 +17390,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/500",
@@ -17389,7 +17409,7 @@
       "problem": 500,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -19109,7 +19129,7 @@
       "wiki_outcome": "Candidate full solution"
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "decidable",
       "erdos_url": "https://www.erdosproblems.com/551",
@@ -19128,7 +19148,7 @@
       "problem": 551,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -20609,14 +20629,14 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/600",
       "fc_has_proof": false,
       "fc_linked": false,
-      "fc_theorem": null,
-      "fc_url": null,
+      "fc_theorem": "Erdos600.erdos_600.parts.ii",
+      "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos600.erdos_600.parts.ii",
       "fidelity_note": null,
       "fidelity_source": null,
       "gpt_erdos": null,
@@ -20628,7 +20648,7 @@
       "problem": 600,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -22981,7 +23001,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/668",
@@ -23000,7 +23020,7 @@
       "problem": 668,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -23603,7 +23623,7 @@
           "partial": false,
           "source": "vlp",
           "state": "axioms_clean",
-          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686EvenCenterGapCofactor.lean"
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686CanonicalLargeOwnerFourCycleTangent.lean"
         }
       ],
       "recommended_action": "Skip because an open PR already touches this problem.",
@@ -25392,7 +25412,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "not provable",
       "erdos_url": "https://www.erdosproblems.com/739",
@@ -25411,7 +25431,7 @@
       "problem": 739,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -25748,12 +25768,12 @@
       "wiki_outcome": "Partial result;  Solution to variant problem"
     },
     {
-      "bucket": "no-proof",
+      "bucket": "done",
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/750",
-      "fc_has_proof": false,
-      "fc_linked": false,
+      "fc_has_proof": true,
+      "fc_linked": true,
       "fc_theorem": "Erdos750.erdos_750",
       "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos750.erdos_750",
       "fidelity_note": null,
@@ -25765,9 +25785,9 @@
       "named_assumptions": [],
       "non_kernel_axioms": [],
       "problem": 750,
-      "proof_link": null,
+      "proof_link": "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P750/Proof.lean",
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "No action.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -26448,7 +26468,7 @@
       "wiki_outcome": "Candidate full solution"
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/769",
@@ -26467,7 +26487,7 @@
       "problem": 769,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -29210,7 +29230,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/854",
@@ -29229,7 +29249,7 @@
       "problem": 854,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -29270,7 +29290,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/856",
@@ -29289,7 +29309,7 @@
       "problem": 856,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -30242,7 +30262,7 @@
     {
       "bucket": "in-pr",
       "discrepancy": false,
-      "erdos_state": "disproved",
+      "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/884",
       "fc_has_proof": false,
       "fc_linked": false,
@@ -31926,7 +31946,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/934",
@@ -31945,7 +31965,7 @@
       "problem": 934,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -34256,7 +34276,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1003",
@@ -34275,7 +34295,7 @@
       "problem": 1003,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -34286,7 +34306,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1004",
@@ -34305,7 +34325,7 @@
       "problem": 1004,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -35646,7 +35666,7 @@
       "wiki_outcome": "Solution to one part of problem;  incorrect solution to other part"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "falsifiable",
       "erdos_url": "https://www.erdosproblems.com/1041",
@@ -35665,7 +35685,7 @@
       "problem": 1041,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -36184,7 +36204,7 @@
       "wiki_outcome": "Partial result (Lean)"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1055",
@@ -36203,7 +36223,7 @@
       "problem": 1055,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36214,7 +36234,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "partial",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1056",
@@ -36243,7 +36263,7 @@
           "url": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos1056.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "Only link a correctly stated variant after a per-problem review.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36314,7 +36334,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1059",
@@ -36333,7 +36353,7 @@
       "problem": 1059,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36344,7 +36364,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1060",
@@ -36363,7 +36383,7 @@
       "problem": 1060,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36472,7 +36492,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/1064",
@@ -36491,7 +36511,7 @@
       "problem": 1064,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36502,7 +36522,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1065",
@@ -36521,7 +36541,7 @@
       "problem": 1065,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36614,7 +36634,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1068",
@@ -36633,7 +36653,7 @@
       "problem": 1068,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36763,7 +36783,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1072",
@@ -36782,7 +36802,7 @@
       "problem": 1072,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36793,7 +36813,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1073",
@@ -36812,7 +36832,7 @@
       "problem": 1073,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -36913,7 +36933,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "disproved",
       "erdos_url": "https://www.erdosproblems.com/1077",
@@ -36932,7 +36952,7 @@
       "problem": 1077,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -37180,7 +37200,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1085",
@@ -37199,7 +37219,7 @@
       "problem": 1085,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -37450,7 +37470,7 @@
       "wiki_outcome": "Full solution"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1093",
@@ -37469,7 +37489,7 @@
       "problem": 1093,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -37480,7 +37500,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1094",
@@ -37499,7 +37519,7 @@
       "problem": 1094,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -37510,7 +37530,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "partial",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1095",
@@ -37539,7 +37559,7 @@
           "url": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos1095.lean"
         }
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "Only link a correctly stated variant after a per-problem review.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -37742,7 +37762,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1101",
@@ -37761,7 +37781,7 @@
       "problem": 1101,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -37885,7 +37905,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/1105",
@@ -37904,7 +37924,7 @@
       "problem": 1105,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -37945,7 +37965,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1107",
@@ -37964,7 +37984,7 @@
       "problem": 1107,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -38799,7 +38819,7 @@
       "wiki_outcome": "Partial result"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1133",
@@ -38818,7 +38838,7 @@
       "problem": 1133,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -38956,7 +38976,7 @@
       "wiki_outcome": "Formalization"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1137",
@@ -38975,7 +38995,7 @@
       "problem": 1137,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -39043,7 +39063,7 @@
       "wiki_outcome": "Full solution"
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1139",
@@ -39062,7 +39082,7 @@
       "problem": 1139,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [
@@ -39263,7 +39283,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1145",
@@ -39282,7 +39302,7 @@
       "problem": 1145,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -39293,7 +39313,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1146",
@@ -39312,7 +39332,7 @@
       "problem": 1146,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -39975,7 +39995,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1167",
@@ -39994,7 +40014,7 @@
       "problem": 1167,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -40215,7 +40235,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1175",
@@ -40234,7 +40254,7 @@
       "problem": 1175,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -40775,7 +40795,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1192",
@@ -40794,7 +40814,7 @@
       "problem": 1192,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],
@@ -41066,7 +41086,7 @@
       "wiki_outcome": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1199",
@@ -41085,7 +41105,7 @@
       "problem": 1199,
       "proof_link": null,
       "proof_links": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "signed_by": null,
       "signed_fidelity_verdict": null,
       "wiki_ai_systems": [],

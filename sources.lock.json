@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-07-16T08:37:45+00:00",
+  "generated_at": "2026-07-22T08:47:37+00:00",
   "sources": {
     "erdos": {
-      "commit": "27d936d0ae13827f51258b68b2b1f6945d236017",
+      "commit": "eacd0368a2428663dff6999b17921706137217e4",
       "kind": "problem_registry",
       "path": "data/problems.yaml",
       "ref": "main",
       "repo": "teorth/erdosproblems",
-      "sha256": "sha256:84e940d075638bf6c3199e008b9f78ba2eb1159b37e18fddfaeedfa61304d3b1",
+      "sha256": "sha256:edc1a3e9f11f932b9c2048115d1e23e75a6a90c7e32ea8e5383b1b938ef8a2b8",
       "url": "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
     },
     "fidelity": {
       "home": "self (.vela/ -> frontier.json)",
       "kind": "statement_attestations",
-      "sha256": "sha256:cc970c3c2f34a841b7ff5a0a291a7273ff799b94b56442b50fca6575869044a7"
+      "sha256": "sha256:5c65352b00e841e4defd38000e6e36d562815e6bb3565ceed0b5a7825cb88d85"
     },
     "formal_conjectures": {
       "kind": "formal_statement_registry",
       "repo": "google-deepmind/formal-conjectures",
-      "sha256": "sha256:208647c4f756badf49327a2f8136feb263d5dbf59e39307aa42b9af8c8831a60",
+      "sha256": "sha256:0507446f57a4dc6b6f3267ef243f78e75a30da956c59b048efa5703f1387610a",
       "url": "https://google-deepmind.github.io/formal-conjectures/data/conjectures.json"
     },
     "gpt_erdos": {
@@ -41,12 +41,12 @@
       "url": "https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml"
     },
     "plby": {
-      "commit": "dea7dcdeb33f88f8f045a61c177f1785e451355b",
+      "commit": "d4476dd3535ec618dee4177915741017026d26bf",
       "kind": "proof_manifest",
       "path": "data/sources.yaml",
       "ref": "main",
       "repo": "plby/lean-proofs",
-      "sha256": "sha256:4769f97155f15319f43a15480218767eb36f1987020e575f9320d4b66aee432f",
+      "sha256": "sha256:a460c1eacbfd5a988764b2d7fcde2b6966475fa568322c1beb1a3b0deb059c01",
       "url": "https://raw.githubusercontent.com/plby/lean-proofs/main/data/sources.yaml"
     },
     "wiki": {
@@ -60,12 +60,12 @@
       "sha256": "sha256:65f7f510a2f2edaafbb73b6a26e365394228bc48b18d3c54e2dee5c01b7bb092"
     },
     "williamjblair_lean_proofs": {
-      "commit": "8c85623069b3923afe418876d06459dbc4d24a51",
+      "commit": "ef1e54ba31563cec6b5169bfc70543a32ac81ef4",
       "kind": "proof_manifest",
       "path": "proofs.yaml",
       "ref": "main",
       "repo": "williamjblair/lean-proofs",
-      "sha256": "sha256:3d0711b3325ef6de77a13ea75e93fb11abd68688f40c570265d2c5a2dbde27cd",
+      "sha256": "sha256:229d13a1bec7ffd6cba62d2375e101dc63143d8feaf9fed62bbab2bd190c4454",
       "url": "https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml"
     }
   },

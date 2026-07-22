@@ -1,19 +1,19 @@
 {
-  "bloom_formalized_count": 496,
+  "bloom_formalized_count": 497,
   "claims_available": true,
   "counts": {
     "blocked-claim": 3,
     "defer": 0,
     "docstring": 8,
-    "done": 109,
+    "done": 112,
     "hypothesis-conditional": 7,
-    "in-pr": 337,
-    "link": 2,
+    "in-pr": 314,
+    "link": 3,
     "mismatch": 2,
     "needs-human-match-check": 2,
     "needs-statement-update": 1,
-    "no-proof": 675,
-    "partial": 4,
+    "no-proof": 692,
+    "partial": 6,
     "statement": 66,
     "wont-fix": 1
   },
@@ -29,20 +29,14 @@
     1148,
     1197
   ],
-  "generated_at": "2026-07-16",
+  "generated_at": "2026-07-22",
   "held_for_review": [],
-  "hosted_proofs_tracked": 216,
+  "hosted_proofs_tracked": 218,
   "rows": [
     {
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos1-formal-proof-link",
           "number": 4382,
@@ -359,12 +353,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
           "title": "chore(FormalConjectures): use LaTeX rather than markdown in docstrings",
@@ -396,16 +384,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/11",
@@ -426,7 +407,7 @@
       "problem": 11,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -2575,9 +2556,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "patch-8",
+          "number": 4469,
+          "title": "Create 62.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4469"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/62",
@@ -2598,7 +2586,7 @@
       "problem": 62,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -3957,12 +3945,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "codex/erdos-reference-docstrings",
           "number": 4003,
           "title": "chore(ErdosProblems): Normalize Erd\u0151s problem docstring references",
@@ -3997,12 +3979,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos-all",
           "number": 3422,
@@ -4268,12 +4244,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "bump_v4.32",
           "number": 4428,
           "title": "chore: bump to v4.32.0",
@@ -4311,16 +4281,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/108",
@@ -4341,21 +4304,14 @@
       "problem": 108,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/109",
@@ -4376,7 +4332,7 @@
       "problem": 109,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -4724,18 +4680,11 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "link",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/119",
       "fc": {
         "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos119.erdos_119.parts.ii",
@@ -4752,10 +4701,22 @@
       "machine": null,
       "override": null,
       "problem": 119,
-      "proof_links": [],
-      "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
-      "source_tags": "",
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "plby/lean-proofs",
+          "partial": false,
+          "source": "plby",
+          "state": "complete",
+          "url": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos119.lean"
+        }
+      ],
+      "proof_sources": [
+        "plby"
+      ],
+      "recommended_action": "Check theorem match, then add the formal_proof link.",
+      "source_tags": "\u1d56",
       "wiki": null
     },
     {
@@ -4853,18 +4814,18 @@
       "wiki": null
     },
     {
-      "bucket": "link",
+      "bucket": "done",
       "candidate_claims": null,
       "claims": [],
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/123",
       "fc": {
         "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos123.erdos_123",
-        "formal_proof_link": null,
+        "formal_proof_link": "https://github.com/plby/lean-proofs/blob/a28a04b6b8ce43d5260a7466677c1f23833bfc38/src/latest/ErdosProblems/Erdos123.lean",
         "has_file": true,
-        "has_proof": false,
-        "linked": false,
+        "has_proof": true,
+        "linked": true,
         "path": "FormalConjectures/ErdosProblems/123.lean",
         "theorem": "Erdos123.erdos_123"
       },
@@ -4888,7 +4849,7 @@
       "proof_sources": [
         "plby"
       ],
-      "recommended_action": "Check theorem match, then add the formal_proof link.",
+      "recommended_action": "No action.",
       "source_tags": "\u1d56",
       "wiki": null
     },
@@ -5076,9 +5037,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "fix/erdos-128-quantifier",
+          "number": 4501,
+          "title": "fix(ErdosProblems/128): quantify all induced subgraphs",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4501"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "falsifiable",
       "erdos_url": "https://www.erdosproblems.com/128",
@@ -5099,7 +5067,7 @@
       "problem": 128,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -10084,9 +10052,16 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "agent/mark-erdos-260-solved",
+          "number": 4446,
+          "title": "feat(ErdosProblems): mark 260 as solved",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4446"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/260",
@@ -10107,7 +10082,7 @@
       "problem": 260,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -10566,19 +10541,13 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "done",
       "candidate_claims": {
         "category": "hidden_constraints",
         "category_label": "Solved as stated, hidden constraints",
         "source": "gpt-erdos"
       },
       "claims": [
-        {
-          "head_ref": "erdos-274-abelian-formal-proof",
-          "number": 4415,
-          "title": "ErdosProblems/274: add formal_proof link for the abelian variant",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4415"
-        },
         {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
@@ -10590,13 +10559,13 @@
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/274",
       "fc": {
-        "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos274.erdos_274",
-        "formal_proof_link": null,
+        "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos274.erdos_274.variants.abelian",
+        "formal_proof_link": "https://github.com/Jostamon/erdos274-hs-abelian/blob/2ab8a2e39e7dd7836adf577b52555f069244466f/Erdos274/Main.lean",
         "has_file": true,
-        "has_proof": false,
-        "linked": false,
+        "has_proof": true,
+        "linked": true,
         "path": "FormalConjectures/ErdosProblems/274.lean",
-        "theorem": "Erdos274.erdos_274"
+        "theorem": "Erdos274.erdos_274.variants.abelian"
       },
       "fidelity": null,
       "held_for_review": false,
@@ -10606,7 +10575,7 @@
       "problem": 274,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action.",
       "source_tags": "",
       "wiki": null
     },
@@ -11291,7 +11260,7 @@
         {
           "head_ref": "erdos-formal-proof-links-4x",
           "number": 4407,
-          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "title": "Add formal-proof links and sharpen Erd\u0151s #647 candidate reductions",
           "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
         }
       ],
@@ -11923,6 +11892,12 @@
       "candidate_claims": null,
       "claims": [
         {
+          "head_ref": "formalize/erdos-307-barrier-11",
+          "number": 4479,
+          "title": "fix(ErdosProblems/307): Fix false theorem and add finite barrier for primes \u2264 11",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4479"
+        },
+        {
           "head_ref": "erdos307-barrier-sixty",
           "number": 4403,
           "title": "Erd\u0151s 307: strengthen the barrier to |P \u222a Q| \u2265 60 (machine-checked)",
@@ -12495,7 +12470,7 @@
       "candidate_claims": null,
       "claims": [],
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/320",
       "fc": {
         "fc_url": null,
@@ -12519,11 +12494,18 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-321",
+          "number": 4487,
+          "title": "feat(ErdosProblems): Update 321 status and refactor",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4487"
+        }
+      ],
       "discrepancy": false,
-      "erdos_state": "open",
+      "erdos_state": "solved",
       "erdos_url": "https://www.erdosproblems.com/321",
       "fc": {
         "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos321.erdos_321",
@@ -12542,7 +12524,7 @@
       "problem": 321,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -13695,6 +13677,36 @@
       "candidate_claims": null,
       "claims": [
         {
+          "head_ref": "erdos-349-two-le",
+          "number": 4485,
+          "title": "ErdosProblems/349: (t, \u03b1) is a good pair for all t \u2265 2 and 1 < \u03b1 \u2264 1 + 1/(2\u230at\u230b+2)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4485"
+        },
+        {
+          "head_ref": "erdos-349-open-zone",
+          "number": 4483,
+          "title": "ErdosProblems/349: good pairs on the strip 1 < \u03b1 < 3/2 for t \u2265 2, reaching arbitrarily close to 3/2",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4483"
+        },
+        {
+          "head_ref": "erdos-349-small-t",
+          "number": 4478,
+          "title": "ErdosProblems/349: eventual completeness for all 0 < t < 2 on the strip 1 < \u03b1 < 3/2",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4478"
+        },
+        {
+          "head_ref": "erdos-349-strip-iff",
+          "number": 4476,
+          "title": "ErdosProblems/349: sharp threshold on the strip 1 < \u03b1 < 3/2 \u2014 entirely complete iff t < 2",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4476"
+        },
+        {
+          "head_ref": "erdos-349-prop-six",
+          "number": 4470,
+          "title": "ErdosProblems/349: (1, \u03b1) is a good pair for 1 < \u03b1 < 3/2 (positive result)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4470"
+        },
+        {
           "head_ref": "bump_v4.32",
           "number": 4428,
           "title": "chore: bump to v4.32.0",
@@ -14491,6 +14503,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "patch-11",
+          "number": 4472,
+          "title": "Create 367.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4472"
+        },
         {
           "head_ref": "codex/add-erdos-formalizations",
           "number": 4354,
@@ -15835,7 +15853,7 @@
         {
           "head_ref": "erdos-formal-proof-links-4x",
           "number": 4407,
-          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "title": "Add formal-proof links and sharpen Erd\u0151s #647 candidate reductions",
           "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
         },
         {
@@ -16895,6 +16913,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "patch-12",
+          "number": 4473,
+          "title": "Create 425.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4473"
+        },
         {
           "head_ref": "erdos-530-425",
           "number": 4068,
@@ -18810,7 +18834,7 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "link",
       "candidate_claims": null,
       "claims": [],
       "discrepancy": false,
@@ -18831,10 +18855,22 @@
       "machine": null,
       "override": null,
       "problem": 469,
-      "proof_links": [],
-      "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
-      "source_tags": "",
+      "proof_links": [
+        {
+          "complete": true,
+          "conditional": false,
+          "label": "plby/lean-proofs",
+          "partial": false,
+          "source": "plby",
+          "state": "complete",
+          "url": "https://github.com/plby/lean-proofs/blob/main/src/v4.29.1/ErdosProblems/Erdos469.lean"
+        }
+      ],
+      "proof_sources": [
+        "plby"
+      ],
+      "recommended_action": "Check theorem match, then add the formal_proof link.",
+      "source_tags": "\u1d56",
       "wiki": null
     },
     {
@@ -19882,7 +19918,7 @@
         {
           "head_ref": "erdos-formal-proof-links-4x",
           "number": 4407,
-          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "title": "Add formal-proof links and sharpen Erd\u0151s #647 candidate reductions",
           "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
         },
         {
@@ -20201,9 +20237,16 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "patch-6",
+          "number": 4466,
+          "title": "Create 500.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4466"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/500",
@@ -20224,7 +20267,7 @@
       "problem": 500,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -22253,9 +22296,16 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "erdos-551",
+          "number": 4451,
+          "title": "feat(Erdos): Erd\u0151s Problem 551 (Ramsey number of a cycle vs a clique)",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4451"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "decidable",
       "erdos_url": "https://www.erdosproblems.com/551",
@@ -22276,7 +22326,7 @@
       "problem": 551,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -22368,6 +22418,12 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
+        {
+          "head_ref": "patch-5",
+          "number": 4465,
+          "title": "Create 555.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4465"
+        },
         {
           "head_ref": "erdos-530-555",
           "number": 4080,
@@ -23809,27 +23865,20 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "erdos-600",
-          "number": 3996,
-          "title": "feat(ErdosProblems): 600",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/3996"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/600",
       "fc": {
-        "fc_url": null,
+        "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos600.erdos_600.parts.ii",
         "formal_proof_link": null,
-        "has_file": false,
+        "has_file": true,
         "has_proof": false,
         "linked": false,
-        "path": null,
-        "theorem": null
+        "path": "FormalConjectures/ErdosProblems/600.lean",
+        "theorem": "Erdos600.erdos_600.parts.ii"
       },
       "fidelity": null,
       "held_for_review": false,
@@ -23839,7 +23888,7 @@
       "problem": 600,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -25598,14 +25647,8 @@
         {
           "head_ref": "erdos-formal-proof-links-4x",
           "number": 4407,
-          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "title": "Add formal-proof links and sharpen Erd\u0151s #647 candidate reductions",
           "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
-        },
-        {
-          "head_ref": "erdos-647-modular-840",
-          "number": 3851,
-          "title": "Add Erd\u0151s Problem #647 modular ladder: 840 \u2223 n proven for n > 54",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/3851"
         }
       ],
       "discrepancy": false,
@@ -26504,9 +26547,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "main",
+          "number": 4453,
+          "title": "Create 668.lean and 854.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4453"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/668",
@@ -26527,7 +26577,7 @@
       "problem": 668,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -27203,7 +27253,7 @@
           "partial": false,
           "source": "vlp",
           "state": "axioms_clean",
-          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686EvenCenterGapCofactor.lean"
+          "url": "https://github.com/williamjblair/lean-proofs/blob/main/ErdosProblems/Erdos686CanonicalLargeOwnerFourCycleTangent.lean"
         }
       ],
       "proof_sources": [
@@ -29209,9 +29259,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "patch-3",
+          "number": 4463,
+          "title": "Create 739.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4463"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "not provable",
       "erdos_url": "https://www.erdosproblems.com/739",
@@ -29232,7 +29289,7 @@
       "problem": 739,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -29585,7 +29642,7 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "done",
       "candidate_claims": null,
       "claims": [],
       "discrepancy": false,
@@ -29593,10 +29650,10 @@
       "erdos_url": "https://www.erdosproblems.com/750",
       "fc": {
         "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos750.erdos_750",
-        "formal_proof_link": null,
+        "formal_proof_link": "https://github.com/Shashi456/erdos-formalizations/blob/main/Erdos/P750/Proof.lean",
         "has_file": true,
-        "has_proof": false,
-        "linked": false,
+        "has_proof": true,
+        "linked": true,
         "path": "FormalConjectures/ErdosProblems/750.lean",
         "theorem": "Erdos750.erdos_750"
       },
@@ -29608,7 +29665,7 @@
       "problem": 750,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "No action.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -30363,9 +30420,16 @@
       }
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "patch-9",
+          "number": 4471,
+          "title": "Create 769.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4471"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/769",
@@ -30386,7 +30450,7 @@
       "problem": 769,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -33281,9 +33345,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "main",
+          "number": 4453,
+          "title": "Create 668.lean and 854.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4453"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/854",
@@ -33304,7 +33375,7 @@
       "problem": 854,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -33337,9 +33408,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "patch-4",
+          "number": 4464,
+          "title": "Create 856.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4464"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/856",
@@ -33360,7 +33438,7 @@
       "problem": 856,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -34465,7 +34543,7 @@
         }
       ],
       "discrepancy": false,
-      "erdos_state": "disproved",
+      "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/884",
       "fc": {
         "fc_url": "https://google-deepmind.github.io/formal-conjectures/theorem/?name=Erdos884.erdos_884",
@@ -36250,9 +36328,16 @@
       "wiki": null
     },
     {
-      "bucket": "no-proof",
+      "bucket": "in-pr",
       "candidate_claims": null,
-      "claims": [],
+      "claims": [
+        {
+          "head_ref": "patch-7",
+          "number": 4467,
+          "title": "Create 934.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4467"
+        }
+      ],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/934",
@@ -36273,7 +36358,7 @@
       "problem": 934,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "No action until a hosted proof appears.",
+      "recommended_action": "Skip because an open PR already touches this problem.",
       "source_tags": "",
       "wiki": null
     },
@@ -38905,12 +38990,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "erdos-all",
           "number": 3422,
           "title": "feat(ErdosProblems): All 1179 Erd\u0151s conjectures formalized",
@@ -38942,16 +39021,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1003",
@@ -38972,21 +39044,14 @@
       "problem": 1003,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1004",
@@ -39007,7 +39072,7 @@
       "problem": 1004,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -40314,6 +40379,12 @@
       "candidate_claims": null,
       "claims": [
         {
+          "head_ref": "patch-1",
+          "number": 4456,
+          "title": "Create 1033.lean",
+          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4456"
+        },
+        {
           "head_ref": "erdos-all",
           "number": 3422,
           "title": "feat(ErdosProblems): All 1179 Erd\u0151s conjectures formalized",
@@ -40622,12 +40693,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
           "title": "chore(FormalConjectures): use LaTeX rather than markdown in docstrings",
@@ -40778,16 +40843,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "falsifiable",
       "erdos_url": "https://www.erdosproblems.com/1041",
@@ -40808,7 +40866,7 @@
       "problem": 1041,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -40866,12 +40924,6 @@
       "bucket": "done",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "bump_v4.32",
           "number": 4428,
@@ -41251,12 +41303,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "bump_v4.32",
           "number": 4428,
           "title": "chore: bump to v4.32.0",
@@ -41349,14 +41395,7 @@
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/1051",
@@ -41422,12 +41461,6 @@
       "bucket": "done",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos-1052-formal-proof-link",
           "number": 4405,
@@ -41511,12 +41544,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "bump_v4.32",
           "number": 4428,
           "title": "chore: bump to v4.32.0",
@@ -41584,16 +41611,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1055",
@@ -41614,21 +41634,14 @@
       "problem": 1055,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "partial",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1056",
@@ -41666,7 +41679,7 @@
       "proof_sources": [
         "plby"
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "Only link a correctly stated variant after a per-problem review.",
       "source_tags": "\u1d56",
       "wiki": null
     },
@@ -41674,12 +41687,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos-all",
           "number": 3422,
@@ -41747,16 +41754,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1059",
@@ -41777,21 +41777,14 @@
       "problem": 1059,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1060",
@@ -41812,7 +41805,7 @@
       "problem": 1060,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -41820,12 +41813,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
@@ -41873,12 +41860,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "bump_v4.32",
           "number": 4428,
@@ -41943,12 +41924,6 @@
       },
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "bump_v4.32",
           "number": 4428,
           "title": "chore: bump to v4.32.0",
@@ -41998,16 +41973,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/1064",
@@ -42028,21 +41996,14 @@
       "problem": 1064,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1065",
@@ -42063,7 +42024,7 @@
       "problem": 1065,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -42105,14 +42066,7 @@
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/1067",
@@ -42176,16 +42130,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1068",
@@ -42206,7 +42153,7 @@
       "problem": 1068,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -42297,14 +42244,7 @@
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/1071",
@@ -42364,16 +42304,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1072",
@@ -42394,21 +42327,14 @@
       "problem": 1072,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1073",
@@ -42429,21 +42355,14 @@
       "problem": 1073,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1074",
@@ -42539,16 +42458,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "disproved",
       "erdos_url": "https://www.erdosproblems.com/1077",
@@ -42569,7 +42481,7 @@
       "problem": 1077,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -42646,14 +42558,7 @@
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/1080",
@@ -42759,12 +42664,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "erdos-all",
           "number": 3422,
           "title": "feat(ErdosProblems): All 1179 Erd\u0151s conjectures formalized",
@@ -42855,12 +42754,6 @@
       },
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
           "title": "chore(FormalConjectures): use LaTeX rather than markdown in docstrings",
@@ -42892,16 +42785,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1085",
@@ -42922,7 +42808,7 @@
       "problem": 1085,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -43087,12 +42973,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "erdos-all",
           "number": 3422,
           "title": "feat(ErdosProblems): All 1179 Erd\u0151s conjectures formalized",
@@ -43223,12 +43103,6 @@
       },
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
           "title": "chore(FormalConjectures): use LaTeX rather than markdown in docstrings",
@@ -43278,16 +43152,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1093",
@@ -43308,21 +43175,14 @@
       "problem": 1093,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1094",
@@ -43343,21 +43203,14 @@
       "problem": 1094,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "partial",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1095",
@@ -43395,7 +43248,7 @@
       "proof_sources": [
         "plby"
       ],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "Only link a correctly stated variant after a per-problem review.",
       "source_tags": "\u1d56",
       "wiki": {
         "ai_systems": [
@@ -43418,12 +43271,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos-all",
           "number": 3422,
@@ -43459,12 +43306,6 @@
       "bucket": "done",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
@@ -43668,16 +43509,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1101",
@@ -43698,7 +43532,7 @@
       "problem": 1101,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -43716,12 +43550,6 @@
       "bucket": "done",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "codex/latex-docstrings",
           "number": 4004,
@@ -43825,12 +43653,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "codex/erdos-reference-docstrings",
           "number": 4003,
           "title": "chore(ErdosProblems): Normalize Erd\u0151s problem docstring references",
@@ -43862,20 +43684,13 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": {
         "category": "partial_literature",
         "category_label": "Partial literature extensions",
         "source": "gpt-erdos"
       },
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "proved",
       "erdos_url": "https://www.erdosproblems.com/1105",
@@ -43896,7 +43711,7 @@
       "problem": 1105,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -43904,12 +43719,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "codex/erdos-reference-docstrings",
           "number": 4003,
@@ -43942,16 +43751,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1107",
@@ -43972,7 +43774,7 @@
       "problem": 1107,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -43980,12 +43782,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "codex/add-erdos-formalizations",
           "number": 4354,
@@ -44168,15 +43964,9 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "erdos-formal-proof-links-4x",
           "number": 4407,
-          "title": "Add formal_proof (lean4) links for Erd\u0151s 291.ii, 399 (cambie), 494 (product), 1113 (infinitely_many_sierpinski)",
+          "title": "Add formal-proof links and sharpen Erd\u0151s #647 candidate reductions",
           "url": "https://github.com/google-deepmind/formal-conjectures/pull/4407"
         },
         {
@@ -44395,12 +44185,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos-all",
           "number": 3422,
@@ -44651,12 +44435,6 @@
       "candidate_claims": null,
       "claims": [
         {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
-        {
           "head_ref": "erdos-all",
           "number": 3422,
           "title": "feat(ErdosProblems): All 1179 Erd\u0151s conjectures formalized",
@@ -44736,12 +44514,6 @@
       "bucket": "done",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos-all",
           "number": 3422,
@@ -44863,12 +44635,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "bump_v4.32",
           "number": 4428,
@@ -45077,16 +44843,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1133",
@@ -45107,7 +44866,7 @@
       "problem": 1133,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -45267,16 +45026,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1137",
@@ -45297,21 +45049,14 @@
       "problem": 1137,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/1138",
@@ -45380,16 +45125,9 @@
       }
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1139",
@@ -45410,7 +45148,7 @@
       "problem": 1139,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": {
         "ai_systems": [
@@ -45461,14 +45199,7 @@
     {
       "bucket": "done",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": true,
       "erdos_state": "disproved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/1141",
@@ -45541,12 +45272,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "bump_v4.32",
           "number": 4428,
@@ -45672,16 +45397,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1145",
@@ -45702,21 +45420,14 @@
       "problem": 1145,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1146",
@@ -45737,7 +45448,7 @@
       "problem": 1146,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -45772,14 +45483,7 @@
     {
       "bucket": "hypothesis-conditional",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": true,
       "erdos_state": "proved (Lean)",
       "erdos_url": "https://www.erdosproblems.com/1148",
@@ -45896,12 +45600,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "erdos-1150-parseval-lower-bound",
           "number": 4110,
@@ -46442,16 +46140,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1167",
@@ -46472,7 +46163,7 @@
       "problem": 1167,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -46722,16 +46413,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1175",
@@ -46752,7 +46436,7 @@
       "problem": 1175,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -46760,12 +46444,6 @@
       "bucket": "in-pr",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "feat/erdos-status-autofix",
           "number": 4367,
@@ -47322,16 +47000,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1192",
@@ -47352,7 +47023,7 @@
       "problem": 1192,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
@@ -47507,12 +47178,6 @@
       "bucket": "done",
       "candidate_claims": null,
       "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        },
         {
           "head_ref": "prove-erdos-1196",
           "number": 3760,
@@ -47683,16 +47348,9 @@
       "wiki": null
     },
     {
-      "bucket": "in-pr",
+      "bucket": "no-proof",
       "candidate_claims": null,
-      "claims": [
-        {
-          "head_ref": "formal_conjectures_util",
-          "number": 4433,
-          "title": "refactor: split out FormalConjectures.Util to a new library",
-          "url": "https://github.com/google-deepmind/formal-conjectures/pull/4433"
-        }
-      ],
+      "claims": [],
       "discrepancy": false,
       "erdos_state": "open",
       "erdos_url": "https://www.erdosproblems.com/1199",
@@ -47713,7 +47371,7 @@
       "problem": 1199,
       "proof_links": [],
       "proof_sources": [],
-      "recommended_action": "Skip because an open PR already touches this problem.",
+      "recommended_action": "No action until a hosted proof appears.",
       "source_tags": "",
       "wiki": null
     },
