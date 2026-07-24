@@ -1,39 +1,18 @@
-schema: vela.frontier_manifest.v0.1
-layout: vela.frontier_repo.v0.1
-mode: split
+schema: vela.frontier-profile.v1
 frontier_id: vfr_0a25edabc16db143
 name: Erdős formalization fidelity
-description: ''
-visibility: public
+summary: A rooted audit of Erdős problem statements, formalizations, proof artifacts, attempts, residual obligations, and signed statement-fidelity decisions.
 scope:
-  question: ''
-  includes: []
-  excludes: []
-vela:
-  reducer: vela@0.800.19
-paths:
-  state: frontier.json
-  sources: sources/
-  artifacts: artifacts/
-  review: review/
-  proof: proof/
-  exports: exports/
-policies:
-  review: review/policy.yaml
-  proof: proof/policy.yaml
+  question: Which Erdős problem records are supported by exact, reproducible formal or computational evidence, and what remains unresolved or conditional?
+  includes:
+    - The pinned 1,217-problem corpus, formal statements, proof records, attempts, residual obligations, witnesses, source locks, and signed fidelity decisions.
+    - Bounded work packets and verifier results that remain distinct from scientific acceptance.
+  excludes:
+    - Treating upstream status, verifier success, Git publication, or graph position as scientific acceptance.
+    - Treating bounded negative search as a universal nonexistence result.
+maintainers:
+  - williamjblair
 license:
   content: CC-BY-4.0
   code: Apache-2.0
   data: varies
-dependencies:
-  frontiers: []
-  packages: []
-  adapters: []
-  frontiers_v2:
-  - name: formal-conjectures-frontier
-    source: vela.hub
-    version: null
-    pinned_hash: null
-    vfr_id: vfr_97d7d25957384f80
-    locator: https://raw.githubusercontent.com/constellate-science/formal-conjectures-frontier/a143c351f8488e0c621598307e248373d9dc3374/frontier.json
-    pinned_snapshot_hash: sha256:48ec4e84bb4640fa54023db58d7eabc6a713a46b053b6ccc3050414ab18520ec

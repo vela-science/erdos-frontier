@@ -1,0 +1,54 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_4391ce0351362631",
+  "kind": "frontier.repository_bound",
+  "target": {
+    "type": "frontier",
+    "id": "vfr_0a25edabc16db143"
+  },
+  "actor": {
+    "id": "reviewer:will-blair",
+    "type": "human"
+  },
+  "timestamp": "2026-07-24T03:09:18Z",
+  "reason": "Bind exact legacy repository",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
+  "payload": {
+    "administrator_actor_id": "reviewer:will-blair",
+    "administrator_algorithm": "ed25519",
+    "administrator_public_key": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
+    "anchor_actor_registry_root": "sha256:665f3e1c48f0a50fac949681c0af01bdd28de2991f2cdc5cc4cddbe69df6311b",
+    "anchor_artifact_registry_root": "sha256:3d58619c5cfb7e28de2f344476e35c9f0b80709c996b2a1bfdb2e11496f7e1da",
+    "anchor_canonical_store_root": "sha256:bacc3c077cf5ef168df3c2ba66b076a494bf15869a8c4d6e399e710541c44fd5",
+    "anchor_event_count": 2189,
+    "anchor_event_log_root": "sha256:a06797bc0d1b0e3c88a2f97507fe0832661e3992d8df41187a0aa6d3ceee9bde",
+    "anchor_git_commit": "6bcc3f478fdeaaed03579f2463f278035f389fd0",
+    "anchor_git_tree": "fccce778c7b62428bff4436fd27d582f66fec662",
+    "anchor_proposal_root": "sha256:e69b38037814f2e8ca826942cfc50ab370993889be2913cac1c0b3e77711160f",
+    "anchor_snapshot_root": "sha256:1faedc24f040a60a22177b456c74b969a61ce8836082297b1835797a57b4fa56",
+    "anchor_snapshot_schema": "https://vela.science/schema/finding-bundle/v0.10.0",
+    "dependencies": [
+      {
+        "frontier_id": "vfr_97d7d25957384f80",
+        "git_commit": "a143c351f8488e0c621598307e248373d9dc3374",
+        "git_object_format": "sha1",
+        "git_tree": "093e84c03a722e5367812a6e6240b1c28042f969",
+        "identity_root": "sha256:841f38525cf2f4862c5fdc2217247a189ab8a0414418b8b782a88c9dd0206731",
+        "scientific_state_root": "sha256:4924adbbea6dfe288d14af03cf3d544f73c511df6b6ef8b938c8291685101444"
+      }
+    ],
+    "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
+    "frontier_id": "vfr_0a25edabc16db143",
+    "git_object_format": "sha1",
+    "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
+    "legacy_identity_preimage_root": "sha256:0a25edabc16db1431ccebf1a65ad52a01c65a705c202a994dfbe9eb2074f183a",
+    "mode": "temporalize_existing",
+    "observed_profile_root": "sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27d666f",
+    "previous_identity_event_root": null,
+    "schema": "vela.frontier-repository-boundary.v1",
+    "trust_mode": "tofu"
+  },
+  "caveats": [],
+  "signature": "v1:220c77ad696e4358759644f9be761322a00365b1a65bfeb6358d8ed1dc5d7687f54855e1326f1b432c72d4b5a93e6fa464908fdf1795512ef53b36e5be3b890c"
+}

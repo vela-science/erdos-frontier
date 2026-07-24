@@ -1,10 +1,10 @@
 {
-  "event_count": 2189,
-  "event_log_hash": "sha256:a06797bc0d1b0e3c88a2f97507fe0832661e3992d8df41187a0aa6d3ceee9bde",
+  "event_count": 2190,
+  "event_log_hash": "sha256:12daf8cc1e4f2777629ca953e081c99b2931a60b8245273b9085a5c0add53c3b",
   "freshness": "fresh",
   "frontier_hash": "sha256:1faedc24f040a60a22177b456c74b969a61ce8836082297b1835797a57b4fa56",
   "frontier_id": "vfr_0a25edabc16db143",
-  "materialized_at": "2026-07-19T01:45:09.736495+00:00",
+  "materialized_at": "2026-07-24T03:09:18Z",
   "paths": {
     "events_authority": ".vela/events/",
     "events_manifest": "proof/events.manifest.jsonl",
@@ -14,10 +14,10 @@
   },
   "proposal_state_hash": "sha256:e69b38037814f2e8ca826942cfc50ab370993889be2913cac1c0b3e77711160f",
   "reducer": {
-    "digest": "sha256:5ed141c9e5336693a450eedec9ebe43855a3379dea5d7b654fdba4d1d33081bc",
+    "digest": "sha256:035e121878fbe65da0cdbfef9da4308d90c67b607a822dde065fd6a4490aca7a",
     "name": "vela",
-    "package": "vela@0.901.0",
-    "version": "0.901.0"
+    "package": "vela@0.914.0",
+    "version": "0.914.0"
   },
   "schema": "vela.frontier_repo_proof.v0.1",
   "warning": "Do not edit frontier.json directly. Use Vela's task-first receipt, signing, materialization, and proof commands."
