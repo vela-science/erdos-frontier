@@ -32,7 +32,9 @@ next -> work -> land
   Trust the ranking; it already encodes what the frontier knows.
 - `vela work <target> --as agent:<you> --json` — claim the lease, load the
   briefing, and write one typed private `session.json` under `.vela/work/`.
-  Read the returned briefing before working; do not edit the session record.
+  A same-actor retry returns that exact active session without another lease
+  event. Read the returned briefing before working; do not edit the session
+  record.
 - `vela land --work <target> --claim <result> --artifact <path>:<kind>
   --caveat <limit> --as agent:<you> --json` — build Receipt v1 from the exact
   session and use the shared write edge. With exactly one active session for
@@ -47,7 +49,11 @@ next -> work -> land
   pending; only the human ceremony may remove its active proof-readiness weight.
 - `vela review list . --json` — the pending queue, newest first. Each compact
   row includes `created_at`; use `vela review show . <vpr_id> --json` for one
-  exact Decision Brief.
+  exact pending Decision Brief or signed terminal decision record.
+- When a task supplies a full `vpr_` ID, start with `vela review show`; it
+  returns the pending brief or signed terminal decision. Rejected proposal
+  findings are intentionally absent from accepted `finding show` and `log`
+  views. That absence is not deletion.
 - `vela review decide . <vpr_id> --accept|--reject --reason <text> --json` — a
   key-free exact Decision Plan. An agent may prepare and invoke the protected
   request, but only the registered human may approve its decision card.

@@ -16,6 +16,9 @@ Agents may:
 - draft retirement of a malformed or obsolete artifact; the result remains
   pending until a human decides it
 - inspect the newest-first review queue and one exact Decision Brief
+- when a task supplies a full `vpr_` ID, begin with `vela review show`; a
+  rejected proposal's candidate finding is absent from accepted `finding show`
+  and `log` views by design, not because its evidence was deleted
 - prepare and invoke one root-bound protected decision request; only the
   registered human may approve or decline its exact decision card
 - regenerate derived views with `vela frontier materialize .`
@@ -42,7 +45,7 @@ vela land --frontier . --work <target> --claim <claim> \
   --artifact <path>:<kind> --caveat <scope-limit> \
   --as agent:<name> --json
 vela review list . --json
-vela review show . <vpr_id> --json
+vela review show . <vpr_id> --json  # first read for a known proposal
 vela review decide . <vpr_id> --accept|--reject --reason <why> --json
 vela status . --json
 vela check .
