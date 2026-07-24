@@ -6,7 +6,7 @@ profile_root: sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27
 identity_root: sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45
 dependency_root: sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1
 scientific_state_root: sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316
-legacy_snapshot_root: sha256:1faedc24f040a60a22177b456c74b969a61ce8836082297b1835797a57b4fa56
+legacy_snapshot_root: sha256:7f6efe7edd5bb0cf5e1fcb31d0b0d8892aa1de9a680dc4355d8628addcb546f4
 event_log_root: sha256:12daf8cc1e4f2777629ca953e081c99b2931a60b8245273b9085a5c0add53c3b
 event_count: 2190
 proposal_root: sha256:e69b38037814f2e8ca826942cfc50ab370993889be2913cac1c0b3e77711160f
@@ -44,7 +44,7 @@ review_hash: sha256:4d2dea43f30482364752cf60a24d68ccc915b1f2aee6946f474a268a1e39
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:7071305ef5248493f48268fde343636399aa6ffbd992af54f107c7177d8af859
+  digest: sha256:bee56cb9d9eecc59a8e89cc8233984916eedf277dee876119174f52e6f0d131c
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
