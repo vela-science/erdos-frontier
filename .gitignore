@@ -18,6 +18,7 @@ records/
 /.vela/keys/
 /.vela/operation-journals/
 /.vela/tasks/
+/.vela/tmp/
 /.vela/work/
 /.vela/workspaces/
 /.vela/source-inbox/
