@@ -1,0 +1,25 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_31473c8516aee288",
+  "kind": "attempt.claimed",
+  "target": {
+    "type": "finding",
+    "id": "erdos:1056"
+  },
+  "actor": {
+    "id": "agent:canopus-local",
+    "type": "agent"
+  },
+  "timestamp": "2026-07-24T07:04:36.270065+00:00",
+  "reason": "obligation lease (swarm coordination)",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
+  "payload": {
+    "claimant_actor": "agent:canopus-local",
+    "claimant_pubkey": "1425435a9f01329578496e8f7a71b72904ed0da860a09ff4d438dae41331e327",
+    "lease_ttl_seconds": 86400,
+    "obligation_id": "erdos:1056"
+  },
+  "caveats": [],
+  "signature": "v1:4dd9603a2484f9a10bd29df57abbc09ead440213bb6a8eaafcc0d3a2b69e6a0da06df5d79aa2184955b6faadbc68ce966f3246796c5e081e0b43e7057d25360d"
+}
