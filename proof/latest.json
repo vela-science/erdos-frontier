@@ -5,7 +5,7 @@
   "freshness": "fresh",
   "frontier_id": "vfr_0a25edabc16db143",
   "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
-  "legacy_snapshot_root": "sha256:97539a304f79fccc20056fc380825b25563de2ad157adfbb7d2bfc49d6a3f3a9",
+  "legacy_snapshot_root": "sha256:c20bab5a5693fb20fc1581eccbfb4e318f1012e9ee37b4f41c280c04dd636b37",
   "materialized_at": "2026-07-24T07:04:36.270065+00:00",
   "paths": {
     "events_authority": ".vela/events/",
@@ -17,10 +17,10 @@
   "profile_root": "sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27d666f",
   "proposal_root": "sha256:c975fd10f75934265baf1d0c2c7701ac36125b6d29cf9214df369fedc98ac9c5",
   "reducer": {
-    "digest": "sha256:c37b83d62936e24d5a9350148cc1501cf7338d338061d5c00a75225d94f3fdfa",
+    "digest": "sha256:899180e33040c904949e6c2edb29a22ea50e202c472c44ea27426bb3ff9e169f",
     "name": "vela",
-    "package": "vela@0.914.1",
-    "version": "0.914.1"
+    "package": "vela@0.915.1",
+    "version": "0.915.1"
   },
   "schema": "vela.frontier_repo_proof.v1",
   "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
