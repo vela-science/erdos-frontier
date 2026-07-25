@@ -1,12 +1,12 @@
 {
   "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
-  "event_count": 2191,
-  "event_log_root": "sha256:b430f080ef0ac992571e0777b7154a8ae3567d0e9dd7292d3ee36e3ed2e4d8cd",
+  "event_count": 2192,
+  "event_log_root": "sha256:cbfa8ff683e44a0abfef9388d48496f0efee60595ae070d415f013ca8c3129c4",
   "freshness": "fresh",
   "frontier_id": "vfr_0a25edabc16db143",
   "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
-  "legacy_snapshot_root": "sha256:c20bab5a5693fb20fc1581eccbfb4e318f1012e9ee37b4f41c280c04dd636b37",
-  "materialized_at": "2026-07-24T07:04:36.270065+00:00",
+  "legacy_snapshot_root": "sha256:cd440b117bd9a4ed2672b400dbfc84d9bb4677c5bda0edff983dcedc2aff4903",
+  "materialized_at": "2026-07-25T10:10:29.080730+00:00",
   "paths": {
     "events_authority": ".vela/events/",
     "events_manifest": "proof/events.manifest.jsonl",

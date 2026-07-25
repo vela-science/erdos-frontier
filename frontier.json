@@ -1,11 +1,11 @@
 {
   "_meta": {
     "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
-    "event_log_root": "sha256:b430f080ef0ac992571e0777b7154a8ae3567d0e9dd7292d3ee36e3ed2e4d8cd",
+    "event_log_root": "sha256:cbfa8ff683e44a0abfef9388d48496f0efee60595ae070d415f013ca8c3129c4",
     "events_manifest": "proof/events.manifest.jsonl",
-    "generated_at": "2026-07-24T07:04:36.270065+00:00",
+    "generated_at": "2026-07-25T10:10:29.080730+00:00",
     "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
-    "legacy_snapshot_root": "sha256:c20bab5a5693fb20fc1581eccbfb4e318f1012e9ee37b4f41c280c04dd636b37",
+    "legacy_snapshot_root": "sha256:cd440b117bd9a4ed2672b400dbfc84d9bb4677c5bda0edff983dcedc2aff4903",
     "lockfile": "vela.lock",
     "materialized_from": ".vela/events/",
     "profile_root": "sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27d666f",
@@ -31386,10 +31386,10 @@
       "obligation_id": "erdos:512"
     },
     {
-      "claim_event_id": "vev_31473c8516aee288",
+      "claim_event_id": "vev_7b1d300ee4c2d66f",
       "claimant_actor": "agent:canopus-local",
-      "claimant_pubkey": "1425435a9f01329578496e8f7a71b72904ed0da860a09ff4d438dae41331e327",
-      "claimed_at": "2026-07-24T07:04:36.270065+00:00",
+      "claimant_pubkey": "ccb3c2e5b938af8ac2f94b5ce5d828a892a48d31003a0abf07e3675094d07604",
+      "claimed_at": "2026-07-25T10:10:29.080730+00:00",
       "lease_ttl_seconds": 86400,
       "obligation_id": "erdos:1056"
     }
@@ -114616,6 +114616,31 @@
         "type": "finding"
       },
       "timestamp": "2026-07-05T02:19:18.498304+00:00"
+    },
+    {
+      "actor": {
+        "id": "agent:canopus-local",
+        "type": "agent"
+      },
+      "after_hash": "sha256:null",
+      "before_hash": "sha256:null",
+      "caveats": [],
+      "id": "vev_7b1d300ee4c2d66f",
+      "kind": "attempt.claimed",
+      "payload": {
+        "claimant_actor": "agent:canopus-local",
+        "claimant_pubkey": "ccb3c2e5b938af8ac2f94b5ce5d828a892a48d31003a0abf07e3675094d07604",
+        "lease_ttl_seconds": 86400,
+        "obligation_id": "erdos:1056"
+      },
+      "reason": "obligation lease (swarm coordination)",
+      "schema": "vela.event.v0.1",
+      "signature": "v1:cbf0035314099ed150b574084791f0bec678e67a8bcbb767caf3c46d5ab244cef5551bff987556065a910d667a4521f9dd08f25659a89fac7d5cbe799e1f8c00",
+      "target": {
+        "id": "erdos:1056",
+        "type": "finding"
+      },
+      "timestamp": "2026-07-25T10:10:29.080730+00:00"
     },
     {
       "actor": {
@@ -421927,7 +421952,7 @@
     },
     "confidence_update_count": 0,
     "contested": 0,
-    "event_count": 2191,
+    "event_count": 2192,
     "evidence_atom_count": 2770,
     "findings": 2770,
     "gaps": 7,
