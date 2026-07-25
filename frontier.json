@@ -5,7 +5,7 @@
     "events_manifest": "proof/events.manifest.jsonl",
     "generated_at": "2026-07-25T10:10:29.080730+00:00",
     "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
-    "legacy_snapshot_root": "sha256:cd440b117bd9a4ed2672b400dbfc84d9bb4677c5bda0edff983dcedc2aff4903",
+    "legacy_snapshot_root": "sha256:0b4b356bed9bba4c9d31a2ab46c9898d4f72593f744be4c0457a8ee8eb74c224",
     "lockfile": "vela.lock",
     "materialized_from": ".vela/events/",
     "profile_root": "sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27d666f",
@@ -371862,6 +371862,132 @@
     },
     {
       "actor": {
+        "id": "agent:canopus-local",
+        "type": "agent"
+      },
+      "caveats": [
+        "Manual findings require evidence review before scientific use."
+      ],
+      "created_at": "2026-07-25T10:13:14.680338+00:00",
+      "id": "vpr_4a9068064a0c441c",
+      "kind": "finding.add",
+      "payload": {
+        "finding": {
+          "assertion": {
+            "direction": null,
+            "relation": null,
+            "text": "Computed the exact registered search over primes in 10428801..10429000 and produced the required artifact bytes; verifier confirmation remains pending outside this worker.",
+            "type": "computational"
+          },
+          "conditions": {
+            "duration": null,
+            "text": "Record vrc_cffe6d97a81437e0 (signed; recorded against the current head). Receipt: sha256:7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435. Caveats: The worker handed off without verifier authority; Canopus subsequently recorded the separate verifier outcome. | Producer status success indicates a contract-complete candidate artifact was produced, not verifier passage or scientific acceptance. | Declared verifier outcome: passed. | Canopus produced this record; it is not a human acceptance decision.. Artifacts: 3 hash-verified at propose."
+          },
+          "confidence": {
+            "basis": "operator-supplied frontier prior; review required",
+            "extraction_confidence": 1.0,
+            "kind": "frontier_epistemic",
+            "method": "expert_judgment",
+            "score": 0.3
+          },
+          "created": "2026-07-25T10:13:14.681075+00:00",
+          "evidence": {
+            "evidence_spans": [
+              {
+                "artifact_kind": "text/plain",
+                "artifact_locator": "records/artifacts/sha256/ce808e3f27edf7571b8d4f4a5c7a1ffc4041642568a4aa409bfda8c8801bb4e0",
+                "artifact_sha256": "ce808e3f27edf7571b8d4f4a5c7a1ffc4041642568a4aa409bfda8c8801bb4e0",
+                "section": "artifacts[0]",
+                "source": "records/receipts/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
+                "text": "Computed the exact registered search over primes in 10428801..10429000 and produced the required artifact bytes; verifier confirmation remains pending outside this worker."
+              },
+              {
+                "artifact_kind": "engine-manifest",
+                "artifact_locator": "records/artifacts/sha256/c21bc6dd9ddab27e75e25b19b03ea05a2029c4440d48ed2d062813556f732ee5",
+                "artifact_sha256": "c21bc6dd9ddab27e75e25b19b03ea05a2029c4440d48ed2d062813556f732ee5",
+                "section": "artifacts[1]",
+                "source": "records/receipts/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
+                "text": "Computed the exact registered search over primes in 10428801..10429000 and produced the required artifact bytes; verifier confirmation remains pending outside this worker."
+              },
+              {
+                "artifact_kind": "verifier-manifest",
+                "artifact_locator": "records/artifacts/sha256/faf5395d6b3cb9a7f4f7262b1e3257dcc3bb4aff3bfacb7aab6a0384d4f4590e",
+                "artifact_sha256": "faf5395d6b3cb9a7f4f7262b1e3257dcc3bb4aff3bfacb7aab6a0384d4f4590e",
+                "section": "artifacts[2]",
+                "source": "records/receipts/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
+                "text": "Computed the exact registered search over primes in 10428801..10429000 and produced the required artifact bytes; verifier confirmation remains pending outside this worker."
+              }
+            ],
+            "method": "manual state transition",
+            "model_system": "",
+            "replicated": false,
+            "replication_count": null,
+            "type": "computational"
+          },
+          "flags": {
+            "contested": false,
+            "declining": false,
+            "gap": false,
+            "gravity_well": false,
+            "negative_space": false,
+            "retracted": false
+          },
+          "id": "vf_96bf786ccaeba3a3",
+          "links": [],
+          "previous_version": null,
+          "provenance": {
+            "authors": [
+              {
+                "name": "agent:canopus-local",
+                "orcid": null
+              }
+            ],
+            "doi": null,
+            "extraction": {
+              "extracted_at": "2026-07-25T10:13:14.680338+00:00",
+              "extractor_version": "vela/0.915.1",
+              "method": "manual_curation",
+              "model": null,
+              "model_version": null
+            },
+            "review": {
+              "corrections": [],
+              "reviewed": false,
+              "reviewed_at": null,
+              "reviewer": null
+            },
+            "source_type": "model_output",
+            "title": "record:vrc_cffe6d97a81437e0",
+            "year": null
+          },
+          "updated": null,
+          "version": 1
+        },
+        "vela_submission": {
+          "operation_id": "vop_5f16ee9a4ed3144e721b59795c855347b37c4888ff0ebdb221eefa9af84cce2e",
+          "receipt_path": "records/receipts/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
+          "receipt_root": "sha256:7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435",
+          "record_id": "vrc_cffe6d97a81437e0",
+          "review_material_path": "records/review/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
+          "schema": "vela.submission-links.internal.v1"
+        }
+      },
+      "reason": "Manual finding added to frontier state",
+      "schema": "vela.proposal.v0.1",
+      "source_refs": [
+        "record:vrc_cffe6d97a81437e0",
+        "records/receipts/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
+        "records/review/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
+        "sha256:7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435"
+      ],
+      "status": "pending_review",
+      "target": {
+        "id": "vf_96bf786ccaeba3a3",
+        "type": "finding"
+      }
+    },
+    {
+      "actor": {
         "id": "agent:claude",
         "type": "agent"
       },
@@ -421966,7 +422092,7 @@
     },
     "links": 1282,
     "negative_space": 0,
-    "proposal_count": 109,
+    "proposal_count": 110,
     "replicated": 0,
     "review_event_count": 93,
     "source_count": 2720,

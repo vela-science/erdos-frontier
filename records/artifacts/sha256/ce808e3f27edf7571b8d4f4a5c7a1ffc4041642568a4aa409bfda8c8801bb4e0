@@ -1,0 +1,11 @@
+schema=canopus.erdos1056-k15-search.v1
+status=negative
+problem=1056
+k=15
+range_start=10428801
+range_end=10429000
+primes_tested=15
+max_multiplicity=11
+best_p=10428809
+best_residue=2766139
+cuts=1239805,2194742,3639446,3689698,4980437,5214971,5789517,7845139,7987248,8442522,9116816
