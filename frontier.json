@@ -375815,7 +375815,10 @@
         "records/review/sha256/7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435.json",
         "sha256:7a7c728516e79da3f25ac1f6c10c30908949b6aba118dc9752f61b90b4a96435"
       ],
-      "status": "pending_review",
+      "status": "rejected",
+      "reviewed_by": "local:device-sha256:67fbb8e56377e6868e9f941524e0bf39cfb4fd2a4bfdd25c2edb93fc82f86213|uid:501",
+      "reviewed_at": "2026-07-26T14:39:19Z",
+      "decision_reason": "The bounded producer result and Receipt remain preserved, but no independent verifier attachment establishes the retained artifact at this frontier head. Producer-reported completion is evidence, not scientific acceptance.",
       "caveats": [
         "Manual findings require evidence review before scientific use."
       ]
@@ -422316,7 +422319,7 @@
     "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
     "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
     "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
-    "legacy_snapshot_root": "sha256:217c305f95ac0fd9a8eecf0493638fd4d08229aff05f5111e58cb8e5cc793404",
+    "legacy_snapshot_root": "sha256:845ed13214db0f8a1fbdb81805bc17ed3d459da040814c35f89eda5e66cf3cf8",
     "event_log_root": "sha256:d35b11555988458d28a971b0c882c6f42c27e0d4ca47df3080bc9872d51c7096",
     "vela_reducer": "vela@0.930.0-rc.7"
   }
