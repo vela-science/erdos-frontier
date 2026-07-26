@@ -1,28 +1,28 @@
 {
-  "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
-  "event_count": 2192,
-  "event_log_root": "sha256:cbfa8ff683e44a0abfef9388d48496f0efee60595ae070d415f013ca8c3129c4",
-  "freshness": "fresh",
+  "schema": "vela.frontier_repo_proof.v1",
   "frontier_id": "vfr_0a25edabc16db143",
+  "profile_root": "sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27d666f",
   "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
-  "legacy_snapshot_root": "sha256:cd440b117bd9a4ed2672b400dbfc84d9bb4677c5bda0edff983dcedc2aff4903",
-  "materialized_at": "2026-07-25T10:10:29.080730+00:00",
+  "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
+  "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
+  "legacy_snapshot_root": "sha256:217c305f95ac0fd9a8eecf0493638fd4d08229aff05f5111e58cb8e5cc793404",
+  "event_log_root": "sha256:d35b11555988458d28a971b0c882c6f42c27e0d4ca47df3080bc9872d51c7096",
+  "proposal_root": "sha256:0cc58eaff0941b7105f4078f6a5bbfaa6b3df682b6c3a469c4d7a8976e6fa2d3",
+  "reducer": {
+    "name": "vela",
+    "version": "0.930.0-rc.7",
+    "package": "vela@0.930.0-rc.7",
+    "digest": "sha256:360246df4ad38aa46a6d9ee155724fd72f806de039316c5c1fdb380f4481d20b"
+  },
+  "materialized_at": "2026-07-26T01:31:41Z",
+  "freshness": "fresh",
+  "event_count": 2193,
   "paths": {
-    "events_authority": ".vela/events/",
-    "events_manifest": "proof/events.manifest.jsonl",
     "frontier": "frontier.json",
     "lockfile": "vela.lock",
+    "events_authority": ".vela/events/",
+    "events_manifest": "proof/events.manifest.jsonl",
     "replay_trace": "proof/replay.trace.jsonl"
   },
-  "profile_root": "sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27d666f",
-  "proposal_root": "sha256:c975fd10f75934265baf1d0c2c7701ac36125b6d29cf9214df369fedc98ac9c5",
-  "reducer": {
-    "digest": "sha256:899180e33040c904949e6c2edb29a22ea50e202c472c44ea27426bb3ff9e169f",
-    "name": "vela",
-    "package": "vela@0.915.1",
-    "version": "0.915.1"
-  },
-  "schema": "vela.frontier_repo_proof.v1",
-  "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
   "warning": "Generated integrity evidence. Scientific acceptance remains event-derived."
 }

@@ -13,7 +13,7 @@ packets/
 # candidate stream
 activity/
 # vela.activity-record receipts — superseded by the signed events they mirror
-records/
+/records/
 /.vela/agents/
 /.vela/keys/
 /.vela/operation-journals/
