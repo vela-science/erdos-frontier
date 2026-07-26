@@ -1,24 +1,24 @@
 schema: vela.frontier_lock.v1
 generated_at: 2026-07-26T01:31:41Z
-vela_version: 0.930.0-rc.7
+vela_version: 0.930.0-rc.12
 frontier_id: vfr_0a25edabc16db143
 profile_root: sha256:ee310fae5233e48f5b190dbdc34e9a14d273dedab35ee7c5faee4a2ce27d666f
 identity_root: sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45
 dependency_root: sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1
 scientific_state_root: sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316
-legacy_snapshot_root: sha256:845ed13214db0f8a1fbdb81805bc17ed3d459da040814c35f89eda5e66cf3cf8
+legacy_snapshot_root: sha256:ac0bf397d26ad7de11a0f1d9da3c45cdf23977a7cd5b49832947eafb5973f126
 event_log_root: sha256:d35b11555988458d28a971b0c882c6f42c27e0d4ca47df3080bc9872d51c7096
 event_count: 2193
-proposal_root: sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e
+proposal_root: sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0
 canonicalization:
   json: vela-canonical-json-v0.1
   yaml: vela-yaml-v0.1
 reducer:
-  package: vela@0.930.0-rc.7
-  digest: sha256:360246df4ad38aa46a6d9ee155724fd72f806de039316c5c1fdb380f4481d20b
+  package: vela@0.930.0-rc.12
+  digest: sha256:74a12d88206a32e2ae1dffa1567d89396cb05f5279bcf7883c1e44a4c443a586
 verifiers:
-  package: vela-verify@0.930.0-rc.7
-  digest: sha256:81d2863ccf3db1c4e0e588d4572bedd5e7b3fb9902074b741a1a04daf43e85bc
+  package: vela-verify@0.930.0-rc.12
+  digest: sha256:886ff576657787f98b3e5a0d0976eb03c90f69e52fa6710fc1fc1c9e9d6aeaf2
   kinds:
   - balanced_coloring
   - binom_deficiency
@@ -39,12 +39,12 @@ verifiers:
   - unit_fraction_decomp
   - unsat_cert
 sources_hash: sha256:8fbb6f845dd131bfc00cd56afdee122aa9b2e55d72c574bc054b2554b01aa444
-artifacts_hash: sha256:83301db15f57d895f07ba224e8393d4188f9669225962b7b8fa0583683098774
+artifacts_hash: sha256:09412ce55701bb75da005e35bf5e053080ac324d9e9c1d7b6b2780b459066d61
 review_hash: sha256:4d2dea43f30482364752cf60a24d68ccc915b1f2aee6946f474a268a1e3968d3
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:9be716cfe89d5a5c9d1beef4e0469707a4f050985402e2d2ff9c192c71a8833d
+  digest: sha256:73d8ec5e1fd08462414532c2e7525713eca009b1b4ab67aeffc2ce7f0853389d
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl

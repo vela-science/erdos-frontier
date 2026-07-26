@@ -6,7 +6,7 @@
     "name": "Erdős formalization fidelity",
     "description": "A rooted audit of Erdős problem statements, formalizations, proof artifacts, attempts, residual obligations, and signed statement-fidelity decisions.",
     "compiled_at": "2026-06-16T04:17:07.953333+00:00",
-    "compiler": "vela/0.930.0-rc.7",
+    "compiler": "vela/0.930.0-rc.12",
     "papers_processed": 0,
     "errors": 0,
     "dependencies": []
@@ -39,7 +39,7 @@
     "source_count": 2720,
     "evidence_atom_count": 2770,
     "condition_record_count": 2770,
-    "proposal_count": 110,
+    "proposal_count": 111,
     "confidence_distribution": {
       "high_gt_80": 6,
       "medium_60_80": 0,
@@ -381234,6 +381234,132 @@
     },
     {
       "schema": "vela.proposal.v0.1",
+      "id": "vpr_d94b6b3bbe4c80ed",
+      "kind": "finding.add",
+      "target": {
+        "type": "finding",
+        "id": "vf_aa08eb8225eabe1d"
+      },
+      "actor": {
+        "id": "agent:canopus-local",
+        "type": "agent"
+      },
+      "created_at": "2026-07-26T22:51:38Z",
+      "reason": "Manual finding added to frontier state",
+      "payload": {
+        "finding": {
+          "id": "vf_aa08eb8225eabe1d",
+          "version": 1,
+          "previous_version": null,
+          "assertion": {
+            "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
+            "type": "computational",
+            "relation": null,
+            "direction": null
+          },
+          "evidence": {
+            "type": "computational",
+            "model_system": "",
+            "method": "manual state transition",
+            "replicated": false,
+            "replication_count": null,
+            "evidence_spans": [
+              {
+                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+                "section": "artifacts[0]",
+                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
+                "artifact_kind": "text/plain",
+                "artifact_locator": "records/artifacts/sha256/b369f29c3dfe777401375eeb47f682d20d89ca0387deaf600d791c01f98da9c0",
+                "artifact_sha256": "b369f29c3dfe777401375eeb47f682d20d89ca0387deaf600d791c01f98da9c0"
+              },
+              {
+                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+                "section": "artifacts[1]",
+                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
+                "artifact_kind": "engine-manifest",
+                "artifact_locator": "records/artifacts/sha256/864a1b5623f6026adaf914fa6dc96c976c996a32c674100c980fbb61065af6be",
+                "artifact_sha256": "864a1b5623f6026adaf914fa6dc96c976c996a32c674100c980fbb61065af6be"
+              },
+              {
+                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+                "section": "artifacts[2]",
+                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
+                "artifact_kind": "verifier-manifest",
+                "artifact_locator": "records/artifacts/sha256/45e36852e3f27c6bd6623b19f6cc7f63071b9a6eab0ff08cfc873f12cfd70553",
+                "artifact_sha256": "45e36852e3f27c6bd6623b19f6cc7f63071b9a6eab0ff08cfc873f12cfd70553"
+              }
+            ]
+          },
+          "conditions": {
+            "text": "Record vrc_cf95c5a1210f62e1 (signed; recorded against the current head). Receipt: sha256:816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b. Caveats: The worker handed off without verifier authority; Canopus subsequently recorded the separate verifier outcome. | Declared verifier outcome: passed. | Canopus produced this record; it is not a human acceptance decision.. Artifacts: 3 hash-verified at propose.",
+            "duration": null
+          },
+          "confidence": {
+            "kind": "frontier_epistemic",
+            "score": 0.3,
+            "basis": "operator-supplied frontier prior; review required",
+            "method": "expert_judgment",
+            "extraction_confidence": 1.0
+          },
+          "provenance": {
+            "source_type": "model_output",
+            "doi": null,
+            "title": "record:vrc_cf95c5a1210f62e1",
+            "authors": [
+              {
+                "name": "agent:canopus-local",
+                "orcid": null
+              }
+            ],
+            "year": null,
+            "extraction": {
+              "method": "manual_curation",
+              "model": null,
+              "model_version": null,
+              "extracted_at": "2026-07-26T22:51:38Z",
+              "extractor_version": "vela/0.930.0-rc.12"
+            },
+            "review": {
+              "reviewed": false,
+              "reviewer": null,
+              "reviewed_at": null,
+              "corrections": []
+            }
+          },
+          "flags": {
+            "gap": false,
+            "negative_space": false,
+            "contested": false,
+            "retracted": false,
+            "declining": false,
+            "gravity_well": false
+          },
+          "links": [],
+          "created": "2026-07-26T22:51:38.157401+00:00",
+          "updated": null
+        },
+        "vela_submission": {
+          "schema": "vela.submission-links.internal.v1",
+          "receipt_root": "sha256:816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b",
+          "receipt_path": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+          "record_id": "vrc_cf95c5a1210f62e1",
+          "operation_id": "vop_ebb7453dfc40881a9684556cea849df6c8fdcca0ada0abd68cfb71aa8db9a231",
+          "review_material_path": "records/review/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json"
+        }
+      },
+      "source_refs": [
+        "record:vrc_cf95c5a1210f62e1",
+        "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+        "records/review/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+        "sha256:816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b"
+      ],
+      "status": "pending_review",
+      "caveats": [
+        "Manual findings require evidence review before scientific use."
+      ]
+    },
+    {
+      "schema": "vela.proposal.v0.1",
       "id": "vpr_d961460c751e844a",
       "kind": "finding.add",
       "target": {
@@ -422319,8 +422445,8 @@
     "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
     "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
     "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
-    "legacy_snapshot_root": "sha256:845ed13214db0f8a1fbdb81805bc17ed3d459da040814c35f89eda5e66cf3cf8",
+    "legacy_snapshot_root": "sha256:ac0bf397d26ad7de11a0f1d9da3c45cdf23977a7cd5b49832947eafb5973f126",
     "event_log_root": "sha256:d35b11555988458d28a971b0c882c6f42c27e0d4ca47df3080bc9872d51c7096",
-    "vela_reducer": "vela@0.930.0-rc.7"
+    "vela_reducer": "vela@0.930.0-rc.12"
   }
 }

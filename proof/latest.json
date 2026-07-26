@@ -5,14 +5,14 @@
   "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
   "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
   "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
-  "legacy_snapshot_root": "sha256:217c305f95ac0fd9a8eecf0493638fd4d08229aff05f5111e58cb8e5cc793404",
+  "legacy_snapshot_root": "sha256:ac0bf397d26ad7de11a0f1d9da3c45cdf23977a7cd5b49832947eafb5973f126",
   "event_log_root": "sha256:d35b11555988458d28a971b0c882c6f42c27e0d4ca47df3080bc9872d51c7096",
-  "proposal_root": "sha256:0cc58eaff0941b7105f4078f6a5bbfaa6b3df682b6c3a469c4d7a8976e6fa2d3",
+  "proposal_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
   "reducer": {
     "name": "vela",
-    "version": "0.930.0-rc.7",
-    "package": "vela@0.930.0-rc.7",
-    "digest": "sha256:360246df4ad38aa46a6d9ee155724fd72f806de039316c5c1fdb380f4481d20b"
+    "version": "0.930.0-rc.12",
+    "package": "vela@0.930.0-rc.12",
+    "digest": "sha256:74a12d88206a32e2ae1dffa1567d89396cb05f5279bcf7883c1e44a4c443a586"
   },
   "materialized_at": "2026-07-26T01:31:41Z",
   "freshness": "fresh",
