@@ -6,7 +6,7 @@
     "name": "Erdős formalization fidelity",
     "description": "A rooted audit of Erdős problem statements, formalizations, proof artifacts, attempts, residual obligations, and signed statement-fidelity decisions.",
     "compiled_at": "2026-06-16T04:17:07.953333+00:00",
-    "compiler": "vela/0.930.0-rc.12",
+    "compiler": "vela/0.930.0-rc.13",
     "papers_processed": 0,
     "errors": 0,
     "dependencies": []
@@ -35,7 +35,7 @@
     "human_reviewed": 6,
     "review_event_count": 93,
     "confidence_update_count": 0,
-    "event_count": 2193,
+    "event_count": 2199,
     "source_count": 2720,
     "evidence_atom_count": 2770,
     "condition_record_count": 2770,
@@ -322852,6 +322852,30 @@
     },
     {
       "schema": "vela.event.v0.1",
+      "id": "vev_6839b1de40b694cf",
+      "kind": "attempt.claimed",
+      "target": {
+        "type": "finding",
+        "id": "erdos:124"
+      },
+      "actor": {
+        "id": "agent:canopus-local",
+        "type": "agent"
+      },
+      "timestamp": "2026-07-26T04:49:36Z",
+      "reason": "obligation lease (swarm coordination)",
+      "before_hash": "sha256:null",
+      "after_hash": "sha256:null",
+      "payload": {
+        "claimant_actor": "agent:canopus-local",
+        "claimant_pubkey": "1e1e4186c80575757b743e6ccd4763959ad3d46d19045aff53b4ddcb98f6a981",
+        "lease_ttl_seconds": 300,
+        "obligation_id": "erdos:124"
+      },
+      "caveats": []
+    },
+    {
+      "schema": "vela.event.v0.1",
       "id": "vev_6857de37fb123830",
       "kind": "anchor.attached",
       "target": {
@@ -338504,6 +338528,30 @@
     },
     {
       "schema": "vela.event.v0.1",
+      "id": "vev_9a749e38c3271001",
+      "kind": "attempt.claimed",
+      "target": {
+        "type": "finding",
+        "id": "erdos:124"
+      },
+      "actor": {
+        "id": "agent:codex",
+        "type": "agent"
+      },
+      "timestamp": "2026-07-26T03:37:21Z",
+      "reason": "obligation lease (swarm coordination)",
+      "before_hash": "sha256:null",
+      "after_hash": "sha256:null",
+      "payload": {
+        "claimant_actor": "agent:codex",
+        "claimant_pubkey": "7f32741f43066444783728437aa9b9b5a9bf756c50dcc540a5a7d1e5f7e8959a",
+        "lease_ttl_seconds": 86400,
+        "obligation_id": "erdos:124"
+      },
+      "caveats": []
+    },
+    {
+      "schema": "vela.event.v0.1",
       "id": "vev_9a78b2aa20469c3b",
       "kind": "anchor.attached",
       "target": {
@@ -340859,6 +340907,32 @@
           "signer_pubkey_hex": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
           "target": "vf_7746daa976a29829"
         }
+      },
+      "caveats": []
+    },
+    {
+      "schema": "vela.event.v0.1",
+      "id": "vev_a1deed577d06421c",
+      "kind": "attempt.claimed",
+      "target": {
+        "type": "finding",
+        "id": "erdos:124"
+      },
+      "actor": {
+        "id": "agent:codex",
+        "type": "agent"
+      },
+      "timestamp": "2026-07-26T03:38:40Z",
+      "reason": "Completed repository-authority claim/release migration verification; no scientific work was attempted.",
+      "before_hash": "sha256:null",
+      "after_hash": "sha256:null",
+      "payload": {
+        "claimant_actor": "agent:codex",
+        "claimant_pubkey": "7f32741f43066444783728437aa9b9b5a9bf756c50dcc540a5a7d1e5f7e8959a",
+        "lease_ttl_seconds": 0,
+        "obligation_id": "erdos:124",
+        "prior_claim_event_id": "vev_9a749e38c3271001",
+        "release_reason": "Completed repository-authority claim/release migration verification; no scientific work was attempted."
       },
       "caveats": []
     },
@@ -368500,6 +368574,30 @@
     },
     {
       "schema": "vela.event.v0.1",
+      "id": "vev_f1eaf0d5685de1de",
+      "kind": "attempt.claimed",
+      "target": {
+        "type": "finding",
+        "id": "erdos:1056"
+      },
+      "actor": {
+        "id": "agent:canopus-local",
+        "type": "agent"
+      },
+      "timestamp": "2026-07-26T22:48:04Z",
+      "reason": "obligation lease (swarm coordination)",
+      "before_hash": "sha256:null",
+      "after_hash": "sha256:null",
+      "payload": {
+        "claimant_actor": "agent:canopus-local",
+        "claimant_pubkey": "4a3971da2cbf18d9993b164edde2aab6082d0bca11bc4ba3753d9dab143d12af",
+        "lease_ttl_seconds": 86400,
+        "obligation_id": "erdos:1056"
+      },
+      "caveats": []
+    },
+    {
+      "schema": "vela.event.v0.1",
       "id": "vev_f20cfcee4cd2e895",
       "kind": "anchor.attached",
       "target": {
@@ -370666,6 +370764,34 @@
     },
     {
       "schema": "vela.event.v0.1",
+      "id": "vev_f8b17cd2bce186a5",
+      "kind": "review.rejected",
+      "target": {
+        "type": "proposal",
+        "id": "vpr_4a9068064a0c441c"
+      },
+      "actor": {
+        "id": "local:device-sha256:67fbb8e56377e6868e9f941524e0bf39cfb4fd2a4bfdd25c2edb93fc82f86213|uid:501",
+        "type": "human"
+      },
+      "timestamp": "2026-07-26T14:39:19Z",
+      "reason": "The bounded producer result and Receipt remain preserved, but no independent verifier attachment establishes the retained artifact at this frontier head. Producer-reported completion is evidence, not scientific acceptance.",
+      "before_hash": "sha256:null",
+      "after_hash": "sha256:null",
+      "payload": {
+        "proposal_id": "vpr_4a9068064a0c441c",
+        "proposal_kind": "finding.add",
+        "provenance": {
+          "input_refs": [
+            "urn:vela:decision-root:sha256:9600921f988763ac434bfa75edf4a2a9f27beb25156cce4b51848b6e90a73eab"
+          ]
+        },
+        "verdict": "rejected"
+      },
+      "caveats": []
+    },
+    {
+      "schema": "vela.event.v0.1",
       "id": "vev_f8e6d2fbe16bab03",
       "kind": "statement.attested",
       "target": {
@@ -372707,6 +372833,32 @@
           "signer_pubkey_hex": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
           "target": "vf_bd1c7ff131a985ca"
         }
+      },
+      "caveats": []
+    },
+    {
+      "schema": "vela.event.v0.1",
+      "id": "vev_fd9e3b57acc23ae8",
+      "kind": "attempt.claimed",
+      "target": {
+        "type": "finding",
+        "id": "erdos:124"
+      },
+      "actor": {
+        "id": "agent:canopus-local",
+        "type": "agent"
+      },
+      "timestamp": "2026-07-26T04:50:33Z",
+      "reason": "Repository-authority producer-path qualification completed; no scientific result was attempted.",
+      "before_hash": "sha256:null",
+      "after_hash": "sha256:null",
+      "payload": {
+        "claimant_actor": "agent:canopus-local",
+        "claimant_pubkey": "1e1e4186c80575757b743e6ccd4763959ad3d46d19045aff53b4ddcb98f6a981",
+        "lease_ttl_seconds": 0,
+        "obligation_id": "erdos:124",
+        "prior_claim_event_id": "vev_6839b1de40b694cf",
+        "release_reason": "Repository-authority producer-path qualification completed; no scientific result was attempted."
       },
       "caveats": []
     },
@@ -381248,103 +381400,103 @@
       "reason": "Manual finding added to frontier state",
       "payload": {
         "finding": {
-          "id": "vf_aa08eb8225eabe1d",
-          "version": 1,
-          "previous_version": null,
           "assertion": {
-            "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
-            "type": "computational",
+            "direction": null,
             "relation": null,
-            "direction": null
-          },
-          "evidence": {
-            "type": "computational",
-            "model_system": "",
-            "method": "manual state transition",
-            "replicated": false,
-            "replication_count": null,
-            "evidence_spans": [
-              {
-                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
-                "section": "artifacts[0]",
-                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
-                "artifact_kind": "text/plain",
-                "artifact_locator": "records/artifacts/sha256/b369f29c3dfe777401375eeb47f682d20d89ca0387deaf600d791c01f98da9c0",
-                "artifact_sha256": "b369f29c3dfe777401375eeb47f682d20d89ca0387deaf600d791c01f98da9c0"
-              },
-              {
-                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
-                "section": "artifacts[1]",
-                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
-                "artifact_kind": "engine-manifest",
-                "artifact_locator": "records/artifacts/sha256/864a1b5623f6026adaf914fa6dc96c976c996a32c674100c980fbb61065af6be",
-                "artifact_sha256": "864a1b5623f6026adaf914fa6dc96c976c996a32c674100c980fbb61065af6be"
-              },
-              {
-                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
-                "section": "artifacts[2]",
-                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
-                "artifact_kind": "verifier-manifest",
-                "artifact_locator": "records/artifacts/sha256/45e36852e3f27c6bd6623b19f6cc7f63071b9a6eab0ff08cfc873f12cfd70553",
-                "artifact_sha256": "45e36852e3f27c6bd6623b19f6cc7f63071b9a6eab0ff08cfc873f12cfd70553"
-              }
-            ]
+            "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending.",
+            "type": "computational"
           },
           "conditions": {
-            "text": "Record vrc_cf95c5a1210f62e1 (signed; recorded against the current head). Receipt: sha256:816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b. Caveats: The worker handed off without verifier authority; Canopus subsequently recorded the separate verifier outcome. | Declared verifier outcome: passed. | Canopus produced this record; it is not a human acceptance decision.. Artifacts: 3 hash-verified at propose.",
-            "duration": null
+            "duration": null,
+            "text": "Record vrc_cf95c5a1210f62e1 (signed; recorded against the current head). Receipt: sha256:816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b. Caveats: The worker handed off without verifier authority; Canopus subsequently recorded the separate verifier outcome. | Declared verifier outcome: passed. | Canopus produced this record; it is not a human acceptance decision.. Artifacts: 3 hash-verified at propose."
           },
           "confidence": {
-            "kind": "frontier_epistemic",
-            "score": 0.3,
             "basis": "operator-supplied frontier prior; review required",
+            "extraction_confidence": 1.0,
+            "kind": "frontier_epistemic",
             "method": "expert_judgment",
-            "extraction_confidence": 1.0
+            "score": 0.3
           },
+          "created": "2026-07-26T22:51:38.157401+00:00",
+          "evidence": {
+            "evidence_spans": [
+              {
+                "artifact_kind": "text/plain",
+                "artifact_locator": "records/artifacts/sha256/b369f29c3dfe777401375eeb47f682d20d89ca0387deaf600d791c01f98da9c0",
+                "artifact_sha256": "b369f29c3dfe777401375eeb47f682d20d89ca0387deaf600d791c01f98da9c0",
+                "section": "artifacts[0]",
+                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending."
+              },
+              {
+                "artifact_kind": "engine-manifest",
+                "artifact_locator": "records/artifacts/sha256/864a1b5623f6026adaf914fa6dc96c976c996a32c674100c980fbb61065af6be",
+                "artifact_sha256": "864a1b5623f6026adaf914fa6dc96c976c996a32c674100c980fbb61065af6be",
+                "section": "artifacts[1]",
+                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending."
+              },
+              {
+                "artifact_kind": "verifier-manifest",
+                "artifact_locator": "records/artifacts/sha256/45e36852e3f27c6bd6623b19f6cc7f63071b9a6eab0ff08cfc873f12cfd70553",
+                "artifact_sha256": "45e36852e3f27c6bd6623b19f6cc7f63071b9a6eab0ff08cfc873f12cfd70553",
+                "section": "artifacts[2]",
+                "source": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+                "text": "Computed the exact bounded search over primes in 10429001..10429200 with the registered flat-table algorithm and an independent in-workspace cross-check for the selected prime/residue/cut fiber; produced the required artifact bytes. Separate verifier execution remains pending."
+              }
+            ],
+            "method": "manual state transition",
+            "model_system": "",
+            "replicated": false,
+            "replication_count": null,
+            "type": "computational"
+          },
+          "flags": {
+            "contested": false,
+            "declining": false,
+            "gap": false,
+            "gravity_well": false,
+            "negative_space": false,
+            "retracted": false
+          },
+          "id": "vf_aa08eb8225eabe1d",
+          "links": [],
+          "previous_version": null,
           "provenance": {
-            "source_type": "model_output",
-            "doi": null,
-            "title": "record:vrc_cf95c5a1210f62e1",
             "authors": [
               {
                 "name": "agent:canopus-local",
                 "orcid": null
               }
             ],
-            "year": null,
+            "doi": null,
             "extraction": {
+              "extracted_at": "2026-07-26T22:51:38Z",
+              "extractor_version": "vela/0.930.0-rc.12",
               "method": "manual_curation",
               "model": null,
-              "model_version": null,
-              "extracted_at": "2026-07-26T22:51:38Z",
-              "extractor_version": "vela/0.930.0-rc.12"
+              "model_version": null
             },
             "review": {
+              "corrections": [],
               "reviewed": false,
-              "reviewer": null,
               "reviewed_at": null,
-              "corrections": []
-            }
+              "reviewer": null
+            },
+            "source_type": "model_output",
+            "title": "record:vrc_cf95c5a1210f62e1",
+            "year": null
           },
-          "flags": {
-            "gap": false,
-            "negative_space": false,
-            "contested": false,
-            "retracted": false,
-            "declining": false,
-            "gravity_well": false
-          },
-          "links": [],
-          "created": "2026-07-26T22:51:38.157401+00:00",
-          "updated": null
+          "updated": null,
+          "version": 1
         },
         "vela_submission": {
-          "schema": "vela.submission-links.internal.v1",
-          "receipt_root": "sha256:816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b",
-          "receipt_path": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
-          "record_id": "vrc_cf95c5a1210f62e1",
           "operation_id": "vop_ebb7453dfc40881a9684556cea849df6c8fdcca0ada0abd68cfb71aa8db9a231",
-          "review_material_path": "records/review/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json"
+          "receipt_path": "records/receipts/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+          "receipt_root": "sha256:816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b",
+          "record_id": "vrc_cf95c5a1210f62e1",
+          "review_material_path": "records/review/sha256/816c7a1c3b355706eeb24aa30755b0d83d83489084dff64ce401ce80b0b26f5b.json",
+          "schema": "vela.submission-links.internal.v1"
         }
       },
       "source_refs": [
@@ -422435,7 +422587,7 @@
   "_warning": "Generated by Vela. Do not edit frontier.json directly; use Vela's task-first receipt, signing, materialization, and proof commands.",
   "_meta": {
     "schema": "vela.frontier_state_meta.v1",
-    "generated_at": "2026-07-26T01:31:41Z",
+    "generated_at": "2026-07-26T22:48:04Z",
     "materialized_from": ".vela/events/",
     "proof": "proof/latest.json",
     "lockfile": "vela.lock",
@@ -422445,8 +422597,8 @@
     "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
     "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
     "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
-    "legacy_snapshot_root": "sha256:ac0bf397d26ad7de11a0f1d9da3c45cdf23977a7cd5b49832947eafb5973f126",
-    "event_log_root": "sha256:d35b11555988458d28a971b0c882c6f42c27e0d4ca47df3080bc9872d51c7096",
-    "vela_reducer": "vela@0.930.0-rc.12"
+    "legacy_snapshot_root": "sha256:dbf0214489500a64b7592816bdb15bade66e0b7dfd2571d6618efd57c6042edc",
+    "event_log_root": "sha256:6296b8b7ec8f2863292e9da54c733dbcb4a302ed89eed616c9e390db153a0426",
+    "vela_reducer": "vela@0.930.0-rc.13"
   }
 }
