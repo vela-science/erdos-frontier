@@ -12,8 +12,11 @@ packets/
 # transient search-witness scratch; accepted findings are committed, not the
 # candidate stream
 activity/
-# vela.activity-record receipts — superseded by the signed events they mirror
-/records/
+# vela.activity-record receipts — superseded by the signed events they mirror.
+# Scoped to the receipts themselves: the current epoch stores signed claim,
+# submission, verification, and registration records under records/, and
+# repository.json references them by path.
+/records/vrc_*.json
 /.vela/agents/
 /.vela/keys/
 /.vela/operation-journals/
