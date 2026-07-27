@@ -1,17 +1,17 @@
-schema: vela.frontier-profile.v1
+schema: vela.frontier-profile.v2
 frontier_id: vfr_0a25edabc16db143
 name: Erdős formalization fidelity
 summary: A rooted audit of Erdős problem statements, formalizations, proof artifacts, attempts, residual obligations, and signed statement-fidelity decisions.
 scope:
   question: Which Erdős problem records are supported by exact, reproducible formal or computational evidence, and what remains unresolved or conditional?
   includes:
-    - The pinned 1,217-problem corpus, formal statements, proof records, attempts, residual obligations, witnesses, source locks, and signed fidelity decisions.
-    - Bounded work packets and verifier results that remain distinct from scientific acceptance.
+  - The pinned 1,217-problem corpus, formal statements, proof records, attempts, residual obligations, witnesses, source locks, and signed fidelity decisions.
+  - Bounded work packets and verifier results that remain distinct from scientific acceptance.
   excludes:
-    - Treating upstream status, verifier success, Git publication, or graph position as scientific acceptance.
-    - Treating bounded negative search as a universal nonexistence result.
+  - Treating upstream status, verifier success, Git publication, or graph position as scientific acceptance.
+  - Treating bounded negative search as a universal nonexistence result.
 maintainers:
-  - williamjblair
+- williamjblair
 license:
   content: CC-BY-4.0
   code: Apache-2.0
