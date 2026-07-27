@@ -65,6 +65,7 @@ def test_external_target_candidate_writes_only_seal_inputs(tmp_path, monkeypatch
         separators=(",", ":"),
     ).encode()
     monkeypatch.setattr(work, "HERE", tmp_path)
+    monkeypatch.setattr(work, "PROBLEM_DIR", tmp_path / "site" / "problems")
     monkeypatch.setattr(work, "TARGET_INDEX_CANDIDATE_PATH", candidate)
     monkeypatch.setattr(
         work,
@@ -85,6 +86,11 @@ def test_external_target_candidate_writes_only_seal_inputs(tmp_path, monkeypatch
     assert external.read_bytes() == candidate_bytes
     assert not candidate.exists()
     assert not unrelated.exists()
+
+    work.write_outputs()
+
+    assert candidate.read_bytes() == candidate_bytes
+    assert unrelated.read_bytes() == b'{"derived":true}'
 
 
 def test_exact_inventory_lenses_and_corpus_coverage():

@@ -3667,7 +3667,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_0dafa95e010040a4",
       "trust": "recorded"
     },
@@ -3676,7 +3676,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_113aed3795936596",
       "trust": "recorded"
     },
@@ -3685,7 +3685,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_75180631e660bb22",
       "trust": "recorded"
     },
@@ -3694,7 +3694,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_81fdde564da0b1db",
       "trust": "recorded"
     },
@@ -3703,7 +3703,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_a0d9607651720925",
       "trust": "recorded"
     },
@@ -3712,7 +3712,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_a4c6faa9cd3638c9",
       "trust": "recorded"
     },
@@ -3721,7 +3721,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_ba38fa1f70e47e97",
       "trust": "recorded"
     },
@@ -3730,7 +3730,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_c267001fd53978a2",
       "trust": "recorded"
     },
@@ -3739,7 +3739,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_e1f84b3df6176057",
       "trust": "recorded"
     },
@@ -3748,7 +3748,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_ea0c7dc317f8b6e3",
       "trust": "recorded"
     },
@@ -3757,7 +3757,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_ed8c9ab64b4ff8f7",
       "trust": "recorded"
     },
@@ -3766,7 +3766,7 @@
       "inferred": false,
       "relation": "drafted",
       "source": "producer:5ba993a58cb70ca5",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "vpr_f374ac37dbbacf9d",
       "trust": "recorded"
     },
@@ -45148,7 +45148,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_0dafa95e010040a4",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:727",
       "trust": "recorded"
     },
@@ -45157,7 +45157,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_113aed3795936596",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:730",
       "trust": "recorded"
     },
@@ -45166,7 +45166,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_75180631e660bb22",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:686",
       "trust": "recorded"
     },
@@ -45175,7 +45175,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_81fdde564da0b1db",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:699",
       "trust": "recorded"
     },
@@ -45184,7 +45184,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_a0d9607651720925",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:617",
       "trust": "recorded"
     },
@@ -45193,7 +45193,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_a4c6faa9cd3638c9",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:686",
       "trust": "recorded"
     },
@@ -45202,7 +45202,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_ba38fa1f70e47e97",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:154",
       "trust": "recorded"
     },
@@ -45211,7 +45211,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_c267001fd53978a2",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:23",
       "trust": "recorded"
     },
@@ -45220,7 +45220,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_e1f84b3df6176057",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:730",
       "trust": "recorded"
     },
@@ -45229,7 +45229,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_ea0c7dc317f8b6e3",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:699",
       "trust": "recorded"
     },
@@ -45238,7 +45238,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_ed8c9ab64b4ff8f7",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:727",
       "trust": "recorded"
     },
@@ -45247,7 +45247,7 @@
       "inferred": false,
       "relation": "proposes",
       "source": "vpr_f374ac37dbbacf9d",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "target": "erdos:23",
       "trust": "recorded"
     },
@@ -62926,7 +62926,7 @@
       "label": "agent:erdos-campaign-review-draft",
       "path": "review/developed-campaign-proposals.v1.yaml",
       "plane": "proposal",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "trust": "recorded"
     },
     {
@@ -94622,7 +94622,7 @@
       "path": "frontier.json#vpr_0dafa95e010040a4",
       "plane": "proposal",
       "proposal_key": "erdos-727-explicit-dickson-ap12-conditional",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94641,7 +94641,7 @@
       "path": "frontier.json#vpr_113aed3795936596",
       "plane": "proposal",
       "proposal_key": "erdos-730-first-power-fixed-upper-slope",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94660,7 +94660,7 @@
       "path": "frontier.json#vpr_75180631e660bb22",
       "plane": "proposal",
       "proposal_key": "erdos-686-final-residual-equivalence",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94679,7 +94679,7 @@
       "path": "frontier.json#vpr_81fdde564da0b1db",
       "plane": "proposal",
       "proposal_key": "erdos-699-c2-no-survivor-and-global-rungs",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94698,7 +94698,7 @@
       "path": "frontier.json#vpr_a0d9607651720925",
       "plane": "proposal",
       "proposal_key": "erdos-617-r5-extension-demand-reduction",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94717,7 +94717,7 @@
       "path": "frontier.json#vpr_a4c6faa9cd3638c9",
       "plane": "proposal",
       "proposal_key": "erdos-686-two-terminal-hypotheses",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94736,7 +94736,7 @@
       "path": "frontier.json#vpr_ba38fa1f70e47e97",
       "plane": "proposal",
       "proposal_key": "erdos-154-sumset-residue-distribution",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94755,7 +94755,7 @@
       "path": "frontier.json#vpr_c267001fd53978a2",
       "plane": "proposal",
       "proposal_key": "erdos-23-two-defect-internal-cost-closure",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94774,7 +94774,7 @@
       "path": "frontier.json#vpr_e1f84b3df6176057",
       "plane": "proposal",
       "proposal_key": "erdos-730-exhaustive-cover-and-budget",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94793,7 +94793,7 @@
       "path": "frontier.json#vpr_ea0c7dc317f8b6e3",
       "plane": "proposal",
       "proposal_key": "erdos-699-c2-reduced-divisor-equivalence",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94812,7 +94812,7 @@
       "path": "frontier.json#vpr_ed8c9ab64b4ff8f7",
       "plane": "proposal",
       "proposal_key": "erdos-727-explicit-dickson-ap12-supply",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94831,7 +94831,7 @@
       "path": "frontier.json#vpr_f374ac37dbbacf9d",
       "plane": "proposal",
       "proposal_key": "erdos-23-post-two-defect-residual",
-      "source_root": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+      "source_root": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
       "statement_fidelity": "pending_human_review",
       "status": "pending_review",
       "trust": "recorded"
@@ -94925,7 +94925,7 @@
       "trust": "machine_reproduced"
     }
   ],
-  "proposal_state_hash": "sha256:19e79fc93ddc3059864a6729554754ace818a05257be28bd4ed604dc7bdb091e",
+  "proposal_state_hash": "sha256:736f39b0babeadf562c3ddd957d52047024ec7e286236950fbc5a8530a153bf0",
   "recovered_records_sha256": "sha256:6f1065cebe99314827abfc78b60d0389948f9ebf6a529200061fd636b7b92582",
   "review_pack_sha256": "sha256:7a36e1bf14b692e8ccca8633f4cff4e2b8ecd753cd3cd62d824f4671b4cea31f",
   "schema": "vela.frontier_graph.v0.1",

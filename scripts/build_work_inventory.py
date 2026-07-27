@@ -2512,7 +2512,11 @@ def write_outputs(target_candidate_output: pathlib.Path | None = None) -> dict:
         }
 
     for path, data in selected_outputs.items():
-        destination = target_candidate_output if path == TARGET_INDEX_CANDIDATE_PATH else path
+        destination = (
+            target_candidate_output
+            if path == TARGET_INDEX_CANDIDATE_PATH and target_candidate_output is not None
+            else path
+        )
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(data)
     if target_candidate_output is None:
