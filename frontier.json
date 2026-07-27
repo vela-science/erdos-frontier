@@ -35,11 +35,11 @@
     "human_reviewed": 6,
     "review_event_count": 93,
     "confidence_update_count": 0,
-    "event_count": 2199,
+    "event_count": 2193,
     "source_count": 2720,
     "evidence_atom_count": 2770,
     "condition_record_count": 2770,
-    "proposal_count": 111,
+    "proposal_count": 112,
     "confidence_distribution": {
       "high_gt_80": 6,
       "medium_60_80": 0,
@@ -322852,30 +322852,6 @@
     },
     {
       "schema": "vela.event.v0.1",
-      "id": "vev_6839b1de40b694cf",
-      "kind": "attempt.claimed",
-      "target": {
-        "type": "finding",
-        "id": "erdos:124"
-      },
-      "actor": {
-        "id": "agent:canopus-local",
-        "type": "agent"
-      },
-      "timestamp": "2026-07-26T04:49:36Z",
-      "reason": "obligation lease (swarm coordination)",
-      "before_hash": "sha256:null",
-      "after_hash": "sha256:null",
-      "payload": {
-        "claimant_actor": "agent:canopus-local",
-        "claimant_pubkey": "1e1e4186c80575757b743e6ccd4763959ad3d46d19045aff53b4ddcb98f6a981",
-        "lease_ttl_seconds": 300,
-        "obligation_id": "erdos:124"
-      },
-      "caveats": []
-    },
-    {
-      "schema": "vela.event.v0.1",
       "id": "vev_6857de37fb123830",
       "kind": "anchor.attached",
       "target": {
@@ -338528,30 +338504,6 @@
     },
     {
       "schema": "vela.event.v0.1",
-      "id": "vev_9a749e38c3271001",
-      "kind": "attempt.claimed",
-      "target": {
-        "type": "finding",
-        "id": "erdos:124"
-      },
-      "actor": {
-        "id": "agent:codex",
-        "type": "agent"
-      },
-      "timestamp": "2026-07-26T03:37:21Z",
-      "reason": "obligation lease (swarm coordination)",
-      "before_hash": "sha256:null",
-      "after_hash": "sha256:null",
-      "payload": {
-        "claimant_actor": "agent:codex",
-        "claimant_pubkey": "7f32741f43066444783728437aa9b9b5a9bf756c50dcc540a5a7d1e5f7e8959a",
-        "lease_ttl_seconds": 86400,
-        "obligation_id": "erdos:124"
-      },
-      "caveats": []
-    },
-    {
-      "schema": "vela.event.v0.1",
       "id": "vev_9a78b2aa20469c3b",
       "kind": "anchor.attached",
       "target": {
@@ -340907,32 +340859,6 @@
           "signer_pubkey_hex": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
           "target": "vf_7746daa976a29829"
         }
-      },
-      "caveats": []
-    },
-    {
-      "schema": "vela.event.v0.1",
-      "id": "vev_a1deed577d06421c",
-      "kind": "attempt.claimed",
-      "target": {
-        "type": "finding",
-        "id": "erdos:124"
-      },
-      "actor": {
-        "id": "agent:codex",
-        "type": "agent"
-      },
-      "timestamp": "2026-07-26T03:38:40Z",
-      "reason": "Completed repository-authority claim/release migration verification; no scientific work was attempted.",
-      "before_hash": "sha256:null",
-      "after_hash": "sha256:null",
-      "payload": {
-        "claimant_actor": "agent:codex",
-        "claimant_pubkey": "7f32741f43066444783728437aa9b9b5a9bf756c50dcc540a5a7d1e5f7e8959a",
-        "lease_ttl_seconds": 0,
-        "obligation_id": "erdos:124",
-        "prior_claim_event_id": "vev_9a749e38c3271001",
-        "release_reason": "Completed repository-authority claim/release migration verification; no scientific work was attempted."
       },
       "caveats": []
     },
@@ -368574,30 +368500,6 @@
     },
     {
       "schema": "vela.event.v0.1",
-      "id": "vev_f1eaf0d5685de1de",
-      "kind": "attempt.claimed",
-      "target": {
-        "type": "finding",
-        "id": "erdos:1056"
-      },
-      "actor": {
-        "id": "agent:canopus-local",
-        "type": "agent"
-      },
-      "timestamp": "2026-07-26T22:48:04Z",
-      "reason": "obligation lease (swarm coordination)",
-      "before_hash": "sha256:null",
-      "after_hash": "sha256:null",
-      "payload": {
-        "claimant_actor": "agent:canopus-local",
-        "claimant_pubkey": "4a3971da2cbf18d9993b164edde2aab6082d0bca11bc4ba3753d9dab143d12af",
-        "lease_ttl_seconds": 86400,
-        "obligation_id": "erdos:1056"
-      },
-      "caveats": []
-    },
-    {
-      "schema": "vela.event.v0.1",
       "id": "vev_f20cfcee4cd2e895",
       "kind": "anchor.attached",
       "target": {
@@ -370764,34 +370666,6 @@
     },
     {
       "schema": "vela.event.v0.1",
-      "id": "vev_f8b17cd2bce186a5",
-      "kind": "review.rejected",
-      "target": {
-        "type": "proposal",
-        "id": "vpr_4a9068064a0c441c"
-      },
-      "actor": {
-        "id": "local:device-sha256:67fbb8e56377e6868e9f941524e0bf39cfb4fd2a4bfdd25c2edb93fc82f86213|uid:501",
-        "type": "human"
-      },
-      "timestamp": "2026-07-26T14:39:19Z",
-      "reason": "The bounded producer result and Receipt remain preserved, but no independent verifier attachment establishes the retained artifact at this frontier head. Producer-reported completion is evidence, not scientific acceptance.",
-      "before_hash": "sha256:null",
-      "after_hash": "sha256:null",
-      "payload": {
-        "proposal_id": "vpr_4a9068064a0c441c",
-        "proposal_kind": "finding.add",
-        "provenance": {
-          "input_refs": [
-            "urn:vela:decision-root:sha256:9600921f988763ac434bfa75edf4a2a9f27beb25156cce4b51848b6e90a73eab"
-          ]
-        },
-        "verdict": "rejected"
-      },
-      "caveats": []
-    },
-    {
-      "schema": "vela.event.v0.1",
       "id": "vev_f8e6d2fbe16bab03",
       "kind": "statement.attested",
       "target": {
@@ -372833,32 +372707,6 @@
           "signer_pubkey_hex": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
           "target": "vf_bd1c7ff131a985ca"
         }
-      },
-      "caveats": []
-    },
-    {
-      "schema": "vela.event.v0.1",
-      "id": "vev_fd9e3b57acc23ae8",
-      "kind": "attempt.claimed",
-      "target": {
-        "type": "finding",
-        "id": "erdos:124"
-      },
-      "actor": {
-        "id": "agent:canopus-local",
-        "type": "agent"
-      },
-      "timestamp": "2026-07-26T04:50:33Z",
-      "reason": "Repository-authority producer-path qualification completed; no scientific result was attempted.",
-      "before_hash": "sha256:null",
-      "after_hash": "sha256:null",
-      "payload": {
-        "claimant_actor": "agent:canopus-local",
-        "claimant_pubkey": "1e1e4186c80575757b743e6ccd4763959ad3d46d19045aff53b4ddcb98f6a981",
-        "lease_ttl_seconds": 0,
-        "obligation_id": "erdos:124",
-        "prior_claim_event_id": "vev_6839b1de40b694cf",
-        "release_reason": "Repository-authority producer-path qualification completed; no scientific result was attempted."
       },
       "caveats": []
     },
@@ -379611,6 +379459,134 @@
       "applied_event_id": "vev_a985a2739a941b89",
       "caveats": [
         "Manual findings require evidence review before scientific use."
+      ]
+    },
+    {
+      "schema": "vela.proposal.v0.1",
+      "id": "vpr_a983c9305332b0a8",
+      "kind": "finding.add",
+      "target": {
+        "type": "finding",
+        "id": "vf_6e8f08edac62ff26"
+      },
+      "actor": {
+        "id": "agent:canopus-local",
+        "type": "agent"
+      },
+      "created_at": "2026-07-27T12:37:24Z",
+      "reason": "Register an authenticated producer Submission for review",
+      "payload": {
+        "finding": {
+          "id": "vf_6e8f08edac62ff26",
+          "version": 1,
+          "previous_version": null,
+          "assertion": {
+            "text": "Exhaustive bounded search over primes in 10429201..10429400 completed and produced a contract-complete candidate artifact; independent verifier replay remains pending.",
+            "type": "computational",
+            "relation": null,
+            "direction": null
+          },
+          "evidence": {
+            "type": "computational",
+            "model_system": "",
+            "method": "manual state transition",
+            "replicated": false,
+            "replication_count": null,
+            "evidence_spans": [
+              {
+                "source": "records/submissions/sha256/f7cc30f6415fd8bf43590d381eb0fd3f2ea73d43a6450c7df5007b493b378de0.json",
+                "artifact_path": "records/artifacts/sha256/05fe0c9d4fcee762ca2fe9047fcafb49deaa40e8ef2ea41a055fff98e7e4fb80",
+                "artifact_kind": "text/plain",
+                "artifact_sha256": "sha256:05fe0c9d4fcee762ca2fe9047fcafb49deaa40e8ef2ea41a055fff98e7e4fb80",
+                "start": 0,
+                "end": 0
+              },
+              {
+                "source": "records/submissions/sha256/f7cc30f6415fd8bf43590d381eb0fd3f2ea73d43a6450c7df5007b493b378de0.json",
+                "artifact_path": "records/artifacts/sha256/08ef872cae720db549df6ad31ebc472f6a21df44ef27a7957c9675fdd05a8184",
+                "artifact_kind": "engine-manifest",
+                "artifact_sha256": "sha256:08ef872cae720db549df6ad31ebc472f6a21df44ef27a7957c9675fdd05a8184",
+                "start": 0,
+                "end": 0
+              },
+              {
+                "source": "records/submissions/sha256/f7cc30f6415fd8bf43590d381eb0fd3f2ea73d43a6450c7df5007b493b378de0.json",
+                "artifact_path": "records/artifacts/sha256/027880be852b58afad761cd840c014c80e7ce75ce94a674af91606dbf507ec58",
+                "artifact_kind": "verifier-manifest",
+                "artifact_sha256": "sha256:027880be852b58afad761cd840c014c80e7ce75ce94a674af91606dbf507ec58",
+                "start": 0,
+                "end": 0
+              }
+            ]
+          },
+          "conditions": {
+            "text": "The frozen verifier independently recomputes the full exact range in a separate network-denied and write-denied container and byte-matches the single artifact.",
+            "duration": null
+          },
+          "confidence": {
+            "kind": "frontier_epistemic",
+            "score": 0.5,
+            "basis": "operator-supplied frontier prior; review required",
+            "method": "expert_judgment",
+            "extraction_confidence": 1.0
+          },
+          "provenance": {
+            "source_type": "vela_submission",
+            "doi": null,
+            "title": "Submission vsb_ce7f0f4d4b6a4c40",
+            "authors": [
+              {
+                "name": "agent:canopus-local",
+                "orcid": null
+              }
+            ],
+            "year": null,
+            "extraction": {
+              "method": "manual_curation",
+              "model": null,
+              "model_version": null,
+              "extracted_at": "2026-07-27T12:37:24Z",
+              "extractor_version": "vela/0.930.0-rc.13"
+            },
+            "review": {
+              "reviewed": false,
+              "reviewer": null,
+              "reviewed_at": null,
+              "corrections": []
+            }
+          },
+          "flags": {
+            "gap": false,
+            "negative_space": false,
+            "contested": false,
+            "retracted": false,
+            "declining": false,
+            "gravity_well": false
+          },
+          "links": [],
+          "created": "2026-07-27T12:37:24.014076+00:00",
+          "updated": null
+        },
+        "submission": {
+          "schema": "vela.submission-proposal-links.internal.v1",
+          "submission_id": "vsb_ce7f0f4d4b6a4c40",
+          "submission_root": "sha256:f7cc30f6415fd8bf43590d381eb0fd3f2ea73d43a6450c7df5007b493b378de0",
+          "submission_path": "records/submissions/sha256/f7cc30f6415fd8bf43590d381eb0fd3f2ea73d43a6450c7df5007b493b378de0.json",
+          "operation_id": "vop_3b23a4521eb76f45f7e2b3be2ffabb28b43f7abf67b58803456ed9aabd3cea0a"
+        }
+      },
+      "source_refs": [
+        "records/artifacts/sha256/027880be852b58afad761cd840c014c80e7ce75ce94a674af91606dbf507ec58",
+        "records/artifacts/sha256/05fe0c9d4fcee762ca2fe9047fcafb49deaa40e8ef2ea41a055fff98e7e4fb80",
+        "records/artifacts/sha256/08ef872cae720db549df6ad31ebc472f6a21df44ef27a7957c9675fdd05a8184",
+        "records/submissions/sha256/f7cc30f6415fd8bf43590d381eb0fd3f2ea73d43a6450c7df5007b493b378de0.json"
+      ],
+      "status": "pending_review",
+      "caveats": [
+        "Canopus produced this record; it is not a Verification Record or Decision.",
+        "Declared verifier outcome: passed.",
+        "Registration records producer input; it does not verify or accept the claim.",
+        "The worker handed off without verifier authority; Canopus subsequently recorded the separate verifier outcome."
       ]
     },
     {
@@ -422587,7 +422563,7 @@
   "_warning": "Generated by Vela. Do not edit frontier.json directly; use Vela's task-first receipt, signing, materialization, and proof commands.",
   "_meta": {
     "schema": "vela.frontier_state_meta.v1",
-    "generated_at": "2026-07-26T22:48:04Z",
+    "generated_at": "2026-07-26T01:31:41Z",
     "materialized_from": ".vela/events/",
     "proof": "proof/latest.json",
     "lockfile": "vela.lock",
@@ -422597,8 +422573,8 @@
     "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
     "dependency_root": "sha256:d8f392a60bb52245b61b62abd3ae7b5f711efb490f7c1953d544c7b3eec5adf1",
     "scientific_state_root": "sha256:540d4967071425f77c693e61f62053208b07d67667490dcb9eeef62ec3f1d316",
-    "legacy_snapshot_root": "sha256:dbf0214489500a64b7592816bdb15bade66e0b7dfd2571d6618efd57c6042edc",
-    "event_log_root": "sha256:6296b8b7ec8f2863292e9da54c733dbcb4a302ed89eed616c9e390db153a0426",
+    "legacy_snapshot_root": "sha256:907f21634d7371ac3d11043a1fd585e6e4980d680f64f96c5adea3bede684862",
+    "event_log_root": "sha256:d35b11555988458d28a971b0c882c6f42c27e0d4ca47df3080bc9872d51c7096",
     "vela_reducer": "vela@0.930.0-rc.13"
   }
 }
