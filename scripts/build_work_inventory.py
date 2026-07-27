@@ -2498,18 +2498,28 @@ def build_outputs() -> tuple[dict[pathlib.Path, bytes], dict]:
 
 def write_outputs(target_candidate_output: pathlib.Path | None = None) -> dict:
     outputs, summary = build_outputs()
-    for path, data in outputs.items():
-        destination = (
-            target_candidate_output
-            if path == TARGET_INDEX_CANDIDATE_PATH and target_candidate_output is not None
-            else path
-        )
+    selected_outputs = outputs
+    if target_candidate_output is not None:
+        candidate = json.loads(outputs[TARGET_INDEX_CANDIDATE_PATH])
+        packet_paths = {
+            HERE / target["packet"]["path"]
+            for target in candidate["targets"]
+        }
+        selected_outputs = {
+            path: data
+            for path, data in outputs.items()
+            if path == TARGET_INDEX_CANDIDATE_PATH or path in packet_paths
+        }
+
+    for path, data in selected_outputs.items():
+        destination = target_candidate_output if path == TARGET_INDEX_CANDIDATE_PATH else path
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(data)
-    expected_shards = {path.name for path in outputs if path.parent == PROBLEM_DIR}
-    for stale in PROBLEM_DIR.glob("*.json"):
-        if stale.name not in expected_shards:
-            stale.unlink()
+    if target_candidate_output is None:
+        expected_shards = {path.name for path in outputs if path.parent == PROBLEM_DIR}
+        for stale in PROBLEM_DIR.glob("*.json"):
+            if stale.name not in expected_shards:
+                stale.unlink()
     return summary
 
 

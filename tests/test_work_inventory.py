@@ -47,6 +47,46 @@ def test_generated_inventory_is_current_and_deterministic():
     )
 
 
+def test_external_target_candidate_writes_only_seal_inputs(tmp_path, monkeypatch):
+    packet = tmp_path / "site" / "problems" / "1056.json"
+    candidate = tmp_path / ".vela" / "tmp" / "target-index-candidate.json"
+    unrelated = tmp_path / "graph" / "frontier-map.json"
+    external = tmp_path / "external-candidate.json"
+    candidate_bytes = json.dumps(
+        {
+            "targets": [
+                {
+                    "packet": {
+                        "path": "site/problems/1056.json",
+                    },
+                },
+            ],
+        },
+        separators=(",", ":"),
+    ).encode()
+    monkeypatch.setattr(work, "HERE", tmp_path)
+    monkeypatch.setattr(work, "TARGET_INDEX_CANDIDATE_PATH", candidate)
+    monkeypatch.setattr(
+        work,
+        "build_outputs",
+        lambda: (
+            {
+                packet: b'{"schema":"erdos-frontier.problem-work.v1"}',
+                candidate: candidate_bytes,
+                unrelated: b'{"derived":true}',
+            },
+            {"counts": {}, "migration": {}, "operational": {}},
+        ),
+    )
+
+    work.write_outputs(external)
+
+    assert packet.is_file()
+    assert external.read_bytes() == candidate_bytes
+    assert not candidate.exists()
+    assert not unrelated.exists()
+
+
 def test_exact_inventory_lenses_and_corpus_coverage():
     index = _work_index()
     assert index["schema"] == "erdos-frontier.work-index.v1"
