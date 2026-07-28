@@ -10,29 +10,22 @@ Generated from VELA.md. Edit VELA.md and run `vela agents sync`; do not edit her
 
 Agents may:
 
-- inspect state, ranked targets, graph slices, provenance, proposals, and
-  schemas
-- claim one target with `vela work` as an explicit `agent:` actor
-- run local frozen verifiers and the focused frontier checks
-- land one scoped Receipt v1 through the claimed work session
-- draft retirement of a malformed or obsolete artifact; the result remains
-  pending until a human decides it
-- inspect the newest-first review queue and one exact Decision Brief
-- when a task supplies a full `vpr_` ID, begin with `vela review show`; a
-  rejected proposal's candidate finding is absent from accepted `finding show`
-  and `log` views by design, not because its evidence was deleted
-- prepare and invoke one root-bound protected decision request; only the
-  registered human may approve or decline its exact decision card
-- regenerate derived views with `vela frontier materialize .`
+- inspect current state, graph slices, provenance, objects, and schemas
+- start one offered target with an explicit `agent:` actor when a current
+  Target Index exists
+- run local frozen verifiers and focused frontier checks
+- register one signed, scoped Submission from their Attempt
+- inspect the review queue and exact Proposal, Registration, Verification, and
+  Claim records
 - draft Formal Conjectures statements, run their mechanical gates, and prepare
   keyless handoff artifacts
 
 Agents may not:
 
-- run legacy `vela sign`, approve a protected decision card, sign a policy, or
-  claim that requesting a decision accepted or rejected a proposal
-- read, handle, or use a human private key, or put a model in a trust path
-- hand-edit `.vela/`, `frontier.json`, `vela.lock`, or `proof/`
+- invoke repository-authority decisions or use repository-authority credentials
+- claim that a Submission, Verification Record, Git commit, or model answer is
+  scientific acceptance
+- hand-edit `.vela/authority/`, `.vela/repository.json`, or retained records
 - link `formal_proof` to a machine-conditional proof or rephrase an upstream
   problem statement
 - publish an outward Formal Conjectures contribution in a human's name

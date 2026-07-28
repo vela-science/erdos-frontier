@@ -26,65 +26,57 @@ Two axes, one trust rule:
 
 ## How the pieces fit
 
-The product loop is deliberately small:
+The current repository loop is deliberately small:
 
-1. **Produce.** Any suitable tool can produce a proof, computation, note, or
-   portable Receipt v1. Canopus is optional producer scaffolding.
-2. **Preserve.** This Git repository preserves the canonical frontier history
-   and content-addressed evidence.
-3. **Check.** Vela replays the event log, checks signatures and roots, and runs
-   the declared verifiers.
-4. **Decide.** Signed policy or one protected, proposal-specific human decision
-   controls whether a truth-bearing proposal changes accepted state.
-5. **Reuse.** The Observatory and other replaceable, read-only consumers help
-   people inspect, reproduce, and continue the work. They hold no authority.
+1. **Inspect.** `status`, `show`, and `why` expose exact repository objects.
+2. **Attempt.** `next` and `start` bind one bounded target when a current Target
+   Index is configured.
+3. **Submit.** A producer registers one signed Submission. It cannot create a
+   Verification Record, Decision, Event, or accepted claim.
+4. **Verify.** Independent, signed Verification Records report scoped checks.
+5. **Decide.** Repository authority accepts or refuses one exact Proposal.
+6. **Reuse.** Git and read-only consumers transport and project the result
+   without acquiring authority.
 
 ## Verify it yourself
 
-The Observatory is a read-only projection. Accepted scientific state is the
-replayable event log under [`.vela/`](.vela/) (Vela frontier
-`vfr_0a25edabc16db143`); external catalogue and proof inputs are commit-pinned
-in the source registry:
+The Observatory is a read-only projection. The current repository epoch is
+declared by [`.vela/epoch.json`](.vela/epoch.json); its accepted and pending
+objects are indexed by [`.vela/repository.json`](.vela/repository.json), with
+signed repository authority under [`.vela/authority/`](.vela/authority/) and
+content-addressed scientific records under [`records/`](records/). External
+catalogue and proof inputs remain commit-pinned:
 
 ```bash
 git clone https://github.com/vela-science/erdos-frontier
 cd erdos-frontier
-vela check . --json       # replay and the applied retirement event pass
+vela check . --strict --json
 vela status . --json
+vela review show . vpr_533385002e7c3ac9 --json
 ```
 
-`vela check . --strict` also promotes the catalogue's declared-data condition
-debt and historical unsigned writes to a failing proof-readiness gate. The
-current 1,217-problem import keeps that debt visible rather than pretending
-every reference row is proof-ready. On 2026-07-16 a key-custody human applied
-proposal `vpr_12b236db3fc0b409`, retiring the unsupported prelaunch active-policy
-byte pair without changing scientific state. The frontier now has no active
-policy and is intentionally human-only for future truth-bearing decisions.
+Strict verification passes for the migrated current epoch. The signed epoch
+record binds predecessor tag `pre-current-epoch/c236b4fdedb2`; historical event
+and policy details remain available there without remaining in the active
+runtime.
 
-Everything under [`site/`](site/) is a generated compatibility projection.
-`frontier.json` and `vela.lock` are also replayed materializations. None of
-these files confers authority by itself.
+Everything under [`site/`](site/) is a generated catalogue projection. It is
+useful for reading and interoperability but confers no authority.
 
 ## Native Vela work surface
 
-The repository is the complete 1,217-problem Erdős work atlas, not merely its
-read projection. [`targets.json`](targets.json) gives every problem a stable
-`erdos:<n>` handle and an exact digest for its full packet under
-[`site/problems/`](site/problems/). Each packet joins the upstream statement
-and status, formal theorem and proof records, attempts, residual obligations,
-dependencies, witnesses, source locks, and trust labels.
+The repository contains the complete 1,217-problem Erdős catalogue and its
+derived problem packets. The migrated current epoch does not yet declare a
+current Target Index, so `vela next` correctly returns no offers. The catalogue
+must not be mistaken for an authority-bearing work queue.
 
 ```bash
 vela next . --json
-vela work erdos:1056 --frontier . --as agent:<you> --json
-vela reproduce .
 ```
 
-`next` ranks current open, unpaused problems and loads only the selected
-packet. Solved, disproved, independent, or in-flight entries stay out of the
-suggestion queue but remain directly addressable for inspection and
-reproduction. The index and packets are derived, deletable briefing
-projections; only signed Vela events carry accepted truth.
+The next engineering step is to derive and review a current-format Target Index
+from the exact catalogue. Until then, inspect claims with `vela show` and
+`vela why`, and use the domain-specific audit commands below.
 
 ## Sources
 
@@ -132,10 +124,6 @@ bash scripts/graph.sh blast cond:maynard-tao  # what does retracting an input un
 bash scripts/graph.sh serve                   # inspect the local derived graph
 ```
 
-The repo also ships [`.mcp.json`](.mcp.json): an MCP client opened here gets
-the read surface plus nonfinalizing `work` and `land` operations. The draft
-profile has no decision tool.
-
 ## Contributing
 
 Two paths, detailed in [CONTRIBUTING.md](CONTRIBUTING.md): host a proof the
@@ -144,12 +132,10 @@ audit reads, or land a portable Receipt v1 through Vela's task-first loop.
 [STANDARD_CHECK.md](STANDARD_CHECK.md) is the proposal for a layered
 statement-review check upstream in formal-conjectures.
 
-Agents use `vela next -> work -> land` and stop. For a deferred truth-bearing
-proposal, an agent may prepare one key-free plan with
-`vela review decide . <vpr_id> --accept|--reject --reason <text> --json`.
-Only the registered human may approve the resulting protected, root-bound
-decision card. Historical statement-fidelity attestations remain immutable
-audit material.
+Agents use `status -> next -> start -> submit` and stop after registering a
+Submission. Verification and repository-authority decisions are separate
+records. Historical statement-fidelity attestations remain immutable audit
+material through the signed predecessor boundary.
 
 [`overrides.yaml`](overrides.yaml) is the only hand-maintained classification
 input. Use it for facts the sources cannot know: a mismatched quantifier, a
