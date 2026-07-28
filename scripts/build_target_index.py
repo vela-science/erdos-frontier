@@ -17,7 +17,6 @@ INDEX_PATH = ROOT / "targets.json"
 PACKET_PATH = ROOT / "site" / "problems" / "1056.json"
 INPUT_PATHS = [
     "scripts/build_target_index.py",
-    "site/problems/1056.json",
 ]
 TARGET = {
     "id": "erdos:1056",
