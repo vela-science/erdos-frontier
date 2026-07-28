@@ -1,0 +1,53 @@
+{
+  "object": "ErdosProblemResolutionDraft",
+  "version": 1,
+  "status": "draft_not_banked",
+  "problem": 427,
+  "title": "Erdos #427 prime-sum divisibility from Shiu's theorem",
+  "official": {
+    "url": "https://www.erdosproblems.com/427",
+    "status_read_utc": "2026-06-05",
+    "status_on_page": "PROVED (LEAN)",
+    "statement": "Is it true that, for every n and d, there exists k such that d divides p_{n+1}+...+p_{n+k}, where p_r denotes the rth prime?"
+  },
+  "claim": {
+    "answer": "yes",
+    "scope": "For all n >= 0 and all d >= 1, there exists k >= 1 such that d divides the sum of k consecutive primes starting at the (n+1)-st prime, in the 0-indexed Lean convention.",
+    "candidate_acceptance_category": "R",
+    "candidate_deliverable_grade": "resolution_candidate_pending_opus_gate",
+    "trust_gate_status": "not_banked"
+  },
+  "proof_boundary": {
+    "external_theorem": "Shiu's theorem on arbitrarily late strings of consecutive primes in a reduced residue class.",
+    "external_theorem_citation": "D. K. L. Shiu, Strings of congruent primes, J. London Math. Soc. 61 (2000), 359-373.",
+    "external_theorem_url": "https://academic.oup.com/jlms/article/61/2/359/870705",
+    "external_theorem_doi": "10.1112/S0024610799007863",
+    "lean_boundary": "The Lean source represents Shiu's theorem by exactly one axiom, shiu_consecutive_primes, and mechanically checks the reduction from that axiom to Erdős #427.",
+    "not_claimed": "This packet does not formalize Shiu's theorem itself inside Lean and does not edit the trust ledger."
+  },
+  "proof_source": {
+    "path": "examples/erdos-problems/attack/erdos427-shiu-reduction/Erdos427.external.lean",
+    "source_url": "https://gist.githubusercontent.com/JohnEdwardJennings/e2c6ef0daab55857b7cc9d340de7af84/raw/8ff97800e38582c71246a238e7541a9d69488cbd/Erdos427.lean",
+    "license_header": "Apache 2.0 in source header",
+    "sha256": "792a4b5fab29e5855fbcb1115d54e28a054d8fcf7ee2bd5589834a73b387c052"
+  },
+  "exact_range_covered": {
+    "lean_reduction": "all n>=0,d>=1 conditional on shiu_consecutive_primes",
+    "modular_cleanup_grid": "d=1..512, residues=0..d-1, complete",
+    "bounded_direct_prime_sum_smoke": "n=0..24, d=1..64, k=1..5000, complete over that bounded box"
+  },
+  "verifier": {
+    "path": "scripts/verify-canopus-erdos427-shiu-reduction-v1.py",
+    "commands": [
+      "python3 scripts/verify-canopus-erdos427-shiu-reduction-v1.py --verify-draft",
+      "lake env lean /Users/williamblair/personal/vela/examples/erdos-problems/attack/erdos427-shiu-reduction/Erdos427.external.lean"
+    ],
+    "reproduce_py_registered": true
+  },
+  "adversarial_probe": {
+    "probe": "Residue cleanup is checked independently for every residue modulo every d<=512, including the r=0 case where the proof adds d Shiu primes rather than zero primes.",
+    "result": "survived"
+  },
+  "attempt_ledger_touched": false,
+  "morning_handoff": "Opus should independently re-run the verifier, inspect the Shiu literature dependency, confirm the official statement mapping, and only then bank if the trust gate accepts the external theorem boundary."
+}

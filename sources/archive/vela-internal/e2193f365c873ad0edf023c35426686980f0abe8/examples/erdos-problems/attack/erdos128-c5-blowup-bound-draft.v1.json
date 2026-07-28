@@ -1,0 +1,48 @@
+{
+  "object": "Erdos128C5BlowupBoundDraft",
+  "version": 1,
+  "problem": 128,
+  "official_source": "https://www.erdosproblems.com/128",
+  "claim_status": "Exact continuous obstruction for weighted C5 blow-ups only. This does not solve Erd\u0151s #128.",
+  "statement": "For every weighted blow-up of C5 with part weights x_i >= 0 and sum x_i = 1, there is a fractional half-subgraph with C5 edge density at most 1/50. The balanced blow-up attains equality.",
+  "proof": [
+    "Let z_i = x_i + x_{i+2}, indices modulo 5.",
+    "If some z_i >= 1/2, take half the mass from the two nonadjacent parts i and i+2; this gives edge density 0.",
+    "Otherwise z_i < 1/2 for every i. For each i, take all mass from parts i and i+2 and fill delta_i = 1/2 - z_i from a neighbour of the smaller of x_i and x_{i+2}.",
+    "The resulting half-subgraph has edge density h_i = delta_i * min(x_i, x_{i+2}).",
+    "Since min(x_i, x_{i+2}) <= z_i/2, h_i <= z_i*(1/2-z_i)/2.",
+    "If h_i > 1/50 for every i, then z_i*(1/2-z_i)/2 > 1/50 for every i. By the exact factorization h(z)-1/50 = -1/2*(z-1/10)*(z-2/5), this forces z_i < 2/5 for every i.",
+    "But sum_i z_i = 2*sum_i x_i = 2, so the average z_i is 2/5. The strict inequalities z_i < 2/5 for all i contradict this.",
+    "Therefore some constructed half-subgraph has edge density at most 1/50."
+  ],
+  "algebra": {
+    "checks": {
+      "h_upper_left_root": "1/50",
+      "h_upper_right_root": "1/50",
+      "threshold": "1/50",
+      "factorization_identity": "h(z)-1/50 = -1/2*(z-1/10)*(z-2/5)"
+    },
+    "errors": []
+  },
+  "balanced_equality_example": {
+    "weights": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "selected_half": [
+      "1/5",
+      "0",
+      "1/5",
+      "0",
+      "1/10"
+    ],
+    "edge_density": "1/50"
+  },
+  "scope": {
+    "rules_out": "Any asymptotic counterexample to #128 obtained solely as a weighted C5 blow-up with threshold strictly above 1/50.",
+    "does_not_rule_out": "Non-C5 triangle-free graphs, finite rounding effects, or a different structural construction."
+  }
+}

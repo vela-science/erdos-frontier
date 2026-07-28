@@ -1,0 +1,93 @@
+{
+  "id": "vf_bc277af6cc7a3216",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The Lean 4 theorem `Erdos961.erdos_961.variants.sylvester_schur_1_1` — Erdos961Prop 1 1  (the n=k=1 instance of Sylvester–Schur: every m ≥ 2 has, in {m}, an element that is not 2-smooth) — is formally proven and kernel-verified in formal-conjectures (zero `sorry`, no extra axioms). Verifier: lean4-kernel + Mathlib (lake build green; the declaration's proof term carries no `sorry` and no extra axioms).",
+    "type": "theoretical",
+    "entities": [],
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "computational",
+    "model_system": "agent artifact packet",
+    "species": null,
+    "method": "ScienceClaw-shaped artifact packet import",
+    "sample_size": null,
+    "effect_size": null,
+    "p_value": null,
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": [
+      {
+        "artifact_id": "va_370c3b127f446b92",
+        "artifact_packet_id": "cap_4af431152a035fa4",
+        "candidate_claim_id": "vc_6c8d56f8a59a3179"
+      }
+    ]
+  },
+  "conditions": {
+    "text": "Agent-imported candidate claim; scope requires review.",
+    "species_verified": [],
+    "species_unverified": [],
+    "in_vitro": false,
+    "in_vivo": false,
+    "human_data": false,
+    "clinical_trial": false,
+    "concentration_range": null,
+    "duration": null,
+    "age_group": null,
+    "cell_type": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.99,
+    "basis": "agent-imported candidate claim; reviewer acceptance required",
+    "method": "expert_judgment",
+    "extraction_confidence": 0.7
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "pmid": null,
+    "pmc": null,
+    "openalex_id": null,
+    "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean",
+    "title": "cap_4af431152a035fa4 · vc_6c8d56f8a59a3179",
+    "authors": [
+      {
+        "name": "Canopus Lean proof-search adapter",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "journal": null,
+    "publisher": "artifact packet",
+    "extraction": {
+      "method": "artifact_to_state_import",
+      "model": "agent:canopus-lean-2026-06-03",
+      "model_version": null,
+      "extracted_at": "2026-06-03T12:00:00+00:00",
+      "extractor_version": "vela/0.691.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    },
+    "citation_count": null
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-03T12:00:00+00:00",
+  "updated": null
+}

@@ -1,0 +1,11 @@
+{
+ "problem": 773,
+ "sequence": "A390813",
+ "proofs": [],
+ "validation": {
+  "n": 68,
+  "proven": false,
+  "a_n_lower_bound": 32,
+  "status": "timeout"
+ }
+}

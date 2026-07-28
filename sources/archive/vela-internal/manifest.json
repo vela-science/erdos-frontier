@@ -1,0 +1,97 @@
+{
+  "schema": "erdos-frontier.source-archive.v1",
+  "source_repository": "vela-science/vela-internal",
+  "purpose": "Public byte-exact mirrors for historical source objects referenced by recovered attempt records.",
+  "objects": [
+    {
+      "source": "vela-science/vela-internal@040f24977220a65ef9b4aa16bd2d3b07231e4ca3:examples/erdos-problems/attack/erdos773-optimality.v1.json",
+      "sha256": "sha256:0c70ddf6efc80d3e763c38d74062f30f9ca64cb5cf644ce915ada30844f71dd1",
+      "bytes": 156,
+      "mirror": "sources/archive/vela-internal/040f24977220a65ef9b4aa16bd2d3b07231e4ca3/examples/erdos-problems/attack/erdos773-optimality.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@040f24977220a65ef9b4aa16bd2d3b07231e4ca3:examples/erdos-problems/attack/erdos848-square-class-count-certificate-draft.v1.json",
+      "sha256": "sha256:ada860130e66abb6d4ee76c335d55a6bb17e5c3e4897eab018c8101b8046641d",
+      "bytes": 16869,
+      "mirror": "sources/archive/vela-internal/040f24977220a65ef9b4aa16bd2d3b07231e4ca3/examples/erdos-problems/attack/erdos848-square-class-count-certificate-draft.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@18e48de26c6ae4e03a4abba95ee59b9c4746f89c:projects/formal-conjectures-lean/.vela/findings/vf_bc277af6cc7a3216.json",
+      "sha256": "sha256:a9f39fa25781d1c2a6145a06a449439870f455e6fee21ecc4837d21ac5f74c87",
+      "bytes": 2813,
+      "mirror": "sources/archive/vela-internal/18e48de26c6ae4e03a4abba95ee59b9c4746f89c/projects/formal-conjectures-lean/.vela/findings/vf_bc277af6cc7a3216.json"
+    },
+    {
+      "source": "vela-science/vela-internal@3c874050fc0ef0f56ff7898845b5a1e70b533f94:examples/erdos-problems/attack/erdos42-lean-resolution-replay.v1.json",
+      "sha256": "sha256:e2b196c731ce94163991161596cc03431bcdf66d5a2004421dbef26f956ea2ef",
+      "bytes": 2843,
+      "mirror": "sources/archive/vela-internal/3c874050fc0ef0f56ff7898845b5a1e70b533f94/examples/erdos-problems/attack/erdos42-lean-resolution-replay.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@3cb9e4c0dc5acb12a2b204799e557624185ff242:scripts/erdos849_singmaster_verifier.py",
+      "sha256": "sha256:ac22146a1174a72a325d77e999343212cf124195f7e71a11b637bc5518a6c7eb",
+      "bytes": 2295,
+      "mirror": "sources/archive/vela-internal/3cb9e4c0dc5acb12a2b204799e557624185ff242/scripts/erdos849_singmaster_verifier.py"
+    },
+    {
+      "source": "vela-science/vela-internal@5b755546df2dcc7155b37207d7f15adcc1bb4ca2:examples/erdos-problems/attack/erdos427-shiu-reduction-draft.v1.json",
+      "sha256": "sha256:460b74e862c8d4a4869d36c3e16210c48d33d22538349f1cabf70012cac81973",
+      "bytes": 3126,
+      "mirror": "sources/archive/vela-internal/5b755546df2dcc7155b37207d7f15adcc1bb4ca2/examples/erdos-problems/attack/erdos427-shiu-reduction-draft.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@5fb261cead755bb11acb1977a31752df1d21e97a:examples/erdos-problems/attack/erdos573-incidence-construction.v1.json",
+      "sha256": "sha256:3f7a994126f321b0ab8fc4d857c0d0c03814667ba0dbf69d9b9370cf951ac0d6",
+      "bytes": 1873,
+      "mirror": "sources/archive/vela-internal/5fb261cead755bb11acb1977a31752df1d21e97a/examples/erdos-problems/attack/erdos573-incidence-construction.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@7815f5fd21f13df75f77c0ea0fd9637b095b1fb3:examples/erdos-problems/attack/erdos375-prime-sdr-search.v1.json",
+      "sha256": "sha256:b79a4cad4af430cdbe108856a6a98a1546b52540d8442b5118a686c978fb546d",
+      "bytes": 416,
+      "mirror": "sources/archive/vela-internal/7815f5fd21f13df75f77c0ea0fd9637b095b1fb3/examples/erdos-problems/attack/erdos375-prime-sdr-search.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@9bd3aa7d41ec3b439696a10629d24828772a8571:examples/erdos-problems/attack/erdos672-perfect-power-ap-search.v1.json",
+      "sha256": "sha256:d721bbac5a297a0394d9299414da4ffe00ea70e02f7b6aa89332b22e06a3d1e8",
+      "bytes": 390,
+      "mirror": "sources/archive/vela-internal/9bd3aa7d41ec3b439696a10629d24828772a8571/examples/erdos-problems/attack/erdos672-perfect-power-ap-search.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@9bdac2f66b17f37fb3267fd296d5635f6b0e209b:docs/history/2026-07-05-erdos-establishment.md",
+      "sha256": "sha256:92d14c77eb806524315af1b3931dedbf753b5eceb454f31e3abbebf04cd4d32d",
+      "bytes": 5278,
+      "mirror": "sources/archive/vela-internal/9bdac2f66b17f37fb3267fd296d5635f6b0e209b/docs/history/2026-07-05-erdos-establishment.md"
+    },
+    {
+      "source": "vela-science/vela-internal@ae9a4f1a2351d163a951a695dfc3c32a568a161f:examples/erdos-problems/attack/erdos64-girth5-exhaustive.v1.json",
+      "sha256": "sha256:2da44d876a43c44c7e1551209f5272b656bc1e7b867523882d3aa862ab0726fa",
+      "bytes": 687,
+      "mirror": "sources/archive/vela-internal/ae9a4f1a2351d163a951a695dfc3c32a568a161f/examples/erdos-problems/attack/erdos64-girth5-exhaustive.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@e2193f365c873ad0edf023c35426686980f0abe8:examples/erdos-problems/attack/erdos128-c5-blowup-bound-draft.v1.json",
+      "sha256": "sha256:b9c88db8f56e7ca5ac00447e1ad819e972674ae6a783cb17045e6fa9648423f7",
+      "bytes": 2085,
+      "mirror": "sources/archive/vela-internal/e2193f365c873ad0edf023c35426686980f0abe8/examples/erdos-problems/attack/erdos128-c5-blowup-bound-draft.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@e2193f365c873ad0edf023c35426686980f0abe8:examples/erdos-problems/attack/erdos835-alltop-reduction-draft.v1.json",
+      "sha256": "sha256:c3dd179b01f344ffd0e14a4c9478dfe3663fd3b6007ee196f6a4774439d07cb5",
+      "bytes": 65369,
+      "mirror": "sources/archive/vela-internal/e2193f365c873ad0edf023c35426686980f0abe8/examples/erdos-problems/attack/erdos835-alltop-reduction-draft.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@e2193f365c873ad0edf023c35426686980f0abe8:examples/erdos-problems/attack/erdos850-radical-triples-prefix200m-draft.v1.json",
+      "sha256": "sha256:63cbda147e76ac7adf73f09a35501d93996807af8af70d55eea4c9e1118e158f",
+      "bytes": 671,
+      "mirror": "sources/archive/vela-internal/e2193f365c873ad0edf023c35426686980f0abe8/examples/erdos-problems/attack/erdos850-radical-triples-prefix200m-draft.v1.json"
+    },
+    {
+      "source": "vela-science/vela-internal@fbdf4cfb31ebd2c44eaada488e1f3217739477de:scripts/foundry/prover-wave/ERDOS92_BDDABOVE_SIGNING_BRIEF.md",
+      "sha256": "sha256:542d58829dbfcc677cad03fc372975f36d8fb28f20fdf8f682ee6ceafd33f813",
+      "bytes": 2880,
+      "mirror": "sources/archive/vela-internal/fbdf4cfb31ebd2c44eaada488e1f3217739477de/scripts/foundry/prover-wave/ERDOS92_BDDABOVE_SIGNING_BRIEF.md"
+    }
+  ]
+}

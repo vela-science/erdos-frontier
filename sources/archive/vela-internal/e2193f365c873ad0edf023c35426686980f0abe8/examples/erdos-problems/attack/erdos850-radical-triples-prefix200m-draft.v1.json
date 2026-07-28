@@ -1,0 +1,16 @@
+{
+  "object": "Erdos850RadicalTriplePrefixSearch",
+  "version": 1,
+  "problem": 850,
+  "claim_status": "bounded exact prefix search only; a collision would solve positively, but no-collision prefixes are not a full solution",
+  "official_source": "https://www.erdosproblems.com/850",
+  "max_n": 200000000,
+  "radical_limit": 200000002,
+  "signature_count": 200000000,
+  "collision_group_count": 0,
+  "collision_pair_count": 0,
+  "positive_witness_found": false,
+  "first_collision": null,
+  "method": "Compute exact radicals rad(n) for n<=max_n+2, sort all exact triples (rad(n),rad(n+1),rad(n+2)), and count equal adjacent signatures.",
+  "full_erdos850_solve": false
+}

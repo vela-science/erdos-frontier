@@ -1,0 +1,54 @@
+{
+  "object": "Erdos42LeanResolutionReplay",
+  "version": 1,
+  "problem": 42,
+  "status": "externally_solved_lean_locally_replayed",
+  "claim": "Erd\u0151s problem #42 is marked SOLVED (LEAN) by erdosproblems.com, and the linked Lean proof file type-checks locally with only Mathlib core axioms reported.",
+  "not_claimed": [
+    "This repository did not discover the #42 proof.",
+    "This artifact does not edit attempt-ledger.v1.json."
+  ],
+  "sources": {
+    "erdos_page": "https://www.erdosproblems.com/42",
+    "erdos_forum_thread": "https://www.erdosproblems.com/forum/thread/42",
+    "lean_proof_repository": "https://github.com/Shashi456/erdos-formalizations",
+    "pinned_raw_proof": "https://raw.githubusercontent.com/Shashi456/erdos-formalizations/286f856aa3fc08957b80950fd18a45aab8d045ea/Erdos/P42/CompactCayley/Proof.lean",
+    "formal_conjectures_shape": "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/42.lean"
+  },
+  "proof_file": {
+    "commit": "286f856aa3fc08957b80950fd18a45aab8d045ea",
+    "path": "Erdos/P42/CompactCayley/Proof.lean",
+    "sha256": "8286145f40352c0b2a34286f9beddb3728fe446a1055d5a52e5861d52b072cac",
+    "scan": {
+      "line_count": 14801,
+      "byte_count": 604558,
+      "sha256": "8286145f40352c0b2a34286f9beddb3728fe446a1055d5a52e5861d52b072cac",
+      "sorry_count": 0,
+      "admit_count": 0,
+      "unsafe_count": 0,
+      "declaration_axiom_count": 0,
+      "declaration_constant_count": 0,
+      "print_axioms_count": 5
+    }
+  },
+  "local_replay": {
+    "formal_conjectures_path": "/Users/williamblair/personal/formal-conjectures",
+    "lean_toolchain": "leanprover/lean4:v4.27.0",
+    "lean_version": "Lean (version 4.27.0, arm64-apple-darwin24.6.0, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+    "command": "lake env lean <downloaded pinned Proof.lean>",
+    "result": {
+      "exit_code": 0,
+      "elapsed_s": 27.709665,
+      "output_lines": [
+        "'Erdos42.CompactCayley.compact_cayley_clique' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'Erdos42.CompactCayley.theorem_1_1_from_compact_cayley' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'Erdos42.theorem_1_1_via_cayley' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'Erdos42.erdos_42_via_cayley' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'Erdos42.FormalConjecturesShape.erdos_42_via_cayley' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "expected_axiom_lines_present": true
+    }
+  },
+  "verification_contract": "Verifier downloads the pinned proof, checks SHA-256 and that there are no sorry/admit/unsafe/axiom/constant declarations, then reruns Lean and checks the five expected #print axioms lines.",
+  "elapsed_s": 28.492265
+}

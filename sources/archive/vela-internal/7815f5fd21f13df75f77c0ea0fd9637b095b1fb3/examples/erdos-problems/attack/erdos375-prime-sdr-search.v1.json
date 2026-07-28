@@ -1,0 +1,12 @@
+{
+ "problem": 375,
+ "question": "every maximal run of consecutive composites has distinct prime representatives (an SDR)?",
+ "verifier": "scripts/verify_erdos375.py (exact bipartite matching + Hall-violation certificate; self-tested)",
+ "box": {
+  "limit": 12000000,
+  "min_run": 1
+ },
+ "composite_runs_tested": 788059,
+ "counterexamples": [],
+ "verdict": "every composite run up to limit has an SDR (honest null)"
+}

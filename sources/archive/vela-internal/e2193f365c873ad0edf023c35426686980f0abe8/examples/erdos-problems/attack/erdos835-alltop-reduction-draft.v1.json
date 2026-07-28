@@ -1,0 +1,2789 @@
+{
+  "object": "Erdos835AlltopReductionDraft",
+  "version": 1,
+  "problem": 835,
+  "official_source": "https://www.erdosproblems.com/835",
+  "claim_status": "Parameter-checked reduction note only. This is not a proof of the external Alltop, Kramer-Mesner, Mendelsohn-Hung, Ostergard-Pottonen, Yoshizawa, or Keevash theorems, and it is not a full solution of #835.",
+  "main_reduction": "For odd prime p > 3, Alltop extension/derivation shifts the remaining prime case from LS[p](p-2,p-1,2p-2) to LS[p](p-3,p-2,2p-3).",
+  "source_urls": [
+    "https://www.erdosproblems.com/forum/thread/835",
+    "https://bica.the-ica.org/Volumes/80/Reprints/BICA6-Reprint.pdf",
+    "https://www.cs.rit.edu/~spr/PUBL/paper23.pdf",
+    "https://pottonen.kapsi.fi/nonexistence.pdf",
+    "https://people.maths.ox.ac.uk/keevash/papers/designsII.pdf",
+    "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/on-blockschematic-steiner-systems-st-t-1-v/5C56F07826C9EE3F722C2D67BCF7BEEC"
+  ],
+  "checked_prime_limit": 97,
+  "prime_rows": [
+    {
+      "p": 5,
+      "original_k": 4,
+      "alltop_core": {
+        "components": 5,
+        "t": 2,
+        "k": 3,
+        "v": 7
+      },
+      "alltop_extended": {
+        "components": 5,
+        "t": 3,
+        "k": 4,
+        "v": 8
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": null,
+      "known_status": "equivalent to LS[5](2,3,7); Cayley gives at most two disjoint Fano planes"
+    },
+    {
+      "p": 7,
+      "original_k": 6,
+      "alltop_core": {
+        "components": 7,
+        "t": 4,
+        "k": 5,
+        "v": 11
+      },
+      "alltop_extended": {
+        "components": 7,
+        "t": 5,
+        "k": 6,
+        "v": 12
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 0,
+        "t": 4,
+        "k": 5,
+        "v": 11
+      },
+      "known_status": "derives to S(4,5,11); Kramer-Mesner gives at most two disjoint systems"
+    },
+    {
+      "p": 11,
+      "original_k": 10,
+      "alltop_core": {
+        "components": 11,
+        "t": 8,
+        "k": 9,
+        "v": 19
+      },
+      "alltop_extended": {
+        "components": 11,
+        "t": 9,
+        "k": 10,
+        "v": 20
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 4,
+        "t": 4,
+        "k": 5,
+        "v": 15
+      },
+      "known_status": "derives four times to S(4,5,15), known nonexistent by Mendelsohn-Hung"
+    },
+    {
+      "p": 13,
+      "original_k": 12,
+      "alltop_core": {
+        "components": 13,
+        "t": 10,
+        "k": 11,
+        "v": 23
+      },
+      "alltop_extended": {
+        "components": 13,
+        "t": 11,
+        "k": 12,
+        "v": 24
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 6,
+        "t": 4,
+        "k": 5,
+        "v": 17
+      },
+      "known_status": "derives six times to S(4,5,17), known nonexistent by Ostergard-Pottonen"
+    },
+    {
+      "p": 17,
+      "original_k": 16,
+      "alltop_core": {
+        "components": 17,
+        "t": 14,
+        "k": 15,
+        "v": 31
+      },
+      "alltop_extended": {
+        "components": 17,
+        "t": 15,
+        "k": 16,
+        "v": 32
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 10,
+        "t": 4,
+        "k": 5,
+        "v": 21
+      },
+      "known_status": "derives to S(4,5,21), the first low-derived open row noted in the literature"
+    },
+    {
+      "p": 19,
+      "original_k": 18,
+      "alltop_core": {
+        "components": 19,
+        "t": 16,
+        "k": 17,
+        "v": 35
+      },
+      "alltop_extended": {
+        "components": 19,
+        "t": 17,
+        "k": 18,
+        "v": 36
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 12,
+        "t": 4,
+        "k": 5,
+        "v": 23
+      },
+      "known_status": null
+    },
+    {
+      "p": 23,
+      "original_k": 22,
+      "alltop_core": {
+        "components": 23,
+        "t": 20,
+        "k": 21,
+        "v": 43
+      },
+      "alltop_extended": {
+        "components": 23,
+        "t": 21,
+        "k": 22,
+        "v": 44
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 16,
+        "t": 4,
+        "k": 5,
+        "v": 27
+      },
+      "known_status": null
+    },
+    {
+      "p": 29,
+      "original_k": 28,
+      "alltop_core": {
+        "components": 29,
+        "t": 26,
+        "k": 27,
+        "v": 55
+      },
+      "alltop_extended": {
+        "components": 29,
+        "t": 27,
+        "k": 28,
+        "v": 56
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 22,
+        "t": 4,
+        "k": 5,
+        "v": 33
+      },
+      "known_status": null
+    },
+    {
+      "p": 31,
+      "original_k": 30,
+      "alltop_core": {
+        "components": 31,
+        "t": 28,
+        "k": 29,
+        "v": 59
+      },
+      "alltop_extended": {
+        "components": 31,
+        "t": 29,
+        "k": 30,
+        "v": 60
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 24,
+        "t": 4,
+        "k": 5,
+        "v": 35
+      },
+      "known_status": null
+    },
+    {
+      "p": 37,
+      "original_k": 36,
+      "alltop_core": {
+        "components": 37,
+        "t": 34,
+        "k": 35,
+        "v": 71
+      },
+      "alltop_extended": {
+        "components": 37,
+        "t": 35,
+        "k": 36,
+        "v": 72
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 30,
+        "t": 4,
+        "k": 5,
+        "v": 41
+      },
+      "known_status": null
+    },
+    {
+      "p": 41,
+      "original_k": 40,
+      "alltop_core": {
+        "components": 41,
+        "t": 38,
+        "k": 39,
+        "v": 79
+      },
+      "alltop_extended": {
+        "components": 41,
+        "t": 39,
+        "k": 40,
+        "v": 80
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 34,
+        "t": 4,
+        "k": 5,
+        "v": 45
+      },
+      "known_status": null
+    },
+    {
+      "p": 43,
+      "original_k": 42,
+      "alltop_core": {
+        "components": 43,
+        "t": 40,
+        "k": 41,
+        "v": 83
+      },
+      "alltop_extended": {
+        "components": 43,
+        "t": 41,
+        "k": 42,
+        "v": 84
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 36,
+        "t": 4,
+        "k": 5,
+        "v": 47
+      },
+      "known_status": null
+    },
+    {
+      "p": 47,
+      "original_k": 46,
+      "alltop_core": {
+        "components": 47,
+        "t": 44,
+        "k": 45,
+        "v": 91
+      },
+      "alltop_extended": {
+        "components": 47,
+        "t": 45,
+        "k": 46,
+        "v": 92
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 40,
+        "t": 4,
+        "k": 5,
+        "v": 51
+      },
+      "known_status": null
+    },
+    {
+      "p": 53,
+      "original_k": 52,
+      "alltop_core": {
+        "components": 53,
+        "t": 50,
+        "k": 51,
+        "v": 103
+      },
+      "alltop_extended": {
+        "components": 53,
+        "t": 51,
+        "k": 52,
+        "v": 104
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 46,
+        "t": 4,
+        "k": 5,
+        "v": 57
+      },
+      "known_status": null
+    },
+    {
+      "p": 59,
+      "original_k": 58,
+      "alltop_core": {
+        "components": 59,
+        "t": 56,
+        "k": 57,
+        "v": 115
+      },
+      "alltop_extended": {
+        "components": 59,
+        "t": 57,
+        "k": 58,
+        "v": 116
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 52,
+        "t": 4,
+        "k": 5,
+        "v": 63
+      },
+      "known_status": null
+    },
+    {
+      "p": 61,
+      "original_k": 60,
+      "alltop_core": {
+        "components": 61,
+        "t": 58,
+        "k": 59,
+        "v": 119
+      },
+      "alltop_extended": {
+        "components": 61,
+        "t": 59,
+        "k": 60,
+        "v": 120
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 54,
+        "t": 4,
+        "k": 5,
+        "v": 65
+      },
+      "known_status": null
+    },
+    {
+      "p": 67,
+      "original_k": 66,
+      "alltop_core": {
+        "components": 67,
+        "t": 64,
+        "k": 65,
+        "v": 131
+      },
+      "alltop_extended": {
+        "components": 67,
+        "t": 65,
+        "k": 66,
+        "v": 132
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 60,
+        "t": 4,
+        "k": 5,
+        "v": 71
+      },
+      "known_status": null
+    },
+    {
+      "p": 71,
+      "original_k": 70,
+      "alltop_core": {
+        "components": 71,
+        "t": 68,
+        "k": 69,
+        "v": 139
+      },
+      "alltop_extended": {
+        "components": 71,
+        "t": 69,
+        "k": 70,
+        "v": 140
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 64,
+        "t": 4,
+        "k": 5,
+        "v": 75
+      },
+      "known_status": null
+    },
+    {
+      "p": 73,
+      "original_k": 72,
+      "alltop_core": {
+        "components": 73,
+        "t": 70,
+        "k": 71,
+        "v": 143
+      },
+      "alltop_extended": {
+        "components": 73,
+        "t": 71,
+        "k": 72,
+        "v": 144
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 66,
+        "t": 4,
+        "k": 5,
+        "v": 77
+      },
+      "known_status": null
+    },
+    {
+      "p": 79,
+      "original_k": 78,
+      "alltop_core": {
+        "components": 79,
+        "t": 76,
+        "k": 77,
+        "v": 155
+      },
+      "alltop_extended": {
+        "components": 79,
+        "t": 77,
+        "k": 78,
+        "v": 156
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 72,
+        "t": 4,
+        "k": 5,
+        "v": 83
+      },
+      "known_status": null
+    },
+    {
+      "p": 83,
+      "original_k": 82,
+      "alltop_core": {
+        "components": 83,
+        "t": 80,
+        "k": 81,
+        "v": 163
+      },
+      "alltop_extended": {
+        "components": 83,
+        "t": 81,
+        "k": 82,
+        "v": 164
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 76,
+        "t": 4,
+        "k": 5,
+        "v": 87
+      },
+      "known_status": null
+    },
+    {
+      "p": 89,
+      "original_k": 88,
+      "alltop_core": {
+        "components": 89,
+        "t": 86,
+        "k": 87,
+        "v": 175
+      },
+      "alltop_extended": {
+        "components": 89,
+        "t": 87,
+        "k": 88,
+        "v": 176
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 82,
+        "t": 4,
+        "k": 5,
+        "v": 93
+      },
+      "known_status": null
+    },
+    {
+      "p": 97,
+      "original_k": 96,
+      "alltop_core": {
+        "components": 97,
+        "t": 94,
+        "k": 95,
+        "v": 191
+      },
+      "alltop_extended": {
+        "components": 97,
+        "t": 95,
+        "k": 96,
+        "v": 192
+      },
+      "core_t_even": true,
+      "extension_matches_original_parameters": true,
+      "derived_to_S_4_5": {
+        "derivations": 90,
+        "t": 4,
+        "k": 5,
+        "v": 101
+      },
+      "known_status": null
+    }
+  ],
+  "fixed_depth_barrier": {
+    "summary": "For each fixed t in the checked range, LS[p](t,t+1,p+t) has p component designs and passes the usual Steiner divisibility conditions for the sampled primes p > t+1. This supports the negative strategy note: fixed-depth derived nonexistence is not a plausible global obstruction once paired with Keevash-type large-set existence theorems.",
+    "fixed_t_rows": [
+      {
+        "fixed_t": 2,
+        "sample_prime_limit": 97,
+        "sample_prime_count": 23,
+        "all_samples_have_count_p": true,
+        "all_samples_pass_steiner_divisibility": true,
+        "rows": [
+          {
+            "p": 5,
+            "n": 7,
+            "large_set_count": 5,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 7,
+            "n": 9,
+            "large_set_count": 7,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 11,
+            "n": 13,
+            "large_set_count": 11,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 13,
+            "n": 15,
+            "large_set_count": 13,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 17,
+            "n": 19,
+            "large_set_count": 17,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 19,
+            "n": 21,
+            "large_set_count": 19,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 23,
+            "n": 25,
+            "large_set_count": 23,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 29,
+            "n": 31,
+            "large_set_count": 29,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 31,
+            "n": 33,
+            "large_set_count": 31,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 37,
+            "n": 39,
+            "large_set_count": 37,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 41,
+            "n": 43,
+            "large_set_count": 41,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 43,
+            "n": 45,
+            "large_set_count": 43,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 47,
+            "n": 49,
+            "large_set_count": 47,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 53,
+            "n": 55,
+            "large_set_count": 53,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 59,
+            "n": 61,
+            "large_set_count": 59,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 61,
+            "n": 63,
+            "large_set_count": 61,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 67,
+            "n": 69,
+            "large_set_count": 67,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 71,
+            "n": 73,
+            "large_set_count": 71,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 73,
+            "n": 75,
+            "large_set_count": 73,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 79,
+            "n": 81,
+            "large_set_count": 79,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 83,
+            "n": 85,
+            "large_set_count": 83,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 89,
+            "n": 91,
+            "large_set_count": 89,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          },
+          {
+            "p": 97,
+            "n": 99,
+            "large_set_count": 97,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0
+            }
+          }
+        ]
+      },
+      {
+        "fixed_t": 3,
+        "sample_prime_limit": 97,
+        "sample_prime_count": 23,
+        "all_samples_have_count_p": true,
+        "all_samples_pass_steiner_divisibility": true,
+        "rows": [
+          {
+            "p": 5,
+            "n": 8,
+            "large_set_count": 5,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 7,
+            "n": 10,
+            "large_set_count": 7,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 11,
+            "n": 14,
+            "large_set_count": 11,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 13,
+            "n": 16,
+            "large_set_count": 13,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 17,
+            "n": 20,
+            "large_set_count": 17,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 19,
+            "n": 22,
+            "large_set_count": 19,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 23,
+            "n": 26,
+            "large_set_count": 23,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 29,
+            "n": 32,
+            "large_set_count": 29,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 31,
+            "n": 34,
+            "large_set_count": 31,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 37,
+            "n": 40,
+            "large_set_count": 37,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 41,
+            "n": 44,
+            "large_set_count": 41,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 43,
+            "n": 46,
+            "large_set_count": 43,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 47,
+            "n": 50,
+            "large_set_count": 47,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 53,
+            "n": 56,
+            "large_set_count": 53,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 59,
+            "n": 62,
+            "large_set_count": 59,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 61,
+            "n": 64,
+            "large_set_count": 61,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 67,
+            "n": 70,
+            "large_set_count": 67,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 71,
+            "n": 74,
+            "large_set_count": 71,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 73,
+            "n": 76,
+            "large_set_count": 73,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 79,
+            "n": 82,
+            "large_set_count": 79,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 83,
+            "n": 86,
+            "large_set_count": 83,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 89,
+            "n": 92,
+            "large_set_count": 89,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          },
+          {
+            "p": 97,
+            "n": 100,
+            "large_set_count": 97,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            }
+          }
+        ]
+      },
+      {
+        "fixed_t": 4,
+        "sample_prime_limit": 97,
+        "sample_prime_count": 22,
+        "all_samples_have_count_p": true,
+        "all_samples_pass_steiner_divisibility": true,
+        "rows": [
+          {
+            "p": 7,
+            "n": 11,
+            "large_set_count": 7,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 11,
+            "n": 15,
+            "large_set_count": 11,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 13,
+            "n": 17,
+            "large_set_count": 13,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 17,
+            "n": 21,
+            "large_set_count": 17,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 19,
+            "n": 23,
+            "large_set_count": 19,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 23,
+            "n": 27,
+            "large_set_count": 23,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 29,
+            "n": 33,
+            "large_set_count": 29,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 31,
+            "n": 35,
+            "large_set_count": 31,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 37,
+            "n": 41,
+            "large_set_count": 37,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 41,
+            "n": 45,
+            "large_set_count": 41,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 43,
+            "n": 47,
+            "large_set_count": 43,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 47,
+            "n": 51,
+            "large_set_count": 47,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 53,
+            "n": 57,
+            "large_set_count": 53,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 59,
+            "n": 63,
+            "large_set_count": 59,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 61,
+            "n": 65,
+            "large_set_count": 61,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 67,
+            "n": 71,
+            "large_set_count": 67,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 71,
+            "n": 75,
+            "large_set_count": 71,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 73,
+            "n": 77,
+            "large_set_count": 73,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 79,
+            "n": 83,
+            "large_set_count": 79,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 83,
+            "n": 87,
+            "large_set_count": 83,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 89,
+            "n": 93,
+            "large_set_count": 89,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          },
+          {
+            "p": 97,
+            "n": 101,
+            "large_set_count": 97,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0
+            }
+          }
+        ]
+      },
+      {
+        "fixed_t": 5,
+        "sample_prime_limit": 97,
+        "sample_prime_count": 22,
+        "all_samples_have_count_p": true,
+        "all_samples_pass_steiner_divisibility": true,
+        "rows": [
+          {
+            "p": 7,
+            "n": 12,
+            "large_set_count": 7,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 11,
+            "n": 16,
+            "large_set_count": 11,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 13,
+            "n": 18,
+            "large_set_count": 13,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 17,
+            "n": 22,
+            "large_set_count": 17,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 19,
+            "n": 24,
+            "large_set_count": 19,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 23,
+            "n": 28,
+            "large_set_count": 23,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 29,
+            "n": 34,
+            "large_set_count": 29,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 31,
+            "n": 36,
+            "large_set_count": 31,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 37,
+            "n": 42,
+            "large_set_count": 37,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 41,
+            "n": 46,
+            "large_set_count": 41,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 43,
+            "n": 48,
+            "large_set_count": 43,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 47,
+            "n": 52,
+            "large_set_count": 47,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 53,
+            "n": 58,
+            "large_set_count": 53,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 59,
+            "n": 64,
+            "large_set_count": 59,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 61,
+            "n": 66,
+            "large_set_count": 61,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 67,
+            "n": 72,
+            "large_set_count": 67,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 71,
+            "n": 76,
+            "large_set_count": 71,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 73,
+            "n": 78,
+            "large_set_count": 73,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 79,
+            "n": 84,
+            "large_set_count": 79,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 83,
+            "n": 88,
+            "large_set_count": 83,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 89,
+            "n": 94,
+            "large_set_count": 89,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          },
+          {
+            "p": 97,
+            "n": 102,
+            "large_set_count": 97,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0
+            }
+          }
+        ]
+      },
+      {
+        "fixed_t": 6,
+        "sample_prime_limit": 97,
+        "sample_prime_count": 21,
+        "all_samples_have_count_p": true,
+        "all_samples_pass_steiner_divisibility": true,
+        "rows": [
+          {
+            "p": 11,
+            "n": 17,
+            "large_set_count": 11,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 13,
+            "n": 19,
+            "large_set_count": 13,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 17,
+            "n": 23,
+            "large_set_count": 17,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 19,
+            "n": 25,
+            "large_set_count": 19,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 23,
+            "n": 29,
+            "large_set_count": 23,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 29,
+            "n": 35,
+            "large_set_count": 29,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 31,
+            "n": 37,
+            "large_set_count": 31,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 37,
+            "n": 43,
+            "large_set_count": 37,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 41,
+            "n": 47,
+            "large_set_count": 41,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 43,
+            "n": 49,
+            "large_set_count": 43,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 47,
+            "n": 53,
+            "large_set_count": 47,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 53,
+            "n": 59,
+            "large_set_count": 53,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 59,
+            "n": 65,
+            "large_set_count": 59,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 61,
+            "n": 67,
+            "large_set_count": 61,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 67,
+            "n": 73,
+            "large_set_count": 67,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 71,
+            "n": 77,
+            "large_set_count": 71,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 73,
+            "n": 79,
+            "large_set_count": 73,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 79,
+            "n": 85,
+            "large_set_count": 79,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 83,
+            "n": 89,
+            "large_set_count": 83,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 89,
+            "n": 95,
+            "large_set_count": 89,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          },
+          {
+            "p": 97,
+            "n": 103,
+            "large_set_count": 97,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0
+            }
+          }
+        ]
+      },
+      {
+        "fixed_t": 7,
+        "sample_prime_limit": 97,
+        "sample_prime_count": 21,
+        "all_samples_have_count_p": true,
+        "all_samples_pass_steiner_divisibility": true,
+        "rows": [
+          {
+            "p": 11,
+            "n": 18,
+            "large_set_count": 11,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 13,
+            "n": 20,
+            "large_set_count": 13,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 17,
+            "n": 24,
+            "large_set_count": 17,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 19,
+            "n": 26,
+            "large_set_count": 19,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 23,
+            "n": 30,
+            "large_set_count": 23,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 29,
+            "n": 36,
+            "large_set_count": 29,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 31,
+            "n": 38,
+            "large_set_count": 31,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 37,
+            "n": 44,
+            "large_set_count": 37,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 41,
+            "n": 48,
+            "large_set_count": 41,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 43,
+            "n": 50,
+            "large_set_count": 43,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 47,
+            "n": 54,
+            "large_set_count": 47,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 53,
+            "n": 60,
+            "large_set_count": 53,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 59,
+            "n": 66,
+            "large_set_count": 59,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 61,
+            "n": 68,
+            "large_set_count": 61,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 67,
+            "n": 74,
+            "large_set_count": 67,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 71,
+            "n": 78,
+            "large_set_count": 71,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 73,
+            "n": 80,
+            "large_set_count": 73,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 79,
+            "n": 86,
+            "large_set_count": 79,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 83,
+            "n": 90,
+            "large_set_count": 83,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 89,
+            "n": 96,
+            "large_set_count": 89,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          },
+          {
+            "p": 97,
+            "n": 104,
+            "large_set_count": 97,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0
+            }
+          }
+        ]
+      },
+      {
+        "fixed_t": 8,
+        "sample_prime_limit": 97,
+        "sample_prime_count": 21,
+        "all_samples_have_count_p": true,
+        "all_samples_pass_steiner_divisibility": true,
+        "rows": [
+          {
+            "p": 11,
+            "n": 19,
+            "large_set_count": 11,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 13,
+            "n": 21,
+            "large_set_count": 13,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 17,
+            "n": 25,
+            "large_set_count": 17,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 19,
+            "n": 27,
+            "large_set_count": 19,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 23,
+            "n": 31,
+            "large_set_count": 23,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 29,
+            "n": 37,
+            "large_set_count": 29,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 31,
+            "n": 39,
+            "large_set_count": 31,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 37,
+            "n": 45,
+            "large_set_count": 37,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 41,
+            "n": 49,
+            "large_set_count": 41,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 43,
+            "n": 51,
+            "large_set_count": 43,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 47,
+            "n": 55,
+            "large_set_count": 47,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 53,
+            "n": 61,
+            "large_set_count": 53,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 59,
+            "n": 67,
+            "large_set_count": 59,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 61,
+            "n": 69,
+            "large_set_count": 61,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 67,
+            "n": 75,
+            "large_set_count": 67,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 71,
+            "n": 79,
+            "large_set_count": 71,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 73,
+            "n": 81,
+            "large_set_count": 73,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 79,
+            "n": 87,
+            "large_set_count": 79,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 83,
+            "n": 91,
+            "large_set_count": 83,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 89,
+            "n": 97,
+            "large_set_count": 89,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          },
+          {
+            "p": 97,
+            "n": 105,
+            "large_set_count": 97,
+            "steiner_divisibility_ok": true,
+            "divisibility_remainders": {
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "5": 0,
+              "6": 0,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "full_erdos835_solve": false
+}

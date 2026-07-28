@@ -1,0 +1,13 @@
+{
+ "problem": 672,
+ "question": "product of a length-k>=4 coprime AP a perfect power?",
+ "verifier": "scripts/verify_erdos672.py (exact integer perfect-power test; self-tested incl. Erd\u0151s\u2013Selfridge d=1 box)",
+ "box": {
+  "nmax": 3000,
+  "dmax": 400,
+  "kmax": 25
+ },
+ "products_checked": 16057910,
+ "witnesses": [],
+ "verdict": "no perfect-power AP product in box (honest null)"
+}

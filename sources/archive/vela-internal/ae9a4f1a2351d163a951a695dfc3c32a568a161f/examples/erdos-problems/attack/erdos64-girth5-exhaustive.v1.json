@@ -1,0 +1,23 @@
+{
+ "problem": 64,
+ "question": "every min-degree>=3 graph has a cycle of length a power of two (>=4)?",
+ "regime": "EXHAUSTIVE over connected cubic graphs of girth>=5 (the C_4-free regime where a counterexample must live)",
+ "generator": "nauty: geng -c -d3 -D3 N | pickg -g5:",
+ "verifier": "exact native cycle-length detector, cross-checked vs networkx + the CP-SAT verifier",
+ "range": {
+  "nmin": 10,
+  "nmax": 22
+ },
+ "girth5_cubic_by_n": {
+  "10": 1,
+  "12": 2,
+  "14": 9,
+  "16": 49,
+  "18": 455,
+  "20": 5783,
+  "22": 90938
+ },
+ "graphs_tested": 97237,
+ "counterexamples": [],
+ "verdict": "EXHAUSTIVE NULL: every girth>=5 cubic graph on <= 22 vertices has a power-of-two cycle"
+}

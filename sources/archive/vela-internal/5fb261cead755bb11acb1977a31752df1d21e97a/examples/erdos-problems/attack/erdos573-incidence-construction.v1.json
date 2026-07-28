@@ -1,0 +1,89 @@
+{
+ "problem": 573,
+ "sequence": "A006856",
+ "construction": "projective-plane PG(2,q) incidence graphs (bipartite, girth 6, exact)",
+ "verifier": "verify_erdos573_girth5_edges.is_girth_ge5 (frozen, self-tested)",
+ "rows": [
+  {
+   "q": 2,
+   "n": 14,
+   "edges": 21,
+   "girth_ge5": true,
+   "published_a_n": 23,
+   "kst_upper_bound": 29.0,
+   "comparison": "below published a(14)=23 by 2"
+  },
+  {
+   "q": 3,
+   "n": 26,
+   "edges": 52,
+   "girth_ge5": true,
+   "published_a_n": 61,
+   "kst_upper_bound": 71.8,
+   "comparison": "below published a(26)=61 by 9"
+  },
+  {
+   "q": 5,
+   "n": 62,
+   "edges": 186,
+   "girth_ge5": true,
+   "published_a_n": null,
+   "kst_upper_bound": 258.1,
+   "comparison": "a(62) unpublished; carried >= 181: BEATS carried by 5"
+  },
+  {
+   "q": 7,
+   "n": 114,
+   "edges": 456,
+   "girth_ge5": true,
+   "published_a_n": null,
+   "kst_upper_bound": 635.1,
+   "comparison": "a(114) unpublished; carried >= 181: BEATS carried by 275"
+  },
+  {
+   "q": 11,
+   "n": 266,
+   "edges": 1596,
+   "girth_ge5": true,
+   "published_a_n": null,
+   "kst_upper_bound": 2232.6,
+   "comparison": "a(266) unpublished; carried >= 181: BEATS carried by 1415"
+  },
+  {
+   "q": 13,
+   "n": 366,
+   "edges": 2562,
+   "girth_ge5": true,
+   "published_a_n": null,
+   "kst_upper_bound": 3588.9,
+   "comparison": "a(366) unpublished; carried >= 181: BEATS carried by 2381"
+  }
+ ],
+ "carried_bound_beats": [
+  {
+   "n": 62,
+   "edges": 186,
+   "carried_bound": 181,
+   "source": "PG(2,5) incidence"
+  },
+  {
+   "n": 114,
+   "edges": 456,
+   "carried_bound": 181,
+   "source": "PG(2,7) incidence"
+  },
+  {
+   "n": 266,
+   "edges": 1596,
+   "carried_bound": 181,
+   "source": "PG(2,11) incidence"
+  },
+  {
+   "n": 366,
+   "edges": 2562,
+   "carried_bound": 181,
+   "source": "PG(2,13) incidence"
+  }
+ ],
+ "verdict": "verified lower-bound improvement(s) at unpublished n"
+}
