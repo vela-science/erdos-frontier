@@ -17,6 +17,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: vela-science/vela@1b051d62bdbd8358c76071e5cfdfb19baf33e2d8 # v0.940.0
+        env:
+          GH_TOKEN: ${{ github.token }}
         with:
           frontier: .
           vela-version: v0.940.0
