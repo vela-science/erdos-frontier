@@ -1,0 +1,60 @@
+{
+  "schema": "erdos-frontier.problem-work.v2",
+  "frontier_id": "vfr_0a25edabc16db143",
+  "repository": {
+    "commit": "90f57cf5c0542952766eb51528e8e65b28d29219",
+    "tree": "33e16e7c5c48caeded95b1a5be884e9af7bce5aa",
+    "root": "sha256:8a98ff1c632232c7b227d87a0f1015aaa3429d38c83592ca66f8e465b06b0ee5"
+  },
+  "target": {
+    "id": "erdos:1056",
+    "problem": 1056,
+    "state": "open",
+    "objective": "Extend the accepted bounded evidence for k=15 without repeating a retained range or implying a universal result.",
+    "next_bounded_range": {
+      "first": 10429401,
+      "last": 10429600,
+      "inclusive": true
+    }
+  },
+  "accepted_state": {
+    "statement": {
+      "claim_id": "vcl_9394cc203635d5665c9a91b4f36e5c5281f97c905351c033e2195728765686b6",
+      "claim_root": "sha256:40dc5b73529b3fcc79c1d40fc723a5ce7adfab97d35e74b5b4191f5faaa7a178"
+    },
+    "formal_statement": {
+      "claim_id": "vcl_3f85df058877260119b4fc7edd6116805ad7fa362762db6d402789331f19a423",
+      "claim_root": "sha256:cf441b4d8773840dd7efc49af4cef4e9802f729fdd5607884fd75e4bb594c5b4"
+    },
+    "partial_formal_proof": {
+      "claim_id": "vcl_f85afa07a987987b51deeb5ab527269df371da83ef6104aae0e36ce1262c5bab",
+      "claim_root": "sha256:2dfe2f1a4f1020a17b3b583c5d8caafc941b7679d4035cdd95121008306400b2"
+    },
+    "banked_k2_through_k14": {
+      "claim_id": "vcl_c2cab61527e2d309786a7106c2ce20d081855de5fac7c379ccfd15bba97707f2",
+      "claim_root": "sha256:8f2b4f1316d757715ad0ed9674d3132b081d9897246197c4766e19b7e980f5ca"
+    },
+    "latest_bounded_negative": {
+      "claim_id": "vcl_d65fa34573c0a57dff8959ed6b4227999cc03e07fad5f2be9bef184677a7ef8a",
+      "claim_root": "sha256:984621a2a8111c79d87922dfa06d78f44fb92a50f9942f49d7ea45dbafd91322",
+      "range": {
+        "first": 10429201,
+        "last": 10429400,
+        "inclusive": true
+      },
+      "artifact_root": "sha256:05fe0c9d4fcee762ca2fe9047fcafb49deaa40e8ef2ea41a055fff98e7e4fb80",
+      "result": "No k=15 witness among 11 primes; maximum multiplicity 12 at p=10429379, residue 7438467."
+    }
+  },
+  "completion_contract": {
+    "positive": "One exact k=15 witness in the bounded range, with a replayable artifact and verifier result.",
+    "negative": "One exhaustive bounded-negative artifact for every prime in the range, including the algorithm, counts, maximum multiplicity, and replay command.",
+    "duplicate_range_forbidden": true,
+    "accepted_state_change": "none until a separate authorized Decision"
+  },
+  "nonclaims": [
+    "A bounded negative result establishes universal nonexistence.",
+    "Verifier success resolves Erdős problem 1056.",
+    "A producer Submission or Verification changes scientific Standing."
+  ]
+}
