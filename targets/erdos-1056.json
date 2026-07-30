@@ -2,9 +2,9 @@
   "schema": "erdos-frontier.problem-work.v2",
   "frontier_id": "vfr_0a25edabc16db143",
   "repository": {
-    "commit": "90f57cf5c0542952766eb51528e8e65b28d29219",
-    "tree": "33e16e7c5c48caeded95b1a5be884e9af7bce5aa",
-    "root": "sha256:8a98ff1c632232c7b227d87a0f1015aaa3429d38c83592ca66f8e465b06b0ee5"
+    "commit": "80606bdccb51fa86524111a1a61876bb08e45d79",
+    "tree": "fd233bf5ef27196dab3eaef5d4c664ed56f8ed92",
+    "root": "sha256:9679827bc76de9f6433bfafa8e2e966b9780ca1273c7948d97c2ae042f5cab1a"
   },
   "target": {
     "id": "erdos:1056",
@@ -12,8 +12,8 @@
     "state": "open",
     "objective": "Extend the accepted bounded evidence for k=15 without repeating a retained range or implying a universal result.",
     "next_bounded_range": {
-      "first": 10429401,
-      "last": 10429600,
+      "first": 10429601,
+      "last": 10429800,
       "inclusive": true
     }
   },
@@ -34,7 +34,7 @@
       "claim_id": "vcl_c2cab61527e2d309786a7106c2ce20d081855de5fac7c379ccfd15bba97707f2",
       "claim_root": "sha256:8f2b4f1316d757715ad0ed9674d3132b081d9897246197c4766e19b7e980f5ca"
     },
-    "latest_bounded_negative": {
+    "previous_bounded_negative": {
       "claim_id": "vcl_d65fa34573c0a57dff8959ed6b4227999cc03e07fad5f2be9bef184677a7ef8a",
       "claim_root": "sha256:984621a2a8111c79d87922dfa06d78f44fb92a50f9942f49d7ea45dbafd91322",
       "range": {
@@ -44,6 +44,17 @@
       },
       "artifact_root": "sha256:05fe0c9d4fcee762ca2fe9047fcafb49deaa40e8ef2ea41a055fff98e7e4fb80",
       "result": "No k=15 witness among 11 primes; maximum multiplicity 12 at p=10429379, residue 7438467."
+    },
+    "latest_bounded_negative": {
+      "claim_id": "vcl_5c740ebb758107f25179b096d9e1b680d0bc62186eb276c8b907a2c1226fd979",
+      "claim_root": "sha256:e5dda77fea872d0de9da96934d8c483d851fcfb8615e10fec9386e88d486452c",
+      "range": {
+        "first": 10429401,
+        "last": 10429600,
+        "inclusive": true
+      },
+      "artifact_root": "sha256:baec250e336105634fec8a7ce529c38e85a0bc7085004fecf70023ac5fd0113e",
+      "result": "No k=15 witness among 14 primes; maximum multiplicity 11 at p=10429427, residue 3828577."
     }
   },
   "completion_contract": {

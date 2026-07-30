@@ -1,0 +1,69 @@
+{
+  "schema": "vela.target-closure.v1",
+  "frontier_id": "vfr_0a25edabc16db143",
+  "target_id": "erdos:1056",
+  "status": "closed",
+  "reason": "Accepted exact bounded evidence exhaustively covers every prime in 10429401..10429600 and discharges this packet's negative completion condition without resolving Erdős problem 1056.",
+  "repository_root": "sha256:9679827bc76de9f6433bfafa8e2e966b9780ca1273c7948d97c2ae042f5cab1a",
+  "completed_scope": {
+    "kind": "inclusive_integer_range",
+    "first": 10429401,
+    "last": 10429600
+  },
+  "completed_packet": {
+    "path": "targets/erdos-1056.json",
+    "git_commit": "80606bdccb51fa86524111a1a61876bb08e45d79",
+    "schema": "erdos-frontier.problem-work.v2",
+    "sha256": "sha256:6d1a2ca87851deb1fa2133f4f6cf7edb28ee843cb0eef57ea09e826b3fdca63b"
+  },
+  "completion_contract": {
+    "positive": "One exact k=15 witness in the bounded range, with a replayable artifact and verifier result.",
+    "negative": "One exhaustive bounded-negative artifact for every prime in the range, including the algorithm, counts, maximum multiplicity, and replay command.",
+    "duplicate_range_forbidden": true,
+    "accepted_state_change": "none until a separate authorized Decision"
+  },
+  "completion_contract_root": "sha256:c628d6f1b79cae3da1c38ef5336485a198426533c3ed4744e6f7920099b88c35",
+  "evidence": [
+    {
+      "kind": "accepted_claim",
+      "id": "vcl_5c740ebb758107f25179b096d9e1b680d0bc62186eb276c8b907a2c1226fd979",
+      "path": "records/claims/sha256/e5dda77fea872d0de9da96934d8c483d851fcfb8615e10fec9386e88d486452c.json",
+      "root": "sha256:e5dda77fea872d0de9da96934d8c483d851fcfb8615e10fec9386e88d486452c"
+    },
+    {
+      "kind": "submission",
+      "id": "vsb_b8ebcd819ac327db",
+      "path": "records/submissions/sha256/0ef6bcf68411df02e4deb11b89df1cfa8ab197c133c38ae327dc19f89abfb822.json",
+      "root": "sha256:0ef6bcf68411df02e4deb11b89df1cfa8ab197c133c38ae327dc19f89abfb822"
+    },
+    {
+      "kind": "verification",
+      "id": "vvr_eb80b766c730513b",
+      "path": "records/verifications/sha256/47b5e299e93d298e31da2b4c3c9352855b37e07500f03208eb7851efb4c24ea9.json",
+      "root": "sha256:47b5e299e93d298e31da2b4c3c9352855b37e07500f03208eb7851efb4c24ea9"
+    },
+    {
+      "kind": "artifact",
+      "id": "va_baec250e33610563",
+      "path": "records/artifacts/sha256/baec250e336105634fec8a7ce529c38e85a0bc7085004fecf70023ac5fd0113e",
+      "root": "sha256:baec250e336105634fec8a7ce529c38e85a0bc7085004fecf70023ac5fd0113e"
+    },
+    {
+      "kind": "decision_event",
+      "id": "vev_51abc098046d3423",
+      "path": ".vela/authority/events/vev_51abc098046d3423.json",
+      "root": "sha256:fb48df2660288285a8dd838e94e1969cef6da95a13a9f7b483641c7f54d1006e"
+    }
+  ],
+  "successor_packet": {
+    "path": "targets/erdos-1056.json",
+    "schema": "erdos-frontier.problem-work.v2",
+    "sha256": "sha256:8d879e24a537de3b9b13ad7878dc98db8ce4f5273187c7f45d0d49a93e8fe8ad",
+    "size": 3245,
+    "expected_scope": {
+      "kind": "inclusive_integer_range",
+      "first": 10429601,
+      "last": 10429800
+    }
+  }
+}

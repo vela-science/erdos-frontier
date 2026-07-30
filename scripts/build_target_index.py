@@ -15,25 +15,29 @@ import pathlib
 import subprocess
 from typing import Any
 
+from validate_target_closure import validate as validate_target_closure
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CANDIDATE_PATH = ROOT / ".vela" / "tmp" / "target-index-candidate.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 INPUT_PATHS = [
     "scripts/build_target_index.py",
+    "scripts/validate_target_closure.py",
+    "targets/closures/erdos-1056-10429401-10429600.json",
 ]
 TARGET = {
     "id": "erdos:1056",
     "title": "Erdős 1056",
     "why": (
         "The exact current packet binds the open problem, banked k=2..14 "
-        "evidence, and the accepted bounded k=15 range 10429201..10429400; "
+        "evidence, and accepted bounded k=15 coverage through 10429600; "
         "the next non-overlapping range is ready."
     ),
     "state": "open",
     "rank": 1,
     "objective": (
-        "Search the exact next k=15 range 10429401..10429600 without repeating "
+        "Search the exact next k=15 range 10429601..10429800 without repeating "
         "banked coverage; produce one bounded, verifier-replayable artifact "
         "whose Claim states its actual scope and does not imply acceptance."
     ),
@@ -100,6 +104,7 @@ def validate_packet() -> None:
 
 
 def candidate() -> dict[str, Any]:
+    validate_target_closure(ROOT)
     validate_packet()
     return {
         "schema": "vela.target-index-candidate.v1",
