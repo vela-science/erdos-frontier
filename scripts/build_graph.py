@@ -63,6 +63,34 @@ VERDICT_EDGE = {"faithful": "supports", "unfaithful": "contradicts",
                 "variant": "specializes"}
 
 
+class GraphBuildError(RuntimeError):
+    """The graph cannot be built without its required signed source."""
+
+
+def load_frontier(path: pathlib.Path = FRONTIER) -> dict:
+    try:
+        frontier = json.loads(path.read_text())
+    except FileNotFoundError as error:
+        raise GraphBuildError(
+            f"required signed frontier projection is missing: {path}; "
+            "materialize frontier.json from .vela/ before rebuilding the graph"
+        ) from error
+    except json.JSONDecodeError as error:
+        raise GraphBuildError(
+            f"required signed frontier projection is invalid JSON: {path}"
+        ) from error
+    if not isinstance(frontier, dict):
+        raise GraphBuildError(
+            f"required signed frontier projection is not an object: {path}"
+        )
+    if not isinstance(frontier.get("statement_attestations"), list):
+        raise GraphBuildError(
+            "required signed frontier projection has no "
+            f"statement_attestations list: {path}"
+        )
+    return frontier
+
+
 def staged_draft(n: int) -> dict | None:
     """A campaign draft staged in statements/<n>/ — the statement exists in this
     repo before it exists upstream, so the graph indexes it (trust: declared)."""
@@ -81,11 +109,11 @@ def staged_draft(n: int) -> dict | None:
             "linked": "formal_proof" in text}
 
 
-def build() -> dict:
+def build(frontier_path: pathlib.Path = FRONTIER) -> dict:
     status = json.loads(STATUS.read_text())
     verdicts = json.loads(VERDICTS.read_text())
     conditions = verdicts["summary"].get("conditions") or []
-    frontier = json.loads(FRONTIER.read_text()) if FRONTIER.exists() else {}
+    frontier = load_frontier(frontier_path)
 
     nodes: dict[str, dict] = {}
     edges: list[dict] = []
@@ -232,7 +260,11 @@ def _count(items, key):
 
 
 def main() -> int:
-    doc = build()
+    try:
+        doc = build()
+    except GraphBuildError as error:
+        print(f"graph build refused: {error}", file=sys.stderr)
+        return 2
     OUT_DIR.mkdir(exist_ok=True)
     (OUT_DIR / "corpus-graph.json").write_text(json.dumps(doc, indent=1) + "\n")
     # The JSONL projection is DEPENDENCY-directed for `vela atlas decl-blast`

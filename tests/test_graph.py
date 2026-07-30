@@ -3,25 +3,61 @@ deterministic from the same inputs, referentially intact, and in exact parity
 with the audit's own discrepancy list (no phantom contradictions)."""
 import json
 import pathlib
-import subprocess
 import sys
 
+import pytest
 import yaml
 
 HERE = pathlib.Path(__file__).parent.parent
 GRAPH = HERE / "graph" / "corpus-graph.json"
+sys.path.insert(0, str(HERE / "scripts"))
+
+from build_graph import GraphBuildError, build  # noqa: E402
 
 
-def _build() -> bytes:
-    subprocess.run([sys.executable, "scripts/build_graph.py"],
-                   cwd=HERE, check=True, capture_output=True)
-    return GRAPH.read_bytes()
+@pytest.fixture
+def signed_frontier(tmp_path: pathlib.Path) -> pathlib.Path:
+    path = tmp_path / "frontier.json"
+    path.write_text(json.dumps({
+        "statement_attestations": [
+            {
+                "id": "vsa_test_faithful",
+                "informal_ref": "erdosproblems.com/246",
+                "attested_by": "reviewer:test",
+                "verdict": "faithful",
+            },
+            {
+                "id": "vsa_test_variant",
+                "informal_ref": "erdosproblems.com/205",
+                "attested_by": "reviewer:test",
+                "verdict": "variant",
+            },
+        ]
+    }))
+    return path
 
 
-def test_graph_is_deterministic():
-    a = _build()
-    b = _build()
+def _build(frontier_path: pathlib.Path) -> bytes:
+    return (json.dumps(build(frontier_path), indent=1) + "\n").encode()
+
+
+def test_graph_is_deterministic(signed_frontier: pathlib.Path):
+    a = _build(signed_frontier)
+    b = _build(signed_frontier)
     assert a == b, "same inputs must produce byte-identical graphs"
+
+
+def test_missing_signed_frontier_fails_closed(tmp_path: pathlib.Path):
+    missing = tmp_path / "frontier.json"
+    with pytest.raises(GraphBuildError, match="signed frontier projection is missing"):
+        build(missing)
+
+
+def test_frontier_without_signed_source_fails_closed(tmp_path: pathlib.Path):
+    incomplete = tmp_path / "frontier.json"
+    incomplete.write_text("{}")
+    with pytest.raises(GraphBuildError, match="no statement_attestations list"):
+        build(incomplete)
 
 
 def test_every_edge_endpoint_exists():
@@ -42,9 +78,9 @@ def test_contradictions_match_the_audit():
         "discrepancy list — no phantom edges, none missing")
 
 
-def test_signed_tier_matches_the_frontier():
-    doc = json.loads(GRAPH.read_text())
-    frontier = json.loads((HERE / "frontier.json").read_text())
+def test_signed_tier_matches_the_frontier(signed_frontier: pathlib.Path):
+    doc = build(signed_frontier)
+    frontier = json.loads(signed_frontier.read_text())
     signed_edges = [e for e in doc["edges"] if e["trust"] == "signed"]
     atts = frontier.get("statement_attestations") or []
     assert len(signed_edges) == len(atts), (
