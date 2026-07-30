@@ -46,9 +46,19 @@ TARGET_BASE = {
 }
 
 
-def git_head() -> str:
+def git_source_commit(root: pathlib.Path = ROOT) -> str:
     return subprocess.run(
-        ["git", "-C", str(ROOT), "rev-parse", "HEAD^{commit}"],
+        [
+            "git",
+            "-C",
+            str(root),
+            "log",
+            "-1",
+            "--format=%H",
+            "--",
+            *INPUT_PATHS,
+            PACKET_PATH.relative_to(ROOT).as_posix(),
+        ],
         check=True,
         capture_output=True,
         text=True,
@@ -132,7 +142,7 @@ def candidate() -> dict[str, Any]:
         "schema": "vela.target-index-candidate.v1",
         "frontier_id": "vfr_0a25edabc16db143",
         "source": {
-            "git_commit": git_head(),
+            "git_commit": git_source_commit(),
             "input_paths": INPUT_PATHS,
         },
         "targets": [target_from_validation(validation)],

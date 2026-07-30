@@ -13,7 +13,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_target_closure import TargetClosureError, validate  # noqa: E402
-from build_target_index import target_from_validation  # noqa: E402
+from build_target_index import git_source_commit, target_from_validation  # noqa: E402
 
 
 def _copy(root: pathlib.Path, relative: str) -> None:
@@ -419,3 +419,44 @@ def test_target_copy_uses_derived_successor_range() -> None:
     )
     assert "10429801..10430000" in target["objective"]
     assert "through 10429800" in target["why"]
+
+
+def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -> None:
+    subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
+    subprocess.run(
+        ["git", "-C", str(tmp_path), "config", "user.email", "target-test@vela.invalid"],
+        check=True,
+    )
+    subprocess.run(
+        ["git", "-C", str(tmp_path), "config", "user.name", "Vela Target Test"],
+        check=True,
+    )
+    for relative in [
+        "scripts/build_target_index.py",
+        "scripts/validate_target_closure.py",
+        "targets/closures/erdos-1056-10429401-10429600.json",
+        "targets/closures/erdos-1056-10429601-10429800.json",
+        "targets/erdos-1056.json",
+    ]:
+        path = tmp_path / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(f"{relative}\n")
+    subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
+    subprocess.run(
+        ["git", "-C", str(tmp_path), "commit", "-qm", "source inputs"],
+        check=True,
+    )
+    source_commit = subprocess.run(
+        ["git", "-C", str(tmp_path), "rev-parse", "HEAD"],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    (tmp_path / "targets.json").write_text("{}\n")
+    subprocess.run(["git", "-C", str(tmp_path), "add", "targets.json"], check=True)
+    subprocess.run(
+        ["git", "-C", str(tmp_path), "commit", "-qm", "generated index"],
+        check=True,
+    )
+
+    assert git_source_commit(tmp_path) == source_commit
