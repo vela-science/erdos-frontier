@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Validate domain-owned Erdős Target closure and successor coverage.
+"""Validate domain-owned Erdős producer closure and successor coverage.
 
-This is a read-only, non-authoritative validator. It binds a closed numerical
-range to retained accepted evidence, then proves that the exposed successor is
-tracked, fresh, contiguous, and non-overlapping.
+This is a read-only, non-authoritative validator. A producer-complete Target is
+closed by an exact Submission that satisfies its frozen completion contract.
+Verification and scientific Standing remain separate: a passing Verification
+may be retained with the closure, but only a repository-authority Decision can
+change accepted state.
 """
 
 from __future__ import annotations
@@ -17,11 +19,31 @@ import subprocess
 from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CLOSURE_PATH = ROOT / "targets" / "closures" / "erdos-1056-10429401-10429600.json"
+CLOSURE_DIRECTORY = ROOT / "targets" / "closures"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 SHA256_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
 GIT_COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")
+BOUNDED_NEGATIVE_CLAIM_RE = re.compile(
+    r"^An exhaustive bounded search of the (?P<primes_tested>[0-9]+) primes "
+    r"in the inclusive range (?P<range_start>[0-9]+)\.\.(?P<range_end>[0-9]+) "
+    r"found no k=(?P<k>[0-9]+) witness; the maximum multiplicity observed was "
+    r"(?P<max_multiplicity>[0-9]+) at p=(?P<best_p>[0-9]+), "
+    r"residue (?P<best_residue>[0-9]+)\.$"
+)
+SEARCH_ARTIFACT_KEYS = {
+    "schema",
+    "status",
+    "problem",
+    "k",
+    "range_start",
+    "range_end",
+    "primes_tested",
+    "max_multiplicity",
+    "best_p",
+    "best_residue",
+    "cuts",
+}
 
 
 class TargetClosureError(ValueError):
@@ -78,14 +100,19 @@ def read_json(path: pathlib.Path) -> dict[str, Any]:
 
 
 def retained_git_json(
-    root: pathlib.Path, commit: str, path_raw: str, expected_root: str
+    root: pathlib.Path,
+    commit: str,
+    path_raw: str,
+    expected_root: str,
+    required_path: str,
+    label: str,
 ) -> dict[str, Any]:
     if not GIT_COMMIT_RE.fullmatch(commit):
-        raise TargetClosureError("completed packet Git commit is malformed")
-    if path_raw != PACKET_PATH.relative_to(ROOT).as_posix():
-        raise TargetClosureError("completed packet Git path differs")
+        raise TargetClosureError(f"{label} Git commit is malformed")
+    if path_raw != required_path:
+        raise TargetClosureError(f"{label} Git path differs")
     if not SHA256_RE.fullmatch(expected_root):
-        raise TargetClosureError("completed packet SHA-256 root is malformed")
+        raise TargetClosureError(f"{label} SHA-256 root is malformed")
 
     commit_check = subprocess.run(
         [
@@ -100,7 +127,7 @@ def retained_git_json(
         capture_output=True,
     )
     if commit_check.returncode != 0:
-        raise TargetClosureError("completed packet Git commit is unavailable")
+        raise TargetClosureError(f"{label} Git commit is unavailable")
     ancestor_check = subprocess.run(
         [
             "git",
@@ -116,7 +143,7 @@ def retained_git_json(
     )
     if ancestor_check.returncode != 0:
         raise TargetClosureError(
-            "completed packet Git commit is not retained in current history"
+            f"{label} Git commit is not retained in current history"
         )
 
     packet_result = subprocess.run(
@@ -131,21 +158,21 @@ def retained_git_json(
         capture_output=True,
     )
     if packet_result.returncode != 0:
-        raise TargetClosureError("completed packet is absent at its Git commit")
+        raise TargetClosureError(f"{label} is absent at its Git commit")
     observed_root = "sha256:" + hashlib.sha256(packet_result.stdout).hexdigest()
     if observed_root != expected_root:
         raise TargetClosureError(
-            "completed packet Git bytes drifted: "
+            f"{label} Git bytes drifted: "
             f"expected {expected_root}, observed {observed_root}"
         )
     try:
         value = json.loads(packet_result.stdout)
     except json.JSONDecodeError as error:
         raise TargetClosureError(
-            "completed packet Git bytes are not canonical JSON"
+            f"{label} Git bytes are not canonical JSON"
         ) from error
     if not isinstance(value, dict):
-        raise TargetClosureError("completed packet Git bytes are not a JSON object")
+        raise TargetClosureError(f"{label} Git bytes are not a JSON object")
     return value
 
 
@@ -177,6 +204,156 @@ def validate_range(value: Any, label: str) -> tuple[int, int]:
     return first, last
 
 
+def is_prime(value: int) -> bool:
+    if value < 2:
+        return False
+    if value % 2 == 0:
+        return value == 2
+    divisor = 3
+    while divisor * divisor <= value:
+        if value % divisor == 0:
+            return False
+        divisor += 2
+    return True
+
+
+def parse_search_artifact(path: pathlib.Path) -> dict[str, Any]:
+    try:
+        lines = path.read_text().splitlines()
+    except (OSError, UnicodeDecodeError) as error:
+        raise TargetClosureError(f"cannot read completion artifact: {error}") from error
+    values: dict[str, str] = {}
+    for line in lines:
+        if not line or "=" not in line:
+            raise TargetClosureError("completion artifact is not canonical key=value text")
+        key, value = line.split("=", 1)
+        if key in values:
+            raise TargetClosureError(f"completion artifact repeats {key}")
+        values[key] = value
+    if set(values) != SEARCH_ARTIFACT_KEYS:
+        raise TargetClosureError(
+            "completion artifact keys differ: "
+            f"expected {sorted(SEARCH_ARTIFACT_KEYS)}, observed {sorted(values)}"
+        )
+
+    integer_fields = (
+        "problem",
+        "k",
+        "range_start",
+        "range_end",
+        "primes_tested",
+        "max_multiplicity",
+        "best_p",
+        "best_residue",
+    )
+    parsed: dict[str, Any] = {
+        "schema": values["schema"],
+        "status": values["status"],
+    }
+    for field in integer_fields:
+        if not values[field].isdigit():
+            raise TargetClosureError(
+                f"completion artifact {field} is not an unsigned integer"
+            )
+        parsed[field] = int(values[field])
+    cuts_raw = values["cuts"].split(",") if values["cuts"] else []
+    if not cuts_raw or any(not value.isdigit() for value in cuts_raw):
+        raise TargetClosureError("completion artifact cuts are malformed")
+    parsed["cuts"] = [int(value) for value in cuts_raw]
+    return parsed
+
+
+def validate_search_artifact(
+    path: pathlib.Path,
+    assertion: str,
+    closed_first: int,
+    closed_last: int,
+) -> dict[str, Any]:
+    artifact = parse_search_artifact(path)
+    if artifact["schema"] != "canopus.erdos1056-k15-search.v1":
+        raise TargetClosureError("completion artifact schema differs")
+    if artifact["status"] != "negative":
+        raise TargetClosureError("completion artifact is not a bounded negative")
+    if artifact["problem"] != 1056 or artifact["k"] != 15:
+        raise TargetClosureError("completion artifact names another problem or k")
+    if (artifact["range_start"], artifact["range_end"]) != (
+        closed_first,
+        closed_last,
+    ):
+        raise TargetClosureError("completion artifact range differs from the closure")
+
+    observed_primes = sum(
+        1 for value in range(closed_first, closed_last + 1) if is_prime(value)
+    )
+    if artifact["primes_tested"] != observed_primes:
+        raise TargetClosureError("completion artifact prime count is incorrect")
+    if (
+        not is_prime(artifact["best_p"])
+        or not closed_first <= artifact["best_p"] <= closed_last
+    ):
+        raise TargetClosureError("completion artifact best_p is outside the prime range")
+    cuts = artifact["cuts"]
+    if (
+        len(cuts) != artifact["max_multiplicity"]
+        or cuts != sorted(set(cuts))
+        or any(value < 0 or value >= artifact["best_p"] for value in cuts)
+    ):
+        raise TargetClosureError("completion artifact cuts are inconsistent")
+    if not 0 <= artifact["best_residue"] < artifact["best_p"]:
+        raise TargetClosureError("completion artifact best_residue is inconsistent")
+
+    match = BOUNDED_NEGATIVE_CLAIM_RE.fullmatch(assertion)
+    if match is None:
+        raise TargetClosureError("bounded Claim does not use the exact result contract")
+    claim_facts = {key: int(value) for key, value in match.groupdict().items()}
+    comparable = {
+        key: artifact[key]
+        for key in (
+            "primes_tested",
+            "range_start",
+            "range_end",
+            "k",
+            "max_multiplicity",
+            "best_p",
+            "best_residue",
+        )
+    }
+    if claim_facts != comparable:
+        raise TargetClosureError("completion artifact and Claim facts differ")
+    return artifact
+
+
+def submission_artifact_by_kind(
+    submission: dict[str, Any], kind: str
+) -> dict[str, Any]:
+    rows = [
+        row
+        for row in submission.get("artifacts", [])
+        if isinstance(row, dict) and row.get("kind") == kind
+    ]
+    if len(rows) != 1:
+        raise TargetClosureError(
+            f"Submission must bind exactly one {kind} artifact"
+        )
+    return rows[0]
+
+
+def validate_manifest_artifact(
+    root: pathlib.Path,
+    row: dict[str, Any],
+    expected_schema: str,
+) -> dict[str, Any]:
+    path = relative_path(root, row.get("path", ""))
+    require_tracked(root, path)
+    digest = row.get("digest", "")
+    if file_root(path) != digest:
+        raise TargetClosureError(f"{row.get('kind')} artifact root drifted")
+    manifest = read_json(path)
+    if manifest.get("schema") != expected_schema:
+        raise TargetClosureError(f"{row.get('kind')} artifact schema differs")
+    return manifest
+
+
 def evidence_by_kind(closure: dict[str, Any]) -> dict[str, dict[str, Any]]:
     rows = closure.get("evidence")
     if not isinstance(rows, list):
@@ -189,17 +366,32 @@ def evidence_by_kind(closure: dict[str, Any]) -> dict[str, dict[str, Any]]:
         if kind in by_kind:
             raise TargetClosureError(f"duplicate Target closure evidence kind: {kind}")
         by_kind[kind] = row
-    required = {
-        "accepted_claim",
-        "submission",
-        "verification",
-        "artifact",
-        "decision_event",
-    }
-    if set(by_kind) != required:
+    basis = closure.get("closure_basis")
+    if basis == "accepted_standing":
+        required = {
+            "accepted_claim",
+            "submission",
+            "verification",
+            "artifact",
+            "decision_event",
+        }
+        allowed = required
+    elif basis == "registered_submission":
+        required = {
+            "claim",
+            "submission",
+            "registration",
+            "artifact",
+            "verification",
+        }
+        allowed = required
+    else:
+        raise TargetClosureError("Target closure basis is unsupported")
+    if not required.issubset(by_kind) or not set(by_kind).issubset(allowed):
         raise TargetClosureError(
             "Target closure evidence kinds differ: "
-            f"expected {sorted(required)}, observed {sorted(by_kind)}"
+            f"required {sorted(required)}, allowed {sorted(allowed)}, "
+            f"observed {sorted(by_kind)}"
         )
     return by_kind
 
@@ -215,65 +407,28 @@ def load_evidence(
     return value
 
 
-def validate_all_closed_ranges(root: pathlib.Path) -> None:
-    ranges: list[tuple[int, int, str]] = []
-    directory = root / "targets" / "closures"
-    for path in sorted(directory.glob("*.json")):
-        require_tracked(root, path)
-        closure = read_json(path)
-        if closure.get("schema") != "vela.target-closure.v1":
-            raise TargetClosureError(f"unsupported Target closure schema at {path}")
-        if closure.get("target_id") != "erdos:1056":
-            continue
-        if closure.get("status") != "closed":
-            raise TargetClosureError(f"non-closed envelope exposed at {path}")
-        first, last = validate_range(
-            closure.get("completed_scope"), f"{path.name} completed scope"
-        )
-        ranges.append((first, last, path.name))
-    ranges.sort()
-    for previous, current in zip(ranges, ranges[1:], strict=False):
-        if current[0] <= previous[1]:
-            raise TargetClosureError(
-                "completed Erdős ranges overlap: "
-                f"{previous[2]} and {current[2]}"
-            )
-
-
-def validate(
-    root: pathlib.Path = ROOT,
-    closure_path: pathlib.Path | None = None,
-    packet_path: pathlib.Path | None = None,
+def validate_closure(
+    root: pathlib.Path,
+    path: pathlib.Path,
+    repository: dict[str, Any],
 ) -> dict[str, Any]:
-    root = root.resolve()
-    closure_path = (closure_path or root / CLOSURE_PATH.relative_to(ROOT)).resolve()
-    packet_path = (packet_path or root / PACKET_PATH.relative_to(ROOT)).resolve()
-    repository_path = root / REPOSITORY_PATH.relative_to(ROOT)
-    for path in (closure_path, packet_path, repository_path):
-        require_tracked(root, path)
-
-    closure = read_json(closure_path)
-    packet = read_json(packet_path)
-    repository = read_json(repository_path)
-
+    require_tracked(root, path)
+    closure = read_json(path)
     if closure.get("schema") != "vela.target-closure.v1":
-        raise TargetClosureError("unsupported Target closure schema")
+        raise TargetClosureError(f"unsupported Target closure schema at {path}")
     if closure.get("frontier_id") != repository.get("frontier_id"):
-        raise TargetClosureError("Target closure names another Frontier")
+        raise TargetClosureError(f"Target closure names another Frontier at {path}")
     if closure.get("target_id") != "erdos:1056":
-        raise TargetClosureError("Target closure names another Target")
+        raise TargetClosureError(f"Target closure names another Target at {path}")
     if closure.get("status") != "closed":
-        raise TargetClosureError("completed Target is not marked closed")
-    observed_repository_root = file_root(repository_path)
-    if closure.get("repository_root") != observed_repository_root:
-        raise TargetClosureError("Target closure repository root drifted")
+        raise TargetClosureError(f"non-closed envelope exposed at {path}")
 
     contract = closure.get("completion_contract")
     if canonical_root(contract) != closure.get("completion_contract_root"):
-        raise TargetClosureError("Target completion-contract root drifted")
+        raise TargetClosureError(f"Target completion-contract root drifted at {path}")
 
     closed_first, closed_last = validate_range(
-        closure.get("completed_scope"), "completed scope"
+        closure.get("completed_scope"), f"{path.name} completed scope"
     )
     completed_packet = closure.get("completed_packet") or {}
     retained_packet = retained_git_json(
@@ -281,6 +436,8 @@ def validate(
         completed_packet.get("git_commit", ""),
         completed_packet.get("path", ""),
         completed_packet.get("sha256", ""),
+        PACKET_PATH.relative_to(ROOT).as_posix(),
+        "completed packet",
     )
     if retained_packet.get("schema") != completed_packet.get("schema"):
         raise TargetClosureError("completed packet schema drifted")
@@ -296,114 +453,293 @@ def validate(
         "completion_contract_root"
     ):
         raise TargetClosureError("completed packet completion contract drifted")
+    retained_git_json(
+        root,
+        closure.get("repository_commit", ""),
+        REPOSITORY_PATH.relative_to(ROOT).as_posix(),
+        closure.get("repository_root", ""),
+        REPOSITORY_PATH.relative_to(ROOT).as_posix(),
+        "closure repository state",
+    )
 
     evidence = evidence_by_kind(closure)
-    claim = load_evidence(root, evidence["accepted_claim"], "claim_id")
+    basis = closure["closure_basis"]
+    claim_kind = "accepted_claim" if basis == "accepted_standing" else "claim"
+    claim = load_evidence(root, evidence[claim_kind], "claim_id")
     submission = load_evidence(root, evidence["submission"], "submission_id")
-    verification = load_evidence(
-        root, evidence["verification"], "verification_record_id"
-    )
     artifact_row = evidence["artifact"]
     artifact_path = relative_path(root, artifact_row.get("path", ""))
     require_tracked(root, artifact_path)
     if file_root(artifact_path) != artifact_row.get("root"):
         raise TargetClosureError("Target closure artifact root drifted")
-    decision = load_evidence(root, evidence["decision_event"], "id")
 
-    accepted = {
-        row.get("claim_id"): row.get("claim_root")
-        for row in repository.get("accepted_claims", [])
-        if isinstance(row, dict)
-    }
-    claim_id = evidence["accepted_claim"]["id"]
-    claim_root = evidence["accepted_claim"]["root"]
-    if accepted.get(claim_id) != claim_root:
-        raise TargetClosureError("bounded-range Claim is not accepted at this root")
-
+    claim_id = evidence[claim_kind]["id"]
+    claim_root = evidence[claim_kind]["root"]
     assertion = ((claim.get("assertion") or {}).get("text")) or ""
-    expected_range = f"{closed_first}..{closed_last}"
-    if (
-        expected_range not in assertion
-        or "exhaustive bounded search" not in assertion.lower()
-    ):
-        raise TargetClosureError("accepted Claim does not state the exact bounded range")
     if submission.get("claim", {}).get("assertion") != assertion:
-        raise TargetClosureError("Submission and accepted Claim assertions differ")
-    if artifact_row["root"] not in {
-        row.get("digest") for row in submission.get("artifacts", [])
-    }:
-        raise TargetClosureError("Submission does not bind the closure artifact")
+        raise TargetClosureError("Submission and Claim assertions differ")
+    validate_search_artifact(artifact_path, assertion, closed_first, closed_last)
 
-    subject = verification.get("subject") or {}
-    if verification.get("outcome") != "pass":
-        raise TargetClosureError("Target closure Verification did not pass")
-    if subject.get("claim_id") != claim_id:
-        raise TargetClosureError("Verification does not bind the accepted Claim")
-    if subject.get("submission_id") != evidence["submission"]["id"]:
-        raise TargetClosureError("Verification does not bind the Submission")
+    if submission.get("replayability") != "exact":
+        raise TargetClosureError("Submission is not exactly replayable")
+    result_artifact = submission_artifact_by_kind(submission, "text/plain")
+    if (
+        result_artifact.get("path") != artifact_row.get("path")
+        or result_artifact.get("digest") != artifact_row.get("root")
+    ):
+        raise TargetClosureError("Submission does not bind the completion artifact")
+    engine_artifact = submission_artifact_by_kind(submission, "engine-manifest")
+    verifier_artifact = submission_artifact_by_kind(submission, "verifier-manifest")
+    validate_manifest_artifact(
+        root, engine_artifact, "canopus.engine-manifest.v0"
+    )
+    verifier_manifest = validate_manifest_artifact(
+        root, verifier_artifact, "canopus.verifier-manifest.v1"
+    )
+    verification_requirements = submission.get("verification_requirements")
+    if (
+        not isinstance(verification_requirements, list)
+        or not verification_requirements
+        or any(not isinstance(value, str) or not value for value in verification_requirements)
+    ):
+        raise TargetClosureError("Submission omits its exact replay requirement")
+    executable_root = verifier_manifest.get("executable_sha256")
+    if (
+        not isinstance(executable_root, str)
+        or not SHA256_RE.fullmatch(executable_root)
+        or executable_root not in "\n".join(verification_requirements)
+    ):
+        raise TargetClosureError(
+            "Submission replay requirement does not bind the verifier capsule"
+        )
+    required_artifact_ids = {
+        row["digest"].removeprefix("sha256:")
+        for row in (result_artifact, engine_artifact, verifier_artifact)
+    }
 
-    content = decision.get("content") or {}
-    payload = content.get("payload") or {}
-    if content.get("kind") != "review.accepted":
-        raise TargetClosureError("Target closure Decision is not an acceptance")
-    if payload.get("proposal_id") != subject.get("proposal_id"):
-        raise TargetClosureError("Decision and Verification bind different Proposals")
+    proposal_id: str | None = None
+    verification_root: str | None = None
+    decision_event_root: str | None = None
+    if basis == "registered_submission":
+        registration = load_evidence(
+            root, evidence["registration"], "registration_record_id"
+        )
+        if registration.get("submission_id") != evidence["submission"]["id"]:
+            raise TargetClosureError("Registration does not bind the Submission")
+        if registration.get("submission_root") != evidence["submission"]["root"]:
+            raise TargetClosureError("Registration binds another Submission root")
+        if registration.get("claim_id") != claim_id:
+            raise TargetClosureError("Registration does not bind the Claim")
+        if registration.get("route") != "pending_review":
+            raise TargetClosureError("producer closure was not routed for review")
+        if registration.get("accepted_state_changed") is not False:
+            raise TargetClosureError("producer closure changed accepted state")
+        proposal_id = registration.get("proposal_id")
+        if not isinstance(proposal_id, str) or not proposal_id:
+            raise TargetClosureError("Registration omits its Proposal")
+    else:
+        accepted = {
+            row.get("claim_id"): row.get("claim_root")
+            for row in repository.get("accepted_claims", [])
+            if isinstance(row, dict)
+        }
+        if accepted.get(claim_id) != claim_root:
+            raise TargetClosureError("bounded-range Claim is not accepted")
+
+    verification_row = evidence.get("verification")
+    if verification_row is not None:
+        verification = load_evidence(
+            root, verification_row, "verification_record_id"
+        )
+        subject = verification.get("subject") or {}
+        if verification.get("outcome") != "pass":
+            raise TargetClosureError("retained Target Verification did not pass")
+        if subject.get("claim_id") != claim_id:
+            raise TargetClosureError("Verification does not bind the Claim")
+        if subject.get("submission_id") != evidence["submission"]["id"]:
+            raise TargetClosureError("Verification does not bind the Submission")
+        if set(subject.get("artifact_ids") or []) != required_artifact_ids:
+            raise TargetClosureError(
+                "Verification does not bind every required artifact"
+            )
+        if (
+            verification.get("method", {}).get("environment_root")
+            != verifier_artifact.get("digest")
+        ):
+            raise TargetClosureError(
+                "Verification environment does not bind the verifier manifest"
+            )
+        if proposal_id is not None and subject.get("proposal_id") != proposal_id:
+            raise TargetClosureError("Verification does not bind the Proposal")
+        proposal_id = subject.get("proposal_id")
+        verification_root = verification_row["root"]
+
+    if basis == "accepted_standing":
+        decision = load_evidence(root, evidence["decision_event"], "id")
+        content = decision.get("content") or {}
+        payload = content.get("payload") or {}
+        if content.get("kind") != "review.accepted":
+            raise TargetClosureError("Target closure Decision is not an acceptance")
+        if payload.get("proposal_id") != proposal_id:
+            raise TargetClosureError(
+                "Decision and Verification bind different Proposals"
+            )
+        decision_event_root = evidence["decision_event"]["root"]
+
+    return {
+        "path": path.relative_to(root).as_posix(),
+        "basis": basis,
+        "first": closed_first,
+        "last": closed_last,
+        "claim_id": claim_id,
+        "claim_root": claim_root,
+        "submission_id": evidence["submission"]["id"],
+        "submission_root": evidence["submission"]["root"],
+        "registration_id": (evidence.get("registration") or {}).get("id"),
+        "registration_root": (evidence.get("registration") or {}).get("root"),
+        "proposal_id": proposal_id,
+        "artifact_root": artifact_row["root"],
+        "verification_id": (verification_row or {}).get("id"),
+        "verification_root": verification_root,
+        "decision_event_root": decision_event_root,
+    }
+
+
+def validate_all_closed_ranges(
+    root: pathlib.Path, repository: dict[str, Any]
+) -> list[dict[str, Any]]:
+    closures: list[dict[str, Any]] = []
+    directory = root / CLOSURE_DIRECTORY.relative_to(ROOT)
+    for path in sorted(directory.glob("*.json")):
+        require_tracked(root, path)
+        raw = read_json(path)
+        if raw.get("target_id") != "erdos:1056":
+            continue
+        closures.append(validate_closure(root, path, repository))
+    closures.sort(key=lambda row: (row["first"], row["last"], row["path"]))
+    for previous, current in zip(closures, closures[1:], strict=False):
+        if current["first"] <= previous["last"]:
+            raise TargetClosureError(
+                "completed Erdős ranges overlap: "
+                f"{previous['path']} and {current['path']}"
+            )
+    return closures
+
+
+def validate(
+    root: pathlib.Path = ROOT,
+    closure_path: pathlib.Path | None = None,
+    packet_path: pathlib.Path | None = None,
+) -> dict[str, Any]:
+    root = root.resolve()
+    packet_path = (packet_path or root / PACKET_PATH.relative_to(ROOT)).resolve()
+    repository_path = root / REPOSITORY_PATH.relative_to(ROOT)
+    for path in (packet_path, repository_path):
+        require_tracked(root, path)
+
+    packet = read_json(packet_path)
+    repository = read_json(repository_path)
+    observed_repository_root = file_root(repository_path)
+    closures = validate_all_closed_ranges(root, repository)
+    if not closures:
+        raise TargetClosureError("no completed Erdős Target closure is retained")
+    if closure_path is not None:
+        requested = closure_path.resolve().relative_to(root).as_posix()
+        if requested not in {row["path"] for row in closures}:
+            raise TargetClosureError("requested Target closure is not retained")
 
     if packet.get("schema") != "erdos-frontier.problem-work.v2":
         raise TargetClosureError("successor packet has the wrong schema")
     if packet.get("frontier_id") != repository.get("frontier_id"):
         raise TargetClosureError("successor packet names another Frontier")
-    if packet.get("target", {}).get("id") != closure.get("target_id"):
+    if packet.get("target", {}).get("id") != "erdos:1056":
         raise TargetClosureError("successor packet names another Target")
     if packet.get("repository", {}).get("root") != observed_repository_root:
         raise TargetClosureError("successor packet repository root drifted")
     successor_first, successor_last = validate_range(
         packet.get("target", {}).get("next_bounded_range"), "successor range"
     )
-    expected_successor = closure.get("successor_packet") or {}
-    expected_first, expected_last = validate_range(
-        expected_successor.get("expected_scope"), "expected successor scope"
-    )
-    if (successor_first, successor_last) != (expected_first, expected_last):
-        raise TargetClosureError("successor range differs from the closure envelope")
-    if successor_first != closed_last + 1:
-        raise TargetClosureError(
-            "successor repeats, overlaps, or skips completed exact coverage"
-        )
-    if expected_successor.get("path") != packet_path.relative_to(root).as_posix():
-        raise TargetClosureError("successor packet path differs")
-    if expected_successor.get("schema") != packet.get("schema"):
-        raise TargetClosureError("successor packet schema differs")
-    if expected_successor.get("sha256") != file_root(packet_path):
-        raise TargetClosureError("successor packet root drifted")
-    if expected_successor.get("size") != packet_path.stat().st_size:
-        raise TargetClosureError("successor packet size drifted")
-
     latest = packet.get("accepted_state", {}).get("latest_bounded_negative") or {}
     latest_first, latest_last = validate_range(
         latest.get("range"), "latest accepted bounded range"
     )
-    if (latest_first, latest_last) != (closed_first, closed_last):
-        raise TargetClosureError("successor packet omits the completed range")
-    if latest.get("claim_id") != claim_id or latest.get("claim_root") != claim_root:
-        raise TargetClosureError("successor packet binds the wrong accepted Claim")
-    if latest.get("artifact_root") != artifact_row["root"]:
-        raise TargetClosureError("successor packet binds the wrong accepted artifact")
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+        if isinstance(row, dict)
+    }
+    if accepted.get(latest.get("claim_id")) != latest.get("claim_root"):
+        raise TargetClosureError("packet latest bounded Claim is not accepted")
 
-    previous = packet.get("accepted_state", {}).get("previous_bounded_negative") or {}
-    _, previous_last = validate_range(previous.get("range"), "previous bounded range")
-    if previous_last + 1 != closed_first:
-        raise TargetClosureError("accepted bounded coverage is not contiguous")
+    producer_closures = [
+        row
+        for row in closures
+        if row["basis"] == "registered_submission" and row["last"] > latest_last
+    ]
+    expected_first = latest_last + 1
+    for row in producer_closures:
+        if row["first"] != expected_first:
+            raise TargetClosureError(
+                "producer-complete coverage repeats, overlaps, or skips accepted coverage"
+            )
+        expected_first = row["last"] + 1
+    if successor_first != expected_first:
+        raise TargetClosureError(
+            "successor repeats, overlaps, or skips completed producer coverage"
+        )
 
-    validate_all_closed_ranges(root)
+    newest = producer_closures[-1] if producer_closures else None
+    progress = packet.get("producer_completion", {}).get(
+        "latest_registered_submission"
+    )
+    if newest is None:
+        if progress is not None:
+            raise TargetClosureError("packet invents producer-complete work")
+    else:
+        if not isinstance(progress, dict):
+            raise TargetClosureError("packet omits producer-complete work")
+        progress_first, progress_last = validate_range(
+            progress.get("range"), "latest producer-complete range"
+        )
+        if (progress_first, progress_last) != (newest["first"], newest["last"]):
+            raise TargetClosureError("packet binds the wrong producer-complete range")
+        exact_fields = {
+            "claim_id": newest["claim_id"],
+            "claim_root": newest["claim_root"],
+            "submission_id": newest["submission_id"],
+            "submission_root": newest["submission_root"],
+            "registration_id": newest["registration_id"],
+            "registration_root": newest["registration_root"],
+            "proposal_id": newest["proposal_id"],
+            "artifact_root": newest["artifact_root"],
+            "verification_id": newest["verification_id"],
+            "verification_root": newest["verification_root"],
+        }
+        for field, expected in exact_fields.items():
+            if progress.get(field) != expected:
+                raise TargetClosureError(
+                    f"packet producer completion binds the wrong {field}"
+                )
+        if progress.get("registration_route") != "pending_review":
+            raise TargetClosureError("producer completion obscures its registration route")
+        if progress.get("registration_accepted_state_changed") is not False:
+            raise TargetClosureError(
+                "producer completion implies accepted-state change"
+            )
+
+    newest_closure = closures[-1]
     return {
         "schema": "erdos-frontier.target-closure-check.v1",
         "ok": True,
-        "closed_target": closure["target_id"],
-        "closed_range": {"first": closed_first, "last": closed_last},
-        "accepted_claim_root": claim_root,
-        "verification_root": evidence["verification"]["root"],
-        "decision_event_root": evidence["decision_event"]["root"],
+        "closed_target": "erdos:1056",
+        "closed_range": {
+            "first": newest_closure["first"],
+            "last": newest_closure["last"],
+        },
+        "closure_basis": newest_closure["basis"],
+        "completion_claim_root": newest_closure["claim_root"],
+        "verification_root": newest_closure["verification_root"],
+        "accepted_coverage": {"first": latest_first, "last": latest_last},
         "successor_range": {"first": successor_first, "last": successor_last},
     }
 

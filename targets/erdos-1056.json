@@ -2,9 +2,9 @@
   "schema": "erdos-frontier.problem-work.v2",
   "frontier_id": "vfr_0a25edabc16db143",
   "repository": {
-    "commit": "80606bdccb51fa86524111a1a61876bb08e45d79",
-    "tree": "fd233bf5ef27196dab3eaef5d4c664ed56f8ed92",
-    "root": "sha256:9679827bc76de9f6433bfafa8e2e966b9780ca1273c7948d97c2ae042f5cab1a"
+    "commit": "af70d2cc1e9b98ee705e757fa773101ecfc17a01",
+    "tree": "a0d730fa348b32433bfb3602156e1bea088b9d51",
+    "root": "sha256:1964e610500eed9e9b916b0d3433e73401a2b33ae7657dde0f0a949235603caf"
   },
   "target": {
     "id": "erdos:1056",
@@ -12,8 +12,8 @@
     "state": "open",
     "objective": "Extend the accepted bounded evidence for k=15 without repeating a retained range or implying a universal result.",
     "next_bounded_range": {
-      "first": 10429601,
-      "last": 10429800,
+      "first": 10429801,
+      "last": 10430000,
       "inclusive": true
     }
   },
@@ -55,6 +55,28 @@
       },
       "artifact_root": "sha256:baec250e336105634fec8a7ce529c38e85a0bc7085004fecf70023ac5fd0113e",
       "result": "No k=15 witness among 14 primes; maximum multiplicity 11 at p=10429427, residue 3828577."
+    }
+  },
+  "producer_completion": {
+    "latest_registered_submission": {
+      "claim_id": "vcl_4b80b2d9500a1f6dd98cf7722717e6d26d9ebd9d8edabb09f9436b9ac49a9237",
+      "claim_root": "sha256:226cdf85adf6edcaf67a3680ffd52a3c3e3cab5ad9dea9e12b8577d69e02f5fc",
+      "submission_id": "vsb_89d9b93573219d50",
+      "submission_root": "sha256:c4939b30f685b89cde593a06c92f51b7da8380185d259b0f4bcef8c1947eead4",
+      "registration_id": "vrr_3d81936bafe55dcd",
+      "registration_root": "sha256:e592cf3928865eef64e613eabdbaa3c6d695e10fad437edc25369c91e13ba4f7",
+      "proposal_id": "vpr_27bce8983810f3bd",
+      "registration_route": "pending_review",
+      "verification_id": "vvr_85596c5b83104888",
+      "verification_root": "sha256:ebf9c60073aacd212bec7e774e2807abc8ade346e8d4ea547b6d339d39822dee",
+      "registration_accepted_state_changed": false,
+      "range": {
+        "first": 10429601,
+        "last": 10429800,
+        "inclusive": true
+      },
+      "artifact_root": "sha256:207d01341d91a12b6645f1d70a66df0c0f942a18f4afbb07dec5bb154b5e4ede",
+      "result": "No k=15 witness among 13 primes; maximum multiplicity 11 at p=10429717, residue 2060465."
     }
   },
   "completion_contract": {

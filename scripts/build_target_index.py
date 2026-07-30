@@ -25,22 +25,13 @@ INPUT_PATHS = [
     "scripts/build_target_index.py",
     "scripts/validate_target_closure.py",
     "targets/closures/erdos-1056-10429401-10429600.json",
+    "targets/closures/erdos-1056-10429601-10429800.json",
 ]
-TARGET = {
+TARGET_BASE = {
     "id": "erdos:1056",
     "title": "Erdős 1056",
-    "why": (
-        "The exact current packet binds the open problem, banked k=2..14 "
-        "evidence, and accepted bounded k=15 coverage through 10429600; "
-        "the next non-overlapping range is ready."
-    ),
     "state": "open",
     "rank": 1,
-    "objective": (
-        "Search the exact next k=15 range 10429601..10429800 without repeating "
-        "banked coverage; produce one bounded, verifier-replayable artifact "
-        "whose Claim states its actual scope and does not imply acceptance."
-    ),
     "labels": [
         "bounded-artifact",
         "erdos",
@@ -71,15 +62,44 @@ def canonical_bytes(value: Any) -> bytes:
     ).encode()
 
 
-def validate_packet() -> None:
+def target_from_validation(validation: dict[str, Any]) -> dict[str, Any]:
+    successor = validation["successor_range"]
+    accepted = validation["accepted_coverage"]
+    completed = validation["closed_range"]
+    pending = ""
+    if (
+        validation["closure_basis"] == "registered_submission"
+        and completed["last"] > accepted["last"]
+    ):
+        pending = (
+            f", and producer-complete work pending review through "
+            f"{completed['last']}"
+        )
+    return {
+        **TARGET_BASE,
+        "why": (
+            "The exact current packet binds the open problem, banked k=2..14 "
+            f"evidence, accepted bounded k=15 coverage through {accepted['last']}"
+            f"{pending}; the next non-overlapping range is ready."
+        ),
+        "objective": (
+            "Search the exact next k=15 range "
+            f"{successor['first']}..{successor['last']} without repeating "
+            "banked coverage; produce one bounded, verifier-replayable artifact "
+            "whose Claim states its actual scope and does not imply acceptance."
+        ),
+    }
+
+
+def validate_packet(validation: dict[str, Any]) -> None:
     repository = json.loads(REPOSITORY_PATH.read_text())
     packet = json.loads(PACKET_PATH.read_text())
     repository_root = "sha256:" + hashlib.sha256(REPOSITORY_PATH.read_bytes()).hexdigest()
-    if packet.get("schema") != TARGET["packet"]["schema"]:
+    if packet.get("schema") != TARGET_BASE["packet"]["schema"]:
         raise ValueError("Erdős 1056 packet schema differs from the Target")
     if packet.get("frontier_id") != repository.get("frontier_id"):
         raise ValueError("Erdős 1056 packet targets another Frontier")
-    if (packet.get("target") or {}).get("id") != TARGET["id"]:
+    if (packet.get("target") or {}).get("id") != TARGET_BASE["id"]:
         raise ValueError("Erdős 1056 packet targets another work item")
     if (packet.get("repository") or {}).get("root") != repository_root:
         raise ValueError("Erdős 1056 packet is stale for the current repository root")
@@ -97,15 +117,17 @@ def validate_packet() -> None:
                 f"Erdős 1056 packet does not bind current accepted Claim {claim_id}"
             )
 
-    previous = packet["accepted_state"]["latest_bounded_negative"]["range"]
     next_range = packet["target"]["next_bounded_range"]
-    if previous["last"] + 1 != next_range["first"]:
-        raise ValueError("Erdős 1056 next range is not contiguous and non-overlapping")
+    if next_range != {
+        **validation["successor_range"],
+        "inclusive": True,
+    }:
+        raise ValueError("Erdős 1056 packet differs from the derived successor range")
 
 
 def candidate() -> dict[str, Any]:
-    validate_target_closure(ROOT)
-    validate_packet()
+    validation = validate_target_closure(ROOT)
+    validate_packet(validation)
     return {
         "schema": "vela.target-index-candidate.v1",
         "frontier_id": "vfr_0a25edabc16db143",
@@ -113,7 +135,7 @@ def candidate() -> dict[str, Any]:
             "git_commit": git_head(),
             "input_paths": INPUT_PATHS,
         },
-        "targets": [TARGET],
+        "targets": [target_from_validation(validation)],
     }
 
 

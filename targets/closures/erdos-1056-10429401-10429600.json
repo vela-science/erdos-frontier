@@ -3,7 +3,9 @@
   "frontier_id": "vfr_0a25edabc16db143",
   "target_id": "erdos:1056",
   "status": "closed",
+  "closure_basis": "accepted_standing",
   "reason": "Accepted exact bounded evidence exhaustively covers every prime in 10429401..10429600 and discharges this packet's negative completion condition without resolving Erdős problem 1056.",
+  "repository_commit": "80606bdccb51fa86524111a1a61876bb08e45d79",
   "repository_root": "sha256:9679827bc76de9f6433bfafa8e2e966b9780ca1273c7948d97c2ae042f5cab1a",
   "completed_scope": {
     "kind": "inclusive_integer_range",
@@ -54,16 +56,5 @@
       "path": ".vela/authority/events/vev_51abc098046d3423.json",
       "root": "sha256:fb48df2660288285a8dd838e94e1969cef6da95a13a9f7b483641c7f54d1006e"
     }
-  ],
-  "successor_packet": {
-    "path": "targets/erdos-1056.json",
-    "schema": "erdos-frontier.problem-work.v2",
-    "sha256": "sha256:8d879e24a537de3b9b13ad7878dc98db8ce4f5273187c7f45d0d49a93e8fe8ad",
-    "size": 3245,
-    "expected_scope": {
-      "kind": "inclusive_integer_range",
-      "first": 10429601,
-      "last": 10429800
-    }
-  }
+  ]
 }
