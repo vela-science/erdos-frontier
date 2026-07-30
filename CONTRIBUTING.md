@@ -1,70 +1,60 @@
 # Contributing
 
-There are two contribution paths. Both keep activity, verification, and human
-judgment separate.
+There are two contribution paths. Both keep production, verification, and
+scientific judgment separate.
 
-## Contribute a proof upstream
+## Improve upstream proof evidence
 
-Host the Lean proof in a tracked proof repository or contribute it to Formal
-Conjectures. This frontier's audit records the exact repository, commit,
-declaration, theorem assumptions, and axiom surface. A clean kernel check is
-evidence about the derivation; it is not by itself a judgment that the theorem
+Contribute a Lean proof to a source repository tracked by this Frontier, or
+improve the source audit and its exact retained evidence. A kernel-clean proof
+is evidence about a derivation; it is not by itself a judgment that the theorem
 faithfully states the informal Erdős problem.
 
-## Land research state through Receipt v1
+For Formal Conjectures statement work:
 
-Install the Vela version declared by [`vela.lock`](vela.lock) (currently
-`0.901.0`), clone the frontier, and use the task-first loop:
+1. `python scripts/draft_statement.py <n>` prepares a pinned candidate.
+2. Edit the statement from the verbatim upstream problem.
+3. `bash scripts/gate_draft.sh <n>` runs the mechanical build and metadata gate.
+4. Submit the exact candidate, input packet, and gate output with an explicit
+   statement-fidelity caveat.
+
+Never add a `formal_proof` link when the retained machine audit reports a
+conditional, axiomatic, partial, or mismatched theorem.
+
+## Submit bounded work through Vela
+
+Use the current released Vela CLI:
 
 ```bash
+vela check . --strict --json
 vela next . --json
-vela work <target> --frontier . --as agent:<your-name> --json
+vela start <target> --frontier . --as agent:<name> --json
 
-# Produce and verify one bounded artifact, then land it through the session.
-vela land --frontier . --work <target> \
-  --claim "One scoped result a skeptical reviewer can evaluate." \
-  --type theoretical --replayability exact \
-  --artifact path/to/result.md:note \
-  --caveat "What this result does not establish." \
-  --as agent:<your-name> --json
+vela submit --frontier . --attempt <attempt_id> \
+  --claim "<one bounded result>" \
+  --type theoretical \
+  --replayability exact \
+  --artifact <path>:<kind> \
+  --caveat "<what the result does not establish>" \
+  --as agent:<name> --json
 ```
 
-A signed policy routes the receipt. Permit admits only a class the human
-already delegated, Defer places the exact proposal in the human's sign queue,
-and Deny refuses canonical admission. Do not bypass that route by editing
-`.vela/`, `frontier.json`, `vela.lock`, or `proof/`.
+The Submission must bind the offered target, exact artifacts, producer identity,
+and scope limit. It enters review without changing accepted state. Independent
+Verification and a repository-authority Decision happen separately.
 
-After landing, commit and push your branch and open a pull request. The Vela
-Action replays the event log and checks materialized-state parity. It never
-signs or supplies a verdict.
+Do not hand-edit `.vela/authority/`, `.vela/repository.json`, `records/`, or
+`targets.json`. Do not invoke authority commands or use authority credentials as
+an agent. If no current target is offered, stop rather than inventing one.
 
-## Formal Conjectures statements
-
-Statement candidates require both mechanical and semantic review:
-
-1. `python scripts/draft_statement.py <n>` gathers pinned inputs and stages the
-   candidate.
-2. Edit the Lean statement from the verbatim boxed problem text and record
-   every divergence from hosted formalizations.
-3. `bash scripts/gate_draft.sh <n>` runs the FC build and metadata checks.
-4. Land the exact draft and gate record as Receipt v1 artifacts with a caveat
-   that statement fidelity remains a human judgment.
-5. Stop at the pending proposal. An agent may prepare its key-free Decision
-   Plan with `vela review decide . <vpr_id> --accept|--reject --reason <text> --json`;
-   only the registered human may approve the protected, root-bound decision
-   card. The outward FC branch is prepared only from the exact accepted bytes.
-
-Never add a `formal_proof` link when the machine audit reports a conditional,
-axiomatic, partial, or mismatched theorem.
-
-## Verify locally
+## Development
 
 ```bash
-vela check .                 # replay, signatures, and parity
-vela status . --json
-bash scripts/graph.sh build  # deterministic corpus projection
+uv sync --all-groups
+uv run pytest -q
+vela check . --strict --json
 ```
 
-`vela check . --strict` additionally treats the catalogue's declared-data
-condition debt as release-blocking. That debt is intentionally visible and is
-not waived by a non-strict pass.
+Heavy multi-toolchain Lean audits are explicit manual workflows. Their reviewed
+outputs are retained under `lean/`; they do not regenerate a parallel site,
+graph, or canonical state.

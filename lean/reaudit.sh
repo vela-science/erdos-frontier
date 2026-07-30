@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-# Re-run the heavy multi-toolchain Lean audit and regenerate the committed feeds.
+# Re-run the heavy multi-toolchain Lean audit and refresh retained source locks.
 #
 # Each proof repo is loaded in its own built `.lake` env at its own pinned Lean
 # toolchain; the extractor reads axioms + theorem-parameter hypotheses per proof.
-# This is the HEAVY step — run it when the proof corpora change. The daily
-# update-status.yml job does NOT run this; it only re-reads the committed
-# audit_feed*.json and refreshes the join, which is cheap.
+# This is the HEAVY step — run it explicitly when the proof corpora change.
 #
 # Assumes the proof repos are already cloned + built locally (the default roots, or
 # the VELA_PROOF_REPO* env overrides used by extract_assumptions.py). The CI
@@ -26,7 +24,7 @@ python3 lean/extract_assumptions.py --repo alphaproof
 echo "==> Jayyhk/erdos-lean (audits already-built problem projects)"
 python3 lean/extract_assumptions.py --repo jayyhk || true
 
-echo "==> regenerate the join (status.json + verdicts.json + STATUS.md + packets feed)"
+echo "==> refresh the source audit and exact source locks"
 python3 erdos_frontier.py
 
-echo "re-audit complete: audit_feed*.json + status regenerated."
+echo "re-audit complete: audit_feed*.json + sources.lock.json refreshed."

@@ -104,16 +104,16 @@ many clauses.
 | independent runs share blind spots | [FrontierMath v2 audit](https://epoch.ai/frontiermath/the-benchmark): errors in 42% of problems that had passed human review | take the union of flags and have a human adjudicate each; no majority voting |
 | circularity | models citing a site's own status as evidence a problem is open | the check reads the original source, never the repo's docstring |
 | one clause corrected, the rest assumed fine | a screening that fixed one misread condition and never re-checked the condition it had already passed | step 3's re-verify-all rule |
-| the formal proof silently repairs the informal argument | Erdős 650: the informal lower-bound proof had a gap; Aristotle's formalization fixed it in-flight, and the gap surfaced only in the authors' write-up ([thread 650](https://www.erdosproblems.com/forum/thread/650), Woett's timeline) | a Lean pass verifies the formal proof, never the informal argument; record known divergences as first-class state ([650's record](https://erdos.constellate.science/finding.html?n=650)) |
+| the formal proof silently repairs the informal argument | Erdős 650: the informal lower-bound proof had a gap; Aristotle's formalization fixed it in-flight, and the gap surfaced only in the authors' write-up ([thread 650](https://www.erdosproblems.com/forum/thread/650), Woett's timeline) | a Lean pass verifies the formal proof, never the informal argument; retain known divergences as source evidence and exact Vela records |
 
 ## What a screening never does
 
 A screening never decides anything. In
 [formal-conjectures](https://github.com/google-deepmind/formal-conjectures),
-maintainer approval merges a statement. On
-[erdos-frontier](https://erdos.constellate.science/method.html), a
-statement-fidelity verdict exists only as a named reviewer's signed event.
-The screening's output is provenance those decisions can cite.
+maintainer approval merges a statement. In the
+[Erdős Frontier](https://app.vela.space/frontiers/erdos), statement fidelity
+changes Standing only through an exact repository-authority Decision. The
+screening's output is evidence that Decision can cite.
 
 First runs of this format: self-reviews on my own open formal-conjectures
 statement PRs. The broader review-process context lives in

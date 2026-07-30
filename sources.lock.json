@@ -11,9 +11,9 @@
       "url": "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
     },
     "fidelity": {
-      "home": "self (.vela/ -> frontier.json)",
-      "kind": "statement_attestations",
-      "sha256": "sha256:5c65352b00e841e4defd38000e6e36d562815e6bb3565ceed0b5a7825cb88d85"
+      "kind": "frozen_snapshot",
+      "path": "sources/fidelity_cache.json",
+      "sha256": "sha256:ea55869e17b0afad037dcb07d7d67da0e3711c28b4db5e79ac44d11ab1a7164d"
     },
     "formal_conjectures": {
       "kind": "formal_statement_registry",

@@ -8,25 +8,26 @@ VELA.md is the canonical, full agent charter for this worktree.
 
 Agents may:
 
-- inspect current state, graph slices, provenance, objects, and schemas
-- start one offered target with an explicit `agent:` actor when a current
-  Target Index exists
-- run local frozen verifiers and focused frontier checks
-- register one signed, scoped Submission from their Attempt
-- inspect the review queue and exact Proposal, Registration, Verification, and
-  Claim records
-- draft Formal Conjectures statements, run their mechanical gates, and prepare
-  keyless handoff artifacts
+- inspect current state, provenance, objects, targets, and schemas;
+- start exactly one current target with an explicit `agent:` actor;
+- run the target’s frozen verifier and focused source checks;
+- register one signed, scoped Submission from their Attempt;
+- inspect the review queue and exact Claim, Submission, Verification, Proposal,
+  and Decision records;
+- draft Formal Conjectures statements, run mechanical gates, and prepare
+  keyless handoff artifacts.
 
 Agents may not:
 
-- invoke repository-authority decisions or use repository-authority credentials
-- claim that a Submission, Verification Record, Git commit, or model answer is
-  scientific acceptance
-- hand-edit `.vela/authority/`, `.vela/repository.json`, or retained records
-- link `formal_proof` to a machine-conditional proof or rephrase an upstream
-  problem statement
-- publish an outward Formal Conjectures contribution in a human's name
+- invoke repository-authority Decisions or use repository-authority credentials;
+- present a Submission, Verification, Git commit, or model answer as accepted
+  scientific Standing;
+- hand-edit `.vela/authority/`, `.vela/repository.json`, `records/`, or
+  `targets.json`;
+- invent work when no current Target is offered;
+- link `formal_proof` to a machine-conditional proof or silently rephrase an
+  upstream problem statement;
+- publish an outward contribution in a human’s name.
 
 ## Fast commands
 
@@ -34,16 +35,18 @@ Agents may not:
 vela status . --json
 vela next . --json
 vela start <target> --frontier . --as agent:<name> --json
-vela submit --frontier . --attempt <vat_id> \
-  --claim "<bounded result>" --type theoretical --replayability exact \
-  --artifact <path>:<kind> --caveat "<scope limit>" \
+vela submit --frontier . --attempt <attempt_id> \
+  --claim "<bounded result>" \
+  --type theoretical \
+  --replayability exact \
+  --artifact <path>:<kind> \
+  --caveat "<scope limit>" \
   --as agent:<name> --json
 vela review list . --json
-vela review show . <vpr_id> --json
+vela review show . <proposal_id> --json
 vela show . <object_id> --json
 vela why . <claim_id> --json
 vela check . --strict --json
-bash scripts/graph.sh blast <node>
 ```
 
 See VELA.md for the full charter: hard rules, layout, contribution path, design, git.

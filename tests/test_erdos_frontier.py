@@ -19,9 +19,6 @@ from erdos_frontier import (
     load_machine_audit,
     load_wiki_registry,
     parse_fidelity,
-    render_next_batch_md,
-    render_status_md,
-    render_verdicts_feed,
 )
 
 
@@ -188,7 +185,7 @@ def test_330_override_prevents_unsafe_link_bucket():
     assert row["bucket"] == "needs-statement-update"
 
 
-def test_status_json_shape_and_rendered_artifacts_are_useful():
+def test_status_payload_shape_preserves_actionable_classification():
     proofs = complete_plby_proofs(24, 214)
     payload = build_status(
         erdos=erdos_records(24, 214),
@@ -209,12 +206,8 @@ def test_status_json_shape_and_rendered_artifacts_are_useful():
         214: "mismatch",
     }
 
-    status_md = render_status_md(payload)
-    next_batch_md = render_next_batch_md(payload, top_count=20, batch_size=8)
-    assert "## `mismatch`" in status_md
-    assert "Problem 24" in next_batch_md
-    assert "ErdosProblems/24" in next_batch_md
-    assert "Problem 214" not in next_batch_md
+    assert decoded["rows"][0]["recommended_action"]
+    assert decoded["rows"][1]["override"]["reason"] == "not the boxed statement"
 
 
 FIDELITY_DOC_214 = {
@@ -296,17 +289,6 @@ def test_faithful_verdict_routes_to_link_when_fc_has_file_else_statement():
     assert without_file["bucket"] == "statement"
 
 
-def test_fidelity_section_renders_in_status_md():
-    fidelity = parse_fidelity(FIDELITY_DOC_214, source="cache")[214]
-    payload, _ = status_for(214, fidelity=fidelity)
-
-    status_md = render_status_md(payload)
-
-    assert "## statement fidelity" in status_md
-    assert "`unfaithful`" in status_md
-    assert "cache" in status_md
-
-
 def test_load_fidelity_missing_source_degrades_to_empty(tmp_path):
     # A path that does not exist (the 404 analogue) yields an empty column.
     missing = tmp_path / "no-such-fidelity.json"
@@ -377,11 +359,7 @@ def test_wiki_claim_plus_conditional_proof_flags_discrepancy():
 
     assert row["wiki"]["claims_full_solution"] is True
     assert row["discrepancy"] is True
-
-    feed_row = render_verdicts_feed(payload)["rows"][0]
-    assert feed_row["wiki_claims_solved"] is True
-    assert feed_row["discrepancy"] is True
-    assert 1148 in render_verdicts_feed(payload)["summary"]["discrepancies"]
+    assert 1148 in payload["discrepancies"]
 
 
 def test_no_discrepancy_when_audited_proof_is_unconditional():
@@ -440,9 +418,8 @@ def test_staging_gate_holds_a_celebrated_proof_flag_until_cleared():
     assert row["discrepancy"] is False                       # suppressed while held
     assert 728 in payload["held_for_review"]
 
-    feed = render_verdicts_feed(payload)
-    assert 728 in feed["summary"]["held_for_review"]
-    assert 728 not in feed["summary"]["discrepancies"]
+    assert 728 in payload["held_for_review"]
+    assert 728 not in payload["discrepancies"]
 
 
 def test_staging_gate_releases_a_cleared_celebrated_flag():
@@ -475,7 +452,7 @@ def test_load_candidate_claims_reads_gpt_erdos_registry():
     assert claims[281]["source"] == "gpt-erdos"
 
 
-def test_candidate_claim_rides_the_row_and_the_cross_reference():
+def test_candidate_claim_rides_the_reconciled_row():
     # #281: gpt-erdos says "new proof"; our extractor flags the Lean proof conditional.
     # The overlap (different artifacts, different verdicts) is the point.
     proof = machine_conditional_proof(281, named=["h : Erdos281.Hyp"])
@@ -487,11 +464,7 @@ def test_candidate_claim_rides_the_row_and_the_cross_reference():
     row = payload["rows"][0]
 
     assert row["candidate_claims"]["category"] == "new_proof"
-
-    feed = render_verdicts_feed(payload)
-    assert feed["rows"][0]["gpt_erdos"] == "new_proof"
-    assert {"problem": 281, "machine_verdict": "conditional", "gpt_erdos": "new_proof"} \
-        in feed["summary"]["cross_reference"]
+    assert row["machine"]["verdict"] == "conditional"
 
 
 def test_source_lock_refresh_preserves_operational_pins_and_selected_paths(

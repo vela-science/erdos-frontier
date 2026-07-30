@@ -37,11 +37,11 @@ sources:
     path: proofs.yaml
     url: https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml
 
-  # Statement-fidelity: this repo IS the git-native home (vfr_0a25edabc16db143);
-  # the four signed vsa_ replay from .vela/ into frontier.json — no external fetch.
+  # Retained historical attestations used only by the source-audit join. Current
+  # scientific Standing is represented by canonical Vela Claims and Decisions.
   fidelity:
-    kind: statement_attestations
-    home: "self (.vela/ -> frontier.json)"
+    kind: frozen_snapshot
+    path: sources/fidelity_cache.json
 
   # Committed frozen snapshots, versioned in-repo (no live fetch).
   wiki:

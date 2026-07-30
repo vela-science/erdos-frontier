@@ -5,9 +5,8 @@ Usage:
     python fc_pr_audit.py <pr-number> [--repo google-deepmind/formal-conjectures]
 
 Reads the PR's changed ErdosProblems files at the PR head, parses each
-declaration textually (no Lean build), joins each problem against the audit
-feed (site/verdicts.json), and prints a markdown facts report suitable for a
-PR comment.
+declaration textually (no Lean build), joins each problem against the current
+source audit, and prints a markdown facts report suitable for a PR comment.
 
 Facts only, no judgments. A flag is a reason for a human to look, never a
 verdict. This implements the L1 layer of STANDARD_CHECK.md.
@@ -21,7 +20,8 @@ import json
 import re
 import subprocess
 import sys
-from pathlib import Path
+
+from erdos_frontier import load_live_status
 
 DEFAULT_REPO = "google-deepmind/formal-conjectures"
 ERDOS_FILE = re.compile(r"FormalConjectures/ErdosProblems/(\d+)\.lean$")
@@ -95,11 +95,23 @@ def parse_lean(text: str) -> dict:
 
 
 def load_feed() -> dict[str, dict]:
-    path = Path(__file__).parent / "site" / "verdicts.json"
-    rows = json.load(open(path))
-    if isinstance(rows, dict):
-        rows = rows.get("rows", [])
-    return {str(r["problem"]): r for r in rows}
+    """Build the small PR-audit view directly from retained source evidence."""
+    rows = {}
+    for source in load_live_status()["rows"]:
+        machine = source.get("machine") or {}
+        wiki = source.get("wiki") or {}
+        fidelity = source.get("fidelity") or {}
+        rows[str(source["problem"])] = {
+            "problem": source["problem"],
+            "erdos_state": source.get("erdos_state"),
+            "proof_links": source.get("proof_links") or [],
+            "machine_verdict": machine.get("verdict"),
+            "named_assumptions": machine.get("named_assumptions") or [],
+            "wiki_outcome": wiki.get("outcome_label"),
+            "signed_fidelity_verdict": fidelity.get("verdict"),
+            "signed_by": fidelity.get("reviewer"),
+        }
+    return rows
 
 
 def facts_for_file(path: str, text: str, feed: dict[str, dict]) -> list[str]:
@@ -187,8 +199,11 @@ def main(argv: list[str]) -> int:
     targets = [f["path"] for f in pr["files"] if ERDOS_FILE.search(f["path"])]
 
     print(f"### Statement facts: PR #{pr['number']} — {pr['title']}")
-    print(f"*Mechanical report from the [erdos-frontier audit]"
-          f"(https://erdos.constellate.science/method.html); facts only, no judgments.*\n")
+    print(
+        "*Mechanical report from the source audit in "
+        "[erdos-frontier](https://github.com/vela-science/erdos-frontier); "
+        "facts only, no judgments.*\n"
+    )
     if not targets:
         print("No `FormalConjectures/ErdosProblems/*.lean` files changed in this PR.")
         return 0
