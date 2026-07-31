@@ -24,7 +24,7 @@ REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 BUNDLE_SCHEMA = "vela.agent-execution-bundle.v1"
 TARGET_ID = "erdos:1056"
-ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430201-10430400.txt"
+ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430401-10430600.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
     {"type": "engine-manifest"},

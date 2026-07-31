@@ -33,6 +33,7 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
         "targets/closures/erdos-1056-10429601-10429800.json",
         "targets/closures/erdos-1056-10429801-10430000.json",
         "targets/closures/erdos-1056-10430001-10430200.json",
+        "targets/closures/erdos-1056-10430201-10430400.json",
     ]
     closures = [json.loads((ROOT / path).read_text()) for path in closure_paths]
     successor_packet = (ROOT / "targets/erdos-1056.json").read_bytes()
@@ -127,13 +128,13 @@ def test_exact_closure_derives_first_uncovered_interval(
     frontier: pathlib.Path,
 ) -> None:
     result = validate(frontier)
-    assert result["closed_range"] == {"first": 10430001, "last": 10430200}
+    assert result["closed_range"] == {"first": 10430201, "last": 10430400}
     assert result["closure_basis"] == "registered_submission"
     assert result["accepted_coverage"] == {"first": 10429401, "last": 10429600}
-    assert result["successor_range"] == {"first": 10430201, "last": 10430400}
+    assert result["successor_range"] == {"first": 10430401, "last": 10430600}
     assert (
         result["completion_claim_root"]
-        == "sha256:6dbb52c243f28aa68e7f3ff9dddffeeb1cb0dff6ecf1f47ec555a2d7b1730640"
+        == "sha256:a1ad4ea66bdac316bfccfbff4a7c18f7917b70b7f7cebd949601c41dcf58299b"
     )
 
 
@@ -382,7 +383,7 @@ def test_rejected_submission_still_closes_producer_work(
 
     result = validate(frontier)
     assert result["accepted_coverage"]["last"] == 10429600
-    assert result["successor_range"]["first"] == 10430201
+    assert result["successor_range"]["first"] == 10430401
 
 
 def test_later_acceptance_reconciles_without_rewriting_closure(
@@ -423,8 +424,8 @@ def test_later_acceptance_reconciles_without_rewriting_closure(
     _write(packet_path, packet)
 
     result = validate(frontier)
-    assert result["accepted_coverage"]["last"] == 10430200
-    assert result["successor_range"]["first"] == 10430201
+    assert result["accepted_coverage"]["last"] == 10430400
+    assert result["successor_range"]["first"] == 10430401
     assert "pending review" not in target_from_validation(result)["why"]
 
 
@@ -432,19 +433,19 @@ def test_target_copy_uses_derived_successor_range() -> None:
     target = target_from_validation(
         {
             "accepted_coverage": {"first": 1, "last": 10429600},
-            "closed_range": {"first": 10430001, "last": 10430200},
+            "closed_range": {"first": 10430201, "last": 10430400},
             "closure_basis": "registered_submission",
-            "successor_range": {"first": 10430201, "last": 10430400},
+            "successor_range": {"first": 10430401, "last": 10430600},
         }
     )
-    assert "10430201..10430400" in target["objective"]
-    assert "through 10430200" in target["why"]
+    assert "10430401..10430600" in target["objective"]
+    assert "through 10430400" in target["why"]
 
 
 def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
     assert execution_input_paths(ROOT) == [
-        "execution/erdos-1056/10430201-10430400/bundle.json",
-        "execution/erdos-1056/mission-10430201-10430400.draft.json",
+        "execution/erdos-1056/10430401-10430600/bundle.json",
+        "execution/erdos-1056/mission-10430401-10430600.draft.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]
@@ -467,6 +468,7 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "targets/closures/erdos-1056-10429601-10429800.json",
         "targets/closures/erdos-1056-10429801-10430000.json",
         "targets/closures/erdos-1056-10430001-10430200.json",
+        "targets/closures/erdos-1056-10430201-10430400.json",
     ]:
         path = tmp_path / relative
         path.parent.mkdir(parents=True, exist_ok=True)
