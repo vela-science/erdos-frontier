@@ -1,0 +1,60 @@
+{
+  "schema": "vela.target-closure.v1",
+  "frontier_id": "vfr_0a25edabc16db143",
+  "target_id": "erdos:1056",
+  "status": "closed",
+  "closure_basis": "registered_submission",
+  "reason": "The exact registered Submission satisfies this packet's bounded-negative completion contract for every prime in 10430001..10430200. Its separate Verification passed, but the Claim remains pending review and no scientific Standing changed.",
+  "repository_commit": "b8088bfbcbdc09d037e12f4924a32dc633112cff",
+  "repository_root": "sha256:adefa01cea989241d96ce22274cdd778d2750054537a1956cdf2c52e041a39c8",
+  "completed_scope": {
+    "kind": "inclusive_integer_range",
+    "first": 10430001,
+    "last": 10430200
+  },
+  "completed_packet": {
+    "path": "targets/erdos-1056.json",
+    "git_commit": "b8088bfbcbdc09d037e12f4924a32dc633112cff",
+    "schema": "erdos-frontier.problem-work.v2",
+    "sha256": "sha256:8462f1061f6af95f51723734385ead23d5ddea76f142821784581dd8b8b06fe3"
+  },
+  "completion_contract": {
+    "positive": "One exact k=15 witness in the bounded range, with a replayable artifact and verifier result.",
+    "negative": "One exhaustive bounded-negative artifact for every prime in the range, including the algorithm, counts, maximum multiplicity, and replay command.",
+    "duplicate_range_forbidden": true,
+    "accepted_state_change": "none until a separate authorized Decision"
+  },
+  "completion_contract_root": "sha256:c628d6f1b79cae3da1c38ef5336485a198426533c3ed4744e6f7920099b88c35",
+  "evidence": [
+    {
+      "kind": "claim",
+      "id": "vcl_268fd0de48f9275bfe2bfcaef6df03f851343dd81109c09d8002f64b05b7edac",
+      "path": "records/claims/sha256/6dbb52c243f28aa68e7f3ff9dddffeeb1cb0dff6ecf1f47ec555a2d7b1730640.json",
+      "root": "sha256:6dbb52c243f28aa68e7f3ff9dddffeeb1cb0dff6ecf1f47ec555a2d7b1730640"
+    },
+    {
+      "kind": "submission",
+      "id": "vsb_895cb3913a189369",
+      "path": "records/submissions/sha256/d6f1434663592b4aa49401ce80f5da84e60f5822430c47cc5c5ea42e14826a41.json",
+      "root": "sha256:d6f1434663592b4aa49401ce80f5da84e60f5822430c47cc5c5ea42e14826a41"
+    },
+    {
+      "kind": "registration",
+      "id": "vrr_26ed7bc6328679bb",
+      "path": "records/registrations/sha256/3713da625ebf0e67cb91b59f3fadd2c3837f3a565158acec96b66dd7e8f53a75.json",
+      "root": "sha256:3713da625ebf0e67cb91b59f3fadd2c3837f3a565158acec96b66dd7e8f53a75"
+    },
+    {
+      "kind": "artifact",
+      "id": "va_f88668b9b0856383",
+      "path": "records/artifacts/sha256/f88668b9b085638347e5f068ff2677bd84b09fe71b5ff934a33047fb29ac55bc",
+      "root": "sha256:f88668b9b085638347e5f068ff2677bd84b09fe71b5ff934a33047fb29ac55bc"
+    },
+    {
+      "kind": "verification",
+      "id": "vvr_9e6664cad0970e67",
+      "path": "records/verifications/sha256/fbf8d2f08ba8a3393447ab8b7989d932595a88eef2971b7b6ae797f06ec3f832.json",
+      "root": "sha256:fbf8d2f08ba8a3393447ab8b7989d932595a88eef2971b7b6ae797f06ec3f832"
+    }
+  ]
+}

@@ -3,14 +3,14 @@
   "frontier_id": "vfr_0a25edabc16db143",
   "execution_bundle": {
     "schema": "vela.agent-execution-bundle.v1",
-    "path": "execution/erdos-1056/10430001-10430200/bundle.json",
+    "path": "execution/erdos-1056/10430201-10430400/bundle.json",
     "size": 1563,
-    "sha256": "sha256:811fcb171984038db54651accf4ff9788faf8e459978f13e8ffdf88008ff2c78"
+    "sha256": "sha256:05aa59cc4494a2405f05f9c4bd18c88c7898334cde20a1495e5a33c11ed369d9"
   },
   "allowed_outputs": [
     {
       "type": "text/plain",
-      "path": "artifacts/erdos1056-k15-range-10430001-10430200.txt"
+      "path": "artifacts/erdos1056-k15-range-10430201-10430400.txt"
     },
     {
       "type": "engine-manifest"
@@ -20,9 +20,9 @@
     }
   ],
   "repository": {
-    "commit": "a3216890d2218a326c6a2308a6561f08bdbfd106",
-    "tree": "02d542935a9328126db0b4c17de11f145b757e76",
-    "root": "sha256:3bc564317755ea25545b88621ed25a4a69a33febd8037058919c85af9a8e79b4"
+    "commit": "b8088bfbcbdc09d037e12f4924a32dc633112cff",
+    "tree": "16064939f848f389b1a01ed7707cf79837df1cd1",
+    "root": "sha256:adefa01cea989241d96ce22274cdd778d2750054537a1956cdf2c52e041a39c8"
   },
   "target": {
     "id": "erdos:1056",
@@ -30,8 +30,8 @@
     "state": "open",
     "objective": "Extend the accepted bounded evidence for k=15 without repeating a retained range or implying a universal result.",
     "next_bounded_range": {
-      "first": 10430001,
-      "last": 10430200,
+      "first": 10430201,
+      "last": 10430400,
       "inclusive": true
     }
   },
@@ -77,24 +77,24 @@
   },
   "producer_completion": {
     "latest_registered_submission": {
-      "claim_id": "vcl_9a4d0304e69426ac62623215f8b9ad7bde9381236aee223b160e92c40943ba86",
-      "claim_root": "sha256:61f7e38cb8ceb5ac7fb2b21be1faa27f50ac54e071506d1d47d7264aa452cbc5",
-      "submission_id": "vsb_d6ae2c3556997bea",
-      "submission_root": "sha256:51da7afc5629d76ad153ef173db94187ee1dea78ea21cc1321061fbaf27c1240",
-      "registration_id": "vrr_e400ab7d26d4f1e1",
-      "registration_root": "sha256:8a40a52ef47419e4afbbd5e71022e320be62797bd037a357cfad085439e9c9ab",
-      "proposal_id": "vpr_148c88da4d5579a9",
+      "claim_id": "vcl_268fd0de48f9275bfe2bfcaef6df03f851343dd81109c09d8002f64b05b7edac",
+      "claim_root": "sha256:6dbb52c243f28aa68e7f3ff9dddffeeb1cb0dff6ecf1f47ec555a2d7b1730640",
+      "submission_id": "vsb_895cb3913a189369",
+      "submission_root": "sha256:d6f1434663592b4aa49401ce80f5da84e60f5822430c47cc5c5ea42e14826a41",
+      "registration_id": "vrr_26ed7bc6328679bb",
+      "registration_root": "sha256:3713da625ebf0e67cb91b59f3fadd2c3837f3a565158acec96b66dd7e8f53a75",
+      "proposal_id": "vpr_96578d006119b322",
       "registration_route": "pending_review",
-      "verification_id": "vvr_18f4862fd1a2c256",
-      "verification_root": "sha256:d99330b6ca86b1b31903b2726022fe6d85d517ea9c48355c2a9b99a8ac74deca",
+      "verification_id": "vvr_9e6664cad0970e67",
+      "verification_root": "sha256:fbf8d2f08ba8a3393447ab8b7989d932595a88eef2971b7b6ae797f06ec3f832",
       "registration_accepted_state_changed": false,
       "range": {
-        "first": 10429801,
-        "last": 10430000,
+        "first": 10430001,
+        "last": 10430200,
         "inclusive": true
       },
-      "artifact_root": "sha256:868ccf416195282c93961ba947e513e8a1d9b6d863d2737b3bdfdb48e1c736d1",
-      "result": "No k=15 witness among 12 primes; maximum multiplicity 11 at p=10429973, residue 7723031."
+      "artifact_root": "sha256:f88668b9b085638347e5f068ff2677bd84b09fe71b5ff934a33047fb29ac55bc",
+      "result": "No k=15 witness among 11 primes; maximum multiplicity 11 at p=10430171, residue 4302968."
     }
   },
   "completion_contract": {
