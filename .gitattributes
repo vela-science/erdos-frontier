@@ -1,5 +1,6 @@
 # Ordinary text is normalized across platforms. More specific rules below win.
 * text=auto eol=lf
+execution/**/verifier/**/verifier -filter -ident -working-tree-encoding -merge -text
 
 # Canonical records are raw Git blobs. No checkout filter, keyword expansion,
 # working-tree encoding, or semantic merge driver may transform them.

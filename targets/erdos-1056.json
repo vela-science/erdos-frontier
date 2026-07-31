@@ -1,6 +1,24 @@
 {
   "schema": "erdos-frontier.problem-work.v2",
   "frontier_id": "vfr_0a25edabc16db143",
+  "execution_bundle": {
+    "schema": "vela.agent-execution-bundle.v1",
+    "path": "execution/erdos-1056/10430001-10430200/bundle.json",
+    "size": 1815,
+    "sha256": "sha256:ebfcbac89c7b6bb546fd643d99ceaacdb0274660202a52d0319826ee76d1d44c"
+  },
+  "allowed_outputs": [
+    {
+      "type": "text/plain",
+      "path": "artifacts/erdos1056-k15-range-10430001-10430200.txt"
+    },
+    {
+      "type": "engine-manifest"
+    },
+    {
+      "type": "verifier-manifest"
+    }
+  ],
   "repository": {
     "commit": "a3216890d2218a326c6a2308a6561f08bdbfd106",
     "tree": "02d542935a9328126db0b4c17de11f145b757e76",

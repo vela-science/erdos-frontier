@@ -13,7 +13,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_target_closure import TargetClosureError, validate  # noqa: E402
-from build_target_index import git_source_commit, target_from_validation  # noqa: E402
+from build_target_index import (  # noqa: E402
+    execution_input_paths,
+    git_source_commit,
+    target_from_validation,
+)
 
 
 def _copy(root: pathlib.Path, relative: str) -> None:
@@ -436,6 +440,15 @@ def test_target_copy_uses_derived_successor_range() -> None:
     assert "through 10430000" in target["why"]
 
 
+def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
+    assert execution_input_paths(ROOT) == [
+        "execution/erdos-1056/10430001-10430200/bundle.json",
+        "execution/erdos-1056/mission-10430001-10430200.draft.json",
+        "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
+        "execution/erdos-1056/verifier/v1/verifier.cpp",
+    ]
+
+
 def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -> None:
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     subprocess.run(
@@ -452,11 +465,15 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "targets/closures/erdos-1056-10429401-10429600.json",
         "targets/closures/erdos-1056-10429601-10429800.json",
         "targets/closures/erdos-1056-10429801-10430000.json",
-        "targets/erdos-1056.json",
     ]:
         path = tmp_path / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(f"{relative}\n")
+    for relative in [
+        "targets/erdos-1056.json",
+        *execution_input_paths(ROOT),
+    ]:
+        _copy(tmp_path, relative)
     subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
     subprocess.run(
         ["git", "-C", str(tmp_path), "commit", "-qm", "source inputs"],
@@ -476,3 +493,7 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
     )
 
     assert git_source_commit(tmp_path) == source_commit
+    builder = tmp_path / "scripts/build_target_index.py"
+    builder.write_bytes(builder.read_bytes() + b" ")
+    with pytest.raises(ValueError, match="committed exactly"):
+        git_source_commit(tmp_path)
