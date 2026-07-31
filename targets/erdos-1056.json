@@ -4,8 +4,8 @@
   "execution_bundle": {
     "schema": "vela.agent-execution-bundle.v1",
     "path": "execution/erdos-1056/10430001-10430200/bundle.json",
-    "size": 1815,
-    "sha256": "sha256:ebfcbac89c7b6bb546fd643d99ceaacdb0274660202a52d0319826ee76d1d44c"
+    "size": 1563,
+    "sha256": "sha256:811fcb171984038db54651accf4ff9788faf8e459978f13e8ffdf88008ff2c78"
   },
   "allowed_outputs": [
     {
