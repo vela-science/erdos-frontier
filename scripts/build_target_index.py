@@ -24,8 +24,10 @@ PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 INPUT_PATHS = [
     "scripts/build_target_index.py",
     "scripts/validate_target_closure.py",
-    "targets/closures/erdos-1056-10429401-10429600.json",
-    "targets/closures/erdos-1056-10429601-10429800.json",
+    *sorted(
+        path.relative_to(ROOT).as_posix()
+        for path in (ROOT / "targets" / "closures").glob("*.json")
+    ),
 ]
 TARGET_BASE = {
     "id": "erdos:1056",

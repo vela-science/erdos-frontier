@@ -25,41 +25,27 @@ def _copy(root: pathlib.Path, relative: str) -> None:
 
 @pytest.fixture
 def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
-    closure = json.loads(
-        (
-            ROOT
-            / "targets/closures/erdos-1056-10429601-10429800.json"
-        ).read_text()
-    )
-    successor_packet = (ROOT / "targets/erdos-1056.json").read_bytes()
-    submission_row = next(
-        row for row in closure["evidence"] if row["kind"] == "submission"
-    )
-    submission = json.loads((ROOT / submission_row["path"]).read_text())
-    paths = {
-        ".vela/repository.json",
-        "targets/erdos-1056.json",
+    closure_paths = [
         "targets/closures/erdos-1056-10429601-10429800.json",
-        *(row["path"] for row in closure["evidence"]),
-        *(row["path"] for row in submission["artifacts"]),
+        "targets/closures/erdos-1056-10429801-10430000.json",
+    ]
+    closures = [json.loads((ROOT / path).read_text()) for path in closure_paths]
+    successor_packet = (ROOT / "targets/erdos-1056.json").read_bytes()
+    paths = {
+        *(
+            row["path"]
+            for closure in closures
+            for row in closure["evidence"]
+        ),
     }
+    for closure in closures:
+        submission_row = next(
+            row for row in closure["evidence"] if row["kind"] == "submission"
+        )
+        submission = json.loads((ROOT / submission_row["path"]).read_text())
+        paths.update(row["path"] for row in submission["artifacts"])
     for relative in sorted(paths):
         _copy(tmp_path, relative)
-    retained_packet = subprocess.run(
-        [
-            "git",
-            "-C",
-            str(ROOT),
-            "show",
-            (
-                f"{closure['completed_packet']['git_commit']}:"
-                f"{closure['completed_packet']['path']}"
-            ),
-        ],
-        check=True,
-        capture_output=True,
-    ).stdout
-    (tmp_path / "targets/erdos-1056.json").write_bytes(retained_packet)
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     subprocess.run(
         ["git", "-C", str(tmp_path), "config", "user.email", "target-test@vela.invalid"],
@@ -69,24 +55,52 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
         ["git", "-C", str(tmp_path), "config", "user.name", "Vela Target Test"],
         check=True,
     )
-    subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
-    subprocess.run(
-        ["git", "-C", str(tmp_path), "commit", "-qm", "retain completed packet"],
-        check=True,
-    )
-    retained_commit = subprocess.run(
-        ["git", "-C", str(tmp_path), "rev-parse", "HEAD"],
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
+
+    retained_commits: list[str] = []
+    for index, closure in enumerate(closures, start=1):
+        for relative, commit in (
+            (
+                closure["completed_packet"]["path"],
+                closure["completed_packet"]["git_commit"],
+            ),
+            (".vela/repository.json", closure["repository_commit"]),
+        ):
+            retained = subprocess.run(
+                ["git", "-C", str(ROOT), "show", f"{commit}:{relative}"],
+                check=True,
+                capture_output=True,
+            ).stdout
+            destination = tmp_path / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(retained)
+        subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
+        subprocess.run(
+            [
+                "git",
+                "-C",
+                str(tmp_path),
+                "commit",
+                "-qm",
+                f"retain completed packet {index}",
+            ],
+            check=True,
+        )
+        retained_commits.append(
+            subprocess.run(
+                ["git", "-C", str(tmp_path), "rev-parse", "HEAD"],
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout.strip()
+        )
+
     (tmp_path / "targets/erdos-1056.json").write_bytes(successor_packet)
-    closure["completed_packet"]["git_commit"] = retained_commit
-    closure["repository_commit"] = retained_commit
-    _write(
-        tmp_path / "targets/closures/erdos-1056-10429601-10429800.json",
-        closure,
-    )
+    for path, closure, retained_commit in zip(
+        closure_paths, closures, retained_commits, strict=True
+    ):
+        closure["completed_packet"]["git_commit"] = retained_commit
+        closure["repository_commit"] = retained_commit
+        _write(tmp_path / path, closure)
     subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
     subprocess.run(
         ["git", "-C", str(tmp_path), "commit", "-qm", "expose successor packet"],
@@ -100,6 +114,7 @@ def _read(path: pathlib.Path) -> dict:
 
 
 def _write(path: pathlib.Path, value: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n")
 
 
@@ -107,13 +122,13 @@ def test_exact_closure_derives_first_uncovered_interval(
     frontier: pathlib.Path,
 ) -> None:
     result = validate(frontier)
-    assert result["closed_range"] == {"first": 10429601, "last": 10429800}
+    assert result["closed_range"] == {"first": 10429801, "last": 10430000}
     assert result["closure_basis"] == "registered_submission"
     assert result["accepted_coverage"] == {"first": 10429401, "last": 10429600}
-    assert result["successor_range"] == {"first": 10429801, "last": 10430000}
+    assert result["successor_range"] == {"first": 10430001, "last": 10430200}
     assert (
         result["completion_claim_root"]
-        == "sha256:226cdf85adf6edcaf67a3680ffd52a3c3e3cab5ad9dea9e12b8577d69e02f5fc"
+        == "sha256:61f7e38cb8ceb5ac7fb2b21be1faa27f50ac54e071506d1d47d7264aa452cbc5"
     )
 
 
@@ -362,7 +377,7 @@ def test_rejected_submission_still_closes_producer_work(
 
     result = validate(frontier)
     assert result["accepted_coverage"]["last"] == 10429600
-    assert result["successor_range"]["first"] == 10429801
+    assert result["successor_range"]["first"] == 10430001
 
 
 def test_later_acceptance_reconciles_without_rewriting_closure(
@@ -403,8 +418,8 @@ def test_later_acceptance_reconciles_without_rewriting_closure(
     _write(packet_path, packet)
 
     result = validate(frontier)
-    assert result["accepted_coverage"]["last"] == 10429800
-    assert result["successor_range"]["first"] == 10429801
+    assert result["accepted_coverage"]["last"] == 10430000
+    assert result["successor_range"]["first"] == 10430001
     assert "pending review" not in target_from_validation(result)["why"]
 
 
@@ -412,13 +427,13 @@ def test_target_copy_uses_derived_successor_range() -> None:
     target = target_from_validation(
         {
             "accepted_coverage": {"first": 1, "last": 10429600},
-            "closed_range": {"first": 10429601, "last": 10429800},
+            "closed_range": {"first": 10429801, "last": 10430000},
             "closure_basis": "registered_submission",
-            "successor_range": {"first": 10429801, "last": 10430000},
+            "successor_range": {"first": 10430001, "last": 10430200},
         }
     )
-    assert "10429801..10430000" in target["objective"]
-    assert "through 10429800" in target["why"]
+    assert "10430001..10430200" in target["objective"]
+    assert "through 10430000" in target["why"]
 
 
 def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -> None:
@@ -436,6 +451,7 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "scripts/validate_target_closure.py",
         "targets/closures/erdos-1056-10429401-10429600.json",
         "targets/closures/erdos-1056-10429601-10429800.json",
+        "targets/closures/erdos-1056-10429801-10430000.json",
         "targets/erdos-1056.json",
     ]:
         path = tmp_path / relative
