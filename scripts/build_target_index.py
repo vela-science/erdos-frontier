@@ -453,6 +453,174 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         raise ValueError("Erdős 183 fidelity packet execution roots differ")
 
 
+def fidelity_work_awaits_decision(root: pathlib.Path = ROOT) -> bool:
+    """Return whether the exact fidelity work is complete but still pending review.
+
+    The tracked Target packet remains available as history, but producer work is
+    no longer offered after its exact report is bound through a Submission and
+    Proposal to a passing scoped Verification.  Pending rather than accepted
+    Standing is required so this derived closure cannot imply a human Decision.
+    """
+
+    repository_path = root / REPOSITORY_PATH.relative_to(ROOT)
+    packet_path = root / FIDELITY_PACKET_PATH.relative_to(ROOT)
+    repository = json.loads(repository_path.read_text())
+    packet = json.loads(packet_path.read_text())
+    review = packet.get("review_contract") or {}
+    output = review.get("output") or {}
+    report_path_raw = output.get("path")
+    if not isinstance(report_path_raw, str):
+        return False
+    report_relative = pathlib.PurePosixPath(report_path_raw)
+    if report_relative.is_absolute() or ".." in report_relative.parts:
+        return False
+    report_path = root.joinpath(*report_relative.parts)
+    if not report_path.is_file() or report_path.is_symlink():
+        return False
+    report_bytes = report_path.read_bytes()
+    report_root = sha256_root(report_bytes)
+    try:
+        report = json.loads(report_bytes)
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return False
+    required_dimensions = review.get("required_dimensions")
+    if (
+        report.get("schema") != output.get("schema")
+        or (report.get("target") or {}).get("frontier_id")
+        != repository.get("frontier_id")
+        or (report.get("target") or {}).get("target_id") != FIDELITY_TARGET_ID
+        or report.get("conclusion") not in review.get("allowed_conclusions", [])
+        or not isinstance(required_dimensions, list)
+        or set((report.get("matrix") or {})) != set(required_dimensions)
+        or not isinstance(report.get("nonclaims"), list)
+        or not report["nonclaims"]
+        or not all(isinstance(item, str) and item for item in report["nonclaims"])
+    ):
+        return False
+
+    def records(kind: str) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+        values = []
+        for row in repository.get(kind, []):
+            relative_raw = row.get("path")
+            expected_root = row.get("root")
+            if not isinstance(relative_raw, str) or not isinstance(expected_root, str):
+                continue
+            relative = pathlib.PurePosixPath(relative_raw)
+            if relative.is_absolute() or ".." in relative.parts:
+                continue
+            path = root.joinpath(*relative.parts)
+            if not path.is_file() or path.is_symlink():
+                continue
+            data = path.read_bytes()
+            if sha256_root(data) != expected_root:
+                continue
+            try:
+                value = json.loads(data)
+            except (UnicodeDecodeError, json.JSONDecodeError):
+                continue
+            values.append((row, value))
+        return values
+
+    contracts = packet.get("execution_contracts") or {}
+    expected_binding = {
+        "profile_root": (contracts.get("producer_profile") or {}).get("sha256"),
+        "verifier_capsule_root": (contracts.get("verifier_capsule") or {}).get(
+            "sha256"
+        ),
+        "result_contract_root": (contracts.get("result_contract") or {}).get(
+            "sha256"
+        ),
+    }
+    review_requirement = review.get("verification")
+    submissions = []
+    for row, submission in records("submissions"):
+        binding = submission.get("execution_binding") or {}
+        submission_requirements = submission.get("verification_requirements")
+        artifact = {
+            "kind": "statement-fidelity-report",
+            "path": report_path_raw,
+            "digest": report_root,
+        }
+        if (
+            submission.get("schema") == "vela.submission.v1"
+            and submission.get("submission_id") == row.get("id")
+            and artifact in submission.get("artifacts", [])
+            and isinstance(review_requirement, str)
+            and isinstance(submission_requirements, list)
+            and len(submission_requirements) == 1
+            and isinstance(submission_requirements[0], str)
+            and submission_requirements[0]
+            and binding.get("schema") == "vela.execution-binding.v1"
+            and all(binding.get(key) == value for key, value in expected_binding.items())
+            and isinstance(binding.get("packet_root"), str)
+            and binding["packet_root"].startswith("sha256:")
+        ):
+            submissions.append((row, submission, submission_requirements[0]))
+
+    pending = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("pending_claims", [])
+    }
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+    }
+    for submission_row, submission, submission_requirement in submissions:
+        for proposal_row, proposal in records("proposals"):
+            package = proposal.get("producer_package") or {}
+            subject = proposal.get("subject") or {}
+            claim_id = subject.get("id")
+            claim_root = subject.get("root")
+            if (
+                proposal.get("schema") != "vela.proposal.v1"
+                or proposal.get("proposal_id") != proposal_row.get("id")
+                or proposal.get("action") != "claim.add"
+                or package
+                != {
+                    "kind": "submission_v1",
+                    "id": submission.get("submission_id"),
+                    "root": submission_row.get("root"),
+                    "path": submission_row.get("path"),
+                }
+                or subject.get("kind") != "claim"
+                or pending.get(claim_id) != claim_root
+                or claim_id in accepted
+            ):
+                continue
+            for verification_row, verification in records("verifications"):
+                verification_subject = verification.get("subject") or {}
+                method = verification.get("method") or {}
+                scope = verification.get("scope") or {}
+                if (
+                    verification.get("schema") == "vela.verification-record.v1"
+                    and verification.get("verification_record_id")
+                    == verification_row.get("id")
+                    and verification.get("outcome") == "pass"
+                    and verification_subject.get("claim_id") == claim_id
+                    and verification_subject.get("proposal_id")
+                    == proposal.get("proposal_id")
+                    and verification_subject.get("submission_id")
+                    == submission.get("submission_id")
+                    and verification_subject.get("submission_root")
+                    == submission_row.get("root")
+                    and set(verification_subject.get("artifact_ids", []))
+                    == {report_root.removeprefix("sha256:")}
+                    and method
+                    == {
+                        "profile": packet.get("verifier_profile"),
+                        "implementation": FIDELITY_EXECUTION_CONTRACT_PATHS[
+                            "verifier_capsule"
+                        ],
+                        "environment_root": expected_binding[
+                            "verifier_capsule_root"
+                        ],
+                    }
+                    and scope.get("property") == submission_requirement
+                ):
+                    return True
+    return False
+
+
 def index() -> dict[str, Any]:
     validation = validate_target_closure(ROOT)
     validate_packet(validation)
@@ -467,12 +635,11 @@ def index() -> dict[str, Any]:
     inputs["input_root"] = sha256_root(canonical_bytes(inputs))
     repository = json.loads(REPOSITORY_PATH.read_text())
     target = target_from_validation(validation)
-    targets = [FIDELITY_TARGET_BASE.copy(), target]
-    for current, packet_path in zip(
-        targets,
-        (FIDELITY_PACKET_PATH, PACKET_PATH),
-        strict=True,
-    ):
+    targets_with_packets = [(target, PACKET_PATH)]
+    if not fidelity_work_awaits_decision():
+        targets_with_packets.insert(0, (FIDELITY_TARGET_BASE.copy(), FIDELITY_PACKET_PATH))
+    targets = [current for current, _ in targets_with_packets]
+    for current, packet_path in targets_with_packets:
         packet = packet_path.read_bytes()
         current["packet"] = {
             **current["packet"],

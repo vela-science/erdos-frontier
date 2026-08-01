@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate_target_closure import TargetClosureError, validate  # noqa: E402
 from build_target_index import (  # noqa: E402
     execution_input_paths,
+    fidelity_work_awaits_decision,
     fidelity_execution_input_paths,
     git_source_commit,
     target_from_validation,
@@ -485,6 +486,77 @@ def test_astra_fidelity_packet_binds_exact_execution_contracts() -> None:
     assert packet["execution_contracts"]["result_contract"]["sha256"] == (
         "sha256:7618f6bbd2c5aa13653a771735c586e6cb24056b092854e20c19112471aff6b2"
     )
+
+
+def test_astra_fidelity_work_awaits_only_human_decision() -> None:
+    assert fidelity_work_awaits_decision(ROOT)
+
+
+@pytest.mark.parametrize(
+    ("relative", "mutation"),
+    [
+        (
+            "artifacts/fidelity/erdos-183-astra-fidelity.v1.json",
+            lambda value: value["matrix"].pop("quantifiers"),
+        ),
+        (
+            "records/proposals/sha256/5abe5d1742a2fa2bd71159c0debaf9f3b0d5c786d5dc84242d3a48af7a56cfc1.json",
+            lambda value: value["producer_package"].update(
+                {"root": "sha256:" + "0" * 64}
+            ),
+        ),
+        (
+            "records/verifications/sha256/6da941b2e6946f59b85b31df1f2d4bdc2472d8357f654b79952c1b8c21e53428.json",
+            lambda value: value.update({"outcome": "fail"}),
+        ),
+    ],
+)
+def test_astra_fidelity_offer_closes_only_for_exact_verified_chain(
+    tmp_path: pathlib.Path,
+    relative: str,
+    mutation,
+) -> None:
+    for retained in [
+        ".vela/repository.json",
+        "targets/erdos-183-astra-fidelity.json",
+        "artifacts/fidelity/erdos-183-astra-fidelity.v1.json",
+        "records/submissions/sha256/8d5bb0e86d8cd50f5d12bc32ed62fa7db0ba7ce951f4eee09b76f7b29884652d.json",
+        "records/proposals/sha256/5abe5d1742a2fa2bd71159c0debaf9f3b0d5c786d5dc84242d3a48af7a56cfc1.json",
+        "records/verifications/sha256/6da941b2e6946f59b85b31df1f2d4bdc2472d8357f654b79952c1b8c21e53428.json",
+    ]:
+        _copy(tmp_path, retained)
+    value = _read(tmp_path / relative)
+    mutation(value)
+    _write(tmp_path / relative, value)
+
+    assert not fidelity_work_awaits_decision(tmp_path)
+
+
+def test_astra_fidelity_offer_requires_zero_accepted_state_delta(
+    tmp_path: pathlib.Path,
+) -> None:
+    for retained in [
+        ".vela/repository.json",
+        "targets/erdos-183-astra-fidelity.json",
+        "artifacts/fidelity/erdos-183-astra-fidelity.v1.json",
+        "records/submissions/sha256/8d5bb0e86d8cd50f5d12bc32ed62fa7db0ba7ce951f4eee09b76f7b29884652d.json",
+        "records/proposals/sha256/5abe5d1742a2fa2bd71159c0debaf9f3b0d5c786d5dc84242d3a48af7a56cfc1.json",
+        "records/verifications/sha256/6da941b2e6946f59b85b31df1f2d4bdc2472d8357f654b79952c1b8c21e53428.json",
+    ]:
+        _copy(tmp_path, retained)
+    repository_path = tmp_path / ".vela/repository.json"
+    repository = _read(repository_path)
+    claim = next(
+        row
+        for row in repository["pending_claims"]
+        if row["claim_id"]
+        == "vcl_47d920289e237e9eedbba44ff247d676b8e739d7a07bf743d213d151162d7881"
+    )
+    repository["pending_claims"].remove(claim)
+    repository["accepted_claims"].append({**claim, "standing": "accepted"})
+    _write(repository_path, repository)
+
+    assert not fidelity_work_awaits_decision(tmp_path)
 
 
 def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -> None:
