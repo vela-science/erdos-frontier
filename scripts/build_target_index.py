@@ -29,6 +29,11 @@ TARGET_ID = "erdos:1056"
 FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
 VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
 FIDELITY_VERIFIER_PROFILE = "erdos-183-astra-fidelity-review-v1"
+FIDELITY_EXECUTION_CONTRACT_PATHS = {
+    "producer_profile": "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
+    "verifier_capsule": "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
+    "result_contract": "execution/erdos-183-astra-fidelity/result-contract.v1.json",
+}
 ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430401-10430600.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
@@ -188,6 +193,29 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     return sorted([bundle_path, *nested])
 
 
+def fidelity_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
+    packet = json.loads(
+        (root / FIDELITY_PACKET_PATH.relative_to(ROOT)).read_text()
+    )
+    contracts = packet.get("execution_contracts")
+    if not isinstance(contracts, dict) or set(contracts) != set(
+        FIDELITY_EXECUTION_CONTRACT_PATHS
+    ):
+        raise ValueError("Erdős 183 execution contract set differs")
+    paths = []
+    for name, expected_path in FIDELITY_EXECUTION_CONTRACT_PATHS.items():
+        path = rooted_file(root, contracts.get(name), f"Erdős 183 {name}")
+        if path != expected_path:
+            raise ValueError(f"Erdős 183 {name} path differs")
+        value = json.loads((root / path).read_text())
+        if value.get("authority") != "non_authoritative" or value.get(
+            "target"
+        ) != FIDELITY_TARGET_ID:
+            raise ValueError(f"Erdős 183 {name} crosses its Target or authority boundary")
+        paths.append(path)
+    return sorted(paths)
+
+
 def input_paths(root: pathlib.Path = ROOT) -> list[str]:
     return sorted(
         [
@@ -198,6 +226,7 @@ def input_paths(root: pathlib.Path = ROOT) -> list[str]:
                 for path in (root / "targets" / "closures").glob("*.json")
             ),
             *execution_input_paths(root),
+            *fidelity_execution_input_paths(root),
         ]
     )
 
@@ -360,6 +389,7 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
     status = source.get("status_observation") or {}
     review = packet.get("review_contract") or {}
     reproduction = packet.get("reproduction_evidence") or {}
+    contracts = packet.get("execution_contracts") or {}
     if (
         packet.get("schema") != FIDELITY_TARGET_BASE["packet"]["schema"]
         or packet.get("frontier_id") != repository.get("frontier_id")
@@ -412,6 +442,15 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         != "sha256:cd38ac37a3abd04c045e2905886fa418155a1838cb755bc351f96341a84179cd"
     ):
         raise ValueError("Erdős 183 fidelity packet weakens its review contract")
+    if {
+        name: (contracts.get(name) or {}).get("sha256")
+        for name in FIDELITY_EXECUTION_CONTRACT_PATHS
+    } != {
+        "producer_profile": "sha256:3fe54bd5fdffc8bb639155b4d408709082eee5aaf255b7d582ad17a4434f5f37",
+        "verifier_capsule": "sha256:aec9b1c3b91b1a2cdfaf6d3da8f051884b0017b31e7450d3148ba0565235d8ec",
+        "result_contract": "sha256:7618f6bbd2c5aa13653a771735c586e6cb24056b092854e20c19112471aff6b2",
+    }:
+        raise ValueError("Erdős 183 fidelity packet execution roots differ")
 
 
 def index() -> dict[str, Any]:

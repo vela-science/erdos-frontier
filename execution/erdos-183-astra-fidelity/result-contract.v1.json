@@ -1,0 +1,35 @@
+{
+  "schema": "erdos-frontier.statement-fidelity-result-contract.v1",
+  "authority": "non_authoritative",
+  "target": "erdos:183:astra-fidelity",
+  "artifact": {
+    "path": "artifacts/fidelity/erdos-183-astra-fidelity.v1.json",
+    "schema": "vela.statement-fidelity-report.v1",
+    "media_type": "application/json"
+  },
+  "required_fields": [
+    "target",
+    "conclusion",
+    "claim",
+    "inputs",
+    "matrix",
+    "discrepancies",
+    "nonclaims"
+  ],
+  "required_dimensions": [
+    "definition_mapping",
+    "quantifiers",
+    "hypotheses",
+    "conclusion",
+    "source_timing_and_disagreement",
+    "unresolved_questions"
+  ],
+  "allowed_conclusions": [
+    "faithful",
+    "not_faithful",
+    "indeterminate"
+  ],
+  "positive_contract": "One exact, source-rooted statement-fidelity matrix whose conclusion follows from the pinned source problem, manuscript theorem, Lean declaration, and imported definitions, while preserving all mismatches, uncertainty, source timing, and nonclaims.",
+  "verification_requirement": "A separately scoped reviewer recomputes all retained byte roots and independently checks every matrix dimension before comparing conclusions.",
+  "accepted_state_change": "none until a separate authorized human Decision"
+}

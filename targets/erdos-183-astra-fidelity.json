@@ -93,6 +93,23 @@
     "verification": "A separately scoped reviewer must recompute every retained byte root and check that the report's matrix, discrepancies, conclusion, and nonclaims follow from the exact source, manuscript, and formal declaration.",
     "accepted_state_change": "none until a separate authorized human Decision"
   },
+  "execution_contracts": {
+    "producer_profile": {
+      "path": "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
+      "size": 1460,
+      "sha256": "sha256:3fe54bd5fdffc8bb639155b4d408709082eee5aaf255b7d582ad17a4434f5f37"
+    },
+    "verifier_capsule": {
+      "path": "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
+      "size": 2047,
+      "sha256": "sha256:aec9b1c3b91b1a2cdfaf6d3da8f051884b0017b31e7450d3148ba0565235d8ec"
+    },
+    "result_contract": {
+      "path": "execution/erdos-183-astra-fidelity/result-contract.v1.json",
+      "size": 1254,
+      "sha256": "sha256:7618f6bbd2c5aa13653a771735c586e6cb24056b092854e20c19112471aff6b2"
+    }
+  },
   "verifier_profile": "erdos-183-astra-fidelity-review-v1",
   "nonclaims": [
     "Lean or Comparator passage establishes statement fidelity, novelty, community acceptance, or Vela Standing.",

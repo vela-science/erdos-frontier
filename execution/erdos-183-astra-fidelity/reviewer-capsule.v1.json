@@ -1,0 +1,29 @@
+{
+  "schema": "erdos-frontier.statement-fidelity-reviewer-capsule.v1",
+  "authority": "non_authoritative",
+  "target": "erdos:183:astra-fidelity",
+  "profile": "erdos-183-astra-fidelity-review-v1",
+  "reviewer_separation": "The reviewer must be separately scoped from the producer report and must not rely on the report as the source of any retained byte root or semantic conclusion.",
+  "procedure": [
+    "Recompute every retained source, manuscript, Comparator, Lean, Mathlib, and reproduction-evidence byte root from its exact locator and revision.",
+    "Read the source statement, manuscript theorem and limit equation, Lean definitions, Lean declaration, and imported definitions from their exact pinned bytes.",
+    "Evaluate definition mapping, quantifiers, hypotheses, conclusion, source timing and disagreement, and unresolved questions independently.",
+    "Compare the independent matrix with the producer report and enumerate every disagreement.",
+    "Report pass only when the producer conclusion follows from the exact retained inputs and all required nonclaims remain explicit."
+  ],
+  "mechanical_checks": [
+    "Every root uses the sha256:<64 lowercase hex> form.",
+    "The report names exactly the six required review dimensions.",
+    "The report conclusion is faithful, not_faithful, or indeterminate.",
+    "The report retains discrepancies and nonclaims as arrays rather than omitting them."
+  ],
+  "semantic_checks": [
+    "The complete graph, total edge-colouring, monochromatic triangle, least-order, asymptotic variable, and positive-infinity limit meanings are preserved.",
+    "Any stronger hypothesis, weaker conclusion, hidden abstraction, source-status conflict, or unresolved interpretation is surfaced."
+  ],
+  "nonclaims": [
+    "A mechanically well-formed report is a verified statement-fidelity conclusion.",
+    "Lean, Nanoda, or Comparator passage establishes novelty, source fidelity, community acceptance, or Vela Standing.",
+    "A passing Verification Record changes accepted scientific state."
+  ]
+}

@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate_target_closure import TargetClosureError, validate  # noqa: E402
 from build_target_index import (  # noqa: E402
     execution_input_paths,
+    fidelity_execution_input_paths,
     git_source_commit,
     target_from_validation,
     validate_fidelity_packet,
@@ -468,6 +469,24 @@ def test_astra_fidelity_packet_preserves_exact_source_and_authority_boundary() -
     assert packet["nonclaims"][0].startswith("Lean or Comparator passage")
 
 
+def test_astra_fidelity_packet_binds_exact_execution_contracts() -> None:
+    assert fidelity_execution_input_paths(ROOT) == [
+        "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
+        "execution/erdos-183-astra-fidelity/result-contract.v1.json",
+        "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
+    ]
+    packet = _read(ROOT / "targets/erdos-183-astra-fidelity.json")
+    assert packet["execution_contracts"]["producer_profile"]["sha256"] == (
+        "sha256:3fe54bd5fdffc8bb639155b4d408709082eee5aaf255b7d582ad17a4434f5f37"
+    )
+    assert packet["execution_contracts"]["verifier_capsule"]["sha256"] == (
+        "sha256:aec9b1c3b91b1a2cdfaf6d3da8f051884b0017b31e7450d3148ba0565235d8ec"
+    )
+    assert packet["execution_contracts"]["result_contract"]["sha256"] == (
+        "sha256:7618f6bbd2c5aa13653a771735c586e6cb24056b092854e20c19112471aff6b2"
+    )
+
+
 def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -> None:
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     subprocess.run(
@@ -494,6 +513,7 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "targets/erdos-1056.json",
         "targets/erdos-183-astra-fidelity.json",
         *execution_input_paths(ROOT),
+        *fidelity_execution_input_paths(ROOT),
     ]:
         _copy(tmp_path, relative)
     subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)

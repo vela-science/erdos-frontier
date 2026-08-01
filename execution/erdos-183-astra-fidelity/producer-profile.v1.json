@@ -1,0 +1,41 @@
+{
+  "schema": "erdos-frontier.statement-fidelity-producer-profile.v1",
+  "authority": "non_authoritative",
+  "target": "erdos:183:astra-fidelity",
+  "role": "producer",
+  "objective": "Compare the exact retained Erdős problem 183 statement, pinned OpenAI manuscript theorem, and pinned Lean declaration across definitions, quantifiers, hypotheses, and conclusion.",
+  "inputs": [
+    "retained_problem_statement",
+    "source_status_observation",
+    "openai_manuscript",
+    "openai_comparator_profile",
+    "openai_lean_challenge",
+    "openai_lean_solution",
+    "pinned_mathlib_definitions",
+    "retained_reproduction_evidence"
+  ],
+  "output": {
+    "path": "artifacts/fidelity/erdos-183-astra-fidelity.v1.json",
+    "schema": "vela.statement-fidelity-report.v1",
+    "allowed_conclusions": [
+      "faithful",
+      "not_faithful",
+      "indeterminate"
+    ]
+  },
+  "required_dimensions": [
+    "definition_mapping",
+    "quantifiers",
+    "hypotheses",
+    "conclusion",
+    "source_timing_and_disagreement",
+    "unresolved_questions"
+  ],
+  "constraints": [
+    "Retain every exact source revision and byte root used by the comparison.",
+    "Record every mismatch and unresolved interpretation.",
+    "Do not infer statement fidelity, novelty, community acceptance, or Vela Standing from checker passage.",
+    "Do not overwrite an older attributed source status with the later OpenAI claim.",
+    "Do not change accepted scientific state."
+  ]
+}
