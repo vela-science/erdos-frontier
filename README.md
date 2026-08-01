@@ -9,7 +9,7 @@ the exact repository state locally:
 ```bash
 git clone https://github.com/vela-science/erdos-frontier
 cd erdos-frontier
-vela check . --strict --json
+vela check . --json
 vela status . --json
 vela next . --json
 ```
@@ -29,7 +29,7 @@ and only repository authority can change accepted Standing.
 
 The active repository is intentionally compact:
 
-- [`.vela/repository.json`](.vela/repository.json) indexes the current epoch.
+- [`.vela/repository.json`](.vela/repository.json) indexes the current objects.
 - [`.vela/authority/`](.vela/authority/) contains repository-authority records.
 - [`records/`](records/) contains immutable Claims, Submissions, Verifications,
   Proposals, artifacts, and related canonical objects.
@@ -117,4 +117,4 @@ issues. Heavy Lean extraction remains an explicit manual workflow under
 - Generated indexes and readers are replaceable and confer no authority.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution mechanics and
-[VELA.md](VELA.md) for the canonical agent charter.
+[AGENTS.md](AGENTS.md) for the canonical agent guide.

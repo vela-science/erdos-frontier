@@ -467,7 +467,7 @@ def test_candidate_claim_rides_the_reconciled_row():
     assert row["machine"]["verdict"] == "conditional"
 
 
-def test_source_lock_refresh_preserves_operational_pins_and_selected_paths(
+def test_source_lock_refresh_records_only_live_sources_and_selected_paths(
     tmp_path, monkeypatch
 ):
     frozen_payload = b"frozen registry"
@@ -496,20 +496,11 @@ def test_source_lock_refresh_preserves_operational_pins_and_selected_paths(
             }
         )
     )
-    work_sources = {
-        "producer": {
-            "repo": "example/producer",
-            "commit": "a" * 40,
-            "paths": ["proofs.yaml"],
-            "sha256": "sha256:" + "b" * 64,
-        }
-    }
     (tmp_path / "sources.lock.json").write_text(
         json.dumps(
             {
                 "generated_at": "old",
                 "sources": {"stale": {"sha256": "sha256:stale"}},
-                "work_sources": work_sources,
             }
         )
         + "\n"
@@ -527,7 +518,7 @@ def test_source_lock_refresh_preserves_operational_pins_and_selected_paths(
 
     refreshed = erdos_frontier.write_sources_lock(tmp_path)
 
-    assert refreshed["work_sources"] == work_sources
+    assert set(refreshed) == {"generated_at", "sources"}
     assert "stale" not in refreshed["sources"]
     assert refreshed["sources"]["live"]["path"] == "data/proofs.yaml"
     assert refreshed["sources"]["live"]["commit"] == "d" * 40

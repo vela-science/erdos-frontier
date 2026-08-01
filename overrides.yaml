@@ -3,10 +3,11 @@
 # still awaiting a statement match-check. Buckets here override the computed
 # bucket unless FC already has a formal_proof link.
 #
-# Statement-fidelity verdicts do NOT live here. Historical signed attestations
-# remain in the frontier event log. New truth-bearing review work must travel
-# through Receipt v1 and the ordinary human `vela sign` ceremony. A signed
-# verdict supersedes any bucket here, so problems with one carry no row.
+# Statement-fidelity verdicts do NOT live here. Historical authority remains
+# reachable through Git history. New truth-bearing review work must travel
+# through a bounded Submission, scoped Verification, and separate human
+# Decision. Accepted Standing supersedes any bucket here, so problems with one
+# carry no row.
 
 45:
   bucket: blocked-claim

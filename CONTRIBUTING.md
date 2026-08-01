@@ -26,7 +26,7 @@ conditional, axiomatic, partial, or mismatched theorem.
 Use the current released Vela CLI:
 
 ```bash
-vela check . --strict --json
+vela check . --json
 vela next . --json
 vela start <target> --frontier . --json
 
@@ -58,7 +58,7 @@ an agent. If no current target is offered, stop rather than inventing one.
 ```bash
 uv sync --all-groups
 uv run pytest -q
-vela check . --strict --json
+vela check . --json
 ```
 
 Heavy multi-toolchain Lean audits are explicit manual workflows. Their reviewed

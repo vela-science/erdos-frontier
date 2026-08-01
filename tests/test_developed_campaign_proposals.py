@@ -52,18 +52,19 @@ def test_proposals_keep_status_dimensions_orthogonal():
             assert "machine_status" in record
 
 
-def test_proposals_use_receipt_v1_and_defer_without_legacy_write_commands():
+def test_proposals_use_direct_submission_and_pending_review():
     pack = load_pack()
     policy = pack["draft_policy"]
-    assert policy["receipt_schema"] == "vela.receipt.v1"
+    assert policy["submission_schema"] == "vela.submission.v1"
     assert policy["workflow"] == {
         "select": "next",
-        "session": "work",
-        "submit": "land",
-        "decision": "sign",
+        "brief": "start",
+        "submit": "submit",
+        "verify": "verification import",
+        "decision": "human review",
     }
-    assert policy["session_required"] is True
-    assert policy["expected_route"] == "defer"
+    assert policy["session_required"] is False
+    assert policy["expected_route"] == "pending_review"
     assert policy["agent_finalization_forbidden"] is True
     assert policy["human_acceptance_required"] is True
 
@@ -74,7 +75,7 @@ def test_proposals_use_receipt_v1_and_defer_without_legacy_write_commands():
             proposed.append((problem, record["proposal_key"]))
             assert "draft_command" not in record
             assert record["assertion"]
-            assert record["activity"] in policy["receipt_mapping"]["type"]
+            assert record["activity"] in policy["submission_mapping"]["type"]
             assert record["statement_fidelity"]["status"] == "pending_human_review"
         else:
             assert record["disposition"] == "skip_duplicate"

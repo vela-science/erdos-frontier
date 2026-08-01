@@ -55,10 +55,7 @@ for (const object of manifest.objects) {
   }
 }
 
-const referenceFiles = [
-  "sources/recovered-attempt-ledger.v2.json",
-  "sources/recovered-attempts.yaml",
-];
+const referenceFiles = ["sources/recovered-attempts.yaml"];
 const referencedSources = new Set<string>();
 const sourcePattern =
   /vela-science\/vela-internal@[0-9a-f]{40}:[^@"'\s]+?(?=#|@sha256:|["'\s])/g;

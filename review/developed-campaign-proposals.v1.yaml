@@ -23,18 +23,19 @@ verification_sources:
     sha256: sha256:2ead974088965e6f070dbf130ef0270c0f4ea799e92f7132d433c7d62a8fb172
 draft_policy:
   actor: agent:erdos-campaign-review-draft
-  receipt_schema: vela.receipt.v1
+  submission_schema: vela.submission.v1
   workflow:
     select: next
-    session: work
-    submit: land
-    decision: sign
-  session_required: true
-  expected_route: defer
+    brief: start
+    submit: submit
+    verify: verification import
+    decision: human review
+  session_required: false
+  expected_route: pending_review
   agent_finalization_forbidden: true
   human_acceptance_required: true
   statement_fidelity_requires_human_review: true
-  receipt_mapping:
+  submission_mapping:
     claim: assertion
     type:
       theorem: theoretical

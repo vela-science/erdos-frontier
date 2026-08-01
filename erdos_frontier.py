@@ -907,12 +907,6 @@ def write_sources_lock(root: str | Path = ".") -> dict:
     import hashlib
     root = Path(root)
     lock_path = root / "sources.lock.json"
-    previous_work_sources: dict = {}
-    if lock_path.exists():
-        previous = json.loads(lock_path.read_text())
-        existing_work_sources = previous.get("work_sources")
-        if isinstance(existing_work_sources, dict):
-            previous_work_sources = existing_work_sources
     registry = (yaml.safe_load((root / "sources.yaml").read_text()) or {}).get("sources", {})
     headers = claims_headers()
     locked: dict[str, dict] = {}
@@ -946,8 +940,6 @@ def write_sources_lock(root: str | Path = ".") -> dict:
         locked[name] = entry
     stamp = _datetime.datetime.now(_datetime.timezone.utc).replace(microsecond=0).isoformat()
     out = {"generated_at": stamp, "sources": locked}
-    if previous_work_sources:
-        out["work_sources"] = previous_work_sources
     lock_path.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n")
     return out
 
