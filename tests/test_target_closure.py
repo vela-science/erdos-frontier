@@ -100,7 +100,12 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
             ).stdout.strip()
         )
 
-    (tmp_path / "targets/erdos-1056.json").write_bytes(successor_packet)
+    successor = json.loads(successor_packet)
+    repository_bytes = (tmp_path / ".vela/repository.json").read_bytes()
+    successor["repository"]["root"] = (
+        "sha256:" + hashlib.sha256(repository_bytes).hexdigest()
+    )
+    _write(tmp_path / "targets/erdos-1056.json", successor)
     for path, closure, retained_commit in zip(
         closure_paths, closures, retained_commits, strict=True
     ):

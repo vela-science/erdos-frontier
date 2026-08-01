@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Build the current domain-owned Erdős Target Index candidate.
+"""Generate the final tracked Erdős Target Index directly.
 
-Vela owns sealing and validation of the derived index. This script owns only
-the domain target and emits the closed candidate consumed by
-`vela target-index seal`.
+This domain adapter owns target semantics and ranking. Vela validates the
+tracked v5 bytes at runtime; there is no candidate, seal, or apply lifecycle.
 """
 
 from __future__ import annotations
@@ -11,15 +10,17 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import pathlib
 import subprocess
 import sys
+import tempfile
 from typing import Any
 
 from validate_target_closure import validate as validate_target_closure
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CANDIDATE_PATH = ROOT / ".vela" / "tmp" / "target-index-candidate.json"
+INDEX_PATH = ROOT / "targets.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 BUNDLE_SCHEMA = "vela.agent-execution-bundle.v1"
@@ -33,7 +34,7 @@ ALLOWED_OUTPUTS = [
 TARGET_BASE = {
     "id": TARGET_ID,
     "title": "Erdős 1056",
-    "state": "open",
+    "presence": "open",
     "rank": 1,
     "labels": [
         "bounded-artifact",
@@ -102,7 +103,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     )
     bundle_file = root / bundle_path
     bundle = json.loads(bundle_file.read_text())
-    if bundle_file.read_bytes() != canonical_bytes(bundle):
+    if bundle_file.read_bytes() != canonical_bytes(bundle) + b"\n":
         raise ValueError("execution bundle must be canonical JSON")
     if (
         bundle.get("schema") != BUNDLE_SCHEMA
@@ -135,7 +136,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     mission_path = rooted_file(root, bundle.get("mission"), "mission")
     mission_file = root / mission_path
     mission = json.loads(mission_file.read_text())
-    if mission_file.read_bytes() != canonical_bytes(mission):
+    if mission_file.read_bytes() != canonical_bytes(mission) + b"\n":
         raise ValueError("Agent mission must be canonical JSON")
     if (
         mission.get("target") != TARGET_ID
@@ -175,16 +176,7 @@ def git_source_commit(
     packet = PACKET_PATH.relative_to(ROOT).as_posix()
     retained = [*paths, packet]
     commit = subprocess.run(
-        [
-            "git",
-            "-C",
-            str(root),
-            "log",
-            "-1",
-            "--format=%H",
-            "--",
-            *retained,
-        ],
+        ["git", "-C", str(root), "log", "-1", "--format=%H", "--", *retained],
         check=True,
         capture_output=True,
         text=True,
@@ -208,11 +200,53 @@ def git_source_commit(
     return commit
 
 
+def git_source(root: pathlib.Path, paths: list[str]) -> tuple[str, str, str]:
+    commit = git_source_commit(root, paths)
+    tree = subprocess.run(
+        ["git", "-C", str(root), "rev-parse", f"{commit}^{{tree}}"],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    object_format = subprocess.run(
+        ["git", "-C", str(root), "rev-parse", "--show-object-format"],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    return object_format, commit, tree
+
+
 def canonical_bytes(value: Any) -> bytes:
-    return (
-        json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-        + "\n"
+    return json.dumps(
+        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ).encode()
+
+
+def tracked_entry(relative: str) -> dict[str, Any]:
+    row = subprocess.run(
+        ["git", "-C", str(ROOT), "ls-files", "--stage", "--", relative],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    if not row:
+        raise ValueError(f"Target Index input is not tracked: {relative}")
+    mode = row.split(maxsplit=1)[0]
+    data = (ROOT / relative).read_bytes()
+    tracked = subprocess.run(
+        ["git", "-C", str(ROOT), "show", f"HEAD:{relative}"],
+        check=True,
+        capture_output=True,
+    ).stdout
+    if tracked != data:
+        raise ValueError(f"Target Index input differs from HEAD: {relative}")
+    return {
+        "path": relative,
+        "git_mode": mode,
+        "size": len(data),
+        "sha256": hashlib.sha256(data).hexdigest(),
+    }
 
 
 def target_from_validation(validation: dict[str, Any]) -> dict[str, Any]:
@@ -278,42 +312,71 @@ def validate_packet(validation: dict[str, Any]) -> None:
         raise ValueError("Erdős 1056 packet differs from the derived successor range")
 
 
-def candidate() -> dict[str, Any]:
+def index() -> dict[str, Any]:
     validation = validate_target_closure(ROOT)
     validate_packet(validation)
     paths = input_paths(ROOT)
-    return {
-        "schema": "vela.target-index-candidate.v1",
+    object_format, commit, tree = git_source(ROOT, paths)
+    entries = [tracked_entry(path) for path in paths]
+    inputs = {
+        "schema": "vela.target-index-input-manifest.v1",
+        "entries": entries,
+    }
+    inputs["input_root"] = sha256_root(canonical_bytes(inputs))
+    repository = json.loads(REPOSITORY_PATH.read_text())
+    packet = PACKET_PATH.read_bytes()
+    target = target_from_validation(validation)
+    target["packet"] = {
+        **target["packet"],
+        "size": len(packet),
+        "sha256": sha256_root(packet),
+    }
+    value = {
+        "schema": "vela.target-index.v5",
         "frontier_id": "vfr_0a25edabc16db143",
         "source": {
-            "git_commit": git_source_commit(ROOT, paths),
-            "input_paths": paths,
+            "git_object_format": object_format,
+            "git_commit": commit,
+            "git_tree": tree,
         },
-        "targets": [target_from_validation(validation)],
+        "inputs": inputs,
+        "repository": {
+            "origin_id": repository["origin_id"],
+            "repository_root": sha256_root(REPOSITORY_PATH.read_bytes()),
+        },
+        "claim_boundary": {
+            "derived": True,
+            "authoritative": False,
+            "deletable": True,
+        },
+        "targets": [target],
     }
+    value["index_root"] = sha256_root(canonical_bytes(value))
+    return value
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--output",
-        type=pathlib.Path,
-        default=CANDIDATE_PATH,
-    )
+    parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    output = args.output.expanduser().resolve()
-    output.parent.mkdir(parents=True, exist_ok=True)
     try:
-        value = candidate()
+        expected = canonical_bytes(index())
     except ValueError as error:
-        print(f"Target Index candidate unavailable: {error}", file=sys.stderr)
+        print(f"Target Index unavailable: {error}", file=sys.stderr)
         return 1
-    output.write_bytes(canonical_bytes(value))
-    try:
-        display = output.relative_to(ROOT)
-    except ValueError:
-        display = output
-    print(f"Wrote {display}")
+    if args.check:
+        if not INDEX_PATH.is_file() or INDEX_PATH.read_bytes() != expected:
+            print("targets.json is stale; run scripts/build_target_index.py", file=sys.stderr)
+            return 1
+        print("targets.json is current")
+        return 0
+    with tempfile.NamedTemporaryFile(dir=ROOT, delete=False) as temporary:
+        temporary.write(expected)
+        temporary.flush()
+        os.fsync(temporary.fileno())
+        temporary_path = pathlib.Path(temporary.name)
+    os.replace(temporary_path, INDEX_PATH)
+    print("Wrote targets.json")
     return 0
 
 
