@@ -129,7 +129,7 @@ def test_exact_closure_derives_first_uncovered_interval(
 ) -> None:
     result = validate(frontier)
     assert result["closed_range"] == {"first": 10430201, "last": 10430400}
-    assert result["closure_basis"] == "registered_submission"
+    assert result["closure_basis"] == "verified_submission"
     assert result["accepted_coverage"] == {"first": 10429401, "last": 10429600}
     assert result["successor_range"] == {"first": 10430401, "last": 10430600}
     assert (
@@ -203,15 +203,15 @@ def test_completed_packet_git_bytes_are_bound(frontier: pathlib.Path) -> None:
         validate(frontier)
 
 
-def test_registered_submission_needs_no_decision_or_accepted_claim(
+def test_verified_submission_needs_no_decision_or_accepted_claim(
     frontier: pathlib.Path,
 ) -> None:
     result = validate(frontier)
-    assert result["closure_basis"] == "registered_submission"
+    assert result["closure_basis"] == "verified_submission"
     assert result["verification_root"].startswith("sha256:")
 
 
-def test_registered_submission_requires_verification(
+def test_verified_submission_requires_verification(
     frontier: pathlib.Path,
 ) -> None:
     closure_path = (
@@ -319,26 +319,26 @@ def test_verification_environment_must_bind_verifier_manifest(
         validate(frontier)
 
 
-def test_registration_cannot_change_accepted_state(
+def test_proposal_cannot_bind_another_submission(
     frontier: pathlib.Path,
 ) -> None:
     closure_path = (
         frontier / "targets/closures/erdos-1056-10429601-10429800.json"
     )
     closure = _read(closure_path)
-    registration_row = next(
-        row for row in closure["evidence"] if row["kind"] == "registration"
+    proposal_row = next(
+        row for row in closure["evidence"] if row["kind"] == "proposal"
     )
-    registration_path = frontier / registration_row["path"]
-    registration = _read(registration_path)
-    registration["accepted_state_changed"] = True
-    _write(registration_path, registration)
-    registration_row["root"] = "sha256:" + hashlib.sha256(
-        registration_path.read_bytes()
+    proposal_path = frontier / proposal_row["path"]
+    proposal = _read(proposal_path)
+    proposal["producer_package"]["root"] = "sha256:" + "0" * 64
+    _write(proposal_path, proposal)
+    proposal_row["root"] = "sha256:" + hashlib.sha256(
+        proposal_path.read_bytes()
     ).hexdigest()
     _write(closure_path, closure)
 
-    with pytest.raises(TargetClosureError, match="changed accepted state"):
+    with pytest.raises(TargetClosureError, match="does not bind the Submission"):
         validate(frontier)
 
 
@@ -348,7 +348,7 @@ def test_pending_submission_cannot_replace_accepted_coverage(
     packet_path = frontier / "targets/erdos-1056.json"
     packet = _read(packet_path)
     latest = packet["accepted_state"]["latest_bounded_negative"]
-    progress = packet["producer_completion"]["latest_registered_submission"]
+    progress = packet["producer_completion"]["latest_verified_submission"]
     latest["claim_id"] = progress["claim_id"]
     latest["claim_root"] = progress["claim_root"]
     latest["range"] = progress["range"]
@@ -366,7 +366,7 @@ def test_rejected_submission_still_closes_producer_work(
     repository = _read(repository_path)
     claim_id = (
         _read(frontier / "targets/erdos-1056.json")["producer_completion"][
-            "latest_registered_submission"
+            "latest_verified_submission"
         ]["claim_id"]
     )
     repository["pending_claims"] = [
@@ -391,7 +391,7 @@ def test_later_acceptance_reconciles_without_rewriting_closure(
 ) -> None:
     packet_path = frontier / "targets/erdos-1056.json"
     packet = _read(packet_path)
-    progress = packet.pop("producer_completion")["latest_registered_submission"]
+    progress = packet.pop("producer_completion")["latest_verified_submission"]
     previous = packet["accepted_state"]["latest_bounded_negative"]
     packet["accepted_state"]["previous_bounded_negative"] = previous
     packet["accepted_state"]["latest_bounded_negative"] = {
@@ -434,7 +434,7 @@ def test_target_copy_uses_derived_successor_range() -> None:
         {
             "accepted_coverage": {"first": 1, "last": 10429600},
             "closed_range": {"first": 10430201, "last": 10430400},
-            "closure_basis": "registered_submission",
+            "closure_basis": "verified_submission",
             "successor_range": {"first": 10430401, "last": 10430600},
         }
     )

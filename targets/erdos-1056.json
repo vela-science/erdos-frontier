@@ -76,18 +76,15 @@
     }
   },
   "producer_completion": {
-    "latest_registered_submission": {
+    "latest_verified_submission": {
       "claim_id": "vcl_5ac4a8eb6ab179ba727ff6395abf1fd6b591137f9da73cc5c09cd41587cd7f86",
       "claim_root": "sha256:a1ad4ea66bdac316bfccfbff4a7c18f7917b70b7f7cebd949601c41dcf58299b",
       "submission_id": "vsb_766e5236769cdbf1",
       "submission_root": "sha256:de5d71dd41c21ab761277e6c23ea7ddb6592edc4fdd443629bc3c95a43a20cc6",
-      "registration_id": "vrr_4fb37b5d2d6e7304",
-      "registration_root": "sha256:f260e156133da6341e7c61e34dcb630f2ca1ec518a3b98f0e38fba94de4481ea",
       "proposal_id": "vpr_eca7e122d1ce6e52",
-      "registration_route": "pending_review",
+      "proposal_root": "sha256:b70726bbae8721d2cdcc2579e020694c39dcb9656fb25f921f32c0e5b8734ab5",
       "verification_id": "vvr_c3437dc1eed8af3c",
       "verification_root": "sha256:c4b0793bd1957e4d5b7f443b93c9ab349b51c561c164bd57ef76e7e1fde9547a",
-      "registration_accepted_state_changed": false,
       "range": {
         "first": 10430201,
         "last": 10430400,

@@ -221,7 +221,7 @@ def target_from_validation(validation: dict[str, Any]) -> dict[str, Any]:
     completed = validation["closed_range"]
     pending = ""
     if (
-        validation["closure_basis"] == "registered_submission"
+        validation["closure_basis"] == "verified_submission"
         and completed["last"] > accepted["last"]
     ):
         pending = (

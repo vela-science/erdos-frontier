@@ -376,11 +376,11 @@ def evidence_by_kind(closure: dict[str, Any]) -> dict[str, dict[str, Any]]:
             "decision_event",
         }
         allowed = required
-    elif basis == "registered_submission":
+    elif basis == "verified_submission":
         required = {
             "claim",
             "submission",
-            "registration",
+            "proposal",
             "artifact",
             "verification",
         }
@@ -520,23 +520,19 @@ def validate_closure(
     proposal_id: str | None = None
     verification_root: str | None = None
     decision_event_root: str | None = None
-    if basis == "registered_submission":
-        registration = load_evidence(
-            root, evidence["registration"], "registration_record_id"
-        )
-        if registration.get("submission_id") != evidence["submission"]["id"]:
-            raise TargetClosureError("Registration does not bind the Submission")
-        if registration.get("submission_root") != evidence["submission"]["root"]:
-            raise TargetClosureError("Registration binds another Submission root")
-        if registration.get("claim_id") != claim_id:
-            raise TargetClosureError("Registration does not bind the Claim")
-        if registration.get("route") != "pending_review":
-            raise TargetClosureError("producer closure was not routed for review")
-        if registration.get("accepted_state_changed") is not False:
-            raise TargetClosureError("producer closure changed accepted state")
-        proposal_id = registration.get("proposal_id")
-        if not isinstance(proposal_id, str) or not proposal_id:
-            raise TargetClosureError("Registration omits its Proposal")
+    if basis == "verified_submission":
+        proposal = load_evidence(root, evidence["proposal"], "proposal_id")
+        subject = proposal.get("subject") or {}
+        producer_package = proposal.get("producer_package") or {}
+        if subject.get("id") != claim_id or subject.get("root") != claim_root:
+            raise TargetClosureError("Proposal does not bind the Claim")
+        if (
+            producer_package.get("id") != evidence["submission"]["id"]
+            or producer_package.get("root") != evidence["submission"]["root"]
+            or producer_package.get("path") != evidence["submission"]["path"]
+        ):
+            raise TargetClosureError("Proposal does not bind the Submission")
+        proposal_id = proposal.get("proposal_id")
     else:
         accepted = {
             row.get("claim_id"): row.get("claim_root")
@@ -595,9 +591,8 @@ def validate_closure(
         "claim_root": claim_root,
         "submission_id": evidence["submission"]["id"],
         "submission_root": evidence["submission"]["root"],
-        "registration_id": (evidence.get("registration") or {}).get("id"),
-        "registration_root": (evidence.get("registration") or {}).get("root"),
         "proposal_id": proposal_id,
+        "proposal_root": (evidence.get("proposal") or {}).get("root"),
         "artifact_root": artifact_row["root"],
         "verification_id": (verification_row or {}).get("id"),
         "verification_root": verification_root,
@@ -674,7 +669,7 @@ def validate(
     producer_closures = [
         row
         for row in closures
-        if row["basis"] == "registered_submission" and row["last"] > latest_last
+        if row["basis"] == "verified_submission" and row["last"] > latest_last
     ]
     expected_first = latest_last + 1
     for row in producer_closures:
@@ -690,7 +685,7 @@ def validate(
 
     newest = producer_closures[-1] if producer_closures else None
     progress = packet.get("producer_completion", {}).get(
-        "latest_registered_submission"
+        "latest_verified_submission"
     )
     if newest is None:
         if progress is not None:
@@ -708,9 +703,8 @@ def validate(
             "claim_root": newest["claim_root"],
             "submission_id": newest["submission_id"],
             "submission_root": newest["submission_root"],
-            "registration_id": newest["registration_id"],
-            "registration_root": newest["registration_root"],
             "proposal_id": newest["proposal_id"],
+            "proposal_root": newest["proposal_root"],
             "artifact_root": newest["artifact_root"],
             "verification_id": newest["verification_id"],
             "verification_root": newest["verification_root"],
@@ -720,12 +714,6 @@ def validate(
                 raise TargetClosureError(
                     f"packet producer completion binds the wrong {field}"
                 )
-        if progress.get("registration_route") != "pending_review":
-            raise TargetClosureError("producer completion obscures its registration route")
-        if progress.get("registration_accepted_state_changed") is not False:
-            raise TargetClosureError(
-                "producer completion implies accepted-state change"
-            )
 
     newest_closure = closures[-1]
     return {

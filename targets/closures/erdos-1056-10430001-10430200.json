@@ -3,8 +3,8 @@
   "frontier_id": "vfr_0a25edabc16db143",
   "target_id": "erdos:1056",
   "status": "closed",
-  "closure_basis": "registered_submission",
-  "reason": "The exact registered Submission satisfies this packet's bounded-negative completion contract for every prime in 10430001..10430200. Its separate Verification passed, but the Claim remains pending review and no scientific Standing changed.",
+  "closure_basis": "verified_submission",
+  "reason": "The exact Submission satisfies this packet's bounded-negative completion contract for every prime in 10430001..10430200. Its separate Verification passed; neither record changes scientific Standing.",
   "repository_commit": "b8088bfbcbdc09d037e12f4924a32dc633112cff",
   "repository_root": "sha256:adefa01cea989241d96ce22274cdd778d2750054537a1956cdf2c52e041a39c8",
   "completed_scope": {
@@ -39,10 +39,10 @@
       "root": "sha256:d6f1434663592b4aa49401ce80f5da84e60f5822430c47cc5c5ea42e14826a41"
     },
     {
-      "kind": "registration",
-      "id": "vrr_26ed7bc6328679bb",
-      "path": "records/registrations/sha256/3713da625ebf0e67cb91b59f3fadd2c3837f3a565158acec96b66dd7e8f53a75.json",
-      "root": "sha256:3713da625ebf0e67cb91b59f3fadd2c3837f3a565158acec96b66dd7e8f53a75"
+      "kind": "proposal",
+      "id": "vpr_96578d006119b322",
+      "path": "records/proposals/sha256/b7d62baeb3f0fe0e6e7846ed44fd265c326c77127026f8178eb45364b1e089b7.json",
+      "root": "sha256:b7d62baeb3f0fe0e6e7846ed44fd265c326c77127026f8178eb45364b1e089b7"
     },
     {
       "kind": "artifact",
