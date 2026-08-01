@@ -1,0 +1,103 @@
+{
+  "schema": "erdos-frontier.statement-fidelity-work.v1",
+  "frontier_id": "vfr_0a25edabc16db143",
+  "authority": "non_authoritative",
+  "repository": {
+    "root": "sha256:89cacf7d7665aa5942d7d6e5fc221b53b5f5794ce76077782f3b2c0820cd0b18"
+  },
+  "target": {
+    "id": "erdos:183:astra-fidelity",
+    "problem": 183,
+    "state": "open",
+    "objective": "Determine whether the pinned OpenAI manuscript theorem and Lean declaration faithfully answer the exact retained Erdős problem 183 statement, and record every mismatch or unresolved interpretation without treating checker passage as acceptance."
+  },
+  "source_problem": {
+    "statement": "Let R(3;k) be the minimal n such that if the edges of K_n are coloured with k colours then there must exist a monochromatic triangle. Determine lim_{k→∞} R(3;k)^(1/k).",
+    "statement_snapshot": {
+      "repository": "https://github.com/vela-science/erdos-frontier",
+      "commit": "3abe642436ea7692a54e1f6008d5e8b05a8c06eb",
+      "path": "sources/statements.v1.json",
+      "sha256": "sha256:dd66cd1de41db64b13d5c2d1f0e486c722924ee2a7d679af3a93bc67f3185ac4"
+    },
+    "status_observation": {
+      "repository": "https://github.com/teorth/erdosproblems",
+      "commit": "8138974387d9030542daabe67faaa33eff9356f8",
+      "tree": "7ed44c260d7eb63a067cf5a16afdb645d494ef06",
+      "path": "data/problems.yaml",
+      "sha256": "sha256:a4358d57b591fc92c75981c160a11f43a561de6b5e8478d8f9629511759a9213",
+      "observed_status": "open",
+      "observed_formal_status": "unformalized",
+      "source_last_update": "2025-08-31"
+    }
+  },
+  "openai_release": {
+    "repository": "https://github.com/openai/ten-proofs",
+    "commit": "29362184c2b698c1b279bc85b3957ee813646c63",
+    "tree": "730bf2c6a13dbb96606024c5fd681a48633fb393",
+    "manuscript": {
+      "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+      "sha256": "sha256:64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6",
+      "reference": "Chapter 9, Theorem 1.1 and equations (1)-(4), printed pages 227-228",
+      "reported_conclusion": "The multicolor triangle Ramsey number R_k(3) has divergent exponential base: lim_{k→∞} R_k(3)^(1/k) = +∞."
+    },
+    "comparator_profile": {
+      "path": "ComparatorChallenges/I_MulticolorTriangleRamsey.json",
+      "sha256": "sha256:03c4a87dfda6588dc685afbd4c6da4338f652166b24df0c4ff2f819ca22f5fd7"
+    },
+    "challenge": {
+      "path": "ComparatorChallenges/I_MulticolorTriangleRamsey.lean",
+      "sha256": "sha256:12f969e50e5b09579849e25692c8cfc1d9351d09278ec9c5e4ea7c36756a6273",
+      "declaration": "ErdosProblems.MulticolourTriangleRamsey.erdos_183"
+    },
+    "solution": {
+      "path": "MulticolorTriangleRamsey.lean",
+      "sha256": "sha256:a87bd60efe16dab00ba07ea4069f22b8dbc991b3f3ba34ae5088b1f8b1987cd3"
+    },
+    "formal_statement": "Filter.Tendsto (fun k : ℕ => (triangleRamseyNumber k : ℝ) ^ ((1 : ℝ) / (k : ℝ))) atTop atTop",
+    "definitions_to_check": [
+      "TriangleFree",
+      "ForcesMonochromaticTriangle",
+      "triangleRamseyNumber"
+    ],
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "reproduction_evidence": {
+    "repository": "https://github.com/vela-science/vela",
+    "commit": "7cbb09d5b7af4726229210eae19657fefc2b564c",
+    "path": "paper/artifacts/astra-erdos-183/result.v1.json",
+    "sha256": "sha256:cd38ac37a3abd04c045e2905886fa418155a1838cb755bc351f96341a84179cd",
+    "observed": "The pinned profile passed Lean and Nanoda in the retained local and hardened offline reproductions."
+  },
+  "review_contract": {
+    "required_dimensions": [
+      "definition_mapping",
+      "quantifiers",
+      "hypotheses",
+      "conclusion",
+      "source_timing_and_disagreement",
+      "unresolved_questions"
+    ],
+    "allowed_conclusions": [
+      "faithful",
+      "not_faithful",
+      "indeterminate"
+    ],
+    "output": {
+      "path": "artifacts/fidelity/erdos-183-astra-fidelity.v1.json",
+      "schema": "vela.statement-fidelity-report.v1"
+    },
+    "verification": "A separately scoped reviewer must recompute every retained byte root and check that the report's matrix, discrepancies, conclusion, and nonclaims follow from the exact source, manuscript, and formal declaration.",
+    "accepted_state_change": "none until a separate authorized human Decision"
+  },
+  "verifier_profile": "erdos-183-astra-fidelity-review-v1",
+  "nonclaims": [
+    "Lean or Comparator passage establishes statement fidelity, novelty, community acceptance, or Vela Standing.",
+    "The 2025-08-31 source status observation refutes or governs the later OpenAI release.",
+    "A fidelity report or Verification resolves Erdős problem 183 without an authorized human Decision.",
+    "One named Frontier Decision would establish universal mathematical consensus."
+  ]
+}

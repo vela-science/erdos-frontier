@@ -23,9 +23,12 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 INDEX_PATH = ROOT / "targets.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
+FIDELITY_PACKET_PATH = ROOT / "targets" / "erdos-183-astra-fidelity.json"
 BUNDLE_SCHEMA = "vela.agent-execution-bundle.v1"
 TARGET_ID = "erdos:1056"
+FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
 VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
+FIDELITY_VERIFIER_PROFILE = "erdos-183-astra-fidelity-review-v1"
 ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430401-10430600.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
@@ -36,7 +39,7 @@ TARGET_BASE = {
     "id": TARGET_ID,
     "title": "Erdős 1056",
     "presence": "open",
-    "rank": 1,
+    "rank": 2,
     "labels": [
         "bounded-artifact",
         "erdos",
@@ -47,6 +50,34 @@ TARGET_BASE = {
     "packet": {
         "path": "targets/erdos-1056.json",
         "schema": "erdos-frontier.problem-work.v2",
+    },
+}
+FIDELITY_TARGET_BASE = {
+    "id": FIDELITY_TARGET_ID,
+    "title": "Erdős 183 statement fidelity",
+    "presence": "open",
+    "rank": 1,
+    "labels": [
+        "erdos",
+        "external-release",
+        "formalization",
+        "statement-fidelity",
+    ],
+    "why": (
+        "The exact source snapshot still records Erdős 183 as open while a "
+        "later pinned OpenAI release reports a resolution and supplies a "
+        "checker-passing Lean declaration; their statement mapping remains "
+        "unreviewed."
+    ),
+    "objective": (
+        "Compare the exact source problem, manuscript theorem, and Lean "
+        "declaration across definitions, quantifiers, hypotheses, and "
+        "conclusion; retain mismatches and uncertainty without treating "
+        "checker passage as acceptance."
+    ),
+    "packet": {
+        "path": "targets/erdos-183-astra-fidelity.json",
+        "schema": "erdos-frontier.statement-fidelity-work.v1",
     },
 }
 
@@ -176,8 +207,11 @@ def git_source_commit(
     paths: list[str] | None = None,
 ) -> str:
     paths = paths or input_paths(root)
-    packet = PACKET_PATH.relative_to(ROOT).as_posix()
-    retained = [*paths, packet]
+    packets = [
+        PACKET_PATH.relative_to(ROOT).as_posix(),
+        FIDELITY_PACKET_PATH.relative_to(ROOT).as_posix(),
+    ]
+    retained = [*paths, *packets]
     commit = subprocess.run(
         ["git", "-C", str(root), "log", "-1", "--format=%H", "--", *retained],
         check=True,
@@ -315,9 +349,75 @@ def validate_packet(validation: dict[str, Any]) -> None:
         raise ValueError("Erdős 1056 packet differs from the derived successor range")
 
 
+def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
+    repository_path = root / REPOSITORY_PATH.relative_to(ROOT)
+    packet_path = root / FIDELITY_PACKET_PATH.relative_to(ROOT)
+    repository = json.loads(repository_path.read_text())
+    packet = json.loads(packet_path.read_text())
+    repository_root = sha256_root(repository_path.read_bytes())
+    release = packet.get("openai_release") or {}
+    source = packet.get("source_problem") or {}
+    status = source.get("status_observation") or {}
+    review = packet.get("review_contract") or {}
+    reproduction = packet.get("reproduction_evidence") or {}
+    if (
+        packet.get("schema") != FIDELITY_TARGET_BASE["packet"]["schema"]
+        or packet.get("frontier_id") != repository.get("frontier_id")
+        or packet.get("authority") != "non_authoritative"
+        or packet.get("repository") != {"root": repository_root}
+        or (packet.get("target") or {}).get("id") != FIDELITY_TARGET_ID
+        or (packet.get("target") or {}).get("problem") != 183
+        or packet.get("verifier_profile") != FIDELITY_VERIFIER_PROFILE
+    ):
+        raise ValueError("Erdős 183 fidelity packet crosses its Target or authority boundary")
+    if (
+        release.get("repository") != "https://github.com/openai/ten-proofs"
+        or release.get("commit") != "29362184c2b698c1b279bc85b3957ee813646c63"
+        or release.get("tree") != "730bf2c6a13dbb96606024c5fd681a48633fb393"
+        or (release.get("manuscript") or {}).get("sha256")
+        != "sha256:64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6"
+        or (release.get("comparator_profile") or {}).get("sha256")
+        != "sha256:03c4a87dfda6588dc685afbd4c6da4338f652166b24df0c4ff2f819ca22f5fd7"
+        or (release.get("challenge") or {}).get("sha256")
+        != "sha256:12f969e50e5b09579849e25692c8cfc1d9351d09278ec9c5e4ea7c36756a6273"
+        or (release.get("solution") or {}).get("sha256")
+        != "sha256:a87bd60efe16dab00ba07ea4069f22b8dbc991b3f3ba34ae5088b1f8b1987cd3"
+    ):
+        raise ValueError("Erdős 183 fidelity packet does not bind the exact OpenAI release")
+    if (
+        status.get("repository") != "https://github.com/teorth/erdosproblems"
+        or status.get("commit") != "8138974387d9030542daabe67faaa33eff9356f8"
+        or status.get("tree") != "7ed44c260d7eb63a067cf5a16afdb645d494ef06"
+        or status.get("sha256")
+        != "sha256:a4358d57b591fc92c75981c160a11f43a561de6b5e8478d8f9629511759a9213"
+    ):
+        raise ValueError("Erdős 183 fidelity packet does not bind the exact source observation")
+    if (
+        review.get("required_dimensions")
+        != [
+            "definition_mapping",
+            "quantifiers",
+            "hypotheses",
+            "conclusion",
+            "source_timing_and_disagreement",
+            "unresolved_questions",
+        ]
+        or review.get("allowed_conclusions")
+        != ["faithful", "not_faithful", "indeterminate"]
+        or review.get("accepted_state_change")
+        != "none until a separate authorized human Decision"
+        or (review.get("output") or {}).get("schema")
+        != "vela.statement-fidelity-report.v1"
+        or reproduction.get("sha256")
+        != "sha256:cd38ac37a3abd04c045e2905886fa418155a1838cb755bc351f96341a84179cd"
+    ):
+        raise ValueError("Erdős 183 fidelity packet weakens its review contract")
+
+
 def index() -> dict[str, Any]:
     validation = validate_target_closure(ROOT)
     validate_packet(validation)
+    validate_fidelity_packet()
     paths = input_paths(ROOT)
     object_format, commit, tree = git_source(ROOT, paths)
     entries = [tracked_entry(path) for path in paths]
@@ -327,13 +427,19 @@ def index() -> dict[str, Any]:
     }
     inputs["input_root"] = sha256_root(canonical_bytes(inputs))
     repository = json.loads(REPOSITORY_PATH.read_text())
-    packet = PACKET_PATH.read_bytes()
     target = target_from_validation(validation)
-    target["packet"] = {
-        **target["packet"],
-        "size": len(packet),
-        "sha256": sha256_root(packet),
-    }
+    targets = [FIDELITY_TARGET_BASE.copy(), target]
+    for current, packet_path in zip(
+        targets,
+        (FIDELITY_PACKET_PATH, PACKET_PATH),
+        strict=True,
+    ):
+        packet = packet_path.read_bytes()
+        current["packet"] = {
+            **current["packet"],
+            "size": len(packet),
+            "sha256": sha256_root(packet),
+        }
     value = {
         "schema": "vela.target-index.v5",
         "frontier_id": "vfr_0a25edabc16db143",
@@ -352,7 +458,7 @@ def index() -> dict[str, Any]:
             "authoritative": False,
             "deletable": True,
         },
-        "targets": [target],
+        "targets": targets,
     }
     value["index_root"] = sha256_root(canonical_bytes(value))
     return value

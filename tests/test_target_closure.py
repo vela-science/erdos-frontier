@@ -17,6 +17,7 @@ from build_target_index import (  # noqa: E402
     execution_input_paths,
     git_source_commit,
     target_from_validation,
+    validate_fidelity_packet,
 )
 
 
@@ -456,6 +457,17 @@ def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
     ]
 
 
+def test_astra_fidelity_packet_preserves_exact_source_and_authority_boundary() -> None:
+    validate_fidelity_packet(ROOT)
+    packet = _read(ROOT / "targets/erdos-183-astra-fidelity.json")
+    assert packet["authority"] == "non_authoritative"
+    assert packet["review_contract"]["accepted_state_change"] == (
+        "none until a separate authorized human Decision"
+    )
+    assert packet["source_problem"]["status_observation"]["source_last_update"] < "2026-08-01"
+    assert packet["nonclaims"][0].startswith("Lean or Comparator passage")
+
+
 def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -> None:
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     subprocess.run(
@@ -480,6 +492,7 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         path.write_text(f"{relative}\n")
     for relative in [
         "targets/erdos-1056.json",
+        "targets/erdos-183-astra-fidelity.json",
         *execution_input_paths(ROOT),
     ]:
         _copy(tmp_path, relative)
