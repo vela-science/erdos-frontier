@@ -16,9 +16,8 @@ jobs:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
         with:
           fetch-depth: 0
-      - uses: vela-science/vela@2fafd652c501cfd6be16f24cc13d6e173eccd58a # v0.950.1
+      - uses: vela-science/vela@78040963bfad51c63396495077d8084a5047f9f8 # v0.961.0
         env:
           GH_TOKEN: ${{ github.token }}
         with:
           frontier: .
-          vela-version: v0.950.1
