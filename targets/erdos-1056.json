@@ -7,6 +7,7 @@
     "size": 1563,
     "sha256": "sha256:61542192e4ac4ed69b08e80838de0f3d434fa2cdcd349cecf97330417ceb67fa"
   },
+  "verifier_profile": "erdos-1056-k15-bounded-replay-v1",
   "allowed_outputs": [
     {
       "type": "text/plain",

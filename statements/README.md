@@ -2,8 +2,8 @@
 
 Drafts from the FC statement campaign live here, one directory per problem.
 Nothing in this directory is accepted frontier state. A new draft travels
-through the same Receipt v1 and protected human-decision path as every other
-claim:
+through the ordinary Submission, scoped Verification, and protected human
+Decision path as every other Claim:
 
     statements/<n>/
       inputs.md    the drafter's desk: verbatim problem LaTeX, upstream state,
@@ -21,13 +21,13 @@ Lifecycle (see campaign.yaml for batch state):
    divergence in draft.json `divergence_notes`.
 3. `bash scripts/gate_draft.sh <n>` — copies into the FC checkout, `lake build`
    (compiles + house linters), extract_names check, link-rule lint.
-4. Land the exact Lean file, input packet, `draft.json`, and `gates.json` as
-   Receipt v1 artifacts. State explicitly that fidelity to the informal
-   problem remains a human judgment.
-5. Stop at the routed proposal. An agent may prepare one exact, key-free plan
-   with `vela review decide . <vpr_id> --accept|--reject --reason <text> --json`;
-   only the registered human may approve its protected decision card. Only
-   exact accepted bytes may be prepared for an outward FC branch.
+4. Submit the exact Lean file, input packet, `draft.json`, and `gates.json` as
+   bounded artifacts. State explicitly that fidelity to the informal problem
+   remains a human judgment.
+5. Stop at the pending Proposal. A separate verifier may import one scoped
+   Verification Record. Only the registered human may accept or reject the
+   exact Proposal. Only exact accepted bytes may be prepared for an outward FC
+   branch.
 
 A drafted `.lean` is never edited after acceptance. Any byte change is a new
-artifact and must go through the gate and Receipt path again.
+artifact and must go through the gate and Submission path again.

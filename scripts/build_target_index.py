@@ -25,6 +25,7 @@ REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 BUNDLE_SCHEMA = "vela.agent-execution-bundle.v1"
 TARGET_ID = "erdos:1056"
+VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
 ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430401-10430600.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
@@ -95,6 +96,8 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     packet = json.loads(packet_path.read_text())
     if packet.get("allowed_outputs") != ALLOWED_OUTPUTS:
         raise ValueError("Erdős 1056 allowed outputs differ from the Agent contract")
+    if packet.get("verifier_profile") != VERIFIER_PROFILE:
+        raise ValueError("Erdős 1056 verifier profile differs from the Target contract")
     bundle_path = rooted_file(
         root,
         packet.get("execution_bundle"),

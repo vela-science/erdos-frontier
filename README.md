@@ -55,19 +55,25 @@ inspect → start bounded work → submit evidence → verify independently → 
 ```bash
 vela status . --json
 vela next . --json
-vela start <target> --frontier . --as agent:<name> --json
-vela submit --frontier . --attempt <attempt_id> \
+vela start <target> --frontier . --json
+vela submit --frontier . \
   --claim "<bounded result>" \
   --type theoretical \
   --replayability exact \
   --artifact <path>:<kind> \
   --caveat "<what this does not establish>" \
+  --packet-root <packet_sha256> \
+  --profile-root <profile_sha256> \
+  --verifier-capsule-root <capsule_sha256> \
+  --result-contract-root <contract_sha256> \
   --as agent:<name> --json
 ```
 
-Agents and producers stop after registering a Submission. Verification and
-repository-authority Decisions are separate records. Git transports the bytes;
-it does not create scientific acceptance.
+`vela start` is a write-free briefing and prints the exact Submission binding
+values; it creates no Attempt, lease, or approval step. Agents and producers
+stop after registering a Submission. Verification and repository-authority
+Decisions are separate records. Git transports the bytes; it does not create
+scientific acceptance.
 
 ## Source audit
 

@@ -28,20 +28,26 @@ Use the current released Vela CLI:
 ```bash
 vela check . --strict --json
 vela next . --json
-vela start <target> --frontier . --as agent:<name> --json
+vela start <target> --frontier . --json
 
-vela submit --frontier . --attempt <attempt_id> \
+vela submit --frontier . \
   --claim "<one bounded result>" \
   --type theoretical \
   --replayability exact \
   --artifact <path>:<kind> \
   --caveat "<what the result does not establish>" \
+  --packet-root <packet_sha256> \
+  --profile-root <profile_sha256> \
+  --verifier-capsule-root <capsule_sha256> \
+  --result-contract-root <contract_sha256> \
   --as agent:<name> --json
 ```
 
-The Submission must bind the offered target, exact artifacts, producer identity,
-and scope limit. It enters review without changing accepted state. Independent
-Verification and a repository-authority Decision happen separately.
+`vela start` creates no Attempt or authorization ceremony. Its briefing supplies
+the exact Target bindings for the Submission. The Submission must bind those
+roots, exact artifacts, producer identity, and scope limit. It enters review
+without changing accepted state. Independent Verification and a
+repository-authority Decision happen separately.
 
 Do not hand-edit `.vela/authority/`, `.vela/repository.json`, `records/`, or
 `targets.json`. Do not invoke authority commands or use authority credentials as

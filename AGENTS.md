@@ -9,9 +9,10 @@ vendor-specific instruction copies are intentionally not used.
 Agents may:
 
 - inspect current state, provenance, objects, targets, and schemas;
-- start exactly one current target with an explicit `agent:` actor;
+- inspect exactly one current Target with the write-free `vela start` briefing;
 - run the target’s frozen verifier and focused source checks;
-- retain one signed, scoped Submission from their Attempt;
+- retain one signed, scoped Submission binding the briefing's packet, producer
+  profile, verifier capsule, and result contract;
 - inspect the review queue and exact Claim, Submission, Verification, Proposal,
   and Decision records;
 - draft Formal Conjectures statements, run mechanical gates, and prepare
@@ -34,14 +35,19 @@ Agents may not:
 ```bash
 vela status . --json
 vela next . --json
-vela start <target> --frontier . --as agent:<name> --json
-vela submit --frontier . --attempt <attempt_id> \
+vela start <target> --frontier . --json
+vela submit --frontier . \
   --claim "<bounded result>" \
   --type theoretical \
   --replayability exact \
   --artifact <path>:<kind> \
   --caveat "<scope limit>" \
+  --packet-root <packet_sha256> \
+  --profile-root <profile_sha256> \
+  --verifier-capsule-root <capsule_sha256> \
+  --result-contract-root <contract_sha256> \
   --as agent:<name> --json
+vela verification import . <verification.json> --as verifier:<name> --json
 vela review list . --json
 vela review show . <proposal_id> --json
 vela show . <object_id> --json
