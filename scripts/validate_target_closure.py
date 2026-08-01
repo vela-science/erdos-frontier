@@ -368,13 +368,10 @@ def evidence_by_kind(closure: dict[str, Any]) -> dict[str, dict[str, Any]]:
         by_kind[kind] = row
     basis = closure.get("closure_basis")
     if basis == "accepted_standing":
-        required = {
-            "accepted_claim",
-            "submission",
-            "verification",
-            "artifact",
-            "decision_event",
-        }
+        # Accepted Standing is the live boundary. Its complete historical
+        # evidence remains in the predecessor archive named by the compaction
+        # origin; daily validation must not keep terminal workflow records live.
+        required = {"accepted_claim"}
         allowed = required
     elif basis == "verified_submission":
         required = {
@@ -466,6 +463,39 @@ def validate_closure(
     basis = closure["closure_basis"]
     claim_kind = "accepted_claim" if basis == "accepted_standing" else "claim"
     claim = load_evidence(root, evidence[claim_kind], "claim_id")
+    claim_id = evidence[claim_kind]["id"]
+    claim_root = evidence[claim_kind]["root"]
+    assertion = ((claim.get("assertion") or {}).get("text")) or ""
+    if basis == "accepted_standing":
+        accepted = {
+            row.get("claim_id"): row.get("claim_root")
+            for row in repository.get("accepted_claims", [])
+            if isinstance(row, dict)
+        }
+        if accepted.get(claim_id) != claim_root:
+            raise TargetClosureError("bounded-range Claim is not accepted")
+        exact_range = f"inclusive range {closed_first}..{closed_last}"
+        if exact_range not in assertion:
+            raise TargetClosureError(
+                "accepted bounded-range Claim does not state its exact range"
+            )
+        return {
+            "path": path.relative_to(root).as_posix(),
+            "basis": basis,
+            "first": closed_first,
+            "last": closed_last,
+            "claim_id": claim_id,
+            "claim_root": claim_root,
+            "submission_id": None,
+            "submission_root": None,
+            "proposal_id": None,
+            "proposal_root": None,
+            "artifact_root": None,
+            "verification_id": None,
+            "verification_root": None,
+            "decision_event_root": None,
+        }
+
     submission = load_evidence(root, evidence["submission"], "submission_id")
     artifact_row = evidence["artifact"]
     artifact_path = relative_path(root, artifact_row.get("path", ""))
@@ -473,9 +503,6 @@ def validate_closure(
     if file_root(artifact_path) != artifact_row.get("root"):
         raise TargetClosureError("Target closure artifact root drifted")
 
-    claim_id = evidence[claim_kind]["id"]
-    claim_root = evidence[claim_kind]["root"]
-    assertion = ((claim.get("assertion") or {}).get("text")) or ""
     if submission.get("claim", {}).get("assertion") != assertion:
         raise TargetClosureError("Submission and Claim assertions differ")
     validate_search_artifact(artifact_path, assertion, closed_first, closed_last)
@@ -520,27 +547,18 @@ def validate_closure(
     proposal_id: str | None = None
     verification_root: str | None = None
     decision_event_root: str | None = None
-    if basis == "verified_submission":
-        proposal = load_evidence(root, evidence["proposal"], "proposal_id")
-        subject = proposal.get("subject") or {}
-        producer_package = proposal.get("producer_package") or {}
-        if subject.get("id") != claim_id or subject.get("root") != claim_root:
-            raise TargetClosureError("Proposal does not bind the Claim")
-        if (
-            producer_package.get("id") != evidence["submission"]["id"]
-            or producer_package.get("root") != evidence["submission"]["root"]
-            or producer_package.get("path") != evidence["submission"]["path"]
-        ):
-            raise TargetClosureError("Proposal does not bind the Submission")
-        proposal_id = proposal.get("proposal_id")
-    else:
-        accepted = {
-            row.get("claim_id"): row.get("claim_root")
-            for row in repository.get("accepted_claims", [])
-            if isinstance(row, dict)
-        }
-        if accepted.get(claim_id) != claim_root:
-            raise TargetClosureError("bounded-range Claim is not accepted")
+    proposal = load_evidence(root, evidence["proposal"], "proposal_id")
+    subject = proposal.get("subject") or {}
+    producer_package = proposal.get("producer_package") or {}
+    if subject.get("id") != claim_id or subject.get("root") != claim_root:
+        raise TargetClosureError("Proposal does not bind the Claim")
+    if (
+        producer_package.get("id") != evidence["submission"]["id"]
+        or producer_package.get("root") != evidence["submission"]["root"]
+        or producer_package.get("path") != evidence["submission"]["path"]
+    ):
+        raise TargetClosureError("Proposal does not bind the Submission")
+    proposal_id = proposal.get("proposal_id")
 
     verification_row = evidence.get("verification")
     if verification_row is not None:
@@ -569,18 +587,6 @@ def validate_closure(
             raise TargetClosureError("Verification does not bind the Proposal")
         proposal_id = subject.get("proposal_id")
         verification_root = verification_row["root"]
-
-    if basis == "accepted_standing":
-        decision = load_evidence(root, evidence["decision_event"], "id")
-        content = decision.get("content") or {}
-        payload = content.get("payload") or {}
-        if content.get("kind") != "review.accepted":
-            raise TargetClosureError("Target closure Decision is not an acceptance")
-        if payload.get("proposal_id") != proposal_id:
-            raise TargetClosureError(
-                "Decision and Verification bind different Proposals"
-            )
-        decision_event_root = evidence["decision_event"]["root"]
 
     return {
         "path": path.relative_to(root).as_posix(),
