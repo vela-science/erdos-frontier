@@ -13,7 +13,7 @@ sources/** -filter -ident -working-tree-encoding -merge -text
 artifacts/** -filter -ident -working-tree-encoding -merge -text
 review/** -filter -ident -working-tree-encoding -merge -text
 proof/** -filter -ident -working-tree-encoding -merge -text
-frontier.yaml -filter -ident -working-tree-encoding -merge diff text eol=lf
+frontier.toml -filter -ident -working-tree-encoding -merge diff text eol=lf
 frontier.json -filter -ident -working-tree-encoding -merge diff text eol=lf
 vela.lock -filter -ident -working-tree-encoding -merge diff text eol=lf
 
