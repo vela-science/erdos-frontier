@@ -453,13 +453,14 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         raise ValueError("Erdős 183 fidelity packet execution roots differ")
 
 
-def fidelity_work_awaits_decision(root: pathlib.Path = ROOT) -> bool:
-    """Return whether the exact fidelity work is complete but still pending review.
+def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
+    """Return whether the exact one-shot fidelity work is pending or accepted.
 
     The tracked Target packet remains available as history, but producer work is
     no longer offered after its exact report is bound through a Submission and
-    Proposal to a passing scoped Verification.  Pending rather than accepted
-    Standing is required so this derived closure cannot imply a human Decision.
+    Proposal to a passing scoped Verification. Pending and accepted Claims both
+    close this one-shot Target. Rejected or withdrawn work may be offered again.
+    This derived lifecycle never implies that Verification caused acceptance.
     """
 
     repository_path = root / REPOSITORY_PATH.relative_to(ROOT)
@@ -583,8 +584,10 @@ def fidelity_work_awaits_decision(root: pathlib.Path = ROOT) -> bool:
                     "path": submission_row.get("path"),
                 }
                 or subject.get("kind") != "claim"
-                or pending.get(claim_id) != claim_root
-                or claim_id in accepted
+                or (
+                    pending.get(claim_id) != claim_root
+                    and accepted.get(claim_id) != claim_root
+                )
             ):
                 continue
             for verification_row, verification in records("verifications"):
@@ -636,7 +639,7 @@ def index() -> dict[str, Any]:
     repository = json.loads(REPOSITORY_PATH.read_text())
     target = target_from_validation(validation)
     targets_with_packets = [(target, PACKET_PATH)]
-    if not fidelity_work_awaits_decision():
+    if not fidelity_work_complete():
         targets_with_packets.insert(0, (FIDELITY_TARGET_BASE.copy(), FIDELITY_PACKET_PATH))
     targets = [current for current, _ in targets_with_packets]
     for current, packet_path in targets_with_packets:
