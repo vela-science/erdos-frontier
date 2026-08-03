@@ -3,9 +3,9 @@
   "frontier_id": "vfr_0a25edabc16db143",
   "execution_contracts": {
     "producer_profile": {
-      "path": "execution/erdos-1056/10430601-10430800/producer-profile.v1.json",
+      "path": "execution/erdos-1056/10430801-10431000/producer-profile.v1.json",
       "size": 849,
-      "sha256": "sha256:6eb2d250485b6903f4371044e537840fb42a53573d22bbb9bed053932c3c89ef"
+      "sha256": "sha256:37b3fb06ba2d87726dfee1d04fe1d293d93f901bd35d4a831648d44619042d70"
     },
     "verifier_capsule": {
       "path": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
@@ -13,22 +13,22 @@
       "sha256": "sha256:793a6265f7fd2cd046a7aba5ba1f64e5d16f3379a605dd058819eca8c533c794"
     },
     "result_contract": {
-      "path": "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
+      "path": "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
       "size": 1079,
-      "sha256": "sha256:7744c41539829a01f4265769683deed1fe895ffd043588fe89a93dd3cb175f17"
+      "sha256": "sha256:63259d4f1b6005bdb0d6a285c9f8164ef25c50fe79e681e384e46a3cc2680f71"
     }
   },
   "verifier_profile": "erdos-1056-k15-bounded-replay-v1",
   "allowed_outputs": [
     {
       "type": "text/plain",
-      "path": "artifacts/erdos1056-k15-range-10430601-10430800.txt"
+      "path": "artifacts/erdos1056-k15-range-10430801-10431000.txt"
     }
   ],
   "repository": {
-    "commit": "1d191a3f65bae4b85aa5db58eb4f43cb5e6b94b2",
-    "tree": "97e644460d8422f2956197d2b9bd37dff0f65664",
-    "root": "sha256:e9b67253e139e2fd365aa0f7dce0949f898174895f1602c59fd6c5b0d862c443"
+    "commit": "9e47f2114454e3577fe4fd9021a310f20872b8da",
+    "tree": "054b6a622167a3f6fb7dc076d2855b6278431e47",
+    "root": "sha256:d07477153b4f3fedff624537fafdb66a24290df14ebdf559687a954b70db3090"
   },
   "target": {
     "id": "erdos:1056",
@@ -36,8 +36,8 @@
     "state": "open",
     "objective": "Extend the accepted bounded evidence for k=15 without repeating a retained range or implying a universal result.",
     "next_bounded_range": {
-      "first": 10430601,
-      "last": 10430800,
+      "first": 10430801,
+      "last": 10431000,
       "inclusive": true
     }
   },
@@ -70,34 +70,15 @@
       "result": "No k=15 witness among 11 primes; maximum multiplicity 12 at p=10429379, residue 7438467."
     },
     "latest_bounded_negative": {
-      "claim_id": "vcl_5c740ebb758107f25179b096d9e1b680d0bc62186eb276c8b907a2c1226fd979",
-      "claim_root": "sha256:e5dda77fea872d0de9da96934d8c483d851fcfb8615e10fec9386e88d486452c",
+      "claim_id": "vcl_aec59340b119cb49b251b889e54783092e2c7c8446aa377559a45670ea288d00",
+      "claim_root": "sha256:64098bebf157e7e81e7985562a6d9cb04c33419b7d59486d6858e5b76292bff3",
       "range": {
-        "first": 10429401,
-        "last": 10429600,
+        "first": 10430601,
+        "last": 10430800,
         "inclusive": true
       },
-      "artifact_root": "sha256:baec250e336105634fec8a7ce529c38e85a0bc7085004fecf70023ac5fd0113e",
-      "result": "No k=15 witness among 14 primes; maximum multiplicity 11 at p=10429427, residue 3828577."
-    }
-  },
-  "producer_completion": {
-    "latest_verified_submission": {
-      "claim_id": "vcl_d057a49fcd9dd99ccab597c95e620550da0b7116c29b5331ef0cdf100012cb1a",
-      "claim_root": "sha256:f0bc52506e71391e8f7e9737dc48f29bf7a6227b67cfe431723a25415fc7698a",
-      "submission_id": "vsb_122c01ddc9c32e1c",
-      "submission_root": "sha256:ca9843d607f763cd364a7ffa6bf1c11944b5614f3faa9ddf15c5041fddbfb483",
-      "proposal_id": "vpr_635f1e6c1811f48c",
-      "proposal_root": "sha256:3e8dd8068ae7af2d27fd54ee0c95c5ee797ecad34c6f510eb3ffcb5d7c20dde5",
-      "verification_id": "vvr_c99f40656e9fc08c",
-      "verification_root": "sha256:66d5ae9776f837ae2224c32190706516bf711aadec5797ae958b48c091b2e480",
-      "range": {
-        "first": 10430401,
-        "last": 10430600,
-        "inclusive": true
-      },
-      "artifact_root": "sha256:451d9318b84cc4c0966e3fbe63567e7c0d2a1e9d9745fe2791b94122e0aaf2b5",
-      "result": "No k=15 witness among 13 primes; maximum multiplicity 11 at p=10430491, residue 4382886."
+      "artifact_root": "sha256:35c1e28a62478957014a14fb3360ee26bdff474af825b97aa0135835710f8058",
+      "result": "No k=15 witness among 15 primes; maximum multiplicity 11 at p=10430729, residue 5661996."
     }
   },
   "completion_contract": {

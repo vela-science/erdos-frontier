@@ -38,12 +38,12 @@ FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "result_contract": "execution/erdos-183-astra-fidelity/result-contract.v1.json",
 }
 ERDOS_1056_EXECUTION_CONTRACT_PATHS = {
-    "producer_profile": "execution/erdos-1056/10430601-10430800/producer-profile.v1.json",
+    "producer_profile": "execution/erdos-1056/10430801-10431000/producer-profile.v1.json",
     "verifier_capsule": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
-    "result_contract": "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
+    "result_contract": "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
 }
 ERDOS_1056_VERIFIER_SOURCE_PATH = "execution/erdos-1056/verifier/v1/verifier.cpp"
-ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430601-10430800.txt"
+ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430801-10431000.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
 ]
@@ -157,7 +157,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         or producer_profile.get("effect") != "none"
         or producer_profile.get("target") != TARGET_ID
         or producer_profile.get("range")
-        != {"first": 10430601, "inclusive": True, "last": 10430800}
+        != {"first": 10430801, "inclusive": True, "last": 10431000}
         or (producer_profile.get("artifact") or {}).get("path") != ARTIFACT_PATH
         or "worker" in producer_profile
         or "budgets" in producer_profile
@@ -175,7 +175,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         or result_contract.get("effect") != "none"
         or result_contract.get("target") != TARGET_ID
         or result_contract.get("range")
-        != {"first": 10430601, "inclusive": True, "last": 10430800}
+        != {"first": 10430801, "inclusive": True, "last": 10431000}
         or (result_contract.get("artifact") or {}).get("path") != ARTIFACT_PATH
         or (result_contract.get("verifier") or {}).get(
             "witness_minimum_multiplicity"
@@ -335,7 +335,8 @@ def target_from_validation(validation: dict[str, Any]) -> dict[str, Any]:
         **TARGET_BASE,
         "why": (
             "The exact current packet binds the open problem, banked k=2..14 "
-            f"evidence, accepted bounded k=15 coverage through {accepted['last']}"
+            f"evidence, the latest accepted bounded k=15 range ending at "
+            f"{accepted['last']}"
             f"{pending}; the next non-overlapping range is ready."
         ),
         "objective": (

@@ -130,6 +130,11 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
             ).stdout.strip()
         )
 
+    # The retained commits above prove historical closure. The live successor
+    # packet must instead bind the current post-Decision repository state.
+    (tmp_path / ".vela/repository.json").write_bytes(
+        (ROOT / ".vela/repository.json").read_bytes()
+    )
     successor = json.loads(successor_packet)
     repository_bytes = (tmp_path / ".vela/repository.json").read_bytes()
     successor["repository"]["root"] = (
@@ -165,8 +170,8 @@ def test_exact_closure_derives_first_uncovered_interval(
     result = validate(frontier)
     assert result["closed_range"] == {"first": 10430401, "last": 10430600}
     assert result["closure_basis"] == "verified_submission"
-    assert result["accepted_coverage"] == {"first": 10429401, "last": 10429600}
-    assert result["successor_range"] == {"first": 10430601, "last": 10430800}
+    assert result["accepted_coverage"] == {"first": 10430601, "last": 10430800}
+    assert result["successor_range"] == {"first": 10430801, "last": 10431000}
     assert (
         result["completion_claim_root"]
         == "sha256:f0bc52506e71391e8f7e9737dc48f29bf7a6227b67cfe431723a25415fc7698a"
@@ -444,105 +449,51 @@ def test_pending_submission_cannot_replace_accepted_coverage(
     packet_path = frontier / "targets/erdos-1056.json"
     packet = _read(packet_path)
     latest = packet["accepted_state"]["latest_bounded_negative"]
-    progress = packet["producer_completion"]["latest_verified_submission"]
-    latest["claim_id"] = progress["claim_id"]
-    latest["claim_root"] = progress["claim_root"]
-    latest["range"] = progress["range"]
-    latest["artifact_root"] = progress["artifact_root"]
+    repository = _read(frontier / ".vela/repository.json")
+    pending = repository["pending_claims"][0]
+    latest["claim_id"] = pending["claim_id"]
+    latest["claim_root"] = pending["claim_root"]
     _write(packet_path, packet)
 
     with pytest.raises(TargetClosureError, match="not accepted"):
         validate(frontier)
 
 
-def test_rejected_submission_still_closes_producer_work(
+def test_prior_verified_submission_stays_closed_after_later_acceptance(
     frontier: pathlib.Path,
 ) -> None:
-    repository_path = frontier / ".vela/repository.json"
-    repository = _read(repository_path)
-    claim_id = (
-        _read(frontier / "targets/erdos-1056.json")["producer_completion"][
-            "latest_verified_submission"
-        ]["claim_id"]
-    )
-    repository["pending_claims"] = [
-        row for row in repository["pending_claims"] if row["claim_id"] != claim_id
-    ]
-    _write(repository_path, repository)
-
-    packet_path = frontier / "targets/erdos-1056.json"
-    packet = _read(packet_path)
-    packet["repository"]["root"] = "sha256:" + hashlib.sha256(
-        repository_path.read_bytes()
-    ).hexdigest()
-    _write(packet_path, packet)
-
     result = validate(frontier)
-    assert result["accepted_coverage"]["last"] == 10429600
-    assert result["successor_range"]["first"] == 10430601
+    assert result["closed_range"]["last"] == 10430600
+    assert result["accepted_coverage"]["last"] == 10430800
+    assert result["successor_range"]["first"] == 10430801
 
 
 def test_later_acceptance_reconciles_without_rewriting_closure(
     frontier: pathlib.Path,
 ) -> None:
-    packet_path = frontier / "targets/erdos-1056.json"
-    packet = _read(packet_path)
-    progress = packet.pop("producer_completion")["latest_verified_submission"]
-    previous = packet["accepted_state"]["latest_bounded_negative"]
-    packet["accepted_state"]["previous_bounded_negative"] = previous
-    packet["accepted_state"]["latest_bounded_negative"] = {
-        "claim_id": progress["claim_id"],
-        "claim_root": progress["claim_root"],
-        "range": progress["range"],
-        "artifact_root": progress["artifact_root"],
-        "result": progress["result"],
-    }
-
-    repository_path = frontier / ".vela/repository.json"
-    repository = _read(repository_path)
-    accepted_row = next(
-        row
-        for row in repository["pending_claims"]
-        if row["claim_id"] == progress["claim_id"]
-    )
-    repository["pending_claims"] = [
-        row
-        for row in repository["pending_claims"]
-        if row["claim_id"] != progress["claim_id"]
-    ]
-    repository["accepted_claims"].append(
-        {**accepted_row, "standing": "accepted"}
-    )
-    _write(repository_path, repository)
-    packet["repository"]["root"] = "sha256:" + hashlib.sha256(
-        repository_path.read_bytes()
-    ).hexdigest()
-    _write(packet_path, packet)
-
     result = validate(frontier)
-    assert result["accepted_coverage"]["last"] == 10430600
-    assert result["successor_range"]["first"] == 10430601
+    assert result["accepted_coverage"]["last"] == 10430800
+    assert result["successor_range"]["first"] == 10430801
     assert "pending review" not in target_from_validation(result)["why"]
 
 
 def test_target_copy_uses_derived_successor_range() -> None:
     target = target_from_validation(
         {
-            "accepted_coverage": {"first": 1, "last": 10429600},
+            "accepted_coverage": {"first": 10430601, "last": 10430800},
             "closed_range": {"first": 10430401, "last": 10430600},
             "closure_basis": "verified_submission",
-            "successor_range": {"first": 10430601, "last": 10430800},
+            "successor_range": {"first": 10430801, "last": 10431000},
         }
     )
-    assert "10430601..10430800" in target["objective"]
-    assert "through 10430600" in target["why"]
+    assert "10430801..10431000" in target["objective"]
+    assert "ending at 10430800" in target["why"]
 
 
 def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
     assert execution_input_paths(ROOT) == [
-        "execution/erdos-1056/10430601-10430800/bundle.json",
-        "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
-        "execution/erdos-1056/mission-10430601-10430800.draft.json",
+        "execution/erdos-1056/10430801-10431000/producer-profile.v1.json",
+        "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]
@@ -551,9 +502,8 @@ def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
 def _copy_erdos_1056_execution_inputs(destination: pathlib.Path) -> None:
     for relative in [
         "targets/erdos-1056.json",
-        "execution/erdos-1056/10430601-10430800/bundle.json",
-        "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
-        "execution/erdos-1056/mission-10430601-10430800.draft.json",
+        "execution/erdos-1056/10430801-10431000/producer-profile.v1.json",
+        "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]:
@@ -579,7 +529,7 @@ def test_execution_inputs_reject_changed_result_contract(
     _copy_erdos_1056_execution_inputs(tmp_path)
     contract_path = (
         tmp_path
-        / "execution/erdos-1056/10430601-10430800/result-contract.v1.json"
+        / "execution/erdos-1056/10430801-10431000/result-contract.v1.json"
     )
     contract = _read(contract_path)
     contract["verifier"]["witness_minimum_multiplicity"] = 15
