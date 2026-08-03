@@ -14,6 +14,11 @@ vela status . --json
 vela next . --json
 ```
 
+Human-readable target plans and completed campaign summaries live in
+[`campaigns/`](campaigns/). Exact Target packets, retained scientific objects,
+artifacts, and replay state in this repository remain authoritative over those
+summaries.
+
 ## What this repository establishes
 
 The source audit asks two separate questions:
