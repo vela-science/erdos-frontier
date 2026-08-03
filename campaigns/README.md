@@ -7,6 +7,10 @@ campaign documents explain how to work with that state without replacing it.
 
 ## Current queue
 
+- [`erdos-183-astra-fidelity.md`](erdos-183-astra-fidelity.md) — protocol-
+  ready human checkpoint for the verified but still-pending Astra statement-
+  fidelity Claim; acceptance, rejection, or explicit deferral remains a human
+  repository-authority action.
 - [`erdos-203-finite-cover.md`](erdos-203-finite-cover.md) — queued fresh-
   discovery campaign for the currently offered Target
   `erdos:203:finite-cover`.
