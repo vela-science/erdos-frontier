@@ -14,8 +14,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_target_closure import TargetClosureError, validate  # noqa: E402
 from build_target_index import (  # noqa: E402
+    ERDOS_203_PACKET_PATH,
     ERDOS_264_CORRECTION_CLAIM,
     ERDOS_264_PACKET_PATH,
+    erdos_203_execution_input_paths,
     erdos_264_correction_accepted,
     erdos_264_execution_input_paths,
     erdos_264_proof_repair_complete,
@@ -25,6 +27,7 @@ from build_target_index import (  # noqa: E402
     fidelity_execution_input_paths,
     git_source_commit,
     target_from_validation,
+    validate_erdos_203_packet,
     validate_erdos_264_packet,
 )
 
@@ -140,15 +143,12 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
         )
 
     # The retained commits above prove historical closure. The live successor
-    # packet must instead bind the current post-Decision repository state.
+    # packet binds its source commit/tree and accepted Claims; targets.json
+    # separately binds the current repository root.
     (tmp_path / ".vela/repository.json").write_bytes(
         (ROOT / ".vela/repository.json").read_bytes()
     )
     successor = json.loads(successor_packet)
-    repository_bytes = (tmp_path / ".vela/repository.json").read_bytes()
-    successor["repository"]["root"] = (
-        "sha256:" + hashlib.sha256(repository_bytes).hexdigest()
-    )
     _write(tmp_path / "targets/erdos-1056.json", successor)
     for path, closure, retained_commit in zip(
         closure_paths, closures, retained_commits, strict=True
@@ -570,6 +570,44 @@ def test_erdos_264_repair_packet_is_exact_and_non_authoritative() -> None:
     assert packet["source"]["sha256"] == (
         "sha256:c59caaa2524e3edd52944e63f5d9bb0614f1bc36d7fb8a0fec7029c14c266b46"
     )
+
+
+def test_erdos_203_target_binds_corrected_campaign_and_exact_verifier() -> None:
+    validate_erdos_203_packet(ROOT)
+    packet = _read(ERDOS_203_PACKET_PATH)
+    assert packet["authority"] == "non_authoritative"
+    assert packet["problem_claim"] == {
+        "claim_id": "vcl_8131cdf07c70fe688bf18bc6ca274d6bff43eaeed116430351685e925bf4a796",
+        "claim_root": "sha256:998616dbbf3a0f704bbab20504a15fe1e4ab92fe60524ab6ad8798eab3435e06",
+    }
+    assert packet["prior_work"]["source"]["commit"] == (
+        "94fde841ea6ad90437bd66a91953bfeba13dba0f"
+    )
+    assert packet["prior_work"]["correction"]["commit"] == (
+        "ccb4105e6b89837c226512ba87a79084cd01cfe5"
+    )
+    assert packet["formal_statement"] == {
+        "blob_sha1": "2bc9f5fb212533aeb94c2328dbb5b53987a9f9ec",
+        "commit": "50ee83fa7dc31c99c03c83f04be90b7fea37d314",
+        "declaration": "Erdos203.erdos_203",
+        "path": "FormalConjectures/ErdosProblems/203.lean",
+        "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+        "sha256": "sha256:dfd0eb1bf073a27ad74a398acb7c2986b73be9cf72e6dc6ed9fc4618c6538cfb",
+        "status": "merged_upstream",
+        "tree": "af55637ba163e4381b00cd0fca0f59158c6998f3",
+    }
+    assert "99.98 percent" in packet["prior_work"]["correction"]["reason"]
+    assert "repository" not in packet
+
+
+def test_erdos_203_execution_inputs_bind_dependency_free_verifier() -> None:
+    assert erdos_203_execution_input_paths(ROOT) == [
+        "execution/erdos-203-cover/producer-profile.v1.json",
+        "execution/erdos-203-cover/result-contract.v1.json",
+        "execution/erdos-203-cover/verifier-capsule.v1.json",
+        "execution/erdos-203-cover/verify.py",
+    ]
+    packet = _read(ERDOS_203_PACKET_PATH)
     assert all(
         forbidden not in json.dumps(packet["execution_contracts"])
         for forbidden in ("model", "worker", "budgets")
@@ -598,9 +636,17 @@ def test_erdos_264_repair_remains_hidden_before_correction_decision(
     tmp_path: pathlib.Path,
 ) -> None:
     _copy_erdos_264_target(tmp_path)
+    repository = _read(tmp_path / ".vela/repository.json")
+    correction = next(
+        row
+        for row in repository["accepted_claims"]
+        if row["claim_id"] == ERDOS_264_CORRECTION_CLAIM["claim_id"]
+    )
+    repository["accepted_claims"].remove(correction)
+    repository["pending_claims"].append({**correction, "standing": "pending_review"})
+    _write(tmp_path / ".vela/repository.json", repository)
     assert not erdos_264_correction_accepted(tmp_path)
     assert not erdos_264_target_available(tmp_path)
-    repository = _read(tmp_path / ".vela/repository.json")
     correction = next(
         row
         for row in repository["pending_claims"]
@@ -858,8 +904,10 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
     for relative in [
         "targets/erdos-1056.json",
         "targets/erdos-183-astra-fidelity.json",
+        "targets/erdos-203-finite-cover.json",
         "targets/erdos-264-parts-i-proof-repair.json",
         *execution_input_paths(ROOT),
+        *erdos_203_execution_input_paths(ROOT),
         *erdos_264_execution_input_paths(ROOT),
         *fidelity_execution_input_paths(ROOT),
     ]:

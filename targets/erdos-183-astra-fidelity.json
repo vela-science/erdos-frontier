@@ -2,9 +2,6 @@
   "schema": "erdos-frontier.statement-fidelity-work.v1",
   "frontier_id": "vfr_0a25edabc16db143",
   "authority": "non_authoritative",
-  "repository": {
-    "root": "sha256:d07477153b4f3fedff624537fafdb66a24290df14ebdf559687a954b70db3090"
-  },
   "target": {
     "id": "erdos:183:astra-fidelity",
     "problem": 183,

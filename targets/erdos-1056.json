@@ -27,8 +27,7 @@
   ],
   "repository": {
     "commit": "aac922ac4afe52f9f8df042cca6c2c4ae296b9f7",
-    "tree": "848f608fa3c576349d41d8995d05afbc3a441a4b",
-    "root": "sha256:60c2a1393147d5264f909f4d023b35d7a81e1c6e9eda31bcfea3140d313b1466"
+    "tree": "848f608fa3c576349d41d8995d05afbc3a441a4b"
   },
   "target": {
     "id": "erdos:1056",

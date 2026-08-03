@@ -726,7 +726,6 @@ def validate(
 
     packet = read_json(packet_path)
     repository = read_json(repository_path)
-    observed_repository_root = file_root(repository_path)
     closures = validate_all_closed_ranges(root, repository)
     if not closures:
         raise TargetClosureError("no completed Erdős Target closure is retained")
@@ -741,8 +740,12 @@ def validate(
         raise TargetClosureError("successor packet names another Frontier")
     if packet.get("target", {}).get("id") != "erdos:1056":
         raise TargetClosureError("successor packet names another Target")
-    if packet.get("repository", {}).get("root") != observed_repository_root:
-        raise TargetClosureError("successor packet repository root drifted")
+    repository_locator = packet.get("repository") or {}
+    if set(repository_locator) != {"commit", "tree"}:
+        raise TargetClosureError(
+            "successor packet must bind its source commit and tree, not a mutable "
+            "repository root"
+        )
     successor_first, successor_last = validate_range(
         packet.get("target", {}).get("next_bounded_range"), "successor range"
     )

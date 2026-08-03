@@ -29,12 +29,15 @@ REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 FIDELITY_PACKET_PATH = ROOT / "targets" / "erdos-183-astra-fidelity.json"
 ERDOS_264_PACKET_PATH = ROOT / "targets" / "erdos-264-parts-i-proof-repair.json"
+ERDOS_203_PACKET_PATH = ROOT / "targets" / "erdos-203-finite-cover.json"
 TARGET_ID = "erdos:1056"
 FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
 ERDOS_264_TARGET_ID = "erdos:264:parts-i-proof-repair"
+ERDOS_203_TARGET_ID = "erdos:203:finite-cover"
 VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
 FIDELITY_VERIFIER_PROFILE = "erdos-183-astra-fidelity-review-v1"
 ERDOS_264_VERIFIER_PROFILE = "erdos-264-parts-i-native-lean-v1"
+ERDOS_203_VERIFIER_PROFILE = "erdos-203-exact-affine-cover-v1"
 FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
     "verifier_capsule": "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
@@ -51,8 +54,15 @@ ERDOS_264_EXECUTION_CONTRACT_PATHS = {
     "verifier_capsule": "execution/erdos-264-proof-repair/verifier-capsule.v1.json",
     "result_contract": "execution/erdos-264-proof-repair/result-contract.v1.json",
 }
+ERDOS_203_EXECUTION_CONTRACT_PATHS = {
+    "producer_profile": "execution/erdos-203-cover/producer-profile.v1.json",
+    "verifier_capsule": "execution/erdos-203-cover/verifier-capsule.v1.json",
+    "result_contract": "execution/erdos-203-cover/result-contract.v1.json",
+}
 ERDOS_264_VERIFIER_SOURCE_PATH = "execution/erdos-264-proof-repair/verify.py"
 ERDOS_264_ARTIFACT_PATH = "artifacts/erdos264-parts-i-proof-repair/264.lean"
+ERDOS_203_VERIFIER_SOURCE_PATH = "execution/erdos-203-cover/verify.py"
+ERDOS_203_ARTIFACT_PATH = "artifacts/erdos203-cover-certificate.v1.json"
 ERDOS_264_CORRECTION_CLAIM = {
     "claim_id": "vcl_5a7df5408c6b11aa52745af2ce1203db3b39cb9a9404c27309f4ee490ffb1386",
     "claim_root": "sha256:4d3f546331886ba10891c1ceb46267993d41b99ed746a19b74d91ccb9448b16e",
@@ -65,7 +75,7 @@ TARGET_BASE = {
     "id": TARGET_ID,
     "title": "Erdős 1056",
     "presence": "open",
-    "rank": 2,
+    "rank": 3,
     "labels": [
         "bounded-artifact",
         "erdos",
@@ -131,6 +141,32 @@ ERDOS_264_TARGET_BASE = {
     "packet": {
         "path": "targets/erdos-264-parts-i-proof-repair.json",
         "schema": "erdos-frontier.correction-inheritance-work.v1",
+    },
+}
+ERDOS_203_TARGET_BASE = {
+    "id": ERDOS_203_TARGET_ID,
+    "title": "Solve Erdős 203 with a finite two-dimensional cover",
+    "presence": "open",
+    "rank": 2,
+    "labels": [
+        "covering-systems",
+        "erdos",
+        "finite-witness",
+        "machine-checkable",
+        "open-problem",
+    ],
+    "why": (
+        "A finite exact cover would resolve the retained existential problem "
+        "affirmatively. The prior campaign produced a corrected exact lattice "
+        "kernel, a viable prime pool, and an explicit structural next route."
+    ),
+    "objective": (
+        "Find one exact finite two-dimensional covering system, pass the "
+        "independent affine-lattice verifier, and derive the canonical CRT witness."
+    ),
+    "packet": {
+        "path": "targets/erdos-203-finite-cover.json",
+        "schema": "erdos-frontier.finite-cover-work.v1",
     },
 }
 
@@ -297,6 +333,46 @@ def erdos_264_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     return sorted({*paths, ERDOS_264_VERIFIER_SOURCE_PATH})
 
 
+def erdos_203_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
+    packet_path = root / ERDOS_203_PACKET_PATH.relative_to(ROOT)
+    packet = json.loads(packet_path.read_text())
+    if packet_path.read_bytes() != canonical_bytes(packet) + b"\n":
+        raise ValueError("Erdős 203 packet must be canonical JSON")
+    contracts = packet.get("execution_contracts")
+    if not isinstance(contracts, dict) or set(contracts) != set(
+        ERDOS_203_EXECUTION_CONTRACT_PATHS
+    ):
+        raise ValueError("Erdős 203 execution contract set differs")
+    paths = []
+    values = {}
+    for name, expected_path in ERDOS_203_EXECUTION_CONTRACT_PATHS.items():
+        path = rooted_file(root, contracts.get(name), f"Erdős 203 {name}")
+        if path != expected_path:
+            raise ValueError(f"Erdős 203 {name} path differs")
+        contract_path = root / path
+        value = json.loads(contract_path.read_text())
+        if contract_path.read_bytes() != canonical_bytes(value) + b"\n":
+            raise ValueError(f"Erdős 203 {name} must be canonical JSON")
+        if (
+            value.get("authority") != "non_authoritative"
+            or value.get("target") != ERDOS_203_TARGET_ID
+        ):
+            raise ValueError(f"Erdős 203 {name} crosses its Target boundary")
+        paths.append(path)
+        values[name] = value
+    verifier = values["verifier_capsule"]
+    implementation = verifier.get("implementation") or {}
+    verifier_source = root / ERDOS_203_VERIFIER_SOURCE_PATH
+    verifier_bytes = verifier_source.read_bytes()
+    if implementation != {
+        "path": ERDOS_203_VERIFIER_SOURCE_PATH,
+        "sha256": sha256_root(verifier_bytes),
+        "size": len(verifier_bytes),
+    }:
+        raise ValueError("Erdős 203 verifier implementation root differs")
+    return sorted({*paths, ERDOS_203_VERIFIER_SOURCE_PATH})
+
+
 def input_paths(
     root: pathlib.Path = ROOT, *, include_fidelity: bool = False
 ) -> list[str]:
@@ -308,6 +384,7 @@ def input_paths(
             for path in (root / "targets" / "closures").glob("*.json")
         ),
         *execution_input_paths(root),
+        *erdos_203_execution_input_paths(root),
         *erdos_264_execution_input_paths(root),
     ]
     if include_fidelity:
@@ -323,6 +400,7 @@ def git_source_commit(
 ) -> str:
     paths = paths or input_paths(root, include_fidelity=include_fidelity)
     packets = [PACKET_PATH.relative_to(ROOT).as_posix()]
+    packets.append(ERDOS_203_PACKET_PATH.relative_to(ROOT).as_posix())
     packets.append(ERDOS_264_PACKET_PATH.relative_to(ROOT).as_posix())
     if include_fidelity:
         packets.append(FIDELITY_PACKET_PATH.relative_to(ROOT).as_posix())
@@ -436,17 +514,18 @@ def target_from_validation(validation: dict[str, Any]) -> dict[str, Any]:
 def validate_packet(validation: dict[str, Any]) -> None:
     repository = json.loads(REPOSITORY_PATH.read_text())
     packet = json.loads(PACKET_PATH.read_text())
-    repository_root = (
-        "sha256:" + hashlib.sha256(REPOSITORY_PATH.read_bytes()).hexdigest()
-    )
     if packet.get("schema") != TARGET_BASE["packet"]["schema"]:
         raise ValueError("Erdős 1056 packet schema differs from the Target")
     if packet.get("frontier_id") != repository.get("frontier_id"):
         raise ValueError("Erdős 1056 packet targets another Frontier")
     if (packet.get("target") or {}).get("id") != TARGET_BASE["id"]:
         raise ValueError("Erdős 1056 packet targets another work item")
-    if (packet.get("repository") or {}).get("root") != repository_root:
-        raise ValueError("Erdős 1056 packet is stale for the current repository root")
+    repository_locator = packet.get("repository") or {}
+    if set(repository_locator) != {"commit", "tree"}:
+        raise ValueError(
+            "Erdős 1056 packet must bind its source commit and tree, not a mutable "
+            "repository root"
+        )
 
     accepted = {
         row["claim_id"]: row["claim_root"]
@@ -474,7 +553,6 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
     packet_path = root / FIDELITY_PACKET_PATH.relative_to(ROOT)
     repository = json.loads(repository_path.read_text())
     packet = json.loads(packet_path.read_text())
-    repository_root = sha256_root(repository_path.read_bytes())
     release = packet.get("openai_release") or {}
     source = packet.get("source_problem") or {}
     status = source.get("status_observation") or {}
@@ -485,7 +563,7 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         packet.get("schema") != FIDELITY_TARGET_BASE["packet"]["schema"]
         or packet.get("frontier_id") != repository.get("frontier_id")
         or packet.get("authority") != "non_authoritative"
-        or packet.get("repository") != {"root": repository_root}
+        or "repository" in packet
         or (packet.get("target") or {}).get("id") != FIDELITY_TARGET_ID
         or (packet.get("target") or {}).get("problem") != 183
         or packet.get("verifier_profile") != FIDELITY_VERIFIER_PROFILE
@@ -590,6 +668,105 @@ def validate_erdos_264_packet(root: pathlib.Path = ROOT) -> None:
     if not isinstance(requirement, str) or not requirement:
         raise ValueError("Erdős 264 packet lacks an exact verification requirement")
     erdos_264_execution_input_paths(root)
+
+
+def validate_erdos_203_packet(root: pathlib.Path = ROOT) -> None:
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    packet = json.loads((root / ERDOS_203_PACKET_PATH.relative_to(ROOT)).read_text())
+    target = packet.get("target") or {}
+    formal_statement = packet.get("formal_statement") or {}
+    source = ((packet.get("prior_work") or {}).get("source")) or {}
+    correction = ((packet.get("prior_work") or {}).get("correction")) or {}
+    problem_claim = packet.get("problem_claim") or {}
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+        if row.get("standing") == "accepted"
+    }
+    if (
+        packet.get("schema") != ERDOS_203_TARGET_BASE["packet"]["schema"]
+        or packet.get("frontier_id") != repository.get("frontier_id")
+        or packet.get("authority") != "non_authoritative"
+        or "repository" in packet
+        or target.get("id") != ERDOS_203_TARGET_ID
+        or target.get("problem") != 203
+        or target.get("state") != "open"
+        or packet.get("verifier_profile") != ERDOS_203_VERIFIER_PROFILE
+        or packet.get("allowed_outputs")
+        != [
+            {
+                "kind": "finite-cover-certificate",
+                "media_type": "application/json",
+                "path": ERDOS_203_ARTIFACT_PATH,
+                "schema": "erdos-frontier.erdos-203-cover-certificate.v1",
+            }
+        ]
+    ):
+        raise ValueError("Erdős 203 packet crosses its Target or authority boundary")
+    if formal_statement != {
+        "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+        "commit": "50ee83fa7dc31c99c03c83f04be90b7fea37d314",
+        "tree": "af55637ba163e4381b00cd0fca0f59158c6998f3",
+        "path": "FormalConjectures/ErdosProblems/203.lean",
+        "blob_sha1": "2bc9f5fb212533aeb94c2328dbb5b53987a9f9ec",
+        "sha256": "sha256:dfd0eb1bf073a27ad74a398acb7c2986b73be9cf72e6dc6ed9fc4618c6538cfb",
+        "declaration": "Erdos203.erdos_203",
+        "status": "merged_upstream",
+    }:
+        raise ValueError("Erdős 203 packet does not bind the merged formal statement")
+    if (
+        problem_claim
+        != {
+            "claim_id": "vcl_8131cdf07c70fe688bf18bc6ca274d6bff43eaeed116430351685e925bf4a796",
+            "claim_root": "sha256:998616dbbf3a0f704bbab20504a15fe1e4ab92fe60524ab6ad8798eab3435e06",
+        }
+        or accepted.get(problem_claim.get("claim_id"))
+        != problem_claim.get("claim_root")
+    ):
+        raise ValueError("Erdős 203 packet does not bind its accepted problem Claim")
+    if (
+        source.get("repository")
+        != "https://github.com/williamjblair/lean-proofs.git"
+        or source.get("commit") != "94fde841ea6ad90437bd66a91953bfeba13dba0f"
+        or source.get("tree") != "5b8a3013fbc08edb9e04086aeb4aa9f5c9a09a9a"
+        or correction.get("commit")
+        != "ccb4105e6b89837c226512ba87a79084cd01cfe5"
+        or not isinstance(correction.get("reason"), str)
+        or not correction["reason"]
+        or len(correction.get("retracted", [])) != 2
+    ):
+        raise ValueError("Erdős 203 packet does not bind the corrected campaign source")
+    expected_files = {
+        "docs/plans/erdos203-campaign.md": (7567, "sha256:3f8b9e037a71ef8fea97d534aa5c3e62bfd8138c3511cc46e51ed5125ffb95af"),
+        "compute203/lattice.py": (4104, "sha256:2579bfb9f9b1213abeb5e8e33e8c25e2434dc4822f5b2ce247bbbc38a2705b2f"),
+        "compute203/tree_builder.py": (8335, "sha256:8bcf760578104a8a1b318174e6b084cc7909b02ed5c8290f64f73db79e1099e9"),
+        "compute203/fleet5040.py": (2170, "sha256:df26cbd844ebb42146535b9c06614c0a7e1ef77dbcee9ac76050d7d2f48df13e"),
+        "compute203/fleetfull.py": (119, "sha256:ddbeb895b8c828b46645f2e5980940eabf8923ad844d137862f1b09a5ee0c38f"),
+        "compute203/point_solver.py": (2935, "sha256:59511ea34bbd719778c37b5295aa95db7b84a49d2eca385eee30c598b391f4ec"),
+        "compute203/pool_merged.json": (4104, "sha256:9a8f179bf6ab509c53144ac679acd8ffe42e66588b1516b0ca3a9f45e18395b3"),
+    }
+    observed_files = {
+        row.get("path"): (row.get("size"), row.get("sha256"))
+        for row in source.get("files", [])
+        if isinstance(row, dict)
+    }
+    if observed_files != expected_files:
+        raise ValueError("Erdős 203 packet source-file roots differ")
+    expected_retracted = {
+        "compute203/best_full2.json": (547, "sha256:b937be3510ae1f7839e9fd316360c9bf41a9f456bd9f350ea2b85268622b712d"),
+        "compute203/stall_cells.json": (2326472, "sha256:72dbc754aecf79c6698b20394f00868c52133013dfa06b9c12f69aaeb708d7ad"),
+    }
+    observed_retracted = {
+        row.get("path"): (row.get("size"), row.get("sha256"))
+        for row in correction.get("retracted", [])
+        if isinstance(row, dict)
+    }
+    if observed_retracted != expected_retracted:
+        raise ValueError("Erdős 203 retracted evidence roots differ")
+    requirement = packet.get("verification_requirement")
+    if not isinstance(requirement, str) or not requirement:
+        raise ValueError("Erdős 203 packet lacks an exact verification requirement")
+    erdos_203_execution_input_paths(root)
 
 
 def current_records(
@@ -998,6 +1175,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
 
 
 def index() -> dict[str, Any]:
+    validate_erdos_203_packet()
     validate_erdos_264_packet()
     erdos_1056_complete = erdos_1056_work_complete()
     validation = None
@@ -1023,6 +1201,7 @@ def index() -> dict[str, Any]:
         targets_with_packets.append(
             (ERDOS_264_TARGET_BASE.copy(), ERDOS_264_PACKET_PATH)
         )
+    targets_with_packets.append((ERDOS_203_TARGET_BASE.copy(), ERDOS_203_PACKET_PATH))
     if not erdos_1056_complete:
         assert validation is not None
         targets_with_packets.append((target_from_validation(validation), PACKET_PATH))
