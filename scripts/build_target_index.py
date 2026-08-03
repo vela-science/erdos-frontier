@@ -210,30 +210,33 @@ def fidelity_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     return sorted(paths)
 
 
-def input_paths(root: pathlib.Path = ROOT) -> list[str]:
-    return sorted(
-        [
-            "scripts/build_target_index.py",
-            "scripts/validate_target_closure.py",
-            *(
-                path.relative_to(root).as_posix()
-                for path in (root / "targets" / "closures").glob("*.json")
-            ),
-            *execution_input_paths(root),
-            *fidelity_execution_input_paths(root),
-        ]
-    )
+def input_paths(
+    root: pathlib.Path = ROOT, *, include_fidelity: bool = False
+) -> list[str]:
+    paths = [
+        "scripts/build_target_index.py",
+        "scripts/validate_target_closure.py",
+        *(
+            path.relative_to(root).as_posix()
+            for path in (root / "targets" / "closures").glob("*.json")
+        ),
+        *execution_input_paths(root),
+    ]
+    if include_fidelity:
+        paths.extend(fidelity_execution_input_paths(root))
+    return sorted(paths)
 
 
 def git_source_commit(
     root: pathlib.Path = ROOT,
     paths: list[str] | None = None,
+    *,
+    include_fidelity: bool = False,
 ) -> str:
-    paths = paths or input_paths(root)
-    packets = [
-        PACKET_PATH.relative_to(ROOT).as_posix(),
-        FIDELITY_PACKET_PATH.relative_to(ROOT).as_posix(),
-    ]
+    paths = paths or input_paths(root, include_fidelity=include_fidelity)
+    packets = [PACKET_PATH.relative_to(ROOT).as_posix()]
+    if include_fidelity:
+        packets.append(FIDELITY_PACKET_PATH.relative_to(ROOT).as_posix())
     retained = [*paths, *packets]
     commit = subprocess.run(
         ["git", "-C", str(root), "log", "-1", "--format=%H", "--", *retained],
@@ -260,8 +263,10 @@ def git_source_commit(
     return commit
 
 
-def git_source(root: pathlib.Path, paths: list[str]) -> tuple[str, str, str]:
-    commit = git_source_commit(root, paths)
+def git_source(
+    root: pathlib.Path, paths: list[str], *, include_fidelity: bool = False
+) -> tuple[str, str, str]:
+    commit = git_source_commit(root, paths, include_fidelity=include_fidelity)
     tree = subprocess.run(
         ["git", "-C", str(root), "rev-parse", f"{commit}^{{tree}}"],
         check=True,
@@ -621,9 +626,13 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
 def index() -> dict[str, Any]:
     validation = validate_target_closure(ROOT)
     validate_packet(validation)
-    validate_fidelity_packet()
-    paths = input_paths(ROOT)
-    object_format, commit, tree = git_source(ROOT, paths)
+    fidelity_complete = fidelity_work_complete()
+    if not fidelity_complete:
+        validate_fidelity_packet()
+    paths = input_paths(ROOT, include_fidelity=not fidelity_complete)
+    object_format, commit, tree = git_source(
+        ROOT, paths, include_fidelity=not fidelity_complete
+    )
     entries = [tracked_entry(path) for path in paths]
     inputs = {
         "schema": "vela.target-index-input-manifest.v1",
@@ -633,7 +642,7 @@ def index() -> dict[str, Any]:
     repository = json.loads(REPOSITORY_PATH.read_text())
     target = target_from_validation(validation)
     targets_with_packets = [(target, PACKET_PATH)]
-    if not fidelity_work_complete():
+    if not fidelity_complete:
         targets_with_packets.insert(0, (FIDELITY_TARGET_BASE.copy(), FIDELITY_PACKET_PATH))
     targets = [current for current, _ in targets_with_packets]
     for current, packet_path in targets_with_packets:
