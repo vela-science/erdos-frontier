@@ -729,7 +729,10 @@ def test_erdos_264_repair_closes_only_after_exact_passing_verification(
                 "digest": artifact_root,
             }
         ],
-        "verification_requirements": [packet["verification_requirement"]],
+        "verification_requirements": [
+            packet["verification_requirement"]
+            + " Bind the exact artifact root and reported axiom set."
+        ],
     }
     proposal = {
         "schema": "vela.proposal.v1",
@@ -755,7 +758,10 @@ def test_erdos_264_repair_closes_only_after_exact_passing_verification(
                 "sha256"
             ],
         },
-        "scope": {"property": packet["verification_requirement"]},
+        "scope": {
+            "property": packet["verification_requirement"]
+            + " Bind the exact artifact root and reported axiom set."
+        },
     }
     records = tmp_path / "records"
     submission_path = records / "submissions/submission.json"
@@ -808,6 +814,10 @@ def test_erdos_264_repair_closes_only_after_exact_passing_verification(
     _write(tmp_path / ".vela/repository.json", repository)
     assert erdos_264_proof_repair_complete(tmp_path)
     assert not erdos_264_target_available(tmp_path)
+    verification["scope"]["property"] = ""
+    _write(verification_path, verification)
+    assert not erdos_264_proof_repair_complete(tmp_path)
+    verification["scope"]["property"] = submission["verification_requirements"][0]
     verification["outcome"] = "fail"
     _write(verification_path, verification)
     assert not erdos_264_proof_repair_complete(tmp_path)

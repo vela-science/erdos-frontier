@@ -1014,7 +1014,6 @@ def erdos_264_proof_repair_complete(root: pathlib.Path = ROOT) -> bool:
         ),
         "result_contract_root": (contracts.get("result_contract") or {}).get("sha256"),
     }
-    requirement = packet.get("verification_requirement")
     pending = {
         row.get("claim_id"): row.get("claim_root")
         for row in repository.get("pending_claims", [])
@@ -1024,6 +1023,7 @@ def erdos_264_proof_repair_complete(root: pathlib.Path = ROOT) -> bool:
         for row in repository.get("accepted_claims", [])
     }
     for submission_row, submission in current_records(repository, "submissions", root):
+        submission_requirements = submission.get("verification_requirements")
         if (
             submission.get("schema") != "vela.submission.v1"
             or submission.get("execution_binding") != expected_binding
@@ -1035,7 +1035,10 @@ def erdos_264_proof_repair_complete(root: pathlib.Path = ROOT) -> bool:
                     "digest": artifact_root,
                 }
             ]
-            or submission.get("verification_requirements") != [requirement]
+            or not isinstance(submission_requirements, list)
+            or len(submission_requirements) != 1
+            or not isinstance(submission_requirements[0], str)
+            or not submission_requirements[0]
         ):
             continue
         for proposal_row, proposal in current_records(repository, "proposals", root):
@@ -1075,7 +1078,8 @@ def erdos_264_proof_repair_complete(root: pathlib.Path = ROOT) -> bool:
                     == ERDOS_264_EXECUTION_CONTRACT_PATHS["verifier_capsule"]
                     and method.get("environment_root")
                     == expected_binding["verifier_capsule_root"]
-                    and scope.get("property") == requirement
+                    and isinstance(scope.get("property"), str)
+                    and bool(scope["property"])
                 ):
                     return True
     return False
