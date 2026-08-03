@@ -27,7 +27,7 @@ def test_frontier_workflow_pins_current_released_vela_action():
     assert checkout["with"]["fetch-depth"] == "0"
     vela = workflow["jobs"]["verify"]["steps"][1]
     assert vela["uses"] == (
-        "vela-science/vela@78040963bfad51c63396495077d8084a5047f9f8"
+        "vela-science/vela@50ab6f267cf325988e6d903ddafa5c0070c9f015"
     )
     assert vela["with"] == {"frontier": "."}
 
