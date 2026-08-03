@@ -17,7 +17,11 @@ import sys
 import tempfile
 from typing import Any
 
-from validate_target_closure import validate as validate_target_closure
+from validate_target_closure import (
+    TargetClosureError,
+    validate_search_artifact,
+    validate as validate_target_closure,
+)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 INDEX_PATH = ROOT / "targets.json"
@@ -452,6 +456,153 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         raise ValueError("Erdős 183 fidelity packet execution roots differ")
 
 
+def current_records(
+    repository: dict[str, Any], kind: str, root: pathlib.Path = ROOT
+) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+    values = []
+    for row in repository.get(kind, []):
+        relative_raw = row.get("path")
+        expected_root = row.get("root")
+        if not isinstance(relative_raw, str) or not isinstance(expected_root, str):
+            continue
+        relative = pathlib.PurePosixPath(relative_raw)
+        if relative.is_absolute() or ".." in relative.parts:
+            continue
+        path = root.joinpath(*relative.parts)
+        if not path.is_file() or path.is_symlink():
+            continue
+        data = path.read_bytes()
+        if sha256_root(data) != expected_root:
+            continue
+        try:
+            value = json.loads(data)
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            continue
+        values.append((row, value))
+    return values
+
+
+def erdos_1056_work_complete(root: pathlib.Path = ROOT) -> bool:
+    """Return whether the exact live range already has passing evidence.
+
+    Producer work closes at scoped Verification, not at human acceptance. This
+    prevents `vela next` from offering duplicate computation while the
+    consequence-bearing Proposal remains in the Decision Inbox.
+    """
+
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    packet_path = root / PACKET_PATH.relative_to(ROOT)
+    packet_bytes = packet_path.read_bytes()
+    packet = json.loads(packet_bytes)
+    packet_root = sha256_root(packet_bytes)
+    contracts = packet.get("execution_contracts") or {}
+    expected_binding = {
+        "schema": "vela.execution-binding.v1",
+        "packet_root": packet_root,
+        "profile_root": (contracts.get("producer_profile") or {}).get("sha256"),
+        "verifier_capsule_root": (contracts.get("verifier_capsule") or {}).get(
+            "sha256"
+        ),
+        "result_contract_root": (contracts.get("result_contract") or {}).get(
+            "sha256"
+        ),
+    }
+    target_range = (packet.get("target") or {}).get("next_bounded_range") or {}
+    artifact_path = ((packet.get("allowed_outputs") or [{}])[0]).get("path")
+    if (
+        set(contracts)
+        != {"producer_profile", "verifier_capsule", "result_contract"}
+        or not isinstance(artifact_path, str)
+        or not isinstance(target_range.get("first"), int)
+        or not isinstance(target_range.get("last"), int)
+        or target_range.get("inclusive") is not True
+    ):
+        return False
+
+    artifact_file = root / artifact_path
+    if not artifact_file.is_file() or artifact_file.is_symlink():
+        return False
+    artifact_root = sha256_root(artifact_file.read_bytes())
+    artifact_id = artifact_root.removeprefix("sha256:")
+    pending = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("pending_claims", [])
+    }
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+    }
+
+    for submission_row, submission in current_records(repository, "submissions", root):
+        artifacts = submission.get("artifacts")
+        requirements = submission.get("verification_requirements")
+        if (
+            submission.get("schema") != "vela.submission.v1"
+            or submission.get("execution_binding") != expected_binding
+            or not isinstance(artifacts, list)
+            or len(artifacts) != 1
+            or artifacts[0]
+            != {
+                "kind": "bounded-search",
+                "path": artifact_path,
+                "digest": artifact_root,
+            }
+            or not isinstance(requirements, list)
+            or len(requirements) != 1
+            or not isinstance(requirements[0], str)
+            or not requirements[0]
+        ):
+            continue
+        assertion = ((submission.get("claim") or {}).get("assertion")) or ""
+        try:
+            validate_search_artifact(
+                artifact_file,
+                assertion,
+                target_range["first"],
+                target_range["last"],
+            )
+        except TargetClosureError:
+            continue
+
+        for proposal_row, proposal in current_records(repository, "proposals", root):
+            package = proposal.get("producer_package") or {}
+            subject = proposal.get("subject") or {}
+            claim_id = subject.get("id")
+            claim_root = subject.get("root")
+            if (
+                proposal.get("schema") != "vela.proposal.v1"
+                or package.get("id") != submission.get("submission_id")
+                or package.get("root") != submission_row.get("root")
+                or package.get("path") != submission_row.get("path")
+                or (
+                    pending.get(claim_id) != claim_root
+                    and accepted.get(claim_id) != claim_root
+                )
+            ):
+                continue
+            for _, verification in current_records(repository, "verifications", root):
+                verification_subject = verification.get("subject") or {}
+                method = verification.get("method") or {}
+                scope = verification.get("scope") or {}
+                if (
+                    verification.get("schema") == "vela.verification-record.v1"
+                    and verification.get("outcome") == "pass"
+                    and verification_subject.get("claim_id") == claim_id
+                    and verification_subject.get("proposal_id")
+                    == proposal_row.get("id")
+                    and verification_subject.get("submission_id")
+                    == submission.get("submission_id")
+                    and verification_subject.get("submission_root")
+                    == submission_row.get("root")
+                    and set(verification_subject.get("artifact_ids", []))
+                    == {artifact_id}
+                    and method.get("profile") == packet.get("verifier_profile")
+                    and scope.get("property") == requirements[0]
+                ):
+                    return True
+    return False
+
+
 def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
     """Return whether the exact one-shot fidelity work is pending or accepted.
 
@@ -498,29 +649,6 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
     ):
         return False
 
-    def records(kind: str) -> list[tuple[dict[str, Any], dict[str, Any]]]:
-        values = []
-        for row in repository.get(kind, []):
-            relative_raw = row.get("path")
-            expected_root = row.get("root")
-            if not isinstance(relative_raw, str) or not isinstance(expected_root, str):
-                continue
-            relative = pathlib.PurePosixPath(relative_raw)
-            if relative.is_absolute() or ".." in relative.parts:
-                continue
-            path = root.joinpath(*relative.parts)
-            if not path.is_file() or path.is_symlink():
-                continue
-            data = path.read_bytes()
-            if sha256_root(data) != expected_root:
-                continue
-            try:
-                value = json.loads(data)
-            except (UnicodeDecodeError, json.JSONDecodeError):
-                continue
-            values.append((row, value))
-        return values
-
     contracts = packet.get("execution_contracts") or {}
     expected_binding = {
         "profile_root": (contracts.get("producer_profile") or {}).get("sha256"),
@@ -533,7 +661,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
     }
     review_requirement = review.get("verification")
     submissions = []
-    for row, submission in records("submissions"):
+    for row, submission in current_records(repository, "submissions", root):
         binding = submission.get("execution_binding") or {}
         submission_requirements = submission.get("verification_requirements")
         artifact = {
@@ -566,7 +694,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
         for row in repository.get("accepted_claims", [])
     }
     for submission_row, submission, submission_requirement in submissions:
-        for proposal_row, proposal in records("proposals"):
+        for proposal_row, proposal in current_records(repository, "proposals", root):
             package = proposal.get("producer_package") or {}
             subject = proposal.get("subject") or {}
             claim_id = subject.get("id")
@@ -589,7 +717,9 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
                 )
             ):
                 continue
-            for verification_row, verification in records("verifications"):
+            for verification_row, verification in current_records(
+                repository, "verifications", root
+            ):
                 verification_subject = verification.get("subject") or {}
                 method = verification.get("method") or {}
                 scope = verification.get("scope") or {}
@@ -624,8 +754,11 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
 
 
 def index() -> dict[str, Any]:
-    validation = validate_target_closure(ROOT)
-    validate_packet(validation)
+    erdos_1056_complete = erdos_1056_work_complete()
+    validation = None
+    if not erdos_1056_complete:
+        validation = validate_target_closure(ROOT)
+        validate_packet(validation)
     fidelity_complete = fidelity_work_complete()
     if not fidelity_complete:
         validate_fidelity_packet()
@@ -640,8 +773,10 @@ def index() -> dict[str, Any]:
     }
     inputs["input_root"] = sha256_root(canonical_bytes(inputs))
     repository = json.loads(REPOSITORY_PATH.read_text())
-    target = target_from_validation(validation)
-    targets_with_packets = [(target, PACKET_PATH)]
+    targets_with_packets = []
+    if not erdos_1056_complete:
+        assert validation is not None
+        targets_with_packets.append((target_from_validation(validation), PACKET_PATH))
     if not fidelity_complete:
         targets_with_packets.insert(0, (FIDELITY_TARGET_BASE.copy(), FIDELITY_PACKET_PATH))
     targets = [current for current, _ in targets_with_packets]
