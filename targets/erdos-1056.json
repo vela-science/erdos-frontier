@@ -1,17 +1,11 @@
 {
   "schema": "erdos-frontier.problem-work.v2",
   "frontier_id": "vfr_0a25edabc16db143",
-  "execution_bundle": {
-    "schema": "vela.agent-execution-bundle.v1",
-    "path": "execution/erdos-1056/10430601-10430800/bundle.json",
-    "size": 1563,
-    "sha256": "sha256:984b347f24d4c33fcb8365d309ebbadc28ffb2e5937bc8d38ff9228917f04c69"
-  },
   "execution_contracts": {
     "producer_profile": {
-      "path": "execution/erdos-1056/mission-10430601-10430800.draft.json",
-      "size": 3211,
-      "sha256": "sha256:eb1d697f974693fce2b776fddf07ec3462bb06528ba1f7181a5c4f7786c3e665"
+      "path": "execution/erdos-1056/10430601-10430800/producer-profile.v1.json",
+      "size": 849,
+      "sha256": "sha256:6eb2d250485b6903f4371044e537840fb42a53573d22bbb9bed053932c3c89ef"
     },
     "verifier_capsule": {
       "path": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",

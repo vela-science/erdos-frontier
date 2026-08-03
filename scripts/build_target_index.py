@@ -24,7 +24,6 @@ INDEX_PATH = ROOT / "targets.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 FIDELITY_PACKET_PATH = ROOT / "targets" / "erdos-183-astra-fidelity.json"
-BUNDLE_SCHEMA = "vela.agent-execution-bundle.v1"
 TARGET_ID = "erdos:1056"
 FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
 VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
@@ -35,10 +34,11 @@ FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "result_contract": "execution/erdos-183-astra-fidelity/result-contract.v1.json",
 }
 ERDOS_1056_EXECUTION_CONTRACT_PATHS = {
-    "producer_profile": "execution/erdos-1056/mission-10430601-10430800.draft.json",
+    "producer_profile": "execution/erdos-1056/10430601-10430800/producer-profile.v1.json",
     "verifier_capsule": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
     "result_contract": "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
 }
+ERDOS_1056_VERIFIER_SOURCE_PATH = "execution/erdos-1056/verifier/v1/verifier.cpp"
 ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430601-10430800.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
@@ -98,16 +98,10 @@ def rooted_file(
     root: pathlib.Path,
     locator: Any,
     label: str,
-    *,
-    schema: bool = False,
 ) -> str:
     required = {"path", "size", "sha256"}
-    if schema:
-        required.add("schema")
     if not isinstance(locator, dict) or set(locator) != required:
         raise ValueError(f"{label} must be one closed rooted-file locator")
-    if schema and locator["schema"] != BUNDLE_SCHEMA:
-        raise ValueError(f"{label} schema differs")
     raw = locator.get("path")
     size = locator.get("size")
     expected = locator.get("sha256")
@@ -137,60 +131,6 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         raise ValueError("Erdős 1056 allowed outputs differ from the Agent contract")
     if packet.get("verifier_profile") != VERIFIER_PROFILE:
         raise ValueError("Erdős 1056 verifier profile differs from the Target contract")
-    bundle_path = rooted_file(
-        root,
-        packet.get("execution_bundle"),
-        "execution bundle",
-        schema=True,
-    )
-    bundle_file = root / bundle_path
-    bundle = json.loads(bundle_file.read_text())
-    if bundle_file.read_bytes() != canonical_bytes(bundle) + b"\n":
-        raise ValueError("execution bundle must be canonical JSON")
-    if (
-        bundle.get("schema") != BUNDLE_SCHEMA
-        or bundle.get("authority") != "non_authoritative"
-        or bundle.get("effect") != "none"
-        or bundle.get("target") != {"id": TARGET_ID}
-        or "target_packet" in bundle
-    ):
-        raise ValueError("execution bundle crosses its exact Target or authority boundary")
-    artifact = bundle.get("artifact_contract")
-    if (
-        not isinstance(artifact, dict)
-        or artifact.get("kind") != ALLOWED_OUTPUTS[0]["type"]
-        or artifact.get("path") != ALLOWED_OUTPUTS[0]["path"]
-    ):
-        raise ValueError("execution bundle Artifact contract differs from allowed outputs")
-    if bundle.get("safeguards") != {
-        "duplicate_work": "target_revalidation",
-        "prior_answer_inputs": [],
-        "worker_inputs": ["mission", "target_packet"],
-    }:
-        raise ValueError("execution bundle input boundary differs")
-    verifier = bundle.get("verifier")
-    if (
-        not isinstance(verifier, dict)
-        or verifier.get("isolation") != {"network": "deny", "writes": "deny"}
-        or (verifier.get("runtime") or {}).get("verifier_platform") != "linux/arm64"
-    ):
-        raise ValueError("execution bundle verifier boundary differs")
-    mission_path = rooted_file(root, bundle.get("mission"), "mission")
-    mission_file = root / mission_path
-    mission = json.loads(mission_file.read_text())
-    if mission_file.read_bytes() != canonical_bytes(mission) + b"\n":
-        raise ValueError("Agent mission must be canonical JSON")
-    if (
-        mission.get("target") != TARGET_ID
-        or mission.get("actor") != "agent:codex"
-        or mission.get("frontier") != "."
-        or mission.get("role") != "producer"
-        or mission.get("allowed_paths") != [ARTIFACT_PATH]
-    ):
-        raise ValueError("Agent mission differs from the exact Target and output contract")
-    verifier_source_path = rooted_file(root, verifier.get("source"), "verifier source")
-    verifier_capsule_path = rooted_file(root, verifier.get("capsule"), "verifier capsule")
-
     contracts = packet.get("execution_contracts")
     if not isinstance(contracts, dict) or set(contracts) != set(
         ERDOS_1056_EXECUTION_CONTRACT_PATHS
@@ -202,10 +142,23 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         if path != expected_path:
             raise ValueError(f"Erdős 1056 {name} path differs")
         contract_paths[name] = path
-    if contract_paths["producer_profile"] != mission_path:
-        raise ValueError("Erdős 1056 producer profile differs from the exact mission")
-    if contract_paths["verifier_capsule"] != verifier_capsule_path:
-        raise ValueError("Erdős 1056 verifier capsule differs from the execution bundle")
+    producer_profile_file = root / contract_paths["producer_profile"]
+    producer_profile = json.loads(producer_profile_file.read_text())
+    if producer_profile_file.read_bytes() != canonical_bytes(producer_profile) + b"\n":
+        raise ValueError("Erdős 1056 producer profile must be canonical JSON")
+    if (
+        producer_profile.get("schema")
+        != "erdos-frontier.bounded-search-producer-profile.v1"
+        or producer_profile.get("authority") != "non_authoritative"
+        or producer_profile.get("effect") != "none"
+        or producer_profile.get("target") != TARGET_ID
+        or producer_profile.get("range")
+        != {"first": 10430601, "inclusive": True, "last": 10430800}
+        or (producer_profile.get("artifact") or {}).get("path") != ARTIFACT_PATH
+        or "worker" in producer_profile
+        or "budgets" in producer_profile
+    ):
+        raise ValueError("Erdős 1056 producer profile crosses its scientific boundary")
 
     result_contract_file = root / contract_paths["result_contract"]
     result_contract = json.loads(result_contract_file.read_text())
@@ -228,10 +181,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         raise ValueError("Erdős 1056 result contract weakens its exact boundary")
     return sorted(
         {
-            bundle_path,
-            mission_path,
-            verifier_source_path,
-            verifier_capsule_path,
+            ERDOS_1056_VERIFIER_SOURCE_PATH,
             *contract_paths.values(),
         }
     )
