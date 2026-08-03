@@ -1390,6 +1390,9 @@ def index() -> dict[str, Any]:
         targets_with_packets.insert(
             0, (FIDELITY_TARGET_BASE.copy(), FIDELITY_PACKET_PATH)
         )
+    targets_with_packets.sort(
+        key=lambda item: (item[0]["rank"], item[0]["id"])
+    )
     targets = [current for current, _ in targets_with_packets]
     for current, packet_path in targets_with_packets:
         packet = packet_path.read_bytes()

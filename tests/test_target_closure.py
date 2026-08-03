@@ -817,6 +817,13 @@ def test_astra_fidelity_work_is_complete_while_awaiting_decision() -> None:
     assert fidelity_work_complete(ROOT)
 
 
+def test_generated_target_index_uses_vela_canonical_order() -> None:
+    targets = _read(ROOT / "targets.json")["targets"]
+    assert [
+        (target["rank"], target["id"]) for target in targets
+    ] == sorted((target["rank"], target["id"]) for target in targets)
+
+
 @pytest.mark.parametrize(
     ("relative", "mutation"),
     [
