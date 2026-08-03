@@ -618,6 +618,8 @@ def test_erdos_203_execution_inputs_bind_dependency_free_verifier() -> None:
 
 
 def test_erdos_264_execution_inputs_bind_native_verifier() -> None:
+    packet = _read(ERDOS_264_PACKET_PATH)
+    assert packet["target"]["state"] == "available_after_accepted_correction"
     assert erdos_264_execution_input_paths(ROOT) == [
         "execution/erdos-264-proof-repair/producer-profile.v1.json",
         "execution/erdos-264-proof-repair/result-contract.v1.json",

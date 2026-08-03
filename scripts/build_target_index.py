@@ -724,6 +724,7 @@ def validate_erdos_264_packet(root: pathlib.Path = ROOT) -> None:
         or packet.get("authority") != "non_authoritative"
         or target.get("id") != ERDOS_264_TARGET_ID
         or target.get("problem") != 264
+        or target.get("state") != "available_after_accepted_correction"
         or packet.get("verifier_profile") != ERDOS_264_VERIFIER_PROFILE
         or prerequisite.get("accepted_claim") != ERDOS_264_CORRECTION_CLAIM
         or outputs
