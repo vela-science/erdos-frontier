@@ -30,14 +30,17 @@ PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 FIDELITY_PACKET_PATH = ROOT / "targets" / "erdos-183-astra-fidelity.json"
 ERDOS_264_PACKET_PATH = ROOT / "targets" / "erdos-264-parts-i-proof-repair.json"
 ERDOS_203_PACKET_PATH = ROOT / "targets" / "erdos-203-finite-cover.json"
+ERDOS_730_PACKET_PATH = ROOT / "targets" / "erdos-730-external-proof-boundary.json"
 TARGET_ID = "erdos:1056"
 FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
 ERDOS_264_TARGET_ID = "erdos:264:parts-i-proof-repair"
 ERDOS_203_TARGET_ID = "erdos:203:finite-cover"
+ERDOS_730_TARGET_ID = "erdos:730:external-proof-boundary"
 VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
 FIDELITY_VERIFIER_PROFILE = "erdos-183-astra-fidelity-review-v1"
 ERDOS_264_VERIFIER_PROFILE = "erdos-264-parts-i-native-lean-v1"
 ERDOS_203_VERIFIER_PROFILE = "erdos-203-exact-affine-cover-v1"
+ERDOS_730_VERIFIER_PROFILE = "erdos-730-external-proof-boundary-v1"
 FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
     "verifier_capsule": "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
@@ -59,10 +62,17 @@ ERDOS_203_EXECUTION_CONTRACT_PATHS = {
     "verifier_capsule": "execution/erdos-203-cover/verifier-capsule.v1.json",
     "result_contract": "execution/erdos-203-cover/result-contract.v1.json",
 }
+ERDOS_730_EXECUTION_CONTRACT_PATHS = {
+    "producer_profile": "execution/erdos-730-proof-boundary/producer-profile.v1.json",
+    "verifier_capsule": "execution/erdos-730-proof-boundary/verifier-capsule.v1.json",
+    "result_contract": "execution/erdos-730-proof-boundary/result-contract.v1.json",
+}
 ERDOS_264_VERIFIER_SOURCE_PATH = "execution/erdos-264-proof-repair/verify.py"
 ERDOS_264_ARTIFACT_PATH = "artifacts/erdos264-parts-i-proof-repair/264.lean"
 ERDOS_203_VERIFIER_SOURCE_PATH = "execution/erdos-203-cover/verify.py"
 ERDOS_203_ARTIFACT_PATH = "artifacts/erdos203-cover-certificate.v1.json"
+ERDOS_730_VERIFIER_SOURCE_PATH = "execution/erdos-730-proof-boundary/verify.py"
+ERDOS_730_ARTIFACT_PATH = "artifacts/fidelity/erdos-730-proof-boundary.v1.json"
 ERDOS_264_CORRECTION_CLAIM = {
     "claim_id": "vcl_5a7df5408c6b11aa52745af2ce1203db3b39cb9a9404c27309f4ee490ffb1386",
     "claim_root": "sha256:4d3f546331886ba10891c1ceb46267993d41b99ed746a19b74d91ccb9448b16e",
@@ -167,6 +177,34 @@ ERDOS_203_TARGET_BASE = {
     "packet": {
         "path": "targets/erdos-203-finite-cover.json",
         "schema": "erdos-frontier.finite-cover-work.v1",
+    },
+}
+ERDOS_730_TARGET_BASE = {
+    "id": ERDOS_730_TARGET_ID,
+    "title": "Transfer the complete Erdős 730 solution",
+    "presence": "open",
+    "rank": 2,
+    "labels": [
+        "erdos",
+        "external-proof",
+        "formal-proof",
+        "lean",
+        "source-equivalence",
+    ],
+    "why": (
+        "The pinned external source contains a complete kernel-checked proof of "
+        "the stronger positive-density consecutive-pair theorem. Its exact "
+        "equivalence and Lean 4.29.1 to 4.27.0 transfer boundary have not yet "
+        "been reviewed by this Frontier."
+    ),
+    "objective": (
+        "Verify source equivalence against Erdos730.erdos_730, then prepare "
+        "either an explicit external-proof boundary or a native Formal "
+        "Conjectures bridge for a separate human Decision."
+    ),
+    "packet": {
+        "path": "targets/erdos-730-external-proof-boundary.json",
+        "schema": "erdos-frontier.external-proof-boundary-work.v1",
     },
 }
 
@@ -373,6 +411,49 @@ def erdos_203_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     return sorted({*paths, ERDOS_203_VERIFIER_SOURCE_PATH})
 
 
+def erdos_730_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
+    packet_path = root / ERDOS_730_PACKET_PATH.relative_to(ROOT)
+    packet = json.loads(packet_path.read_text())
+    if packet_path.read_bytes() != canonical_bytes(packet) + b"\n":
+        raise ValueError("Erdős 730 packet must be canonical JSON")
+    contracts = packet.get("execution_contracts")
+    if not isinstance(contracts, dict) or set(contracts) != set(
+        ERDOS_730_EXECUTION_CONTRACT_PATHS
+    ):
+        raise ValueError("Erdős 730 execution contract set differs")
+    paths = []
+    values = {}
+    for name, expected_path in ERDOS_730_EXECUTION_CONTRACT_PATHS.items():
+        path = rooted_file(root, contracts.get(name), f"Erdős 730 {name}")
+        if path != expected_path:
+            raise ValueError(f"Erdős 730 {name} path differs")
+        contract_path = root / path
+        value = json.loads(contract_path.read_text())
+        if contract_path.read_bytes() != canonical_bytes(value) + b"\n":
+            raise ValueError(f"Erdős 730 {name} must be canonical JSON")
+        if (
+            value.get("authority") != "non_authoritative"
+            or value.get("target") != ERDOS_730_TARGET_ID
+            or "worker" in value
+            or "model" in value
+            or "budgets" in value
+        ):
+            raise ValueError(f"Erdős 730 {name} crosses its Target boundary")
+        paths.append(path)
+        values[name] = value
+    verifier = values["verifier_capsule"]
+    implementation = verifier.get("implementation") or {}
+    verifier_source = root / ERDOS_730_VERIFIER_SOURCE_PATH
+    verifier_bytes = verifier_source.read_bytes()
+    if implementation != {
+        "path": ERDOS_730_VERIFIER_SOURCE_PATH,
+        "sha256": sha256_root(verifier_bytes),
+        "size": len(verifier_bytes),
+    }:
+        raise ValueError("Erdős 730 verifier implementation root differs")
+    return sorted({*paths, ERDOS_730_VERIFIER_SOURCE_PATH})
+
+
 def input_paths(
     root: pathlib.Path = ROOT, *, include_fidelity: bool = False
 ) -> list[str]:
@@ -386,6 +467,7 @@ def input_paths(
         *execution_input_paths(root),
         *erdos_203_execution_input_paths(root),
         *erdos_264_execution_input_paths(root),
+        *erdos_730_execution_input_paths(root),
     ]
     if include_fidelity:
         paths.extend(fidelity_execution_input_paths(root))
@@ -402,6 +484,7 @@ def git_source_commit(
     packets = [PACKET_PATH.relative_to(ROOT).as_posix()]
     packets.append(ERDOS_203_PACKET_PATH.relative_to(ROOT).as_posix())
     packets.append(ERDOS_264_PACKET_PATH.relative_to(ROOT).as_posix())
+    packets.append(ERDOS_730_PACKET_PATH.relative_to(ROOT).as_posix())
     if include_fidelity:
         packets.append(FIDELITY_PACKET_PATH.relative_to(ROOT).as_posix())
     retained = [*paths, *packets]
@@ -767,6 +850,101 @@ def validate_erdos_203_packet(root: pathlib.Path = ROOT) -> None:
     if not isinstance(requirement, str) or not requirement:
         raise ValueError("Erdős 203 packet lacks an exact verification requirement")
     erdos_203_execution_input_paths(root)
+
+
+def validate_erdos_730_packet(root: pathlib.Path = ROOT) -> None:
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    packet = json.loads((root / ERDOS_730_PACKET_PATH.relative_to(ROOT)).read_text())
+    target = packet.get("target") or {}
+    external = packet.get("external_proof") or {}
+    formal = packet.get("formal_statement") or {}
+    standing = packet.get("current_frontier_standing") or {}
+    next_obligation = packet.get("next_obligation") or {}
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+        if row.get("standing") == "accepted"
+    }
+    if (
+        packet.get("schema") != ERDOS_730_TARGET_BASE["packet"]["schema"]
+        or packet.get("frontier_id") != repository.get("frontier_id")
+        or packet.get("authority") != "non_authoritative"
+        or target.get("id") != ERDOS_730_TARGET_ID
+        or target.get("problem") != 730
+        or target.get("state")
+        != "complete_external_solution_pending_frontier_transfer"
+        or packet.get("verifier_profile") != ERDOS_730_VERIFIER_PROFILE
+        or packet.get("allowed_outputs")
+        != [
+            {
+                "kind": "source-equivalence-report",
+                "media_type": "application/json",
+                "path": ERDOS_730_ARTIFACT_PATH,
+                "schema": "erdos-frontier.erdos-730-boundary-report.v1",
+            }
+        ]
+    ):
+        raise ValueError("Erdős 730 packet crosses its Target or authority boundary")
+    if external != {
+        "repository": "https://github.com/williamjblair/lean-proofs.git",
+        "snapshot_commit": "4f915a323443bfb1709a6805a013812016dca88a",
+        "snapshot_tree": "a0aaa84d22ed8fab7c2788bced29472953cc1752",
+        "terminal_solve_commit": "8c85623069b3923afe418876d06459dbc4d24a51",
+        "terminal_path": "ErdosProblems/Erdos730FullDensityTheorem.lean",
+        "terminal_sha256": "sha256:7f341400b34cd3241007dce7365aa84c367546ffda0acf164d7a32e003f98ba0",
+        "terminal_declaration": "Erdos730.FullDensityTheorem.pairSet_infinite",
+        "lean_toolchain": "leanprover/lean4:v4.29.1",
+        "mathlib_commit": "5e932f97dd25535344f80f9dd8da3aab83df0fe6",
+        "erdos_730_module_count": 74,
+        "status": "complete_kernel_checked_solution_in_source_repository",
+        "strength": (
+            "The terminal theorem proves a stronger positive-density "
+            "consecutive-pair result, not merely one witness or a partial reduction."
+        ),
+        "conclusion": (
+            "The explicit family has lower density strictly greater than "
+            "107/2500, hence there are infinitely many consecutive pairs whose "
+            "central binomial coefficients have identical prime support."
+        ),
+    }:
+        raise ValueError("Erdős 730 packet does not bind the complete external proof")
+    if formal != {
+        "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+        "commit": "50ee83fa7dc31c99c03c83f04be90b7fea37d314",
+        "tree": "af55637ba163e4381b00cd0fca0f59158c6998f3",
+        "path": "FormalConjectures/ErdosProblems/730.lean",
+        "blob_sha1": "d37ca5fc59eb615e7406dff2c7881e1600d15d58",
+        "sha256": "sha256:c8e532aa2916312501375df4e30ca4770fdeb3968d39622dda5cdfc5f9fa26e7",
+        "declaration": "Erdos730.erdos_730",
+        "lean_toolchain": "leanprover/lean4:v4.27.0",
+        "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+        "status": "merged_upstream_open_statement",
+    }:
+        raise ValueError("Erdős 730 packet does not bind Formal Conjectures")
+    claims = [standing.get("problem_claim"), standing.get("formal_source_claim")]
+    if any(
+        not isinstance(claim, dict)
+        or accepted.get(claim.get("claim_id")) != claim.get("claim_root")
+        for claim in claims
+    ):
+        raise ValueError("Erdős 730 packet does not bind current accepted source Claims")
+    if (
+        standing.get("standing")
+        != "open until a separate authorized human Decision"
+        or "Lean 4.29.1" not in next_obligation.get("first", "")
+        or "Lean 4.27.0" not in next_obligation.get("after_equivalence", "")
+        or "authorized human Decision" not in next_obligation.get(
+            "prohibited_shortcut", ""
+        )
+    ):
+        raise ValueError("Erdős 730 packet weakens its transfer boundary")
+    nonclaims = " ".join(packet.get("nonclaims", []))
+    if any(
+        required not in nonclaims
+        for required in ("accepted", "Vela caused", "Lean 4.29.1", "Standing")
+    ):
+        raise ValueError("Erdős 730 packet omits a required nonclaim")
+    erdos_730_execution_input_paths(root)
 
 
 def current_records(
@@ -1177,6 +1355,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
 def index() -> dict[str, Any]:
     validate_erdos_203_packet()
     validate_erdos_264_packet()
+    validate_erdos_730_packet()
     erdos_1056_complete = erdos_1056_work_complete()
     validation = None
     if not erdos_1056_complete:
@@ -1201,6 +1380,7 @@ def index() -> dict[str, Any]:
         targets_with_packets.append(
             (ERDOS_264_TARGET_BASE.copy(), ERDOS_264_PACKET_PATH)
         )
+    targets_with_packets.append((ERDOS_730_TARGET_BASE.copy(), ERDOS_730_PACKET_PATH))
     targets_with_packets.append((ERDOS_203_TARGET_BASE.copy(), ERDOS_203_PACKET_PATH))
     if not erdos_1056_complete:
         assert validation is not None

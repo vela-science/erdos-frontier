@@ -17,11 +17,13 @@ from build_target_index import (  # noqa: E402
     ERDOS_203_PACKET_PATH,
     ERDOS_264_CORRECTION_CLAIM,
     ERDOS_264_PACKET_PATH,
+    ERDOS_730_PACKET_PATH,
     erdos_203_execution_input_paths,
     erdos_264_correction_accepted,
     erdos_264_execution_input_paths,
     erdos_264_proof_repair_complete,
     erdos_264_target_available,
+    erdos_730_execution_input_paths,
     execution_input_paths,
     fidelity_work_complete,
     fidelity_execution_input_paths,
@@ -29,6 +31,7 @@ from build_target_index import (  # noqa: E402
     target_from_validation,
     validate_erdos_203_packet,
     validate_erdos_264_packet,
+    validate_erdos_730_packet,
 )
 
 
@@ -623,6 +626,39 @@ def test_erdos_264_execution_inputs_bind_native_verifier() -> None:
     ]
 
 
+def test_erdos_730_target_binds_complete_external_solution_and_transfer_gap() -> None:
+    validate_erdos_730_packet(ROOT)
+    packet = _read(ERDOS_730_PACKET_PATH)
+    assert packet["authority"] == "non_authoritative"
+    assert packet["external_proof"]["status"] == (
+        "complete_kernel_checked_solution_in_source_repository"
+    )
+    assert packet["external_proof"]["snapshot_commit"] == (
+        "4f915a323443bfb1709a6805a013812016dca88a"
+    )
+    assert packet["external_proof"]["terminal_solve_commit"] == (
+        "8c85623069b3923afe418876d06459dbc4d24a51"
+    )
+    assert packet["external_proof"]["terminal_sha256"] == (
+        "sha256:7f341400b34cd3241007dce7365aa84c367546ffda0acf164d7a32e003f98ba0"
+    )
+    assert packet["external_proof"]["erdos_730_module_count"] == 74
+    assert packet["external_proof"]["lean_toolchain"] == "leanprover/lean4:v4.29.1"
+    assert packet["formal_statement"]["lean_toolchain"] == (
+        "leanprover/lean4:v4.27.0"
+    )
+    assert packet["current_frontier_standing"]["standing"].startswith("open")
+
+
+def test_erdos_730_execution_inputs_bind_source_local_verifier() -> None:
+    assert erdos_730_execution_input_paths(ROOT) == [
+        "execution/erdos-730-proof-boundary/producer-profile.v1.json",
+        "execution/erdos-730-proof-boundary/result-contract.v1.json",
+        "execution/erdos-730-proof-boundary/verifier-capsule.v1.json",
+        "execution/erdos-730-proof-boundary/verify.py",
+    ]
+
+
 def _copy_erdos_264_target(destination: pathlib.Path) -> None:
     for relative in [
         ".vela/repository.json",
@@ -906,9 +942,11 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "targets/erdos-183-astra-fidelity.json",
         "targets/erdos-203-finite-cover.json",
         "targets/erdos-264-parts-i-proof-repair.json",
+        "targets/erdos-730-external-proof-boundary.json",
         *execution_input_paths(ROOT),
         *erdos_203_execution_input_paths(ROOT),
         *erdos_264_execution_input_paths(ROOT),
+        *erdos_730_execution_input_paths(ROOT),
         *fidelity_execution_input_paths(ROOT),
     ]:
         _copy(tmp_path, relative)
