@@ -725,6 +725,12 @@ def erdos_264_proof_repair_complete(root: pathlib.Path = ROOT) -> bool:
     return False
 
 
+def erdos_264_target_available(root: pathlib.Path = ROOT) -> bool:
+    return erdos_264_correction_accepted(root) and not erdos_264_proof_repair_complete(
+        root
+    )
+
+
 def erdos_1056_work_complete(root: pathlib.Path = ROOT) -> bool:
     """Return whether the exact live range already has passing evidence.
 
@@ -1013,7 +1019,7 @@ def index() -> dict[str, Any]:
     inputs["input_root"] = sha256_root(canonical_bytes(inputs))
     repository = json.loads(REPOSITORY_PATH.read_text())
     targets_with_packets = []
-    if erdos_264_correction_accepted() and not erdos_264_proof_repair_complete():
+    if erdos_264_target_available():
         targets_with_packets.append(
             (ERDOS_264_TARGET_BASE.copy(), ERDOS_264_PACKET_PATH)
         )

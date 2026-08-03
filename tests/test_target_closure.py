@@ -19,6 +19,7 @@ from build_target_index import (  # noqa: E402
     erdos_264_correction_accepted,
     erdos_264_execution_input_paths,
     erdos_264_proof_repair_complete,
+    erdos_264_target_available,
     execution_input_paths,
     fidelity_work_complete,
     fidelity_execution_input_paths,
@@ -598,6 +599,7 @@ def test_erdos_264_repair_remains_hidden_before_correction_decision(
 ) -> None:
     _copy_erdos_264_target(tmp_path)
     assert not erdos_264_correction_accepted(tmp_path)
+    assert not erdos_264_target_available(tmp_path)
     repository = _read(tmp_path / ".vela/repository.json")
     correction = next(
         row
@@ -608,6 +610,7 @@ def test_erdos_264_repair_remains_hidden_before_correction_decision(
     repository["accepted_claims"].append({**correction, "standing": "accepted"})
     _write(tmp_path / ".vela/repository.json", repository)
     assert erdos_264_correction_accepted(tmp_path)
+    assert erdos_264_target_available(tmp_path)
 
 
 def test_erdos_264_repair_closes_only_after_exact_passing_verification(
@@ -720,6 +723,7 @@ def test_erdos_264_repair_closes_only_after_exact_passing_verification(
     )
     _write(tmp_path / ".vela/repository.json", repository)
     assert erdos_264_proof_repair_complete(tmp_path)
+    assert not erdos_264_target_available(tmp_path)
     verification["outcome"] = "fail"
     _write(verification_path, verification)
     assert not erdos_264_proof_repair_complete(tmp_path)
