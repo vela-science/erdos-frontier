@@ -453,10 +453,52 @@ def test_target_copy_uses_derived_successor_range() -> None:
 def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
     assert execution_input_paths(ROOT) == [
         "execution/erdos-1056/10430401-10430600/bundle.json",
+        "execution/erdos-1056/10430401-10430600/result-contract.v1.json",
         "execution/erdos-1056/mission-10430401-10430600.draft.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]
+
+
+def _copy_erdos_1056_execution_inputs(destination: pathlib.Path) -> None:
+    for relative in [
+        "targets/erdos-1056.json",
+        "execution/erdos-1056/10430401-10430600/bundle.json",
+        "execution/erdos-1056/10430401-10430600/result-contract.v1.json",
+        "execution/erdos-1056/mission-10430401-10430600.draft.json",
+        "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
+        "execution/erdos-1056/verifier/v1/verifier.cpp",
+    ]:
+        _copy(destination, relative)
+
+
+def test_execution_inputs_reject_missing_result_contract(
+    tmp_path: pathlib.Path,
+) -> None:
+    _copy_erdos_1056_execution_inputs(tmp_path)
+    packet_path = tmp_path / "targets/erdos-1056.json"
+    packet = _read(packet_path)
+    packet["execution_contracts"].pop("result_contract")
+    _write(packet_path, packet)
+
+    with pytest.raises(ValueError, match="execution contract set differs"):
+        execution_input_paths(tmp_path)
+
+
+def test_execution_inputs_reject_changed_result_contract(
+    tmp_path: pathlib.Path,
+) -> None:
+    _copy_erdos_1056_execution_inputs(tmp_path)
+    contract_path = (
+        tmp_path
+        / "execution/erdos-1056/10430401-10430600/result-contract.v1.json"
+    )
+    contract = _read(contract_path)
+    contract["verifier"]["witness_minimum_multiplicity"] = 15
+    _write(contract_path, contract)
+
+    with pytest.raises(ValueError, match="bytes differ from the locator"):
+        execution_input_paths(tmp_path)
 
 
 def test_astra_fidelity_packet_preserves_exact_source_and_authority_boundary() -> None:

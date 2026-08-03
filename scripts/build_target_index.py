@@ -34,6 +34,11 @@ FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "verifier_capsule": "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
     "result_contract": "execution/erdos-183-astra-fidelity/result-contract.v1.json",
 }
+ERDOS_1056_EXECUTION_CONTRACT_PATHS = {
+    "producer_profile": "execution/erdos-1056/mission-10430401-10430600.draft.json",
+    "verifier_capsule": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
+    "result_contract": "execution/erdos-1056/10430401-10430600/result-contract.v1.json",
+}
 ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430401-10430600.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
@@ -185,12 +190,53 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         or mission.get("allowed_paths") != [ARTIFACT_PATH]
     ):
         raise ValueError("Agent mission differs from the exact Target and output contract")
-    nested = [
-        mission_path,
-        rooted_file(root, verifier.get("source"), "verifier source"),
-        rooted_file(root, verifier.get("capsule"), "verifier capsule"),
-    ]
-    return sorted([bundle_path, *nested])
+    verifier_source_path = rooted_file(root, verifier.get("source"), "verifier source")
+    verifier_capsule_path = rooted_file(root, verifier.get("capsule"), "verifier capsule")
+
+    contracts = packet.get("execution_contracts")
+    if not isinstance(contracts, dict) or set(contracts) != set(
+        ERDOS_1056_EXECUTION_CONTRACT_PATHS
+    ):
+        raise ValueError("Erdős 1056 execution contract set differs")
+    contract_paths = {}
+    for name, expected_path in ERDOS_1056_EXECUTION_CONTRACT_PATHS.items():
+        path = rooted_file(root, contracts.get(name), f"Erdős 1056 {name}")
+        if path != expected_path:
+            raise ValueError(f"Erdős 1056 {name} path differs")
+        contract_paths[name] = path
+    if contract_paths["producer_profile"] != mission_path:
+        raise ValueError("Erdős 1056 producer profile differs from the exact mission")
+    if contract_paths["verifier_capsule"] != verifier_capsule_path:
+        raise ValueError("Erdős 1056 verifier capsule differs from the execution bundle")
+
+    result_contract_file = root / contract_paths["result_contract"]
+    result_contract = json.loads(result_contract_file.read_text())
+    if result_contract_file.read_bytes() != canonical_bytes(result_contract) + b"\n":
+        raise ValueError("Erdős 1056 result contract must be canonical JSON")
+    if (
+        result_contract.get("schema")
+        != "erdos-frontier.bounded-search-result-contract.v1"
+        or result_contract.get("authority") != "non_authoritative"
+        or result_contract.get("effect") != "none"
+        or result_contract.get("target") != TARGET_ID
+        or result_contract.get("range")
+        != {"first": 10430401, "inclusive": True, "last": 10430600}
+        or (result_contract.get("artifact") or {}).get("path") != ARTIFACT_PATH
+        or (result_contract.get("verifier") or {}).get(
+            "witness_minimum_multiplicity"
+        )
+        != 16
+    ):
+        raise ValueError("Erdős 1056 result contract weakens its exact boundary")
+    return sorted(
+        {
+            bundle_path,
+            mission_path,
+            verifier_source_path,
+            verifier_capsule_path,
+            *contract_paths.values(),
+        }
+    )
 
 
 def fidelity_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
