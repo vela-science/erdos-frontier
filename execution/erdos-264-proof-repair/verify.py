@@ -25,6 +25,8 @@ SOURCE_SHA256 = "c59caaa2524e3edd52944e63f5d9bb0614f1bc36d7fb8a0fec7029c14c266b4
 LEAN_TOOLCHAIN = "leanprover/lean4:v4.27.0"
 MATHLIB_COMMIT = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 DECLARATION = "Erdos264.erdos_264.parts.i"
+LEAN_HEARTBEAT_MODE = "unlimited"
+LEAN_COMMAND = ("lake", "env", "lean", "-DmaxHeartbeats=0")
 THEOREM_MARKER = (
     "@[category research solved, AMS 11]\n"
     "theorem erdos_264.parts.i : ¬IsIrrationalitySequence (2 ^ ·) := by"
@@ -142,7 +144,7 @@ def verify(workspace: pathlib.Path, candidate_path: pathlib.Path) -> dict[str, A
             temporary.write(check_source)
             temporary_path = pathlib.Path(temporary.name)
         process = subprocess.run(
-            ["lake", "env", "lean", str(temporary_path)],
+            [*LEAN_COMMAND, str(temporary_path)],
             cwd=workspace,
             capture_output=True,
             text=True,
@@ -175,6 +177,7 @@ def verify(workspace: pathlib.Path, candidate_path: pathlib.Path) -> dict[str, A
         "environment": {
             "lean_toolchain": LEAN_TOOLCHAIN,
             "mathlib_commit": MATHLIB_COMMIT,
+            "heartbeat_mode": LEAN_HEARTBEAT_MODE,
         },
         "checks": {
             "source_identity_exact": True,

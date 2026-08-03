@@ -56,3 +56,13 @@ def test_axiom_report_accepts_only_permitted_axioms() -> None:
         "Erdos264.erdos_264.parts.i depends on axioms: "
         "[propext, Classical.choice, Quot.sound]"
     ) == ["Classical.choice", "Quot.sound", "propext"]
+
+
+def test_native_checker_makes_its_unlimited_heartbeat_contract_explicit() -> None:
+    assert VERIFIER.LEAN_HEARTBEAT_MODE == "unlimited"
+    assert VERIFIER.LEAN_COMMAND == (
+        "lake",
+        "env",
+        "lean",
+        "-DmaxHeartbeats=0",
+    )
