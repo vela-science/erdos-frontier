@@ -37,6 +37,7 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
         "targets/closures/erdos-1056-10429801-10430000.json",
         "targets/closures/erdos-1056-10430001-10430200.json",
         "targets/closures/erdos-1056-10430201-10430400.json",
+        "targets/closures/erdos-1056-10430401-10430600.json",
     ]
     closures = [json.loads((ROOT / path).read_text()) for path in closure_paths]
     successor_packet = (ROOT / "targets/erdos-1056.json").read_bytes()
@@ -48,11 +49,37 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
         ),
     }
     for closure in closures:
+        completed_packet = json.loads(
+            subprocess.run(
+                [
+                    "git",
+                    "-C",
+                    str(ROOT),
+                    "show",
+                    f"{closure['completed_packet']['git_commit']}:"
+                    f"{closure['completed_packet']['path']}",
+                ],
+                check=True,
+                capture_output=True,
+            ).stdout
+        )
+        paths.update(
+            locator["path"]
+            for locator in (completed_packet.get("execution_contracts") or {}).values()
+        )
         submission_row = next(
             row for row in closure["evidence"] if row["kind"] == "submission"
         )
         submission = json.loads((ROOT / submission_row["path"]).read_text())
-        paths.update(row["path"] for row in submission["artifacts"])
+        # Historical Canopus records retain sidecar manifests at their authored
+        # paths. Current direct Submissions need only the content-addressed
+        # retained Artifact referenced by the closure; the producer's mutable
+        # output path is deliberately disposable after registration.
+        paths.update(
+            row["path"]
+            for row in submission["artifacts"]
+            if (ROOT / row["path"]).is_file()
+        )
     for relative in sorted(paths):
         _copy(tmp_path, relative)
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
@@ -136,13 +163,13 @@ def test_exact_closure_derives_first_uncovered_interval(
     frontier: pathlib.Path,
 ) -> None:
     result = validate(frontier)
-    assert result["closed_range"] == {"first": 10430201, "last": 10430400}
+    assert result["closed_range"] == {"first": 10430401, "last": 10430600}
     assert result["closure_basis"] == "verified_submission"
     assert result["accepted_coverage"] == {"first": 10429401, "last": 10429600}
-    assert result["successor_range"] == {"first": 10430401, "last": 10430600}
+    assert result["successor_range"] == {"first": 10430601, "last": 10430800}
     assert (
         result["completion_claim_root"]
-        == "sha256:a1ad4ea66bdac316bfccfbff4a7c18f7917b70b7f7cebd949601c41dcf58299b"
+        == "sha256:f0bc52506e71391e8f7e9737dc48f29bf7a6227b67cfe431723a25415fc7698a"
     )
 
 
@@ -327,6 +354,67 @@ def test_verification_environment_must_bind_verifier_manifest(
         validate(frontier)
 
 
+def test_current_submission_must_bind_exact_execution_contracts(
+    frontier: pathlib.Path,
+) -> None:
+    closure_path = (
+        frontier / "targets/closures/erdos-1056-10430401-10430600.json"
+    )
+    closure = _read(closure_path)
+    submission_row = next(
+        row for row in closure["evidence"] if row["kind"] == "submission"
+    )
+    submission_path = frontier / submission_row["path"]
+    submission = _read(submission_path)
+    submission["execution_binding"]["result_contract_root"] = "sha256:" + "0" * 64
+    _write(submission_path, submission)
+    submission_row["root"] = "sha256:" + hashlib.sha256(
+        submission_path.read_bytes()
+    ).hexdigest()
+    _write(closure_path, closure)
+
+    with pytest.raises(TargetClosureError, match="execution binding differs"):
+        validate(frontier)
+
+
+def test_current_result_contract_root_drift_is_rejected(
+    frontier: pathlib.Path,
+) -> None:
+    contract_path = (
+        frontier
+        / "execution/erdos-1056/10430401-10430600/result-contract.v1.json"
+    )
+    contract = _read(contract_path)
+    contract["range"]["last"] = 10430601
+    _write(contract_path, contract)
+
+    with pytest.raises(TargetClosureError, match="result contract root drifted"):
+        validate(frontier)
+
+
+def test_current_verification_must_satisfy_exact_independent_requirement(
+    frontier: pathlib.Path,
+) -> None:
+    closure_path = (
+        frontier / "targets/closures/erdos-1056-10430401-10430600.json"
+    )
+    closure = _read(closure_path)
+    verification_row = next(
+        row for row in closure["evidence"] if row["kind"] == "verification"
+    )
+    verification_path = frontier / verification_row["path"]
+    verification = _read(verification_path)
+    verification["scope"]["property"] = "A different property."
+    _write(verification_path, verification)
+    verification_row["root"] = "sha256:" + hashlib.sha256(
+        verification_path.read_bytes()
+    ).hexdigest()
+    _write(closure_path, closure)
+
+    with pytest.raises(TargetClosureError, match="exact independent requirement"):
+        validate(frontier)
+
+
 def test_proposal_cannot_bind_another_submission(
     frontier: pathlib.Path,
 ) -> None:
@@ -391,7 +479,7 @@ def test_rejected_submission_still_closes_producer_work(
 
     result = validate(frontier)
     assert result["accepted_coverage"]["last"] == 10429600
-    assert result["successor_range"]["first"] == 10430401
+    assert result["successor_range"]["first"] == 10430601
 
 
 def test_later_acceptance_reconciles_without_rewriting_closure(
@@ -432,8 +520,8 @@ def test_later_acceptance_reconciles_without_rewriting_closure(
     _write(packet_path, packet)
 
     result = validate(frontier)
-    assert result["accepted_coverage"]["last"] == 10430400
-    assert result["successor_range"]["first"] == 10430401
+    assert result["accepted_coverage"]["last"] == 10430600
+    assert result["successor_range"]["first"] == 10430601
     assert "pending review" not in target_from_validation(result)["why"]
 
 
@@ -441,20 +529,20 @@ def test_target_copy_uses_derived_successor_range() -> None:
     target = target_from_validation(
         {
             "accepted_coverage": {"first": 1, "last": 10429600},
-            "closed_range": {"first": 10430201, "last": 10430400},
+            "closed_range": {"first": 10430401, "last": 10430600},
             "closure_basis": "verified_submission",
-            "successor_range": {"first": 10430401, "last": 10430600},
+            "successor_range": {"first": 10430601, "last": 10430800},
         }
     )
-    assert "10430401..10430600" in target["objective"]
-    assert "through 10430400" in target["why"]
+    assert "10430601..10430800" in target["objective"]
+    assert "through 10430600" in target["why"]
 
 
 def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
     assert execution_input_paths(ROOT) == [
-        "execution/erdos-1056/10430401-10430600/bundle.json",
-        "execution/erdos-1056/10430401-10430600/result-contract.v1.json",
-        "execution/erdos-1056/mission-10430401-10430600.draft.json",
+        "execution/erdos-1056/10430601-10430800/bundle.json",
+        "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
+        "execution/erdos-1056/mission-10430601-10430800.draft.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]
@@ -463,9 +551,9 @@ def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
 def _copy_erdos_1056_execution_inputs(destination: pathlib.Path) -> None:
     for relative in [
         "targets/erdos-1056.json",
-        "execution/erdos-1056/10430401-10430600/bundle.json",
-        "execution/erdos-1056/10430401-10430600/result-contract.v1.json",
-        "execution/erdos-1056/mission-10430401-10430600.draft.json",
+        "execution/erdos-1056/10430601-10430800/bundle.json",
+        "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
+        "execution/erdos-1056/mission-10430601-10430800.draft.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]:
@@ -491,7 +579,7 @@ def test_execution_inputs_reject_changed_result_contract(
     _copy_erdos_1056_execution_inputs(tmp_path)
     contract_path = (
         tmp_path
-        / "execution/erdos-1056/10430401-10430600/result-contract.v1.json"
+        / "execution/erdos-1056/10430601-10430800/result-contract.v1.json"
     )
     contract = _read(contract_path)
     contract["verifier"]["witness_minimum_multiplicity"] = 15
@@ -644,6 +732,7 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "targets/closures/erdos-1056-10429801-10430000.json",
         "targets/closures/erdos-1056-10430001-10430200.json",
         "targets/closures/erdos-1056-10430201-10430400.json",
+        "targets/closures/erdos-1056-10430401-10430600.json",
     ]:
         path = tmp_path / relative
         path.parent.mkdir(parents=True, exist_ok=True)

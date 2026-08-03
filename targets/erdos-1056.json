@@ -3,15 +3,15 @@
   "frontier_id": "vfr_0a25edabc16db143",
   "execution_bundle": {
     "schema": "vela.agent-execution-bundle.v1",
-    "path": "execution/erdos-1056/10430401-10430600/bundle.json",
+    "path": "execution/erdos-1056/10430601-10430800/bundle.json",
     "size": 1563,
-    "sha256": "sha256:61542192e4ac4ed69b08e80838de0f3d434fa2cdcd349cecf97330417ceb67fa"
+    "sha256": "sha256:984b347f24d4c33fcb8365d309ebbadc28ffb2e5937bc8d38ff9228917f04c69"
   },
   "execution_contracts": {
     "producer_profile": {
-      "path": "execution/erdos-1056/mission-10430401-10430600.draft.json",
+      "path": "execution/erdos-1056/mission-10430601-10430800.draft.json",
       "size": 3211,
-      "sha256": "sha256:45740dbb4e0c908279dbe41b6aec81394a4c86d76c414fc8f10509c7485278bb"
+      "sha256": "sha256:eb1d697f974693fce2b776fddf07ec3462bb06528ba1f7181a5c4f7786c3e665"
     },
     "verifier_capsule": {
       "path": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
@@ -19,28 +19,22 @@
       "sha256": "sha256:793a6265f7fd2cd046a7aba5ba1f64e5d16f3379a605dd058819eca8c533c794"
     },
     "result_contract": {
-      "path": "execution/erdos-1056/10430401-10430600/result-contract.v1.json",
+      "path": "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
       "size": 1079,
-      "sha256": "sha256:4fb54c7a6d24b14abea8a31617f014e4b44ce50b1627398e6a97f520b104221d"
+      "sha256": "sha256:7744c41539829a01f4265769683deed1fe895ffd043588fe89a93dd3cb175f17"
     }
   },
   "verifier_profile": "erdos-1056-k15-bounded-replay-v1",
   "allowed_outputs": [
     {
       "type": "text/plain",
-      "path": "artifacts/erdos1056-k15-range-10430401-10430600.txt"
-    },
-    {
-      "type": "engine-manifest"
-    },
-    {
-      "type": "verifier-manifest"
+      "path": "artifacts/erdos1056-k15-range-10430601-10430800.txt"
     }
   ],
   "repository": {
-    "commit": "54f140e0e62d01fac3f608f33f031c14a43e6ac4",
-    "tree": "33b3e1bcad93846566a3821308212783456821b6",
-    "root": "sha256:b2ddc8d321b34b04fa1088951ca6671066485ae45de703afd2e359987c74c0b2"
+    "commit": "205f19b218769bca7898933e86528b539dc898e9",
+    "tree": "e7289e2bf80a14fb3c29f70f73e96a0000192ea2",
+    "root": "sha256:5a7f78b70777096665b968c70ce652406973310087cd2d69f3cd92a4f3362bb2"
   },
   "target": {
     "id": "erdos:1056",
@@ -48,8 +42,8 @@
     "state": "open",
     "objective": "Extend the accepted bounded evidence for k=15 without repeating a retained range or implying a universal result.",
     "next_bounded_range": {
-      "first": 10430401,
-      "last": 10430600,
+      "first": 10430601,
+      "last": 10430800,
       "inclusive": true
     }
   },
@@ -95,21 +89,21 @@
   },
   "producer_completion": {
     "latest_verified_submission": {
-      "claim_id": "vcl_5ac4a8eb6ab179ba727ff6395abf1fd6b591137f9da73cc5c09cd41587cd7f86",
-      "claim_root": "sha256:a1ad4ea66bdac316bfccfbff4a7c18f7917b70b7f7cebd949601c41dcf58299b",
-      "submission_id": "vsb_766e5236769cdbf1",
-      "submission_root": "sha256:de5d71dd41c21ab761277e6c23ea7ddb6592edc4fdd443629bc3c95a43a20cc6",
-      "proposal_id": "vpr_eca7e122d1ce6e52",
-      "proposal_root": "sha256:b70726bbae8721d2cdcc2579e020694c39dcb9656fb25f921f32c0e5b8734ab5",
-      "verification_id": "vvr_c3437dc1eed8af3c",
-      "verification_root": "sha256:c4b0793bd1957e4d5b7f443b93c9ab349b51c561c164bd57ef76e7e1fde9547a",
+      "claim_id": "vcl_d057a49fcd9dd99ccab597c95e620550da0b7116c29b5331ef0cdf100012cb1a",
+      "claim_root": "sha256:f0bc52506e71391e8f7e9737dc48f29bf7a6227b67cfe431723a25415fc7698a",
+      "submission_id": "vsb_122c01ddc9c32e1c",
+      "submission_root": "sha256:ca9843d607f763cd364a7ffa6bf1c11944b5614f3faa9ddf15c5041fddbfb483",
+      "proposal_id": "vpr_635f1e6c1811f48c",
+      "proposal_root": "sha256:3e8dd8068ae7af2d27fd54ee0c95c5ee797ecad34c6f510eb3ffcb5d7c20dde5",
+      "verification_id": "vvr_c99f40656e9fc08c",
+      "verification_root": "sha256:66d5ae9776f837ae2224c32190706516bf711aadec5797ae958b48c091b2e480",
       "range": {
-        "first": 10430201,
-        "last": 10430400,
+        "first": 10430401,
+        "last": 10430600,
         "inclusive": true
       },
-      "artifact_root": "sha256:d88f80c39239dd4750627212b8e7e75e093fbc88925c3c2784fac246599a2fea",
-      "result": "No k=15 witness among 15 primes; maximum multiplicity 11 at p=10430281, residue 1529895."
+      "artifact_root": "sha256:451d9318b84cc4c0966e3fbe63567e7c0d2a1e9d9745fe2791b94122e0aaf2b5",
+      "result": "No k=15 witness among 13 primes; maximum multiplicity 11 at p=10430491, residue 4382886."
     }
   },
   "completion_contract": {

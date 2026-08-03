@@ -3,7 +3,7 @@
   "frontier_id": "vfr_0a25edabc16db143",
   "authority": "non_authoritative",
   "repository": {
-    "root": "sha256:b2ddc8d321b34b04fa1088951ca6671066485ae45de703afd2e359987c74c0b2"
+    "root": "sha256:5a7f78b70777096665b968c70ce652406973310087cd2d69f3cd92a4f3362bb2"
   },
   "target": {
     "id": "erdos:183:astra-fidelity",

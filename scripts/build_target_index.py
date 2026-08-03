@@ -35,15 +35,13 @@ FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "result_contract": "execution/erdos-183-astra-fidelity/result-contract.v1.json",
 }
 ERDOS_1056_EXECUTION_CONTRACT_PATHS = {
-    "producer_profile": "execution/erdos-1056/mission-10430401-10430600.draft.json",
+    "producer_profile": "execution/erdos-1056/mission-10430601-10430800.draft.json",
     "verifier_capsule": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
-    "result_contract": "execution/erdos-1056/10430401-10430600/result-contract.v1.json",
+    "result_contract": "execution/erdos-1056/10430601-10430800/result-contract.v1.json",
 }
-ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430401-10430600.txt"
+ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430601-10430800.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
-    {"type": "engine-manifest"},
-    {"type": "verifier-manifest"},
 ]
 TARGET_BASE = {
     "id": TARGET_ID,
@@ -220,7 +218,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         or result_contract.get("effect") != "none"
         or result_contract.get("target") != TARGET_ID
         or result_contract.get("range")
-        != {"first": 10430401, "inclusive": True, "last": 10430600}
+        != {"first": 10430601, "inclusive": True, "last": 10430800}
         or (result_contract.get("artifact") or {}).get("path") != ARTIFACT_PATH
         or (result_contract.get("verifier") or {}).get(
             "witness_minimum_multiplicity"

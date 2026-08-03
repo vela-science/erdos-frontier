@@ -509,20 +509,6 @@ def validate_closure(
 
     if submission.get("replayability") != "exact":
         raise TargetClosureError("Submission is not exactly replayable")
-    result_artifact = submission_artifact_by_kind(submission, "text/plain")
-    if (
-        result_artifact.get("path") != artifact_row.get("path")
-        or result_artifact.get("digest") != artifact_row.get("root")
-    ):
-        raise TargetClosureError("Submission does not bind the completion artifact")
-    engine_artifact = submission_artifact_by_kind(submission, "engine-manifest")
-    verifier_artifact = submission_artifact_by_kind(submission, "verifier-manifest")
-    validate_manifest_artifact(
-        root, engine_artifact, "canopus.engine-manifest.v0"
-    )
-    verifier_manifest = validate_manifest_artifact(
-        root, verifier_artifact, "canopus.verifier-manifest.v1"
-    )
     verification_requirements = submission.get("verification_requirements")
     if (
         not isinstance(verification_requirements, list)
@@ -530,19 +516,105 @@ def validate_closure(
         or any(not isinstance(value, str) or not value for value in verification_requirements)
     ):
         raise TargetClosureError("Submission omits its exact replay requirement")
-    executable_root = verifier_manifest.get("executable_sha256")
-    if (
-        not isinstance(executable_root, str)
-        or not SHA256_RE.fullmatch(executable_root)
-        or executable_root not in "\n".join(verification_requirements)
-    ):
-        raise TargetClosureError(
-            "Submission replay requirement does not bind the verifier capsule"
+
+    execution_binding = submission.get("execution_binding")
+    current_execution = isinstance(execution_binding, dict)
+    if current_execution:
+        contracts = retained_packet.get("execution_contracts") or {}
+        if set(contracts) != {
+            "producer_profile",
+            "verifier_capsule",
+            "result_contract",
+        }:
+            raise TargetClosureError(
+                "completed packet omits the current execution contracts"
+            )
+        expected_binding = {
+            "schema": "vela.execution-binding.v1",
+            "packet_root": completed_packet.get("sha256"),
+            "profile_root": (contracts.get("producer_profile") or {}).get(
+                "sha256"
+            ),
+            "verifier_capsule_root": (
+                contracts.get("verifier_capsule") or {}
+            ).get("sha256"),
+            "result_contract_root": (contracts.get("result_contract") or {}).get(
+                "sha256"
+            ),
+        }
+        if execution_binding != expected_binding:
+            raise TargetClosureError(
+                "Submission execution binding differs from the completed packet"
+            )
+
+        result_artifact = submission_artifact_by_kind(
+            submission, "bounded-search"
         )
-    required_artifact_ids = {
-        row["digest"].removeprefix("sha256:")
-        for row in (result_artifact, engine_artifact, verifier_artifact)
-    }
+        result_contract_row = contracts["result_contract"]
+        result_contract_path = relative_path(
+            root, result_contract_row.get("path", "")
+        )
+        require_tracked(root, result_contract_path)
+        if file_root(result_contract_path) != result_contract_row.get("sha256"):
+            raise TargetClosureError("result contract root drifted")
+        result_contract = read_json(result_contract_path)
+        contract_artifact = result_contract.get("artifact") or {}
+        contract_first, contract_last = validate_range(
+            result_contract.get("range"), "result contract range"
+        )
+        if (
+            result_contract.get("schema")
+            != "erdos-frontier.bounded-search-result-contract.v1"
+            or result_contract.get("authority") != "non_authoritative"
+            or result_contract.get("effect") != "none"
+            or result_contract.get("target") != "erdos:1056"
+            or (contract_first, contract_last) != (closed_first, closed_last)
+            or contract_artifact.get("path") != result_artifact.get("path")
+            or result_artifact.get("digest") != artifact_row.get("root")
+        ):
+            raise TargetClosureError(
+                "Submission, result contract, and completion artifact differ"
+            )
+        required_artifact_ids = {
+            result_artifact["digest"].removeprefix("sha256:")
+        }
+    else:
+        # Historical retained Canopus submissions predate the current direct
+        # packet/profile/capsule/result execution binding. They remain exact
+        # evidence for already-completed ranges, not an active producer path.
+        result_artifact = submission_artifact_by_kind(submission, "text/plain")
+        if (
+            result_artifact.get("path") != artifact_row.get("path")
+            or result_artifact.get("digest") != artifact_row.get("root")
+        ):
+            raise TargetClosureError(
+                "Submission does not bind the completion artifact"
+            )
+        engine_artifact = submission_artifact_by_kind(
+            submission, "engine-manifest"
+        )
+        verifier_artifact = submission_artifact_by_kind(
+            submission, "verifier-manifest"
+        )
+        validate_manifest_artifact(
+            root, engine_artifact, "canopus.engine-manifest.v0"
+        )
+        verifier_manifest = validate_manifest_artifact(
+            root, verifier_artifact, "canopus.verifier-manifest.v1"
+        )
+        executable_root = verifier_manifest.get("executable_sha256")
+        if (
+            not isinstance(executable_root, str)
+            or not SHA256_RE.fullmatch(executable_root)
+            or executable_root not in "\n".join(verification_requirements)
+        ):
+            raise TargetClosureError(
+                "Submission replay requirement does not bind the verifier capsule"
+            )
+        required_artifact_ids = {
+            row["digest"].removeprefix("sha256:")
+            for row in (result_artifact, engine_artifact, verifier_artifact)
+        }
 
     proposal_id: str | None = None
     verification_root: str | None = None
@@ -576,7 +648,21 @@ def validate_closure(
             raise TargetClosureError(
                 "Verification does not bind every required artifact"
             )
-        if (
+        if current_execution:
+            if (
+                verification.get("scope", {}).get("property")
+                not in verification_requirements
+                or verification.get("verifier")
+                == submission.get("provenance", {}).get("producer")
+                or submission.get("provenance", {}).get("producer")
+                not in verification.get("independence", {}).get(
+                    "declared_independent_of", []
+                )
+            ):
+                raise TargetClosureError(
+                    "Verification does not satisfy the exact independent requirement"
+                )
+        elif (
             verification.get("method", {}).get("environment_root")
             != verifier_artifact.get("digest")
         ):
