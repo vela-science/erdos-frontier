@@ -31,6 +31,12 @@ FIDELITY_PACKET_PATH = ROOT / "targets" / "erdos-183-astra-fidelity.json"
 ERDOS_264_PACKET_PATH = ROOT / "targets" / "erdos-264-parts-i-proof-repair.json"
 ERDOS_203_PACKET_PATH = ROOT / "targets" / "erdos-203-finite-cover.json"
 ERDOS_730_PACKET_PATH = ROOT / "targets" / "erdos-730-external-proof-boundary.json"
+ERDOS_730_HANDOFF_PATH = (
+    ROOT
+    / "execution"
+    / "erdos-730-proof-boundary"
+    / "post-decision-handoff.v1.json"
+)
 TARGET_ID = "erdos:1056"
 FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
 ERDOS_264_TARGET_ID = "erdos:264:parts-i-proof-repair"
@@ -73,6 +79,10 @@ ERDOS_203_VERIFIER_SOURCE_PATH = "execution/erdos-203-cover/verify.py"
 ERDOS_203_ARTIFACT_PATH = "artifacts/erdos203-cover-certificate.v1.json"
 ERDOS_730_VERIFIER_SOURCE_PATH = "execution/erdos-730-proof-boundary/verify.py"
 ERDOS_730_ARTIFACT_PATH = "artifacts/fidelity/erdos-730-proof-boundary.v1.json"
+ERDOS_730_ACCEPTED_CLAIM = {
+    "claim_id": "vcl_8ef85fca44b8d9105e8c28b9ba702accd9365c4ff23d87466bf2b64853921345",
+    "claim_root": "sha256:5c95f42b35f52f5bb018a846555b99ae94dd02d768f76250aa40d4a299959f41",
+}
 ERDOS_264_CORRECTION_CLAIM = {
     "claim_id": "vcl_5a7df5408c6b11aa52745af2ce1203db3b39cb9a9404c27309f4ee490ffb1386",
     "claim_root": "sha256:4d3f546331886ba10891c1ceb46267993d41b99ed746a19b74d91ccb9448b16e",
@@ -468,6 +478,7 @@ def input_paths(
         *erdos_203_execution_input_paths(root),
         *erdos_264_execution_input_paths(root),
         *erdos_730_execution_input_paths(root),
+        ERDOS_730_HANDOFF_PATH.relative_to(root).as_posix(),
     ]
     if include_fidelity:
         paths.extend(fidelity_execution_input_paths(root))
@@ -948,6 +959,84 @@ def validate_erdos_730_packet(root: pathlib.Path = ROOT) -> None:
     erdos_730_execution_input_paths(root)
 
 
+def erdos_730_work_complete(root: pathlib.Path = ROOT) -> bool:
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+        if row.get("standing") == "accepted"
+    }
+    return (
+        accepted.get(ERDOS_730_ACCEPTED_CLAIM["claim_id"])
+        == ERDOS_730_ACCEPTED_CLAIM["claim_root"]
+    )
+
+
+def validate_erdos_730_handoff(root: pathlib.Path = ROOT) -> None:
+    handoff_path = root / ERDOS_730_HANDOFF_PATH.relative_to(ROOT)
+    handoff = json.loads(handoff_path.read_text())
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    completed = handoff.get("completed_target") or {}
+    accepted = handoff.get("accepted_boundary") or {}
+    decision = handoff.get("decision") or {}
+    obligations = handoff.get("next_obligations") or {}
+    if (
+        handoff.get("schema") != "erdos-frontier.next-obligation-handoff.v1"
+        or handoff.get("frontier_id") != repository.get("frontier_id")
+        or handoff.get("authority") != "non_authoritative"
+        or completed.get("id") != ERDOS_730_TARGET_ID
+        or completed.get("state") != "accepted_local_external_proof_boundary"
+        or accepted != ERDOS_730_ACCEPTED_CLAIM
+        or decision.get("proposal_id") != "vpr_c9554694d438c594"
+        or decision.get("decision_event_id") != "vev_0ab843df6ad373ec"
+        or decision.get("repository_before")
+        != "sha256:db438141c7780f1122ee11daf7a57390a275dfc03744131ad991e9a65bbd39b9"
+        or decision.get("repository_after")
+        != "sha256:821cf0d94778f647305107943572f4916a6cf63fe5ea12506a471fabc07b7474"
+        or obligations.get("primary")
+        != "Build Erdős 730 as the second non-authoritative Result Dossier case."
+        or obligations.get("scientific_followup")
+        != "Obtain external mathematical review or build an explicit Lean 4.27.0 bridge as a separate future campaign."
+    ):
+        raise ValueError("Erdős 730 handoff weakens or misstates the accepted boundary")
+    current_accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+        if row.get("standing") == "accepted"
+    }
+    if current_accepted.get(accepted.get("claim_id")) != accepted.get("claim_root"):
+        raise ValueError("Erdős 730 handoff does not bind current accepted Standing")
+    evidence = handoff.get("evidence") or {}
+    expected_paths = {
+        "producer_report": ERDOS_730_ARTIFACT_PATH,
+        "semantic_review": "execution/erdos-730-proof-boundary/independent-semantic-review.v1.json",
+        "verification": "records/verifications/sha256/fb28b83d8a03cbd75e28ed9ce6c0e8a5169fea9acce6bfe6e7f03142f85b64ac.json",
+        "decision_event": ".vela/authority/events/vev_0ab843df6ad373ec.json",
+        "standing_event": ".vela/authority/events/vev_50a750b12f5dbc53.json",
+        "authority_record": ".vela/authority/records/var_6fc6421006cbab2e.dsse.json",
+    }
+    if set(evidence) != set(expected_paths):
+        raise ValueError("Erdős 730 handoff evidence set differs")
+    for name, expected_path in expected_paths.items():
+        observed_path = rooted_file(
+            root, evidence.get(name), f"Erdős 730 handoff {name}"
+        )
+        if observed_path != expected_path:
+            raise ValueError(f"Erdős 730 handoff {name} path differs")
+    nonclaims = " ".join(handoff.get("nonclaims", []))
+    if any(
+        required not in nonclaims
+        for required in (
+            "global solution",
+            "external mathematical review",
+            "novelty",
+            "Lean 4.27.0 port",
+            "Vela caused",
+        )
+    ):
+        raise ValueError("Erdős 730 handoff omits a required nonclaim")
+
+
 def current_records(
     repository: dict[str, Any], kind: str, root: pathlib.Path = ROOT
 ) -> list[tuple[dict[str, Any], dict[str, Any]]]:
@@ -1361,6 +1450,7 @@ def index() -> dict[str, Any]:
     validate_erdos_203_packet()
     validate_erdos_264_packet()
     validate_erdos_730_packet()
+    validate_erdos_730_handoff()
     erdos_1056_complete = erdos_1056_work_complete()
     validation = None
     if not erdos_1056_complete:
@@ -1385,7 +1475,10 @@ def index() -> dict[str, Any]:
         targets_with_packets.append(
             (ERDOS_264_TARGET_BASE.copy(), ERDOS_264_PACKET_PATH)
         )
-    targets_with_packets.append((ERDOS_730_TARGET_BASE.copy(), ERDOS_730_PACKET_PATH))
+    if not erdos_730_work_complete():
+        targets_with_packets.append(
+            (ERDOS_730_TARGET_BASE.copy(), ERDOS_730_PACKET_PATH)
+        )
     targets_with_packets.append((ERDOS_203_TARGET_BASE.copy(), ERDOS_203_PACKET_PATH))
     if not erdos_1056_complete:
         assert validation is not None
