@@ -14,12 +14,17 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_target_closure import TargetClosureError, validate  # noqa: E402
 from build_target_index import (  # noqa: E402
+    ERDOS_264_CORRECTION_CLAIM,
+    ERDOS_264_PACKET_PATH,
+    erdos_264_correction_accepted,
+    erdos_264_execution_input_paths,
+    erdos_264_proof_repair_complete,
     execution_input_paths,
     fidelity_work_complete,
     fidelity_execution_input_paths,
     git_source_commit,
     target_from_validation,
-    validate_fidelity_packet,
+    validate_erdos_264_packet,
 )
 
 
@@ -42,11 +47,7 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
     closures = [json.loads((ROOT / path).read_text()) for path in closure_paths]
     successor_packet = (ROOT / "targets/erdos-1056.json").read_bytes()
     paths = {
-        *(
-            row["path"]
-            for closure in closures
-            for row in closure["evidence"]
-        ),
+        *(row["path"] for closure in closures for row in closure["evidence"]),
     }
     for closure in closures:
         completed_packet = json.loads(
@@ -84,7 +85,14 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
         _copy(tmp_path, relative)
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     subprocess.run(
-        ["git", "-C", str(tmp_path), "config", "user.email", "target-test@vela.invalid"],
+        [
+            "git",
+            "-C",
+            str(tmp_path),
+            "config",
+            "user.email",
+            "target-test@vela.invalid",
+        ],
         check=True,
     )
     subprocess.run(
@@ -254,9 +262,7 @@ def test_verified_submission_needs_no_decision_or_accepted_claim(
 def test_verified_submission_requires_verification(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10429601-10429800.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10429601-10429800.json"
     closure = _read(closure_path)
     closure["evidence"] = [
         row for row in closure["evidence"] if row["kind"] != "verification"
@@ -270,20 +276,16 @@ def test_verified_submission_requires_verification(
 def test_tampered_rerooted_completion_artifact_is_rejected(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10429601-10429800.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10429601-10429800.json"
     closure = _read(closure_path)
-    artifact_row = next(
-        row for row in closure["evidence"] if row["kind"] == "artifact"
-    )
+    artifact_row = next(row for row in closure["evidence"] if row["kind"] == "artifact")
     artifact_path = frontier / artifact_row["path"]
     artifact_path.write_text(
         artifact_path.read_text().replace("primes_tested=13", "primes_tested=12")
     )
-    artifact_row["root"] = "sha256:" + hashlib.sha256(
-        artifact_path.read_bytes()
-    ).hexdigest()
+    artifact_row["root"] = (
+        "sha256:" + hashlib.sha256(artifact_path.read_bytes()).hexdigest()
+    )
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="prime count is incorrect"):
@@ -293,9 +295,7 @@ def test_tampered_rerooted_completion_artifact_is_rejected(
 def test_submission_without_exact_replay_is_rejected(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10429601-10429800.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10429601-10429800.json"
     closure = _read(closure_path)
     submission_row = next(
         row for row in closure["evidence"] if row["kind"] == "submission"
@@ -304,9 +304,9 @@ def test_submission_without_exact_replay_is_rejected(
     submission = _read(submission_path)
     submission["replayability"] = "none"
     _write(submission_path, submission)
-    submission_row["root"] = "sha256:" + hashlib.sha256(
-        submission_path.read_bytes()
-    ).hexdigest()
+    submission_row["root"] = (
+        "sha256:" + hashlib.sha256(submission_path.read_bytes()).hexdigest()
+    )
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="not exactly replayable"):
@@ -316,9 +316,7 @@ def test_submission_without_exact_replay_is_rejected(
 def test_verification_must_bind_every_replay_artifact(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10429601-10429800.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10429601-10429800.json"
     closure = _read(closure_path)
     verification_row = next(
         row for row in closure["evidence"] if row["kind"] == "verification"
@@ -327,9 +325,9 @@ def test_verification_must_bind_every_replay_artifact(
     verification = _read(verification_path)
     verification["subject"]["artifact_ids"].pop()
     _write(verification_path, verification)
-    verification_row["root"] = "sha256:" + hashlib.sha256(
-        verification_path.read_bytes()
-    ).hexdigest()
+    verification_row["root"] = (
+        "sha256:" + hashlib.sha256(verification_path.read_bytes()).hexdigest()
+    )
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="every required artifact"):
@@ -339,9 +337,7 @@ def test_verification_must_bind_every_replay_artifact(
 def test_verification_environment_must_bind_verifier_manifest(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10429601-10429800.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10429601-10429800.json"
     closure = _read(closure_path)
     verification_row = next(
         row for row in closure["evidence"] if row["kind"] == "verification"
@@ -350,9 +346,9 @@ def test_verification_environment_must_bind_verifier_manifest(
     verification = _read(verification_path)
     verification["method"]["environment_root"] = "sha256:" + "0" * 64
     _write(verification_path, verification)
-    verification_row["root"] = "sha256:" + hashlib.sha256(
-        verification_path.read_bytes()
-    ).hexdigest()
+    verification_row["root"] = (
+        "sha256:" + hashlib.sha256(verification_path.read_bytes()).hexdigest()
+    )
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="environment"):
@@ -362,9 +358,7 @@ def test_verification_environment_must_bind_verifier_manifest(
 def test_current_submission_must_bind_exact_execution_contracts(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10430401-10430600.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10430401-10430600.json"
     closure = _read(closure_path)
     submission_row = next(
         row for row in closure["evidence"] if row["kind"] == "submission"
@@ -373,9 +367,9 @@ def test_current_submission_must_bind_exact_execution_contracts(
     submission = _read(submission_path)
     submission["execution_binding"]["result_contract_root"] = "sha256:" + "0" * 64
     _write(submission_path, submission)
-    submission_row["root"] = "sha256:" + hashlib.sha256(
-        submission_path.read_bytes()
-    ).hexdigest()
+    submission_row["root"] = (
+        "sha256:" + hashlib.sha256(submission_path.read_bytes()).hexdigest()
+    )
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="execution binding differs"):
@@ -386,8 +380,7 @@ def test_current_result_contract_root_drift_is_rejected(
     frontier: pathlib.Path,
 ) -> None:
     contract_path = (
-        frontier
-        / "execution/erdos-1056/10430401-10430600/result-contract.v1.json"
+        frontier / "execution/erdos-1056/10430401-10430600/result-contract.v1.json"
     )
     contract = _read(contract_path)
     contract["range"]["last"] = 10430601
@@ -400,9 +393,7 @@ def test_current_result_contract_root_drift_is_rejected(
 def test_current_verification_must_satisfy_exact_independent_requirement(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10430401-10430600.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10430401-10430600.json"
     closure = _read(closure_path)
     verification_row = next(
         row for row in closure["evidence"] if row["kind"] == "verification"
@@ -411,9 +402,9 @@ def test_current_verification_must_satisfy_exact_independent_requirement(
     verification = _read(verification_path)
     verification["scope"]["property"] = "A different property."
     _write(verification_path, verification)
-    verification_row["root"] = "sha256:" + hashlib.sha256(
-        verification_path.read_bytes()
-    ).hexdigest()
+    verification_row["root"] = (
+        "sha256:" + hashlib.sha256(verification_path.read_bytes()).hexdigest()
+    )
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="exact independent requirement"):
@@ -423,20 +414,16 @@ def test_current_verification_must_satisfy_exact_independent_requirement(
 def test_proposal_cannot_bind_another_submission(
     frontier: pathlib.Path,
 ) -> None:
-    closure_path = (
-        frontier / "targets/closures/erdos-1056-10429601-10429800.json"
-    )
+    closure_path = frontier / "targets/closures/erdos-1056-10429601-10429800.json"
     closure = _read(closure_path)
-    proposal_row = next(
-        row for row in closure["evidence"] if row["kind"] == "proposal"
-    )
+    proposal_row = next(row for row in closure["evidence"] if row["kind"] == "proposal")
     proposal_path = frontier / proposal_row["path"]
     proposal = _read(proposal_path)
     proposal["producer_package"]["root"] = "sha256:" + "0" * 64
     _write(proposal_path, proposal)
-    proposal_row["root"] = "sha256:" + hashlib.sha256(
-        proposal_path.read_bytes()
-    ).hexdigest()
+    proposal_row["root"] = (
+        "sha256:" + hashlib.sha256(proposal_path.read_bytes()).hexdigest()
+    )
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="does not bind the Submission"):
@@ -528,8 +515,7 @@ def test_execution_inputs_reject_changed_result_contract(
 ) -> None:
     _copy_erdos_1056_execution_inputs(tmp_path)
     contract_path = (
-        tmp_path
-        / "execution/erdos-1056/10430801-10431000/result-contract.v1.json"
+        tmp_path / "execution/erdos-1056/10430801-10431000/result-contract.v1.json"
     )
     contract = _read(contract_path)
     contract["verifier"]["witness_minimum_multiplicity"] = 15
@@ -540,13 +526,19 @@ def test_execution_inputs_reject_changed_result_contract(
 
 
 def test_astra_fidelity_packet_preserves_exact_source_and_authority_boundary() -> None:
-    validate_fidelity_packet(ROOT)
+    # This one-shot Target is already complete. Its packet remains bound to the
+    # repository state it reviewed rather than being rewritten after unrelated
+    # later Decisions.
+    assert fidelity_work_complete(ROOT)
     packet = _read(ROOT / "targets/erdos-183-astra-fidelity.json")
     assert packet["authority"] == "non_authoritative"
     assert packet["review_contract"]["accepted_state_change"] == (
         "none until a separate authorized human Decision"
     )
-    assert packet["source_problem"]["status_observation"]["source_last_update"] < "2026-08-01"
+    assert (
+        packet["source_problem"]["status_observation"]["source_last_update"]
+        < "2026-08-01"
+    )
     assert packet["nonclaims"][0].startswith("Lean or Comparator passage")
 
 
@@ -566,6 +558,171 @@ def test_astra_fidelity_packet_binds_exact_execution_contracts() -> None:
     assert packet["execution_contracts"]["result_contract"]["sha256"] == (
         "sha256:7618f6bbd2c5aa13653a771735c586e6cb24056b092854e20c19112471aff6b2"
     )
+
+
+def test_erdos_264_repair_packet_is_exact_and_non_authoritative() -> None:
+    validate_erdos_264_packet(ROOT)
+    packet = _read(ERDOS_264_PACKET_PATH)
+    assert packet["authority"] == "non_authoritative"
+    assert packet["prerequisite"]["accepted_claim"] == ERDOS_264_CORRECTION_CLAIM
+    assert packet["source"]["commit"] == ("e6d6b867dc85eec2f88bc47496b4314c623f9f92")
+    assert packet["source"]["sha256"] == (
+        "sha256:c59caaa2524e3edd52944e63f5d9bb0614f1bc36d7fb8a0fec7029c14c266b46"
+    )
+    assert all(
+        forbidden not in json.dumps(packet["execution_contracts"])
+        for forbidden in ("model", "worker", "budgets")
+    )
+
+
+def test_erdos_264_execution_inputs_bind_native_verifier() -> None:
+    assert erdos_264_execution_input_paths(ROOT) == [
+        "execution/erdos-264-proof-repair/producer-profile.v1.json",
+        "execution/erdos-264-proof-repair/result-contract.v1.json",
+        "execution/erdos-264-proof-repair/verifier-capsule.v1.json",
+        "execution/erdos-264-proof-repair/verify.py",
+    ]
+
+
+def _copy_erdos_264_target(destination: pathlib.Path) -> None:
+    for relative in [
+        ".vela/repository.json",
+        "targets/erdos-264-parts-i-proof-repair.json",
+        *erdos_264_execution_input_paths(ROOT),
+    ]:
+        _copy(destination, relative)
+
+
+def test_erdos_264_repair_remains_hidden_before_correction_decision(
+    tmp_path: pathlib.Path,
+) -> None:
+    _copy_erdos_264_target(tmp_path)
+    assert not erdos_264_correction_accepted(tmp_path)
+    repository = _read(tmp_path / ".vela/repository.json")
+    correction = next(
+        row
+        for row in repository["pending_claims"]
+        if row["claim_id"] == ERDOS_264_CORRECTION_CLAIM["claim_id"]
+    )
+    repository["pending_claims"].remove(correction)
+    repository["accepted_claims"].append({**correction, "standing": "accepted"})
+    _write(tmp_path / ".vela/repository.json", repository)
+    assert erdos_264_correction_accepted(tmp_path)
+
+
+def test_erdos_264_repair_closes_only_after_exact_passing_verification(
+    tmp_path: pathlib.Path,
+) -> None:
+    _copy_erdos_264_target(tmp_path)
+    packet_path = tmp_path / "targets/erdos-264-parts-i-proof-repair.json"
+    packet = _read(packet_path)
+    artifact_path = tmp_path / "artifacts/erdos264-parts-i-proof-repair/264.lean"
+    artifact_path.parent.mkdir(parents=True)
+    artifact_path.write_text("exact candidate bytes\n")
+    artifact_root = "sha256:" + hashlib.sha256(artifact_path.read_bytes()).hexdigest()
+    execution_binding = {
+        "schema": "vela.execution-binding.v1",
+        "packet_root": "sha256:" + hashlib.sha256(packet_path.read_bytes()).hexdigest(),
+        "profile_root": packet["execution_contracts"]["producer_profile"]["sha256"],
+        "verifier_capsule_root": packet["execution_contracts"]["verifier_capsule"][
+            "sha256"
+        ],
+        "result_contract_root": packet["execution_contracts"]["result_contract"][
+            "sha256"
+        ],
+    }
+    submission = {
+        "schema": "vela.submission.v1",
+        "submission_id": "vsb_test",
+        "execution_binding": execution_binding,
+        "artifacts": [
+            {
+                "kind": "lean-source-repair",
+                "path": "artifacts/erdos264-parts-i-proof-repair/264.lean",
+                "digest": artifact_root,
+            }
+        ],
+        "verification_requirements": [packet["verification_requirement"]],
+    }
+    proposal = {
+        "schema": "vela.proposal.v1",
+        "proposal_id": "vpr_test",
+        "producer_package": {},
+        "subject": {"kind": "claim", "id": "vcl_test", "root": "sha256:" + "1" * 64},
+    }
+    verification = {
+        "schema": "vela.verification-record.v1",
+        "verification_record_id": "vvr_test",
+        "outcome": "pass",
+        "subject": {
+            "claim_id": "vcl_test",
+            "proposal_id": "vpr_test",
+            "submission_id": "vsb_test",
+            "submission_root": "",
+            "artifact_ids": [artifact_root.removeprefix("sha256:")],
+        },
+        "method": {
+            "profile": "erdos-264-parts-i-native-lean-v1",
+            "implementation": "execution/erdos-264-proof-repair/verifier-capsule.v1.json",
+            "environment_root": packet["execution_contracts"]["verifier_capsule"][
+                "sha256"
+            ],
+        },
+        "scope": {"property": packet["verification_requirement"]},
+    }
+    records = tmp_path / "records"
+    submission_path = records / "submissions/submission.json"
+    _write(submission_path, submission)
+    submission_root = (
+        "sha256:" + hashlib.sha256(submission_path.read_bytes()).hexdigest()
+    )
+    proposal["producer_package"] = {
+        "kind": "submission_v1",
+        "id": "vsb_test",
+        "root": submission_root,
+        "path": "records/submissions/submission.json",
+    }
+    verification["subject"]["submission_root"] = submission_root
+    proposal_path = records / "proposals/proposal.json"
+    verification_path = records / "verifications/verification.json"
+    _write(proposal_path, proposal)
+    _write(verification_path, verification)
+    repository = _read(tmp_path / ".vela/repository.json")
+    repository["pending_claims"].append(
+        {
+            "claim_id": "vcl_test",
+            "claim_root": "sha256:" + "1" * 64,
+            "path": "records/claims/test.json",
+            "standing": "pending_review",
+        }
+    )
+    repository["submissions"].append(
+        {
+            "id": "vsb_test",
+            "path": "records/submissions/submission.json",
+            "root": submission_root,
+        }
+    )
+    repository["proposals"].append(
+        {
+            "id": "vpr_test",
+            "path": "records/proposals/proposal.json",
+            "root": "sha256:" + hashlib.sha256(proposal_path.read_bytes()).hexdigest(),
+        }
+    )
+    repository["verifications"].append(
+        {
+            "id": "vvr_test",
+            "path": "records/verifications/verification.json",
+            "root": "sha256:"
+            + hashlib.sha256(verification_path.read_bytes()).hexdigest(),
+        }
+    )
+    _write(tmp_path / ".vela/repository.json", repository)
+    assert erdos_264_proof_repair_complete(tmp_path)
+    verification["outcome"] = "fail"
+    _write(verification_path, verification)
+    assert not erdos_264_proof_repair_complete(tmp_path)
 
 
 def test_astra_fidelity_work_is_complete_while_awaiting_decision() -> None:
@@ -667,7 +824,14 @@ def test_astra_fidelity_offer_reopens_after_nonaccepted_terminal_standing(
 def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -> None:
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     subprocess.run(
-        ["git", "-C", str(tmp_path), "config", "user.email", "target-test@vela.invalid"],
+        [
+            "git",
+            "-C",
+            str(tmp_path),
+            "config",
+            "user.email",
+            "target-test@vela.invalid",
+        ],
         check=True,
     )
     subprocess.run(
@@ -690,7 +854,9 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
     for relative in [
         "targets/erdos-1056.json",
         "targets/erdos-183-astra-fidelity.json",
+        "targets/erdos-264-parts-i-proof-repair.json",
         *execution_input_paths(ROOT),
+        *erdos_264_execution_input_paths(ROOT),
         *fidelity_execution_input_paths(ROOT),
     ]:
         _copy(tmp_path, relative)

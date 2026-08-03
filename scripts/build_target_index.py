@@ -28,10 +28,13 @@ INDEX_PATH = ROOT / "targets.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 FIDELITY_PACKET_PATH = ROOT / "targets" / "erdos-183-astra-fidelity.json"
+ERDOS_264_PACKET_PATH = ROOT / "targets" / "erdos-264-parts-i-proof-repair.json"
 TARGET_ID = "erdos:1056"
 FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
+ERDOS_264_TARGET_ID = "erdos:264:parts-i-proof-repair"
 VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
 FIDELITY_VERIFIER_PROFILE = "erdos-183-astra-fidelity-review-v1"
+ERDOS_264_VERIFIER_PROFILE = "erdos-264-parts-i-native-lean-v1"
 FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
     "verifier_capsule": "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
@@ -43,6 +46,17 @@ ERDOS_1056_EXECUTION_CONTRACT_PATHS = {
     "result_contract": "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
 }
 ERDOS_1056_VERIFIER_SOURCE_PATH = "execution/erdos-1056/verifier/v1/verifier.cpp"
+ERDOS_264_EXECUTION_CONTRACT_PATHS = {
+    "producer_profile": "execution/erdos-264-proof-repair/producer-profile.v1.json",
+    "verifier_capsule": "execution/erdos-264-proof-repair/verifier-capsule.v1.json",
+    "result_contract": "execution/erdos-264-proof-repair/result-contract.v1.json",
+}
+ERDOS_264_VERIFIER_SOURCE_PATH = "execution/erdos-264-proof-repair/verify.py"
+ERDOS_264_ARTIFACT_PATH = "artifacts/erdos264-parts-i-proof-repair/264.lean"
+ERDOS_264_CORRECTION_CLAIM = {
+    "claim_id": "vcl_5a7df5408c6b11aa52745af2ce1203db3b39cb9a9404c27309f4ee490ffb1386",
+    "claim_root": "sha256:4d3f546331886ba10891c1ceb46267993d41b99ed746a19b74d91ccb9448b16e",
+}
 ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430801-10431000.txt"
 ALLOWED_OUTPUTS = [
     {"type": "text/plain", "path": ARTIFACT_PATH},
@@ -90,6 +104,33 @@ FIDELITY_TARGET_BASE = {
     "packet": {
         "path": "targets/erdos-183-astra-fidelity.json",
         "schema": "erdos-frontier.statement-fidelity-work.v1",
+    },
+}
+ERDOS_264_TARGET_BASE = {
+    "id": ERDOS_264_TARGET_ID,
+    "title": "Repair the published Erdős 264 part i proof",
+    "presence": "open",
+    "rank": 1,
+    "labels": [
+        "correction-inheritance",
+        "erdos",
+        "formal-proof",
+        "lean",
+        "machine-checkable",
+    ],
+    "why": (
+        "The accepted source correction changes bounded perturbations from "
+        "natural-valued to integer-valued. The retained public Lean proof is "
+        "therefore evidence for the predecessor definition, not the corrected one."
+    ),
+    "objective": (
+        "Repair Erdos264.erdos_264.parts.i in the exact pinned Formal "
+        "Conjectures source and pass the native Lean verifier without changing "
+        "the theorem signature or any unrelated source bytes."
+    ),
+    "packet": {
+        "path": "targets/erdos-264-parts-i-proof-repair.json",
+        "schema": "erdos-frontier.correction-inheritance-work.v1",
     },
 }
 
@@ -177,9 +218,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         or result_contract.get("range")
         != {"first": 10430801, "inclusive": True, "last": 10431000}
         or (result_contract.get("artifact") or {}).get("path") != ARTIFACT_PATH
-        or (result_contract.get("verifier") or {}).get(
-            "witness_minimum_multiplicity"
-        )
+        or (result_contract.get("verifier") or {}).get("witness_minimum_multiplicity")
         != 16
     ):
         raise ValueError("Erdős 1056 result contract weakens its exact boundary")
@@ -192,9 +231,7 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
 
 
 def fidelity_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
-    packet = json.loads(
-        (root / FIDELITY_PACKET_PATH.relative_to(ROOT)).read_text()
-    )
+    packet = json.loads((root / FIDELITY_PACKET_PATH.relative_to(ROOT)).read_text())
     contracts = packet.get("execution_contracts")
     if not isinstance(contracts, dict) or set(contracts) != set(
         FIDELITY_EXECUTION_CONTRACT_PATHS
@@ -206,12 +243,58 @@ def fidelity_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         if path != expected_path:
             raise ValueError(f"Erdős 183 {name} path differs")
         value = json.loads((root / path).read_text())
-        if value.get("authority") != "non_authoritative" or value.get(
-            "target"
-        ) != FIDELITY_TARGET_ID:
-            raise ValueError(f"Erdős 183 {name} crosses its Target or authority boundary")
+        if (
+            value.get("authority") != "non_authoritative"
+            or value.get("target") != FIDELITY_TARGET_ID
+        ):
+            raise ValueError(
+                f"Erdős 183 {name} crosses its Target or authority boundary"
+            )
         paths.append(path)
     return sorted(paths)
+
+
+def erdos_264_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
+    packet_path = root / ERDOS_264_PACKET_PATH.relative_to(ROOT)
+    packet = json.loads(packet_path.read_text())
+    if packet_path.read_bytes() != canonical_bytes(packet) + b"\n":
+        raise ValueError("Erdős 264 packet must be canonical JSON")
+    contracts = packet.get("execution_contracts")
+    if not isinstance(contracts, dict) or set(contracts) != set(
+        ERDOS_264_EXECUTION_CONTRACT_PATHS
+    ):
+        raise ValueError("Erdős 264 execution contract set differs")
+    paths = []
+    values = {}
+    for name, expected_path in ERDOS_264_EXECUTION_CONTRACT_PATHS.items():
+        path = rooted_file(root, contracts.get(name), f"Erdős 264 {name}")
+        if path != expected_path:
+            raise ValueError(f"Erdős 264 {name} path differs")
+        contract_path = root / path
+        value = json.loads(contract_path.read_text())
+        if contract_path.read_bytes() != canonical_bytes(value) + b"\n":
+            raise ValueError(f"Erdős 264 {name} must be canonical JSON")
+        if (
+            value.get("authority") != "non_authoritative"
+            or value.get("target") != ERDOS_264_TARGET_ID
+            or "worker" in value
+            or "model" in value
+            or "budgets" in value
+        ):
+            raise ValueError(f"Erdős 264 {name} crosses its Target boundary")
+        paths.append(path)
+        values[name] = value
+    verifier = values["verifier_capsule"]
+    implementation = verifier.get("implementation") or {}
+    verifier_source = root / ERDOS_264_VERIFIER_SOURCE_PATH
+    verifier_bytes = verifier_source.read_bytes()
+    if implementation != {
+        "path": ERDOS_264_VERIFIER_SOURCE_PATH,
+        "sha256": sha256_root(verifier_bytes),
+        "size": len(verifier_bytes),
+    }:
+        raise ValueError("Erdős 264 verifier implementation root differs")
+    return sorted({*paths, ERDOS_264_VERIFIER_SOURCE_PATH})
 
 
 def input_paths(
@@ -225,6 +308,7 @@ def input_paths(
             for path in (root / "targets" / "closures").glob("*.json")
         ),
         *execution_input_paths(root),
+        *erdos_264_execution_input_paths(root),
     ]
     if include_fidelity:
         paths.extend(fidelity_execution_input_paths(root))
@@ -239,6 +323,7 @@ def git_source_commit(
 ) -> str:
     paths = paths or input_paths(root, include_fidelity=include_fidelity)
     packets = [PACKET_PATH.relative_to(ROOT).as_posix()]
+    packets.append(ERDOS_264_PACKET_PATH.relative_to(ROOT).as_posix())
     if include_fidelity:
         packets.append(FIDELITY_PACKET_PATH.relative_to(ROOT).as_posix())
     retained = [*paths, *packets]
@@ -351,7 +436,9 @@ def target_from_validation(validation: dict[str, Any]) -> dict[str, Any]:
 def validate_packet(validation: dict[str, Any]) -> None:
     repository = json.loads(REPOSITORY_PATH.read_text())
     packet = json.loads(PACKET_PATH.read_text())
-    repository_root = "sha256:" + hashlib.sha256(REPOSITORY_PATH.read_bytes()).hexdigest()
+    repository_root = (
+        "sha256:" + hashlib.sha256(REPOSITORY_PATH.read_bytes()).hexdigest()
+    )
     if packet.get("schema") != TARGET_BASE["packet"]["schema"]:
         raise ValueError("Erdős 1056 packet schema differs from the Target")
     if packet.get("frontier_id") != repository.get("frontier_id"):
@@ -403,7 +490,9 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         or (packet.get("target") or {}).get("problem") != 183
         or packet.get("verifier_profile") != FIDELITY_VERIFIER_PROFILE
     ):
-        raise ValueError("Erdős 183 fidelity packet crosses its Target or authority boundary")
+        raise ValueError(
+            "Erdős 183 fidelity packet crosses its Target or authority boundary"
+        )
     if (
         release.get("repository") != "https://github.com/openai/ten-proofs"
         or release.get("commit") != "29362184c2b698c1b279bc85b3957ee813646c63"
@@ -417,7 +506,9 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         or (release.get("solution") or {}).get("sha256")
         != "sha256:a87bd60efe16dab00ba07ea4069f22b8dbc991b3f3ba34ae5088b1f8b1987cd3"
     ):
-        raise ValueError("Erdős 183 fidelity packet does not bind the exact OpenAI release")
+        raise ValueError(
+            "Erdős 183 fidelity packet does not bind the exact OpenAI release"
+        )
     if (
         status.get("repository") != "https://github.com/teorth/erdosproblems"
         or status.get("commit") != "8138974387d9030542daabe67faaa33eff9356f8"
@@ -425,7 +516,9 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         or status.get("sha256")
         != "sha256:a4358d57b591fc92c75981c160a11f43a561de6b5e8478d8f9629511759a9213"
     ):
-        raise ValueError("Erdős 183 fidelity packet does not bind the exact source observation")
+        raise ValueError(
+            "Erdős 183 fidelity packet does not bind the exact source observation"
+        )
     if (
         review.get("required_dimensions")
         != [
@@ -457,6 +550,48 @@ def validate_fidelity_packet(root: pathlib.Path = ROOT) -> None:
         raise ValueError("Erdős 183 fidelity packet execution roots differ")
 
 
+def validate_erdos_264_packet(root: pathlib.Path = ROOT) -> None:
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    packet = json.loads((root / ERDOS_264_PACKET_PATH.relative_to(ROOT)).read_text())
+    source = packet.get("source") or {}
+    prerequisite = packet.get("prerequisite") or {}
+    target = packet.get("target") or {}
+    outputs = packet.get("allowed_outputs")
+    if (
+        packet.get("schema") != ERDOS_264_TARGET_BASE["packet"]["schema"]
+        or packet.get("frontier_id") != repository.get("frontier_id")
+        or packet.get("authority") != "non_authoritative"
+        or target.get("id") != ERDOS_264_TARGET_ID
+        or target.get("problem") != 264
+        or packet.get("verifier_profile") != ERDOS_264_VERIFIER_PROFILE
+        or prerequisite.get("accepted_claim") != ERDOS_264_CORRECTION_CLAIM
+        or outputs
+        != [
+            {
+                "kind": "lean-source-repair",
+                "media_type": "text/x-lean",
+                "path": ERDOS_264_ARTIFACT_PATH,
+            }
+        ]
+    ):
+        raise ValueError("Erdős 264 packet crosses its Target or authority boundary")
+    if source != {
+        "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+        "commit": "e6d6b867dc85eec2f88bc47496b4314c623f9f92",
+        "tree": "1e24e996a9fee330dc885ec2b314f60bfd508985",
+        "path": "FormalConjectures/ErdosProblems/264.lean",
+        "sha256": "sha256:c59caaa2524e3edd52944e63f5d9bb0614f1bc36d7fb8a0fec7029c14c266b46",
+        "lean_toolchain": "leanprover/lean4:v4.27.0",
+        "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+        "declaration": "Erdos264.erdos_264.parts.i",
+    }:
+        raise ValueError("Erdős 264 packet does not bind the exact source")
+    requirement = packet.get("verification_requirement")
+    if not isinstance(requirement, str) or not requirement:
+        raise ValueError("Erdős 264 packet lacks an exact verification requirement")
+    erdos_264_execution_input_paths(root)
+
+
 def current_records(
     repository: dict[str, Any], kind: str, root: pathlib.Path = ROOT
 ) -> list[tuple[dict[str, Any], dict[str, Any]]]:
@@ -483,6 +618,113 @@ def current_records(
     return values
 
 
+def erdos_264_correction_accepted(root: pathlib.Path = ROOT) -> bool:
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+        if row.get("standing") == "accepted"
+    }
+    return (
+        accepted.get(ERDOS_264_CORRECTION_CLAIM["claim_id"])
+        == ERDOS_264_CORRECTION_CLAIM["claim_root"]
+    )
+
+
+def erdos_264_proof_repair_complete(root: pathlib.Path = ROOT) -> bool:
+    """Close the repair offer only after an exact passing Verification.
+
+    Producer completion prevents duplicate proof work while the resulting
+    Proposal remains a separate human Decision. Verification never changes or
+    implies Standing here.
+    """
+
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    packet = json.loads((root / ERDOS_264_PACKET_PATH.relative_to(ROOT)).read_text())
+    artifact_path = root / ERDOS_264_ARTIFACT_PATH
+    if not artifact_path.is_file() or artifact_path.is_symlink():
+        return False
+    artifact_root = sha256_root(artifact_path.read_bytes())
+    artifact_id = artifact_root.removeprefix("sha256:")
+    contracts = packet.get("execution_contracts") or {}
+    expected_binding = {
+        "schema": "vela.execution-binding.v1",
+        "packet_root": sha256_root(
+            (root / ERDOS_264_PACKET_PATH.relative_to(ROOT)).read_bytes()
+        ),
+        "profile_root": (contracts.get("producer_profile") or {}).get("sha256"),
+        "verifier_capsule_root": (contracts.get("verifier_capsule") or {}).get(
+            "sha256"
+        ),
+        "result_contract_root": (contracts.get("result_contract") or {}).get("sha256"),
+    }
+    requirement = packet.get("verification_requirement")
+    pending = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("pending_claims", [])
+    }
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+    }
+    for submission_row, submission in current_records(repository, "submissions", root):
+        if (
+            submission.get("schema") != "vela.submission.v1"
+            or submission.get("execution_binding") != expected_binding
+            or submission.get("artifacts")
+            != [
+                {
+                    "kind": "lean-source-repair",
+                    "path": ERDOS_264_ARTIFACT_PATH,
+                    "digest": artifact_root,
+                }
+            ]
+            or submission.get("verification_requirements") != [requirement]
+        ):
+            continue
+        for proposal_row, proposal in current_records(repository, "proposals", root):
+            package = proposal.get("producer_package") or {}
+            subject = proposal.get("subject") or {}
+            claim_id = subject.get("id")
+            claim_root = subject.get("root")
+            if (
+                proposal.get("schema") != "vela.proposal.v1"
+                or package.get("id") != submission.get("submission_id")
+                or package.get("root") != submission_row.get("root")
+                or package.get("path") != submission_row.get("path")
+                or (
+                    pending.get(claim_id) != claim_root
+                    and accepted.get(claim_id) != claim_root
+                )
+            ):
+                continue
+            for _, verification in current_records(repository, "verifications", root):
+                verification_subject = verification.get("subject") or {}
+                method = verification.get("method") or {}
+                scope = verification.get("scope") or {}
+                if (
+                    verification.get("schema") == "vela.verification-record.v1"
+                    and verification.get("outcome") == "pass"
+                    and verification_subject.get("claim_id") == claim_id
+                    and verification_subject.get("proposal_id")
+                    == proposal_row.get("id")
+                    and verification_subject.get("submission_id")
+                    == submission.get("submission_id")
+                    and verification_subject.get("submission_root")
+                    == submission_row.get("root")
+                    and set(verification_subject.get("artifact_ids", []))
+                    == {artifact_id}
+                    and method.get("profile") == ERDOS_264_VERIFIER_PROFILE
+                    and method.get("implementation")
+                    == ERDOS_264_EXECUTION_CONTRACT_PATHS["verifier_capsule"]
+                    and method.get("environment_root")
+                    == expected_binding["verifier_capsule_root"]
+                    and scope.get("property") == requirement
+                ):
+                    return True
+    return False
+
+
 def erdos_1056_work_complete(root: pathlib.Path = ROOT) -> bool:
     """Return whether the exact live range already has passing evidence.
 
@@ -504,15 +746,12 @@ def erdos_1056_work_complete(root: pathlib.Path = ROOT) -> bool:
         "verifier_capsule_root": (contracts.get("verifier_capsule") or {}).get(
             "sha256"
         ),
-        "result_contract_root": (contracts.get("result_contract") or {}).get(
-            "sha256"
-        ),
+        "result_contract_root": (contracts.get("result_contract") or {}).get("sha256"),
     }
     target_range = (packet.get("target") or {}).get("next_bounded_range") or {}
     artifact_path = ((packet.get("allowed_outputs") or [{}])[0]).get("path")
     if (
-        set(contracts)
-        != {"producer_profile", "verifier_capsule", "result_contract"}
+        set(contracts) != {"producer_profile", "verifier_capsule", "result_contract"}
         or not isinstance(artifact_path, str)
         or not isinstance(target_range.get("first"), int)
         or not isinstance(target_range.get("last"), int)
@@ -656,9 +895,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
         "verifier_capsule_root": (contracts.get("verifier_capsule") or {}).get(
             "sha256"
         ),
-        "result_contract_root": (contracts.get("result_contract") or {}).get(
-            "sha256"
-        ),
+        "result_contract_root": (contracts.get("result_contract") or {}).get("sha256"),
     }
     review_requirement = review.get("verification")
     submissions = []
@@ -680,7 +917,9 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
             and isinstance(submission_requirements[0], str)
             and submission_requirements[0]
             and binding.get("schema") == "vela.execution-binding.v1"
-            and all(binding.get(key) == value for key, value in expected_binding.items())
+            and all(
+                binding.get(key) == value for key, value in expected_binding.items()
+            )
             and isinstance(binding.get("packet_root"), str)
             and binding["packet_root"].startswith("sha256:")
         ):
@@ -744,9 +983,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
                         "implementation": FIDELITY_EXECUTION_CONTRACT_PATHS[
                             "verifier_capsule"
                         ],
-                        "environment_root": expected_binding[
-                            "verifier_capsule_root"
-                        ],
+                        "environment_root": expected_binding["verifier_capsule_root"],
                     }
                     and scope.get("property") == submission_requirement
                 ):
@@ -755,6 +992,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
 
 
 def index() -> dict[str, Any]:
+    validate_erdos_264_packet()
     erdos_1056_complete = erdos_1056_work_complete()
     validation = None
     if not erdos_1056_complete:
@@ -775,11 +1013,17 @@ def index() -> dict[str, Any]:
     inputs["input_root"] = sha256_root(canonical_bytes(inputs))
     repository = json.loads(REPOSITORY_PATH.read_text())
     targets_with_packets = []
+    if erdos_264_correction_accepted() and not erdos_264_proof_repair_complete():
+        targets_with_packets.append(
+            (ERDOS_264_TARGET_BASE.copy(), ERDOS_264_PACKET_PATH)
+        )
     if not erdos_1056_complete:
         assert validation is not None
         targets_with_packets.append((target_from_validation(validation), PACKET_PATH))
     if not fidelity_complete:
-        targets_with_packets.insert(0, (FIDELITY_TARGET_BASE.copy(), FIDELITY_PACKET_PATH))
+        targets_with_packets.insert(
+            0, (FIDELITY_TARGET_BASE.copy(), FIDELITY_PACKET_PATH)
+        )
     targets = [current for current, _ in targets_with_packets]
     for current, packet_path in targets_with_packets:
         packet = packet_path.read_bytes()
@@ -823,7 +1067,10 @@ def main() -> int:
         return 1
     if args.check:
         if not INDEX_PATH.is_file() or INDEX_PATH.read_bytes() != expected:
-            print("targets.json is stale; run scripts/build_target_index.py", file=sys.stderr)
+            print(
+                "targets.json is stale; run scripts/build_target_index.py",
+                file=sys.stderr,
+            )
             return 1
         print("targets.json is current")
         return 0
