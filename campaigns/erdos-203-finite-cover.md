@@ -85,6 +85,26 @@ The three instrumentation iterations therefore
 establish a search-engine bottleneck only; they do not narrow the mathematical
 Target or justify a Claim.
 
+## Next valid engineering obligation
+
+Do not spend another tranche on an unstructured point-cover SAT encoding. The
+next producer must first derive, from the pinned 31-tile family and corrected
+lattice engine, an exact prime-power direction ledger containing:
+
+1. every projective direction class and available distinct-prime supply at
+   each prime-power stage dividing 5040;
+2. the quotient cells each class can partition without dropped-cell
+   approximations;
+3. unavoidable pairwise or higher-order overlap lower bounds relative to the
+   exact density slack `143/140 - 1 = 3/140`; and
+4. either a certified structural obstruction or a reduced parallel-direction
+   tree instance with an independently checked encoding.
+
+Only that reduced instance may justify another solver iteration. A structural
+obstruction must state its exact family and quotient; it is not global
+nonexistence. A constructive tree must still produce the canonical certificate
+and pass the frozen independent verifier.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
