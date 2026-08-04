@@ -17,10 +17,17 @@ Agents may:
   and Decision records;
 - draft Formal Conjectures statements, run mechanical gates, and prepare
   keyless handoff artifacts.
+- execute one exact repository-authority Decision when the human authority has
+  explicitly authorized that Decision or the named campaign in the active
+  Codex task, provided the agent uses the standard authority provider, binds
+  the current Decision Inbox entry root, records the human-facing reason, and
+  replays the repository before continuing;
 
 Agents may not:
 
-- invoke repository-authority Decisions or use repository-authority credentials;
+- invoke a repository-authority Decision without explicit human authorization,
+  infer authorization from verifier success, bypass the standard authority
+  provider, or expose repository-authority credentials;
 - present a Submission, Verification, Git commit, or model answer as accepted
   scientific Standing;
 - hand-edit `.vela/authority/`, `.vela/repository.json`, `records/`, or
