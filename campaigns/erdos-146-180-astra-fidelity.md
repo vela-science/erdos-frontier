@@ -33,7 +33,9 @@ accepted Claim.
 
 ### Erdős 146
 
-Conclusion: **faithful**, pending separately scoped Verification.
+Conclusion: **faithful**, mechanically qualified at the source-local evidence
+ceiling. No source-owning Target exists for a protocol Verification or
+Decision.
 
 The retained induced-subgraph definition of `r`-degeneracy, the manuscript's
 subgraph formulation, and Lean's finite-vertex-set definition are equivalent.
@@ -48,8 +50,8 @@ Report:
 
 ### Erdős 180
 
-Conclusion: **qualified mismatch**, pending separately scoped Verification and
-source-correction review.
+Conclusion: **qualified mismatch**, mechanically qualified at the source-local
+evidence ceiling. Source correction remains an explicit human-owned action.
 
 The retained statement asks the unrestricted finite-family question. The
 manuscript explicitly says that this original form has simple counterexamples,
@@ -68,14 +70,38 @@ Report:
 `artifacts/fidelity/erdos-180-astra-fidelity.v1.json`, file root
 `sha256:a8758344f24ad00f0bf5c4d38e77105bc8ceef25aff0c3daa36f7e6f6a9766a4`.
 
+## Source-first mechanical qualification
+
+The consolidated checker at
+`execution/erdos-146-180-astra-fidelity/verify.py` recomputes both report roots
+and binds the exact retained statement snapshot, the 2025-08-31 open and
+unformalized source-status observation, the pinned OpenAI repository and paper,
+the material Lean declaration fragments, and the native Comparator, Nanoda,
+and Lean replay records. It passed both cases and changed no accepted state.
+
+For Erdős 146, the source bytes, positive-`r` quantifier, induced-subgraph
+definition, asymptotic conclusion, and stronger connected bipartite witness
+remain mechanically consistent with the faithful matrix. For Erdős 180, the
+same check confirms that the retained unrestricted predicate and the
+manuscript/Lean nonempty cyclic-family predicate are materially different,
+while the stronger witness supplies the stated consequence for both.
+
+The check is retained at
+`artifacts/runs/erdos-146-180-astra-fidelity-check.v1.json`. It shares the
+operator, machine, sources, paper, Lean kernel, Mathlib, and replay lineage and
+does not independently re-prove the mathematics. It is not a Vela Verification.
+
+The chronology-preserving Erdős 180 correction packet is retained at
+`artifacts/fidelity/erdos-180-source-correction-packet.v1.json`. It recommends
+preserving the original and corrected formulations as separately timed records
+linked by an explicit correction relation; it does not perform that correction.
+
 ## Next valid actions
 
-1. Run one separately scoped, source-first Verification of both report roots,
-   including the induced/subgraph equivalence for 146 and the corrected-source
-   boundary for 180.
-2. If that Verification passes, prepare a distinct Erdős 180 source-correction
-   packet that preserves both formulations and their chronology. Do not
-   overwrite the original question or infer a Decision.
+1. Retain Erdős 146 at the source-local evidence ceiling unless a source owner
+   creates an exact Target; do not invent protocol work.
+2. A human source owner may open the distinct Erdős 180 correction workflow or
+   document deferral. Preserve both formulations and their chronology.
 3. Keep the existing Erdős 183 Proposal pending until human repository
    authority explicitly accepts, rejects, or documents deferral.
 4. Feed only verified, consequence-complete conclusions into the cross-release
