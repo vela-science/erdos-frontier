@@ -294,6 +294,26 @@ establishes novelty or solves the official problem. The next useful structural
 question is whether the same forest certificate extends to a substantially
 larger source-pinned family before any new constructive search is warranted.
 
+## Frozen 188-tile forest extension
+
+That extension is now frozen at
+`execution/erdos-203-cover/extended-forest-preregistration.v1.json`. Starting
+from the qualified 55-tile tree, the producer repeatedly adds the remaining
+source-pinned tile with the least exact loss of contradiction gap, using its
+strongest mandatory edge into the current tree and deterministic tie breaks.
+It stops before the first addition that would make the gap nonpositive.
+
+Exploration selected 188 of the 313 pinned pool tiles. The retained iteration
+is therefore post-exploratory and receives no Claim credit. The source commit,
+pool root, producer and independent checker bytes, exact 188-tile candidate
+values, stopping rule, and nonclaims are frozen before execution. The checker
+will not import producer code or SymPy: it will rederive the selected subgroup
+coordinates by direct bounded enumeration, check all 187 mandatory edges and
+the spanning-tree property, and recompute the exact density and mass gap.
+
+A passing result can exclude only the exact 188 certificate tiles. It does not
+exclude the full pool, resolve the global problem, or establish novelty.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
