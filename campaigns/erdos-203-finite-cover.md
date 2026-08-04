@@ -191,6 +191,24 @@ the same global degree-sequence inequality. It is a stronger graph-local or
 prime-power structural bound for the 55440 family, or a separately frozen
 constructive search reduced by those constraints.
 
+## Frozen graph-local method qualification
+
+The next claim-credit-false iteration is now frozen at
+`execution/erdos-203-cover/graph-local-55440-preregistration.v1.json`. It will
+certify the exact best unweighted mandatory-graph ratio by constructing one
+root-excluding integral orientation for each of the 55 graph vertices, then
+checking every orientation against a source-first reconstruction of all 819
+mandatory edges.
+
+This is explicitly post-exploratory qualification: an unretained calculation
+already suggested that the full graph attains ratio `91/6` and that the
+resulting pair-overlap inequality remains cover-compatible. The iteration
+therefore receives no Claim credit. Its useful outcome is a compact exact
+certificate and a decisive answer about whether any stronger *unweighted*
+mandatory-edge count remains available. Producer and checker bytes, input
+root, stopping rule, expected boundaries, and the disclosure of prior
+knowledge are frozen before the retained run.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
