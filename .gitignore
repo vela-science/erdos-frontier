@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+/.contract-source/
 # transient extractor scripts — regenerated each run from the template in
 # extract_assumptions.py; the audit_feed*.json results are what we commit.
 lean/extract_*.lean

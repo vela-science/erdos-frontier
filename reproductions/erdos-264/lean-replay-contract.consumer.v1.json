@@ -1,0 +1,19 @@
+{
+  "schema": "vela.package-consumer-reference.v1",
+  "authority_effect": "none",
+  "package": {
+    "id": "vela-science/lean-replay-contract",
+    "version": "0.0.0-source-local"
+  },
+  "source": {
+    "repository": "https://github.com/vela-science/vela.git",
+    "commit": "051b4d5123dad53aaf49e1123cef61f433551fbf",
+    "tree": "4bd5b06c3450b4226593f76982911409399e6880",
+    "path": "research/lean-replay-contract"
+  },
+  "package_root": "sha256:5653a31b6b42a77cff91905ffa3086730e21eb6cc4105963d9d98cbcc2b2baae",
+  "descriptor_jcs": "{\"files\":[{\"media_type\":\"text/plain\",\"path\":\"README.md\",\"sha256\":\"sha256:1da461fbded079660f589794cbe389b463d030474af1cdf3bc1537cfccf5aa48\",\"size\":2091},{\"media_type\":\"text/x-python\",\"path\":\"build_root.py\",\"sha256\":\"sha256:100729e966f043d6777b54e231ede8c4a794e4701ab53d901127546e9380e679\",\"size\":2552},{\"media_type\":\"application/json\",\"path\":\"fixtures/axiom-reports.v1.json\",\"sha256\":\"sha256:cc55bc207a6709e3dc8a29b9cfca0bf1148c6f95d816edeebeb76b7d55ab6d10\",\"size\":1010},{\"media_type\":\"text/x-python\",\"path\":\"lean_replay_contract.py\",\"sha256\":\"sha256:0709761796b07805b7189eed766b30e03a346704203e0edc1e829cd82b8e72a9\",\"size\":8411},{\"media_type\":\"application/json\",\"path\":\"package.json\",\"sha256\":\"sha256:e7144436dcc6e1dfbf60c6ea3f673bc2d80a5b45f4ccab95f57020269381d37f\",\"size\":1997},{\"media_type\":\"text/plain\",\"path\":\"requirements.lock.txt\",\"sha256\":\"sha256:f534b03c11055c7e5032328504269507eea948c4a4a967f81a44007830a51557\",\"size\":331},{\"media_type\":\"application/json\",\"path\":\"schemas/lean-replay-request.v1.schema.json\",\"sha256\":\"sha256:5fa7c856df8405e2de7716d6808f35bf7c1228c45ae5bed3d65372517ea72adb\",\"size\":1652},{\"media_type\":\"application/json\",\"path\":\"schemas/lean-replay-result.v1.schema.json\",\"sha256\":\"sha256:eba08738f67516a3cd6c2c49a3684f4315a55d3e8051ce3e5e304a9db918e25c\",\"size\":1145},{\"media_type\":\"application/json\",\"path\":\"schemas/package-candidate.v1.schema.json\",\"sha256\":\"sha256:8c7d868484a054a9556cc7132f0f72639baa38e3a67ab70d691dc325a28c7c74\",\"size\":3509},{\"media_type\":\"text/x-python\",\"path\":\"test_contract.py\",\"sha256\":\"sha256:df0a3b0360f0c207b4a012d8914053977f109da2ff87962880df4922add0e59d\",\"size\":3447}],\"schema\":\"vela.logical-package-root.v1\"}",
+  "standing_effect": "none",
+  "consumer": "erdos-frontier/reproductions/erdos-264",
+  "historical_implementation_policy": "The accepted verifier and capsule bytes remain immutable; this reference cannot replace or rescore their Verification Records or Decisions."
+}

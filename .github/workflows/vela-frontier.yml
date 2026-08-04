@@ -21,3 +21,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         with:
           frontier: .
+      - name: Check out the exact source-local Lean replay contract
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        with:
+          repository: vela-science/vela
+          ref: 051b4d5123dad53aaf49e1123cef61f433551fbf
+          path: .contract-source/vela
+      - name: Verify the exact package root as the Erdős consumer
+        env:
+          VELA_LEAN_REPLAY_CONTRACT: ${{ github.workspace }}/.contract-source/vela/research/lean-replay-contract
+        run: python3 tests/test_lean_replay_contract_consumer.py
