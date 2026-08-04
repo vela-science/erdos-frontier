@@ -12,25 +12,31 @@ campaign documents explain how to work with that state without replacing it.
   `erdos:203:finite-cover`. Its write-free briefing binds the corrected
   lattice source, retracted 99.98% episode, finite-certificate contract, and
   independent verifier at repository root
-  `sha256:821cf0d94778f647305107943572f4916a6cf63fe5ea12506a471fabc07b7474`.
+  `sha256:92111121fed83d122ea82246872dcb390dee0f3f58a99b53a93c371a432a82a1`.
 
-## Review queue
+## Completed checkpoints
 
 - [`human-decision-inbox-2026-08-04.md`](human-decision-inbox-2026-08-04.md) —
-  exact six-entry human checkpoint: four protocol-ready Proposals and one
-  duplicated Erdős 1056 execution whose older wording must be resolved before
-  the corrected Proposal can become reviewable.
+  historical six-entry checkpoint. The current Decision Inbox is empty; later
+  attributed Decisions and withdrawals resolved the retained entries.
 - [`erdos-146-180-astra-fidelity.md`](erdos-146-180-astra-fidelity.md) —
-  completed producer matrices: Erdős 146 is assessed faithful, while Erdős 180
-  retains a material original-versus-corrected-statement boundary. Separate
-  Verification and the possible Erdős 180 correction workflow remain open.
+  completed producer matrices. Erdős 146 is assessed faithful and Erdős 180
+  retains a material original-versus-corrected-statement boundary. No current
+  Proposal remains in the Decision Inbox.
 - [`erdos-183-astra-fidelity.md`](erdos-183-astra-fidelity.md) — protocol-
-  ready human checkpoint for the verified but still-pending Astra statement-
-  fidelity Claim; acceptance, rejection, or explicit deferral remains a human
-  repository-authority action.
+  ready statement-fidelity packet preserved as campaign history. Its Proposal
+  no longer remains pending in the current Frontier.
 - [`erdos-730-external-proof-boundary.md`](erdos-730-external-proof-boundary.md)
   — completed source-equivalence, Verification, Decision, replay, and handoff
   episode.
+
+## Frontier-to-commons foundry
+
+- [`erdos-264-commons-disposition.md`](erdos-264-commons-disposition.md) — first
+  explicit extraction disposition. The exact accepted proof remains
+  source-local because its 319-line source-specific body exposes no general
+  declaration or maintained second consumer. Formal Conjectures is the native
+  owner if a later minimization pass makes the proof reviewer-ready.
 
 ## Repository boundary
 
