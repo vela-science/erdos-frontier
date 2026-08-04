@@ -263,6 +263,37 @@ values, stopping rule, and nonclaims are frozen before execution. A passing
 run may establish only that the selected 55-tile `n | 55440` family cannot
 cover; it cannot resolve the global problem or establish novelty.
 
+The retained producer and compositional checker both passed. The selected 54
+mandatory pairs form a spanning tree on all 55 tiles. Their exact fixed
+intersection mass is
+
+```text
+353861/1663200.
+```
+
+If the 55 shifted tiles covered `Z^2`, then at every point the tree edges
+induced by the covering tiles would number at most the covering multiplicity
+minus one. Integration would therefore bound that fixed tree mass by the total
+multiplicity excess `3013/18480`. Instead the tree mass exceeds the excess by
+`11813/237600 > 0`. Consequently, no choice of one affine shift for each of
+the 55 pinned `n | 55440` tiles covers `Z^2`.
+
+The exact certificate is
+`artifacts/analyses/erdos203-55440-forest-obstruction.v1.json`, root
+`sha256:da80ca8eb1aa32d17ec24a4e61670f1034432fdd7694b9b4c56e280a370ce8e0`.
+The checker output is
+`artifacts/runs/erdos203-55440-forest-obstruction-check.v1.json`, root
+`sha256:e4ca30a5975ab9823c9db66b8075ee1c50c9ca28d9aaa09ca89726484bb2122b`.
+The checker imports no producer code. It binds the separately source-first-
+checked 1,485-pair graph, then checks every chosen edge, duplicate absence,
+acyclicity, spanning connectivity, and exact rational sum.
+
+This is a bounded exclusion, not global nonexistence. The family is not a
+superset of the separately excluded `n | 10080` family, and neither result
+establishes novelty or solves the official problem. The next useful structural
+question is whether the same forest certificate extends to a substantially
+larger source-pinned family before any new constructive search is warranted.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
