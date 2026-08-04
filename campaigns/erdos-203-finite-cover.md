@@ -52,6 +52,19 @@ allowed.
 7. Replay the outcome and hand the next obligation to a different producer or
    model family.
 
+## Instrumentation iteration 1
+
+The first claim-credit-false engineering tranche froze the complete 31-tile
+`n | 5040` family, exact-one shift variables, a safe translation symmetry
+break, and counterexample-guided torus constraints. CaDiCaL 3.0.0 reached the
+registered 120-second per-call stop on the initial 1,024 sound point clauses.
+It produced neither a cover candidate nor an UNSAT result. The retained result
+root is `sha256:162fb7c9d20052ad8d87afb54b251de8555f94aa4a9ed08ceac12bbf4fce7907`.
+
+This timeout is an instrumentation null, not evidence against the 5040 family.
+Any algorithmic revision must be frozen as a separately versioned iteration
+before it observes another result.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
