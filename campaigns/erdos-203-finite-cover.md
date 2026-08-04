@@ -314,6 +314,39 @@ the spanning-tree property, and recompute the exact density and mass gap.
 A passing result can exclude only the exact 188 certificate tiles. It does not
 exclude the full pool, resolve the global problem, or establish novelty.
 
+The retained producer and source-first checker both passed. The certificate
+contains 188 distinct pinned tiles and 187 mandatory edges forming one
+spanning tree. Its exact density is recorded in the artifact (approximately
+`1.2268038470`), while its tree mass is approximately `0.2271920559`. The tree
+mass exceeds total multiplicity excess by the exact positive fraction
+
+```text
+98179276982121282003278295819262959836618532360993672608705790974113841
+─────────────────────────────────────────────────────────────────────────────
+252903248485453387397193514437500747728947464623363692256320584271520704000
+```
+
+(approximately `0.0003882088`). Therefore no choice of one affine shift for
+each of those 188 certificate tiles covers `Z^2`.
+
+The certificate is
+`artifacts/analyses/erdos203-extended-forest-obstruction.v1.json`, root
+`sha256:1626b12a3976b9064c7b52562d825437551d1b0439b30f705b5cdc5125a1d1b5`.
+The independent check is
+`artifacts/runs/erdos203-extended-forest-obstruction-check.v1.json`, root
+`sha256:eb5a817968c655e4074a866f746019cbf70158990371c313e6a7d26bb009f104`.
+The checker rederived all 188 coordinate maps by bounded subgroup enumeration,
+verified all 187 compatibility indices and exact edge masses, and checked the
+tree and aggregate fractions without importing producer code or SymPy.
+
+This is the campaign's strongest bounded exclusion. It does not exclude the
+remaining 125 pool tiles or any outside construction, and it is not a global
+solution or novelty claim. A constructive search should not return to the
+excluded family. The next discovery obligation is a structurally different
+candidate family containing tiles outside this certificate, or a proof that
+the retained full pool cannot cover using higher-order information beyond a
+single forest.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
