@@ -105,6 +105,29 @@ obstruction must state its exact family and quotient; it is not global
 nonexistence. A constructive tree must still produce the canonical certificate
 and pass the frozen independent verifier.
 
+## Exact 5040-family obstruction
+
+The preregistered direction ledger supplies the first genuine bounded
+mathematical advance from this tranche: the 31 distinct-prime tiles whose
+orders divide 5040 cannot cover `Z^2`, for any choice of shifts.
+
+Their total density is `143/140`, so a cover would have exact expected excess
+multiplicity `3/140`. The ledger finds 271 tile pairs whose compatibility index
+is one; every choice of their two shifts intersects, and their fixed total
+pair-intersection mass is `420493/1270080`. At a point covered by `r` selected
+tiles, the number of these mandatory edges is at most
+`min(r(r-1)/2, 271) <= (271/23)(r-1)`. A cover would therefore make the fixed
+pair mass at most `(271/23)(3/140) = 813/3220`, but the exact mass exceeds this
+by `2295803/29211840 > 0`.
+
+The producer analysis is retained at
+`artifacts/analyses/erdos203-5040-structural-obstruction.v1.json`, root
+`sha256:8df2765ff5420362cbe7eda7915b72aa2a6302033581f6c37fa84496dbfb67cb`.
+It still
+requires a separately scoped source-first check before any bounded Claim is
+prepared. It excludes only the frozen `n | 5040` family; it says nothing about
+larger-order tiles or the global Erdős 203 answer.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
