@@ -5,7 +5,16 @@ Erdős-specific Targets. The authoritative scientific state remains the signed
 objects, generated Target Index, and exact artifacts in this repository; these
 campaign documents explain how to work with that state without replacing it.
 
-## Current queue
+## Active producer lane
+
+- [`erdos-203-finite-cover.md`](erdos-203-finite-cover.md) — active fresh-
+  discovery campaign for the first currently offered Target,
+  `erdos:203:finite-cover`. Its write-free briefing binds the corrected
+  lattice source, retracted 99.98% episode, finite-certificate contract, and
+  independent verifier at repository root
+  `sha256:821cf0d94778f647305107943572f4916a6cf63fe5ea12506a471fabc07b7474`.
+
+## Review queue
 
 - [`erdos-146-180-astra-fidelity.md`](erdos-146-180-astra-fidelity.md) —
   completed producer matrices: Erdős 146 is assessed faithful, while Erdős 180
@@ -15,9 +24,6 @@ campaign documents explain how to work with that state without replacing it.
   ready human checkpoint for the verified but still-pending Astra statement-
   fidelity Claim; acceptance, rejection, or explicit deferral remains a human
   repository-authority action.
-- [`erdos-203-finite-cover.md`](erdos-203-finite-cover.md) — queued fresh-
-  discovery campaign for the currently offered Target
-  `erdos:203:finite-cover`.
 - [`erdos-730-external-proof-boundary.md`](erdos-730-external-proof-boundary.md)
   — completed source-equivalence, Verification, Decision, replay, and handoff
   episode.
