@@ -209,6 +209,41 @@ mandatory-edge count remains available. Producer and checker bytes, input
 root, stopping rule, expected boundaries, and the disclosure of prior
 knowledge are frozen before the retained run.
 
+The frozen run returned `no_conclusion`, but it closed that method lane
+exactly. All 55 root-excluding orientations exist and the independent checker
+reconstructed the 819-edge graph directly from the pinned prime pool, without
+importing producer code or using SymPy. For every vertex set `S` with at least
+two vertices, the certificates prove
+
+```text
+6 |E(S)| <= 91 (|S| - 1).
+```
+
+The full 55-vertex graph attains equality because `819 / 54 = 91 / 6`, so
+`91/6` is the exact strongest unweighted graph-local ratio. This improves the
+registered degree-sequence bound `551/33`, lowering the cover-compatible pair
+mass ceiling to `39169/15840`. The fixed pair mass remains only
+`94093787/204906240`; the contradiction gap is still negative at
+`-412596397/204906240`.
+
+The producer artifact is
+`artifacts/analyses/erdos203-55440-graph-local-bound.v1.json`, root
+`sha256:0518cfe270e666718c68c101abf561c9118483e48471f3bebbbcc0ab4ec9ebe0`.
+The source-first check is
+`artifacts/runs/erdos203-55440-graph-local-bound-check.v1.json`, root
+`sha256:2326b9413406577d3b5522d2db631e837a4db30bd746485b90eb03550db6faff`.
+This qualification shares the operator, machine, pinned source, Python
+runtime, and integer-arithmetic assumptions. It is not external review, a Vela
+Verification, or a bounded nonexistence Claim.
+
+Another unweighted mandatory-edge inequality cannot decide the `n | 55440`
+family. The next mathematical tranche must exploit weighted marginals,
+prime-power structure, or higher-order intersections, or freeze a constructive
+search that uses such constraints. Because the current Target output contract
+allows only a finite-cover certificate, this method-limit artifact is retained
+as claim-credit-false campaign evidence and is not forced through a Vela
+Submission.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
