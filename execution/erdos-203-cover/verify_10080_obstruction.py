@@ -25,6 +25,14 @@ def canonical_bytes(value: Any) -> bytes:
     return json.dumps(value, sort_keys=True, separators=(",", ":")).encode() + b"\n"
 
 
+def canonical_utf8_bytes(value: Any) -> bytes:
+    return (
+        json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        .encode()
+        + b"\n"
+    )
+
+
 def root(raw: bytes) -> str:
     return "sha256:" + hashlib.sha256(raw).hexdigest()
 
@@ -175,7 +183,7 @@ def verify(
 ) -> dict[str, Any]:
     preregistration_raw = (frontier / PREREGISTRATION).read_bytes()
     preregistration = json.loads(preregistration_raw)
-    if preregistration_raw != canonical_bytes(preregistration):
+    if preregistration_raw != canonical_utf8_bytes(preregistration):
         raise ValueError("preregistration is not canonical JSON")
     producer_raw = (frontier / PRODUCER).read_bytes()
     registered_script = preregistration.get("method", {}).get("script", {})

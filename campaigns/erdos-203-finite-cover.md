@@ -135,6 +135,38 @@ mechanical cross-check, but it shares the operator, machine, source, Python,
 SymPy, and arithmetic assumptions and is not a Vela Verification record or
 external mathematical review.
 
+## Exact 10080-family obstruction
+
+A separately preregistered next-family experiment extends the same bounded
+strategy to every pinned tile whose exact subgroup order divides 10080. This
+33-tile family has density `743/720` and exact excess `23/720`. Its mandatory-
+overlap graph has 307 edges with fixed pair mass
+`11477773/33868800`.
+
+The registered pointwise bound also uses the mandatory graph's full degree
+sequence: for any `r` selected tiles, their induced mandatory edges are at
+most the minimum of `C(r,2)`, the total edge count, and half the sum of the
+`r` largest degrees. The resulting maximum edge-to-excess ratio is `209/20`,
+so a cover would make the fixed pair mass at most
+`(209/20)(23/720) = 4807/14400`. The actual mass exceeds this by
+`171709/33868800 > 0`. Therefore no choice of one shift for each of the 33
+tiles covers `Z^2`.
+
+The producer artifact is
+`artifacts/analyses/erdos203-10080-overlap-obstruction.v1.json`, root
+`sha256:e1ad8e2fa75fa55c278b7e26daa61a8aef53ce12b26559d25c6a5d7125022d17`.
+An independently implemented checker imports no producer code and replaces
+SymPy discrete logarithms with direct bounded subgroup enumeration. It exactly
+reproduced all 528 compatibility checks and every registered fraction. It
+still shares the human operator, machine, pinned source, Python runtime, and
+integer-arithmetic assumptions. This is not a Vela Verification, external
+review, or accepted Decision.
+
+This stronger bounded exclusion subsumes the `n | 5040` family but still says
+nothing about tiles outside `n | 10080` or the global answer. The next valid
+structural family is `n | 55440`; it requires its own preregistration and may
+honestly return no conclusion if the overlap inequality is too weak.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
