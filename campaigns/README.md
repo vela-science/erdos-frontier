@@ -16,6 +16,10 @@ campaign documents explain how to work with that state without replacing it.
 
 ## Review queue
 
+- [`human-decision-inbox-2026-08-04.md`](human-decision-inbox-2026-08-04.md) —
+  exact six-entry human checkpoint: four protocol-ready Proposals and one
+  duplicated Erdős 1056 execution whose older wording must be resolved before
+  the corrected Proposal can become reviewable.
 - [`erdos-146-180-astra-fidelity.md`](erdos-146-180-astra-fidelity.md) —
   completed producer matrices: Erdős 146 is assessed faithful, while Erdős 180
   retains a material original-versus-corrected-statement boundary. Separate
