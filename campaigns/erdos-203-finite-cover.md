@@ -167,6 +167,30 @@ nothing about tiles outside `n | 10080` or the global answer. The next valid
 structural family is `n | 55440`; it requires its own preregistration and may
 honestly return no conclusion if the overlap inequality is too weak.
 
+## Registered 55440-family null
+
+That separate preregistered experiment has now returned `no_conclusion`. The
+55 pinned tiles whose orders divide 55440 have density `21493/18480`, hence
+the much larger excess `3013/18480`. Their mandatory-overlap graph has 819
+edges and fixed pair mass `94093787/204906240`; the registered degree-sequence
+bound gives pointwise ratio `551/33` and cover-compatible upper bound
+`1660163/609840`. The difference is
+`-463720981/204906240`, so the required strict contradiction is absent.
+
+The neutral producer artifact is
+`artifacts/analyses/erdos203-55440-overlap-obstruction.v1.json`, root
+`sha256:c4e63f2cec41e39c9c6bcbb08207a76892900d6b88c47d672aee2c63025322bd`.
+The consolidated independent checker reproduced all 1,485 compatibility
+checks and exact fractions without importing producer code or SymPy. This null
+does not suggest that the family covers, does not weaken either smaller-family
+exclusion, and does not justify a global Claim. The `n | 55440` family is not
+a superset of `n | 10080`.
+
+The next useful mathematical obligation is no longer another application of
+the same global degree-sequence inequality. It is a stronger graph-local or
+prime-power structural bound for the 55440 family, or a separately frozen
+constructive search reduced by those constraints.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the

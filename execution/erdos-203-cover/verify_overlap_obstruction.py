@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independently check the bounded n-divides-10080 overlap obstruction."""
+"""Independently check a registered bounded mandatory-overlap result."""
 
 from __future__ import annotations
 
@@ -15,10 +15,46 @@ from typing import Any
 CAMPAIGN_COMMIT = "94fde841ea6ad90437bd66a91953bfeba13dba0f"
 CAMPAIGN_TREE = "5b8a3013fbc08edb9e04086aeb4aa9f5c9a09a9a"
 POOL_ROOT = "sha256:9a8f179bf6ab509c53144ac679acd8ffe42e66588b1516b0ca3a9f45e18395b3"
-PERIOD = 10080
 SCHEMA = "erdos-frontier.erdos-203-overlap-obstruction.v1"
-PREREGISTRATION = "execution/erdos-203-cover/overlap-10080-preregistration.v1.json"
 PRODUCER = "execution/erdos-203-cover/overlap_obstruction.py"
+CASES = {
+    10080: {
+        "preregistration": "execution/erdos-203-cover/overlap-10080-preregistration.v1.json",
+        "expected": {
+            "tiles": 33,
+            "density": "743/720",
+            "density_slack": "23/720",
+            "pairs_checked": 528,
+            "edges": 307,
+            "fixed_pair_mass": "11477773/33868800",
+            "pointwise_ratio": "209/20",
+            "cover_pair_mass_upper_bound": "4807/14400",
+            "contradiction_gap": "171709/33868800",
+        },
+        "conclusion": {
+            "result": "no_cover_selected_family",
+            "scope": "No choice of one affine shift for each of these 33 tiles covers Z^2.",
+        },
+    },
+    55440: {
+        "preregistration": "execution/erdos-203-cover/overlap-55440-preregistration.v1.json",
+        "expected": {
+            "tiles": 55,
+            "density": "21493/18480",
+            "density_slack": "3013/18480",
+            "pairs_checked": 1485,
+            "edges": 819,
+            "fixed_pair_mass": "94093787/204906240",
+            "pointwise_ratio": "551/33",
+            "cover_pair_mass_upper_bound": "1660163/609840",
+            "contradiction_gap": "-463720981/204906240",
+        },
+        "conclusion": {
+            "result": "no_conclusion",
+            "scope": "The registered mandatory-overlap inequality does not decide this family.",
+        },
+    },
+}
 
 
 def canonical_bytes(value: Any) -> bytes:
@@ -87,7 +123,7 @@ def compatibility_index(left: tuple[int, int, int], right: tuple[int, int, int])
     return math.gcd(*determinants)
 
 
-def load_tiles(source: pathlib.Path) -> list[dict[str, int]]:
+def load_tiles(source: pathlib.Path, period: int) -> list[dict[str, int]]:
     if git_value(source, "HEAD") != CAMPAIGN_COMMIT:
         raise ValueError("campaign source commit drifted")
     if git_value(source, "HEAD^{tree}") != CAMPAIGN_TREE:
@@ -98,7 +134,7 @@ def load_tiles(source: pathlib.Path) -> list[dict[str, int]]:
     pool = {int(prime): int(order) for prime, order in json.loads(pool_raw).items()}
     tiles = []
     for prime, order in sorted(pool.items(), key=lambda item: (item[1], item[0])):
-        if PERIOD % order:
+        if period % order:
             continue
         primitive = primitive_root_prime(prime)
         generator = pow(primitive, (prime - 1) // order, prime)
@@ -179,9 +215,16 @@ def recompute(tiles: list[dict[str, int]]) -> dict[str, Any]:
 
 
 def verify(
-    frontier: pathlib.Path, source: pathlib.Path, artifact: pathlib.Path
+    frontier: pathlib.Path,
+    source: pathlib.Path,
+    artifact: pathlib.Path,
+    period: int,
 ) -> dict[str, Any]:
-    preregistration_raw = (frontier / PREREGISTRATION).read_bytes()
+    if period not in CASES:
+        raise ValueError(f"period {period} is not a registered checker case")
+    case = CASES[period]
+    preregistration_path = str(case["preregistration"])
+    preregistration_raw = (frontier / preregistration_path).read_bytes()
     preregistration = json.loads(preregistration_raw)
     if preregistration_raw != canonical_utf8_bytes(preregistration):
         raise ValueError("preregistration is not canonical JSON")
@@ -196,22 +239,16 @@ def verify(
     value = json.loads(raw)
     if raw != canonical_bytes(value) or value.get("schema") != SCHEMA:
         raise ValueError("obstruction artifact is not canonical or has the wrong schema")
-    actual = recompute(load_tiles(source))
+    if value.get("inputs", {}).get("period") != period:
+        raise ValueError("artifact period does not match requested checker case")
+    if value.get("inputs", {}).get("preregistration") != preregistration_path:
+        raise ValueError("artifact preregistration path does not match checker case")
+    actual = recompute(load_tiles(source, period))
     if value.get("family") != actual["family"]:
         raise ValueError("artifact family does not match independent reconstruction")
     if value.get("mandatory_overlap") != actual["mandatory_overlap"]:
         raise ValueError("artifact overlap ledger does not match independent reconstruction")
-    expected = {
-        "tiles": 33,
-        "density": "743/720",
-        "density_slack": "23/720",
-        "pairs_checked": 528,
-        "edges": 307,
-        "fixed_pair_mass": "11477773/33868800",
-        "pointwise_ratio": "209/20",
-        "cover_pair_mass_upper_bound": "4807/14400",
-        "contradiction_gap": "171709/33868800",
-    }
+    expected = case["expected"]
     summary = {
         "tiles": actual["family"]["tiles"],
         "density": actual["family"]["density"],
@@ -230,16 +267,18 @@ def verify(
     }
     if summary != expected:
         raise ValueError(f"registered exact values do not reproduce: {summary}")
-    if value.get("conclusion") != {
-        "result": "no_cover_selected_family",
-        "scope": "No choice of one affine shift for each of these 33 tiles covers Z^2.",
-    }:
+    if value.get("conclusion") != case["conclusion"]:
         raise ValueError("artifact conclusion exceeds or loses the exact bounded result")
-    if Fraction(summary["contradiction_gap"]) <= 0:
+    if (
+        case["conclusion"]["result"] == "no_cover_selected_family"
+        and Fraction(summary["contradiction_gap"]) <= 0
+    ):
         raise ValueError("registered contradiction gap is not positive")
     return {
-        "schema": "erdos-frontier.erdos-203-10080-overlap-obstruction-check.v1",
+        "schema": "erdos-frontier.erdos-203-overlap-obstruction-check.v1",
         "ok": True,
+        "period": period,
+        "result": case["conclusion"]["result"],
         "artifact_root": root(raw),
         **summary,
         "implementation_independence": {
@@ -260,6 +299,7 @@ def main() -> int:
     parser.add_argument("--frontier", required=True, type=pathlib.Path)
     parser.add_argument("--campaign-source", required=True, type=pathlib.Path)
     parser.add_argument("--artifact", required=True, type=pathlib.Path)
+    parser.add_argument("--period", required=True, type=int)
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     try:
@@ -267,10 +307,11 @@ def main() -> int:
             args.frontier.resolve(),
             args.campaign_source.resolve(),
             args.artifact.resolve(),
+            args.period,
         )
     except (OSError, ValueError, json.JSONDecodeError, subprocess.CalledProcessError) as error:
         result = {
-            "schema": "erdos-frontier.erdos-203-10080-overlap-obstruction-check.v1",
+            "schema": "erdos-frontier.erdos-203-overlap-obstruction-check.v1",
             "ok": False,
             "error": str(error),
             "accepted_state_change": "none",
