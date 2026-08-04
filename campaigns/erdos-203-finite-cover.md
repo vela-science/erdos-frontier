@@ -244,6 +244,25 @@ allows only a finite-cover certificate, this method-limit artifact is retained
 as claim-credit-false campaign evidence and is not forced through a Vela
 Submission.
 
+## Frozen weighted-forest obstruction qualification
+
+The first genuinely stronger structural certificate is now frozen at
+`execution/erdos-203-cover/forest-55440-preregistration.v1.json`. Instead of
+counting every mandatory pair equally, it selects a deterministic
+maximum-weight spanning tree, where each edge weight is that pair's exact
+fixed intersection density. At every point, the selected edges induced by the
+tiles covering that point form a forest and therefore number at most one less
+than the point's multiplicity. Integrating gives a direct comparison between
+the selected tree mass and total multiplicity excess.
+
+This is also explicitly post-exploratory. The candidate tree, mass
+`353861/1663200`, and positive gap `11813/237600` were observed before the
+retained run, so the iteration receives no Claim credit. The exact producer,
+compositional checker, independently checked mandatory-graph roots, candidate
+values, stopping rule, and nonclaims are frozen before execution. A passing
+run may establish only that the selected 55-tile `n | 55440` family cannot
+cover; it cannot resolve the global problem or establish novelty.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
