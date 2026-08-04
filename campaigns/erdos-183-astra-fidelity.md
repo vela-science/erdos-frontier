@@ -10,9 +10,9 @@ This is a review checkpoint over completed producer and verifier work. It is
 not an invitation to rerun the producer, create a replacement Claim, or widen
 the scientific assertion.
 
-## Current rooted state
+## Frozen rooted checkpoint
 
-- Frontier commit: `6793d89998533103466ccfc221521c8299c94d15`
+- Checkpoint creation commit: `6793d89998533103466ccfc221521c8299c94d15`
 - Repository root:
   `sha256:821cf0d94778f647305107943572f4916a6cf63fe5ea12506a471fabc07b7474`
 - Completed producer Target: `erdos:183:astra-fidelity`
@@ -41,6 +41,14 @@ the scientific assertion.
 The Proposal is `pending_review`. Its protocol gate is satisfied, a human
 Decision is required, rejection remains available, and the current inbox lists
 no protocol blocker. There is no Decision.
+
+Later documentation and consumer-contract commits leave that logical
+repository root and checkpoint unchanged. Complementary cross-release evidence
+now shows all twelve Astra profiles, including the exact Erdős 183 profile,
+passing Comparator, Nanoda, and Lean's default kernel at replay root
+`sha256:5a60c3be27036c65a6a37bf55dce71abcb024cfecece92b8e7dcaf1324b095d0`.
+That broader replay does not replace this packet's scoped Verification or the
+still-required human Decision.
 
 ## Bounded assertion under review
 

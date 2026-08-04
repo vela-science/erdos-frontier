@@ -1,0 +1,137 @@
+{
+  "schema": "vela.statement-fidelity-report.v1",
+  "authority_boundary": "Producer-authored source-local campaign evidence. This is not a Submission, Verification, Proposal, Decision, Event, accepted Claim, or Standing transition.",
+  "scope": {
+    "frontier_id": "vfr_0a25edabc16db143",
+    "campaign": "astra-ten-result-map",
+    "problem": 146,
+    "frontier_commit_before_report": "c82bb1546f521cf6f15f48ba80414330980de4ac",
+    "repository_root_before_report": "sha256:821cf0d94778f647305107943572f4916a6cf63fe5ea12506a471fabc07b7474"
+  },
+  "conclusion": "faithful",
+  "review_status": "producer evidence; independent scoped Verification not yet performed",
+  "claim": "At the exact retained Erdős statement snapshot and OpenAI ten-proofs commit 29362184c2b698c1b279bc85b3957ee813646c63, TwoDegenerateGraphs.DegeneracyConjectureStatement faithfully formalizes the meaningful positive-r domain of Erdős problem 146, and twoDegenerateExtremalCounterexample supplies the manuscript's connected bipartite 2-degenerate counterexample with an eventual exponent strictly above 3/2.",
+  "inputs": {
+    "retained_problem_statement": {
+      "repository": "https://github.com/vela-science/erdos-frontier",
+      "commit": "3abe642436ea7692a54e1f6008d5e8b05a8c06eb",
+      "path": "sources/statements.v1.json",
+      "sha256": "sha256:dd66cd1de41db64b13d5c2d1f0e486c722924ee2a7d679af3a93bc67f3185ac4",
+      "statement": "If H is bipartite and r-degenerate, meaning every induced subgraph has minimum degree at most r, then ex(n;H) is O(n^(2-1/r))."
+    },
+    "source_status_observation": {
+      "repository": "https://github.com/teorth/erdosproblems",
+      "commit": "8138974387d9030542daabe67faaa33eff9356f8",
+      "tree": "7ed44c260d7eb63a067cf5a16afdb645d494ef06",
+      "path": "data/problems.yaml",
+      "sha256": "sha256:a4358d57b591fc92c75981c160a11f43a561de6b5e8478d8f9629511759a9213",
+      "observed_status": "open",
+      "observed_formal_status": "unformalized",
+      "last_update": "2025-08-31"
+    },
+    "openai_release": {
+      "repository": "https://github.com/openai/ten-proofs",
+      "commit": "29362184c2b698c1b279bc85b3957ee813646c63",
+      "tree": "730bf2c6a13dbb96606024c5fd681a48633fb393",
+      "manuscript": {
+        "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+        "sha256": "sha256:64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6",
+        "reference": "Chapter 10, Section 1.2, equation (3), and Theorem 1.2, printed pages 235-236; PDF pages 237-238"
+      },
+      "comparator_profile": {
+        "path": "ComparatorChallenges/J_TwoDegenerateGraphs.json",
+        "sha256": "sha256:48e77981fb8a5f29e444f619cabb98d7c5df95d7150fb8808a17d94b05b38426"
+      },
+      "challenge": {
+        "path": "ComparatorChallenges/J_TwoDegenerateGraphs.lean",
+        "sha256": "sha256:9565db54e089c8a3d5be1d463c06429283aee131f0506306bb4bfaf64dfbdf9e",
+        "declarations": [
+          "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample",
+          "TwoDegenerateGraphs.not_erdos_146"
+        ]
+      },
+      "solution": {
+        "path": "CompactnessAndDegeneracy.lean",
+        "sha256": "sha256:ed50917cd60c231551698a276efbef4161e34c8ff9ecb069f3b9c937d030a68c"
+      },
+      "mathlib": {
+        "repository": "https://github.com/leanprover-community/mathlib4",
+        "commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+        "tree": "5ea66b811b8461daae82f14d356fed2a287d7c40",
+        "lake_manifest_sha256": "sha256:a6faf8302fe77f77f499446c27b8829b1af8dbc7847298b682556baa2a0b135e",
+        "extremal_basic_path": "Mathlib/Combinatorics/SimpleGraph/Extremal/Basic.lean",
+        "extremal_basic_sha256": "sha256:f744859f8afded0ce6969bd495708389edec20fa71dcfc7bf36241893cdd1667",
+        "copy_path": "Mathlib/Combinatorics/SimpleGraph/Copy.lean",
+        "copy_sha256": "sha256:64c5d49c1e3b579bbf4af5240e2b9845aec4df8656f1d2845033fec0ca7bf4de"
+      }
+    },
+    "reproduction_evidence": {
+      "repository": "https://github.com/vela-science/vela",
+      "commit": "4040a62896091ba6b28f2da15ebb4cf167505cfb",
+      "path": "paper/artifacts/astra-ten-result-map-2026-08-03/result.v1.json",
+      "file_sha256": "sha256:bc25a2bd0d410d890144a0f045330fd4649f2bfc7171242c38661b2d6a9ac8f3",
+      "self_root": "sha256:5a60c3be27036c65a6a37bf55dce71abcb024cfecece92b8e7dcaf1324b095d0",
+      "observed": "The exact profile passed Comparator, Nanoda, and Lean's default kernel in the retained hardened network-disabled Linux replay; both declarations depend exactly on propext, Classical.choice, and Quot.sound."
+    }
+  },
+  "matrix": {
+    "definition_mapping": {
+      "assessment": "match",
+      "evidence": [
+        "The retained statement defines r-degeneracy through every induced subgraph having a vertex of degree at most r.",
+        "IsDegenerate r G quantifies over every nonempty finite vertex set s and requires one v in s with at most r neighbors inside s, exactly the induced-subgraph formulation.",
+        "The manuscript uses every nonempty subgraph rather than induced subgraph; these formulations are equivalent because deleting edges cannot increase vertex degree.",
+        "SimpleGraph.extremalNumber uses H.Free, where Free means that H has no subgraph copy in the host, matching the retained extremal-number convention."
+      ]
+    },
+    "quantifiers": {
+      "assessment": "match_with_explicit_domain",
+      "evidence": [
+        "DegeneracyConjectureStatement quantifies over every natural r, finite order q, and simple graph H on Fin q.",
+        "Finite simple graphs are represented up to relabeling by a graph on some Fin q, and Mathlib extremalNumber is invariant under graph isomorphism.",
+        "Lean explicitly assumes 0 < r. The retained exponent 2-1/r has no meaningful r=0 interpretation, so this makes the intended positive-r domain explicit rather than narrowing a defined case.",
+        "Asymptotics.IsBigO atTop expresses the retained eventual constant-factor upper bound."
+      ]
+    },
+    "hypotheses": {
+      "assessment": "match",
+      "evidence": [
+        "The conjecture predicate assumes exactly positive r, bipartiteness, and r-degeneracy; it does not add connectedness or a degree condition.",
+        "The counterexample is stronger than required: H is connected, bipartite, and 2-degenerate.",
+        "The additional bipartition-side maximum-degree property in twoDegenerateExtremalCounterexample is extra witness information and is not used to redefine the conjecture."
+      ]
+    },
+    "conclusion": {
+      "assessment": "match",
+      "evidence": [
+        "For r=2, the conjectured exponent is 2-1/2=3/2.",
+        "The Lean witness supplies c>0 and epsilon>0 with c*n^(3/2+epsilon) at most ex(n,H) for all sufficiently large n, matching manuscript Theorem 1.2.",
+        "not_erdos_146 derives the contradiction with the conjectured Big-O bound and therefore proves the negation of the exact conjecture predicate."
+      ]
+    },
+    "source_timing_and_disagreement": {
+      "assessment": "status_lag_not_statement_mismatch",
+      "evidence": [
+        "The teorth/erdosproblems observation was last updated on 2025-08-31 and records problem 146 as open and unformalized.",
+        "The pinned OpenAI release is dated 2026-08-01 and reports a counterexample with formal declarations.",
+        "The older source status and later release retain separate provenance and time; neither silently governs the other."
+      ]
+    },
+    "unresolved_questions": {
+      "assessment": "none_within_statement_fidelity",
+      "evidence": [
+        "No definition, quantifier, hypothesis, or conclusion mismatch was found in the exact retained materials.",
+        "Independent mathematical review, novelty, citation completeness, upstream status updates, and any Vela Claim or Decision remain outside this report."
+      ]
+    }
+  },
+  "discrepancies": [],
+  "nonclaims": [
+    "This report does not independently re-prove the manuscript argument.",
+    "Comparator and kernel passage do not establish statement fidelity by themselves; the matrix is separate producer-authored semantic evidence.",
+    "This report does not establish novelty, priority, citation completeness, community acceptance, or global resolution of Erdős problem 146.",
+    "The 2025-08-31 open status observation does not refute or govern the later OpenAI release.",
+    "Producer and replay evidence share the same operator, machine lineage, source release, Lean kernel, and Mathlib dependencies and are not externally independent.",
+    "No scientific Standing changes without a separately scoped Verification, Submission, and attributed human Decision."
+  ]
+}

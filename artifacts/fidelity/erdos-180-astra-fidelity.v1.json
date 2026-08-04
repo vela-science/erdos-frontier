@@ -1,0 +1,154 @@
+{
+  "schema": "vela.statement-fidelity-report.v1",
+  "authority_boundary": "Producer-authored source-local campaign evidence. This is not a Submission, Verification, Proposal, Decision, Event, accepted Claim, source correction, or Standing transition.",
+  "scope": {
+    "frontier_id": "vfr_0a25edabc16db143",
+    "campaign": "astra-ten-result-map",
+    "problem": 180,
+    "frontier_commit_before_report": "c82bb1546f521cf6f15f48ba80414330980de4ac",
+    "repository_root_before_report": "sha256:821cf0d94778f647305107943572f4916a6cf63fe5ea12506a471fabc07b7474"
+  },
+  "conclusion": "qualified_mismatch",
+  "review_status": "producer evidence; independent scoped Verification not yet performed",
+  "claim": "The retained Erdős 180 statement asks the unrestricted finite-family compactness question, while CompactnessConjecture.CompactnessConjectureStatement formalizes the manuscript's corrected nonempty cyclic-family restriction. The predicates are not identical. However, quantitativeCompactnessCounterexample constructs a nonempty family of connected bipartite cyclic graphs that violates compactness, so the formal result supplies a counterexample to both the corrected conjecture and the broader retained question.",
+  "inputs": {
+    "retained_problem_statement": {
+      "repository": "https://github.com/vela-science/erdos-frontier",
+      "commit": "3abe642436ea7692a54e1f6008d5e8b05a8c06eb",
+      "path": "sources/statements.v1.json",
+      "sha256": "sha256:dd66cd1de41db64b13d5c2d1f0e486c722924ee2a7d679af3a93bc67f3185ac4",
+      "statement": "For every finite family F of finite graphs, does some G in F satisfy ex(n;G) = O_F(ex(n;F))?"
+    },
+    "source_status_observation": {
+      "repository": "https://github.com/teorth/erdosproblems",
+      "commit": "8138974387d9030542daabe67faaa33eff9356f8",
+      "tree": "7ed44c260d7eb63a067cf5a16afdb645d494ef06",
+      "path": "data/problems.yaml",
+      "sha256": "sha256:a4358d57b591fc92c75981c160a11f43a561de6b5e8478d8f9629511759a9213",
+      "observed_status": "open",
+      "observed_formal_status": "unformalized",
+      "last_update": "2025-08-31"
+    },
+    "openai_release": {
+      "repository": "https://github.com/openai/ten-proofs",
+      "commit": "29362184c2b698c1b279bc85b3957ee813646c63",
+      "tree": "730bf2c6a13dbb96606024c5fd681a48633fb393",
+      "manuscript": {
+        "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+        "sha256": "sha256:64b900d5fae6fe22f2ae1b8e3b712d20055194a6c81cf343a2455e5898ac7dd6",
+        "reference": "Chapter 10, Section 1.1 and Theorem 1.1, printed page 235; PDF page 237"
+      },
+      "comparator_profile": {
+        "path": "ComparatorChallenges/J_CompactnessConjecture.json",
+        "sha256": "sha256:e9a7a93409f01b4ca611ddb21a6c69821f9fde60dd385651aa62f4ebe68ba3a6"
+      },
+      "challenge": {
+        "path": "ComparatorChallenges/J_CompactnessConjecture.lean",
+        "sha256": "sha256:0640640051c055e453df5551696ebaa61f3fa9d647ba9ec38b1734d280898801",
+        "declarations": [
+          "CompactnessConjecture.quantitativeCompactnessCounterexample",
+          "CompactnessConjecture.compactnessCounterexample_bigO",
+          "CompactnessConjecture.not_erdos_180"
+        ]
+      },
+      "solution": {
+        "path": "CompactnessAndDegeneracy.lean",
+        "sha256": "sha256:ed50917cd60c231551698a276efbef4161e34c8ff9ecb069f3b9c937d030a68c"
+      },
+      "mathlib": {
+        "repository": "https://github.com/leanprover-community/mathlib4",
+        "commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+        "tree": "5ea66b811b8461daae82f14d356fed2a287d7c40",
+        "lake_manifest_sha256": "sha256:a6faf8302fe77f77f499446c27b8829b1af8dbc7847298b682556baa2a0b135e",
+        "extremal_basic_path": "Mathlib/Combinatorics/SimpleGraph/Extremal/Basic.lean",
+        "extremal_basic_sha256": "sha256:f744859f8afded0ce6969bd495708389edec20fa71dcfc7bf36241893cdd1667",
+        "copy_path": "Mathlib/Combinatorics/SimpleGraph/Copy.lean",
+        "copy_sha256": "sha256:64c5d49c1e3b579bbf4af5240e2b9845aec4df8656f1d2845033fec0ca7bf4de"
+      }
+    },
+    "reproduction_evidence": {
+      "repository": "https://github.com/vela-science/vela",
+      "commit": "4040a62896091ba6b28f2da15ebb4cf167505cfb",
+      "path": "paper/artifacts/astra-ten-result-map-2026-08-03/result.v1.json",
+      "file_sha256": "sha256:bc25a2bd0d410d890144a0f045330fd4649f2bfc7171242c38661b2d6a9ac8f3",
+      "self_root": "sha256:5a60c3be27036c65a6a37bf55dce71abcb024cfecece92b8e7dcaf1324b095d0",
+      "observed": "The exact profile passed Comparator, Nanoda, and Lean's default kernel in the retained hardened network-disabled Linux replay; all three declarations depend exactly on propext, Classical.choice, and Quot.sound."
+    }
+  },
+  "matrix": {
+    "definition_mapping": {
+      "assessment": "match",
+      "evidence": [
+        "FiniteGraph packages a finite labeled simple graph, and a Finset FiniteGraph represents a finite graph family.",
+        "FamilyFree requires a host to contain no member as a subgraph; familyExtremal takes the maximum edge count over family-free graphs on Fin n.",
+        "IsCompactFamily asks for one member and a positive constant whose single-graph extremal number is eventually at most that constant times the family extremal number, matching the retained constant-factor relation for a fixed family.",
+        "IsCyclicFamily requires every member to contain a cycle; this definition is internally faithful to the manuscript's corrected formulation but is absent from the retained statement."
+      ]
+    },
+    "quantifiers": {
+      "assessment": "qualified_mismatch",
+      "evidence": [
+        "The retained wording quantifies over every finite family and does not state the manuscript's cyclic-family restriction.",
+        "CompactnessConjectureStatement quantifies only over nonempty finite families whose every member contains a cycle.",
+        "Explicit nonemptiness resolves the otherwise impossible empty-family existential and matches the manuscript's corrected question.",
+        "The missing cyclic-family condition is substantive, not cosmetic: the manuscript says the unrestricted original has simple counterexamples before introducing the corrected conjecture."
+      ]
+    },
+    "hypotheses": {
+      "assessment": "corrected_formulation_not_literal_source",
+      "evidence": [
+        "The Lean conjecture adds the manuscript's requirement that every forbidden graph contain a cycle.",
+        "The quantitative witness is stronger still: every family member is connected and bipartite as well as cyclic.",
+        "Those stronger witness properties do not repair literal predicate identity, but they ensure the constructed family is also a valid family for the unrestricted retained question."
+      ]
+    },
+    "conclusion": {
+      "assessment": "consequence_matches_both",
+      "evidence": [
+        "The manuscript and Lean prove a family-level upper bound O(n^(4/3-1/48)) and an Omega(n^(4/3)) lower bound for every individual member.",
+        "The exponent gap implies that no member has extremal number within a constant factor of the family extremal number.",
+        "not_erdos_180 negates the corrected cyclic-family predicate.",
+        "Because the same explicit family is finite and violates compactness, quantitativeCompactnessCounterexample also provides a counterexample to the broader retained question even though no separate unrestricted predicate is declared."
+      ]
+    },
+    "source_timing_and_disagreement": {
+      "assessment": "status_lag_plus_statement_correction",
+      "evidence": [
+        "The teorth/erdosproblems observation was last updated on 2025-08-31 and records problem 180 as open and unformalized.",
+        "The pinned OpenAI release is dated 2026-08-01 and explicitly distinguishes the easy counterexamples to the original formulation from its counterexample to the corrected cyclic-family conjecture.",
+        "The retained source statement preserves the unrestricted wording and therefore does not yet expose the corrected hypothesis boundary."
+      ]
+    },
+    "unresolved_questions": {
+      "assessment": "source_correction_required_before_faithful_label",
+      "evidence": [
+        "A source-owning correction should decide whether Erdős 180's retained statement is meant to record the original unrestricted question, the corrected nonempty cyclic-family conjecture, or both as separately timed formulations.",
+        "Until that correction is explicit, the formal result should be described as refuting the corrected cyclic-family conjecture and, by its stronger witness, also answering the unrestricted question negatively.",
+        "Independent mathematical review, novelty, citation completeness, upstream status updates, and any Vela Claim or Decision remain outside this report."
+      ]
+    }
+  },
+  "discrepancies": [
+    {
+      "id": "cyclic_family_hypothesis_absent_from_retained_statement",
+      "severity": "material",
+      "retained_source": "Every finite graph family.",
+      "manuscript_and_lean": "Every nonempty finite graph family whose members all contain cycles.",
+      "effect": "The Lean conjecture predicate is a corrected restriction, not a literal formalization of the retained statement; the constructed witness nevertheless refutes both."
+    }
+  ],
+  "next_obligation": {
+    "kind": "source-correction-review",
+    "description": "Prepare a rooted source-first correction packet that preserves both formulations and their chronology, then seek separate scoped Verification before any human Decision.",
+    "automatic_authority": false
+  },
+  "nonclaims": [
+    "This report does not independently re-prove the manuscript argument.",
+    "Comparator and kernel passage do not establish statement fidelity by themselves; the matrix is separate producer-authored semantic evidence.",
+    "The label qualified_mismatch is not a rejection of the formal theorem or its consequence.",
+    "This report does not establish novelty, priority, citation completeness, community acceptance, or global resolution of Erdős problem 180.",
+    "The 2025-08-31 open status observation does not refute or govern the later OpenAI release.",
+    "Producer and replay evidence share the same operator, machine lineage, source release, Lean kernel, and Mathlib dependencies and are not externally independent.",
+    "No retained source statement or scientific Standing changes without a separately scoped correction workflow and attributed human Decision."
+  ]
+}

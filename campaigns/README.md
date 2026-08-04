@@ -7,6 +7,10 @@ campaign documents explain how to work with that state without replacing it.
 
 ## Current queue
 
+- [`erdos-146-180-astra-fidelity.md`](erdos-146-180-astra-fidelity.md) —
+  completed producer matrices: Erdős 146 is assessed faithful, while Erdős 180
+  retains a material original-versus-corrected-statement boundary. Separate
+  Verification and the possible Erdős 180 correction workflow remain open.
 - [`erdos-183-astra-fidelity.md`](erdos-183-astra-fidelity.md) — protocol-
   ready human checkpoint for the verified but still-pending Astra statement-
   fidelity Claim; acceptance, rejection, or explicit deferral remains a human
