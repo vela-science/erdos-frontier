@@ -347,6 +347,56 @@ candidate family containing tiles outside this certificate, or a proof that
 the retained full pool cannot cover using higher-order information beyond a
 single forest.
 
+## Frozen 306-tile pair/triple 2-complex obstruction
+
+The structurally distinct follow-up is frozen at
+`execution/erdos-203-cover/two-complex-preregistration.v1.json`. A maximum
+spanning tree on all 313 tiles has mass only about `0.36022` against density
+slack about `0.81088`, so no further single-forest optimization can exclude
+the full pool. The new method instead uses exact mandatory triple
+intersections.
+
+The certificate is a 2-tree: it starts with one mandatory triangle and adds
+each new tile along an existing mandatory edge, adding two edges and one
+triangle. Reverse elimination proves that every nonempty induced tile set
+`S` satisfies
+
+```text
+|E(S)| - |T(S)| <= |S| - 1.
+```
+
+For any shifted cover, integration therefore bounds fixed mandatory-pair mass
+minus fixed mandatory-triple mass by total multiplicity excess. Exploration
+identified the seed primes `47, 211, 6073` and a deterministic least-cost
+extension before the retained run, so this is a post-exploratory,
+claim-credit-false qualification.
+
+The frozen producer retained 306 of the 313 pinned tiles, 609 mandatory pairs,
+and 304 mandatory triples. Crucially, the family contains all 125 tiles that
+were outside the earlier 188-tile certificate, together with 181 of those 188
+tiles. Its exact density is approximately `1.0019196441`; pair mass is
+approximately `0.0528470565`; triple mass is approximately `0.0004896106`;
+and their difference exceeds density slack by approximately `0.0504378018`.
+Consequently, no choice of one affine shift for each of these 306 certificate
+tiles covers `Z^2`.
+
+The exact certificate is
+`artifacts/analyses/erdos203-two-complex-obstruction.v1.json`, root
+`sha256:010f860f416f2fad97ae984c78dc263901127b095eb9f1cfc496dd5f2f678f07`.
+The independent source-first check is
+`artifacts/runs/erdos203-two-complex-obstruction-check.v1.json`, root
+`sha256:3e52b9edf91c6031f1e74a508262ef76b2099a959df0a7ef0034d5bf52025b52`.
+It imports no producer code or SymPy and rederives all 306 coordinate maps,
+609 pair-surjectivity checks, 304 triple-surjectivity checks, the complete
+2-tree construction, prior-complement coverage, and every exact rational.
+
+This result omits the seven low-order tiles with primes
+`5, 7, 11, 13, 17, 19, 23`. It therefore does not exclude the full 313-tile
+pool, solve Erdős 203, establish novelty, constitute a Vela Verification, or
+change Standing. The remaining full-pool obligation is now sharply localized:
+incorporate those seven tiles without losing the alternating-mass gap, or use
+a higher-dimensional complex or a different exact obstruction.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
