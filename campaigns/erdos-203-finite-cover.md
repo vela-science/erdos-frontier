@@ -65,6 +65,18 @@ This timeout is an instrumentation null, not evidence against the 5040 family.
 Any algorithmic revision must be frozen as a separately versioned iteration
 before it observes another result.
 
+Iteration 2 replaced the proof-oriented solver with fixed-seed min-conflicts.
+After 500,000 registered moves over 2,048 exact points, its best assignment
+still left 377 points uncovered. Result root:
+`sha256:57b7d760b40f689afb5fb2d730f4c973b3eeee3f5f30dd5dbb6fd4c7f40ad88a`.
+This is another algorithmic null, not UNSAT.
+
+Iteration 3 therefore returns to the exact iteration-1 CNF at root
+`sha256:642abc07e441699324e7c79c9145a023b55a5318c7dcf238a44796e33097b961`
+with a proof-oriented 3,600-second CaDiCaL budget. SAT still requires the full
+torus scan and frozen Frontier verifier. UNSAT would exclude only the frozen
+31-tile `n | 5040` family.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
