@@ -37,6 +37,11 @@ campaign documents explain how to work with that state without replacing it.
   source-local because its 319-line source-specific body exposes no general
   declaration or maintained second consumer. Formal Conjectures is the native
   owner if a later minimization pass makes the proof reviewer-ready.
+- [`erdos-730-commons-disposition.md`](erdos-730-commons-disposition.md) — third
+  explicit extraction disposition. The accepted external-proof boundary stays
+  source-local until Formal Conjectures explicitly resolves the solved-status
+  and Lean 4.29.1/4.27.0 link boundary; a future contribution would be a small
+  pinned proof link, never a copy of the 74-module proof.
 
 ## Repository boundary
 
