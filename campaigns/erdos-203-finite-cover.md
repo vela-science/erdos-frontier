@@ -128,6 +128,13 @@ requires a separately scoped source-first check before any bounded Claim is
 prepared. It excludes only the frozen `n | 5040` family; it says nothing about
 larger-order tiles or the global Erdős 203 answer.
 
+An independently implemented source-first checker re-derived the pinned pool,
+all subgroup coordinates, all 465 pair compatibility indices, and every exact
+fraction above. It passed with zero accepted-state change. This is a strong
+mechanical cross-check, but it shares the operator, machine, source, Python,
+SymPy, and arithmetic assumptions and is not a Vela Verification record or
+external mathematical review.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
