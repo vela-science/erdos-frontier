@@ -77,6 +77,14 @@ with a proof-oriented 3,600-second CaDiCaL budget. SAT still requires the full
 torus scan and frozen Frontier verifier. UNSAT would exclude only the frozen
 31-tile `n | 5040` family.
 
+Iteration 3 reached that exact cutoff with exit code 0 and `c UNKNOWN`: neither
+SAT nor UNSAT. Its incomplete DRAT stream is rooted for incident integrity but
+is not a proof and is not retained as an 8.44 GB repository artifact. Result
+root: `sha256:310969d0604e1bb785d6f3a1eea8edd89ff48f4a2f931a1b6233d36f9760a8e5`.
+The three instrumentation iterations therefore
+establish a search-engine bottleneck only; they do not narrow the mathematical
+Target or justify a Claim.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the
