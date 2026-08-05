@@ -436,9 +436,19 @@ and repository disagreed only on escaped-Unicode versus UTF-8 canonical JSON.
 The v2 preregistration retains that failure and changes no mathematical value.
 Both iterations have `claim_credit: false`.
 
-This bounded result still omits primes `5, 7, 11, 13, 17, 23`. It is not a
-full-pool exclusion, a global solution of Erdős 203, a novelty claim, or an
-acceptance. The remaining finite-cover Target stays open and separate.
+The exact bounded Claim
+`vcl_fa4ebb9690735cc2f1e10d58943c8be6e47605f02f71c70635dc7b58446bdade`
+was accepted after passing Verification
+`vvr_0cc164fbe3d62459`. The attributed Decision is rooted at
+`sha256:23851abf2ac8e781afce3d848555a3bcebdd55ad9a72675231f57ecbb5bf88b7`,
+and replay succeeds at repository root
+`sha256:f03be3a76ce43be0c2f9ca63ff731b9a5ff5c010b768e95b46a35f3a067eed96`.
+
+Acceptance applies only to the exact 307-tile bounded exclusion. The result
+still omits primes `5, 7, 11, 13, 17, 23`; it is not a full-pool exclusion, a
+global solution of Erdős 203, a novelty claim, external review, or causal Vela
+lift. The separate `erdos:203:finite-cover` Target is again the first current
+offer.
 
 ## Success and nonclaims
 

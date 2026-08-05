@@ -20,6 +20,7 @@ from build_target_index import (  # noqa: E402
     ERDOS_264_PACKET_PATH,
     ERDOS_730_PACKET_PATH,
     erdos_203_chordal_execution_input_paths,
+    erdos_203_chordal_work_complete,
     erdos_203_execution_input_paths,
     erdos_264_correction_accepted,
     erdos_264_execution_input_paths,
@@ -656,6 +657,39 @@ def test_erdos_203_chordal_inputs_bind_both_independent_checkers() -> None:
         "execution/erdos-203-chordal/verify.py",
         "execution/erdos-203-cover/verify_two_complex_obstruction.py",
     ]
+
+
+def test_erdos_203_chordal_offer_closes_only_after_exact_verification(
+    tmp_path: pathlib.Path,
+) -> None:
+    retained = [
+        ".vela/repository.json",
+        "targets/erdos-203-chordal-obstruction.json",
+        "artifacts/analyses/erdos203-chordal-obstruction.v1.json",
+        "records/submissions/sha256/e8ccce3379acc78507e3ea0436e752e1ed0d7fe569264518bf0095e0a3bf2cfc.json",
+        "records/proposals/sha256/7e074dc04e470c74be8a27d233f233a42bfad33c1a0c94ec5ffd93ddda5c4697.json",
+        "records/verifications/sha256/0eebe7f967a3d09d62bd68489c5378375fd6b068a1604c2c25364a4680c43733.json",
+    ]
+    for relative in retained:
+        _copy(tmp_path, relative)
+    assert erdos_203_chordal_work_complete(tmp_path)
+
+    verification_path = tmp_path / retained[-1]
+    verification = _read(verification_path)
+    verification["outcome"] = "fail"
+    _write(verification_path, verification)
+    repository_path = tmp_path / ".vela/repository.json"
+    repository = _read(repository_path)
+    row = next(
+        item
+        for item in repository["verifications"]
+        if item["id"] == "vvr_0cc164fbe3d62459"
+    )
+    row["root"] = "sha256:" + hashlib.sha256(
+        verification_path.read_bytes()
+    ).hexdigest()
+    _write(repository_path, repository)
+    assert not erdos_203_chordal_work_complete(tmp_path)
 
 
 def test_erdos_264_execution_inputs_bind_native_verifier() -> None:

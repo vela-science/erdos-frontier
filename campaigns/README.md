@@ -7,14 +7,19 @@ campaign documents explain how to work with that state without replacing it.
 
 ## Active producer lane
 
-- [`erdos-203-finite-cover.md`](erdos-203-finite-cover.md) — active Erdős 203
-  campaign. Its first current offer, `erdos:203:chordal-obstruction`, qualifies
-  a bounded 307-tile exclusion; the separate fresh-discovery Target
-  `erdos:203:finite-cover` remains open afterward. Both bind the corrected
-  lattice source and preserve the retracted 99.98% episode as failed lineage.
+- [`erdos-203-finite-cover.md`](erdos-203-finite-cover.md) — active fresh-
+  discovery campaign for the first current offer, `erdos:203:finite-cover`.
+  The preceding `erdos:203:chordal-obstruction` Target is accepted as an exact
+  bounded 307-tile exclusion. Both bind the corrected lattice source and
+  preserve the retracted 99.98% episode as failed lineage.
 
 ## Completed checkpoints
 
+- The Erdős 203 chordal qualification completed producer, independent
+  Verification, attributed Decision, replay, and handoff back to the separate
+  finite-cover discovery Target. Its accepted scope excludes exactly one
+  307-tile family and preserves six omitted primes and all global-solution and
+  novelty nonclaims.
 - [`human-decision-inbox-2026-08-04.md`](human-decision-inbox-2026-08-04.md) —
   historical six-entry checkpoint. The current Decision Inbox is empty; later
   attributed Decisions and withdrawals resolved the retained entries.
