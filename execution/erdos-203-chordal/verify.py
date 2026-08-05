@@ -22,7 +22,7 @@ BASE_PATH = "artifacts/analyses/erdos203-two-complex-obstruction.v1.json"
 BASE_ROOT = "sha256:010f860f416f2fad97ae984c78dc263901127b095eb9f1cfc496dd5f2f678f07"
 BASE_VERIFIER_PATH = "execution/erdos-203-cover/verify_two_complex_obstruction.py"
 BASE_VERIFIER_ROOT = "sha256:6d29fd16d3591d5f465bbbe864e5db82a2fec929f2e8f85fc66b1545a5cd679a"
-PREREGISTRATION_PATH = "execution/erdos-203-chordal/preregistration.v1.json"
+PREREGISTRATION_PATH = "execution/erdos-203-chordal/preregistration.v2.json"
 PRODUCER_PATH = "execution/erdos-203-chordal/produce.py"
 TARGET = "erdos:203:chordal-obstruction"
 ARTIFACT_SCHEMA = "erdos-frontier.erdos-203-chordal-obstruction.v1"
@@ -32,7 +32,15 @@ NEW_PRIME = 19
 
 
 def canonical_bytes(value: Any) -> bytes:
-    return json.dumps(value, sort_keys=True, separators=(",", ":")).encode() + b"\n"
+    return (
+        json.dumps(
+            value,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode()
+        + b"\n"
+    )
 
 
 def root(raw: bytes) -> str:

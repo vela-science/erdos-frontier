@@ -648,11 +648,11 @@ def test_erdos_203_chordal_target_binds_bounded_no_credit_qualification() -> Non
 def test_erdos_203_chordal_inputs_bind_both_independent_checkers() -> None:
     assert erdos_203_chordal_execution_input_paths(ROOT) == [
         "artifacts/analyses/erdos203-two-complex-obstruction.v1.json",
-        "execution/erdos-203-chordal/preregistration.v1.json",
+        "execution/erdos-203-chordal/preregistration.v2.json",
         "execution/erdos-203-chordal/produce.py",
         "execution/erdos-203-chordal/producer-profile.v1.json",
         "execution/erdos-203-chordal/result-contract.v1.json",
-        "execution/erdos-203-chordal/verifier-capsule.v1.json",
+        "execution/erdos-203-chordal/verifier-capsule.v2.json",
         "execution/erdos-203-chordal/verify.py",
         "execution/erdos-203-cover/verify_two_complex_obstruction.py",
     ]

@@ -50,7 +50,7 @@ VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
 FIDELITY_VERIFIER_PROFILE = "erdos-183-astra-fidelity-review-v1"
 ERDOS_264_VERIFIER_PROFILE = "erdos-264-parts-i-native-lean-v1"
 ERDOS_203_VERIFIER_PROFILE = "erdos-203-exact-affine-cover-v1"
-ERDOS_203_CHORDAL_VERIFIER_PROFILE = "erdos-203-chordal-obstruction-v1"
+ERDOS_203_CHORDAL_VERIFIER_PROFILE = "erdos-203-chordal-obstruction-v2"
 ERDOS_730_VERIFIER_PROFILE = "erdos-730-external-proof-boundary-v1"
 FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
@@ -75,7 +75,7 @@ ERDOS_203_EXECUTION_CONTRACT_PATHS = {
 }
 ERDOS_203_CHORDAL_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-203-chordal/producer-profile.v1.json",
-    "verifier_capsule": "execution/erdos-203-chordal/verifier-capsule.v1.json",
+    "verifier_capsule": "execution/erdos-203-chordal/verifier-capsule.v2.json",
     "result_contract": "execution/erdos-203-chordal/result-contract.v1.json",
 }
 ERDOS_730_EXECUTION_CONTRACT_PATHS = {
@@ -90,7 +90,7 @@ ERDOS_203_ARTIFACT_PATH = "artifacts/erdos203-cover-certificate.v1.json"
 ERDOS_203_CHORDAL_PRODUCER_PATH = "execution/erdos-203-chordal/produce.py"
 ERDOS_203_CHORDAL_VERIFIER_SOURCE_PATH = "execution/erdos-203-chordal/verify.py"
 ERDOS_203_CHORDAL_PREREGISTRATION_PATH = (
-    "execution/erdos-203-chordal/preregistration.v1.json"
+    "execution/erdos-203-chordal/preregistration.v2.json"
 )
 ERDOS_203_CHORDAL_BASE_VERIFIER_PATH = (
     "execution/erdos-203-cover/verify_two_complex_obstruction.py"

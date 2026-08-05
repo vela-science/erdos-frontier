@@ -27,7 +27,15 @@ NEW_PRIME = 19
 
 
 def canonical_bytes(value: Any) -> bytes:
-    return json.dumps(value, sort_keys=True, separators=(",", ":")).encode() + b"\n"
+    return (
+        json.dumps(
+            value,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode()
+        + b"\n"
+    )
 
 
 def root(raw: bytes) -> str:
