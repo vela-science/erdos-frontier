@@ -3,8 +3,15 @@
 # so accepted state is traceable to exact snapshots rather than a floating `main`
 # (memo Gate 1 / Failure Mode 4). Regenerate the lock with:
 #     python -c "import erdos_frontier as e; e.write_sources_lock('.')"
+#
+# `source_id` is the identifier the release-scoped source registry publishes
+# this entry under, or null where the entry is frontier-derived and publishes
+# under none. It belongs here rather than in a mapping table downstream: a
+# consumer that has to be told which of its own ids matches which of our keys
+# is a consumer that can disagree with us silently.
 sources:
   erdos:
+    source_id: source:erdos-problems
     kind: problem_registry
     repo: teorth/erdosproblems
     ref: main
@@ -12,11 +19,13 @@ sources:
     url: https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml
 
   formal_conjectures:
+    source_id: source:formal-conjectures
     kind: formal_statement_registry
     repo: google-deepmind/formal-conjectures
     url: https://google-deepmind.github.io/formal-conjectures/data/conjectures.json
 
   plby:
+    source_id: source:plby-lean-proofs
     kind: proof_manifest
     repo: plby/lean-proofs
     ref: main
@@ -24,6 +33,7 @@ sources:
     url: https://raw.githubusercontent.com/plby/lean-proofs/main/data/sources.yaml
 
   jayyhk:
+    source_id: source:jayyhk-erdos-lean
     kind: proof_manifest
     repo: Jayyhk/erdos-lean
     ref: main
@@ -31,6 +41,7 @@ sources:
     url: https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml
 
   williamjblair_lean_proofs:
+    source_id: source:williamjblair-lean-proofs
     kind: proof_manifest
     repo: williamjblair/lean-proofs
     ref: main
@@ -40,11 +51,13 @@ sources:
   # Retained historical attestations used only by the source-audit join. Current
   # scientific Standing is represented by canonical Vela Claims and Decisions.
   fidelity:
+    source_id: null
     kind: frozen_snapshot
     path: sources/fidelity_cache.json
 
   # Committed frozen snapshots, versioned in-repo (no live fetch).
   wiki:
+    source_id: source:erdos-ai-contributions-wiki
     kind: frozen_snapshot
     repo: teorth/erdosproblems.wiki
     commit: c8ad4309d20120c67cb97faa86daa1443acee018
@@ -52,6 +65,7 @@ sources:
     paths: [AI-contributions-to-Erdős-problems.md]
     note: the retired AI-contributions wiki (frozen 2026-06-30)
   gpt_erdos:
+    source_id: source:gpt-erdos
     kind: frozen_snapshot
     repo: neelsomani/gpt-erdos
     commit: 21b48ae6b97279e9fe6781e3744e1cdd835e2cc1
