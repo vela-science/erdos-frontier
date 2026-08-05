@@ -20,7 +20,7 @@ COMMIT = "94fde841ea6ad90437bd66a91953bfeba13dba0f"
 TREE = "5b8a3013fbc08edb9e04086aeb4aa9f5c9a09a9a"
 POOL_ROOT = "sha256:9a8f179bf6ab509c53144ac679acd8ffe42e66588b1516b0ca3a9f45e18395b3"
 PERIOD = 5040
-FIXED = {"5": 0, "7": 0, "11": 0, "13": 1, "17": 3, "23": 0}
+FIXED = {"5": 0, "7": 0, "11": 0, "13": 1, "17": 3}
 TARGET = "erdos:203:finite-cover"
 SOURCE = {
     "repository": "https://github.com/williamjblair/lean-proofs.git",

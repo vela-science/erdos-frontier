@@ -24,7 +24,7 @@ from search_5040_cegar import (
 PERIOD = 5040
 SEED = 1
 MAX_SWEEPS = 5
-FIXED = {5: 0, 7: 0, 11: 0, 13: 1, 17: 3, 23: 0}
+FIXED = {5: 0, 7: 0, 11: 0, 13: 1, 17: 3}
 
 
 def add_tile(
