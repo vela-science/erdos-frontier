@@ -59,5 +59,5 @@ vela review list . --json
 vela review show . <proposal_id> --json
 vela show . <object_id> --json
 vela why . <claim_id> --json
-vela check . --json
+vela replay . --json
 ```
