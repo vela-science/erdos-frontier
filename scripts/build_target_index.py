@@ -627,7 +627,7 @@ def input_paths(
         *erdos_203_chordal_execution_input_paths(root),
         *erdos_264_execution_input_paths(root),
         *erdos_730_execution_input_paths(root),
-        ERDOS_730_HANDOFF_PATH.relative_to(root).as_posix(),
+        ERDOS_730_HANDOFF_PATH.relative_to(ROOT).as_posix(),
     ]
     if include_fidelity:
         paths.extend(fidelity_execution_input_paths(root))

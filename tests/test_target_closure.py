@@ -444,7 +444,12 @@ def test_pending_submission_cannot_replace_accepted_coverage(
     packet = _read(packet_path)
     latest = packet["accepted_state"]["latest_bounded_negative"]
     repository = _read(frontier / ".vela/repository.json")
-    pending = repository["pending_claims"][0]
+    pending = {
+        "claim_id": "vcl_" + "f" * 64,
+        "claim_root": "sha256:" + "e" * 64,
+    }
+    repository["pending_claims"].append(pending)
+    _write(frontier / ".vela/repository.json", repository)
     latest["claim_id"] = pending["claim_id"]
     latest["claim_root"] = pending["claim_root"]
     _write(packet_path, packet)
@@ -922,18 +927,6 @@ def test_astra_fidelity_offer_remains_closed_after_acceptance(
         "records/verifications/sha256/6da941b2e6946f59b85b31df1f2d4bdc2472d8357f654b79952c1b8c21e53428.json",
     ]:
         _copy(tmp_path, retained)
-    repository_path = tmp_path / ".vela/repository.json"
-    repository = _read(repository_path)
-    claim = next(
-        row
-        for row in repository["pending_claims"]
-        if row["claim_id"]
-        == "vcl_47d920289e237e9eedbba44ff247d676b8e739d7a07bf743d213d151162d7881"
-    )
-    repository["pending_claims"].remove(claim)
-    repository["accepted_claims"].append({**claim, "standing": "accepted"})
-    _write(repository_path, repository)
-
     assert fidelity_work_complete(tmp_path)
 
 
@@ -954,6 +947,12 @@ def test_astra_fidelity_offer_reopens_after_nonaccepted_terminal_standing(
     repository["pending_claims"] = [
         row
         for row in repository["pending_claims"]
+        if row["claim_id"]
+        != "vcl_47d920289e237e9eedbba44ff247d676b8e739d7a07bf743d213d151162d7881"
+    ]
+    repository["accepted_claims"] = [
+        row
+        for row in repository["accepted_claims"]
         if row["claim_id"]
         != "vcl_47d920289e237e9eedbba44ff247d676b8e739d7a07bf743d213d151162d7881"
     ]
@@ -999,6 +998,7 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "targets/erdos-203-chordal-obstruction.json",
         "targets/erdos-264-parts-i-proof-repair.json",
         "targets/erdos-730-external-proof-boundary.json",
+        "execution/erdos-730-proof-boundary/post-decision-handoff.v1.json",
         *execution_input_paths(ROOT),
         *erdos_203_chordal_execution_input_paths(ROOT),
         *erdos_203_execution_input_paths(ROOT),
