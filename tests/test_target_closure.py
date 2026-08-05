@@ -14,10 +14,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_target_closure import TargetClosureError, validate  # noqa: E402
 from build_target_index import (  # noqa: E402
+    ERDOS_203_CHORDAL_PACKET_PATH,
     ERDOS_203_PACKET_PATH,
     ERDOS_264_CORRECTION_CLAIM,
     ERDOS_264_PACKET_PATH,
     ERDOS_730_PACKET_PATH,
+    erdos_203_chordal_execution_input_paths,
     erdos_203_execution_input_paths,
     erdos_264_correction_accepted,
     erdos_264_execution_input_paths,
@@ -29,6 +31,7 @@ from build_target_index import (  # noqa: E402
     fidelity_execution_input_paths,
     git_source_commit,
     target_from_validation,
+    validate_erdos_203_chordal_packet,
     validate_erdos_203_packet,
     validate_erdos_264_packet,
     validate_erdos_730_packet,
@@ -617,6 +620,39 @@ def test_erdos_203_execution_inputs_bind_dependency_free_verifier() -> None:
     )
 
 
+def test_erdos_203_chordal_target_binds_bounded_no_credit_qualification() -> None:
+    validate_erdos_203_chordal_packet(ROOT)
+    packet = _read(ERDOS_203_CHORDAL_PACKET_PATH)
+    assert packet["authority"] == "non_authoritative"
+    preregistration = _read(ROOT / packet["preregistration"]["path"])
+    assert preregistration["claim_credit"] is False
+    assert packet["base_evidence"]["accepted_state_change"] == "none"
+    assert packet["target"] == {
+        "id": "erdos:203:chordal-obstruction",
+        "objective": (
+            "Independently qualify the exact 307-tile chordal-complex "
+            "obstruction obtained by adjoining tile 19 over the mandatory "
+            "triangle 31, 47, 71."
+        ),
+        "problem": 203,
+        "state": "open",
+    }
+    assert "full solution" in packet["nonclaims"][0]
+
+
+def test_erdos_203_chordal_inputs_bind_both_independent_checkers() -> None:
+    assert erdos_203_chordal_execution_input_paths(ROOT) == [
+        "artifacts/analyses/erdos203-two-complex-obstruction.v1.json",
+        "execution/erdos-203-chordal/preregistration.v1.json",
+        "execution/erdos-203-chordal/produce.py",
+        "execution/erdos-203-chordal/producer-profile.v1.json",
+        "execution/erdos-203-chordal/result-contract.v1.json",
+        "execution/erdos-203-chordal/verifier-capsule.v1.json",
+        "execution/erdos-203-chordal/verify.py",
+        "execution/erdos-203-cover/verify_two_complex_obstruction.py",
+    ]
+
+
 def test_erdos_264_execution_inputs_bind_native_verifier() -> None:
     packet = _read(ERDOS_264_PACKET_PATH)
     assert packet["target"]["state"] == "available_after_accepted_correction"
@@ -960,9 +996,11 @@ def test_generated_index_commit_does_not_rebind_source(tmp_path: pathlib.Path) -
         "targets/erdos-1056.json",
         "targets/erdos-183-astra-fidelity.json",
         "targets/erdos-203-finite-cover.json",
+        "targets/erdos-203-chordal-obstruction.json",
         "targets/erdos-264-parts-i-proof-repair.json",
         "targets/erdos-730-external-proof-boundary.json",
         *execution_input_paths(ROOT),
+        *erdos_203_chordal_execution_input_paths(ROOT),
         *erdos_203_execution_input_paths(ROOT),
         *erdos_264_execution_input_paths(ROOT),
         *erdos_730_execution_input_paths(ROOT),

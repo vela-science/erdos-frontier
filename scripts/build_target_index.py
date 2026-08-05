@@ -30,6 +30,9 @@ PACKET_PATH = ROOT / "targets" / "erdos-1056.json"
 FIDELITY_PACKET_PATH = ROOT / "targets" / "erdos-183-astra-fidelity.json"
 ERDOS_264_PACKET_PATH = ROOT / "targets" / "erdos-264-parts-i-proof-repair.json"
 ERDOS_203_PACKET_PATH = ROOT / "targets" / "erdos-203-finite-cover.json"
+ERDOS_203_CHORDAL_PACKET_PATH = (
+    ROOT / "targets" / "erdos-203-chordal-obstruction.json"
+)
 ERDOS_730_PACKET_PATH = ROOT / "targets" / "erdos-730-external-proof-boundary.json"
 ERDOS_730_HANDOFF_PATH = (
     ROOT
@@ -41,11 +44,13 @@ TARGET_ID = "erdos:1056"
 FIDELITY_TARGET_ID = "erdos:183:astra-fidelity"
 ERDOS_264_TARGET_ID = "erdos:264:parts-i-proof-repair"
 ERDOS_203_TARGET_ID = "erdos:203:finite-cover"
+ERDOS_203_CHORDAL_TARGET_ID = "erdos:203:chordal-obstruction"
 ERDOS_730_TARGET_ID = "erdos:730:external-proof-boundary"
 VERIFIER_PROFILE = "erdos-1056-k15-bounded-replay-v1"
 FIDELITY_VERIFIER_PROFILE = "erdos-183-astra-fidelity-review-v1"
 ERDOS_264_VERIFIER_PROFILE = "erdos-264-parts-i-native-lean-v1"
 ERDOS_203_VERIFIER_PROFILE = "erdos-203-exact-affine-cover-v1"
+ERDOS_203_CHORDAL_VERIFIER_PROFILE = "erdos-203-chordal-obstruction-v1"
 ERDOS_730_VERIFIER_PROFILE = "erdos-730-external-proof-boundary-v1"
 FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-183-astra-fidelity/producer-profile.v1.json",
@@ -68,6 +73,11 @@ ERDOS_203_EXECUTION_CONTRACT_PATHS = {
     "verifier_capsule": "execution/erdos-203-cover/verifier-capsule.v1.json",
     "result_contract": "execution/erdos-203-cover/result-contract.v1.json",
 }
+ERDOS_203_CHORDAL_EXECUTION_CONTRACT_PATHS = {
+    "producer_profile": "execution/erdos-203-chordal/producer-profile.v1.json",
+    "verifier_capsule": "execution/erdos-203-chordal/verifier-capsule.v1.json",
+    "result_contract": "execution/erdos-203-chordal/result-contract.v1.json",
+}
 ERDOS_730_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-730-proof-boundary/producer-profile.v1.json",
     "verifier_capsule": "execution/erdos-730-proof-boundary/verifier-capsule.v1.json",
@@ -77,6 +87,20 @@ ERDOS_264_VERIFIER_SOURCE_PATH = "execution/erdos-264-proof-repair/verify.py"
 ERDOS_264_ARTIFACT_PATH = "artifacts/erdos264-parts-i-proof-repair/264.lean"
 ERDOS_203_VERIFIER_SOURCE_PATH = "execution/erdos-203-cover/verify.py"
 ERDOS_203_ARTIFACT_PATH = "artifacts/erdos203-cover-certificate.v1.json"
+ERDOS_203_CHORDAL_PRODUCER_PATH = "execution/erdos-203-chordal/produce.py"
+ERDOS_203_CHORDAL_VERIFIER_SOURCE_PATH = "execution/erdos-203-chordal/verify.py"
+ERDOS_203_CHORDAL_PREREGISTRATION_PATH = (
+    "execution/erdos-203-chordal/preregistration.v1.json"
+)
+ERDOS_203_CHORDAL_BASE_VERIFIER_PATH = (
+    "execution/erdos-203-cover/verify_two_complex_obstruction.py"
+)
+ERDOS_203_CHORDAL_BASE_ARTIFACT_PATH = (
+    "artifacts/analyses/erdos203-two-complex-obstruction.v1.json"
+)
+ERDOS_203_CHORDAL_ARTIFACT_PATH = (
+    "artifacts/analyses/erdos203-chordal-obstruction.v1.json"
+)
 ERDOS_730_VERIFIER_SOURCE_PATH = "execution/erdos-730-proof-boundary/verify.py"
 ERDOS_730_ARTIFACT_PATH = "artifacts/fidelity/erdos-730-proof-boundary.v1.json"
 ERDOS_730_ACCEPTED_CLAIM = {
@@ -187,6 +211,33 @@ ERDOS_203_TARGET_BASE = {
     "packet": {
         "path": "targets/erdos-203-finite-cover.json",
         "schema": "erdos-frontier.finite-cover-work.v1",
+    },
+}
+ERDOS_203_CHORDAL_TARGET_BASE = {
+    "id": ERDOS_203_CHORDAL_TARGET_ID,
+    "title": "Qualify the Erdős 203 chordal obstruction",
+    "presence": "open",
+    "rank": 1,
+    "labels": [
+        "bounded-obstruction",
+        "covering-systems",
+        "erdos",
+        "machine-checkable",
+        "post-exploratory",
+    ],
+    "why": (
+        "The exact rooted 306-tile obstruction admits a one-tile chordal "
+        "extension: tile 19 attaches over the mandatory triangle 31, 47, 71 "
+        "and leaves a positive exact alternating-mass gap."
+    ),
+    "objective": (
+        "Freeze and independently verify the exact 307-tile bounded exclusion, "
+        "including the full base replay, tetrahedral intersection indices, "
+        "omitted-prime boundary, and explicit nonclaims."
+    ),
+    "packet": {
+        "path": "targets/erdos-203-chordal-obstruction.json",
+        "schema": "erdos-frontier.chordal-obstruction-work.v1",
     },
 }
 ERDOS_730_TARGET_BASE = {
@@ -421,6 +472,103 @@ def erdos_203_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     return sorted({*paths, ERDOS_203_VERIFIER_SOURCE_PATH})
 
 
+def erdos_203_chordal_execution_input_paths(
+    root: pathlib.Path = ROOT,
+) -> list[str]:
+    packet_path = root / ERDOS_203_CHORDAL_PACKET_PATH.relative_to(ROOT)
+    packet = json.loads(packet_path.read_text())
+    if packet_path.read_bytes() != canonical_bytes(packet) + b"\n":
+        raise ValueError("Erdős 203 chordal packet must be canonical JSON")
+    contracts = packet.get("execution_contracts")
+    if not isinstance(contracts, dict) or set(contracts) != set(
+        ERDOS_203_CHORDAL_EXECUTION_CONTRACT_PATHS
+    ):
+        raise ValueError("Erdős 203 chordal execution contract set differs")
+    paths = []
+    values = {}
+    for name, expected_path in ERDOS_203_CHORDAL_EXECUTION_CONTRACT_PATHS.items():
+        path = rooted_file(root, contracts.get(name), f"Erdős 203 chordal {name}")
+        if path != expected_path:
+            raise ValueError(f"Erdős 203 chordal {name} path differs")
+        contract_path = root / path
+        value = json.loads(contract_path.read_text())
+        if contract_path.read_bytes() != canonical_bytes(value) + b"\n":
+            raise ValueError(f"Erdős 203 chordal {name} must be canonical JSON")
+        if (
+            value.get("authority") != "non_authoritative"
+            or value.get("target") != ERDOS_203_CHORDAL_TARGET_ID
+        ):
+            raise ValueError(
+                f"Erdős 203 chordal {name} crosses its Target boundary"
+            )
+        paths.append(path)
+        values[name] = value
+
+    verifier_source = root / ERDOS_203_CHORDAL_VERIFIER_SOURCE_PATH
+    verifier_bytes = verifier_source.read_bytes()
+    verifier = values["verifier_capsule"]
+    if verifier.get("implementation") != {
+        "path": ERDOS_203_CHORDAL_VERIFIER_SOURCE_PATH,
+        "sha256": sha256_root(verifier_bytes),
+        "size": len(verifier_bytes),
+    }:
+        raise ValueError("Erdős 203 chordal verifier implementation root differs")
+
+    preregistration = rooted_file(
+        root,
+        packet.get("preregistration"),
+        "Erdős 203 chordal preregistration",
+    )
+    if preregistration != ERDOS_203_CHORDAL_PREREGISTRATION_PATH:
+        raise ValueError("Erdős 203 chordal preregistration path differs")
+    preregistration_value = json.loads((root / preregistration).read_text())
+    if (
+        preregistration_value.get("target") != ERDOS_203_CHORDAL_TARGET_ID
+        or preregistration_value.get("claim_credit") is not False
+    ):
+        raise ValueError("Erdős 203 chordal preregistration boundary differs")
+
+    producer_bytes = (root / ERDOS_203_CHORDAL_PRODUCER_PATH).read_bytes()
+    if (preregistration_value.get("method") or {}).get("producer") != {
+        "path": ERDOS_203_CHORDAL_PRODUCER_PATH,
+        "sha256": sha256_root(producer_bytes),
+        "size": len(producer_bytes),
+    }:
+        raise ValueError("Erdős 203 chordal producer root differs")
+    if (preregistration_value.get("method") or {}).get("checker") != {
+        "path": ERDOS_203_CHORDAL_VERIFIER_SOURCE_PATH,
+        "sha256": sha256_root(verifier_bytes),
+        "size": len(verifier_bytes),
+    }:
+        raise ValueError("Erdős 203 chordal checker root differs")
+
+    base_evidence = packet.get("base_evidence") or {}
+    base_verifier = rooted_file(
+        root,
+        base_evidence.get("checker"),
+        "Erdős 203 chordal base verifier",
+    )
+    base_artifact = rooted_file(
+        root,
+        base_evidence.get("artifact"),
+        "Erdős 203 chordal base artifact",
+    )
+    if base_verifier != ERDOS_203_CHORDAL_BASE_VERIFIER_PATH:
+        raise ValueError("Erdős 203 chordal base verifier path differs")
+    if base_artifact != ERDOS_203_CHORDAL_BASE_ARTIFACT_PATH:
+        raise ValueError("Erdős 203 chordal base artifact path differs")
+    return sorted(
+        {
+            *paths,
+            preregistration,
+            ERDOS_203_CHORDAL_PRODUCER_PATH,
+            ERDOS_203_CHORDAL_VERIFIER_SOURCE_PATH,
+            base_verifier,
+            base_artifact,
+        }
+    )
+
+
 def erdos_730_execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     packet_path = root / ERDOS_730_PACKET_PATH.relative_to(ROOT)
     packet = json.loads(packet_path.read_text())
@@ -476,6 +624,7 @@ def input_paths(
         ),
         *execution_input_paths(root),
         *erdos_203_execution_input_paths(root),
+        *erdos_203_chordal_execution_input_paths(root),
         *erdos_264_execution_input_paths(root),
         *erdos_730_execution_input_paths(root),
         ERDOS_730_HANDOFF_PATH.relative_to(root).as_posix(),
@@ -494,6 +643,7 @@ def git_source_commit(
     paths = paths or input_paths(root, include_fidelity=include_fidelity)
     packets = [PACKET_PATH.relative_to(ROOT).as_posix()]
     packets.append(ERDOS_203_PACKET_PATH.relative_to(ROOT).as_posix())
+    packets.append(ERDOS_203_CHORDAL_PACKET_PATH.relative_to(ROOT).as_posix())
     packets.append(ERDOS_264_PACKET_PATH.relative_to(ROOT).as_posix())
     packets.append(ERDOS_730_PACKET_PATH.relative_to(ROOT).as_posix())
     if include_fidelity:
@@ -864,6 +1014,89 @@ def validate_erdos_203_packet(root: pathlib.Path = ROOT) -> None:
     erdos_203_execution_input_paths(root)
 
 
+def validate_erdos_203_chordal_packet(root: pathlib.Path = ROOT) -> None:
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    packet = json.loads(
+        (root / ERDOS_203_CHORDAL_PACKET_PATH.relative_to(ROOT)).read_text()
+    )
+    target = packet.get("target") or {}
+    formal_statement = packet.get("formal_statement") or {}
+    source = packet.get("source") or {}
+    problem_claim = packet.get("problem_claim") or {}
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+        if row.get("standing") == "accepted"
+    }
+    if (
+        packet.get("schema") != ERDOS_203_CHORDAL_TARGET_BASE["packet"]["schema"]
+        or packet.get("frontier_id") != repository.get("frontier_id")
+        or packet.get("authority") != "non_authoritative"
+        or "repository" in packet
+        or target.get("id") != ERDOS_203_CHORDAL_TARGET_ID
+        or target.get("problem") != 203
+        or target.get("state") != "open"
+        or packet.get("verifier_profile") != ERDOS_203_CHORDAL_VERIFIER_PROFILE
+        or packet.get("allowed_outputs")
+        != [
+            {
+                "kind": "chordal-complex-obstruction",
+                "media_type": "application/json",
+                "path": ERDOS_203_CHORDAL_ARTIFACT_PATH,
+                "schema": "erdos-frontier.erdos-203-chordal-obstruction.v1",
+            }
+        ]
+    ):
+        raise ValueError(
+            "Erdős 203 chordal packet crosses its Target or authority boundary"
+        )
+    if formal_statement != {
+        "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+        "commit": "50ee83fa7dc31c99c03c83f04be90b7fea37d314",
+        "tree": "af55637ba163e4381b00cd0fca0f59158c6998f3",
+        "path": "FormalConjectures/ErdosProblems/203.lean",
+        "blob_sha1": "2bc9f5fb212533aeb94c2328dbb5b53987a9f9ec",
+        "sha256": "sha256:dfd0eb1bf073a27ad74a398acb7c2986b73be9cf72e6dc6ed9fc4618c6538cfb",
+        "declaration": "Erdos203.erdos_203",
+        "status": "merged_upstream",
+    }:
+        raise ValueError(
+            "Erdős 203 chordal packet does not bind the merged formal statement"
+        )
+    if (
+        problem_claim
+        != {
+            "claim_id": "vcl_8131cdf07c70fe688bf18bc6ca274d6bff43eaeed116430351685e925bf4a796",
+            "claim_root": "sha256:998616dbbf3a0f704bbab20504a15fe1e4ab92fe60524ab6ad8798eab3435e06",
+        }
+        or accepted.get(problem_claim.get("claim_id"))
+        != problem_claim.get("claim_root")
+    ):
+        raise ValueError(
+            "Erdős 203 chordal packet does not bind its accepted problem Claim"
+        )
+    if source != {
+        "repository": "https://github.com/williamjblair/lean-proofs.git",
+        "commit": "94fde841ea6ad90437bd66a91953bfeba13dba0f",
+        "tree": "5b8a3013fbc08edb9e04086aeb4aa9f5c9a09a9a",
+        "pool_root": "sha256:9a8f179bf6ab509c53144ac679acd8ffe42e66588b1516b0ca3a9f45e18395b3",
+    }:
+        raise ValueError("Erdős 203 chordal packet source identity differs")
+    base = packet.get("base_evidence") or {}
+    if (
+        base.get("accepted_state_change") != "none"
+        or base.get("result")
+        != "The exact rooted 306-tile mandatory pair/triple 2-tree has a positive contradiction gap and excludes that bounded family."
+    ):
+        raise ValueError("Erdős 203 chordal base-evidence boundary differs")
+    requirement = packet.get("verification_requirement")
+    if not isinstance(requirement, str) or not requirement:
+        raise ValueError(
+            "Erdős 203 chordal packet lacks an exact verification requirement"
+        )
+    erdos_203_chordal_execution_input_paths(root)
+
+
 def validate_erdos_730_packet(root: pathlib.Path = ROOT) -> None:
     repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
     packet = json.loads((root / ERDOS_730_PACKET_PATH.relative_to(ROOT)).read_text())
@@ -1180,6 +1413,100 @@ def erdos_264_target_available(root: pathlib.Path = ROOT) -> bool:
     )
 
 
+def erdos_203_chordal_work_complete(root: pathlib.Path = ROOT) -> bool:
+    """Close the bounded qualification offer only after exact Verification."""
+
+    repository = json.loads((root / REPOSITORY_PATH.relative_to(ROOT)).read_text())
+    packet_path = root / ERDOS_203_CHORDAL_PACKET_PATH.relative_to(ROOT)
+    packet = json.loads(packet_path.read_text())
+    artifact_path = root / ERDOS_203_CHORDAL_ARTIFACT_PATH
+    if not artifact_path.is_file() or artifact_path.is_symlink():
+        return False
+    artifact_root = sha256_root(artifact_path.read_bytes())
+    artifact_id = artifact_root.removeprefix("sha256:")
+    contracts = packet.get("execution_contracts") or {}
+    expected_binding = {
+        "schema": "vela.execution-binding.v1",
+        "packet_root": sha256_root(packet_path.read_bytes()),
+        "profile_root": (contracts.get("producer_profile") or {}).get("sha256"),
+        "verifier_capsule_root": (contracts.get("verifier_capsule") or {}).get(
+            "sha256"
+        ),
+        "result_contract_root": (contracts.get("result_contract") or {}).get(
+            "sha256"
+        ),
+    }
+    pending = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("pending_claims", [])
+    }
+    accepted = {
+        row.get("claim_id"): row.get("claim_root")
+        for row in repository.get("accepted_claims", [])
+    }
+    for submission_row, submission in current_records(repository, "submissions", root):
+        requirements = submission.get("verification_requirements")
+        if (
+            submission.get("schema") != "vela.submission.v1"
+            or submission.get("execution_binding") != expected_binding
+            or submission.get("artifacts")
+            != [
+                {
+                    "kind": "chordal-complex-obstruction",
+                    "path": ERDOS_203_CHORDAL_ARTIFACT_PATH,
+                    "digest": artifact_root,
+                }
+            ]
+            or not isinstance(requirements, list)
+            or len(requirements) != 1
+            or not isinstance(requirements[0], str)
+            or not requirements[0]
+        ):
+            continue
+        for proposal_row, proposal in current_records(repository, "proposals", root):
+            package = proposal.get("producer_package") or {}
+            subject = proposal.get("subject") or {}
+            claim_id = subject.get("id")
+            claim_root = subject.get("root")
+            if (
+                proposal.get("schema") != "vela.proposal.v1"
+                or package.get("id") != submission.get("submission_id")
+                or package.get("root") != submission_row.get("root")
+                or package.get("path") != submission_row.get("path")
+                or (
+                    pending.get(claim_id) != claim_root
+                    and accepted.get(claim_id) != claim_root
+                )
+            ):
+                continue
+            for _, verification in current_records(repository, "verifications", root):
+                subject = verification.get("subject") or {}
+                method = verification.get("method") or {}
+                scope = verification.get("scope") or {}
+                if (
+                    verification.get("schema") == "vela.verification-record.v1"
+                    and verification.get("outcome") == "pass"
+                    and subject.get("claim_id") == claim_id
+                    and subject.get("proposal_id") == proposal_row.get("id")
+                    and subject.get("submission_id")
+                    == submission.get("submission_id")
+                    and subject.get("submission_root") == submission_row.get("root")
+                    and set(subject.get("artifact_ids", [])) == {artifact_id}
+                    and method.get("profile")
+                    == ERDOS_203_CHORDAL_VERIFIER_PROFILE
+                    and method.get("implementation")
+                    == ERDOS_203_CHORDAL_EXECUTION_CONTRACT_PATHS[
+                        "verifier_capsule"
+                    ]
+                    and method.get("environment_root")
+                    == expected_binding["verifier_capsule_root"]
+                    and isinstance(scope.get("property"), str)
+                    and bool(scope["property"])
+                ):
+                    return True
+    return False
+
+
 def erdos_1056_work_complete(root: pathlib.Path = ROOT) -> bool:
     """Return whether the exact live range already has passing evidence.
 
@@ -1448,6 +1775,7 @@ def fidelity_work_complete(root: pathlib.Path = ROOT) -> bool:
 
 def index() -> dict[str, Any]:
     validate_erdos_203_packet()
+    validate_erdos_203_chordal_packet()
     validate_erdos_264_packet()
     validate_erdos_730_packet()
     validate_erdos_730_handoff()
@@ -1471,6 +1799,10 @@ def index() -> dict[str, Any]:
     inputs["input_root"] = sha256_root(canonical_bytes(inputs))
     repository = json.loads(REPOSITORY_PATH.read_text())
     targets_with_packets = []
+    if not erdos_203_chordal_work_complete():
+        targets_with_packets.append(
+            (ERDOS_203_CHORDAL_TARGET_BASE.copy(), ERDOS_203_CHORDAL_PACKET_PATH)
+        )
     if erdos_264_target_available():
         targets_with_packets.append(
             (ERDOS_264_TARGET_BASE.copy(), ERDOS_264_PACKET_PATH)
