@@ -397,6 +397,49 @@ change Standing. The remaining full-pool obligation is now sharply localized:
 incorporate those seven tiles without losing the alternating-mass gap, or use
 a higher-dimensional complex or a different exact obstruction.
 
+## Qualified 307-tile chordal-complex obstruction
+
+The next bounded step is now independently checked under the separate Target
+`erdos:203:chordal-obstruction`. Pinned tile `19`, with order `18` and derived
+coordinates `(1, 13)`, attaches over the existing mandatory triangle on primes
+`31, 47, 71`, whose orders are `30, 23, 35`. All six pair indices, all four
+triple indices, and the quadruple index are exactly one. The resulting complex
+has 307 tiles, 612 edges, 307 triangles, and one tetrahedron.
+
+Reverse-eliminating tile `19` contributes
+`k - choose(k, 2) + choose(k, 3)`, which is zero when no parent is selected and
+one when one, two, or all three parents are selected. The verified base 2-tree
+bound therefore lifts to
+
+```text
+|E(S)| - |T(S)| + |Q(S)| <= |S| - 1.
+```
+
+Exact mandatory pair mass minus triple mass plus quadruple mass exceeds density
+slack by
+`14161249934429854100379147809709463755790196575358230170351495039913793205280060213951263934919191733755516834376464997652026340821/26384769220628766312960719743153992954560857620018027630147238273081805874568194250013073268573513836616158573665304734945716303920000`,
+approximately `0.0005367206290877076`. Consequently, no choice of one affine
+shift for each of these 307 pinned tiles covers `Z^2`.
+
+The canonical artifact is
+`artifacts/analyses/erdos203-chordal-obstruction.v1.json`, root
+`sha256:1e0821128d1dcc7bfc5565aba38889e0349de6d20d75d5a74a2cf65232b08cd1`.
+The independent check is
+`artifacts/runs/erdos203-chordal-obstruction-check.v1.json`, root
+`sha256:803945ab4b06a26252bee532d8f16a3eeba27c803042ac698050b75e0fb7e2f8`.
+It replays the full rooted 306-tile checker, imports no extension producer code
+or SymPy, independently enumerates subgroup coordinates, and recomputes every
+lattice-index minor and exact rational.
+
+The first qualification iteration produced no valid check because its checker
+and repository disagreed only on escaped-Unicode versus UTF-8 canonical JSON.
+The v2 preregistration retains that failure and changes no mathematical value.
+Both iterations have `claim_credit: false`.
+
+This bounded result still omits primes `5, 7, 11, 13, 17, 23`. It is not a
+full-pool exclusion, a global solution of Erdős 203, a novelty claim, or an
+acceptance. The remaining finite-cover Target stays open and separate.
+
 ## Success and nonclaims
 
 Scientific success is a verifier-replayable finite cover that implies the

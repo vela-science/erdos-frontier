@@ -7,12 +7,11 @@ campaign documents explain how to work with that state without replacing it.
 
 ## Active producer lane
 
-- [`erdos-203-finite-cover.md`](erdos-203-finite-cover.md) — active fresh-
-  discovery campaign for the first currently offered Target,
-  `erdos:203:finite-cover`. Its write-free briefing binds the corrected
-  lattice source, retracted 99.98% episode, finite-certificate contract, and
-  independent verifier at repository root
-  `sha256:92111121fed83d122ea82246872dcb390dee0f3f58a99b53a93c371a432a82a1`.
+- [`erdos-203-finite-cover.md`](erdos-203-finite-cover.md) — active Erdős 203
+  campaign. Its first current offer, `erdos:203:chordal-obstruction`, qualifies
+  a bounded 307-tile exclusion; the separate fresh-discovery Target
+  `erdos:203:finite-cover` remains open afterward. Both bind the corrected
+  lattice source and preserve the retracted 99.98% episode as failed lineage.
 
 ## Completed checkpoints
 
