@@ -48,6 +48,18 @@ sources:
     path: proofs.yaml
     url: https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml
 
+  # Cited, not acquired. The fidelity artifacts and the astra-fidelity targets
+  # reference the OpenAI comparator corpus; its bytes are acquired by the
+  # formal-conjectures frontier, which declares it with an exact commit. This
+  # entry exists so that a reader asking what this frontier reconciles gets the
+  # same answer as the registry, which has always listed erdos in its coverage.
+  openai_ten_proofs:
+    source_id: source:openai-ten-proofs
+    kind: formal_library
+    repo: openai/ten-proofs
+    url: https://github.com/openai/ten-proofs
+    acquired_by: formal-conjectures
+
   # Retained historical attestations used only by the source-audit join. Current
   # scientific Standing is represented by canonical Vela Claims and Decisions.
   fidelity:
