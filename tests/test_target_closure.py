@@ -22,6 +22,7 @@ from build_target_index import (  # noqa: E402
     ERDOS_203_PACKET_PATH,
     ERDOS_264_CORRECTION_CLAIM,
     ERDOS_264_PACKET_PATH,
+    ERDOS_730_ARTIFACT_PATH,
     ERDOS_730_PACKET_PATH,
     erdos_203_chordal_execution_input_paths,
     erdos_203_chordal_work_complete,
@@ -923,19 +924,28 @@ def test_erdos_730_target_binds_complete_external_solution_and_transfer_gap() ->
     assert packet["external_proof"]["status"] == (
         "complete_kernel_checked_solution_in_source_repository"
     )
-    assert packet["external_proof"]["snapshot_commit"] == (
-        "4f915a323443bfb1709a6805a013812016dca88a"
+    # The commits, the terminal root, the module count and the toolchain used to
+    # be spelled out again here, a third copy of numbers the packet and the
+    # validator already carry. Copies cannot disagree usefully: the question a
+    # reader has is whether the Target binds the same two sources the retained
+    # boundary report was written against. So this compares them.
+    report = _read(ROOT / ERDOS_730_ARTIFACT_PATH)
+    for name, bound in (
+        ("lean_proofs", packet["external_proof"]),
+        ("formal_conjectures", packet["formal_statement"]),
+    ):
+        source = report["sources"][name]
+        assert source == {key: bound[key] for key in source}, name
+    # The transfer gap is the reason this Target is open: the external proof and
+    # the Formal Conjectures statement are pinned to different environments, so
+    # kernel passage on one side is not an artifact on the other.
+    assert (
+        packet["external_proof"]["lean_toolchain"]
+        != packet["formal_statement"]["lean_toolchain"]
     )
-    assert packet["external_proof"]["terminal_solve_commit"] == (
-        "8c85623069b3923afe418876d06459dbc4d24a51"
-    )
-    assert packet["external_proof"]["terminal_sha256"] == (
-        "sha256:7f341400b34cd3241007dce7365aa84c367546ffda0acf164d7a32e003f98ba0"
-    )
-    assert packet["external_proof"]["erdos_730_module_count"] == 74
-    assert packet["external_proof"]["lean_toolchain"] == "leanprover/lean4:v4.29.1"
-    assert packet["formal_statement"]["lean_toolchain"] == (
-        "leanprover/lean4:v4.27.0"
+    assert (
+        packet["external_proof"]["mathlib_commit"]
+        != packet["formal_statement"]["mathlib_commit"]
     )
     assert packet["current_frontier_standing"]["standing"].startswith("open")
 

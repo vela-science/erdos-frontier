@@ -27,7 +27,14 @@ jobs:
           repository: vela-science/vela
           ref: 051b4d5123dad53aaf49e1123cef61f433551fbf
           path: .contract-source/vela
-      - name: Verify the exact package root as the Erdős consumer
+      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          version: "0.11.32"
+          python-version: "3.13"
+      # The whole suite, not the one file that used to run here. The consumer
+      # test is inside it and still gets its contract path; what changes is that
+      # the other 128 tests stop being written for a runner nobody starts.
+      - name: Frontier test suite
         env:
           VELA_LEAN_REPLAY_CONTRACT: ${{ github.workspace }}/.contract-source/vela/research/lean-replay-contract
-        run: python3 tests/test_lean_replay_contract_consumer.py
+        run: uv run --locked --group dev pytest -q

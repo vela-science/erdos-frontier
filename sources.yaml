@@ -12,7 +12,11 @@
 # implementations of one concept across four repositories is two things that can
 # disagree while every lock still looks consistent. The pin is a git rev rather
 # than a released version because the package is not on PyPI yet; the rev is
-# immutable, so the invocation above resolves the same bytes anywhere.
+# immutable, so the invocation above resolves the same bytes anywhere. This
+# repository restates that rev in the pyproject, the lock and `erdos_frontier.py`
+# as well, so `conformance/frontier_lint.py` in vela holds every statement of it
+# here to one value, and holds each sibling Frontier's single statement of it to
+# a 40-character commit.
 #
 # Regenerating is a deliberate act rather than a side effect of running
 # `erdos_frontier.py`, so the lock only moves when someone means to move it.

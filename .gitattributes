@@ -4,13 +4,27 @@ execution/**/verifier/**/verifier -filter -ident -working-tree-encoding -merge -
 
 # Canonical records are raw Git blobs. No checkout filter, keyword expansion,
 # working-tree encoding, or semantic merge driver may transform them.
+#
+# records/ was on `diff text eol=lf` while all three sibling Frontiers had it
+# on `-text`, and `-text` is the correct one: these blobs are named by their
+# own sha256, and end-of-line normalization is a byte rewrite, so a record it
+# touches no longer hashes to its own filename. Nothing under records/ here
+# holds a CR today, which is exactly why this was invisible; the sibling
+# formal-conjectures Frontier already stores a gzip stream at
+# records/artifacts/sha256/3a1f083e…b26c carrying six CRLF pairs, and this
+# repository accepts the same kind of Artifact. The lost `diff` is the price:
+# these are content-addressed blobs, and a textual diff of one is not what a
+# reviewer reads anyway.
 .vela/** -filter -ident -working-tree-encoding -merge -text
-records/** -filter -ident -working-tree-encoding -merge diff text eol=lf
+records/** -filter -ident -working-tree-encoding -merge -text
 sources/** -filter -ident -working-tree-encoding -merge -text
 artifacts/** -filter -ident -working-tree-encoding -merge -text
 review/** -filter -ident -working-tree-encoding -merge -text
 frontier.toml -filter -ident -working-tree-encoding -merge diff text eol=lf
 
-# Witnesses are small reviewed JSON and stay as ordinary Git blobs. Disabling
-# checkout filters explicitly keeps a fresh clone byte-stable and reproducible.
-witnesses/** -filter -ident -working-tree-encoding -merge diff text eol=lf
+# Witnesses are small reviewed JSON, and 21 of the 38 tracked here are byte
+# identical to a canonical Artifact under records/artifacts/sha256/: the
+# witness is the preimage of its own digest. So they get the same `-text` rule
+# for the same reason, not the softer one they used to carry. The global
+# `* text=auto eol=lf` above is what makes an explicit rule necessary.
+witnesses/** -filter -ident -working-tree-encoding -merge -text
