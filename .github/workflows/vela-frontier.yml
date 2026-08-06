@@ -39,7 +39,9 @@ jobs:
           python-version: "3.13"
       # The whole suite, not the one file that used to run here. The consumer
       # test is inside it and still gets its contract path; what changes is that
-      # the other 128 tests stop being written for a runner nobody starts.
+      # the rest of the suite stops being written for a runner nobody starts.
+      # Discovery names the shape, so a new test file is gated the day it lands
+      # and no count has to be restated here to stay true.
       - name: Frontier test suite
         env:
           VELA_LEAN_REPLAY_CONTRACT: ${{ github.workspace }}/.contract-source/vela/research/lean-replay-contract
