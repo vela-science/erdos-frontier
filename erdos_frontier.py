@@ -903,6 +903,12 @@ def write_sources_lock(root: str | Path = ".") -> dict:
     live source into ``sources.lock.json``, so the materialized state is traceable
     to fixed snapshots rather than a floating ``main``. Network failures degrade to
     a recorded error rather than aborting the run.
+
+    Every entry carries exactly one of ``sha256``, ``unlocked`` or ``error``, which
+    is the invariant a reader relies on: no content hash means ``unlocked`` states
+    why, so an entry nobody could pin never reads as one nobody bothered to. The
+    sibling Frontiers generate their locks from ``scripts/write_sources_lock.py``
+    and hold the same shape.
     """
     import hashlib
     root = Path(root)
@@ -926,6 +932,10 @@ def write_sources_lock(root: str | Path = ".") -> dict:
             entry["acquired_by"] = spec["acquired_by"]
             if spec.get("url") is not None:
                 entry["url"] = spec["url"]
+            entry["unlocked"] = (
+                f"cited, not acquired: the bytes are acquired by the {spec['acquired_by']} "
+                "frontier and are not retained here, so the pin is the declared commit and tree"
+            )
             locked[name] = entry
             continue
         try:
@@ -945,6 +955,10 @@ def write_sources_lock(root: str | Path = ".") -> dict:
             elif spec.get("path") and (root / spec["path"]).exists():
                 entry["sha256"] = "sha256:" + hashlib.sha256(
                     (root / spec["path"]).read_bytes()).hexdigest()
+            else:
+                entry["unlocked"] = (
+                    "no url and no in-repository path: nothing to compute a content root from"
+                )
         except (urllib.error.URLError, OSError) as exc:
             entry["error"] = str(exc)
         locked[name] = entry
