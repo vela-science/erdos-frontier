@@ -1,10 +1,11 @@
 # Curated attack-channel taxonomy for the Erdős frontier.
 #
-# A channel is a named line of attack on a problem. Attempts opt in by
-# recording a `channel:<id>` named obstruction; an accepted finding closes a
-# channel by carrying a `channel`-namespace anchor. `vela status` derives
-# Open / Cold / Dead per channel from the attempt ledger — this file only
-# names the channels, it never adjudicates them.
+# A channel is a named line of attack on a problem. This file only names the
+# channels; it never adjudicates them and it never configures the operator.
+# Vela has no channel concept: `vela status` emits `vela.status.v3`, whose
+# fields are frontier, git, integrity, roots, counts, work and decision_inbox,
+# and no Vela command reads this file. The thresholds below are curation notes
+# recording how the taxonomy was judged, not runtime inputs anything consumes.
 #
 # Curation notes (2026-07-03, starter taxonomy):
 # - 647: the prime-power / prime channel was ground to exhaustion internally
@@ -16,13 +17,16 @@
 # - 617 is deliberately omitted: no statement-informed channel decomposition
 #   has been curated yet, and a made-up one would poison the fold key.
 
-schema: vela.channels.v0.1
+# `vela.` is reserved for identifiers the protocol defines, and it defines no
+# channel schema. This is a Frontier-local domain file, named like the packet
+# schemas under targets/.
+schema: erdos-frontier.channels.v0.1
 
-# A channel goes cold at this much age-weighted failure...
+# A channel was judged cold at this much age-weighted failure...
 cold_threshold: 3
 # ...but only from at least this many distinct producers.
 cold_min_producers: 2
-# Attempts older than this (vs the newest event in the log) weigh 0.5.
+# Attempts older than this (vs the newest event in the log) weighed 0.5.
 decay_days: 45
 
 # Bedrock cores (six-excavation measurement, 2026-07-04): every reachable

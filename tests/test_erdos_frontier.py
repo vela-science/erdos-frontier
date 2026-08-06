@@ -531,3 +531,36 @@ def test_source_lock_refresh_records_only_live_sources_and_selected_paths(
     assert refreshed["sources"]["frozen"]["sha256"] == (
         "sha256:" + hashlib.sha256(frozen_payload).hexdigest()
     )
+
+
+def test_source_lock_keeps_a_cited_entry_at_its_declared_pin(tmp_path, monkeypatch):
+    (tmp_path / "sources.yaml").write_text(
+        yaml.safe_dump(
+            {
+                "sources": {
+                    "cited": {
+                        "kind": "formal_library",
+                        "repo": "example/comparator",
+                        "commit": "a" * 40,
+                        "tree": "b" * 40,
+                        "url": "https://github.com/example/comparator",
+                        "acquired_by": "other-frontier",
+                    }
+                }
+            }
+        )
+    )
+
+    def refuse(url, _headers=None):
+        raise AssertionError(f"a cited entry must not be fetched: {url}")
+
+    monkeypatch.setattr(erdos_frontier, "claims_headers", lambda: {})
+    monkeypatch.setattr(erdos_frontier, "fetch", refuse)
+
+    cited = erdos_frontier.write_sources_lock(tmp_path)["sources"]["cited"]
+
+    assert cited["commit"] == "a" * 40
+    assert cited["tree"] == "b" * 40
+    assert cited["acquired_by"] == "other-frontier"
+    assert cited["url"] == "https://github.com/example/comparator"
+    assert "sha256" not in cited

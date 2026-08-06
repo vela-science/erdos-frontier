@@ -16,7 +16,9 @@ jobs:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
         with:
           fetch-depth: 0
-      - uses: vela-science/vela@50ab6f267cf325988e6d903ddafa5c0070c9f015 # v0.963.0
+      # v0.966.2 ships an action.yml that still invokes `vela check`, a verb its own
+      # binary rejects, so the newest release that verifies at all is v0.966.1.
+      - uses: vela-science/vela@bf11bc02651c014cd6dd5bf23adf8c651e79559b # v0.966.1
         env:
           GH_TOKEN: ${{ github.token }}
         with:

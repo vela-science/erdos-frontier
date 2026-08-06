@@ -106,7 +106,7 @@ must not be used as an accepted Result Dossier case.
 ## Inspection commands
 
 ```bash
-vela check . --json
+vela replay . --json
 vela review show . vpr_3635f052644495be --json
 vela show . vcl_47d920289e237e9eedbba44ff247d676b8e739d7a07bf743d213d151162d7881 --json
 ```

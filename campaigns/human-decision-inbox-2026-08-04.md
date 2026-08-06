@@ -123,7 +123,7 @@ other captured entry.
 ## Reproduction
 
 ```bash
-vela check . --json
+vela replay . --json
 vela review list . --json
 vela review show . vpr_27bce8983810f3bd --json
 vela review show . vpr_148c88da4d5579a9 --json
@@ -133,6 +133,6 @@ vela review show . vpr_b4a4b9ea9c00d6e9 --json
 vela review show . vpr_96578d006119b322 --json
 ```
 
-After every attributed Decision, run `vela check . --json`, commit the exact
+After every attributed Decision, run `vela replay . --json`, commit the exact
 authority mutation, and recompute `vela review list . --json` before acting on
 the next item. Do not batch Decisions against stale projected roots.

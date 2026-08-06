@@ -9,7 +9,7 @@ the exact repository state locally:
 ```bash
 git clone https://github.com/vela-science/erdos-frontier
 cd erdos-frontier
-vela check . --json
+vela replay . --json
 vela status . --json
 vela next . --json
 ```
@@ -35,6 +35,7 @@ and only repository authority can change accepted Standing.
 The active repository is intentionally compact:
 
 - [`.vela/repository.json`](.vela/repository.json) indexes the current objects.
+- [`.vela/origin.json`](.vela/origin.json) binds the compacted predecessor.
 - [`.vela/authority/`](.vela/authority/) contains repository-authority records.
 - [`records/`](records/) contains immutable Claims, Submissions, Verifications,
   Proposals, artifacts, and related canonical objects.
@@ -46,15 +47,16 @@ The active repository is intentionally compact:
 - [`artifacts/`](artifacts/) and [`witnesses/`](witnesses/) retain scientific
   evidence.
 
-Historical runtime formats remain reachable through the signed predecessor tag;
-they are not duplicated in the active tree. The Observatory derives its
-read-only view from the canonical repository and retained source snapshots.
+Historical runtime formats remain reachable through the signed predecessor tag
+`pre-compaction/fc7b922e54e4`; they are not duplicated in the active tree. The
+Observatory derives its read-only view from the canonical repository and
+retained source snapshots.
 There is no second site or graph authority surface in this repository.
 
 ## Research loop
 
 ```text
-inspect → start bounded work → submit evidence → verify independently → decide
+map → target → work → submit → verify → decide → remap
 ```
 
 ```bash

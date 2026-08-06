@@ -915,9 +915,19 @@ def write_sources_lock(root: str | Path = ".") -> dict:
         # Repository identity and selected paths are part of the lock even for
         # URL-backed inputs. Keeping them outside the fetch branches prevents a
         # routine status refresh from erasing the exact inventory provenance.
-        for field in ("repo", "ref", "path", "paths", "commit", "home"):
+        for field in ("repo", "ref", "path", "paths", "commit", "tree", "home"):
             if spec.get(field) is not None:
                 entry[field] = spec[field]
+        if spec.get("acquired_by"):
+            # A cited entry names a corpus another Frontier acquires, and its url
+            # is the repository landing page rather than a content locator.
+            # Fetching it would hash rendered HTML and record that as the content
+            # root, so the declared commit and tree are the whole of this entry.
+            entry["acquired_by"] = spec["acquired_by"]
+            if spec.get("url") is not None:
+                entry["url"] = spec["url"]
+            locked[name] = entry
+            continue
         try:
             if spec.get("url"):
                 data = fetch(spec["url"])

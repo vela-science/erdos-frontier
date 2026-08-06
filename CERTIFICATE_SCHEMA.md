@@ -16,7 +16,7 @@ indexed by `.vela/repository.json`.
 To inspect current state:
 
 ```bash
-vela check . --json
+vela replay . --json
 vela status . --json
 vela show . <object_id> --json
 vela why . <claim_id> --json

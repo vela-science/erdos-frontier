@@ -22,6 +22,15 @@ sources:
     source_id: source:formal-conjectures
     kind: formal_statement_registry
     repo: google-deepmind/formal-conjectures
+    # There is no revision to pin. `data/conjectures.json` is not tracked in the
+    # upstream repository at any ref; the GitHub Pages workflow builds it from
+    # `main` and publishes it at the url below, so the bytes cannot be re-fetched
+    # from a commit. `pages_commit` is the commit of the active github-pages
+    # deployment, resolved from the deployment API on 2026-08-05. The lock's
+    # content hash is the real pin, which is why this entry locks a sha256 and
+    # no commit while every fetchable entry here locks both.
+    pages_commit: 4c3577432c87a34761963b04c20aba2ac7e2efd2
+    pages_commit_resolved: 2026-08-05T21:22:46Z
     url: https://google-deepmind.github.io/formal-conjectures/data/conjectures.json
 
   plby:
@@ -50,13 +59,15 @@ sources:
 
   # Cited, not acquired. The fidelity artifacts and the astra-fidelity targets
   # reference the OpenAI comparator corpus; its bytes are acquired by the
-  # formal-conjectures frontier, which declares it with an exact commit. This
-  # entry exists so that a reader asking what this frontier reconciles gets the
-  # same answer as the registry, which has always listed erdos in its coverage.
+  # formal-conjectures frontier. The commit and tree are restated here rather
+  # than left to the sibling repository, because a reader who only has this file
+  # would otherwise get a bare repository url where the registry has a pin.
   openai_ten_proofs:
     source_id: source:openai-ten-proofs
     kind: formal_library
     repo: openai/ten-proofs
+    commit: 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6
+    tree: 174289e4d4958cb0509874e6e53400e098213de7
     url: https://github.com/openai/ten-proofs
     acquired_by: formal-conjectures
 
