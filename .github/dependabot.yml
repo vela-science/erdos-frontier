@@ -9,6 +9,12 @@ version: 2
 # keys only reach package managers that carry semver — and a week is roughly the
 # window in which a compromised publish gets noticed and yanked. A SHA pin
 # records which bytes run, not that those bytes were ever worth running.
+# Groups carry minor and patch only, so a major sits in its own pull request.
+# The first cargo group in the protocol repository proposed ten crates at once,
+# three of them major, including the crates that produce canonical roots and
+# sign authority envelopes. Bundling a breaking change behind a patch means
+# either the safe bump waits on the breaking one or the breaking one rides in
+# on the safe one's review.
 updates:
   - package-ecosystem: github-actions
     directory: /
@@ -30,6 +36,9 @@ updates:
       workflow-actions:
         patterns:
           - "*"
+        update-types:
+          - minor
+          - patch
 
   # uv.lock at the root backs `uv run --locked` in vela-frontier.yml, so a
   # manifest bump that misses the lock fails the run instead of landing quietly.
@@ -50,3 +59,6 @@ updates:
       python:
         patterns:
           - "*"
+        update-types:
+          - minor
+          - patch
