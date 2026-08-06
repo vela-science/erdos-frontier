@@ -2,7 +2,30 @@
 # content hash (and GitHub commit, where resolvable) of each at generation time,
 # so accepted state is traceable to exact snapshots rather than a floating `main`
 # (memo Gate 1 / Failure Mode 4). Regenerate the lock with:
-#     python -c "import erdos_frontier as e; e.write_sources_lock('.')"
+#     uvx --from "git+https://github.com/vela-science/vela@73d278b0020b1699fcf80749104db19860d1bec2#subdirectory=packages/vela-source-manifest" vela-source-lock
+# and check the committed one, without the network, with `--check`.
+#
+# The generator is the shared `vela-source-manifest` package, which lives at
+# `packages/vela-source-manifest` in the vela repository and is declared in this
+# repository's pyproject. It used to be a function in `erdos_frontier.py`, and a
+# separate copy of a wider resolver in each sibling Frontier's `scripts/`; two
+# implementations of one concept across four repositories is two things that can
+# disagree while every lock still looks consistent. The pin is a git rev rather
+# than a released version because the package is not on PyPI yet; the rev is
+# immutable, so the invocation above resolves the same bytes anywhere.
+#
+# Regenerating is a deliberate act rather than a side effect of running
+# `erdos_frontier.py`, so the lock only moves when someone means to move it.
+# It was last regenerated on 2026-08-06, against the shared resolver; before
+# that it had stood since the 2026-07-22 acquisition, long enough that it no
+# longer described this file. What a regeneration changes is the acquisition
+# pin, not the standing of anything resting on it: a Claim is bound to the
+# Verification Record that established it, and that record names the bytes it
+# ran on. Refreshing an entry here therefore records what upstream serves now
+# and leaves the accepted record undisturbed. What it must never do is close a
+# gap by hand — every hash in the lock is computed from bytes the resolver
+# fetched, which is why the fix for a `--check` failure is to run the generator
+# again, never to edit the lock to agree with it.
 #
 # `source_id` is the identifier the release-scoped source registry publishes
 # this entry under, or null where the entry is frontier-derived and publishes

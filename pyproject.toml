@@ -11,7 +11,19 @@ dependencies = [
 [dependency-groups]
 dev = [
   "pytest>=8.0",
+  # Writes and checks `sources.lock.json`. A dev dependency rather than a
+  # runtime one: nothing in `erdos_frontier.py` locks sources any more, so the
+  # only code here that imports it is the test that holds it to this Frontier's
+  # declaration shapes. Acquisitions run it as a tool, not as a library:
+  #     uvx --from "git+https://github.com/vela-science/vela@73d278b0020b1699fcf80749104db19860d1bec2#subdirectory=packages/vela-source-manifest" vela-source-lock
+  "vela-source-manifest>=1.0",
 ]
+
+[tool.uv.sources]
+# A git rev rather than a released version because the package is not on PyPI
+# yet; the rev is immutable, so this resolves from a checkout of this repository
+# alone rather than only where the vela repository happens to sit beside it.
+vela-source-manifest = { git = "https://github.com/vela-science/vela", rev = "73d278b0020b1699fcf80749104db19860d1bec2", subdirectory = "packages/vela-source-manifest" }
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

@@ -1,13 +1,14 @@
 {
-  "generated_at": "2026-07-22T08:47:37+00:00",
+  "generated_at": "2026-08-06T07:08:48+00:00",
   "sources": {
     "erdos": {
-      "commit": "eacd0368a2428663dff6999b17921706137217e4",
+      "commit": "8ac41070458c7fc9912a8f0428e0660bafa09a82",
       "kind": "problem_registry",
       "path": "data/problems.yaml",
       "ref": "main",
       "repo": "teorth/erdosproblems",
-      "sha256": "sha256:edc1a3e9f11f932b9c2048115d1e23e75a6a90c7e32ea8e5383b1b938ef8a2b8",
+      "sha256": "sha256:32c4f4052090b69b124cb6c6819eaaabbae315ff5846a8984ce714c37a10913e",
+      "tree": "b5828ff4d45c992605af08dcc17ba5494f7f8f7a",
       "url": "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
     },
     "fidelity": {
@@ -17,8 +18,10 @@
     },
     "formal_conjectures": {
       "kind": "formal_statement_registry",
+      "pages_commit": "4c3577432c87a34761963b04c20aba2ac7e2efd2",
+      "pages_commit_resolved": "2026-08-05T21:22:46Z",
       "repo": "google-deepmind/formal-conjectures",
-      "sha256": "sha256:0507446f57a4dc6b6f3267ef243f78e75a30da956c59b048efa5703f1387610a",
+      "sha256": "sha256:6ef2a9dd09159d74b1cf2dff244aae6e83f547c7983303f2bd50450508e3e6e9",
       "url": "https://google-deepmind.github.io/formal-conjectures/data/conjectures.json"
     },
     "gpt_erdos": {
@@ -32,21 +35,32 @@
       "sha256": "sha256:c0f626a4792d6b150b79268807ea2f9316f2b09be5475fb6ee1b14f630bc1136"
     },
     "jayyhk": {
-      "commit": "32434b3a0859bb1e485fa7e530f38eee73a3debf",
+      "commit": "bd503065cd2735696eacab41d043b2b0fd5aeed4",
       "kind": "proof_manifest",
       "path": "data/problems.yaml",
       "ref": "main",
       "repo": "Jayyhk/erdos-lean",
-      "sha256": "sha256:0a52b5572933426450b12b544141e38a1c185ac97fde18d6927b64a82361ecf4",
+      "sha256": "sha256:2e8893a14ecab7c1e4e29bf876b6301b809d8f8d82b1b4ba42601a44abbcff31",
+      "tree": "5e7d70232138a6e1c446d716992c4836f1d406e1",
       "url": "https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml"
     },
+    "openai_ten_proofs": {
+      "acquired_by": "formal-conjectures",
+      "commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+      "kind": "formal_library",
+      "repo": "openai/ten-proofs",
+      "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+      "unlocked": "cited, not acquired: the bytes are acquired by the formal-conjectures frontier and are not retained here, so the pin is the declared commit and tree",
+      "url": "https://github.com/openai/ten-proofs"
+    },
     "plby": {
-      "commit": "d4476dd3535ec618dee4177915741017026d26bf",
+      "commit": "68da20b96673899166e94638f5a7fffeb7231d35",
       "kind": "proof_manifest",
       "path": "data/sources.yaml",
       "ref": "main",
       "repo": "plby/lean-proofs",
-      "sha256": "sha256:a460c1eacbfd5a988764b2d7fcde2b6966475fa568322c1beb1a3b0deb059c01",
+      "sha256": "sha256:84ff932308170f4a02d2ec6df1257bce6a1cde56d7d61f850a7de3bc1a75b98e",
+      "tree": "1d42e6d9d0fecef7de0c6c2a6e3cf7d58283bab8",
       "url": "https://raw.githubusercontent.com/plby/lean-proofs/main/data/sources.yaml"
     },
     "wiki": {
@@ -60,12 +74,13 @@
       "sha256": "sha256:65f7f510a2f2edaafbb73b6a26e365394228bc48b18d3c54e2dee5c01b7bb092"
     },
     "williamjblair_lean_proofs": {
-      "commit": "ef1e54ba31563cec6b5169bfc70543a32ac81ef4",
+      "commit": "a8c2872a27cf8d11cf6744ca4a2c5b49ace5fea0",
       "kind": "proof_manifest",
       "path": "proofs.yaml",
       "ref": "main",
       "repo": "williamjblair/lean-proofs",
-      "sha256": "sha256:229d13a1bec7ffd6cba62d2375e101dc63143d8feaf9fed62bbab2bd190c4454",
+      "sha256": "sha256:cc558c2b3a2cdee8db48bfae4a70b6c5ef307b00be3d29bd77a2d69bb9b653cb",
+      "tree": "dbbe69fa2dbdd73f5e398bbd799115dbbdc9cc27",
       "url": "https://raw.githubusercontent.com/williamjblair/lean-proofs/main/proofs.yaml"
     }
   }

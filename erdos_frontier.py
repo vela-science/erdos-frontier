@@ -898,83 +898,16 @@ def load_live_status(overrides_path: str | Path = "overrides.yaml") -> dict:
     )
 
 
-def write_sources_lock(root: str | Path = ".") -> dict:
-    """Record the exact content hash (+ GitHub commit, where resolvable) of every
-    live source into ``sources.lock.json``, so the materialized state is traceable
-    to fixed snapshots rather than a floating ``main``. Network failures degrade to
-    a recorded error rather than aborting the run.
-
-    Every entry carries exactly one of ``sha256``, ``unlocked`` or ``error``, which
-    is the invariant a reader relies on: no content hash means ``unlocked`` states
-    why, so an entry nobody could pin never reads as one nobody bothered to. The
-    sibling Frontiers generate their locks from ``scripts/write_sources_lock.py``
-    and hold the same shape.
-    """
-    import hashlib
-    root = Path(root)
-    lock_path = root / "sources.lock.json"
-    registry = (yaml.safe_load((root / "sources.yaml").read_text()) or {}).get("sources", {})
-    headers = claims_headers()
-    locked: dict[str, dict] = {}
-    for name, spec in registry.items():
-        entry: dict = {"kind": spec.get("kind")}
-        # Repository identity and selected paths are part of the lock even for
-        # URL-backed inputs. Keeping them outside the fetch branches prevents a
-        # routine status refresh from erasing the exact inventory provenance.
-        for field in ("repo", "ref", "path", "paths", "commit", "tree", "home"):
-            if spec.get(field) is not None:
-                entry[field] = spec[field]
-        if spec.get("acquired_by"):
-            # A cited entry names a corpus another Frontier acquires, and its url
-            # is the repository landing page rather than a content locator.
-            # Fetching it would hash rendered HTML and record that as the content
-            # root, so the declared commit and tree are the whole of this entry.
-            entry["acquired_by"] = spec["acquired_by"]
-            if spec.get("url") is not None:
-                entry["url"] = spec["url"]
-            entry["unlocked"] = (
-                f"cited, not acquired: the bytes are acquired by the {spec['acquired_by']} "
-                "frontier and are not retained here, so the pin is the declared commit and tree"
-            )
-            locked[name] = entry
-            continue
-        try:
-            if spec.get("url"):
-                data = fetch(spec["url"])
-                entry["url"] = spec["url"]
-                entry["sha256"] = "sha256:" + hashlib.sha256(data).hexdigest()
-                if spec.get("repo") and spec.get("ref"):
-                    try:
-                        commit = json.loads(fetch(
-                            f"https://api.github.com/repos/{spec['repo']}/commits/{spec['ref']}",
-                            headers))
-                        entry["ref"] = spec["ref"]
-                        entry["commit"] = commit.get("sha")
-                    except (urllib.error.URLError, json.JSONDecodeError):
-                        pass
-            elif spec.get("path") and (root / spec["path"]).exists():
-                entry["sha256"] = "sha256:" + hashlib.sha256(
-                    (root / spec["path"]).read_bytes()).hexdigest()
-            else:
-                entry["unlocked"] = (
-                    "no url and no in-repository path: nothing to compute a content root from"
-                )
-        except (urllib.error.URLError, OSError) as exc:
-            entry["error"] = str(exc)
-        locked[name] = entry
-    stamp = _datetime.datetime.now(_datetime.timezone.utc).replace(microsecond=0).isoformat()
-    out = {"generated_at": stamp, "sources": locked}
-    lock_path.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n")
-    return out
-
-
 def main() -> int:
+    # Reconciling live status no longer rewrites `sources.lock.json`. The lock is
+    # produced by the shared `vela-source-manifest` package, under its own
+    # command, because pinning what this Frontier acquired and counting what it
+    # currently reconciles are two different acts. Folding the first into the
+    # second is how a pin moves on a run that was only ever asked about the
+    # second, and a pin that moves without anyone deciding to move it is not a
+    # pin. Regenerate deliberately:
+    #     uvx --from "git+https://github.com/vela-science/vela@73d278b0020b1699fcf80749104db19860d1bec2#subdirectory=packages/vela-source-manifest" vela-source-lock
     payload = load_live_status()
-    try:
-        write_sources_lock(".")
-    except OSError as exc:
-        import sys
-        sys.stderr.write(f"WARNING: could not write sources.lock.json ({exc})\n")
     print(
         f"reconciled {payload['total_problems']} problems; "
         f"claims_available={payload['claims_available']}; "
@@ -982,7 +915,7 @@ def main() -> int:
     )
     for bucket in BUCKET_ORDER:
         print(f"  {bucket:>24}: {payload['counts'].get(bucket, 0)}")
-    print("refreshed sources.lock.json; canonical state remains in Vela records")
+    print("canonical state remains in Vela records")
     return 0
 
 

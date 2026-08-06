@@ -100,7 +100,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lean/audit_feed*.json sources.lock.json
+          # sources.lock.json is not a regenerated feed and is deliberately not
+          # staged here. Its live-fetched pins record what upstream served when
+          # the Claims resting on them were accepted; a nightly re-audit that
+          # refreshed them would overwrite that evidence with today's `main`.
+          # Regenerate it deliberately, with `vela-source-lock`, when an
+          # acquisition actually happens.
+          git add lean/audit_feed*.json
           if git diff --staged --quiet; then
             echo "Audit feeds unchanged."
           else

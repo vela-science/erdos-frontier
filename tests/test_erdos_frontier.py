@@ -7,6 +7,8 @@ import yaml
 
 import erdos_frontier
 
+from vela_source_manifest import write_sources_lock
+
 from erdos_frontier import (
     Claim,
     _wiki_summary,
@@ -467,9 +469,17 @@ def test_candidate_claim_rides_the_reconciled_row():
     assert row["machine"]["verdict"] == "conditional"
 
 
-def test_source_lock_refresh_records_only_live_sources_and_selected_paths(
-    tmp_path, monkeypatch
-):
+# The two tests below no longer exercise a resolver in this repository. This
+# Frontier's `sources.lock.json` is now written by the shared
+# `vela-source-manifest` package, which every Frontier uses. They are kept here,
+# against this Frontier's own declaration shapes, because what has to keep
+# holding is a property of *this* inventory: a frozen snapshot is hashed from
+# the bytes on disk, a live entry is hashed from the bytes fetched, and a cited
+# entry is never fetched at all. The package's own suite proves the resolver;
+# these prove it still says the right thing about the declarations here.
+
+
+def test_source_lock_refresh_records_only_live_sources_and_selected_paths(tmp_path):
     frozen_payload = b"frozen registry"
     frozen_path = tmp_path / "sources" / "frozen.json"
     frozen_path.parent.mkdir()
@@ -479,6 +489,7 @@ def test_source_lock_refresh_records_only_live_sources_and_selected_paths(
             {
                 "sources": {
                     "live": {
+                        "source_id": "source:live",
                         "kind": "proof_manifest",
                         "repo": "example/live",
                         "ref": "main",
@@ -486,6 +497,7 @@ def test_source_lock_refresh_records_only_live_sources_and_selected_paths(
                         "url": "https://example.invalid/proofs.yaml",
                     },
                     "frozen": {
+                        "source_id": "source:frozen",
                         "kind": "frozen_snapshot",
                         "repo": "example/frozen",
                         "commit": "c" * 40,
@@ -510,18 +522,23 @@ def test_source_lock_refresh_records_only_live_sources_and_selected_paths(
 
     def fake_fetch(url, _headers=None):
         if "api.github.com" in url:
-            return json.dumps({"sha": "d" * 40}).encode()
+            # The shape the commits API actually returns. The resolver reads the
+            # tree out of it as well as the sha, so a fake that served only the
+            # sha would be testing a GitHub that does not exist.
+            return json.dumps(
+                {"sha": "d" * 40, "commit": {"tree": {"sha": "e" * 40}}}
+            ).encode()
         return live_payload
 
-    monkeypatch.setattr(erdos_frontier, "claims_headers", lambda: {})
-    monkeypatch.setattr(erdos_frontier, "fetch", fake_fetch)
+    resolution = write_sources_lock(tmp_path, fake_fetch)
+    refreshed = resolution.payload
 
-    refreshed = erdos_frontier.write_sources_lock(tmp_path)
-
+    assert resolution.ok, resolution.problems
     assert set(refreshed) == {"generated_at", "sources"}
     assert "stale" not in refreshed["sources"]
     assert refreshed["sources"]["live"]["path"] == "data/proofs.yaml"
     assert refreshed["sources"]["live"]["commit"] == "d" * 40
+    assert refreshed["sources"]["live"]["tree"] == "e" * 40
     assert refreshed["sources"]["live"]["sha256"] == (
         "sha256:" + hashlib.sha256(live_payload).hexdigest()
     )
@@ -531,14 +548,16 @@ def test_source_lock_refresh_records_only_live_sources_and_selected_paths(
     assert refreshed["sources"]["frozen"]["sha256"] == (
         "sha256:" + hashlib.sha256(frozen_payload).hexdigest()
     )
+    assert json.loads((tmp_path / "sources.lock.json").read_text()) == refreshed
 
 
-def test_source_lock_keeps_a_cited_entry_at_its_declared_pin(tmp_path, monkeypatch):
+def test_source_lock_keeps_a_cited_entry_at_its_declared_pin(tmp_path):
     (tmp_path / "sources.yaml").write_text(
         yaml.safe_dump(
             {
                 "sources": {
                     "cited": {
+                        "source_id": "source:cited",
                         "kind": "formal_library",
                         "repo": "example/comparator",
                         "commit": "a" * 40,
@@ -554,13 +573,13 @@ def test_source_lock_keeps_a_cited_entry_at_its_declared_pin(tmp_path, monkeypat
     def refuse(url, _headers=None):
         raise AssertionError(f"a cited entry must not be fetched: {url}")
 
-    monkeypatch.setattr(erdos_frontier, "claims_headers", lambda: {})
-    monkeypatch.setattr(erdos_frontier, "fetch", refuse)
+    resolution = write_sources_lock(tmp_path, refuse)
+    cited = resolution.payload["sources"]["cited"]
 
-    cited = erdos_frontier.write_sources_lock(tmp_path)["sources"]["cited"]
-
+    assert resolution.ok, resolution.problems
     assert cited["commit"] == "a" * 40
     assert cited["tree"] == "b" * 40
     assert cited["acquired_by"] == "other-frontier"
     assert cited["url"] == "https://github.com/example/comparator"
     assert "sha256" not in cited
+    assert cited["unlocked"].startswith("cited, not acquired")
