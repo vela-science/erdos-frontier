@@ -1,14 +1,22 @@
 {
-  "generated_at": "2026-08-06T07:08:48+00:00",
+  "generated_at": "2026-08-06T11:43:49+00:00",
   "sources": {
+    "alphaproof": {
+      "commit": "0647711a71183c1ea492ad60860776617ce1ea88",
+      "kind": "formal_library",
+      "repo": "google-deepmind/alphaproof-nexus-results",
+      "tree": "f5b237b85887066fac14f98a51fd059aaf952184",
+      "unlocked": "no content locator: the url is the repository landing page, not bytes, and this frontier retains no snapshot. The pin is the commit and tree above, both read from the GitHub API at generation time",
+      "url": "https://github.com/google-deepmind/alphaproof-nexus-results"
+    },
     "erdos": {
-      "commit": "8ac41070458c7fc9912a8f0428e0660bafa09a82",
+      "commit": "e373b21b7973f1f27988ed0c77428e4f9f532599",
       "kind": "problem_registry",
       "path": "data/problems.yaml",
       "ref": "main",
       "repo": "teorth/erdosproblems",
       "sha256": "sha256:32c4f4052090b69b124cb6c6819eaaabbae315ff5846a8984ce714c37a10913e",
-      "tree": "b5828ff4d45c992605af08dcc17ba5494f7f8f7a",
+      "tree": "0c181c9df32a1c5dc37496bdae4d6ed7ce57aad4",
       "url": "https://raw.githubusercontent.com/teorth/erdosproblems/main/data/problems.yaml"
     },
     "fidelity": {
@@ -18,10 +26,10 @@
     },
     "formal_conjectures": {
       "kind": "formal_statement_registry",
-      "pages_commit": "4c3577432c87a34761963b04c20aba2ac7e2efd2",
-      "pages_commit_resolved": "2026-08-05T21:22:46Z",
+      "pages_commit": "19a0e741ce6ba8a26a6147390da8a42b69edbe83",
+      "pages_commit_resolved": "2026-08-06T11:43:37Z",
       "repo": "google-deepmind/formal-conjectures",
-      "sha256": "sha256:6ef2a9dd09159d74b1cf2dff244aae6e83f547c7983303f2bd50450508e3e6e9",
+      "sha256": "sha256:47ae27cd42f191ebd3d74caee0b2da5b8d0faabc8199920be0be8735bc47a018",
       "url": "https://google-deepmind.github.io/formal-conjectures/data/conjectures.json"
     },
     "gpt_erdos": {

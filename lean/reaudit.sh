@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-# Re-run the heavy multi-toolchain Lean audit and refresh retained source locks.
+# Re-run the heavy multi-toolchain Lean audit.
+#
+# It does not touch sources.lock.json. It used to say it did, for a few hours
+# after `erdos_frontier.py` stopped writing the lock, which is the worst version
+# of the error: an operator reading the last line would believe a pin had moved
+# and that the acquisition behind it had been re-checked. Locking is its own
+# deliberate act now — `vela-source-lock`, run on purpose.
 #
 # Each proof repo is loaded in its own built `.lake` env at its own pinned Lean
 # toolchain; the extractor reads axioms + theorem-parameter hypotheses per proof.
@@ -24,7 +30,7 @@ python3 lean/extract_assumptions.py --repo alphaproof
 echo "==> Jayyhk/erdos-lean (audits already-built problem projects)"
 python3 lean/extract_assumptions.py --repo jayyhk || true
 
-echo "==> refresh the source audit and exact source locks"
+echo "==> reconcile the source audit"
 python3 erdos_frontier.py
 
-echo "re-audit complete: audit_feed*.json + sources.lock.json refreshed."
+echo "re-audit complete: audit_feed*.json refreshed; sources.lock.json untouched."

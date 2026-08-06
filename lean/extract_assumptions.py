@@ -62,6 +62,13 @@ STATUS = SP.parent / "site" / "status.json"
 # problem hypothesis, so `conditional` is correct; #1080 whose answer is a negation
 # the extractor's forallTelescope cannot read cleanly.)
 REPOS = {
+    # The declared source is `plby/lean-proofs` (sources.yaml key `plby`), pinned
+    # in sources.lock.json; CI checks that repository out at that commit and
+    # passes it in `VELA_PROOF_REPO`, so the path below is never what CI reads.
+    # It is a local convenience and it is a fork checkout, which is how a proof
+    # that exists only on a fork branch once reached a committed feed. Point it
+    # at a checkout of the declared repository, or pass `--root`, before
+    # trusting a local run's output.
     "plby": {
         "root_env": "VELA_PROOF_REPO",
         "root": HOME / "personal/lean-proofs-fork/src/v4.29.1",

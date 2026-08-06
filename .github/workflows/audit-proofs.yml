@@ -9,8 +9,9 @@ name: Re-audit Lean proofs (heavy)
 # fetched the Mathlib oleans fine) — the logic is sound, it just needs ~2h per
 # toolchain, so the whole job runs ~4h cold. The fast, reliable path is LOCAL:
 # with the proof repos cloned + built, `bash lean/reaudit.sh` finishes in minutes.
-# Don't run this right before an external comms moment — if the fork moved since the
-# last local audit, it will commit changed feeds (which is the point, just review them).
+# Don't run this right before an external comms moment — if a locked commit moved
+# since the last local audit, it will commit changed feeds (which is the point,
+# just review them).
 on:
   workflow_dispatch: {}
 
@@ -27,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 300   # ~4h cold (two toolchains built from scratch) + margin
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Install elan (Lean toolchain manager)
         run: |
@@ -40,24 +41,28 @@ jobs:
       # NOT caching proof-repos/.lake — it would be restored before the clone and
       # make `git clone` fail on a non-empty dir.
       - name: Cache the Lean toolchains
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: ~/.elan
           key: elan-${{ runner.os }}-v1
           restore-keys: elan-${{ runner.os }}-
 
-      - name: Clone proof repos
+      # Both the repository and the commit come from sources.lock.json, which is
+      # what makes this an audit OF the declared sources rather than of whatever
+      # three default branches happened to say. See lean/clone-at-lock.sh; it
+      # fails the job if a checkout does not land on the pinned commit.
+      - name: Check out the declared proof repos at their locked commits
         run: |
           mkdir -p proof-repos
-          git clone --depth 1 https://github.com/williamjblair/lean-proofs-fork.git proof-repos/plby
-          git clone --depth 1 https://github.com/google-deepmind/alphaproof-nexus-results.git proof-repos/alphaproof
-          git clone --depth 1 https://github.com/Jayyhk/erdos-lean.git proof-repos/jayyhk
+          bash lean/clone-at-lock.sh plby proof-repos/plby
+          bash lean/clone-at-lock.sh alphaproof proof-repos/alphaproof
+          bash lean/clone-at-lock.sh jayyhk proof-repos/jayyhk
 
       # Build ONLY the ErdosProblems library (the aggregate ErdosProblems.All), not
-      # the fork's default "All" target — that also pulls HundredTheorems / MathOverflow
-      # / PrimeNumberTheoremAnd, which the extractor never reads and which only add
-      # build time and failure surface.
-      - name: Build plby fork ErdosProblems (Lean 4.29.1)
+      # the repository's default "All" target — that also pulls HundredTheorems /
+      # MathOverflow / PrimeNumberTheoremAnd, which the extractor never reads and
+      # which only add build time and failure surface.
+      - name: Build plby ErdosProblems (Lean 4.29.1)
         working-directory: proof-repos/plby/src/v4.29.1
         run: |
           lake exe cache get || true
@@ -77,10 +82,17 @@ jobs:
         run: JAYYHK="$GITHUB_WORKSPACE/proof-repos/jayyhk" bash lean/build-jayyhk.sh v4.29.1 v4.27.0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.x"
-      - uses: astral-sh/setup-uv@v5
+      # uv's version is pinned, not just the action's. uv.lock carries a format
+      # `revision`, and the resolver writes whichever revision its own build
+      # declares: 0.7.x writes 2, 0.9.0 and later write 3. This lock is at 3, so
+      # an unpinned uv that happened to be older would rewrite it a format
+      # backwards and the job would commit that downgrade as if it were a result.
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+        with:
+          version: "0.11.32"
       - run: uv sync --all-groups
 
       - name: Run the multi-toolchain audit

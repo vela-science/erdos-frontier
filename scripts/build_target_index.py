@@ -57,11 +57,7 @@ FIDELITY_EXECUTION_CONTRACT_PATHS = {
     "verifier_capsule": "execution/erdos-183-astra-fidelity/reviewer-capsule.v1.json",
     "result_contract": "execution/erdos-183-astra-fidelity/result-contract.v1.json",
 }
-ERDOS_1056_EXECUTION_CONTRACT_PATHS = {
-    "producer_profile": "execution/erdos-1056/10430801-10431000/producer-profile.v1.json",
-    "verifier_capsule": "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
-    "result_contract": "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
-}
+ERDOS_1056_VERIFIER_CAPSULE_PATH = "execution/erdos-1056/verifier/v1/linux-arm64/verifier"
 ERDOS_1056_VERIFIER_SOURCE_PATH = "execution/erdos-1056/verifier/v1/verifier.cpp"
 ERDOS_264_EXECUTION_CONTRACT_PATHS = {
     "producer_profile": "execution/erdos-264-proof-repair/producer-profile.v1.json",
@@ -111,10 +107,29 @@ ERDOS_264_CORRECTION_CLAIM = {
     "claim_id": "vcl_5a7df5408c6b11aa52745af2ce1203db3b39cb9a9404c27309f4ee490ffb1386",
     "claim_root": "sha256:4d3f546331886ba10891c1ceb46267993d41b99ed746a19b74d91ccb9448b16e",
 }
-ARTIFACT_PATH = "artifacts/erdos1056-k15-range-10430801-10431000.txt"
-ALLOWED_OUTPUTS = [
-    {"type": "text/plain", "path": ARTIFACT_PATH},
-]
+def erdos_1056_execution_contract_paths(first: int, last: int) -> dict[str, str]:
+    """Name this range's execution contracts.
+
+    The window is the Target's objective, so it moves the moment a range
+    closes. Naming the directory from the range keeps the check honest across
+    that move: it still pins where a range's contracts must live, but it no
+    longer pins which range is live.
+    """
+
+    window = f"execution/erdos-1056/{first}-{last}"
+    return {
+        "producer_profile": f"{window}/producer-profile.v1.json",
+        "verifier_capsule": ERDOS_1056_VERIFIER_CAPSULE_PATH,
+        "result_contract": f"{window}/result-contract.v1.json",
+    }
+
+
+def erdos_1056_artifact_path(first: int, last: int) -> str:
+    return f"artifacts/erdos1056-k15-range-{first}-{last}.txt"
+
+
+def erdos_1056_allowed_outputs(first: int, last: int) -> list[dict[str, str]]:
+    return [{"type": "text/plain", "path": erdos_1056_artifact_path(first, last)}]
 TARGET_BASE = {
     "id": TARGET_ID,
     "title": "Erdős 1056",
@@ -307,17 +322,40 @@ def rooted_file(
 def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
     packet_path = root / PACKET_PATH.relative_to(ROOT)
     packet = json.loads(packet_path.read_text())
-    if packet.get("allowed_outputs") != ALLOWED_OUTPUTS:
+    # The live window comes from the packet rather than from a constant here.
+    # `validate_packet` is what holds the packet to the closure ledger, so the
+    # ledger stays the authority; this function only checks that the contracts
+    # and the artifact agree with whichever range the packet declares.
+    bounded_range = (packet.get("target") or {}).get("next_bounded_range")
+    if not isinstance(bounded_range, dict):
+        raise ValueError("Erdős 1056 packet omits its bounded range")
+    first = bounded_range.get("first")
+    last = bounded_range.get("last")
+    if (
+        not isinstance(first, int)
+        or not isinstance(last, int)
+        or isinstance(first, bool)
+        or isinstance(last, bool)
+        or first > last
+        or bounded_range.get("inclusive") is not True
+        or set(bounded_range) != {"first", "last", "inclusive"}
+    ):
+        raise ValueError("Erdős 1056 packet bounded range is malformed")
+    expected_range = {"first": first, "inclusive": True, "last": last}
+    artifact_path = erdos_1056_artifact_path(first, last)
+    execution_contract_paths = erdos_1056_execution_contract_paths(first, last)
+
+    if packet.get("allowed_outputs") != erdos_1056_allowed_outputs(first, last):
         raise ValueError("Erdős 1056 allowed outputs differ from the Agent contract")
     if packet.get("verifier_profile") != VERIFIER_PROFILE:
         raise ValueError("Erdős 1056 verifier profile differs from the Target contract")
     contracts = packet.get("execution_contracts")
     if not isinstance(contracts, dict) or set(contracts) != set(
-        ERDOS_1056_EXECUTION_CONTRACT_PATHS
+        execution_contract_paths
     ):
         raise ValueError("Erdős 1056 execution contract set differs")
     contract_paths = {}
-    for name, expected_path in ERDOS_1056_EXECUTION_CONTRACT_PATHS.items():
+    for name, expected_path in execution_contract_paths.items():
         path = rooted_file(root, contracts.get(name), f"Erdős 1056 {name}")
         if path != expected_path:
             raise ValueError(f"Erdős 1056 {name} path differs")
@@ -332,9 +370,8 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         or producer_profile.get("authority") != "non_authoritative"
         or producer_profile.get("effect") != "none"
         or producer_profile.get("target") != TARGET_ID
-        or producer_profile.get("range")
-        != {"first": 10430801, "inclusive": True, "last": 10431000}
-        or (producer_profile.get("artifact") or {}).get("path") != ARTIFACT_PATH
+        or producer_profile.get("range") != expected_range
+        or (producer_profile.get("artifact") or {}).get("path") != artifact_path
         or "worker" in producer_profile
         or "budgets" in producer_profile
     ):
@@ -350,9 +387,8 @@ def execution_input_paths(root: pathlib.Path = ROOT) -> list[str]:
         or result_contract.get("authority") != "non_authoritative"
         or result_contract.get("effect") != "none"
         or result_contract.get("target") != TARGET_ID
-        or result_contract.get("range")
-        != {"first": 10430801, "inclusive": True, "last": 10431000}
-        or (result_contract.get("artifact") or {}).get("path") != ARTIFACT_PATH
+        or result_contract.get("range") != expected_range
+        or (result_contract.get("artifact") or {}).get("path") != artifact_path
         or (result_contract.get("verifier") or {}).get("witness_minimum_multiplicity")
         != 16
     ):

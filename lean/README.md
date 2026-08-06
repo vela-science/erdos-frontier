@@ -17,8 +17,12 @@ the gap this layer closes.
 
 ## Run
 
-    python3 extract_assumptions.py --repo plby         # default; the v4.29.1 fork
+    python3 extract_assumptions.py --repo plby         # default; plby/lean-proofs, v4.29.1
     python3 extract_assumptions.py --repo alphaproof   # alphaproof-nexus, Lean 4.27.0
+
+Each `--repo` names a source `sources.yaml` declares. `lean/clone-at-lock.sh <key>
+<destination>` checks one out at the commit `sources.lock.json` pins, which is how
+CI gets its roots; do the same locally and a local run audits the same bytes CI does.
 
 Each repo is loaded in its own built `.lake` at its own pinned Lean toolchain (override
 the root with the per-repo `VELA_PROOF_REPO[_<TAG>]` env var). For each, the harness

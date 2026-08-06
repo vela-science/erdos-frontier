@@ -12,7 +12,11 @@ import pytest
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from validate_target_closure import TargetClosureError, validate  # noqa: E402
+from validate_target_closure import (  # noqa: E402
+    CLOSURE_DIRECTORY,
+    TargetClosureError,
+    validate,
+)
 from build_target_index import (  # noqa: E402
     ERDOS_203_CHORDAL_PACKET_PATH,
     ERDOS_203_PACKET_PATH,
@@ -48,12 +52,13 @@ def _copy(root: pathlib.Path, relative: str) -> None:
 
 @pytest.fixture
 def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
+    # Glob rather than a hand-written list. The validator globs this directory,
+    # so a list here would let a closure land on disk and silently stay out of
+    # every test — which is exactly what happened to the 10429401..10429600
+    # envelope.
     closure_paths = [
-        "targets/closures/erdos-1056-10429601-10429800.json",
-        "targets/closures/erdos-1056-10429801-10430000.json",
-        "targets/closures/erdos-1056-10430001-10430200.json",
-        "targets/closures/erdos-1056-10430201-10430400.json",
-        "targets/closures/erdos-1056-10430401-10430600.json",
+        path.relative_to(ROOT).as_posix()
+        for path in sorted(CLOSURE_DIRECTORY.glob("*.json"))
     ]
     closures = [json.loads((ROOT / path).read_text()) for path in closure_paths]
     successor_packet = (ROOT / "targets/erdos-1056.json").read_bytes()
@@ -79,9 +84,14 @@ def frontier(tmp_path: pathlib.Path) -> pathlib.Path:
             locator["path"]
             for locator in (completed_packet.get("execution_contracts") or {}).values()
         )
+        # A closure resting on accepted Standing carries the accepted Claim
+        # alone; only a verified Submission brings a Submission and Artifact.
         submission_row = next(
-            row for row in closure["evidence"] if row["kind"] == "submission"
+            (row for row in closure["evidence"] if row["kind"] == "submission"),
+            None,
         )
+        if submission_row is None:
+            continue
         submission = json.loads((ROOT / submission_row["path"]).read_text())
         # Historical Canopus records retain sidecar manifests at their authored
         # paths. Current direct Submissions need only the content-addressed
@@ -180,18 +190,64 @@ def _write(path: pathlib.Path, value: dict) -> None:
     path.write_text(json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n")
 
 
+def _canonical(value: dict) -> bytes:
+    # Matches build_target_index.canonical_bytes. These files spell "Erdős", so
+    # the escaping choice is the difference between canonical and not.
+    return (
+        json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        + "\n"
+    ).encode()
+
+
+def _ledger(frontier: pathlib.Path) -> list[dict]:
+    """Read the retained closure envelopes straight off disk, oldest first.
+
+    Expectations below are stated against these bytes rather than against
+    literals. Closing the live window is the Target's objective, so a literal
+    here is a number with an expiry date; the ledger is not.
+    """
+
+    rows = [
+        json.loads(path.read_text())
+        for path in sorted((frontier / "targets/closures").glob("*.json"))
+    ]
+    rows.sort(key=lambda row: (row["completed_scope"]["first"], row["completed_scope"]["last"]))
+    return rows
+
+
 def test_exact_closure_derives_first_uncovered_interval(
     frontier: pathlib.Path,
 ) -> None:
     result = validate(frontier)
-    assert result["closed_range"] == {"first": 10430401, "last": 10430600}
-    assert result["closure_basis"] == "verified_submission"
-    assert result["accepted_coverage"] == {"first": 10430601, "last": 10430800}
-    assert result["successor_range"] == {"first": 10430801, "last": 10431000}
+    newest = _ledger(frontier)[-1]
+    packet = _read(frontier / "targets/erdos-1056.json")
+    accepted = packet["accepted_state"]["latest_bounded_negative"]["range"]
+    successor = packet["target"]["next_bounded_range"]
+    scope = newest["completed_scope"]
+
+    assert result["closed_range"] == {"first": scope["first"], "last": scope["last"]}
+    assert result["closure_basis"] == newest["closure_basis"]
+    assert result["accepted_coverage"] == {
+        "first": accepted["first"],
+        "last": accepted["last"],
+    }
+    assert result["successor_range"] == {
+        "first": successor["first"],
+        "last": successor["last"],
+    }
+    # The successor abuts accepted coverage exactly and repeats its width, so
+    # no prime is searched twice and none is skipped.
+    assert result["successor_range"]["first"] == accepted["last"] + 1
     assert (
-        result["completion_claim_root"]
-        == "sha256:f0bc52506e71391e8f7e9737dc48f29bf7a6227b67cfe431723a25415fc7698a"
+        result["successor_range"]["last"] - result["successor_range"]["first"]
+        == accepted["last"] - accepted["first"]
     )
+    completion_claim = next(
+        row
+        for row in newest["evidence"]
+        if row["kind"] in {"claim", "accepted_claim"}
+    )
+    assert result["completion_claim_root"] == completion_claim["root"]
 
 
 def test_completed_successor_is_rejected(frontier: pathlib.Path) -> None:
@@ -291,9 +347,11 @@ def test_tampered_rerooted_completion_artifact_is_rejected(
     artifact_path.write_text(
         artifact_path.read_text().replace("primes_tested=13", "primes_tested=12")
     )
-    artifact_row["root"] = (
-        "sha256:" + hashlib.sha256(artifact_path.read_bytes()).hexdigest()
-    )
+    # A careful tamperer re-derives every field the ledger derives, ID
+    # included, so the recomputed arithmetic is what has to catch this.
+    digest = hashlib.sha256(artifact_path.read_bytes()).hexdigest()
+    artifact_row["root"] = f"sha256:{digest}"
+    artifact_row["id"] = digest
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="prime count is incorrect"):
@@ -339,6 +397,47 @@ def test_verification_must_bind_every_replay_artifact(
     _write(closure_path, closure)
 
     with pytest.raises(TargetClosureError, match="every required artifact"):
+        validate(frontier)
+
+
+def test_every_closure_artifact_id_is_its_content_address(
+    frontier: pathlib.Path,
+) -> None:
+    # The protocol references an Artifact by its full lowercase content hash
+    # (vela-protocol objects/artifact_reference.rs), which is what the
+    # Verification Record's artifact_ids carry. The ledger says the same thing.
+    rows = [
+        row
+        for closure in _ledger(frontier)
+        for row in closure["evidence"]
+        if row["kind"] == "artifact"
+    ]
+    assert rows, "no artifact evidence to check"
+    for row in rows:
+        assert row["id"] == row["root"].removeprefix("sha256:")
+        assert len(row["id"]) == 64
+
+
+@pytest.mark.parametrize(
+    "damage",
+    [
+        pytest.param(lambda digest: f"va_{digest[:16]}", id="retired-prefix"),
+        pytest.param(lambda digest: f"var_{digest[:16]}", id="authority-record-prefix"),
+        pytest.param(lambda digest: digest[:63], id="truncated"),
+    ],
+)
+def test_artifact_evidence_id_must_be_the_content_address(
+    frontier: pathlib.Path, damage
+) -> None:
+    closure_path = frontier / "targets/closures/erdos-1056-10430401-10430600.json"
+    closure = _read(closure_path)
+    artifact_row = next(
+        row for row in closure["evidence"] if row["kind"] == "artifact"
+    )
+    artifact_row["id"] = damage(artifact_row["root"].removeprefix("sha256:"))
+    _write(closure_path, closure)
+
+    with pytest.raises(TargetClosureError, match="not the Artifact's content address"):
         validate(frontier)
 
 
@@ -463,47 +562,72 @@ def test_prior_verified_submission_stays_closed_after_later_acceptance(
     frontier: pathlib.Path,
 ) -> None:
     result = validate(frontier)
-    assert result["closed_range"]["last"] == 10430600
-    assert result["accepted_coverage"]["last"] == 10430800
-    assert result["successor_range"]["first"] == 10430801
+    newest = _ledger(frontier)[-1]
+    accepted = _read(frontier / "targets/erdos-1056.json")["accepted_state"][
+        "latest_bounded_negative"
+    ]["range"]
+    # Acceptance has since moved past this closure. The closure keeps its own
+    # scope; only coverage advances.
+    assert result["closed_range"]["last"] == newest["completed_scope"]["last"]
+    assert result["closed_range"]["last"] < accepted["last"]
+    assert result["accepted_coverage"]["last"] == accepted["last"]
+    assert result["successor_range"]["first"] == accepted["last"] + 1
 
 
 def test_later_acceptance_reconciles_without_rewriting_closure(
     frontier: pathlib.Path,
 ) -> None:
     result = validate(frontier)
-    assert result["accepted_coverage"]["last"] == 10430800
-    assert result["successor_range"]["first"] == 10430801
+    accepted = _read(frontier / "targets/erdos-1056.json")["accepted_state"][
+        "latest_bounded_negative"
+    ]["range"]
+    assert result["accepted_coverage"]["last"] == accepted["last"]
+    assert result["successor_range"]["first"] == accepted["last"] + 1
     assert "pending review" not in target_from_validation(result)["why"]
 
 
 def test_target_copy_uses_derived_successor_range() -> None:
+    # Deliberately not the live window: this exercises the copy alone, and
+    # borrowing the real numbers would hide a copy that ignored its argument.
     target = target_from_validation(
         {
-            "accepted_coverage": {"first": 10430601, "last": 10430800},
-            "closed_range": {"first": 10430401, "last": 10430600},
+            "accepted_coverage": {"first": 201, "last": 400},
+            "closed_range": {"first": 1, "last": 200},
             "closure_basis": "verified_submission",
-            "successor_range": {"first": 10430801, "last": 10431000},
+            "successor_range": {"first": 401, "last": 600},
         }
     )
-    assert "10430801..10431000" in target["objective"]
-    assert "ending at 10430800" in target["why"]
+    assert "401..600" in target["objective"]
+    assert "ending at 400" in target["why"]
+
+
+def _erdos_1056_window(root: pathlib.Path = ROOT) -> tuple[int, int]:
+    live = _read(root / "targets/erdos-1056.json")["target"]["next_bounded_range"]
+    return live["first"], live["last"]
 
 
 def test_execution_inputs_bind_only_the_exact_agent_bundle_files() -> None:
+    first, last = _erdos_1056_window()
     assert execution_input_paths(ROOT) == [
-        "execution/erdos-1056/10430801-10431000/producer-profile.v1.json",
-        "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
+        f"execution/erdos-1056/{first}-{last}/producer-profile.v1.json",
+        f"execution/erdos-1056/{first}-{last}/result-contract.v1.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]
+    # The window the packet declares is the window the closure ledger derives,
+    # so the bundle above is the successor's, not a stale range's.
+    assert (first, last) == (
+        validate(ROOT)["successor_range"]["first"],
+        validate(ROOT)["successor_range"]["last"],
+    )
 
 
 def _copy_erdos_1056_execution_inputs(destination: pathlib.Path) -> None:
+    first, last = _erdos_1056_window()
     for relative in [
         "targets/erdos-1056.json",
-        "execution/erdos-1056/10430801-10431000/producer-profile.v1.json",
-        "execution/erdos-1056/10430801-10431000/result-contract.v1.json",
+        f"execution/erdos-1056/{first}-{last}/producer-profile.v1.json",
+        f"execution/erdos-1056/{first}-{last}/result-contract.v1.json",
         "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
         "execution/erdos-1056/verifier/v1/verifier.cpp",
     ]:
@@ -527,14 +651,103 @@ def test_execution_inputs_reject_changed_result_contract(
     tmp_path: pathlib.Path,
 ) -> None:
     _copy_erdos_1056_execution_inputs(tmp_path)
+    first, last = _erdos_1056_window()
     contract_path = (
-        tmp_path / "execution/erdos-1056/10430801-10431000/result-contract.v1.json"
+        tmp_path
+        / f"execution/erdos-1056/{first}-{last}/result-contract.v1.json"
     )
     contract = _read(contract_path)
     contract["verifier"]["witness_minimum_multiplicity"] = 15
     _write(contract_path, contract)
 
     with pytest.raises(ValueError, match="bytes differ from the locator"):
+        execution_input_paths(tmp_path)
+
+
+def _advance_erdos_1056_window(
+    root: pathlib.Path, first: int, last: int
+) -> None:
+    """Move the packet and its contracts onto the given range, in place."""
+
+    old_first, old_last = _erdos_1056_window()
+    packet_path = root / "targets/erdos-1056.json"
+    packet = _read(packet_path)
+    packet["target"]["next_bounded_range"] = {
+        "first": first,
+        "last": last,
+        "inclusive": True,
+    }
+    artifact = f"artifacts/erdos1056-k15-range-{first}-{last}.txt"
+    packet["allowed_outputs"] = [{"type": "text/plain", "path": artifact}]
+    for name in ("producer_profile", "result_contract"):
+        contract = _read(root / packet["execution_contracts"][name]["path"])
+        contract["range"] = {"first": first, "inclusive": True, "last": last}
+        contract["artifact"]["path"] = artifact
+        relative = packet["execution_contracts"][name]["path"].replace(
+            f"{old_first}-{old_last}", f"{first}-{last}"
+        )
+        body = _canonical(contract)
+        destination = root / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(body)
+        packet["execution_contracts"][name] = {
+            "path": relative,
+            "sha256": "sha256:" + hashlib.sha256(body).hexdigest(),
+            "size": len(body),
+        }
+    packet_path.write_bytes(_canonical(packet))
+
+
+def test_execution_inputs_follow_the_window_when_the_target_succeeds(
+    tmp_path: pathlib.Path,
+) -> None:
+    # Closing the live range is what this Target is for. Succeeding at it must
+    # not make the Target Index unbuildable, which is what a pinned window did.
+    _copy_erdos_1056_execution_inputs(tmp_path)
+    old_first, old_last = _erdos_1056_window()
+    width = old_last - old_first
+    first = old_last + 1
+    last = first + width
+    _advance_erdos_1056_window(tmp_path, first, last)
+
+    assert execution_input_paths(tmp_path) == [
+        f"execution/erdos-1056/{first}-{last}/producer-profile.v1.json",
+        f"execution/erdos-1056/{first}-{last}/result-contract.v1.json",
+        "execution/erdos-1056/verifier/v1/linux-arm64/verifier",
+        "execution/erdos-1056/verifier/v1/verifier.cpp",
+    ]
+
+
+def test_execution_inputs_reject_contracts_left_on_the_previous_window(
+    tmp_path: pathlib.Path,
+) -> None:
+    # The window is derived, not free: contracts that stayed behind when the
+    # packet advanced are still caught.
+    _copy_erdos_1056_execution_inputs(tmp_path)
+    old_first, old_last = _erdos_1056_window()
+    packet_path = tmp_path / "targets/erdos-1056.json"
+    packet = _read(packet_path)
+    packet["target"]["next_bounded_range"] = {
+        "first": old_last + 1,
+        "last": old_last + 1 + (old_last - old_first),
+        "inclusive": True,
+    }
+    packet_path.write_bytes(_canonical(packet))
+
+    with pytest.raises(ValueError, match="allowed outputs differ"):
+        execution_input_paths(tmp_path)
+
+
+def test_execution_inputs_reject_a_malformed_window(
+    tmp_path: pathlib.Path,
+) -> None:
+    _copy_erdos_1056_execution_inputs(tmp_path)
+    packet_path = tmp_path / "targets/erdos-1056.json"
+    packet = _read(packet_path)
+    packet["target"]["next_bounded_range"]["inclusive"] = False
+    packet_path.write_bytes(_canonical(packet))
+
+    with pytest.raises(ValueError, match="bounded range is malformed"):
         execution_input_paths(tmp_path)
 
 

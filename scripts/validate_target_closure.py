@@ -502,6 +502,15 @@ def validate_closure(
     require_tracked(root, artifact_path)
     if file_root(artifact_path) != artifact_row.get("root"):
         raise TargetClosureError("Target closure artifact root drifted")
+    # An Artifact has no record to carry an ID field, so the other four kinds'
+    # check does not reach this row. Its ID is the content address itself —
+    # the same form the Verification Record binds below, and the only form the
+    # protocol accepts for an Artifact reference. Unchecked, it silently
+    # truncated.
+    if artifact_row.get("id") != artifact_row["root"].removeprefix("sha256:"):
+        raise TargetClosureError(
+            "artifact evidence ID is not the Artifact's content address"
+        )
 
     if submission.get("claim", {}).get("assertion") != assertion:
         raise TargetClosureError("Submission and Claim assertions differ")

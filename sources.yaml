@@ -49,11 +49,17 @@ sources:
     # upstream repository at any ref; the GitHub Pages workflow builds it from
     # `main` and publishes it at the url below, so the bytes cannot be re-fetched
     # from a commit. `pages_commit` is the commit of the active github-pages
-    # deployment, resolved from the deployment API on 2026-08-05. The lock's
-    # content hash is the real pin, which is why this entry locks a sha256 and
-    # no commit while every fetchable entry here locks both.
-    pages_commit: 4c3577432c87a34761963b04c20aba2ac7e2efd2
-    pages_commit_resolved: 2026-08-05T21:22:46Z
+    # deployment, resolved from the deployment API at the instant below. The
+    # lock's content hash is the real pin, which is why this entry locks a
+    # sha256 and no commit while every fetchable entry here locks both.
+    #
+    # Both values move together or not at all. Upstream redeploys often — the
+    # 2026-08-05 pin was already two deployments stale by the next morning — so
+    # a regeneration that refreshed the hash while leaving this commit alone
+    # would produce an entry naming one deployment and hashing another, which
+    # reads as a pin and is not one.
+    pages_commit: 19a0e741ce6ba8a26a6147390da8a42b69edbe83
+    pages_commit_resolved: 2026-08-06T11:43:37Z
     url: https://google-deepmind.github.io/formal-conjectures/data/conjectures.json
 
   plby:
@@ -71,6 +77,30 @@ sources:
     ref: main
     path: data/problems.yaml
     url: https://raw.githubusercontent.com/Jayyhk/erdos-lean/main/data/problems.yaml
+
+  # Acquired and built by `audit-proofs.yml`, and undeclared until now. Its
+  # verdicts have been retained here the whole time — `lean/audit_feed_alphaproof.json`
+  # holds seven, `sources/external-claims.v1.json` restates them, and
+  # `erdos_frontier` merges them into the source audit — so this file listed
+  # every source but one, and the one it omitted was evidence in use. Declaring
+  # it is what makes the omission impossible to repeat: the audit workflow now
+  # clones what this file names, at the commit the lock records.
+  #
+  # There is no single content locator, which is why this entry pins a commit
+  # and no sha256. The audited bytes are a directory, `APNOutputs/ErdosProblems`
+  # (nine `erdos_*.lean` files covering the seven problems in the feed), not one
+  # file the way plby's `data/sources.yaml` is. The repository's own
+  # `erdos_problems_attempted.txt` looks like the sibling manifest and is not
+  # one: it lists 353 attempts across 237 problems and names only four of the
+  # seven the audit actually reports on, so pinning it would hash bytes that do
+  # not describe the evidence. The commit and tree, resolved from the GitHub API
+  # at generation, pin the whole tree including those nine files.
+  alphaproof:
+    source_id: source:alphaproof-nexus-results
+    kind: formal_library
+    repo: google-deepmind/alphaproof-nexus-results
+    commit: 0647711a71183c1ea492ad60860776617ce1ea88
+    url: https://github.com/google-deepmind/alphaproof-nexus-results
 
   williamjblair_lean_proofs:
     source_id: source:williamjblair-lean-proofs

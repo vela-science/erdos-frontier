@@ -34,7 +34,7 @@ jobs:
           - { tc: "v4.30.0 v4.30.0-rc1 v4.25.0-rc2", shard: 0, of: 1 }
           - { tc: "v4.22.0 v4.21.0 v4.23.0", shard: 0, of: 1 }
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Install elan
         run: |
@@ -43,7 +43,7 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Cache toolchains + mathlib oleans
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
             ~/.elan
@@ -51,8 +51,11 @@ jobs:
           key: jayyhk-${{ runner.os }}-${{ matrix.tc }}-v1
           restore-keys: jayyhk-${{ runner.os }}-
 
-      - name: Clone Jayyhk
-        run: git clone --depth 1 https://github.com/Jayyhk/erdos-lean.git "$HOME/erdos-lean"
+      # The repository and commit come from sources.lock.json, not from this
+      # file, so every shard of the matrix audits the same declared bytes even
+      # when upstream `main` moves mid-run. See lean/clone-at-lock.sh.
+      - name: Check out Jayyhk at its locked commit
+        run: bash lean/clone-at-lock.sh jayyhk "$HOME/erdos-lean"
 
       - name: Build the toolchain group (shard ${{ matrix.shard }}/${{ matrix.of }})
         env:
@@ -67,7 +70,7 @@ jobs:
         run: python3 lean/extract_assumptions.py --repo jayyhk
 
       - name: Upload partial feed
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: feed-${{ strategy.job-index }}
           path: lean/audit_feed_jayyhk.json
@@ -76,8 +79,8 @@ jobs:
     needs: audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           path: partial-feeds
       - name: Merge partial feeds
@@ -97,12 +100,20 @@ jobs:
           base.write_text(json.dumps(merged, indent=2))
           print(f"merged {len(merged)} jayyhk verdicts")
           EOF
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.x"
-      - uses: astral-sh/setup-uv@v5
+      # Same uv pin as audit-proofs.yml, for the same reason: this job commits
+      # uv.lock's neighbours through a PR, and a uv older than 0.9.0 would write
+      # the lock back at format revision 2 while the committed one is at 3.
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+        with:
+          version: "0.11.32"
       - run: uv sync --all-groups
-      - name: Refresh source locks and the reviewed golden
+      # Not "refresh the source locks": `erdos_frontier.py` stopped writing
+      # sources.lock.json when locking moved to `vela-source-lock`, so the only
+      # thing this step regenerates is the reviewed golden.
+      - name: Regenerate the reviewed golden
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -124,7 +135,11 @@ jobs:
           if git diff --quiet; then echo "No feed changes."; exit 0; fi
           BRANCH="jayyhk-matrix-$(date -u +%Y%m%d-%H%M)"
           git checkout -b "$BRANCH"
-          git add lean/audit_feed_jayyhk.json tests/golden_machine_verdicts.json sources.lock.json
+          # sources.lock.json is not staged. Nothing in this job regenerates it,
+          # so listing it here only ever offered to commit an unrelated local
+          # edit under a title about audit verdicts. Move a pin deliberately,
+          # with `vela-source-lock`, in its own change.
+          git add lean/audit_feed_jayyhk.json tests/golden_machine_verdicts.json
           git commit -m "Jayyhk matrix audit: merged verdicts ($(date -u +%Y-%m-%d))"
           git push -u origin "$BRANCH"
           gh pr create --title "Jayyhk matrix audit ($(date -u +%Y-%m-%d))" \
