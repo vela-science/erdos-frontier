@@ -1,7 +1,7 @@
 # Erdős #686 — session artifacts (2026-06-09)
 
 Target: the remaining `N = 4, k ≥ 5` branch (all five stuck squares reduce
-to per-(N,k) cells; the Lean lane in `vela/lean/Vela/Erdos686.lean` closes
+to per-(N,k) cells; the Lean lane in `Erdos686.lean` closes
 every `k ≥ 5` for `N = 4` from one frontier statement). This directory holds
 the session's new mathematics, engines, and sweep results.
 
@@ -9,7 +9,7 @@ the session's new mathematics, engines, and sweep results.
 
 ### 1. Tail bound — frontier now finite per (k,d)  [Lean-verified]
 
-`TAIL-BOUND.md` + `vela/lean/Vela/Erdos686Tail.lean` (green,
+`TAIL-BOUND.md` + `Erdos686Tail.lean` (green,
 axioms = Mathlib core three):
 
 > If `5 ≤ k ≤ d` and the `p>2k` rough part of `P_k(d+x)` divides `Δ_k(d)`,
@@ -83,5 +83,9 @@ would close the window.
 - `validate_tail_bound.py` — numeric validation of the inequality chain
 - `logs/` — all sweep outputs (`*.err` has the DONE/hits summary lines)
 
-Lean artifacts live in the vela repo: `lean/Vela/Erdos686Tail.lean`,
-documented in `docs/erdos-attack/686/NOTE.md`.
+The Lean modules this file cites, `Erdos686.lean` and `Erdos686Tail.lean`, are
+in no repository here. Neither name appears at any commit on any ref of the vela
+repository, and `docs/erdos-attack/686/NOTE.md` has never existed there either.
+The session report for 2026-06-09 records them as uncommitted working files, and
+they were never committed anywhere since. Every Lean claim above is unlocated
+until they are.

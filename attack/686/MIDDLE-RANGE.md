@@ -1,7 +1,7 @@
 # The middle range: what remains of the #686 frontier after the tail bound
 
-Date: 2026-06-09. Companion to `TAIL-BOUND.md` and
-`vela/lean/Vela/Erdos686Tail.lean`.
+Date: 2026-06-09. Companion to `TAIL-BOUND.md` and `Erdos686Tail.lean`
+(uncommitted; see the note at the end of `README.md`).
 
 After the tail bound, the remaining N=4, k≥5 target is:
 

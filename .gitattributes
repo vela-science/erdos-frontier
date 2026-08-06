@@ -5,17 +5,11 @@ execution/**/verifier/**/verifier -filter -ident -working-tree-encoding -merge -
 # Canonical records are raw Git blobs. No checkout filter, keyword expansion,
 # working-tree encoding, or semantic merge driver may transform them.
 .vela/** -filter -ident -working-tree-encoding -merge -text
-.vela/events/** -filter -ident -working-tree-encoding -merge diff text eol=lf
-.vela/proposals/** -filter -ident -working-tree-encoding -merge diff text eol=lf
-.vela/records/** -filter -ident -working-tree-encoding -merge diff text eol=lf
 records/** -filter -ident -working-tree-encoding -merge diff text eol=lf
 sources/** -filter -ident -working-tree-encoding -merge -text
 artifacts/** -filter -ident -working-tree-encoding -merge -text
 review/** -filter -ident -working-tree-encoding -merge -text
-proof/** -filter -ident -working-tree-encoding -merge -text
 frontier.toml -filter -ident -working-tree-encoding -merge diff text eol=lf
-frontier.json -filter -ident -working-tree-encoding -merge diff text eol=lf
-vela.lock -filter -ident -working-tree-encoding -merge diff text eol=lf
 
 # Witnesses are small reviewed JSON and stay as ordinary Git blobs. Disabling
 # checkout filters explicitly keeps a fresh clone byte-stable and reproducible.

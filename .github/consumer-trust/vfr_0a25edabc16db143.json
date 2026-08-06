@@ -1,8 +1,0 @@
-{
-  "schema": "vela.repository-trust-anchor.v1",
-  "frontier_id": "vfr_0a25edabc16db143",
-  "identity_root": "sha256:a767c4b5c4645ebcbb3862c20a8cbd533bcd7f05f112f2423f4c6c76573e9b45",
-  "boundary_content_root": "sha256:4391ce03513626317287c92681c04da7f6b9813d70d01cd300d46b38adfd6fae",
-  "administrator_actor_id": "reviewer:will-blair",
-  "administrator_public_key": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e"
-}
