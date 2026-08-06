@@ -534,7 +534,12 @@ def test_source_lock_refresh_records_only_live_sources_and_selected_paths(tmp_pa
     refreshed = resolution.payload
 
     assert resolution.ok, resolution.problems
-    assert set(refreshed) == {"generated_at", "sources"}
+    # `sources` alone. The lock carried a `generated_at` stamp, which was the
+    # only value in a file whose premise is that everything was computed from
+    # bytes that nobody computed — so two runs over identical inputs produced
+    # different bytes and `--check` could not be a byte comparison. When the
+    # lock was acquired is the commit that changed it.
+    assert set(refreshed) == {"sources"}
     assert "stale" not in refreshed["sources"]
     assert refreshed["sources"]["live"]["path"] == "data/proofs.yaml"
     assert refreshed["sources"]["live"]["commit"] == "d" * 40

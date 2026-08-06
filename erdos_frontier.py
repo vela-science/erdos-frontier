@@ -906,7 +906,7 @@ def main() -> int:
     # second is how a pin moves on a run that was only ever asked about the
     # second, and a pin that moves without anyone deciding to move it is not a
     # pin. Regenerate deliberately:
-    #     uvx --from "git+https://github.com/vela-science/vela@73d278b0020b1699fcf80749104db19860d1bec2#subdirectory=packages/vela-source-manifest" vela-source-lock
+    #     uvx --from "git+https://github.com/vela-science/vela@3eacefceea2c76d8809d93f5805bff9bf5e5752c#subdirectory=packages/vela-source-manifest" vela-source-lock
     payload = load_live_status()
     print(
         f"reconciled {payload['total_problems']} problems; "

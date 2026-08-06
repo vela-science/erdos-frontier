@@ -12,9 +12,13 @@ name: Audit Jayyhk (toolchain matrix)
 on:
   workflow_dispatch: {}
 
+# Read is the floor. Only `merge` writes — it pushes a branch and opens the
+# review PR — and it raises its own scope there. Granting both writes at the
+# workflow level handed them to nine matrix shards that build Lean and upload
+# one JSON file, which is the largest blast radius in this repository for the
+# least reason.
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   audit:
@@ -35,6 +39,11 @@ jobs:
           - { tc: "v4.22.0 v4.21.0 v4.23.0", shard: 0, of: 1 }
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        with:
+          # A shard reads this repository, builds Lean and uploads one JSON
+          # file. It has nothing to push, and it runs third-party toolchain
+          # code, which is the case where a persisted token is worst.
+          persist-credentials: false
 
       - name: Install elan
         run: |
@@ -78,8 +87,15 @@ jobs:
   merge:
     needs: audit
     runs-on: ubuntu-latest
+    # The only writing job: it pushes the review branch and opens the PR whose
+    # golden diff is the reviewed act.
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      # The persisted credential is what "Open the review PR" pushes the branch
+      # with. Dropping it would take the write this job exists to perform.
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1 # zizmor: ignore[artipacked]
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           path: partial-feeds

@@ -1,7 +1,9 @@
 # Erdős Frontier
 
 The canonical Git repository for Vela’s Erdős research portfolio and
-formalization-fidelity audit.
+formalization-fidelity audit. The bounded question is stated in
+[STATEMENT.md](STATEMENT.md) and declared in `frontier.toml`, which
+`profile_root` commits to.
 
 [Open in Vela Observatory](https://app.vela.space/frontiers/erdos) or verify
 the exact repository state locally:

@@ -2,7 +2,7 @@
 # content hash (and GitHub commit, where resolvable) of each at generation time,
 # so accepted state is traceable to exact snapshots rather than a floating `main`
 # (memo Gate 1 / Failure Mode 4). Regenerate the lock with:
-#     uvx --from "git+https://github.com/vela-science/vela@73d278b0020b1699fcf80749104db19860d1bec2#subdirectory=packages/vela-source-manifest" vela-source-lock
+#     uvx --from "git+https://github.com/vela-science/vela@3eacefceea2c76d8809d93f5805bff9bf5e5752c#subdirectory=packages/vela-source-manifest" vela-source-lock
 # and check the committed one, without the network, with `--check`.
 #
 # The generator is the shared `vela-source-manifest` package, which lives at
@@ -63,7 +63,7 @@ sources:
     # would produce an entry naming one deployment and hashing another, which
     # reads as a pin and is not one.
     pages_commit: 19a0e741ce6ba8a26a6147390da8a42b69edbe83
-    pages_commit_resolved: 2026-08-06T11:43:37Z
+    pages_commit_resolved: "2026-08-06T11:43:37Z"
     url: https://google-deepmind.github.io/formal-conjectures/data/conjectures.json
 
   plby:

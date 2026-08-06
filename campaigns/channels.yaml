@@ -7,6 +7,10 @@
 # and no Vela command reads this file. The thresholds below are curation notes
 # recording how the taxonomy was judged, not runtime inputs anything consumes.
 #
+# It sits in campaigns/ because that is where this repository keeps the
+# human-readable plans a session reads before it starts, which is the only
+# thing anyone does with this file.
+#
 # Curation notes (2026-07-03, starter taxonomy):
 # - 647: the prime-power / prime channel was ground to exhaustion internally
 #   (banked with a Lean certificate on the internal frontier); listed here so
@@ -18,8 +22,10 @@
 #   has been curated yet, and a made-up one would poison the fold key.
 
 # `vela.` is reserved for identifiers the protocol defines, and it defines no
-# channel schema. This is a Frontier-local domain file, named like the packet
-# schemas under targets/.
+# channel schema. This is a Frontier-local domain file, and the identifier is
+# kept only because `tests/test_channels.py` now checks the shape it names: that
+# every `reduces_to` below reaches a declared core and that no id is used twice.
+# Both of those go wrong silently, which is why they are worth a reader.
 schema: erdos-frontier.channels.v0.1
 
 # A channel was judged cold at this much age-weighted failure...

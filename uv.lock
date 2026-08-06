@@ -40,7 +40,7 @@ requires-dist = [{ name = "pyyaml", specifier = ">=6.0" }]
 [package.metadata.requires-dev]
 dev = [
     { name = "pytest", specifier = ">=8.0" },
-    { name = "vela-source-manifest", git = "https://github.com/vela-science/vela?subdirectory=packages%2Fvela-source-manifest&rev=73d278b0020b1699fcf80749104db19860d1bec2" },
+    { name = "vela-source-manifest", git = "https://github.com/vela-science/vela?subdirectory=packages%2Fvela-source-manifest&rev=3eacefceea2c76d8809d93f5805bff9bf5e5752c" },
 ]
 
 [[package]]
@@ -326,7 +326,7 @@ wheels = [
 [[package]]
 name = "vela-source-manifest"
 version = "1.0.0"
-source = { git = "https://github.com/vela-science/vela?subdirectory=packages%2Fvela-source-manifest&rev=73d278b0020b1699fcf80749104db19860d1bec2#73d278b0020b1699fcf80749104db19860d1bec2" }
+source = { git = "https://github.com/vela-science/vela?subdirectory=packages%2Fvela-source-manifest&rev=3eacefceea2c76d8809d93f5805bff9bf5e5752c#3eacefceea2c76d8809d93f5805bff9bf5e5752c" }
 dependencies = [
     { name = "jsonschema" },
     { name = "pyyaml" },

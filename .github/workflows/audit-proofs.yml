@@ -28,7 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 300   # ~4h cold (two toolchains built from scratch) + margin
     steps:
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      # The persisted credential is what "Commit regenerated feeds if changed"
+      # pushes with. This is the one job here that writes to main, which is why
+      # it shares the `commit-to-main` concurrency group above.
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1 # zizmor: ignore[artipacked]
 
       - name: Install elan (Lean toolchain manager)
         run: |
