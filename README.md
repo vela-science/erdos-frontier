@@ -1,5 +1,26 @@
 # Erdős Frontier
 
+> [!IMPORTANT]
+> **Archived.** This repository is preserved exactly as signed and is no longer
+> developed. Its history, records and authority events stay readable here.
+>
+> Vela's authority boundary was renamed and consolidated in
+> [ADR 0039](https://github.com/vela-science/vela/blob/main/docs/adr/0039-repository-authority-and-derived-frontiers.md).
+> `Frontier` was doing three jobs at once — authority boundary, topic boundary
+> and product slice — and four repositories existed because there were four
+> topics, not four authorities. They named one maintainer and one decision
+> model between them, so four trust roots bought four Standing universes that
+> could not see each other.
+>
+> A repository now exists because there is a new **authority**, never because
+> there is a new topic. Current mathematical work lives in one repository under
+> one authority. Nothing here was migrated into it: Claims are re-admitted
+> deliberately through Submission, Verification and Decision, and these roots
+> remain as their provenance.
+>
+> Tooling from `vela 0.967` onward does not read this repository. The last
+> release that does is `0.966.4`.
+
 The canonical Git repository for Vela’s Erdős research portfolio and
 formalization-fidelity audit. The bounded question is stated in
 [STATEMENT.md](STATEMENT.md) and declared in `frontier.toml`, which
